@@ -9,10 +9,9 @@
 
 # Set basic kernel data
 set -e
-export KERNEL_VERSION=5.10
-export AUFS_REPOSITORY=aufs5-linux
-export AUFS_REPOSITORY_URL=https://github.com/sfjro/aufs5-linux.git
-export AUFS_BRANCH=aufs5.10
+export KERNEL_VERSION=5.10.103
+export AUFS_REPOSITORY=aufs5-standalone
+export AUFS_BRANCH=origin/aufs5.10.82
 
 # Check if apt is available
 if ! command -v apt; then
@@ -20,7 +19,7 @@ if ! command -v apt; then
 	exit
 fi
 
-# Download repo
+# Download kernel and build tools
 source download-kernel.sh
 
 # Compile the kernel
