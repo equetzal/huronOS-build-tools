@@ -27,4 +27,4 @@ source download-kernel.sh
 source compile-kernel.sh
 
 # Clean
-# source clean-tools.sh
+source clean.sh

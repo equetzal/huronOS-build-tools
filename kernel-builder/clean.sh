@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#	clean-tools.sh
+#	clean.sh
 #	Cleaner for all the installed utilities used to build the kernel
 #	Author: Enya Quetzalli <enya@quetza.ly>
 
