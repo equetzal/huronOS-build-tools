@@ -4,18 +4,13 @@
 #	Download AUFS Kernel
 #	Author: Enya Quetzalli <enya@quetza.ly>
 
+cp -aR ./sources.list /etc/apt/sources.list
 apt update
 
-# Download git
-if ! command -v git; then
-	echo "Installing git"
-	apt install --yes --no-install-recommends git
-fi
-
 # Download Linux kernel
-apt build-dep linux
-apt source linux
-cd linux-$KERNEL_VERSION
+apt install --yes --no-install-recommends $PACKAGES
+apt source linux --yes
+pushd linux-$KERNEL_VERSION
 
 # Download AUFS standalone code
 rm -Rf $AUFS_REPOSITORY
@@ -37,4 +32,7 @@ patch -p1 < $AUFS_REPOSITORY/vfs-ino.patch
 
 # Load huronOS config file
 cp ../huronos.config ./.config
+# Fill non configured parameters as default
+make olddefconfig
 
+popd
