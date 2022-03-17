@@ -8,6 +8,9 @@ echo "Changing current directory to $CHANGEDIR"
 cd $CHANGEDIR
 CWD="$(pwd)"
 
+# Install huronOS base packages
+source install.sh
+
 . ./config || exit 1
 . ./livekitlib || exit 1
 
@@ -41,7 +44,7 @@ fi
 # create live kit filesystem (cpio archive)
 rm -Rf "$LIVEKITDATA"
 BOOT="$LIVEKITDATA"/boot
-FILES="$LIVEKITDATA"/"$LIKEKITNAME"
+FILES="$LIVEKITDATA"/"$LIVEKITNAME"
 mkdir -p "$BOOT"
 mkdir -p "$FILES"/changes
 mkdir -p "$FILEs"/modules
@@ -57,7 +60,8 @@ cp $VMLINUZ $BOOT/ || exit
 # UEFI booting
 mkdir -p $BOOT/EFI/Boot
 cp bootloader/EFI/Boot/syslinux.efi $BOOT/EFI/Boot/bootx64.efi
-cp bootloader/EFI/Boot/{ldlinux.e64,menu.c32,libutil.c32,vesamenu.c32,libcom32.c32, syslinux.cfg} $BOOT/EFI/Boot
+cp bootloader/EFI/Boot/{ldlinux.e64,menu.c32,libutil.c32,vesamenu.c32,libcom32.c32} $BOOT/EFI/Boot
+cp bootloader/syslinux.cfg $BOOT/EFI/Boot
 
 # create compressed 01-core.sb
 COREFS=""
@@ -76,7 +80,7 @@ cat "$CWD/bootinfo.txt" | fgrep -v "#" | sed -r "s/mylinux/$LIVEKITNAME/" | sed 
 
 echo cd $LIVEKITDATA '&&' $MKISOFS -o "$TARGET/$LIVEKITNAME-$ARCH.iso" -v -J -R -D -A "$LIVEKITNAME" -V "$LIVEKITNAME" \
 -no-emul-boot -boot-info-table -boot-load-size 4 \
--b "$LIVEKITNAME"/boot/isolinux.bin -c "$LIVEKITNAME"/boot/isolinux.boot . \
+-b boot/isolinux.bin -c boot/isolinux.boot . \
 > $TARGET/gen_"$LIVEKITNAME"_iso.sh
 chmod o+x $TARGET/gen_"$LIVEKITNAME"_iso.sh
 
