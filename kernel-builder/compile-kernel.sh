@@ -7,8 +7,8 @@ pushd linux-$KERNEL_VERSION
 
 make clean
 #make -j $(getconf _NPROCESSORS_ONLN) deb-pkg
-make -j $(getconf _NPROCESSORS_ONLN) bzImage
-make -j $(getconf _NPROCESSORS_ONLN) modules
+make -j $(getconf _NPROCESSORS_ONLN) bzImage 2>&1 | tee kernel_compilation.log
+make -j 1 modules 2>&1 | tee kernel_modules_compilation.log
 
 make modules_install INSTALL_MOD_STRIP=1
 

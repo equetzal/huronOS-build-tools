@@ -41,8 +41,8 @@ if [ "$DEV" != "$PART" ]; then
 fi
 
 # UEFI boot loader
-mkdir -p "$BOOT/../../EFI"
-mv "EFI/Boot" "$BOOT/../../EFI/"
+mkdir -p "$BOOT/../EFI"
+mv "EFI/Boot" "$BOOT/../EFI/"
 
 echo "Boot installation finished."
 cd "$CWD"
