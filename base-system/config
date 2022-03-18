@@ -21,7 +21,7 @@ VMLINUZ=/boot/vmlinuz-5.10.103-huronos
 
 # Kernel version. Change it to "3.2.28" for example, if you are building
 # Live Kit with a different kernel than the one you are actually running
-KERNEL=$(uname -r)
+KERNEL="5.10.103-huronos"
 
 # List of directories for root filesystem
 # No subdirectories are allowed, no slashes,
@@ -44,3 +44,8 @@ BEXT=hsm
 
 # Directory with kernel .ko modules, can be different in some distros
 LMK="lib/modules/$KERNEL"
+
+# huronOS
+# Configure distribution with developer tools. This tools should be available for competitors
+# To enable, set to true
+DEVELOPER=true
