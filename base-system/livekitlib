@@ -552,7 +552,7 @@ find_data_try()
       fi
 
       # search for bundles in the mounted directory
-      if [ "$(find "$1/$FROM" -maxdepth 1 -name "*.$BEXT" 2>/dev/null)" != "" ]; then
+      if [ "$(find "$1/$FROM" "$1/$FROM/base" -maxdepth 1 -name "*.$BEXT" 2>/dev/null)" != "" ]; then
          # we found at least one bundle/module here
          echo "$1/$FROM" | tr -s "/" | sed -r "s:/[^/]+/[.][.]/:/:g"
          return
