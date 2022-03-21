@@ -1,10 +1,6 @@
 #!/bin/bash
 # Linux Live Kit version 7
 
-if [ "$DEVELOPER" = "true" ]; then
-	set -x
-fi
-
 export PATH=.:./tools:../tools:/usr/sbin:/usr/bin:/sbin:/bin:/
 
 CHANGEDIR=$(dirname $(readlink -f $0))
@@ -34,8 +30,15 @@ if [ "$MKISOFS" = "" ]; then
    exit 3
 fi
 
-# Prepare huronOS base packages
-source prepare.sh
+# Install huronOS base packages
+pushd usrroot
+cp --parents -afr * /
+popd
+source install.sh
+
+if ["$DEVELOPER" = "true"]; then
+	echo "IS D
+fi
 
 # build initramfs image
 if [ "$SKIPINITRFS" = "" ]; then
@@ -92,11 +95,8 @@ echo cd $LIVEKITDATA '&&' zip -0 -r "$TARGET/$LIVEKITNAME-$ARCH.zip" '*' \
 > $TARGET/gen_"$LIVEKITNAME"_zip.sh
 chmod o+x $TARGET/gen_"$LIVEKITNAME"_zip.sh
 
-source restore.sh
-
 echo "-----------------------------"
 echo "Finished. Find your result in $LIVEKITDATA"
 echo "To build ISO, run: $TARGET/gen_"$LIVEKITNAME"_iso.sh"
 echo "To build ZIP, run: $TARGET/gen_"$LIVEKITNAME"_zip.sh"
 cd $CWD
-
