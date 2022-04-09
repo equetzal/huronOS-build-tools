@@ -552,7 +552,7 @@ find_data_try()
       fi
 
       # search for bundles in the mounted directory
-      if [ "$(find "$1/$FROM" "$1/$FROM/base" -maxdepth 1 -name "*.$BEXT" 2>/dev/null)" != "" ]; then
+      if [ "$(find "$1/$FROM" "$1/$FROM/" -maxdepth 1 -name "*.$BEXT" 2>/dev/null)" != "" ]; then
          # we found at least one bundle/module here
          echo "$1/$FROM" | tr -s "/" | sed -r "s:/[^/]+/[.][.]/:/:g"
          return
@@ -590,7 +590,7 @@ find_data()
       return
    fi
 
-   if [ "$FROM" = "" ]; then FROM="$LIVEKITNAME"; fi
+   if [ "$FROM" = "" ]; then FROM="$LIVEKITNAME"/base; fi
 
    echo_green_star >&2
    echo -n "Looking for $LIVEKITNAME data in /$FROM .." | tr -s "/" >&2
@@ -631,7 +631,7 @@ persistent_changes()
 
    local CHANGES T1 T2 EXISTS
 
-   CHANGES="$1/$(basename "$2")"
+   CHANGES="$1/../$(basename "$2")"
    T1="$CHANGES/.empty"
    T2="$T1"2
 

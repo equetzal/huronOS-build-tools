@@ -1,7 +1,7 @@
 #!/bin/bash
 
 TMP=/tmp/changes$$
-EXCLUDE="^\$|/\$|[.]wh[.][.]wh[.]orph/|^[.]wh[.][.]pwd[.]lock|^[.]wh[.][.]wh[.]plnk/|^[.]wh[.][.]wh[.]aufs|^var/cache/|^var/backups/|^var/tmp/|^var/log/|^var/lib/apt/|^var/lib/dhcp/|^var/lib/systemd/|^sbin/fsck[.]aufs|^etc/resolv[.]conf|^root/[.]Xauthority|^root/[.]xsession-errors|^root/[.]fehbg|^root/[.]fluxbox/lastwallpaper|^root/[.]fluxbox/menu_resolution|^etc/mtab|^etc/fstab|^boot/|^dev/|^mnt/|^proc/|^run/|^sys/|^tmp/"
+EXCLUDE="^\$|/\$|[.]wh[.][.]wh[.]orph/|^[.]wh[.][.]pwd[.]lock|^[.]wh[.][.]wh[.]plnk/|^[.]wh[.][.]wh[.]aufs|^var/cache/|^var/backups/|^var/tmp/|^var/log/|^var/lib/apt/|^var/lib/dhcp/|^var/lib/systemd/|^sbin/fsck[.]aufs|^etc/resolv[.]conf|^contestant/[.]bash_history|^root/[.]bash_history|^root/[.]Xauthority|^root/[.]xsession-errors|^root/[.]fehbg|^root/[.]fluxbox/lastwallpaper|^root/[.]fluxbox/menu_resolution|^etc/mtab|^etc/fstab|^boot/|^dev/|^mnt/|^proc/|^run/|^sys/|^tmp/"
 CHANGES=/run/initramfs/memory/changes
 
 if [ "$1" = "" ]; then
@@ -28,7 +28,7 @@ if [ -d "$CHANGES/changes" -a -d "$CHANGES/workdir" -a "$(ls -1 "$CHANGES" | egr
 fi
 
 # exclude control files for automounted disk drives
-EXCLUDEDISKS=$(grep "Slax skip savechanges" /etc/systemd/system/{*,*/*} 2>/dev/null | cut -d : -f 1 | cut -b 2- | tr '\n' '|')
+EXCLUDEDISKS=$(grep "huronOS skip savechanges" /etc/systemd/system/{*,*/*} 2>/dev/null | cut -d : -f 1 | cut -b 2- | tr '\n' '|')
 if [ "$EXCLUDEDISKS" != "" ]; then
    EXCLUDE="$EXCLUDE|^($EXCLUDEDISKS)\$"
 fi
