@@ -1,0 +1,27 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages were automatically installed and are no longer required:
+  libc6-i386 libefiboot1 libefivar1
+Use 'apt autoremove' to remove them.
+The following additional packages will be installed:
+  git git-man liberror-perl xdg-utils
+Suggested packages:
+  lsb-release git-daemon-run | git-daemon-sysvinit git-doc git-el git-email
+  git-gui gitk gitweb git-cvs git-mediawiki git-svn
+Recommended packages:
+  gnome-keyring patch ssh-client libfile-mimeinfo-perl libnet-dbus-perl
+  libx11-protocol-perl x11-xserver-utils
+The following NEW packages will be installed:
+  atom git git-man liberror-perl xdg-utils
+0 upgraded, 5 newly installed, 0 to remove and 0 not upgraded.
+Inst liberror-perl (0.17029-1 Debian:11.2/stable [all])
+Inst git-man (1:2.30.2-1 Debian:11.2/stable [all])
+Inst git (1:2.30.2-1 Debian:11.2/stable [amd64])
+Inst xdg-utils (1.1.3-4.1 Debian:11.2/stable [all])
+Inst atom (1.60.0 local-deb [amd64])
+Conf liberror-perl (0.17029-1 Debian:11.2/stable [all])
+Conf git-man (1:2.30.2-1 Debian:11.2/stable [all])
+Conf git (1:2.30.2-1 Debian:11.2/stable [amd64])
+Conf xdg-utils (1.1.3-4.1 Debian:11.2/stable [all])
+Conf atom (1.60.0 local-deb [amd64])

@@ -1,0 +1,17 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages were automatically installed and are no longer required:
+  gettext-base libc6-i386 libefiboot1 libefivar1
+Use 'apt autoremove' to remove them.
+The following additional packages will be installed:
+  geany-common
+Suggested packages:
+  libvte9 doc-base
+The following NEW packages will be installed:
+  geany geany-common
+0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+Inst geany-common (1.37.1-2 Debian:11.2/stable [all])
+Inst geany (1.37.1-2 Debian:11.2/stable [amd64])
+Conf geany-common (1.37.1-2 Debian:11.2/stable [all])
+Conf geany (1.37.1-2 Debian:11.2/stable [amd64])

@@ -1,4 +1,6 @@
-PACKAGES="xserver-xorg xserver-xorg-video-intel xinit xterm xinput libdrm-intel1 libgl1-mesa-dri libglu1-mesa x11-utils lightdm apparmor budgie-desktop budgie-network-manager-applet moka-icon-theme plank nautilus gnome-terminal libglib2.0-bin dconf-cli"
+PACKAGES="xserver-xorg xserver-xorg-video-intel xinit xterm xinput libdrm-intel1 libgl1-mesa-dri libglu1-mesa x11-utils lightdm apparmor budgie-desktop budgie-network-manager-applet moka-icon-theme plank nautilus gnome-terminal libglib2.0-bin dconf-cli okular gnome-calculator"
+
+#### Missing PDF Viewer, Calculator
 
 #set -x
 
@@ -51,5 +53,7 @@ sleep 3
 ## Launch lightdm to configure desktops
 systemctl start lightdm.service
 
-## Configure Menu of /usr/share/applications/*
+## Configure Menu Launcher of /usr/share/applications/*
 	## Basic Tools
+
+## Configure Menu Directories on /usr/share/desktop-directories and /etc/xdg/menus/gnome-applications.menu

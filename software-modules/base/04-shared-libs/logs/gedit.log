@@ -1,0 +1,46 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages were automatically installed and are no longer required:
+  gettext-base libc6-i386 libefiboot1 libefivar1
+Use 'apt autoremove' to remove them.
+The following additional packages will be installed:
+  gedit-common gir1.2-gtksource-4 libamtk-5-0 libamtk-5-common libgspell-1-2
+  libgspell-1-common libgtksourceview-4-0 libgtksourceview-4-common
+  libtepl-5-0 python3-cairo python3-gi python3-gi-cairo
+Suggested packages:
+  gedit-plugins
+Recommended packages:
+  yelp zenity
+The following NEW packages will be installed:
+  gedit gedit-common gir1.2-gtksource-4 libamtk-5-0 libamtk-5-common
+  libgspell-1-2 libgspell-1-common libgtksourceview-4-0
+  libgtksourceview-4-common libtepl-5-0 python3-cairo python3-gi
+  python3-gi-cairo
+0 upgraded, 13 newly installed, 0 to remove and 0 not upgraded.
+Inst gedit-common (3.38.1-1 Debian:11.2/stable [all])
+Inst libgtksourceview-4-common (4.8.0-1 Debian:11.2/stable [all])
+Inst libgtksourceview-4-0 (4.8.0-1 Debian:11.2/stable [amd64])
+Inst gir1.2-gtksource-4 (4.8.0-1 Debian:11.2/stable [amd64])
+Inst python3-gi (3.38.0-2 Debian:11.2/stable [amd64])
+Inst python3-cairo (1.16.2-4+b2 Debian:11.2/stable [amd64])
+Inst python3-gi-cairo (3.38.0-2 Debian:11.2/stable [amd64])
+Inst libamtk-5-common (5.2.0-1 Debian:11.2/stable [all])
+Inst libamtk-5-0 (5.2.0-1 Debian:11.2/stable [amd64])
+Inst libgspell-1-common (1.8.4-1 Debian:11.2/stable [all])
+Inst libgspell-1-2 (1.8.4-1 Debian:11.2/stable [amd64])
+Inst libtepl-5-0 (5.0.1-2 Debian:11.2/stable [amd64])
+Inst gedit (3.38.1-1 Debian:11.2/stable [amd64])
+Conf gedit-common (3.38.1-1 Debian:11.2/stable [all])
+Conf libgtksourceview-4-common (4.8.0-1 Debian:11.2/stable [all])
+Conf libgtksourceview-4-0 (4.8.0-1 Debian:11.2/stable [amd64])
+Conf gir1.2-gtksource-4 (4.8.0-1 Debian:11.2/stable [amd64])
+Conf python3-gi (3.38.0-2 Debian:11.2/stable [amd64])
+Conf python3-cairo (1.16.2-4+b2 Debian:11.2/stable [amd64])
+Conf python3-gi-cairo (3.38.0-2 Debian:11.2/stable [amd64])
+Conf libamtk-5-common (5.2.0-1 Debian:11.2/stable [all])
+Conf libamtk-5-0 (5.2.0-1 Debian:11.2/stable [amd64])
+Conf libgspell-1-common (1.8.4-1 Debian:11.2/stable [all])
+Conf libgspell-1-2 (1.8.4-1 Debian:11.2/stable [amd64])
+Conf libtepl-5-0 (5.0.1-2 Debian:11.2/stable [amd64])
+Conf gedit (3.38.1-1 Debian:11.2/stable [amd64])

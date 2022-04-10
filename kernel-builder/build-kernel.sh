@@ -2,7 +2,7 @@
 
 #	build-kernel.sh
 #	Building AUFS Kernel for huronOS
-#	Author: Enya Quetzalli <enya@quetza.ly>
+#	Author: Enya Quetzalli <equetzal@huronos.org>
 
 # Run as root
 (( EUID != 0 )) && exec sudo -- "$0" "$@"

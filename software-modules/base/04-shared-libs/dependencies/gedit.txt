@@ -1,0 +1,1 @@
+gir1.2-gtksource-4 libamtk-5-0 libamtk-5-common libgspell-1-2 libgspell-1-common libgtksourceview-4-0 libgtksourceview-4-common libtepl-5-0 python3-cairo python3-gi python3-gi-cairo 
