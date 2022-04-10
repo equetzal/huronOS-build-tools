@@ -2,8 +2,7 @@
 
 #	compile-kernel.sh
 #	Compile AUFS Kernel
-#	Author: Enya Quetzalli <equetzal@huronos.org>
-
+#	Author: Enya Quetzalli <enya@quetza.ly>
 pushd linux-$KERNEL_VERSION
 
 make clean
