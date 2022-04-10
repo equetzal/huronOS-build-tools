@@ -1,7 +1,9 @@
 #!/bin/bash
-# Create initramfs image
-# Author: Tomas M <http://www.linux-live.org/>
-#
+
+# Initramfs image
+# Taken from Slax, Originally authored by: Tomas M <http://www.slax.org/>
+# Modified by the huronOS team:
+#	Enya Quetzalli <equetzal@huronos.org>
 
 . ../config
 

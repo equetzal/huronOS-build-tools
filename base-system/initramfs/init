@@ -1,11 +1,16 @@
 #!/bin/sh
-# Initial script for Linux Live Kit
-# Author: Tomas M <http://www.linux-live.org/>
+
+# Initial script for huronOS
+# Taken from Slax, Originally authored by: Tomas M <http://www.slax.org/>
+# Modified by the huronOS team:
+#	Enya Quetzalli <equetzal@huronos.org>
 
 export PATH=.:/:/usr/sbin:/usr/bin:/sbin:/bin
 
 . /lib/config
 . /lib/livekitlib
+
+echo "Starting huronOS"
 
 transfer_initramfs
 
@@ -15,8 +20,9 @@ UNION=$MEMORY/union
 DATAMNT=$MEMORY/data
 BUNDLES=$MEMORY/bundles
 
-header "Live Kit init <http://www.linux-live.org/>"
+header "huronOS Init process <https://huronos.org/>"
 
+echo "Creating target filesystem"
 init_proc_sysfs
 
 debug_start
@@ -55,9 +61,10 @@ copy_rootcopy_content "$DATA" "$UNION"
 fstab_create "$UNION" "$DATAMNT"
                                                                                                                                                       debug_shell
 # run user custom preinit
-user_preinit "$DATA" "$UNION"
+# user_preinit "$DATA" "$UNION"
 
-header "Live Kit done, starting $LIVEKITNAME"
+header "huronOS ready!, starting contest enviroment"
+header "Keep Training!"
 change_root "$UNION"
 
 header "!!ERROR occured, you shouldn't be here.!!"

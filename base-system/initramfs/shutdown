@@ -1,10 +1,10 @@
 #!/bin/sh
+
 # Shutdown script for initramfs. It's automatically started by
 # systemd (if you use it) on shutdown, no need for any tweaks.
 # Purpose of this script is to unmount everything cleanly.
 #
-# Author: Tomas M <http://www.linux-live.org/>
-#
+# Taken from Slax, Originally authored by: Tomas M <http://www.slax.org/>
 
 . /lib/config
 . /lib/livekitlib
