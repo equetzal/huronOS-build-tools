@@ -1,9 +1,12 @@
 #!/bin/bash
-# Linux Live Kit version 7
 
-	set -x
+# Taken from Linux-Live, Originally authored by: Tomas M <http://www.linux-live.org/>
+# Modified by the huronOS team:
+#	Enya Quetzalli <equetzal@huronos.org>
+#	Abraham Omar   <aomm@huronos.org>
 
 export PATH=.:./tools:../tools:/usr/sbin:/usr/bin:/sbin:/bin:/
+set -x
 
 CHANGEDIR=$(dirname $(readlink -f $0))
 echo "Changing current directory to $CHANGEDIR"
