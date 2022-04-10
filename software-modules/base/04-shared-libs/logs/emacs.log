@@ -1,0 +1,33 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages were automatically installed and are no longer required:
+  gettext-base libc6-i386 libefiboot1 libefivar1
+Use 'apt autoremove' to remove them.
+The following additional packages will be installed:
+  emacs-bin-common emacs-common emacs-gtk install-info libm17n-0 libotf0
+  m17n-db
+Suggested packages:
+  emacs-common-non-dfsg ncurses-term m17n-docs gawk
+Recommended packages:
+  mailutils emacs-el
+The following NEW packages will be installed:
+  emacs emacs-bin-common emacs-common emacs-gtk install-info libm17n-0 libotf0
+  m17n-db
+0 upgraded, 8 newly installed, 0 to remove and 0 not upgraded.
+Inst install-info (6.7.0.dfsg.2-6 Debian:11.2/stable [amd64])
+Conf install-info (6.7.0.dfsg.2-6 Debian:11.2/stable [amd64])
+Inst emacs-common (1:27.1+1-3.1 Debian:11.2/stable [all])
+Inst emacs-bin-common (1:27.1+1-3.1 Debian:11.2/stable [amd64])
+Inst m17n-db (1.8.0-3 Debian:11.2/stable [all])
+Inst libotf0 (0.9.13-7 Debian:11.2/stable [amd64])
+Inst libm17n-0 (1.8.0-2 Debian:11.2/stable [amd64])
+Inst emacs-gtk (1:27.1+1-3.1 Debian:11.2/stable [amd64])
+Inst emacs (1:27.1+1-3.1 Debian:11.2/stable [all])
+Conf emacs-common (1:27.1+1-3.1 Debian:11.2/stable [all])
+Conf emacs-bin-common (1:27.1+1-3.1 Debian:11.2/stable [amd64])
+Conf m17n-db (1.8.0-3 Debian:11.2/stable [all])
+Conf libotf0 (0.9.13-7 Debian:11.2/stable [amd64])
+Conf libm17n-0 (1.8.0-2 Debian:11.2/stable [amd64])
+Conf emacs-gtk (1:27.1+1-3.1 Debian:11.2/stable [amd64])
+Conf emacs (1:27.1+1-3.1 Debian:11.2/stable [all])

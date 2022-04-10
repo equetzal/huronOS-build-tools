@@ -1,0 +1,45 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages were automatically installed and are no longer required:
+  gettext-base libc6-i386 libefiboot1 libefivar1
+Use 'apt autoremove' to remove them.
+The following additional packages will be installed:
+  binutils binutils-common binutils-x86-64-linux-gnu codeblocks-common
+  libastyle3 libbinutils libcodeblocks0 libctf-nobfd0 libctf0
+  libtinyxml2.6.2v5 libwxbase3.0-0v5 libwxgtk3.0-gtk3-0v5
+Suggested packages:
+  binutils-doc codeblocks-contrib libwxgtk3.0-dev
+Recommended packages:
+  gcc | g++ gdb
+The following NEW packages will be installed:
+  binutils binutils-common binutils-x86-64-linux-gnu codeblocks
+  codeblocks-common libastyle3 libbinutils libcodeblocks0 libctf-nobfd0
+  libctf0 libtinyxml2.6.2v5 libwxbase3.0-0v5 libwxgtk3.0-gtk3-0v5
+0 upgraded, 13 newly installed, 0 to remove and 0 not upgraded.
+Inst binutils-common (2.35.2-2 Debian:11.2/stable [amd64])
+Inst libbinutils (2.35.2-2 Debian:11.2/stable [amd64])
+Inst libctf-nobfd0 (2.35.2-2 Debian:11.2/stable [amd64])
+Inst libctf0 (2.35.2-2 Debian:11.2/stable [amd64])
+Inst binutils-x86-64-linux-gnu (2.35.2-2 Debian:11.2/stable [amd64])
+Inst binutils (2.35.2-2 Debian:11.2/stable [amd64])
+Inst codeblocks-common (20.03-3 Debian:11.2/stable [all])
+Inst libastyle3 (3.1-2+b1 Debian:11.2/stable [amd64])
+Inst libtinyxml2.6.2v5 (2.6.2-4 Debian:11.2/stable [amd64])
+Inst libwxbase3.0-0v5 (3.0.5.1+dfsg-2 Debian:11.2/stable [amd64])
+Inst libwxgtk3.0-gtk3-0v5 (3.0.5.1+dfsg-2 Debian:11.2/stable [amd64])
+Inst libcodeblocks0 (20.03-3 Debian:11.2/stable [amd64])
+Inst codeblocks (20.03-3 Debian:11.2/stable [amd64])
+Conf binutils-common (2.35.2-2 Debian:11.2/stable [amd64])
+Conf libbinutils (2.35.2-2 Debian:11.2/stable [amd64])
+Conf libctf-nobfd0 (2.35.2-2 Debian:11.2/stable [amd64])
+Conf libctf0 (2.35.2-2 Debian:11.2/stable [amd64])
+Conf binutils-x86-64-linux-gnu (2.35.2-2 Debian:11.2/stable [amd64])
+Conf binutils (2.35.2-2 Debian:11.2/stable [amd64])
+Conf codeblocks-common (20.03-3 Debian:11.2/stable [all])
+Conf libastyle3 (3.1-2+b1 Debian:11.2/stable [amd64])
+Conf libtinyxml2.6.2v5 (2.6.2-4 Debian:11.2/stable [amd64])
+Conf libwxbase3.0-0v5 (3.0.5.1+dfsg-2 Debian:11.2/stable [amd64])
+Conf libwxgtk3.0-gtk3-0v5 (3.0.5.1+dfsg-2 Debian:11.2/stable [amd64])
+Conf libcodeblocks0 (20.03-3 Debian:11.2/stable [amd64])
+Conf codeblocks (20.03-3 Debian:11.2/stable [amd64])

@@ -1,0 +1,17 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages were automatically installed and are no longer required:
+  gettext-base libc6-i386 libefiboot1 libefivar1
+Use 'apt autoremove' to remove them.
+The following additional packages will be installed:
+  pypy3-lib
+Suggested packages:
+  pypy3-doc pypy3-tk
+The following NEW packages will be installed:
+  pypy3 pypy3-lib
+0 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+Inst pypy3-lib (7.3.5+dfsg-2 Debian:11.2/stable [amd64])
+Conf pypy3-lib (7.3.5+dfsg-2 Debian:11.2/stable [amd64])
+Inst pypy3 (7.3.5+dfsg-2 Debian:11.2/stable [amd64])
+Conf pypy3 (7.3.5+dfsg-2 Debian:11.2/stable [amd64])
