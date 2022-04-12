@@ -9,4 +9,4 @@ cp -r ./reference/* /usr/share/doc/reference/
 
 cp ./c-documentation.desktop /usr/share/applications/
 
-savechanges /media/sdb1/huronOS/programming/gcc.hsm
+savechanges /media/sdb1/huronOS/langs/gcc.hsm

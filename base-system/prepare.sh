@@ -13,7 +13,7 @@ else
 	apt remove --yes $DEV_PACKAGES
 fi
 apt remove --yes $REM_PACKAGES
-apt autoclean --yes
+apt autoclean --yes --purge
 
 # Copy root directories
 pushd usrroot && cp --parents -afr * / && popd

@@ -1,0 +1,186 @@
+#!/bin/bash
+
+# hmm // Huron Module Manager
+#	Huron module manager, is the tool that allows huronOS to activate and
+#	decativate modules automatically on the fly using AUFS. It also allows
+#	the creation of new modules.
+
+# Taken from Slax, Originally authored by: Tomas M <http://www.slax.org/>
+# Modified by the huronOS team:
+#	Enya Quetzalli <equetzal@huronos.org>
+#	Abraham Omar   <aomm@huronos.org>
+
+# Params:
+#	activate
+#	deactivate
+#	list
+
+LIVE=/run/initramfs/memory
+RAMSTORE=$LIVE/modules
+
+# Print error message and exit
+# $1 = error message
+#
+die(){
+   echo "$1" >&2
+   exit 1
+}
+
+
+print_branches(){
+   local SI MODULE LOOP CWD
+
+   SI="/sys/fs/aufs/$(cat /proc/mounts | grep 'aufs / aufs' | egrep -o 'si=([^,) ]+)' | tr = _)"
+   CWD="$(pwd)"
+   cd "$SI"
+   ls -v1 | grep -v xi_path | egrep 'br[0-9]+' | xargs cat | grep memory/bundles | rev | cut -b 4- | rev | while read MODULE; do
+      if mountpoint -q "$MODULE"; then
+         LOOP=$(cat /proc/mounts | fgrep " $MODULE squashfs" | cut -d " " -f 1)
+         echo -n "$MODULE"
+         echo -ne "\t"
+         losetup $LOOP | sed -r "s:.*[(]|[)].*::g"
+      fi
+   done | tac
+   cd "$CWD"
+}
+
+
+# Activate Module
+# $1 = file to activate
+#
+activate(){
+   local MODULE TGT BAS
+
+   MODULE="$(readlink -f "$1")"
+   BAS="$(basename "$MODULE")"
+
+   # check if file exists
+   if [ ! -r "$MODULE" ]; then
+      usage
+      die "file not found $MODULE"
+   fi
+
+   # check if the file is part of aufs union, if yes we need to copy it outside
+   if df "$MODULE" | cut -d " " -f 1 | grep -q aufs; then
+      TGT="$RAMSTORE"
+      mkdir -p "$TGT"
+      if [ -r $TGT/$BAS ]; then die "File exists: $TGT/$BAS"; fi
+      cp -n "$MODULE" "$TGT/$BAS"
+      if [ $? -ne 0 ]; then die "Error copying file to $TGT/$BAS. Not enough free RAM or disk space?"; fi
+      MODULE="$TGT/$BAS"
+   fi
+
+   # check if this particular file is already activated
+   if print_branches | cut -f 2 | fgrep -q "$MODULE"; then
+      exit
+   fi
+
+   # mount remount,add
+   TGT="$LIVE/bundles/$BAS"
+   mkdir -p "$TGT"
+
+   mount -n -o loop,ro "$MODULE" "$TGT"
+   if [ $? -ne 0 ]; then
+      die "Error mounting $MODULE to $TGT, perhaps corrupted download"
+   fi
+
+   # add current branch to aufs union
+   mount -t aufs -o remount,add:1:"$TGT" aufs /
+   if [ $? -ne 0 ]; then
+      umount "$TGT"
+      rmdir "$TGT"
+      die "Error attaching bundle filesystem to huronOS"
+   fi
+
+   su contestant -c '(nohup budgie-panel --replace > /dev/null 2>&1 &)'
+   echo "huronOS module activated: $BAS"
+}
+
+
+# Deactivate module of the given name
+# $1 = path to module file, or its name
+#
+deactivate(){
+   local BUNDLES MODULE MATCH LOOP LOOPFILE
+
+   BUNDLES=$LIVE/bundles
+   MODULES=$LIVE/modules
+   MODULE="$(basename "$1")"
+
+   rmdir "$BUNDLES/$MODULE" 2>/dev/null    # this fails unless the dir is
+   rmdir "$BUNDLES/$MODULE.hsm" 2>/dev/null # forgotten there empty. It's safe this way
+
+   if [ ! -d "$BUNDLES/$MODULE" ]; then
+      # we don't have real filename match, lets try to add .sb extension
+      if [ ! -d "$BUNDLES/$MODULE.hsm" ]; then
+         # no, still no match. Lets use some guesswork
+         MODULE=$(print_branches | cut -f 2 | egrep -o "/[0-9]+-$MODULE.hsm\$" | tail -n 1 | xargs -r basename)
+      else
+         MODULE="$MODULE.hsm"
+      fi
+   fi
+
+   if [ "$MODULE" = "" -o ! -d "$BUNDLES/$MODULE" ]; then
+      die "can't find active module $1"
+   fi
+
+   echo "Attempting to deactivate module $MODULE..."
+   mount -t aufs -o remount,verbose,del:"$BUNDLES/$MODULE" aufs / 2>/dev/null
+   if [ $? -ne 0 ]; then
+      die "Unable to deactivate huronOS module - still in use. See dmesg for more."
+   fi
+
+   # remember what loop device was the bundle mounted to, it may be needed later
+   LOOP="$(cat /proc/mounts | fgrep " $BUNDLES/$MODULE " | cut -d " " -f 1)"
+   LOOPFILE="$(losetup "$LOOP" | cut -d " " -f 3 | sed -r 's:^.|.$::g')"
+
+   umount "$BUNDLES/$MODULE" 2>/dev/null
+   if [ $? -ne 0 ]; then
+      die "Unable to umount huronOS module loop-mount $BUNDLES/$MODULE"
+   fi
+   rmdir "$BUNDLES/$MODULE"
+
+   # free the loop device manually since umount fails to do that if the bundle was activated on boot
+   losetup -d "$LOOP" 2>/dev/null
+
+   if echo "$LOOPFILE" | grep -q $RAMSTORE; then
+      rm -f $LOOPFILE
+   fi
+
+   su contestant -c '(nohup budgie-panel --replace > /dev/null 2>&1 &)'
+   echo "huronOS module deactivated: $MODULE"
+}
+
+
+usage()
+{
+   echo "Usage: $0 [ activate | deactivate | list ] [ file.hsm ]" >&2
+   if [ "$1" != "" ]; then
+      echo "$1" >&2
+   fi
+}
+
+
+if [ "$1" = "activate" ]; then
+   activate "$2"
+   exit
+fi
+
+if [ "$1" = "deactivate" ]; then
+   deactivate "$2"
+   exit
+fi
+
+if [ "$1" = "list" ]; then
+   print_branches
+   exit
+fi
+
+if [ "$1" = "savechanges" ]; then
+   shift
+   savechanges "$@"
+   exit
+fi
+
+usage
+exit 1
