@@ -2,7 +2,8 @@
 
 #	download-kernel.sh
 #	Download AUFS Kernel
-#	Author: Enya Quetzalli <enya@quetza.ly>
+#	Author:
+#		Enya Quetzalli <equetzal@huronos.org>
 
 cp -aR ./sources.list /etc/apt/sources.list
 apt update
