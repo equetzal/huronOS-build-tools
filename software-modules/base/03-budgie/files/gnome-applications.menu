@@ -1,0 +1,105 @@
+<!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
+ "http://www.freedesktop.org/standards/menu-spec/1.0/menu.dtd">
+
+<Menu>
+
+  <Name>Applications</Name>
+  <Directory>X-GNOME-Menu-Applications.directory</Directory>
+
+  <!-- Read standard .directory and .desktop file locations -->
+  <DefaultAppDirs/>
+  <DefaultDirectoryDirs/>
+
+  <!-- Read in overrides and child menus from applications-merged/ -->
+  <DefaultMergeDirs/>
+
+  <!-- Programming submenu -->
+  <Menu>
+    <Name>Programming</Name>
+    <Directory>Programming.directory</Directory>
+    <Include>
+      <And>
+        <Category>Programming</Category>
+        <Category>Development</Category>
+        <Not><Category>Settings</Category></Not>
+      </And>
+
+      <Filename>atom.desktop</Filename>
+      <Filename>codeblocks.desktop</Filename>
+      <Filename>eclipse.desktop</Filename>
+      <Filename>emacs.desktop</Filename>
+      <Filename>geany.desktop</Filename>
+      <Filename>gedit.desktop</Filename>
+      <Filename>gvim.desktop</Filename>
+      <Filename>kate.desktop</Filename>
+      <Filename>kdevelop.desktop</Filename>
+      <Filename>vscode.desktop</Filename>
+      <Filename>intellij.desktop</Filename>
+      <Filename>joe.desktop</Filename>
+      <Filename>vim.desktop</Filename>
+      <Filename>clion.desktop</Filename>
+      <Filename>pycharm.desktop</Filename>
+      <Filename>sublime.desktop</Filename>
+
+    </Include>
+  </Menu> <!-- End Programming -->
+
+  <!-- Reference -->
+  <Menu>
+    <Name>Reference</Name>
+    <Directory>Reference.directory</Directory>
+    <Include>
+      <And>
+        <Category>Reference</Category>
+      </And>
+      <Filename>c-documentation.desktop</Filename>
+      <Filename>c++-documentation.desktop</Filename>
+      <Filename>kotlin-documentation.desktop</Filename>
+      <Filename>python3-documentation.desktop</Filename>
+      <Filename>ruby-documentation.desktop</Filename>
+      <Filename>crow-translation.desktop</Filename>
+    </Include>
+  </Menu> <!-- End Reference -->
+
+  <!-- Tools -->
+  <Menu>
+    <Name>Tools</Name>
+    <Directory>Tools.directory</Directory>
+    <Include>
+      <And>
+        <Category>Tools</Category>
+      </And>
+      <Filename>gnome-calculator.desktop</Filename>
+      <Filename>okular.desktop</Filename>
+      <Filename>eog.desktop</Filename>
+      <Filename>nautilus.desktop</Filename>
+      <Filename>gnome-terminal.desktop</Filename>
+      <Filename>konsole.desktop</Filename>
+      <Filename>midnight-commander.desktop</Filename>
+      <Filename>byobu.desktop</Filename>
+      <Filename>uxterm.desktop</Filename>
+      <Filename>xterm.desktop</Filename>
+    </Include>
+  </Menu> <!-- End Tools -->
+
+  <!-- Internet -->
+  <Menu>
+    <Name>Internet</Name>
+    <Directory>Network.directory</Directory>
+    <Include>
+      <And>
+        <Category>Network</Category>
+	<Not><Category>X-GNOME-WebApplication</Category></Not>
+      </And>
+      <Filename>chrome.desktop</Filename>
+      <Filename>chromium.desktop</Filename>
+      <Filename>firefox.desktop</Filename>
+    </Include>
+
+    <Exclude>
+      <!-- Utilities exclusions -->
+      <Filename>vinagre.desktop</Filename>
+    </Exclude>
+  </Menu>   <!-- End Internet -->
+
+</Menu> <!-- End Applications -->

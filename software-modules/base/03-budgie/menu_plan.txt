@@ -1,0 +1,45 @@
+All
+
+Programming
+	Atom, atom
+	Codeblocks, codeblocks
+	Eclipse, eclipse
+	Emacs, emacs
+	Geany, geany
+	Gedit, gedit
+	Gvim, gvim
+	Kate, kate
+	Kdevelop, kdevelop
+	Visual Studio Code, vscode
+	IntelliJ, intellij
+	Joe, joe
+	Vim, vim
+	Clion, clion
+	Pycharm, pycharm
+	Sublime Text, sublime
+
+Reference
+	C Documentation, c-documentation
+	C++ Documentation, c++-documentation
+	Java Documentation, java-documentation
+	Kotlin Documentation kotlin-documentation
+	Python 3 Documentation, python3-documentation
+	Ruby Documentation, ruby-documentation
+	Crow Translation, crow-translation
+
+Tools
+	Calculator, gnome-calculator
+	PDF Viewer, okular
+	Image Viewer, eog
+	Files, nautilus
+	Gnome-Terminal, gnome-terminal
+	Konsole, konsole
+	Midnight Commander, midnight-commander (mc)
+	Byobu, byobu
+	UXTerm, uxterm
+	XTerm, xterm
+
+Internet
+	Chrome, chrome
+	Chromium, chromium
+	Firefox, firefox

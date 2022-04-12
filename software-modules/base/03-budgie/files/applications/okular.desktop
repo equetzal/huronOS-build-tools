@@ -1,0 +1,13 @@
+[Desktop Entry]
+MimeType=application/pdf;application/x-gzpdf;application/x-bzpdf;application/x-wwf;
+Terminal=false
+Name=Okular
+GenericName=Document Viewer
+Comment=Universal document viewer
+Exec=okular %U
+Icon=okular
+Type=Application
+InitialPreference=8
+Categories=Qt;KDE;Graphics;Viewer;Tools;
+X-KDE-Keywords=PDF, Portable Document Format
+NoDisplay=false

@@ -1,30 +1,18 @@
-PACKAGES="xserver-xorg xserver-xorg-video-intel xinit xterm xinput libdrm-intel1 libgl1-mesa-dri libglu1-mesa x11-utils lightdm apparmor budgie-desktop budgie-network-manager-applet moka-icon-theme plank nautilus gnome-terminal libglib2.0-bin dconf-cli okular gnome-calculator"
+PACKAGES="apparmor budgie-desktop budgie-countdown-applet budgie-network-manager-applet dconf-cli eog gnome-calculator gnome-terminal libdrm-intel1 libgl1-mesa-dri libglib2.0-bin libglu1-mesa lightdm moka-icon-theme nautilus okular plank x11-utils xinit xinput xserver-xorg xserver-xorg-video-intel xterm"
 
-#### Missing PDF Viewer, Calculator
-
-#set -x
+set -x
 
 ## Install
 apt update
 apt install --yes --no-install-recommends $PACKAGES
 
-## Remove non used moka-icons
-#ICONS="atom vim codeblocks eclipse emacs geany accessories-calculator accessories-clipboard accessories-document-viewer accessories-text-editor intellij-idea sublime-text firefox gnome-software gnome-tweak-tool utilities-terminal utilities-system-monitor terminix byobu pycharm clion visual-studio-code libreoffice-base libreoffice-calc libreoffice-main libreoffice-math libreoffice-write system-lock-screen system-log-out system-restart system-run system-shutdown system-sleep system-suspend system-users calendar brave vivaldi opera"
-#EXCLUDE="-name *.png"
-#for ICON in $ICONS; do
-#	EXCLUDE+=" -a -not -name *$ICON.png*"
-#done
-#find /usr/share/icons/Moka/ -type f $EXCLUDE -delete
-
-## Copy user root files
-pushd usrroot && cp --parents -afr * / && popd
-cp huronOS-desktop-config.dump /tmp/huronOS-desktop-config.dump
-chmod 777 /tmp/huronOS-desktop-config.dump
-
 ## Delete debian lightdm configs
 rm -rf /usr/share/lightdm/*
 rm -rf /usr/share/images/desktop-base/*
 rm /usr/share/xsessions/budgie-desktop.desktop
+
+## Fix terminals not updating $PATH on su
+echo "ALWAYS_SET_PATH	yes" >> /etc/login.defs
 
 ## Set huronOS lightdm configs
 sed -i 's/#greeter-session=.*/greeter-session=lightdm-greeter/g' /etc/lightdm/lightdm.conf
@@ -33,8 +21,29 @@ sed -i 's/#session-wrapper=.*/session-wrapper=\/etc\/X11\/Xsession/g' /etc/light
 sed -i 's/#autologin-user=.*/autologin-user=contestant/g' /etc/lightdm/lightdm.conf
 sed -i 's/#autologin-user-timeout=.*/autologin-user-timeout=0/g' /etc/lightdm/lightdm.conf
 
+## Set budgie background
+mkdir -p /usr/share/backgrounds/
+cp files/huronos-background.png /usr/share/backgrounds/huronos-background.png
+cp files/huronos-lightdm.png /usr/share/backgrounds/huronos-lightdm.png
 chmod 644 /usr/share/backgrounds/huronos*
 echo "background=/usr/share/backgrounds/huronos-lightdm.png" >> /etc/lightdm/lightdm-gtk-greeter.conf
+
+## Set budgie menu configs
+cp files/huronOS-desktop-config.dump /tmp/huronOS-desktop-config.dump
+chmod 777 /tmp/huronOS-desktop-config.dump
+cp files/gnome-applications.menu /etc/xdg/menus/gnome-applications.menu
+rm /usr/share/desktop-directories/* -rf
+cp files/directories/* /usr/share/desktop-directories/
+
+## Set .desktop launchers
+mkdir -p /tmp/save/ 
+cp /usr/share/applications/gnome-*-panel.desktop /tmp/save/
+cp /usr/share/applications/budgie-*.desktop /tmp/save/
+rm /usr/share/applications/*.desktop -f
+cp files/applications/* /usr/share/applications/
+cp /tmp/save/* /usr/share/applications/
+rm -rf /tmp/save
+
 ## Set Budgie as default desktop
 sed -i 's/Name=.*/Name=Budgie/g' /usr/share/xsessions/lightdm-xsession.desktop
 sed -i 's/Exec=.*/Exec=budgie-desktop/g' /usr/share/xsessions/lightdm-xsession.desktop
@@ -48,12 +57,7 @@ sed -i 's/contestant:x:/contestant::/g' /etc/passwd
 systemctl enable lightdm.service
 
 echo "Please run setup-desktop.sh on each user will have the contestant user interface"
-sleep 3
+sleep 10
 
 ## Launch lightdm to configure desktops
 systemctl start lightdm.service
-
-## Configure Menu Launcher of /usr/share/applications/*
-	## Basic Tools
-
-## Configure Menu Directories on /usr/share/desktop-directories and /etc/xdg/menus/gnome-applications.menu
