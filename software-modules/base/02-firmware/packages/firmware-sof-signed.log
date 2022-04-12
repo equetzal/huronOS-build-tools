@@ -1,0 +1,11 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages were automatically installed and are no longer required:
+  gettext-base libbrotli1 libefiboot1 libefivar1 libfreetype6 libpng16-16 ucf
+Use 'apt autoremove' to remove them.
+The following NEW packages will be installed:
+  firmware-sof-signed
+0 upgraded, 1 newly installed, 0 to remove and 18 not upgraded.
+Inst firmware-sof-signed (1.7-1 Debian:11.3/stable [all])
+Conf firmware-sof-signed (1.7-1 Debian:11.3/stable [all])

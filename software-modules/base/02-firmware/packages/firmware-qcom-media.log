@@ -1,0 +1,17 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages were automatically installed and are no longer required:
+  gettext-base libbrotli1 libefiboot1 libefivar1 libfreetype6 libpng16-16 ucf
+Use 'apt autoremove' to remove them.
+The following additional packages will be installed:
+  firmware-qcom-soc
+Recommended packages:
+  firmware-atheros
+The following NEW packages will be installed:
+  firmware-qcom-media firmware-qcom-soc
+0 upgraded, 2 newly installed, 0 to remove and 18 not upgraded.
+Inst firmware-qcom-soc (20210315-3 Debian:11.3/stable [all])
+Inst firmware-qcom-media (20210315-3 Debian:11.3/stable [all])
+Conf firmware-qcom-soc (20210315-3 Debian:11.3/stable [all])
+Conf firmware-qcom-media (20210315-3 Debian:11.3/stable [all])

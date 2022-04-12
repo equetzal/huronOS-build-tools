@@ -1,0 +1,31 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages were automatically installed and are no longer required:
+  gettext-base libbrotli1 libefiboot1 libefivar1 libfreetype6 libpng16-16 ucf
+Use 'apt autoremove' to remove them.
+The following additional packages will be installed:
+  fonts-font-awesome fonts-lato libjs-jquery libjs-sphinxdoc libjs-underscore
+  sphinx-rtd-theme-common
+Suggested packages:
+  www-browser
+Recommended packages:
+  javascript-common
+The following NEW packages will be installed:
+  firmware-microbit-micropython-doc fonts-font-awesome fonts-lato libjs-jquery
+  libjs-sphinxdoc libjs-underscore sphinx-rtd-theme-common
+0 upgraded, 7 newly installed, 0 to remove and 18 not upgraded.
+Inst fonts-lato (2.0-2.1 Debian:11.3/stable [all])
+Inst libjs-jquery (3.5.1+dfsg+~3.5.5-7 Debian:11.3/stable [all])
+Inst libjs-underscore (1.9.1~dfsg-3 Debian:11.3/stable [all])
+Inst libjs-sphinxdoc (3.4.3-2 Debian:11.3/stable [all])
+Inst fonts-font-awesome (5.0.10+really4.7.0~dfsg-4.1 Debian:11.3/stable [all])
+Inst sphinx-rtd-theme-common (0.5.1+dfsg-1 Debian:11.3/stable [all])
+Inst firmware-microbit-micropython-doc (1.0.1-2 Debian:11.3/stable [all])
+Conf fonts-lato (2.0-2.1 Debian:11.3/stable [all])
+Conf libjs-jquery (3.5.1+dfsg+~3.5.5-7 Debian:11.3/stable [all])
+Conf libjs-underscore (1.9.1~dfsg-3 Debian:11.3/stable [all])
+Conf libjs-sphinxdoc (3.4.3-2 Debian:11.3/stable [all])
+Conf fonts-font-awesome (5.0.10+really4.7.0~dfsg-4.1 Debian:11.3/stable [all])
+Conf sphinx-rtd-theme-common (0.5.1+dfsg-1 Debian:11.3/stable [all])
+Conf firmware-microbit-micropython-doc (1.0.1-2 Debian:11.3/stable [all])

@@ -1,0 +1,19 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages were automatically installed and are no longer required:
+  gettext-base libbrotli1 libefiboot1 libefivar1 libfreetype6 libpng16-16 ucf
+Use 'apt autoremove' to remove them.
+The following additional packages will be installed:
+  libical3 libicu67
+Recommended packages:
+  dbus-user-session
+The following NEW packages will be installed:
+  bluez-obexd libical3 libicu67
+0 upgraded, 3 newly installed, 0 to remove and 18 not upgraded.
+Inst libicu67 (67.1-7 Debian:11.3/stable [amd64])
+Inst libical3 (3.0.9-2 Debian:11.3/stable [amd64])
+Inst bluez-obexd (5.55-3.1 Debian:11.3/stable [amd64])
+Conf libicu67 (67.1-7 Debian:11.3/stable [amd64])
+Conf libical3 (3.0.9-2 Debian:11.3/stable [amd64])
+Conf bluez-obexd (5.55-3.1 Debian:11.3/stable [amd64])

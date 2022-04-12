@@ -1,0 +1,152 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages were automatically installed and are no longer required:
+  gettext-base libefiboot1 libefivar1
+Use 'apt autoremove' to remove them.
+The following additional packages will be installed:
+  bc cups cups-client cups-common cups-core-drivers cups-daemon cups-filters
+  cups-filters-core-drivers cups-ipp-utils cups-ppdc cups-server-common
+  fontconfig-config fonts-dejavu-core fonts-urw-base35 ghostscript
+  libavahi-client3 libavahi-common-data libavahi-common3 libcairo2 libcups2
+  libcupsfilters1 libdeflate0 libfontconfig1 libfontembed1 libgs9
+  libgs9-common libidn11 libijs-0.35 libjbig0 libjbig2dec0 libjpeg62-turbo
+  liblcms2-2 libnspr4 libnss3 libopenjp2-7 libpaper1 libpixman-1-0
+  libpoppler-cpp0v5 libpoppler102 libqpdf28 libsqlite3-0 libtiff5 libwebp6
+  libx11-6 libx11-data libxau6 libxcb-render0 libxcb-shm0 libxcb1 libxdmcp6
+  libxext6 libxrender1 openssl poppler-data poppler-utils ssl-cert
+Suggested packages:
+  cups-bsd cups-pdf foomatic-db-compressed-ppds | foomatic-db smbclient
+  antiword docx2txt imagemagick fonts-freefont-otf | fonts-freefont-ttf
+  fonts-texgyre ghostscript-x liblcms2-utils ca-certificates
+  fonts-japanese-mincho | fonts-ipafont-mincho fonts-japanese-gothic
+  | fonts-ipafont-gothic fonts-arphic-ukai fonts-arphic-uming fonts-nanum
+Recommended packages:
+  avahi-daemon colord cups-browsed ipp-usb liblouisutdml-bin | liblouis-bin
+  fonts-droid-fallback libpaper-utils
+The following NEW packages will be installed:
+  bc bluez-cups cups cups-client cups-common cups-core-drivers cups-daemon
+  cups-filters cups-filters-core-drivers cups-ipp-utils cups-ppdc
+  cups-server-common fontconfig-config fonts-dejavu-core fonts-urw-base35
+  ghostscript libavahi-client3 libavahi-common-data libavahi-common3 libcairo2
+  libcups2 libcupsfilters1 libdeflate0 libfontconfig1 libfontembed1 libgs9
+  libgs9-common libidn11 libijs-0.35 libjbig0 libjbig2dec0 libjpeg62-turbo
+  liblcms2-2 libnspr4 libnss3 libopenjp2-7 libpaper1 libpixman-1-0
+  libpoppler-cpp0v5 libpoppler102 libqpdf28 libsqlite3-0 libtiff5 libwebp6
+  libx11-6 libx11-data libxau6 libxcb-render0 libxcb-shm0 libxcb1 libxdmcp6
+  libxext6 libxrender1 openssl poppler-data poppler-utils ssl-cert
+0 upgraded, 57 newly installed, 0 to remove and 18 not upgraded.
+Inst bc (1.07.1-2+b2 Debian:11.3/stable [amd64])
+Inst libavahi-common-data (0.8-5 Debian:11.3/stable [amd64])
+Inst libavahi-common3 (0.8-5 Debian:11.3/stable [amd64])
+Inst libavahi-client3 (0.8-5 Debian:11.3/stable [amd64])
+Inst libcups2 (2.3.3op2-3+deb11u1 Debian:11.3/stable [amd64])
+Inst openssl (1.1.1n-0+deb11u1 Debian:11.3/stable [amd64])
+Inst ssl-cert (1.1.0+nmu1 Debian:11.3/stable [all])
+Inst libpaper1 (1.1.28+b1 Debian:11.3/stable [amd64])
+Inst cups-daemon (2.3.3op2-3+deb11u1 Debian:11.3/stable [amd64])
+Inst poppler-data (0.4.10-1 Debian:11.3/stable [all])
+Inst cups-common (2.3.3op2-3+deb11u1 Debian:11.3/stable [all])
+Inst cups-client (2.3.3op2-3+deb11u1 Debian:11.3/stable [amd64])
+Inst libjpeg62-turbo (1:2.0.6-4 Debian:11.3/stable [amd64])
+Inst libdeflate0 (1.7-1 Debian:11.3/stable [amd64])
+Inst libjbig0 (2.1-3.1+b2 Debian:11.3/stable [amd64])
+Inst libwebp6 (0.6.1-2.1 Debian:11.3/stable [amd64])
+Inst libtiff5 (4.2.0-1+deb11u1 Debian-Security:11/stable-security [amd64])
+Inst libcupsfilters1 (1.28.7-1+deb11u1 Debian:11.3/stable [amd64])
+Inst liblcms2-2 (2.12~rc1-2 Debian:11.3/stable [amd64])
+Inst fonts-dejavu-core (2.37-2 Debian:11.3/stable [all])
+Inst fonts-urw-base35 (20200910-1 Debian:11.3/stable [all])
+Inst fontconfig-config (2.13.1-4.2 Debian:11.3/stable [all])
+Inst libfontconfig1 (2.13.1-4.2 Debian:11.3/stable [amd64])
+Inst libnspr4 (2:4.29-1 Debian:11.3/stable [amd64])
+Inst libsqlite3-0 (3.34.1-3 Debian:11.3/stable [amd64])
+Inst libnss3 (2:3.61-1+deb11u2 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Inst libopenjp2-7 (2.4.0-3 Debian:11.3/stable [amd64])
+Inst libpoppler102 (20.09.0-3.1 Debian:11.3/stable [amd64])
+Inst libpoppler-cpp0v5 (20.09.0-3.1 Debian:11.3/stable [amd64])
+Inst libqpdf28 (10.1.0-1 Debian:11.3/stable [amd64])
+Inst libpixman-1-0 (0.40.0-1 Debian:11.3/stable [amd64])
+Inst libxau6 (1:1.0.9-1 Debian:11.3/stable [amd64])
+Inst libxdmcp6 (1:1.1.2-3 Debian:11.3/stable [amd64])
+Inst libxcb1 (1.14-3 Debian:11.3/stable [amd64])
+Inst libx11-data (2:1.7.2-1 Debian:11.3/stable [all])
+Inst libx11-6 (2:1.7.2-1 Debian:11.3/stable [amd64])
+Inst libxcb-render0 (1.14-3 Debian:11.3/stable [amd64])
+Inst libxcb-shm0 (1.14-3 Debian:11.3/stable [amd64])
+Inst libxext6 (2:1.3.3-1.1 Debian:11.3/stable [amd64])
+Inst libxrender1 (1:0.9.10-1 Debian:11.3/stable [amd64])
+Inst libcairo2 (1.16.0-5 Debian:11.3/stable [amd64])
+Inst poppler-utils (20.09.0-3.1 Debian:11.3/stable [amd64])
+Inst cups-ipp-utils (2.3.3op2-3+deb11u1 Debian:11.3/stable [amd64])
+Inst cups-filters-core-drivers (1.28.7-1+deb11u1 Debian:11.3/stable [amd64])
+Inst cups-core-drivers (2.3.3op2-3+deb11u1 Debian:11.3/stable [amd64])
+Inst libfontembed1 (1.28.7-1+deb11u1 Debian:11.3/stable [amd64])
+Inst libgs9-common (9.53.3~dfsg-7+deb11u2 Debian:11.3/stable, Debian-Security:11/stable-security [all])
+Inst libidn11 (1.33-3 Debian:11.3/stable [amd64])
+Inst libijs-0.35 (0.35-15 Debian:11.3/stable [amd64])
+Inst libjbig2dec0 (0.19-2 Debian:11.3/stable [amd64])
+Inst libgs9 (9.53.3~dfsg-7+deb11u2 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Inst ghostscript (9.53.3~dfsg-7+deb11u2 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Inst cups-filters (1.28.7-1+deb11u1 Debian:11.3/stable [amd64])
+Inst cups-ppdc (2.3.3op2-3+deb11u1 Debian:11.3/stable [amd64])
+Inst cups-server-common (2.3.3op2-3+deb11u1 Debian:11.3/stable [all])
+Inst cups (2.3.3op2-3+deb11u1 Debian:11.3/stable [amd64])
+Inst bluez-cups (5.55-3.1 Debian:11.3/stable [amd64])
+Conf bc (1.07.1-2+b2 Debian:11.3/stable [amd64])
+Conf libavahi-common-data (0.8-5 Debian:11.3/stable [amd64])
+Conf libavahi-common3 (0.8-5 Debian:11.3/stable [amd64])
+Conf libavahi-client3 (0.8-5 Debian:11.3/stable [amd64])
+Conf libcups2 (2.3.3op2-3+deb11u1 Debian:11.3/stable [amd64])
+Conf openssl (1.1.1n-0+deb11u1 Debian:11.3/stable [amd64])
+Conf ssl-cert (1.1.0+nmu1 Debian:11.3/stable [all])
+Conf libpaper1 (1.1.28+b1 Debian:11.3/stable [amd64])
+Conf cups-daemon (2.3.3op2-3+deb11u1 Debian:11.3/stable [amd64])
+Conf poppler-data (0.4.10-1 Debian:11.3/stable [all])
+Conf cups-common (2.3.3op2-3+deb11u1 Debian:11.3/stable [all])
+Conf cups-client (2.3.3op2-3+deb11u1 Debian:11.3/stable [amd64])
+Conf libjpeg62-turbo (1:2.0.6-4 Debian:11.3/stable [amd64])
+Conf libdeflate0 (1.7-1 Debian:11.3/stable [amd64])
+Conf libjbig0 (2.1-3.1+b2 Debian:11.3/stable [amd64])
+Conf libwebp6 (0.6.1-2.1 Debian:11.3/stable [amd64])
+Conf libtiff5 (4.2.0-1+deb11u1 Debian-Security:11/stable-security [amd64])
+Conf libcupsfilters1 (1.28.7-1+deb11u1 Debian:11.3/stable [amd64])
+Conf liblcms2-2 (2.12~rc1-2 Debian:11.3/stable [amd64])
+Conf fonts-dejavu-core (2.37-2 Debian:11.3/stable [all])
+Conf fonts-urw-base35 (20200910-1 Debian:11.3/stable [all])
+Conf fontconfig-config (2.13.1-4.2 Debian:11.3/stable [all])
+Conf libfontconfig1 (2.13.1-4.2 Debian:11.3/stable [amd64])
+Conf libnspr4 (2:4.29-1 Debian:11.3/stable [amd64])
+Conf libsqlite3-0 (3.34.1-3 Debian:11.3/stable [amd64])
+Conf libnss3 (2:3.61-1+deb11u2 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Conf libopenjp2-7 (2.4.0-3 Debian:11.3/stable [amd64])
+Conf libpoppler102 (20.09.0-3.1 Debian:11.3/stable [amd64])
+Conf libpoppler-cpp0v5 (20.09.0-3.1 Debian:11.3/stable [amd64])
+Conf libqpdf28 (10.1.0-1 Debian:11.3/stable [amd64])
+Conf libpixman-1-0 (0.40.0-1 Debian:11.3/stable [amd64])
+Conf libxau6 (1:1.0.9-1 Debian:11.3/stable [amd64])
+Conf libxdmcp6 (1:1.1.2-3 Debian:11.3/stable [amd64])
+Conf libxcb1 (1.14-3 Debian:11.3/stable [amd64])
+Conf libx11-data (2:1.7.2-1 Debian:11.3/stable [all])
+Conf libx11-6 (2:1.7.2-1 Debian:11.3/stable [amd64])
+Conf libxcb-render0 (1.14-3 Debian:11.3/stable [amd64])
+Conf libxcb-shm0 (1.14-3 Debian:11.3/stable [amd64])
+Conf libxext6 (2:1.3.3-1.1 Debian:11.3/stable [amd64])
+Conf libxrender1 (1:0.9.10-1 Debian:11.3/stable [amd64])
+Conf libcairo2 (1.16.0-5 Debian:11.3/stable [amd64])
+Conf poppler-utils (20.09.0-3.1 Debian:11.3/stable [amd64])
+Conf cups-ipp-utils (2.3.3op2-3+deb11u1 Debian:11.3/stable [amd64])
+Conf cups-filters-core-drivers (1.28.7-1+deb11u1 Debian:11.3/stable [amd64])
+Conf cups-core-drivers (2.3.3op2-3+deb11u1 Debian:11.3/stable [amd64])
+Conf libfontembed1 (1.28.7-1+deb11u1 Debian:11.3/stable [amd64])
+Conf libgs9-common (9.53.3~dfsg-7+deb11u2 Debian:11.3/stable, Debian-Security:11/stable-security [all])
+Conf libidn11 (1.33-3 Debian:11.3/stable [amd64])
+Conf libijs-0.35 (0.35-15 Debian:11.3/stable [amd64])
+Conf libjbig2dec0 (0.19-2 Debian:11.3/stable [amd64])
+Conf libgs9 (9.53.3~dfsg-7+deb11u2 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Conf ghostscript (9.53.3~dfsg-7+deb11u2 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Conf cups-filters (1.28.7-1+deb11u1 Debian:11.3/stable [amd64])
+Conf cups-ppdc (2.3.3op2-3+deb11u1 Debian:11.3/stable [amd64])
+Conf cups-server-common (2.3.3op2-3+deb11u1 Debian:11.3/stable [all])
+Conf cups (2.3.3op2-3+deb11u1 Debian:11.3/stable [amd64])
+Conf bluez-cups (5.55-3.1 Debian:11.3/stable [amd64])

@@ -1,0 +1,115 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages were automatically installed and are no longer required:
+  gettext-base libbrotli1 libefiboot1 libefivar1 libfreetype6 libpng16-16 ucf
+Use 'apt autoremove' to remove them.
+The following additional packages will be installed:
+  binutils binutils-common binutils-x86-64-linux-gnu cpp cpp-10 dctrl-tools
+  distro-info-data dkms dpkg-dev gcc gcc-10 libasan6 libatomic1 libbinutils
+  libcc1-0 libctf-nobfd0 libctf0 libdpkg-perl libgcc-10-dev libisl23 libitm1
+  liblsan0 libmpc3 libmpdec3 libmpfr6 libpython3-stdlib libpython3.9-minimal
+  libpython3.9-stdlib libquadmath0 libsqlite3-0 libtsan0 libubsan1 lsb-release
+  make media-types patch python3 python3-minimal python3.9 python3.9-minimal
+Suggested packages:
+  binutils-doc cpp-doc gcc-10-locales debtags menu debian-keyring gcc-multilib
+  manpages-dev autoconf automake libtool flex bison gdb gcc-doc
+  gcc-10-multilib gcc-10-doc gnupg git bzr make-doc ed diffutils-doc
+  python3-doc python3-tk python3-venv python3.9-venv python3.9-doc
+  binfmt-support
+Recommended packages:
+  fakeroot sudo linux-headers-686-pae | linux-headers-amd64
+  | linux-headers-generic | linux-headers build-essential gnupg
+  libalgorithm-merge-perl libc6-dev | libc-dev libc6-dev
+  libfile-fcntllock-perl ca-certificates
+The following NEW packages will be installed:
+  binutils binutils-common binutils-x86-64-linux-gnu broadcom-sta-dkms cpp
+  cpp-10 dctrl-tools distro-info-data dkms dpkg-dev gcc gcc-10 libasan6
+  libatomic1 libbinutils libcc1-0 libctf-nobfd0 libctf0 libdpkg-perl
+  libgcc-10-dev libisl23 libitm1 liblsan0 libmpc3 libmpdec3 libmpfr6
+  libpython3-stdlib libpython3.9-minimal libpython3.9-stdlib libquadmath0
+  libsqlite3-0 libtsan0 libubsan1 lsb-release make media-types patch python3
+  python3-minimal python3.9 python3.9-minimal
+0 upgraded, 41 newly installed, 0 to remove and 18 not upgraded.
+Inst libpython3.9-minimal (3.9.2-1 Debian:11.3/stable [amd64])
+Inst python3.9-minimal (3.9.2-1 Debian:11.3/stable [amd64])
+Conf libpython3.9-minimal (3.9.2-1 Debian:11.3/stable [amd64])
+Conf python3.9-minimal (3.9.2-1 Debian:11.3/stable [amd64])
+Inst python3-minimal (3.9.2-3 Debian:11.3/stable [amd64])
+Inst media-types (4.0.0 Debian:11.3/stable [all])
+Inst libmpdec3 (2.5.1-1 Debian:11.3/stable [amd64])
+Inst libsqlite3-0 (3.34.1-3 Debian:11.3/stable [amd64])
+Inst libpython3.9-stdlib (3.9.2-1 Debian:11.3/stable [amd64])
+Inst python3.9 (3.9.2-1 Debian:11.3/stable [amd64])
+Inst libpython3-stdlib (3.9.2-3 Debian:11.3/stable [amd64])
+Conf python3-minimal (3.9.2-3 Debian:11.3/stable [amd64])
+Inst python3 (3.9.2-3 Debian:11.3/stable [amd64])
+Inst distro-info-data (0.51+deb11u1 Debian:11.3/stable [all])
+Inst lsb-release (11.1.0 Debian:11.3/stable [all])
+Inst libisl23 (0.23-1 Debian:11.3/stable [amd64])
+Inst libmpfr6 (4.1.0-3 Debian:11.3/stable [amd64])
+Inst libmpc3 (1.2.0-1 Debian:11.3/stable [amd64])
+Inst cpp-10 (10.2.1-6 Debian:11.3/stable [amd64])
+Inst cpp (4:10.2.1-1 Debian:11.3/stable [amd64])
+Inst libcc1-0 (10.2.1-6 Debian:11.3/stable [amd64])
+Inst binutils-common (2.35.2-2 Debian:11.3/stable [amd64])
+Inst libbinutils (2.35.2-2 Debian:11.3/stable [amd64])
+Inst libctf-nobfd0 (2.35.2-2 Debian:11.3/stable [amd64])
+Inst libctf0 (2.35.2-2 Debian:11.3/stable [amd64])
+Inst binutils-x86-64-linux-gnu (2.35.2-2 Debian:11.3/stable [amd64])
+Inst binutils (2.35.2-2 Debian:11.3/stable [amd64])
+Inst libitm1 (10.2.1-6 Debian:11.3/stable [amd64])
+Inst libatomic1 (10.2.1-6 Debian:11.3/stable [amd64])
+Inst libasan6 (10.2.1-6 Debian:11.3/stable [amd64])
+Inst liblsan0 (10.2.1-6 Debian:11.3/stable [amd64])
+Inst libtsan0 (10.2.1-6 Debian:11.3/stable [amd64])
+Inst libubsan1 (10.2.1-6 Debian:11.3/stable [amd64])
+Inst libquadmath0 (10.2.1-6 Debian:11.3/stable [amd64])
+Inst libgcc-10-dev (10.2.1-6 Debian:11.3/stable [amd64])
+Inst gcc-10 (10.2.1-6 Debian:11.3/stable [amd64])
+Inst gcc (4:10.2.1-1 Debian:11.3/stable [amd64])
+Inst libdpkg-perl (1.20.9 Debian:11.3/stable [all])
+Inst patch (2.7.6-7 Debian:11.3/stable [amd64])
+Inst make (4.3-4.1 Debian:11.3/stable [amd64])
+Inst dpkg-dev (1.20.9 Debian:11.3/stable [all])
+Inst dctrl-tools (2.24-3+b1 Debian:11.3/stable [amd64])
+Conf media-types (4.0.0 Debian:11.3/stable [all])
+Conf libmpdec3 (2.5.1-1 Debian:11.3/stable [amd64])
+Conf libsqlite3-0 (3.34.1-3 Debian:11.3/stable [amd64])
+Conf libpython3.9-stdlib (3.9.2-1 Debian:11.3/stable [amd64])
+Conf python3.9 (3.9.2-1 Debian:11.3/stable [amd64])
+Conf libpython3-stdlib (3.9.2-3 Debian:11.3/stable [amd64])
+Conf python3 (3.9.2-3 Debian:11.3/stable [amd64])
+Conf distro-info-data (0.51+deb11u1 Debian:11.3/stable [all])
+Conf lsb-release (11.1.0 Debian:11.3/stable [all])
+Inst dkms (2.8.4-3 Debian:11.3/stable [all])
+Inst broadcom-sta-dkms (6.30.223.271-17 Debian:11.3/stable [all])
+Conf libisl23 (0.23-1 Debian:11.3/stable [amd64])
+Conf libmpfr6 (4.1.0-3 Debian:11.3/stable [amd64])
+Conf libmpc3 (1.2.0-1 Debian:11.3/stable [amd64])
+Conf cpp-10 (10.2.1-6 Debian:11.3/stable [amd64])
+Conf cpp (4:10.2.1-1 Debian:11.3/stable [amd64])
+Conf libcc1-0 (10.2.1-6 Debian:11.3/stable [amd64])
+Conf binutils-common (2.35.2-2 Debian:11.3/stable [amd64])
+Conf libbinutils (2.35.2-2 Debian:11.3/stable [amd64])
+Conf libctf-nobfd0 (2.35.2-2 Debian:11.3/stable [amd64])
+Conf libctf0 (2.35.2-2 Debian:11.3/stable [amd64])
+Conf binutils-x86-64-linux-gnu (2.35.2-2 Debian:11.3/stable [amd64])
+Conf binutils (2.35.2-2 Debian:11.3/stable [amd64])
+Conf libitm1 (10.2.1-6 Debian:11.3/stable [amd64])
+Conf libatomic1 (10.2.1-6 Debian:11.3/stable [amd64])
+Conf libasan6 (10.2.1-6 Debian:11.3/stable [amd64])
+Conf liblsan0 (10.2.1-6 Debian:11.3/stable [amd64])
+Conf libtsan0 (10.2.1-6 Debian:11.3/stable [amd64])
+Conf libubsan1 (10.2.1-6 Debian:11.3/stable [amd64])
+Conf libquadmath0 (10.2.1-6 Debian:11.3/stable [amd64])
+Conf libgcc-10-dev (10.2.1-6 Debian:11.3/stable [amd64])
+Conf gcc-10 (10.2.1-6 Debian:11.3/stable [amd64])
+Conf gcc (4:10.2.1-1 Debian:11.3/stable [amd64])
+Conf libdpkg-perl (1.20.9 Debian:11.3/stable [all])
+Conf patch (2.7.6-7 Debian:11.3/stable [amd64])
+Conf make (4.3-4.1 Debian:11.3/stable [amd64])
+Conf dpkg-dev (1.20.9 Debian:11.3/stable [all])
+Conf dctrl-tools (2.24-3+b1 Debian:11.3/stable [amd64])
+Conf dkms (2.8.4-3 Debian:11.3/stable [all])
+Conf broadcom-sta-dkms (6.30.223.271-17 Debian:11.3/stable [all])

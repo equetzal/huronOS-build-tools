@@ -1,0 +1,15 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following packages were automatically installed and are no longer required:
+  gettext-base libbrotli1 libefiboot1 libefivar1 libfreetype6 libpng16-16 ucf
+Use 'apt autoremove' to remove them.
+The following additional packages will be installed:
+  dfu-util
+The following NEW packages will be installed:
+  dfu-util firmware-tomu
+0 upgraded, 2 newly installed, 0 to remove and 18 not upgraded.
+Inst dfu-util (0.9-1+b1 Debian:11.3/stable [amd64])
+Inst firmware-tomu (2.0~rc7-2 Debian:11.3/stable [all])
+Conf dfu-util (0.9-1+b1 Debian:11.3/stable [amd64])
+Conf firmware-tomu (2.0~rc7-2 Debian:11.3/stable [all])
