@@ -1,0 +1,1206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : OpenSSL::OCSP::SingleResponse  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:26:01 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '../..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '../..'   asset_rel_prefix = '../..'  --> 
+  <title>Class: OpenSSL::OCSP::SingleResponse (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="../..css/obf.css"  -->
+  <link rel="stylesheet" href="../../css/inuit.css" >
+  <link rel="stylesheet" href="../../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../../css/carbon17.css" type="text/css" >
+
+
+  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>openssl/ossl_ocsp.c</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-cert_status">#cert_status</a></li>
+          
+          <li><a href="#method-i-certid">#certid</a></li>
+          
+          <li><a href="#method-i-check_validity">#check_validity</a></li>
+          
+          <li><a href="#method-i-extensions">#extensions</a></li>
+          
+          <li><a href="#method-i-initialize_copy">#initialize_copy</a></li>
+          
+          <li><a href="#method-i-next_update">#next_update</a></li>
+          
+          <li><a href="#method-i-revocation_reason">#revocation_reason</a></li>
+          
+          <li><a href="#method-i-revocation_time">#revocation_time</a></li>
+          
+          <li><a href="#method-i-this_update">#this_update</a></li>
+          
+          <li><a href="#method-i-to_der">#to_der</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../../IO.html">IO</a></li>
+        
+          
+          
+          <li><a href="../../IO/WaitReadable.html">IO::WaitReadable</a></li>
+        
+          
+          
+          <li><a href="../../IO/WaitWritable.html">IO::WaitWritable</a></li>
+        
+          
+          
+          <li><a href="../../Integer.html">Integer</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL.html">OpenSSL</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/ASN1.html">OpenSSL::ASN1</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/ASN1/ASN1Data.html">OpenSSL::ASN1::ASN1Data</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/ASN1/ASN1Error.html">OpenSSL::ASN1::ASN1Error</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/ASN1/Constructive.html">OpenSSL::ASN1::Constructive</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/ASN1/ObjectId.html">OpenSSL::ASN1::ObjectId</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/ASN1/Primitive.html">OpenSSL::ASN1::Primitive</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/BN.html">OpenSSL::BN</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/BNError.html">OpenSSL::BNError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Buffering.html">OpenSSL::Buffering</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Cipher.html">OpenSSL::Cipher</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Cipher/Cipher.html">OpenSSL::Cipher::Cipher</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Cipher/CipherError.html">OpenSSL::Cipher::CipherError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Config.html">OpenSSL::Config</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/ConfigError.html">OpenSSL::ConfigError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Digest.html">OpenSSL::Digest</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Digest/DigestError.html">OpenSSL::Digest::DigestError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Engine.html">OpenSSL::Engine</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Engine/EngineError.html">OpenSSL::Engine::EngineError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/ExtConfig.html">OpenSSL::ExtConfig</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/HMAC.html">OpenSSL::HMAC</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/HMACError.html">OpenSSL::HMACError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/KDF.html">OpenSSL::KDF</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/KDF/KDFError.html">OpenSSL::KDF::KDFError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Netscape.html">OpenSSL::Netscape</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Netscape/SPKI.html">OpenSSL::Netscape::SPKI</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Netscape/SPKIError.html">OpenSSL::Netscape::SPKIError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/OCSP.html">OpenSSL::OCSP</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/OCSP/BasicResponse.html">OpenSSL::OCSP::BasicResponse</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/OCSP/CertificateId.html">OpenSSL::OCSP::CertificateId</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/OCSP/OCSPError.html">OpenSSL::OCSP::OCSPError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/OCSP/Request.html">OpenSSL::OCSP::Request</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/OCSP/Response.html">OpenSSL::OCSP::Response</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/OCSP/SingleResponse.html">OpenSSL::OCSP::SingleResponse</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/OpenSSLError.html">OpenSSL::OpenSSLError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKCS12.html">OpenSSL::PKCS12</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKCS12/PKCS12Error.html">OpenSSL::PKCS12::PKCS12Error</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKCS5.html">OpenSSL::PKCS5</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKCS7.html">OpenSSL::PKCS7</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKCS7/PKCS7Error.html">OpenSSL::PKCS7::PKCS7Error</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKCS7/RecipientInfo.html">OpenSSL::PKCS7::RecipientInfo</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKCS7/SignerInfo.html">OpenSSL::PKCS7::SignerInfo</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey.html">OpenSSL::PKey</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/DH.html">OpenSSL::PKey::DH</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/DHError.html">OpenSSL::PKey::DHError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/DSA.html">OpenSSL::PKey::DSA</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/DSAError.html">OpenSSL::PKey::DSAError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/EC.html">OpenSSL::PKey::EC</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/EC/Group.html">OpenSSL::PKey::EC::Group</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/EC/Group/Error.html">OpenSSL::PKey::EC::Group::Error</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/EC/Point.html">OpenSSL::PKey::EC::Point</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/EC/Point/Error.html">OpenSSL::PKey::EC::Point::Error</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/ECError.html">OpenSSL::PKey::ECError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/PKey.html">OpenSSL::PKey::PKey</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/PKeyError.html">OpenSSL::PKey::PKeyError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/RSA.html">OpenSSL::PKey::RSA</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/RSAError.html">OpenSSL::PKey::RSAError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Random.html">OpenSSL::Random</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Random/RandomError.html">OpenSSL::Random::RandomError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/SSL.html">OpenSSL::SSL</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/SSL/SSLContext.html">OpenSSL::SSL::SSLContext</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/SSL/SSLError.html">OpenSSL::SSL::SSLError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/SSL/SSLErrorWaitReadable.html">OpenSSL::SSL::SSLErrorWaitReadable</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/SSL/SSLErrorWaitWritable.html">OpenSSL::SSL::SSLErrorWaitWritable</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/SSL/SSLServer.html">OpenSSL::SSL::SSLServer</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/SSL/SSLSocket.html">OpenSSL::SSL::SSLSocket</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/SSL/Session.html">OpenSSL::SSL::Session</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/SSL/Session/SessionError.html">OpenSSL::SSL::Session::SessionError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/SSL/SocketForwarder.html">OpenSSL::SSL::SocketForwarder</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509.html">OpenSSL::X509</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/Attribute.html">OpenSSL::X509::Attribute</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/AttributeError.html">OpenSSL::X509::AttributeError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/CRL.html">OpenSSL::X509::CRL</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/CRLError.html">OpenSSL::X509::CRLError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/Certificate.html">OpenSSL::X509::Certificate</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/CertificateError.html">OpenSSL::X509::CertificateError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/Extension.html">OpenSSL::X509::Extension</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/ExtensionError.html">OpenSSL::X509::ExtensionError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/ExtensionFactory.html">OpenSSL::X509::ExtensionFactory</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/Name.html">OpenSSL::X509::Name</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/Name/RFC2253DN.html">OpenSSL::X509::Name::RFC2253DN</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/NameError.html">OpenSSL::X509::NameError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/Request.html">OpenSSL::X509::Request</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/RequestError.html">OpenSSL::X509::RequestError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/Revoked.html">OpenSSL::X509::Revoked</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/RevokedError.html">OpenSSL::X509::RevokedError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/Store.html">OpenSSL::X509::Store</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/StoreContext.html">OpenSSL::X509::StoreContext</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/StoreError.html">OpenSSL::X509::StoreError</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">OpenSSL::OCSP::SingleResponse</h1>
+
+    <div id="description" class="description">
+      
+<p>An <a href="SingleResponse.html"><code>OpenSSL::OCSP::SingleResponse</code></a> represents an <a href="../OCSP.html"><code>OCSP</code></a> <a href="SingleResponse.html"><code>SingleResponse</code></a> structure, which contains the basic information of the status of the certificate.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">OpenSSL::OCSP::SingleResponse.new(der_string) &rarr; SingleResponse</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Creates a new <a href="SingleResponse.html"><code>SingleResponse</code></a> from <em>der_string</em>.</p>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_ocspsres_initialize(VALUE self, VALUE arg)
+{
+    OCSP_SINGLERESP *res, *res_new;
+    const unsigned char *p;
+
+    arg = ossl_to_der_if_possible(arg);
+    StringValue(arg);
+    GetOCSPSingleRes(self, res);
+
+    p = (unsigned char*)RSTRING_PTR(arg);
+    res_new = d2i_OCSP_SINGLERESP(NULL, &amp;p, RSTRING_LEN(arg));
+    if (!res_new)
+        ossl_raise(eOCSPError, &quot;d2i_OCSP_SINGLERESP&quot;);
+    SetOCSPSingleRes(self, res_new);
+    OCSP_SINGLERESP_free(res);
+
+    return self;
+}
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="cert_status-method" class="method-detail ">
+          <a name="method-i-cert_status"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">cert_status &rarr; Integer</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns the status of the certificate identified by the certid. The return value may be one of these constant:</p>
+<ul><li>
+<p>V_CERTSTATUS_GOOD</p>
+</li><li>
+<p>V_CERTSTATUS_REVOKED</p>
+</li><li>
+<p>V_CERTSTATUS_UNKNOWN</p>
+</li></ul>
+
+<p>When the status is V_CERTSTATUS_REVOKED, the time at which the certificate was revoked can be retrieved by <a href="SingleResponse.html#method-i-revocation_time"><code>revocation_time</code></a>.</p>
+            
+
+            
+            <div class="method-source-code" id="cert_status-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_ocspsres_get_cert_status(VALUE self)
+{
+    OCSP_SINGLERESP *sres;
+    int status;
+
+    GetOCSPSingleRes(self, sres);
+    status = OCSP_single_get0_status(sres, NULL, NULL, NULL, NULL);
+    if (status &lt; 0)
+        ossl_raise(eOCSPError, &quot;OCSP_single_get0_status&quot;);
+
+    return INT2NUM(status);
+}
+            </pre> 
+            </div><!-- cert_status-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- cert_status-method -->
+      
+        <div id="certid-method" class="method-detail ">
+          <a name="method-i-certid"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">certid &rarr; CertificateId</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns the <a href="CertificateId.html"><code>CertificateId</code></a> for which this <a href="SingleResponse.html"><code>SingleResponse</code></a> is.</p>
+            
+
+            
+            <div class="method-source-code" id="certid-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_ocspsres_get_certid(VALUE self)
+{
+    OCSP_SINGLERESP *sres;
+    OCSP_CERTID *id;
+
+    GetOCSPSingleRes(self, sres);
+    id = OCSP_CERTID_dup((OCSP_CERTID *)OCSP_SINGLERESP_get0_id(sres)); /* FIXME */
+
+    return ossl_ocspcertid_new(id);
+}
+            </pre> 
+            </div><!-- certid-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- certid-method -->
+      
+        <div id="check_validity-method" class="method-detail ">
+          <a name="method-i-check_validity"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">check_validity(nsec = 0, maxsec = -1) &rarr; true | false</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Checks the validity of thisUpdate and nextUpdate fields of this <a href="SingleResponse.html"><code>SingleResponse</code></a>. This checks the current time is within the range thisUpdate to nextUpdate.</p>
+
+<p>It is possible that the <a href="../OCSP.html"><code>OCSP</code></a> request takes a few seconds or the time is not accurate. To avoid rejecting a valid response, this method allows the times to be within <em>nsec</em> seconds of the current time.</p>
+
+<p>Some responders don&#39;t set the nextUpdate field. This may cause a very old response to be considered valid. The <em>maxsec</em> parameter can be used to limit the age of responses.</p>
+            
+
+            
+            <div class="method-source-code" id="check_validity-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_ocspsres_check_validity(int argc, VALUE *argv, VALUE self)
+{
+    OCSP_SINGLERESP *sres;
+    ASN1_GENERALIZEDTIME *this_update, *next_update;
+    VALUE nsec_v, maxsec_v;
+    int nsec, maxsec, status, ret;
+
+    rb_scan_args(argc, argv, &quot;02&quot;, &amp;nsec_v, &amp;maxsec_v);
+    nsec = NIL_P(nsec_v) ? 0 : NUM2INT(nsec_v);
+    maxsec = NIL_P(maxsec_v) ? -1 : NUM2INT(maxsec_v);
+
+    GetOCSPSingleRes(self, sres);
+    status = OCSP_single_get0_status(sres, NULL, NULL, &amp;this_update, &amp;next_update);
+    if (status &lt; 0)
+        ossl_raise(eOCSPError, &quot;OCSP_single_get0_status&quot;);
+
+    ret = OCSP_check_validity(this_update, next_update, nsec, maxsec);
+
+    if (ret)
+        return Qtrue;
+    else {
+        ossl_clear_error();
+        return Qfalse;
+    }
+}
+            </pre> 
+            </div><!-- check_validity-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- check_validity-method -->
+      
+        <div id="extensions-method" class="method-detail ">
+          <a name="method-i-extensions"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">extensions &rarr; Array of X509::Extension</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="extensions-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_ocspsres_get_extensions(VALUE self)
+{
+    OCSP_SINGLERESP *sres;
+    X509_EXTENSION *ext;
+    int count, i;
+    VALUE ary;
+
+    GetOCSPSingleRes(self, sres);
+
+    count = OCSP_SINGLERESP_get_ext_count(sres);
+    ary = rb_ary_new2(count);
+    for (i = 0; i &lt; count; i++) {
+        ext = OCSP_SINGLERESP_get_ext(sres, i);
+        rb_ary_push(ary, ossl_x509ext_new(ext)); /* will dup */
+    }
+
+    return ary;
+}
+            </pre> 
+            </div><!-- extensions-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- extensions-method -->
+      
+        <div id="initialize_copy-method" class="method-detail ">
+          <a name="method-i-initialize_copy"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">initialize_copy</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="initialize_copy-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_ocspsres_initialize_copy(VALUE self, VALUE other)
+{
+    OCSP_SINGLERESP *sres, *sres_old, *sres_new;
+
+    rb_check_frozen(self);
+    GetOCSPSingleRes(self, sres_old);
+    GetOCSPSingleRes(other, sres);
+
+    sres_new = ASN1_item_dup(ASN1_ITEM_rptr(OCSP_SINGLERESP), sres);
+    if (!sres_new)
+        ossl_raise(eOCSPError, &quot;ASN1_item_dup&quot;);
+
+    SetOCSPSingleRes(self, sres_new);
+    OCSP_SINGLERESP_free(sres_old);
+
+    return self;
+}
+            </pre> 
+            </div><!-- initialize_copy-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- initialize_copy-method -->
+      
+        <div id="next_update-method" class="method-detail ">
+          <a name="method-i-next_update"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">next_update &rarr; Time | nil</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="next_update-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_ocspsres_get_next_update(VALUE self)
+{
+    OCSP_SINGLERESP *sres;
+    int status;
+    ASN1_GENERALIZEDTIME *time;
+
+    GetOCSPSingleRes(self, sres);
+    status = OCSP_single_get0_status(sres, NULL, NULL, NULL, &amp;time);
+    if (status &lt; 0)
+        ossl_raise(eOCSPError, &quot;OCSP_single_get0_status&quot;);
+    if (!time)
+        return Qnil;
+
+    return asn1time_to_time(time);
+}
+            </pre> 
+            </div><!-- next_update-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- next_update-method -->
+      
+        <div id="revocation_reason-method" class="method-detail ">
+          <a name="method-i-revocation_reason"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">revocation_reason &rarr; Integer | nil</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="revocation_reason-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_ocspsres_get_revocation_reason(VALUE self)
+{
+    OCSP_SINGLERESP *sres;
+    int status, reason;
+
+    GetOCSPSingleRes(self, sres);
+    status = OCSP_single_get0_status(sres, &amp;reason, NULL, NULL, NULL);
+    if (status &lt; 0)
+        ossl_raise(eOCSPError, &quot;OCSP_single_get0_status&quot;);
+    if (status != V_OCSP_CERTSTATUS_REVOKED)
+        ossl_raise(eOCSPError, &quot;certificate is not revoked&quot;);
+
+    return INT2NUM(reason);
+}
+            </pre> 
+            </div><!-- revocation_reason-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- revocation_reason-method -->
+      
+        <div id="revocation_time-method" class="method-detail ">
+          <a name="method-i-revocation_time"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">revocation_time &rarr; Time | nil</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="revocation_time-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_ocspsres_get_revocation_time(VALUE self)
+{
+    OCSP_SINGLERESP *sres;
+    int status;
+    ASN1_GENERALIZEDTIME *time;
+
+    GetOCSPSingleRes(self, sres);
+    status = OCSP_single_get0_status(sres, NULL, &amp;time, NULL, NULL);
+    if (status &lt; 0)
+        ossl_raise(eOCSPError, &quot;OCSP_single_get0_status&quot;);
+    if (status != V_OCSP_CERTSTATUS_REVOKED)
+        ossl_raise(eOCSPError, &quot;certificate is not revoked&quot;);
+    if (!time)
+        return Qnil;
+
+    return asn1time_to_time(time);
+}
+            </pre> 
+            </div><!-- revocation_time-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- revocation_time-method -->
+      
+        <div id="this_update-method" class="method-detail ">
+          <a name="method-i-this_update"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">this_update &rarr; Time</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="this_update-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_ocspsres_get_this_update(VALUE self)
+{
+    OCSP_SINGLERESP *sres;
+    int status;
+    ASN1_GENERALIZEDTIME *time;
+
+    GetOCSPSingleRes(self, sres);
+    status = OCSP_single_get0_status(sres, NULL, NULL, &amp;time, NULL);
+    if (status &lt; 0)
+        ossl_raise(eOCSPError, &quot;OCSP_single_get0_status&quot;);
+    if (!time)
+        return Qnil;
+
+    return asn1time_to_time(time);
+}
+            </pre> 
+            </div><!-- this_update-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- this_update-method -->
+      
+        <div id="to_der-method" class="method-detail ">
+          <a name="method-i-to_der"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">to_der &rarr; String</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Encodes this <a href="SingleResponse.html"><code>SingleResponse</code></a> into a DER-encoded string.</p>
+            
+
+            
+            <div class="method-source-code" id="to_der-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_ocspsres_to_der(VALUE self)
+{
+    OCSP_SINGLERESP *sres;
+    VALUE str;
+    long len;
+    unsigned char *p;
+
+    GetOCSPSingleRes(self, sres);
+    if ((len = i2d_OCSP_SINGLERESP(sres, NULL)) &lt;= 0)
+        ossl_raise(eOCSPError, NULL);
+    str = rb_str_new(0, len);
+    p = (unsigned char *)RSTRING_PTR(str);
+    if (i2d_OCSP_SINGLERESP(sres, &amp;p) &lt;= 0)
+        ossl_raise(eOCSPError, NULL);
+    ossl_str_adjust(str, p);
+
+    return str;
+}
+            </pre> 
+            </div><!-- to_der-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_der-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_SingleResponse_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_SingleResponse_versioned").load("/associated/2.7.4/SingleResponse.ihtml");</script> <div id='tx_SingleResponse' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_SingleResponse").load("/associated/SingleResponse.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Hack your world.  Feed your head.  Live curious</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_SingleResponse.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_SingleResponse.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

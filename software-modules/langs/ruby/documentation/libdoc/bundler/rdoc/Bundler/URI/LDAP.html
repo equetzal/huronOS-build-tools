@@ -1,0 +1,2135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : Bundler::URI::LDAP  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:17:05 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '../..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '../..'   asset_rel_prefix = '../..'  --> 
+  <title>Class: Bundler::URI::LDAP (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="../..css/obf.css"  -->
+  <link rel="stylesheet" href="../../css/inuit.css" >
+  <link rel="stylesheet" href="../../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../../css/carbon17.css" type="text/css" >
+
+
+  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>bundler/vendor/uri/lib/uri/ldap.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="Generic.html">Bundler::URI::Generic</a></p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-build">::build</a></li>
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-attributes">#attributes</a></li>
+          
+          <li><a href="#method-i-attributes-3D">#attributes=</a></li>
+          
+          <li><a href="#method-i-dn">#dn</a></li>
+          
+          <li><a href="#method-i-dn-3D">#dn=</a></li>
+          
+          <li><a href="#method-i-extensions">#extensions</a></li>
+          
+          <li><a href="#method-i-extensions-3D">#extensions=</a></li>
+          
+          <li><a href="#method-i-filter">#filter</a></li>
+          
+          <li><a href="#method-i-filter-3D">#filter=</a></li>
+          
+          <li><a href="#method-i-hierarchical-3F">#hierarchical?</a></li>
+          
+          <li><a href="#method-i-scope">#scope</a></li>
+          
+          <li><a href="#method-i-scope-3D">#scope=</a></li>
+          
+          <li><a href="#method-i-set_attributes">#set_attributes</a></li>
+          
+          <li><a href="#method-i-set_dn">#set_dn</a></li>
+          
+          <li><a href="#method-i-set_extensions">#set_extensions</a></li>
+          
+          <li><a href="#method-i-set_filter">#set_filter</a></li>
+          
+          <li><a href="#method-i-set_scope">#set_scope</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../../AmbiguousCommandError.html">AmbiguousCommandError</a></li>
+        
+          
+          
+          <li><a href="../../AmbiguousTaskError.html">AmbiguousTaskError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler.html">Bundler</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/APIResponseMismatchError.html">Bundler::APIResponseMismatchError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/BuildMetadata.html">Bundler::BuildMetadata</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/BundlerError.html">Bundler::BundlerError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI.html">Bundler::CLI</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Add.html">Bundler::CLI::Add</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Binstubs.html">Bundler::CLI::Binstubs</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Cache.html">Bundler::CLI::Cache</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Check.html">Bundler::CLI::Check</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Clean.html">Bundler::CLI::Clean</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Common.html">Bundler::CLI::Common</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Config.html">Bundler::CLI::Config</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Config/Base.html">Bundler::CLI::Config::Base</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Console.html">Bundler::CLI::Console</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Doctor.html">Bundler::CLI::Doctor</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Exec.html">Bundler::CLI::Exec</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Gem.html">Bundler::CLI::Gem</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Info.html">Bundler::CLI::Info</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Init.html">Bundler::CLI::Init</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Inject.html">Bundler::CLI::Inject</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Install.html">Bundler::CLI::Install</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Issue.html">Bundler::CLI::Issue</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/List.html">Bundler::CLI::List</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Lock.html">Bundler::CLI::Lock</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Open.html">Bundler::CLI::Open</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Outdated.html">Bundler::CLI::Outdated</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Package.html">Bundler::CLI::Package</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Platform.html">Bundler::CLI::Platform</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Plugin.html">Bundler::CLI::Plugin</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Pristine.html">Bundler::CLI::Pristine</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Remove.html">Bundler::CLI::Remove</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Show.html">Bundler::CLI::Show</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Update.html">Bundler::CLI::Update</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Viz.html">Bundler::CLI::Viz</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CompactIndexClient.html">Bundler::CompactIndexClient</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CompactIndexClient/Cache.html">Bundler::CompactIndexClient::Cache</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CompactIndexClient/Error.html">Bundler::CompactIndexClient::Error</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CompactIndexClient/Updater.html">Bundler::CompactIndexClient::Updater</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CompactIndexClient/Updater/MisMatchedChecksumError.html">Bundler::CompactIndexClient::Updater::MisMatchedChecksumError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/ConnectionPool.html">Bundler::ConnectionPool</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/ConnectionPool/Error.html">Bundler::ConnectionPool::Error</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/ConnectionPool/PoolShuttingDownError.html">Bundler::ConnectionPool::PoolShuttingDownError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/ConnectionPool/TimedStack.html">Bundler::ConnectionPool::TimedStack</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/ConnectionPool/Wrapper.html">Bundler::ConnectionPool::Wrapper</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CurrentRuby.html">Bundler::CurrentRuby</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CyclicDependencyError.html">Bundler::CyclicDependencyError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Definition.html">Bundler::Definition</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/DepProxy.html">Bundler::DepProxy</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Dependency.html">Bundler::Dependency</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Deployment.html">Bundler::Deployment</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Deprecate.html">Bundler::Deprecate</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/DeprecatedError.html">Bundler::DeprecatedError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Dsl.html">Bundler::Dsl</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Dsl/DSLError.html">Bundler::Dsl::DSLError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/EndpointSpecification.html">Bundler::EndpointSpecification</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Env.html">Bundler::Env</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/EnvironmentPreserver.html">Bundler::EnvironmentPreserver</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/FeatureFlag.html">Bundler::FeatureFlag</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher.html">Bundler::Fetcher</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher/AuthenticationRequiredError.html">Bundler::Fetcher::AuthenticationRequiredError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher/BadAuthenticationError.html">Bundler::Fetcher::BadAuthenticationError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher/Base.html">Bundler::Fetcher::Base</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher/CertificateFailureError.html">Bundler::Fetcher::CertificateFailureError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher/CompactIndex.html">Bundler::Fetcher::CompactIndex</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher/Dependency.html">Bundler::Fetcher::Dependency</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher/Downloader.html">Bundler::Fetcher::Downloader</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher/FallbackError.html">Bundler::Fetcher::FallbackError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher/Index.html">Bundler::Fetcher::Index</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher/NetworkDownError.html">Bundler::Fetcher::NetworkDownError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher/SSLError.html">Bundler::Fetcher::SSLError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher/TooManyRequestsError.html">Bundler::Fetcher::TooManyRequestsError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/FileUtils.html">Bundler::FileUtils</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/FileUtils/DryRun.html">Bundler::FileUtils::DryRun</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/FileUtils/NoWrite.html">Bundler::FileUtils::NoWrite</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/FileUtils/StreamUtils_.html">Bundler::FileUtils::StreamUtils_</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/FileUtils/Verbose.html">Bundler::FileUtils::Verbose</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/FriendlyErrors.html">Bundler::FriendlyErrors</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemHelper.html">Bundler::GemHelper</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemHelpers.html">Bundler::GemHelpers</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemHelpers/PlatformMatch.html">Bundler::GemHelpers::PlatformMatch</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemInstaller.html">Bundler::GemInstaller</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemNotFound.html">Bundler::GemNotFound</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemRemoteFetcher.html">Bundler::GemRemoteFetcher</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemRequireError.html">Bundler::GemRequireError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemVersionPromoter.html">Bundler::GemVersionPromoter</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Gemdeps.html">Bundler::Gemdeps</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemfileError.html">Bundler::GemfileError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemfileEvalError.html">Bundler::GemfileEvalError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemfileLockNotFound.html">Bundler::GemfileLockNotFound</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemfileNotFound.html">Bundler::GemfileNotFound</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemspecError.html">Bundler::GemspecError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GenericSystemCallError.html">Bundler::GenericSystemCallError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GitError.html">Bundler::GitError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Graph.html">Bundler::Graph</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Graph/GraphVizClient.html">Bundler::Graph::GraphVizClient</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/HTTPError.html">Bundler::HTTPError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Index.html">Bundler::Index</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Injector.html">Bundler::Injector</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/InstallError.html">Bundler::InstallError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/InstallHookError.html">Bundler::InstallHookError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Installer.html">Bundler::Installer</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/InvalidOption.html">Bundler::InvalidOption</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/LazySpecification.html">Bundler::LazySpecification</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/LazySpecification/Identifier.html">Bundler::LazySpecification::Identifier</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/LockfileError.html">Bundler::LockfileError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/LockfileGenerator.html">Bundler::LockfileGenerator</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/LockfileParser.html">Bundler::LockfileParser</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/MarshalError.html">Bundler::MarshalError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/MatchPlatform.html">Bundler::MatchPlatform</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/MirrorSockets.html">Bundler::MirrorSockets</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo.html">Bundler::Molinillo</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/CircularDependencyError.html">Bundler::Molinillo::CircularDependencyError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/Compatibility.html">Bundler::Molinillo::Compatibility</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/Delegates.html">Bundler::Molinillo::Delegates</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/Delegates/ResolutionState.html">Bundler::Molinillo::Delegates::ResolutionState</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/Delegates/SpecificationProvider.html">Bundler::Molinillo::Delegates::SpecificationProvider</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/DependencyGraph.html">Bundler::Molinillo::DependencyGraph</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/DependencyGraph/Action.html">Bundler::Molinillo::DependencyGraph::Action</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/DependencyGraph/AddEdgeNoCircular.html">Bundler::Molinillo::DependencyGraph::AddEdgeNoCircular</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/DependencyGraph/DeleteEdge.html">Bundler::Molinillo::DependencyGraph::DeleteEdge</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/DependencyGraph/DetachVertexNamed.html">Bundler::Molinillo::DependencyGraph::DetachVertexNamed</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/DependencyGraph/Log.html">Bundler::Molinillo::DependencyGraph::Log</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/DependencyGraph/Tag.html">Bundler::Molinillo::DependencyGraph::Tag</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/DependencyGraph/Vertex.html">Bundler::Molinillo::DependencyGraph::Vertex</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/DependencyState.html">Bundler::Molinillo::DependencyState</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/NoSuchDependencyError.html">Bundler::Molinillo::NoSuchDependencyError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/PossibilityState.html">Bundler::Molinillo::PossibilityState</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/ResolutionState.html">Bundler::Molinillo::ResolutionState</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/Resolver.html">Bundler::Molinillo::Resolver</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/Resolver/Resolution.html">Bundler::Molinillo::Resolver::Resolution</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/Resolver/Resolution/Conflict.html">Bundler::Molinillo::Resolver::Resolution::Conflict</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/Resolver/Resolution/PossibilitySet.html">Bundler::Molinillo::Resolver::Resolution::PossibilitySet</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/Resolver/Resolution/UnwindDetails.html">Bundler::Molinillo::Resolver::Resolution::UnwindDetails</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/ResolverError.html">Bundler::Molinillo::ResolverError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/SpecificationProvider.html">Bundler::Molinillo::SpecificationProvider</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/UI.html">Bundler::Molinillo::UI</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/VersionConflict.html">Bundler::Molinillo::VersionConflict</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/NoSpaceOnDeviceError.html">Bundler::NoSpaceOnDeviceError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/OperationNotSupportedError.html">Bundler::OperationNotSupportedError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/ParallelInstaller.html">Bundler::ParallelInstaller</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/ParallelInstaller/SpecInstallation.html">Bundler::ParallelInstaller::SpecInstallation</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/PathError.html">Bundler::PathError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/PermissionError.html">Bundler::PermissionError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Persistent.html">Bundler::Persistent</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Persistent/Net.html">Bundler::Persistent::Net</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Persistent/Net/HTTP.html">Bundler::Persistent::Net::HTTP</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Persistent/Net/HTTP/Persistent.html">Bundler::Persistent::Net::HTTP::Persistent</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Persistent/Net/HTTP/Persistent/Error.html">Bundler::Persistent::Net::HTTP::Persistent::Error</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/PersistentHTTP.html">Bundler::PersistentHTTP</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin.html">Bundler::Plugin</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/API.html">Bundler::Plugin::API</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/API/Source.html">Bundler::Plugin::API::Source</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/DSL.html">Bundler::Plugin::DSL</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/DSL/PluginGemfileError.html">Bundler::Plugin::DSL::PluginGemfileError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/Events.html">Bundler::Plugin::Events</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/Index.html">Bundler::Plugin::Index</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/Index/CommandConflict.html">Bundler::Plugin::Index::CommandConflict</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/Index/SourceConflict.html">Bundler::Plugin::Index::SourceConflict</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/Installer.html">Bundler::Plugin::Installer</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/Installer/Git.html">Bundler::Plugin::Installer::Git</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/Installer/Rubygems.html">Bundler::Plugin::Installer::Rubygems</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/MalformattedPlugin.html">Bundler::Plugin::MalformattedPlugin</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/SourceList.html">Bundler::Plugin::SourceList</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/UndefinedCommandError.html">Bundler::Plugin::UndefinedCommandError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/UnknownSourceError.html">Bundler::Plugin::UnknownSourceError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/PluginError.html">Bundler::PluginError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/ProcessLock.html">Bundler::ProcessLock</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/ProductionError.html">Bundler::ProductionError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/RemoteSpecification.html">Bundler::RemoteSpecification</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Resolver.html">Bundler::Resolver</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Resolver/SpecGroup.html">Bundler::Resolver::SpecGroup</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Retry.html">Bundler::Retry</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/RubyDsl.html">Bundler::RubyDsl</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/RubyGemsGemInstaller.html">Bundler::RubyGemsGemInstaller</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/RubyVersion.html">Bundler::RubyVersion</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/RubyVersionMismatch.html">Bundler::RubyVersionMismatch</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/RubygemsIntegration.html">Bundler::RubygemsIntegration</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/RubygemsIntegration/Gem.html">Bundler::RubygemsIntegration::Gem</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Runtime.html">Bundler::Runtime</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/SecurityError.html">Bundler::SecurityError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Settings.html">Bundler::Settings</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Settings/Mirror.html">Bundler::Settings::Mirror</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Settings/MirrorConfig.html">Bundler::Settings::MirrorConfig</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Settings/Mirrors.html">Bundler::Settings::Mirrors</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Settings/TCPSocketProbe.html">Bundler::Settings::TCPSocketProbe</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Settings/Validator.html">Bundler::Settings::Validator</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Settings/Validator/Rule.html">Bundler::Settings::Validator::Rule</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/SharedHelpers.html">Bundler::SharedHelpers</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/SimilarityDetector.html">Bundler::SimilarityDetector</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/SocketAddress.html">Bundler::SocketAddress</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source.html">Bundler::Source</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source/Gemspec.html">Bundler::Source::Gemspec</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source/Git.html">Bundler::Source::Git</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source/Git/GitCommandError.html">Bundler::Source::Git::GitCommandError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source/Git/GitNotAllowedError.html">Bundler::Source::Git::GitNotAllowedError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source/Git/GitNotInstalledError.html">Bundler::Source::Git::GitNotInstalledError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source/Git/GitProxy.html">Bundler::Source::Git::GitProxy</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source/Git/MissingGitRevisionError.html">Bundler::Source::Git::MissingGitRevisionError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source/Metadata.html">Bundler::Source::Metadata</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source/Path.html">Bundler::Source::Path</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source/Path/Installer.html">Bundler::Source::Path::Installer</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source/Rubygems.html">Bundler::Source::Rubygems</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source/Rubygems/Remote.html">Bundler::Source::Rubygems::Remote</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/SourceList.html">Bundler::SourceList</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/SpecSet.html">Bundler::SpecSet</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Standalone.html">Bundler::Standalone</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/StubSpecification.html">Bundler::StubSpecification</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/SudoNotPermittedError.html">Bundler::SudoNotPermittedError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/TemporaryResourceError.html">Bundler::TemporaryResourceError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Actions.html">Bundler::Thor::Actions</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Actions/CapturableERB.html">Bundler::Thor::Actions::CapturableERB</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Actions/ClassMethods.html">Bundler::Thor::Actions::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Base.html">Bundler::Thor::Base</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Base/ClassMethods.html">Bundler::Thor::Base::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Command.html">Bundler::Thor::Command</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/CoreExt.html">Bundler::Thor::CoreExt</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/CoreExt/OrderedHash.html">Bundler::Thor::CoreExt::OrderedHash</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/DynamicCommand.html">Bundler::Thor::DynamicCommand</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/DynamicCommand.html">Bundler::Thor::DynamicTask</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Group.html">Bundler::Thor::Group</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/HiddenCommand.html">Bundler::Thor::HiddenCommand</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/HiddenCommand.html">Bundler::Thor::HiddenTask</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Invocation.html">Bundler::Thor::Invocation</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Invocation/ClassMethods.html">Bundler::Thor::Invocation::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/LineEditor.html">Bundler::Thor::LineEditor</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/LineEditor/Basic.html">Bundler::Thor::LineEditor::Basic</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/LineEditor/Readline.html">Bundler::Thor::LineEditor::Readline</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/LineEditor/Readline/PathCompletion.html">Bundler::Thor::LineEditor::Readline::PathCompletion</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/NestedContext.html">Bundler::Thor::NestedContext</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/RakeCompat.html">Bundler::Thor::RakeCompat</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Shell.html">Bundler::Thor::Shell</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Shell/Basic.html">Bundler::Thor::Shell::Basic</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Shell/Color.html">Bundler::Thor::Shell::Color</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Shell/HTML.html">Bundler::Thor::Shell::HTML</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Command.html">Bundler::Thor::Task</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Util.html">Bundler::Thor::Util</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/ThreadCreationError.html">Bundler::ThreadCreationError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/UI.html">Bundler::UI</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/UI/RGProxy.html">Bundler::UI::RGProxy</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/UI/Shell.html">Bundler::UI::Shell</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/UI/Silent.html">Bundler::UI::Silent</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI.html">Bundler::URI</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/BadURIError.html">Bundler::URI::BadURIError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/Error.html">Bundler::URI::Error</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/Escape.html">Bundler::URI::Escape</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/FTP.html">Bundler::URI::FTP</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/File.html">Bundler::URI::File</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/Generic.html">Bundler::URI::Generic</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/HTTP.html">Bundler::URI::HTTP</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/HTTPS.html">Bundler::URI::HTTPS</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/InvalidComponentError.html">Bundler::URI::InvalidComponentError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/InvalidURIError.html">Bundler::URI::InvalidURIError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/LDAP.html">Bundler::URI::LDAP</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/LDAPS.html">Bundler::URI::LDAPS</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/MailTo.html">Bundler::URI::MailTo</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/RFC2396_Parser.html">Bundler::URI::Parser</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/RFC2396_REGEXP.html">Bundler::URI::REGEXP</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/RFC2396_Parser.html">Bundler::URI::RFC2396_Parser</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/RFC2396_REGEXP.html">Bundler::URI::RFC2396_REGEXP</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/RFC2396_REGEXP/PATTERN.html">Bundler::URI::RFC2396_REGEXP::PATTERN</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URICredentialsFilter.html">Bundler::URICredentialsFilter</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/VersionConflict.html">Bundler::VersionConflict</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/VersionRanges.html">Bundler::VersionRanges</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/VersionRanges/ReqR.html">Bundler::VersionRanges::ReqR</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/VirtualProtocolError.html">Bundler::VirtualProtocolError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Worker.html">Bundler::Worker</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Worker/WrappedException.html">Bundler::Worker::WrappedException</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/YAMLSerializer.html">Bundler::YAMLSerializer</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/YamlSyntaxError.html">Bundler::YamlSyntaxError</a></li>
+        
+          
+          
+          <li><a href="../../Error.html">Error</a></li>
+        
+          
+          
+          <li><a href="../../Gem.html">Gem</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Dependency.html">Gem::Dependency</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Platform.html">Gem::Platform</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Specification.html">Gem::Specification</a></li>
+        
+          
+          
+          <li><a href="../../InvocationError.html">InvocationError</a></li>
+        
+          
+          
+          <li><a href="../../Kernel.html">Kernel</a></li>
+        
+          
+          
+          <li><a href="../../MalformattedArgumentError.html">MalformattedArgumentError</a></li>
+        
+          
+          
+          <li><a href="../../Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="../../RequiredArgumentMissingError.html">RequiredArgumentMissingError</a></li>
+        
+          
+          
+          <li><a href="../../UndefinedCommandError.html">UndefinedCommandError</a></li>
+        
+          
+          
+          <li><a href="../../UndefinedCommandError/SpellChecker.html">UndefinedCommandError::SpellChecker</a></li>
+        
+          
+          
+          <li><a href="../../UndefinedTaskError.html">UndefinedTaskError</a></li>
+        
+          
+          
+          <li><a href="../../UnknownArgumentError.html">UnknownArgumentError</a></li>
+        
+          
+          
+          <li><a href="../../UnknownArgumentError/SpellChecker.html">UnknownArgumentError::SpellChecker</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">Bundler::URI::LDAP</h1>
+
+    <div id="description" class="description">
+      
+<p><a href="LDAP.html"><code>LDAP</code></a> <a href="../URI.html"><code>Bundler::URI</code></a> SCHEMA (described in RFC2255).</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="COMPONENT">COMPONENT</a></dt>
+          
+          <dd class="description"><p>An Array of the available components for <a href="LDAP.html"><code>Bundler::URI::LDAP</code></a>.</p></dd>
+          
+        
+          <dt><a name="DEFAULT_PORT">DEFAULT_PORT</a></dt>
+          
+          <dd class="description"><p>A Default port of 389 for <a href="LDAP.html"><code>Bundler::URI::LDAP</code></a>.</p></dd>
+          
+        
+          <dt><a name="SCOPE">SCOPE</a></dt>
+          
+          <dd class="description"><p>Scopes available for the starting point.</p>
+<ul><li>
+<p>SCOPE_BASE - the Base DN</p>
+</li><li>
+<p>SCOPE_ONE  - one level under the Base DN, not including the base DN and not including any entries under this</p>
+</li><li>
+<p>SCOPE_SUB  - subtrees, all entries at all levels</p>
+</li></ul></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="build-method" class="method-detail ">
+          <a name="method-c-build"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">build</span><span
+              class="method-args">(args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <h2 id="method-c-build-label-Description">Description<span><a href="#method-c-build-label-Description">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Creates a new <a href="LDAP.html"><code>Bundler::URI::LDAP</code></a> object from components, with syntax checking.</p>
+
+<p>The components accepted are host, port, dn, attributes, scope, filter, and extensions.</p>
+
+<p>The components should be provided either as an Array, or as a Hash with keys formed by preceding the component names with a colon.</p>
+
+<p>If an Array is used, the components must be passed in the order <code>[host, port, dn, attributes, scope, filter, extensions]</code>.</p>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">uri</span> = <span class="ruby-constant">Bundler</span><span class="ruby-operator">::</span><span class="ruby-constant">URI</span><span class="ruby-operator">::</span><span class="ruby-constant">LDAP</span>.<span class="ruby-identifier">build</span>({<span class="ruby-value">:host</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;ldap.example.com&#39;</span>,
+  <span class="ruby-value">:dn</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;/dc=example&#39;</span>})
+
+<span class="ruby-identifier">uri</span> = <span class="ruby-constant">Bundler</span><span class="ruby-operator">::</span><span class="ruby-constant">URI</span><span class="ruby-operator">::</span><span class="ruby-constant">LDAP</span>.<span class="ruby-identifier">build</span>([<span class="ruby-string">&quot;ldap.example.com&quot;</span>, <span class="ruby-keyword">nil</span>,
+  <span class="ruby-string">&quot;/dc=example;dc=com&quot;</span>, <span class="ruby-string">&quot;query&quot;</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>])
+</pre>
+            
+
+            
+            <div class="method-source-code" id="build-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/uri/lib/uri/ldap.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">build</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">tmp</span> = <span class="ruby-constant">Util</span><span class="ruby-operator">::</span><span class="ruby-identifier">make_components_hash</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">args</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">tmp</span>[<span class="ruby-value">:dn</span>]
+    <span class="ruby-identifier">tmp</span>[<span class="ruby-value">:path</span>] = <span class="ruby-identifier">tmp</span>[<span class="ruby-value">:dn</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">query</span> = []
+  [<span class="ruby-value">:extensions</span>, <span class="ruby-value">:filter</span>, <span class="ruby-value">:scope</span>, <span class="ruby-value">:attributes</span>].<span class="ruby-identifier">collect</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">tmp</span>[<span class="ruby-identifier">x</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">query</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+    <span class="ruby-identifier">query</span>.<span class="ruby-identifier">unshift</span>(<span class="ruby-identifier">tmp</span>[<span class="ruby-identifier">x</span>])
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">tmp</span>[<span class="ruby-value">:query</span>] = <span class="ruby-identifier">query</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39;?&#39;</span>)
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span>(<span class="ruby-identifier">tmp</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- build-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- build-method -->
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(*arg)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <h2 id="method-c-new-label-Description">Description<span><a href="#method-c-new-label-Description">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Creates a new <a href="LDAP.html"><code>Bundler::URI::LDAP</code></a> object from generic <a href="../URI.html"><code>Bundler::URI</code></a> components as per RFC 2396. No LDAP-specific syntax checking is performed.</p>
+
+<p>Arguments are <code>scheme</code>, <code>userinfo</code>, <code>host</code>, <code>port</code>, <code>registry</code>, <code>path</code>, <code>opaque</code>, <code>query</code>, and <code>fragment</code>, in that order.</p>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">uri</span> = <span class="ruby-constant">Bundler</span><span class="ruby-operator">::</span><span class="ruby-constant">URI</span><span class="ruby-operator">::</span><span class="ruby-constant">LDAP</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;ldap&quot;</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-string">&quot;ldap.example.com&quot;</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>,
+  <span class="ruby-string">&quot;/dc=example;dc=com&quot;</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-string">&quot;query&quot;</span>, <span class="ruby-keyword">nil</span>)
+</pre>
+
+<p>See also <a href="Generic.html#method-c-new"><code>Bundler::URI::Generic.new</code></a>.</p>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/uri/lib/uri/ldap.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">arg</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">arg</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@fragment</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">InvalidURIError</span>, <span class="ruby-string">&#39;bad LDAP URL&#39;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">parse_dn</span>
+  <span class="ruby-identifier">parse_query</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="attributes-method" class="method-detail ">
+          <a name="method-i-attributes"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">attributes</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns attributes.</p>
+            
+
+            
+            <div class="method-source-code" id="attributes-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/uri/lib/uri/ldap.rb, line 178</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">attributes</span>
+  <span class="ruby-ivar">@attributes</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- attributes-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- attributes-method -->
+      
+        <div id="attributes-3D-method" class="method-detail ">
+          <a name="method-i-attributes-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">attributes=</span><span
+              class="method-args">(val)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Setter for attributes <code>val</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="attributes-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/uri/lib/uri/ldap.rb, line 191</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">attributes=</span>(<span class="ruby-identifier">val</span>)
+  <span class="ruby-identifier">set_attributes</span>(<span class="ruby-identifier">val</span>)
+  <span class="ruby-identifier">val</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- attributes-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- attributes-3D-method -->
+      
+        <div id="dn-method" class="method-detail ">
+          <a name="method-i-dn"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">dn</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns dn.</p>
+            
+
+            
+            <div class="method-source-code" id="dn-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/uri/lib/uri/ldap.rb, line 159</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dn</span>
+  <span class="ruby-ivar">@dn</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- dn-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- dn-method -->
+      
+        <div id="dn-3D-method" class="method-detail ">
+          <a name="method-i-dn-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">dn=</span><span
+              class="method-args">(val)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Setter for dn <code>val</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="dn-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/uri/lib/uri/ldap.rb, line 172</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dn=</span>(<span class="ruby-identifier">val</span>)
+  <span class="ruby-identifier">set_dn</span>(<span class="ruby-identifier">val</span>)
+  <span class="ruby-identifier">val</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- dn-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- dn-3D-method -->
+      
+        <div id="extensions-method" class="method-detail ">
+          <a name="method-i-extensions"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">extensions</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns extensions.</p>
+            
+
+            
+            <div class="method-source-code" id="extensions-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/uri/lib/uri/ldap.rb, line 235</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">extensions</span>
+  <span class="ruby-ivar">@extensions</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- extensions-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- extensions-method -->
+      
+        <div id="extensions-3D-method" class="method-detail ">
+          <a name="method-i-extensions-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">extensions=</span><span
+              class="method-args">(val)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Setter for extensions <code>val</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="extensions-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/uri/lib/uri/ldap.rb, line 248</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">extensions=</span>(<span class="ruby-identifier">val</span>)
+  <span class="ruby-identifier">set_extensions</span>(<span class="ruby-identifier">val</span>)
+  <span class="ruby-identifier">val</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- extensions-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- extensions-3D-method -->
+      
+        <div id="filter-method" class="method-detail ">
+          <a name="method-i-filter"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">filter</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns filter.</p>
+            
+
+            
+            <div class="method-source-code" id="filter-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/uri/lib/uri/ldap.rb, line 216</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">filter</span>
+  <span class="ruby-ivar">@filter</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- filter-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- filter-method -->
+      
+        <div id="filter-3D-method" class="method-detail ">
+          <a name="method-i-filter-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">filter=</span><span
+              class="method-args">(val)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Setter for filter <code>val</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="filter-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/uri/lib/uri/ldap.rb, line 229</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">filter=</span>(<span class="ruby-identifier">val</span>)
+  <span class="ruby-identifier">set_filter</span>(<span class="ruby-identifier">val</span>)
+  <span class="ruby-identifier">val</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- filter-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- filter-3D-method -->
+      
+        <div id="hierarchical-3F-method" class="method-detail ">
+          <a name="method-i-hierarchical-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">hierarchical?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Checks if <a href="../URI.html"><code>Bundler::URI</code></a> has a path. For <a href="LDAP.html"><code>Bundler::URI::LDAP</code></a> this will return <code>false</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="hierarchical-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/uri/lib/uri/ldap.rb, line 255</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hierarchical?</span>
+  <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- hierarchical-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- hierarchical-3F-method -->
+      
+        <div id="scope-method" class="method-detail ">
+          <a name="method-i-scope"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">scope</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns scope.</p>
+            
+
+            
+            <div class="method-source-code" id="scope-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/uri/lib/uri/ldap.rb, line 197</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">scope</span>
+  <span class="ruby-ivar">@scope</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- scope-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- scope-method -->
+      
+        <div id="scope-3D-method" class="method-detail ">
+          <a name="method-i-scope-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">scope=</span><span
+              class="method-args">(val)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Setter for scope <code>val</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="scope-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/uri/lib/uri/ldap.rb, line 210</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">scope=</span>(<span class="ruby-identifier">val</span>)
+  <span class="ruby-identifier">set_scope</span>(<span class="ruby-identifier">val</span>)
+  <span class="ruby-identifier">val</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- scope-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- scope-3D-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+      <div id="protected-instance-method-details" class="method-section section">
+        <h3 class="section-header">Protected Instance Methods</h3>
+
+      
+        <div id="set_attributes-method" class="method-detail ">
+          <a name="method-i-set_attributes"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">set_attributes</span><span
+              class="method-args">(val)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Private setter for attributes <code>val</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="set_attributes-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/uri/lib/uri/ldap.rb, line 183</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_attributes</span>(<span class="ruby-identifier">val</span>)
+  <span class="ruby-ivar">@attributes</span> = <span class="ruby-identifier">val</span>
+  <span class="ruby-identifier">build_path_query</span>
+  <span class="ruby-ivar">@attributes</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- set_attributes-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- set_attributes-method -->
+      
+        <div id="set_dn-method" class="method-detail ">
+          <a name="method-i-set_dn"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">set_dn</span><span
+              class="method-args">(val)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Private setter for dn <code>val</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="set_dn-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/uri/lib/uri/ldap.rb, line 164</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_dn</span>(<span class="ruby-identifier">val</span>)
+  <span class="ruby-ivar">@dn</span> = <span class="ruby-identifier">val</span>
+  <span class="ruby-identifier">build_path_query</span>
+  <span class="ruby-ivar">@dn</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- set_dn-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- set_dn-method -->
+      
+        <div id="set_extensions-method" class="method-detail ">
+          <a name="method-i-set_extensions"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">set_extensions</span><span
+              class="method-args">(val)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Private setter for extensions <code>val</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="set_extensions-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/uri/lib/uri/ldap.rb, line 240</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_extensions</span>(<span class="ruby-identifier">val</span>)
+  <span class="ruby-ivar">@extensions</span> = <span class="ruby-identifier">val</span>
+  <span class="ruby-identifier">build_path_query</span>
+  <span class="ruby-ivar">@extensions</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- set_extensions-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- set_extensions-method -->
+      
+        <div id="set_filter-method" class="method-detail ">
+          <a name="method-i-set_filter"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">set_filter</span><span
+              class="method-args">(val)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Private setter for filter <code>val</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="set_filter-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/uri/lib/uri/ldap.rb, line 221</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_filter</span>(<span class="ruby-identifier">val</span>)
+  <span class="ruby-ivar">@filter</span> = <span class="ruby-identifier">val</span>
+  <span class="ruby-identifier">build_path_query</span>
+  <span class="ruby-ivar">@filter</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- set_filter-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- set_filter-method -->
+      
+        <div id="set_scope-method" class="method-detail ">
+          <a name="method-i-set_scope"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">set_scope</span><span
+              class="method-args">(val)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Private setter for scope <code>val</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="set_scope-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/uri/lib/uri/ldap.rb, line 202</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_scope</span>(<span class="ruby-identifier">val</span>)
+  <span class="ruby-ivar">@scope</span> = <span class="ruby-identifier">val</span>
+  <span class="ruby-identifier">build_path_query</span>
+  <span class="ruby-ivar">@scope</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- set_scope-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- set_scope-method -->
+      
+      </div><!-- protected-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_LDAP_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_LDAP_versioned").load("/associated/2.7.4/LDAP.ihtml");</script> <div id='tx_LDAP' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_LDAP").load("/associated/LDAP.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, an erratic source of art, music, and technology.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_LDAP.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_LDAP.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

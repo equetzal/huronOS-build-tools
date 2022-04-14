@@ -1,0 +1,2260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : Bundler::Settings  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:17:02 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '..'   asset_rel_prefix = '..'  --> 
+  <title>Class: Bundler::Settings (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="..css/obf.css"  -->
+  <link rel="stylesheet" href="../css/inuit.css" >
+  <link rel="stylesheet" href="../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../css/carbon17.css" type="text/css" >
+
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>bundler/mirror.rb</li>      
+            
+          
+          <li class='in-file'>bundler/settings.rb</li>      
+            
+          
+          <li class='in-file'>bundler/settings/validator.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="../Object.html">Object</a></p>
+        
+      </div>
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">CLASS</span> <a href="Settings/Mirror.html">Bundler::Settings::Mirror</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Settings/MirrorConfig.html">Bundler::Settings::MirrorConfig</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Settings/Mirrors.html">Bundler::Settings::Mirrors</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Settings/TCPSocketProbe.html">Bundler::Settings::TCPSocketProbe</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Settings/Validator.html">Bundler::Settings::Validator</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-5B-5D">#[]</a></li>
+          
+          <li><a href="#method-i-all">#all</a></li>
+          
+          <li><a href="#method-i-allow_sudo-3F">#allow_sudo?</a></li>
+          
+          <li><a href="#method-i-app_cache_path">#app_cache_path</a></li>
+          
+          <li><a href="#method-i-credentials_for">#credentials_for</a></li>
+          
+          <li><a href="#method-i-gem_mirrors">#gem_mirrors</a></li>
+          
+          <li><a href="#method-i-ignore_config-3F">#ignore_config?</a></li>
+          
+          <li><a href="#method-i-key_for">#key_for</a></li>
+          
+          <li><a href="#method-i-local_overrides">#local_overrides</a></li>
+          
+          <li><a href="#method-i-locations">#locations</a></li>
+          
+          <li><a href="#method-i-mirror_for">#mirror_for</a></li>
+          
+          <li><a href="#method-i-path">#path</a></li>
+          
+          <li><a href="#method-i-pretty_values_for">#pretty_values_for</a></li>
+          
+          <li><a href="#method-i-set_command_option">#set_command_option</a></li>
+          
+          <li><a href="#method-i-set_command_option_if_given">#set_command_option_if_given</a></li>
+          
+          <li><a href="#method-i-set_global">#set_global</a></li>
+          
+          <li><a href="#method-i-set_local">#set_local</a></li>
+          
+          <li><a href="#method-i-temporary">#temporary</a></li>
+          
+          <li><a href="#method-i-validate-21">#validate!</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../AmbiguousCommandError.html">AmbiguousCommandError</a></li>
+        
+          
+          
+          <li><a href="../AmbiguousTaskError.html">AmbiguousTaskError</a></li>
+        
+          
+          
+          <li><a href="../Bundler.html">Bundler</a></li>
+        
+          
+          
+          <li><a href="../Bundler/APIResponseMismatchError.html">Bundler::APIResponseMismatchError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/BuildMetadata.html">Bundler::BuildMetadata</a></li>
+        
+          
+          
+          <li><a href="../Bundler/BundlerError.html">Bundler::BundlerError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI.html">Bundler::CLI</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Add.html">Bundler::CLI::Add</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Binstubs.html">Bundler::CLI::Binstubs</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Cache.html">Bundler::CLI::Cache</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Check.html">Bundler::CLI::Check</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Clean.html">Bundler::CLI::Clean</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Common.html">Bundler::CLI::Common</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Config.html">Bundler::CLI::Config</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Config/Base.html">Bundler::CLI::Config::Base</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Console.html">Bundler::CLI::Console</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Doctor.html">Bundler::CLI::Doctor</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Exec.html">Bundler::CLI::Exec</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Gem.html">Bundler::CLI::Gem</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Info.html">Bundler::CLI::Info</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Init.html">Bundler::CLI::Init</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Inject.html">Bundler::CLI::Inject</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Install.html">Bundler::CLI::Install</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Issue.html">Bundler::CLI::Issue</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/List.html">Bundler::CLI::List</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Lock.html">Bundler::CLI::Lock</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Open.html">Bundler::CLI::Open</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Outdated.html">Bundler::CLI::Outdated</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Package.html">Bundler::CLI::Package</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Platform.html">Bundler::CLI::Platform</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Plugin.html">Bundler::CLI::Plugin</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Pristine.html">Bundler::CLI::Pristine</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Remove.html">Bundler::CLI::Remove</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Show.html">Bundler::CLI::Show</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Update.html">Bundler::CLI::Update</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Viz.html">Bundler::CLI::Viz</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CompactIndexClient.html">Bundler::CompactIndexClient</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CompactIndexClient/Cache.html">Bundler::CompactIndexClient::Cache</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CompactIndexClient/Error.html">Bundler::CompactIndexClient::Error</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CompactIndexClient/Updater.html">Bundler::CompactIndexClient::Updater</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CompactIndexClient/Updater/MisMatchedChecksumError.html">Bundler::CompactIndexClient::Updater::MisMatchedChecksumError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/ConnectionPool.html">Bundler::ConnectionPool</a></li>
+        
+          
+          
+          <li><a href="../Bundler/ConnectionPool/Error.html">Bundler::ConnectionPool::Error</a></li>
+        
+          
+          
+          <li><a href="../Bundler/ConnectionPool/PoolShuttingDownError.html">Bundler::ConnectionPool::PoolShuttingDownError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/ConnectionPool/TimedStack.html">Bundler::ConnectionPool::TimedStack</a></li>
+        
+          
+          
+          <li><a href="../Bundler/ConnectionPool/Wrapper.html">Bundler::ConnectionPool::Wrapper</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CurrentRuby.html">Bundler::CurrentRuby</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CyclicDependencyError.html">Bundler::CyclicDependencyError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Definition.html">Bundler::Definition</a></li>
+        
+          
+          
+          <li><a href="../Bundler/DepProxy.html">Bundler::DepProxy</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Dependency.html">Bundler::Dependency</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Deployment.html">Bundler::Deployment</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Deprecate.html">Bundler::Deprecate</a></li>
+        
+          
+          
+          <li><a href="../Bundler/DeprecatedError.html">Bundler::DeprecatedError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Dsl.html">Bundler::Dsl</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Dsl/DSLError.html">Bundler::Dsl::DSLError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/EndpointSpecification.html">Bundler::EndpointSpecification</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Env.html">Bundler::Env</a></li>
+        
+          
+          
+          <li><a href="../Bundler/EnvironmentPreserver.html">Bundler::EnvironmentPreserver</a></li>
+        
+          
+          
+          <li><a href="../Bundler/FeatureFlag.html">Bundler::FeatureFlag</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher.html">Bundler::Fetcher</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher/AuthenticationRequiredError.html">Bundler::Fetcher::AuthenticationRequiredError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher/BadAuthenticationError.html">Bundler::Fetcher::BadAuthenticationError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher/Base.html">Bundler::Fetcher::Base</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher/CertificateFailureError.html">Bundler::Fetcher::CertificateFailureError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher/CompactIndex.html">Bundler::Fetcher::CompactIndex</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher/Dependency.html">Bundler::Fetcher::Dependency</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher/Downloader.html">Bundler::Fetcher::Downloader</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher/FallbackError.html">Bundler::Fetcher::FallbackError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher/Index.html">Bundler::Fetcher::Index</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher/NetworkDownError.html">Bundler::Fetcher::NetworkDownError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher/SSLError.html">Bundler::Fetcher::SSLError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher/TooManyRequestsError.html">Bundler::Fetcher::TooManyRequestsError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/FileUtils.html">Bundler::FileUtils</a></li>
+        
+          
+          
+          <li><a href="../Bundler/FileUtils/DryRun.html">Bundler::FileUtils::DryRun</a></li>
+        
+          
+          
+          <li><a href="../Bundler/FileUtils/NoWrite.html">Bundler::FileUtils::NoWrite</a></li>
+        
+          
+          
+          <li><a href="../Bundler/FileUtils/StreamUtils_.html">Bundler::FileUtils::StreamUtils_</a></li>
+        
+          
+          
+          <li><a href="../Bundler/FileUtils/Verbose.html">Bundler::FileUtils::Verbose</a></li>
+        
+          
+          
+          <li><a href="../Bundler/FriendlyErrors.html">Bundler::FriendlyErrors</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemHelper.html">Bundler::GemHelper</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemHelpers.html">Bundler::GemHelpers</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemHelpers/PlatformMatch.html">Bundler::GemHelpers::PlatformMatch</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemInstaller.html">Bundler::GemInstaller</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemNotFound.html">Bundler::GemNotFound</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemRemoteFetcher.html">Bundler::GemRemoteFetcher</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemRequireError.html">Bundler::GemRequireError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemVersionPromoter.html">Bundler::GemVersionPromoter</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Gemdeps.html">Bundler::Gemdeps</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemfileError.html">Bundler::GemfileError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemfileEvalError.html">Bundler::GemfileEvalError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemfileLockNotFound.html">Bundler::GemfileLockNotFound</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemfileNotFound.html">Bundler::GemfileNotFound</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemspecError.html">Bundler::GemspecError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GenericSystemCallError.html">Bundler::GenericSystemCallError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GitError.html">Bundler::GitError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Graph.html">Bundler::Graph</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Graph/GraphVizClient.html">Bundler::Graph::GraphVizClient</a></li>
+        
+          
+          
+          <li><a href="../Bundler/HTTPError.html">Bundler::HTTPError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Index.html">Bundler::Index</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Injector.html">Bundler::Injector</a></li>
+        
+          
+          
+          <li><a href="../Bundler/InstallError.html">Bundler::InstallError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/InstallHookError.html">Bundler::InstallHookError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Installer.html">Bundler::Installer</a></li>
+        
+          
+          
+          <li><a href="../Bundler/InvalidOption.html">Bundler::InvalidOption</a></li>
+        
+          
+          
+          <li><a href="../Bundler/LazySpecification.html">Bundler::LazySpecification</a></li>
+        
+          
+          
+          <li><a href="../Bundler/LazySpecification/Identifier.html">Bundler::LazySpecification::Identifier</a></li>
+        
+          
+          
+          <li><a href="../Bundler/LockfileError.html">Bundler::LockfileError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/LockfileGenerator.html">Bundler::LockfileGenerator</a></li>
+        
+          
+          
+          <li><a href="../Bundler/LockfileParser.html">Bundler::LockfileParser</a></li>
+        
+          
+          
+          <li><a href="../Bundler/MarshalError.html">Bundler::MarshalError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/MatchPlatform.html">Bundler::MatchPlatform</a></li>
+        
+          
+          
+          <li><a href="../Bundler/MirrorSockets.html">Bundler::MirrorSockets</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo.html">Bundler::Molinillo</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/CircularDependencyError.html">Bundler::Molinillo::CircularDependencyError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/Compatibility.html">Bundler::Molinillo::Compatibility</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/Delegates.html">Bundler::Molinillo::Delegates</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/Delegates/ResolutionState.html">Bundler::Molinillo::Delegates::ResolutionState</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/Delegates/SpecificationProvider.html">Bundler::Molinillo::Delegates::SpecificationProvider</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/DependencyGraph.html">Bundler::Molinillo::DependencyGraph</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/DependencyGraph/Action.html">Bundler::Molinillo::DependencyGraph::Action</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/DependencyGraph/AddEdgeNoCircular.html">Bundler::Molinillo::DependencyGraph::AddEdgeNoCircular</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/DependencyGraph/DeleteEdge.html">Bundler::Molinillo::DependencyGraph::DeleteEdge</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/DependencyGraph/DetachVertexNamed.html">Bundler::Molinillo::DependencyGraph::DetachVertexNamed</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/DependencyGraph/Log.html">Bundler::Molinillo::DependencyGraph::Log</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/DependencyGraph/Tag.html">Bundler::Molinillo::DependencyGraph::Tag</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/DependencyGraph/Vertex.html">Bundler::Molinillo::DependencyGraph::Vertex</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/DependencyState.html">Bundler::Molinillo::DependencyState</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/NoSuchDependencyError.html">Bundler::Molinillo::NoSuchDependencyError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/PossibilityState.html">Bundler::Molinillo::PossibilityState</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/ResolutionState.html">Bundler::Molinillo::ResolutionState</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/Resolver.html">Bundler::Molinillo::Resolver</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/Resolver/Resolution.html">Bundler::Molinillo::Resolver::Resolution</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/Resolver/Resolution/Conflict.html">Bundler::Molinillo::Resolver::Resolution::Conflict</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/Resolver/Resolution/PossibilitySet.html">Bundler::Molinillo::Resolver::Resolution::PossibilitySet</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/Resolver/Resolution/UnwindDetails.html">Bundler::Molinillo::Resolver::Resolution::UnwindDetails</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/ResolverError.html">Bundler::Molinillo::ResolverError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/SpecificationProvider.html">Bundler::Molinillo::SpecificationProvider</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/UI.html">Bundler::Molinillo::UI</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/VersionConflict.html">Bundler::Molinillo::VersionConflict</a></li>
+        
+          
+          
+          <li><a href="../Bundler/NoSpaceOnDeviceError.html">Bundler::NoSpaceOnDeviceError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/OperationNotSupportedError.html">Bundler::OperationNotSupportedError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/ParallelInstaller.html">Bundler::ParallelInstaller</a></li>
+        
+          
+          
+          <li><a href="../Bundler/ParallelInstaller/SpecInstallation.html">Bundler::ParallelInstaller::SpecInstallation</a></li>
+        
+          
+          
+          <li><a href="../Bundler/PathError.html">Bundler::PathError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/PermissionError.html">Bundler::PermissionError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Persistent.html">Bundler::Persistent</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Persistent/Net.html">Bundler::Persistent::Net</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Persistent/Net/HTTP.html">Bundler::Persistent::Net::HTTP</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Persistent/Net/HTTP/Persistent.html">Bundler::Persistent::Net::HTTP::Persistent</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Persistent/Net/HTTP/Persistent/Error.html">Bundler::Persistent::Net::HTTP::Persistent::Error</a></li>
+        
+          
+          
+          <li><a href="../Bundler/PersistentHTTP.html">Bundler::PersistentHTTP</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin.html">Bundler::Plugin</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/API.html">Bundler::Plugin::API</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/API/Source.html">Bundler::Plugin::API::Source</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/DSL.html">Bundler::Plugin::DSL</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/DSL/PluginGemfileError.html">Bundler::Plugin::DSL::PluginGemfileError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/Events.html">Bundler::Plugin::Events</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/Index.html">Bundler::Plugin::Index</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/Index/CommandConflict.html">Bundler::Plugin::Index::CommandConflict</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/Index/SourceConflict.html">Bundler::Plugin::Index::SourceConflict</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/Installer.html">Bundler::Plugin::Installer</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/Installer/Git.html">Bundler::Plugin::Installer::Git</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/Installer/Rubygems.html">Bundler::Plugin::Installer::Rubygems</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/MalformattedPlugin.html">Bundler::Plugin::MalformattedPlugin</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/SourceList.html">Bundler::Plugin::SourceList</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/UndefinedCommandError.html">Bundler::Plugin::UndefinedCommandError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/UnknownSourceError.html">Bundler::Plugin::UnknownSourceError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/PluginError.html">Bundler::PluginError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/ProcessLock.html">Bundler::ProcessLock</a></li>
+        
+          
+          
+          <li><a href="../Bundler/ProductionError.html">Bundler::ProductionError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/RemoteSpecification.html">Bundler::RemoteSpecification</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Resolver.html">Bundler::Resolver</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Resolver/SpecGroup.html">Bundler::Resolver::SpecGroup</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Retry.html">Bundler::Retry</a></li>
+        
+          
+          
+          <li><a href="../Bundler/RubyDsl.html">Bundler::RubyDsl</a></li>
+        
+          
+          
+          <li><a href="../Bundler/RubyGemsGemInstaller.html">Bundler::RubyGemsGemInstaller</a></li>
+        
+          
+          
+          <li><a href="../Bundler/RubyVersion.html">Bundler::RubyVersion</a></li>
+        
+          
+          
+          <li><a href="../Bundler/RubyVersionMismatch.html">Bundler::RubyVersionMismatch</a></li>
+        
+          
+          
+          <li><a href="../Bundler/RubygemsIntegration.html">Bundler::RubygemsIntegration</a></li>
+        
+          
+          
+          <li><a href="../Bundler/RubygemsIntegration/Gem.html">Bundler::RubygemsIntegration::Gem</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Runtime.html">Bundler::Runtime</a></li>
+        
+          
+          
+          <li><a href="../Bundler/SecurityError.html">Bundler::SecurityError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Settings.html">Bundler::Settings</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Settings/Mirror.html">Bundler::Settings::Mirror</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Settings/MirrorConfig.html">Bundler::Settings::MirrorConfig</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Settings/Mirrors.html">Bundler::Settings::Mirrors</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Settings/TCPSocketProbe.html">Bundler::Settings::TCPSocketProbe</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Settings/Validator.html">Bundler::Settings::Validator</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Settings/Validator/Rule.html">Bundler::Settings::Validator::Rule</a></li>
+        
+          
+          
+          <li><a href="../Bundler/SharedHelpers.html">Bundler::SharedHelpers</a></li>
+        
+          
+          
+          <li><a href="../Bundler/SimilarityDetector.html">Bundler::SimilarityDetector</a></li>
+        
+          
+          
+          <li><a href="../Bundler/SocketAddress.html">Bundler::SocketAddress</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source.html">Bundler::Source</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source/Gemspec.html">Bundler::Source::Gemspec</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source/Git.html">Bundler::Source::Git</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source/Git/GitCommandError.html">Bundler::Source::Git::GitCommandError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source/Git/GitNotAllowedError.html">Bundler::Source::Git::GitNotAllowedError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source/Git/GitNotInstalledError.html">Bundler::Source::Git::GitNotInstalledError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source/Git/GitProxy.html">Bundler::Source::Git::GitProxy</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source/Git/MissingGitRevisionError.html">Bundler::Source::Git::MissingGitRevisionError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source/Metadata.html">Bundler::Source::Metadata</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source/Path.html">Bundler::Source::Path</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source/Path/Installer.html">Bundler::Source::Path::Installer</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source/Rubygems.html">Bundler::Source::Rubygems</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source/Rubygems/Remote.html">Bundler::Source::Rubygems::Remote</a></li>
+        
+          
+          
+          <li><a href="../Bundler/SourceList.html">Bundler::SourceList</a></li>
+        
+          
+          
+          <li><a href="../Bundler/SpecSet.html">Bundler::SpecSet</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Standalone.html">Bundler::Standalone</a></li>
+        
+          
+          
+          <li><a href="../Bundler/StubSpecification.html">Bundler::StubSpecification</a></li>
+        
+          
+          
+          <li><a href="../Bundler/SudoNotPermittedError.html">Bundler::SudoNotPermittedError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/TemporaryResourceError.html">Bundler::TemporaryResourceError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Actions.html">Bundler::Thor::Actions</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Actions/CapturableERB.html">Bundler::Thor::Actions::CapturableERB</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Actions/ClassMethods.html">Bundler::Thor::Actions::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Base.html">Bundler::Thor::Base</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Base/ClassMethods.html">Bundler::Thor::Base::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Command.html">Bundler::Thor::Command</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/CoreExt.html">Bundler::Thor::CoreExt</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/CoreExt/OrderedHash.html">Bundler::Thor::CoreExt::OrderedHash</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/DynamicCommand.html">Bundler::Thor::DynamicCommand</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/DynamicCommand.html">Bundler::Thor::DynamicTask</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Group.html">Bundler::Thor::Group</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/HiddenCommand.html">Bundler::Thor::HiddenCommand</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/HiddenCommand.html">Bundler::Thor::HiddenTask</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Invocation.html">Bundler::Thor::Invocation</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Invocation/ClassMethods.html">Bundler::Thor::Invocation::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/LineEditor.html">Bundler::Thor::LineEditor</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/LineEditor/Basic.html">Bundler::Thor::LineEditor::Basic</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/LineEditor/Readline.html">Bundler::Thor::LineEditor::Readline</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/LineEditor/Readline/PathCompletion.html">Bundler::Thor::LineEditor::Readline::PathCompletion</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/NestedContext.html">Bundler::Thor::NestedContext</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/RakeCompat.html">Bundler::Thor::RakeCompat</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Shell.html">Bundler::Thor::Shell</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Shell/Basic.html">Bundler::Thor::Shell::Basic</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Shell/Color.html">Bundler::Thor::Shell::Color</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Shell/HTML.html">Bundler::Thor::Shell::HTML</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Command.html">Bundler::Thor::Task</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Util.html">Bundler::Thor::Util</a></li>
+        
+          
+          
+          <li><a href="../Bundler/ThreadCreationError.html">Bundler::ThreadCreationError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/UI.html">Bundler::UI</a></li>
+        
+          
+          
+          <li><a href="../Bundler/UI/RGProxy.html">Bundler::UI::RGProxy</a></li>
+        
+          
+          
+          <li><a href="../Bundler/UI/Shell.html">Bundler::UI::Shell</a></li>
+        
+          
+          
+          <li><a href="../Bundler/UI/Silent.html">Bundler::UI::Silent</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI.html">Bundler::URI</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/BadURIError.html">Bundler::URI::BadURIError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/Error.html">Bundler::URI::Error</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/Escape.html">Bundler::URI::Escape</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/FTP.html">Bundler::URI::FTP</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/File.html">Bundler::URI::File</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/Generic.html">Bundler::URI::Generic</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/HTTP.html">Bundler::URI::HTTP</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/HTTPS.html">Bundler::URI::HTTPS</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/InvalidComponentError.html">Bundler::URI::InvalidComponentError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/InvalidURIError.html">Bundler::URI::InvalidURIError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/LDAP.html">Bundler::URI::LDAP</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/LDAPS.html">Bundler::URI::LDAPS</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/MailTo.html">Bundler::URI::MailTo</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/RFC2396_Parser.html">Bundler::URI::Parser</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/RFC2396_REGEXP.html">Bundler::URI::REGEXP</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/RFC2396_Parser.html">Bundler::URI::RFC2396_Parser</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/RFC2396_REGEXP.html">Bundler::URI::RFC2396_REGEXP</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/RFC2396_REGEXP/PATTERN.html">Bundler::URI::RFC2396_REGEXP::PATTERN</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URICredentialsFilter.html">Bundler::URICredentialsFilter</a></li>
+        
+          
+          
+          <li><a href="../Bundler/VersionConflict.html">Bundler::VersionConflict</a></li>
+        
+          
+          
+          <li><a href="../Bundler/VersionRanges.html">Bundler::VersionRanges</a></li>
+        
+          
+          
+          <li><a href="../Bundler/VersionRanges/ReqR.html">Bundler::VersionRanges::ReqR</a></li>
+        
+          
+          
+          <li><a href="../Bundler/VirtualProtocolError.html">Bundler::VirtualProtocolError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Worker.html">Bundler::Worker</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Worker/WrappedException.html">Bundler::Worker::WrappedException</a></li>
+        
+          
+          
+          <li><a href="../Bundler/YAMLSerializer.html">Bundler::YAMLSerializer</a></li>
+        
+          
+          
+          <li><a href="../Bundler/YamlSyntaxError.html">Bundler::YamlSyntaxError</a></li>
+        
+          
+          
+          <li><a href="../Error.html">Error</a></li>
+        
+          
+          
+          <li><a href="../Gem.html">Gem</a></li>
+        
+          
+          
+          <li><a href="../Gem/Dependency.html">Gem::Dependency</a></li>
+        
+          
+          
+          <li><a href="../Gem/Platform.html">Gem::Platform</a></li>
+        
+          
+          
+          <li><a href="../Gem/Specification.html">Gem::Specification</a></li>
+        
+          
+          
+          <li><a href="../InvocationError.html">InvocationError</a></li>
+        
+          
+          
+          <li><a href="../Kernel.html">Kernel</a></li>
+        
+          
+          
+          <li><a href="../MalformattedArgumentError.html">MalformattedArgumentError</a></li>
+        
+          
+          
+          <li><a href="../Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="../RequiredArgumentMissingError.html">RequiredArgumentMissingError</a></li>
+        
+          
+          
+          <li><a href="../UndefinedCommandError.html">UndefinedCommandError</a></li>
+        
+          
+          
+          <li><a href="../UndefinedCommandError/SpellChecker.html">UndefinedCommandError::SpellChecker</a></li>
+        
+          
+          
+          <li><a href="../UndefinedTaskError.html">UndefinedTaskError</a></li>
+        
+          
+          
+          <li><a href="../UnknownArgumentError.html">UnknownArgumentError</a></li>
+        
+          
+          
+          <li><a href="../UnknownArgumentError/SpellChecker.html">UnknownArgumentError::SpellChecker</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">Bundler::Settings</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="ARRAY_KEYS">ARRAY_KEYS</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="BOOL_KEYS">BOOL_KEYS</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="DEFAULT_CONFIG">DEFAULT_CONFIG</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="NORMALIZE_URI_OPTIONS_PATTERN">NORMALIZE_URI_OPTIONS_PATTERN</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="NUMBER_KEYS">NUMBER_KEYS</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="PER_URI_OPTIONS">PER_URI_OPTIONS</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="Path">Path</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(root = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/settings.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">root</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-ivar">@root</span>            = <span class="ruby-identifier">root</span>
+  <span class="ruby-ivar">@local_config</span>    = <span class="ruby-identifier">load_config</span>(<span class="ruby-identifier">local_config_file</span>)
+  <span class="ruby-ivar">@global_config</span>   = <span class="ruby-identifier">load_config</span>(<span class="ruby-identifier">global_config_file</span>)
+  <span class="ruby-ivar">@temporary</span>       = {}
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="5B-5D-method" class="method-detail ">
+          <a name="method-i-5B-5D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">[]</span><span
+              class="method-args">(name)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="5B-5D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/settings.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">key</span> = <span class="ruby-identifier">key_for</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">value</span> = <span class="ruby-ivar">@temporary</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">key</span>) <span class="ruby-keyword">do</span>
+          <span class="ruby-ivar">@local_config</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">key</span>) <span class="ruby-keyword">do</span>
+          <span class="ruby-constant">ENV</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">key</span>) <span class="ruby-keyword">do</span>
+          <span class="ruby-ivar">@global_config</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">key</span>) <span class="ruby-keyword">do</span>
+          <span class="ruby-constant">DEFAULT_CONFIG</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">name</span>) <span class="ruby-keyword">do</span>
+            <span class="ruby-keyword">nil</span>
+          <span class="ruby-keyword">end</span> <span class="ruby-keyword">end</span> <span class="ruby-keyword">end</span> <span class="ruby-keyword">end</span> <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">converted_value</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">name</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 5B-5D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 5B-5D-method -->
+      
+        <div id="all-method" class="method-detail ">
+          <a name="method-i-all"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">all</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="all-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/settings.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">all</span>
+  <span class="ruby-identifier">env_keys</span> = <span class="ruby-constant">ENV</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-regexp">/\ABUNDLE_.+/</span>)
+
+  <span class="ruby-identifier">keys</span> = <span class="ruby-ivar">@temporary</span>.<span class="ruby-identifier">keys</span> <span class="ruby-operator">|</span> <span class="ruby-ivar">@global_config</span>.<span class="ruby-identifier">keys</span> <span class="ruby-operator">|</span> <span class="ruby-ivar">@local_config</span>.<span class="ruby-identifier">keys</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">env_keys</span>
+
+  <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">key</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/^BUNDLE_/</span>, <span class="ruby-string">&quot;&quot;</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/__/</span>, <span class="ruby-string">&quot;.&quot;</span>).<span class="ruby-identifier">downcase</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- all-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- all-method -->
+      
+        <div id="allow_sudo-3F-method" class="method-detail ">
+          <a name="method-i-allow_sudo-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">allow_sudo?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="allow_sudo-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/settings.rb, line 267</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">allow_sudo?</span>
+  <span class="ruby-identifier">key</span> = <span class="ruby-identifier">key_for</span>(<span class="ruby-value">:path</span>)
+  <span class="ruby-identifier">path_configured</span> = <span class="ruby-ivar">@temporary</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">key</span>) <span class="ruby-operator">||</span> <span class="ruby-ivar">@local_config</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-operator">!</span><span class="ruby-identifier">path_configured</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- allow_sudo-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- allow_sudo-3F-method -->
+      
+        <div id="app_cache_path-method" class="method-detail ">
+          <a name="method-i-app_cache_path"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">app_cache_path</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="app_cache_path-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/settings.rb, line 277</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">app_cache_path</span>
+  <span class="ruby-ivar">@app_cache_path</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">:cache_path</span>] <span class="ruby-operator">||</span> <span class="ruby-string">&quot;vendor/cache&quot;</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- app_cache_path-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- app_cache_path-method -->
+      
+        <div id="credentials_for-method" class="method-detail ">
+          <a name="method-i-credentials_for"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">credentials_for</span><span
+              class="method-args">(uri)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="credentials_for-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/settings.rb, line 161</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">credentials_for</span>(<span class="ruby-identifier">uri</span>)
+  <span class="ruby-keyword">self</span>[<span class="ruby-identifier">uri</span>.<span class="ruby-identifier">to_s</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">uri</span>.<span class="ruby-identifier">host</span>]
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- credentials_for-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- credentials_for-method -->
+      
+        <div id="gem_mirrors-method" class="method-detail ">
+          <a name="method-i-gem_mirrors"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">gem_mirrors</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="gem_mirrors-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/settings.rb, line 165</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">gem_mirrors</span>
+  <span class="ruby-identifier">all</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-constant">Mirrors</span>.<span class="ruby-identifier">new</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">mirrors</span>, <span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">mirrors</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">k</span>, <span class="ruby-keyword">self</span>[<span class="ruby-identifier">k</span>]) <span class="ruby-keyword">if</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&quot;mirror.&quot;</span>)
+    <span class="ruby-identifier">mirrors</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- gem_mirrors-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- gem_mirrors-method -->
+      
+        <div id="ignore_config-3F-method" class="method-detail ">
+          <a name="method-i-ignore_config-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ignore_config?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="ignore_config-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/settings.rb, line 273</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ignore_config?</span>
+  <span class="ruby-constant">ENV</span>[<span class="ruby-string">&quot;BUNDLE_IGNORE_CONFIG&quot;</span>]
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- ignore_config-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ignore_config-3F-method -->
+      
+        <div id="key_for-method" class="method-detail ">
+          <a name="method-i-key_for"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">key_for</span><span
+              class="method-args">(key)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="key_for-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/settings.rb, line 290</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">key_for</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">key</span> = <span class="ruby-constant">Settings</span>.<span class="ruby-identifier">normalize_uri</span>(<span class="ruby-identifier">key</span>).<span class="ruby-identifier">to_s</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">key</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-regexp">/https?:/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">key</span>
+  <span class="ruby-identifier">key</span> = <span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-string">&quot;.&quot;</span>, <span class="ruby-string">&quot;__&quot;</span>).<span class="ruby-identifier">upcase</span>
+  <span class="ruby-node">&quot;BUNDLE_#{key}&quot;</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- key_for-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- key_for-method -->
+      
+        <div id="local_overrides-method" class="method-detail ">
+          <a name="method-i-local_overrides"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">local_overrides</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="local_overrides-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/settings.rb, line 144</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">local_overrides</span>
+  <span class="ruby-identifier">repos</span> = {}
+  <span class="ruby-identifier">all</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">repos</span>[<span class="ruby-node">$&#39;</span>] = <span class="ruby-keyword">self</span>[<span class="ruby-identifier">k</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">k</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^local\./</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">repos</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- local_overrides-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- local_overrides-method -->
+      
+        <div id="locations-method" class="method-detail ">
+          <a name="method-i-locations"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">locations</span><span
+              class="method-args">(key)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="locations-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/settings.rb, line 172</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">locations</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">key</span> = <span class="ruby-identifier">key_for</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">locations</span> = {}
+  <span class="ruby-identifier">locations</span>[<span class="ruby-value">:temporary</span>] = <span class="ruby-ivar">@temporary</span>[<span class="ruby-identifier">key</span>] <span class="ruby-keyword">if</span> <span class="ruby-ivar">@temporary</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">locations</span>[<span class="ruby-value">:local</span>]  = <span class="ruby-ivar">@local_config</span>[<span class="ruby-identifier">key</span>] <span class="ruby-keyword">if</span> <span class="ruby-ivar">@local_config</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">locations</span>[<span class="ruby-value">:env</span>]    = <span class="ruby-constant">ENV</span>[<span class="ruby-identifier">key</span>] <span class="ruby-keyword">if</span> <span class="ruby-constant">ENV</span>[<span class="ruby-identifier">key</span>]
+  <span class="ruby-identifier">locations</span>[<span class="ruby-value">:global</span>] = <span class="ruby-ivar">@global_config</span>[<span class="ruby-identifier">key</span>] <span class="ruby-keyword">if</span> <span class="ruby-ivar">@global_config</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">locations</span>[<span class="ruby-value">:default</span>] = <span class="ruby-constant">DEFAULT_CONFIG</span>[<span class="ruby-identifier">key</span>] <span class="ruby-keyword">if</span> <span class="ruby-constant">DEFAULT_CONFIG</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">locations</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- locations-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- locations-method -->
+      
+        <div id="mirror_for-method" class="method-detail ">
+          <a name="method-i-mirror_for"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">mirror_for</span><span
+              class="method-args">(uri)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="mirror_for-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/settings.rb, line 152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">mirror_for</span>(<span class="ruby-identifier">uri</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
+    <span class="ruby-identifier">require_relative</span> <span class="ruby-string">&quot;vendored_uri&quot;</span>
+    <span class="ruby-identifier">uri</span> = <span class="ruby-constant">Bundler</span><span class="ruby-operator">::</span><span class="ruby-constant">URI</span>(<span class="ruby-identifier">uri</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">gem_mirrors</span>.<span class="ruby-identifier">for</span>(<span class="ruby-identifier">uri</span>.<span class="ruby-identifier">to_s</span>).<span class="ruby-identifier">uri</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- mirror_for-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- mirror_for-method -->
+      
+        <div id="path-method" class="method-detail ">
+          <a name="method-i-path"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">path</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>for legacy reasons, in <a href="../Bundler.html"><code>Bundler</code></a> 2, we do not respect :disable_shared_gems</p>
+            
+
+            
+            <div class="method-source-code" id="path-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/settings.rb, line 209</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">path</span>
+  <span class="ruby-identifier">key</span>  = <span class="ruby-identifier">key_for</span>(<span class="ruby-value">:path</span>)
+  <span class="ruby-identifier">path</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">||</span> <span class="ruby-ivar">@global_config</span>[<span class="ruby-identifier">key</span>]
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">path</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@temporary</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">key</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@local_config</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">key</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Path</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">path</span>, <span class="ruby-keyword">false</span>, <span class="ruby-keyword">false</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">system_path</span> = <span class="ruby-keyword">self</span>[<span class="ruby-string">&quot;path.system&quot;</span>] <span class="ruby-operator">||</span> (<span class="ruby-keyword">self</span>[<span class="ruby-value">:disable_shared_gems</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>)
+  <span class="ruby-constant">Path</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>[<span class="ruby-value">:path</span>], <span class="ruby-identifier">system_path</span>, <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">feature_flag</span>.<span class="ruby-identifier">default_install_uses_path?</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- path-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- path-method -->
+      
+        <div id="pretty_values_for-method" class="method-detail ">
+          <a name="method-i-pretty_values_for"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">pretty_values_for</span><span
+              class="method-args">(exposed_key)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="pretty_values_for-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/settings.rb, line 183</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_values_for</span>(<span class="ruby-identifier">exposed_key</span>)
+  <span class="ruby-identifier">key</span> = <span class="ruby-identifier">key_for</span>(<span class="ruby-identifier">exposed_key</span>)
+
+  <span class="ruby-identifier">locations</span> = []
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@temporary</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">key</span>)
+    <span class="ruby-identifier">locations</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;Set for the current command: #{converted_value(@temporary[key], exposed_key).inspect}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@local_config</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">key</span>)
+    <span class="ruby-identifier">locations</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;Set for your local app (#{local_config_file}): #{converted_value(@local_config[key], exposed_key).inspect}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-identifier">key</span>]
+    <span class="ruby-identifier">locations</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;Set via #{key}: #{converted_value(value, exposed_key).inspect}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@global_config</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">key</span>)
+    <span class="ruby-identifier">locations</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;Set for the current user (#{global_config_file}): #{converted_value(@global_config[key], exposed_key).inspect}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> [<span class="ruby-node">&quot;You have not configured a value for `#{exposed_key}`&quot;</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">locations</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">locations</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- pretty_values_for-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- pretty_values_for-method -->
+      
+        <div id="set_command_option-method" class="method-detail ">
+          <a name="method-i-set_command_option"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">set_command_option</span><span
+              class="method-args">(key, value)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="set_command_option-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/settings.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_command_option</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">feature_flag</span>.<span class="ruby-identifier">forget_cli_options?</span>
+    <span class="ruby-identifier">temporary</span>(<span class="ruby-identifier">key</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">value</span>)
+    <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">set_local</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- set_command_option-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- set_command_option-method -->
+      
+        <div id="set_command_option_if_given-method" class="method-detail ">
+          <a name="method-i-set_command_option_if_given"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">set_command_option_if_given</span><span
+              class="method-args">(key, value)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="set_command_option_if_given-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/settings.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_command_option_if_given</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">set_command_option</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- set_command_option_if_given-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- set_command_option_if_given-method -->
+      
+        <div id="set_global-method" class="method-detail ">
+          <a name="method-i-set_global"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">set_global</span><span
+              class="method-args">(key, value)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="set_global-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/settings.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_global</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">set_key</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>, <span class="ruby-ivar">@global_config</span>, <span class="ruby-identifier">global_config_file</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- set_global-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- set_global-method -->
+      
+        <div id="set_local-method" class="method-detail ">
+          <a name="method-i-set_local"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">set_local</span><span
+              class="method-args">(key, value)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="set_local-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/settings.rb, line 111</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_local</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">local_config_file</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">raise</span>(<span class="ruby-constant">GemfileNotFound</span>, <span class="ruby-string">&quot;Could not locate Gemfile&quot;</span>)
+
+  <span class="ruby-identifier">set_key</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>, <span class="ruby-ivar">@local_config</span>, <span class="ruby-identifier">local_config_file</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- set_local-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- set_local-method -->
+      
+        <div id="temporary-method" class="method-detail ">
+          <a name="method-i-temporary"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">temporary</span><span
+              class="method-args">(update)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="temporary-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/settings.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">temporary</span>(<span class="ruby-identifier">update</span>)
+  <span class="ruby-identifier">existing</span> = <span class="ruby-constant">Hash</span>[<span class="ruby-identifier">update</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">_</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">k</span>, <span class="ruby-ivar">@temporary</span>[<span class="ruby-identifier">key_for</span>(<span class="ruby-identifier">k</span>)]] }]
+  <span class="ruby-identifier">update</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">set_key</span>(<span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span>, <span class="ruby-ivar">@temporary</span>, <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">ensure</span>
+    <span class="ruby-identifier">existing</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">set_key</span>(<span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span>, <span class="ruby-ivar">@temporary</span>, <span class="ruby-keyword">nil</span>) }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- temporary-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- temporary-method -->
+      
+        <div id="validate-21-method" class="method-detail ">
+          <a name="method-i-validate-21"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">validate!</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="validate-21-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/settings.rb, line 281</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">validate!</span>
+  <span class="ruby-identifier">all</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">raw_key</span><span class="ruby-operator">|</span>
+    [<span class="ruby-ivar">@local_config</span>, <span class="ruby-constant">ENV</span>, <span class="ruby-ivar">@global_config</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">settings</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">value</span> = <span class="ruby-identifier">converted_value</span>(<span class="ruby-identifier">settings</span>[<span class="ruby-identifier">key_for</span>(<span class="ruby-identifier">raw_key</span>)], <span class="ruby-identifier">raw_key</span>)
+      <span class="ruby-constant">Validator</span>.<span class="ruby-identifier">validate!</span>(<span class="ruby-identifier">raw_key</span>, <span class="ruby-identifier">value</span>, <span class="ruby-identifier">settings</span>.<span class="ruby-identifier">to_hash</span>.<span class="ruby-identifier">dup</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- validate-21-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- validate-21-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Settings_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Settings_versioned").load("/associated/2.7.4/Settings.ihtml");</script> <div id='tx_Settings' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Settings").load("/associated/Settings.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, an erratic source of art, music, and technology.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Settings.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Settings.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

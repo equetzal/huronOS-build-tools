@@ -1,0 +1,1031 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : UNIXSocket  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:32:05 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = ''  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = ''  --> 
+  <title>Class: UNIXSocket (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href=".css/obf.css"  -->
+  <link rel="stylesheet" href="css/inuit.css" >
+  <link rel="stylesheet" href="css/grid.inuit.css" >
+  <link rel="stylesheet" href="css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="css/carbon17.css" type="text/css" >
+
+
+  <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="/js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>socket/unixsocket.c</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="BasicSocket.html">BasicSocket</a></p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-c-pair">::pair</a></li>
+          
+          <li><a href="#method-c-socketpair">::socketpair</a></li>
+          
+          <li><a href="#method-i-addr">#addr</a></li>
+          
+          <li><a href="#method-i-path">#path</a></li>
+          
+          <li><a href="#method-i-peeraddr">#peeraddr</a></li>
+          
+          <li><a href="#method-i-recv_io">#recv_io</a></li>
+          
+          <li><a href="#method-i-recvfrom">#recvfrom</a></li>
+          
+          <li><a href="#method-i-send_io">#send_io</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="./Addrinfo.html">Addrinfo</a></li>
+        
+          
+          
+          <li><a href="./BasicSocket.html">BasicSocket</a></li>
+        
+          
+          
+          <li><a href="./IPSocket.html">IPSocket</a></li>
+        
+          
+          
+          <li><a href="./Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="./SOCKSSocket.html">SOCKSSocket</a></li>
+        
+          
+          
+          <li><a href="./Socket.html">Socket</a></li>
+        
+          
+          
+          <li><a href="./Socket/AncillaryData.html">Socket::AncillaryData</a></li>
+        
+          
+          
+          <li><a href="./Socket/Constants.html">Socket::Constants</a></li>
+        
+          
+          
+          <li><a href="./Socket/Ifaddr.html">Socket::Ifaddr</a></li>
+        
+          
+          
+          <li><a href="./Socket/Option.html">Socket::Option</a></li>
+        
+          
+          
+          <li><a href="./Socket/UDPSource.html">Socket::UDPSource</a></li>
+        
+          
+          
+          <li><a href="./SocketError.html">SocketError</a></li>
+        
+          
+          
+          <li><a href="./TCPServer.html">TCPServer</a></li>
+        
+          
+          
+          <li><a href="./TCPSocket.html">TCPSocket</a></li>
+        
+          
+          
+          <li><a href="./UDPSocket.html">UDPSocket</a></li>
+        
+          
+          
+          <li><a href="./UNIXServer.html">UNIXServer</a></li>
+        
+          
+          
+          <li><a href="./UNIXSocket.html">UNIXSocket</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">UNIXSocket</h1>
+
+    <div id="description" class="description">
+      
+<p><a href="UNIXSocket.html"><code>UNIXSocket</code></a> represents a UNIX domain stream client socket.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">new(path) => unixsocket</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Creates a new UNIX client socket connected to <em>path</em>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;socket&#39;</span>
+
+<span class="ruby-identifier">s</span> = <span class="ruby-constant">UNIXSocket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;/tmp/sock&quot;</span>)
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">send</span> <span class="ruby-string">&quot;hello&quot;</span>, <span class="ruby-value">0</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+unix_init(VALUE sock, VALUE path)
+{
+    return rsock_init_unixsock(sock, path, 0);
+}
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+        <div id="pair-method" class="method-detail ">
+          <a name="method-c-pair"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">pair([type [, protocol]])       => [unixsocket1, unixsocket2]</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Creates a pair of sockets connected to each other.</p>
+
+<p><em>socktype</em> should be a socket type such as: :STREAM, :DGRAM, :RAW, etc.</p>
+
+<p><em>protocol</em> should be a protocol defined in the domain. 0 is default protocol for the domain.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s1</span>, <span class="ruby-identifier">s2</span> = <span class="ruby-constant">UNIXSocket</span>.<span class="ruby-identifier">pair</span>
+<span class="ruby-identifier">s1</span>.<span class="ruby-identifier">send</span> <span class="ruby-string">&quot;a&quot;</span>, <span class="ruby-value">0</span>
+<span class="ruby-identifier">s1</span>.<span class="ruby-identifier">send</span> <span class="ruby-string">&quot;b&quot;</span>, <span class="ruby-value">0</span>
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">s2</span>.<span class="ruby-identifier">recv</span>(<span class="ruby-value">10</span>) <span class="ruby-comment">#=&gt; &quot;ab&quot;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="pair-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+unix_s_socketpair(int argc, VALUE *argv, VALUE klass)
+{
+    VALUE domain, type, protocol;
+    VALUE args[3];
+
+    domain = INT2FIX(PF_UNIX);
+    rb_scan_args(argc, argv, &quot;02&quot;, &amp;type, &amp;protocol);
+    if (argc == 0)
+        type = INT2FIX(SOCK_STREAM);
+    if (argc &lt;= 1)
+        protocol = INT2FIX(0);
+
+    args[0] = domain;
+    args[1] = type;
+    args[2] = protocol;
+
+    return rsock_sock_s_socketpair(3, args, klass);
+}
+            </pre> 
+            </div><!-- pair-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- pair-method -->
+      
+        <div id="socketpair-method" class="method-detail ">
+          <a name="method-c-socketpair"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">socketpair([type [, protocol]]) => [unixsocket1, unixsocket2]</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Creates a pair of sockets connected to each other.</p>
+
+<p><em>socktype</em> should be a socket type such as: :STREAM, :DGRAM, :RAW, etc.</p>
+
+<p><em>protocol</em> should be a protocol defined in the domain. 0 is default protocol for the domain.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s1</span>, <span class="ruby-identifier">s2</span> = <span class="ruby-constant">UNIXSocket</span>.<span class="ruby-identifier">pair</span>
+<span class="ruby-identifier">s1</span>.<span class="ruby-identifier">send</span> <span class="ruby-string">&quot;a&quot;</span>, <span class="ruby-value">0</span>
+<span class="ruby-identifier">s1</span>.<span class="ruby-identifier">send</span> <span class="ruby-string">&quot;b&quot;</span>, <span class="ruby-value">0</span>
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">s2</span>.<span class="ruby-identifier">recv</span>(<span class="ruby-value">10</span>) <span class="ruby-comment">#=&gt; &quot;ab&quot;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="socketpair-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+unix_s_socketpair(int argc, VALUE *argv, VALUE klass)
+{
+    VALUE domain, type, protocol;
+    VALUE args[3];
+
+    domain = INT2FIX(PF_UNIX);
+    rb_scan_args(argc, argv, &quot;02&quot;, &amp;type, &amp;protocol);
+    if (argc == 0)
+        type = INT2FIX(SOCK_STREAM);
+    if (argc &lt;= 1)
+        protocol = INT2FIX(0);
+
+    args[0] = domain;
+    args[1] = type;
+    args[2] = protocol;
+
+    return rsock_sock_s_socketpair(3, args, klass);
+}
+            </pre> 
+            </div><!-- socketpair-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- socketpair-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="addr-method" class="method-detail ">
+          <a name="method-i-addr"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">addr => [address_family, unix_path]</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns the local address as an array which contains address_family and unix_path.</p>
+
+<p>Example</p>
+
+<pre class="ruby"><span class="ruby-identifier">serv</span> = <span class="ruby-constant">UNIXServer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;/tmp/sock&quot;</span>)
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">serv</span>.<span class="ruby-identifier">addr</span> <span class="ruby-comment">#=&gt; [&quot;AF_UNIX&quot;, &quot;/tmp/sock&quot;]</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="addr-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+unix_addr(VALUE sock)
+{
+    rb_io_t *fptr;
+    struct sockaddr_un addr;
+    socklen_t len = (socklen_t)sizeof addr;
+    socklen_t len0 = len;
+
+    GetOpenFile(sock, fptr);
+
+    if (getsockname(fptr-&gt;fd, (struct sockaddr*)&amp;addr, &amp;len) &lt; 0)
+        rsock_sys_fail_path(&quot;getsockname(2)&quot;, fptr-&gt;pathv);
+    if (len0 &lt; len) len = len0;
+    return rsock_unixaddr(&amp;addr, len);
+}
+            </pre> 
+            </div><!-- addr-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- addr-method -->
+      
+        <div id="path-method" class="method-detail ">
+          <a name="method-i-path"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">path => path</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns the path of the local address of unixsocket.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span> = <span class="ruby-constant">UNIXServer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;/tmp/sock&quot;</span>)
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">path</span> <span class="ruby-comment">#=&gt; &quot;/tmp/sock&quot;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="path-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+unix_path(VALUE sock)
+{
+    rb_io_t *fptr;
+
+    GetOpenFile(sock, fptr);
+    if (NIL_P(fptr-&gt;pathv)) {
+        struct sockaddr_un addr;
+        socklen_t len = (socklen_t)sizeof(addr);
+        socklen_t len0 = len;
+        if (getsockname(fptr-&gt;fd, (struct sockaddr*)&amp;addr, &amp;len) &lt; 0)
+            rsock_sys_fail_path(&quot;getsockname(2)&quot;, fptr-&gt;pathv);
+        if (len0 &lt; len) len = len0;
+        fptr-&gt;pathv = rb_obj_freeze(rsock_unixpath_str(&amp;addr, len));
+    }
+    return rb_str_dup(fptr-&gt;pathv);
+}
+            </pre> 
+            </div><!-- path-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- path-method -->
+      
+        <div id="peeraddr-method" class="method-detail ">
+          <a name="method-i-peeraddr"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">peeraddr => [address_family, unix_path]</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns the remote address as an array which contains address_family and unix_path.</p>
+
+<p>Example</p>
+
+<pre class="ruby"><span class="ruby-identifier">serv</span> = <span class="ruby-constant">UNIXServer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;/tmp/sock&quot;</span>)
+<span class="ruby-identifier">c</span> = <span class="ruby-constant">UNIXSocket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;/tmp/sock&quot;</span>)
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">peeraddr</span> <span class="ruby-comment">#=&gt; [&quot;AF_UNIX&quot;, &quot;/tmp/sock&quot;]</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="peeraddr-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+unix_peeraddr(VALUE sock)
+{
+    rb_io_t *fptr;
+    struct sockaddr_un addr;
+    socklen_t len = (socklen_t)sizeof addr;
+    socklen_t len0 = len;
+
+    GetOpenFile(sock, fptr);
+
+    if (getpeername(fptr-&gt;fd, (struct sockaddr*)&amp;addr, &amp;len) &lt; 0)
+        rsock_sys_fail_path(&quot;getpeername(2)&quot;, fptr-&gt;pathv);
+    if (len0 &lt; len) len = len0;
+    return rsock_unixaddr(&amp;addr, len);
+}
+            </pre> 
+            </div><!-- peeraddr-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- peeraddr-method -->
+      
+        <div id="recv_io-method" class="method-detail ">
+          <a name="method-i-recv_io"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">recv_io([klass [, mode]]) => io</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Example</p>
+
+<pre class="ruby"><span class="ruby-constant">UNIXServer</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;/tmp/sock&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">serv</span><span class="ruby-operator">|</span>
+  <span class="ruby-constant">UNIXSocket</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;/tmp/sock&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">s</span> = <span class="ruby-identifier">serv</span>.<span class="ruby-identifier">accept</span>
+
+    <span class="ruby-identifier">c</span>.<span class="ruby-identifier">send_io</span> <span class="ruby-constant">STDOUT</span>
+    <span class="ruby-identifier">stdout</span> = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">recv_io</span>
+
+    <span class="ruby-identifier">p</span> <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">fileno</span> <span class="ruby-comment">#=&gt; 1</span>
+    <span class="ruby-identifier">p</span> <span class="ruby-identifier">stdout</span>.<span class="ruby-identifier">fileno</span> <span class="ruby-comment">#=&gt; 7</span>
+
+    <span class="ruby-identifier">stdout</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;hello&quot;</span> <span class="ruby-comment"># outputs &quot;hello\n&quot; to standard output.</span>
+  }
+}
+</pre>
+
+<p><em>klass</em> will determine the class of <em>io</em> returned (using the IO.for_fd singleton method or similar). If <em>klass</em> is <code>nil</code>, an integer file descriptor is returned.</p>
+
+<p><em>mode</em> is the same as the argument passed to IO.for_fd</p>
+            
+
+            
+            <div class="method-source-code" id="recv_io-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+unix_recv_io(int argc, VALUE *argv, VALUE sock)
+{
+    VALUE klass, mode;
+    rb_io_t *fptr;
+    struct iomsg_arg arg;
+    struct iovec vec[2];
+    char buf[1];
+    unsigned int gc_reason = 0;
+    enum {
+        GC_REASON_EMSGSIZE = 0x1,
+        GC_REASON_TRUNCATE = 0x2,
+        GC_REASON_ENOMEM = 0x4
+    };
+
+    int fd;
+#if FD_PASSING_BY_MSG_CONTROL
+    union {
+        struct cmsghdr hdr;
+        char pad[sizeof(struct cmsghdr)+8+sizeof(int)+8];
+    } cmsg;
+#endif
+
+    rb_scan_args(argc, argv, &quot;02&quot;, &amp;klass, &amp;mode);
+    if (argc == 0)
+        klass = rb_cIO;
+    if (argc &lt;= 1)
+        mode = Qnil;
+
+retry:
+    GetOpenFile(sock, fptr);
+
+    arg.msg.msg_name = NULL;
+    arg.msg.msg_namelen = 0;
+
+    vec[0].iov_base = buf;
+    vec[0].iov_len = sizeof(buf);
+    arg.msg.msg_iov = vec;
+    arg.msg.msg_iovlen = 1;
+
+#if FD_PASSING_BY_MSG_CONTROL
+    arg.msg.msg_control = (caddr_t)&amp;cmsg;
+    arg.msg.msg_controllen = (socklen_t)CMSG_SPACE(sizeof(int));
+    arg.msg.msg_flags = 0;
+    cmsg.hdr.cmsg_len = (socklen_t)CMSG_LEN(sizeof(int));
+    cmsg.hdr.cmsg_level = SOL_SOCKET;
+    cmsg.hdr.cmsg_type = SCM_RIGHTS;
+    fd = -1;
+    memcpy(CMSG_DATA(&amp;cmsg.hdr), &amp;fd, sizeof(int));
+#else
+    arg.msg.msg_accrights = (caddr_t)&amp;fd;
+    arg.msg.msg_accrightslen = sizeof(fd);
+    fd = -1;
+#endif
+
+    arg.fd = fptr-&gt;fd;
+    while ((int)BLOCKING_REGION_FD(recvmsg_blocking, &amp;arg) == -1) {
+        int e = errno;
+        if (e == EMSGSIZE &amp;&amp; !(gc_reason &amp; GC_REASON_EMSGSIZE)) {
+            /* FreeBSD gets here when we&#39;re out of FDs */
+            gc_reason |= GC_REASON_EMSGSIZE;
+            rb_gc_for_fd(EMFILE);
+            goto retry;
+        }
+        else if (e == ENOMEM &amp;&amp; !(gc_reason &amp; GC_REASON_ENOMEM)) {
+            /* ENOMEM is documented in recvmsg manpages */
+            gc_reason |= GC_REASON_ENOMEM;
+            rb_gc_for_fd(e);
+            goto retry;
+        }
+        if (!rb_io_wait_readable(arg.fd))
+            rsock_syserr_fail_path(e, &quot;recvmsg(2)&quot;, fptr-&gt;pathv);
+    }
+
+#if FD_PASSING_BY_MSG_CONTROL
+    if (arg.msg.msg_controllen &lt; (socklen_t)sizeof(struct cmsghdr)) {
+        /* FreeBSD and Linux both get here when we&#39;re out of FDs */
+        if (!(gc_reason &amp; GC_REASON_TRUNCATE)) {
+            gc_reason |= GC_REASON_TRUNCATE;
+            rb_gc_for_fd(EMFILE);
+            goto retry;
+        }
+        rb_raise(rb_eSocket,
+                 &quot;file descriptor was not passed (msg_controllen=%d smaller than sizeof(struct cmsghdr)=%d)&quot;,
+                 (int)arg.msg.msg_controllen, (int)sizeof(struct cmsghdr));
+    }
+    if (cmsg.hdr.cmsg_level != SOL_SOCKET) {
+        rb_raise(rb_eSocket,
+                 &quot;file descriptor was not passed (cmsg_level=%d, %d expected)&quot;,
+                 cmsg.hdr.cmsg_level, SOL_SOCKET);
+    }
+    if (cmsg.hdr.cmsg_type != SCM_RIGHTS) {
+        rb_raise(rb_eSocket,
+                 &quot;file descriptor was not passed (cmsg_type=%d, %d expected)&quot;,
+                 cmsg.hdr.cmsg_type, SCM_RIGHTS);
+    }
+    if (arg.msg.msg_controllen &lt; (socklen_t)CMSG_LEN(sizeof(int))) {
+        rb_raise(rb_eSocket,
+                 &quot;file descriptor was not passed (msg_controllen=%d smaller than CMSG_LEN(sizeof(int))=%d)&quot;,
+                 (int)arg.msg.msg_controllen, (int)CMSG_LEN(sizeof(int)));
+    }
+    if ((socklen_t)CMSG_SPACE(sizeof(int)) &lt; arg.msg.msg_controllen) {
+        rb_raise(rb_eSocket,
+                 &quot;file descriptor was not passed (msg_controllen=%d bigger than CMSG_SPACE(sizeof(int))=%d)&quot;,
+                 (int)arg.msg.msg_controllen, (int)CMSG_SPACE(sizeof(int)));
+    }
+    if (cmsg.hdr.cmsg_len != CMSG_LEN(sizeof(int))) {
+        rsock_discard_cmsg_resource(&amp;arg.msg, 0);
+        rb_raise(rb_eSocket,
+                 &quot;file descriptor was not passed (cmsg_len=%d, %d expected)&quot;,
+                 (int)cmsg.hdr.cmsg_len, (int)CMSG_LEN(sizeof(int)));
+    }
+#else
+    if (arg.msg.msg_accrightslen != sizeof(fd)) {
+        rb_raise(rb_eSocket,
+                 &quot;file descriptor was not passed (accrightslen=%d, %d expected)&quot;,
+                 arg.msg.msg_accrightslen, (int)sizeof(fd));
+    }
+#endif
+
+#if FD_PASSING_BY_MSG_CONTROL
+    memcpy(&amp;fd, CMSG_DATA(&amp;cmsg.hdr), sizeof(int));
+#endif
+
+    rb_update_max_fd(fd);
+
+    if (rsock_cmsg_cloexec_state &lt; 0)
+        rsock_cmsg_cloexec_state = rsock_detect_cloexec(fd);
+    if (rsock_cmsg_cloexec_state == 0 || fd &lt;= 2)
+        rb_maygvl_fd_fix_cloexec(fd);
+
+    if (klass == Qnil)
+        return INT2FIX(fd);
+    else {
+        ID for_fd;
+        int ff_argc;
+        VALUE ff_argv[2];
+        CONST_ID(for_fd, &quot;for_fd&quot;);
+        ff_argc = mode == Qnil ? 1 : 2;
+        ff_argv[0] = INT2FIX(fd);
+        ff_argv[1] = mode;
+        return rb_funcallv(klass, for_fd, ff_argc, ff_argv);
+    }
+}
+            </pre> 
+            </div><!-- recv_io-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- recv_io-method -->
+      
+        <div id="recvfrom-method" class="method-detail ">
+          <a name="method-i-recvfrom"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">recvfrom(maxlen [, flags[, outbuf]]) => [mesg, unixaddress]</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Receives a message via <em>unixsocket</em>.</p>
+
+<p><em>maxlen</em> is the maximum number of bytes to receive.</p>
+
+<p><em>flags</em> should be a bitwise OR of Socket::MSG_* constants.</p>
+
+<p><em>outbuf</em> will contain only the received data after the method call even if it is not empty at the beginning.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s1</span> = <span class="ruby-constant">Socket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:UNIX</span>, <span class="ruby-value">:DGRAM</span>, <span class="ruby-value">0</span>)
+<span class="ruby-identifier">s1_ai</span> = <span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">unix</span>(<span class="ruby-string">&quot;/tmp/sock1&quot;</span>)
+<span class="ruby-identifier">s1</span>.<span class="ruby-identifier">bind</span>(<span class="ruby-identifier">s1_ai</span>)
+
+<span class="ruby-identifier">s2</span> = <span class="ruby-constant">Socket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:UNIX</span>, <span class="ruby-value">:DGRAM</span>, <span class="ruby-value">0</span>)
+<span class="ruby-identifier">s2_ai</span> = <span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">unix</span>(<span class="ruby-string">&quot;/tmp/sock2&quot;</span>)
+<span class="ruby-identifier">s2</span>.<span class="ruby-identifier">bind</span>(<span class="ruby-identifier">s2_ai</span>)
+<span class="ruby-identifier">s3</span> = <span class="ruby-constant">UNIXSocket</span>.<span class="ruby-identifier">for_fd</span>(<span class="ruby-identifier">s2</span>.<span class="ruby-identifier">fileno</span>)
+
+<span class="ruby-identifier">s1</span>.<span class="ruby-identifier">send</span> <span class="ruby-string">&quot;a&quot;</span>, <span class="ruby-value">0</span>, <span class="ruby-identifier">s2_ai</span>
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">s3</span>.<span class="ruby-identifier">recvfrom</span>(<span class="ruby-value">10</span>) <span class="ruby-comment">#=&gt; [&quot;a&quot;, [&quot;AF_UNIX&quot;, &quot;/tmp/sock1&quot;]]</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="recvfrom-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+unix_recvfrom(int argc, VALUE *argv, VALUE sock)
+{
+    return rsock_s_recvfrom(sock, argc, argv, RECV_UNIX);
+}
+            </pre> 
+            </div><!-- recvfrom-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- recvfrom-method -->
+      
+        <div id="send_io-method" class="method-detail ">
+          <a name="method-i-send_io"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">send_io(io) => nil</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Sends <em>io</em> as file descriptor passing.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s1</span>, <span class="ruby-identifier">s2</span> = <span class="ruby-constant">UNIXSocket</span>.<span class="ruby-identifier">pair</span>
+
+<span class="ruby-identifier">s1</span>.<span class="ruby-identifier">send_io</span> <span class="ruby-constant">STDOUT</span>
+<span class="ruby-identifier">stdout</span> = <span class="ruby-identifier">s2</span>.<span class="ruby-identifier">recv_io</span>
+
+<span class="ruby-identifier">p</span> <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">fileno</span> <span class="ruby-comment">#=&gt; 1</span>
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">stdout</span>.<span class="ruby-identifier">fileno</span> <span class="ruby-comment">#=&gt; 6</span>
+
+<span class="ruby-identifier">stdout</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;hello&quot;</span> <span class="ruby-comment"># outputs &quot;hello\n&quot; to standard output.</span>
+</pre>
+
+<p><em>io</em> may be any kind of IO object or integer file descriptor.</p>
+            
+
+            
+            <div class="method-source-code" id="send_io-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+unix_send_io(VALUE sock, VALUE val)
+{
+    int fd;
+    rb_io_t *fptr;
+    struct iomsg_arg arg;
+    struct iovec vec[1];
+    char buf[1];
+
+#if FD_PASSING_BY_MSG_CONTROL
+    union {
+        struct cmsghdr hdr;
+        char pad[sizeof(struct cmsghdr)+8+sizeof(int)+8];
+    } cmsg;
+#endif
+
+    if (rb_obj_is_kind_of(val, rb_cIO)) {
+        rb_io_t *valfptr;
+        GetOpenFile(val, valfptr);
+        fd = valfptr-&gt;fd;
+    }
+    else if (FIXNUM_P(val)) {
+        fd = FIX2INT(val);
+    }
+    else {
+        rb_raise(rb_eTypeError, &quot;neither IO nor file descriptor&quot;);
+    }
+
+    GetOpenFile(sock, fptr);
+
+    arg.msg.msg_name = NULL;
+    arg.msg.msg_namelen = 0;
+
+    /* Linux and Solaris doesn&#39;t work if msg_iov is NULL. */
+    buf[0] = &#39;\0&#39;;
+    vec[0].iov_base = buf;
+    vec[0].iov_len = 1;
+    arg.msg.msg_iov = vec;
+    arg.msg.msg_iovlen = 1;
+
+#if FD_PASSING_BY_MSG_CONTROL
+    arg.msg.msg_control = (caddr_t)&amp;cmsg;
+    arg.msg.msg_controllen = (socklen_t)CMSG_LEN(sizeof(int));
+    arg.msg.msg_flags = 0;
+    MEMZERO((char*)&amp;cmsg, char, sizeof(cmsg));
+    cmsg.hdr.cmsg_len = (socklen_t)CMSG_LEN(sizeof(int));
+    cmsg.hdr.cmsg_level = SOL_SOCKET;
+    cmsg.hdr.cmsg_type = SCM_RIGHTS;
+    memcpy(CMSG_DATA(&amp;cmsg.hdr), &amp;fd, sizeof(int));
+#else
+    arg.msg.msg_accrights = (caddr_t)&amp;fd;
+    arg.msg.msg_accrightslen = sizeof(fd);
+#endif
+
+    arg.fd = fptr-&gt;fd;
+    while ((int)BLOCKING_REGION_FD(sendmsg_blocking, &amp;arg) == -1) {
+        if (!rb_io_wait_writable(arg.fd))
+            rsock_sys_fail_path(&quot;sendmsg(2)&quot;, fptr-&gt;pathv);
+    }
+
+    return Qnil;
+}
+            </pre> 
+            </div><!-- send_io-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- send_io-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_UNIXSocket_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_UNIXSocket_versioned").load("/associated/2.7.4/UNIXSocket.ihtml");</script> <div id='tx_UNIXSocket' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_UNIXSocket").load("/associated/UNIXSocket.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Maximum R+D</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_UNIXSocket.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_UNIXSocket.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

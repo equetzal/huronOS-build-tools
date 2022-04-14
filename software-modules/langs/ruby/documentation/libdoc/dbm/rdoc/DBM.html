@@ -1,0 +1,2419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : DBM  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:18:14 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = ''  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = ''  --> 
+  <title>Class: DBM (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href=".css/obf.css"  -->
+  <link rel="stylesheet" href="css/inuit.css" >
+  <link rel="stylesheet" href="css/grid.inuit.css" >
+  <link rel="stylesheet" href="css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="css/carbon17.css" type="text/css" >
+
+
+  <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="/js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>dbm/dbm.c</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-c-open">::open</a></li>
+          
+          <li><a href="#method-i-5B-5D">#[]</a></li>
+          
+          <li><a href="#method-i-5B-5D-3D">#[]=</a></li>
+          
+          <li><a href="#method-i-clear">#clear</a></li>
+          
+          <li><a href="#method-i-close">#close</a></li>
+          
+          <li><a href="#method-i-closed-3F">#closed?</a></li>
+          
+          <li><a href="#method-i-delete">#delete</a></li>
+          
+          <li><a href="#method-i-delete_if">#delete_if</a></li>
+          
+          <li><a href="#method-i-each">#each</a></li>
+          
+          <li><a href="#method-i-each_key">#each_key</a></li>
+          
+          <li><a href="#method-i-each_pair">#each_pair</a></li>
+          
+          <li><a href="#method-i-each_value">#each_value</a></li>
+          
+          <li><a href="#method-i-empty-3F">#empty?</a></li>
+          
+          <li><a href="#method-i-fetch">#fetch</a></li>
+          
+          <li><a href="#method-i-has_key-3F">#has_key?</a></li>
+          
+          <li><a href="#method-i-has_value-3F">#has_value?</a></li>
+          
+          <li><a href="#method-i-include-3F">#include?</a></li>
+          
+          <li><a href="#method-i-invert">#invert</a></li>
+          
+          <li><a href="#method-i-key">#key</a></li>
+          
+          <li><a href="#method-i-key-3F">#key?</a></li>
+          
+          <li><a href="#method-i-keys">#keys</a></li>
+          
+          <li><a href="#method-i-length">#length</a></li>
+          
+          <li><a href="#method-i-member-3F">#member?</a></li>
+          
+          <li><a href="#method-i-reject">#reject</a></li>
+          
+          <li><a href="#method-i-reject-21">#reject!</a></li>
+          
+          <li><a href="#method-i-replace">#replace</a></li>
+          
+          <li><a href="#method-i-select">#select</a></li>
+          
+          <li><a href="#method-i-shift">#shift</a></li>
+          
+          <li><a href="#method-i-size">#size</a></li>
+          
+          <li><a href="#method-i-store">#store</a></li>
+          
+          <li><a href="#method-i-to_a">#to_a</a></li>
+          
+          <li><a href="#method-i-to_hash">#to_hash</a></li>
+          
+          <li><a href="#method-i-update">#update</a></li>
+          
+          <li><a href="#method-i-value-3F">#value?</a></li>
+          
+          <li><a href="#method-i-values">#values</a></li>
+          
+          <li><a href="#method-i-values_at">#values_at</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Included Modules -->
+      <div id="includes-section" class="section">
+        <h3 class="section-header">Included Modules</h3>
+        <ul class="link-list">
+        
+        
+          <li><span class="include">Enumerable</span></li>
+        
+        
+        </ul>
+      </div>
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="./DBM.html">DBM</a></li>
+        
+          
+          
+          <li><a href="./DBMError.html">DBMError</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">DBM</h1>
+
+    <div id="description" class="description">
+      
+<h2 id="class-DBM-label-Introduction">Introduction<span><a href="#class-DBM-label-Introduction">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>The <a href="DBM.html"><code>DBM</code></a> class provides a wrapper to a Unix-style <a href="http://en.wikipedia.org/wiki/Dbm">dbm</a> or Database Manager library.</p>
+
+<p>Dbm databases do not have tables or columns; they are simple key-value data stores, like a Ruby Hash except not resident in RAM. Keys and values must be strings.</p>
+
+<p>The exact library used depends on how Ruby was compiled. It could be any of the following:</p>
+<ul><li>
+<p>The original ndbm library is released in 4.3BSD. It is based on dbm library in Unix Version 7 but has different API to support multiple databases in a process.</p>
+</li><li>
+<p><a href="http://en.wikipedia.org/wiki/Berkeley_DB">Berkeley DB</a> versions 1 thru 6, also known as BDB and Sleepycat DB, now owned by Oracle Corporation.</p>
+</li><li>
+<p>Berkeley DB 1.x, still found in 4.4BSD derivatives (FreeBSD, OpenBSD, etc).</p>
+</li><li>
+<p><a href="http://www.gnu.org/software/gdbm/">gdbm</a>, the GNU implementation of dbm.</p>
+</li><li>
+<p><a href="http://fallabs.com/qdbm/index.html">qdbm</a>, another open source reimplementation of dbm.</p>
+</li></ul>
+
+<p>All of these dbm implementations have their own Ruby interfaces available, which provide richer (but varying) APIs.</p>
+
+<h2 id="class-DBM-label-Cautions">Cautions<span><a href="#class-DBM-label-Cautions">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Before you decide to use <a href="DBM.html"><code>DBM</code></a>, there are some issues you should consider:</p>
+<ul><li>
+<p>Each implementation of dbm has its own file format. Generally, dbm libraries will not read each other&#39;s files. This makes dbm files a bad choice for data exchange.</p>
+</li><li>
+<p>Even running the same OS and the same dbm implementation, the database file format may depend on the CPU architecture. For example, files may not be portable between PowerPC and 386, or between 32 and 64 bit Linux.</p>
+</li><li>
+<p>Different versions of Berkeley DB use different file formats. A change to the OS may therefore break <a href="DBM.html"><code>DBM</code></a> access to existing files.</p>
+</li><li>
+<p>Data size limits vary between implementations. Original Berkeley DB was limited to 2GB of data. Dbm libraries also sometimes limit the total size of a key/value pair, and the total size of all the keys that hash to the same value. These limits can be as little as 512 bytes. That said, gdbm and recent versions of Berkeley DB do away with these limits.</p>
+</li></ul>
+
+<p>Given the above cautions, <a href="DBM.html"><code>DBM</code></a> is not a good choice for long term storage of important data. It is probably best used as a fast and easy alternative to a Hash for processing large amounts of data.</p>
+
+<h2 id="class-DBM-label-Example">Example<span><a href="#class-DBM-label-Example">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;dbm&#39;</span>
+<span class="ruby-identifier">db</span> = <span class="ruby-constant">DBM</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&#39;rfcs&#39;</span>, <span class="ruby-value">0666</span>, <span class="ruby-constant">DBM</span><span class="ruby-operator">::</span><span class="ruby-constant">WRCREAT</span>)
+<span class="ruby-identifier">db</span>[<span class="ruby-string">&#39;822&#39;</span>] = <span class="ruby-string">&#39;Standard for the Format of ARPA Internet Text Messages&#39;</span>
+<span class="ruby-identifier">db</span>[<span class="ruby-string">&#39;1123&#39;</span>] = <span class="ruby-string">&#39;Requirements for Internet Hosts - Application and Support&#39;</span>
+<span class="ruby-identifier">db</span>[<span class="ruby-string">&#39;3068&#39;</span>] = <span class="ruby-string">&#39;An Anycast Prefix for 6to4 Relay Routers&#39;</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">db</span>[<span class="ruby-string">&#39;822&#39;</span>]
+</pre>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="NEWDB">NEWDB</a></dt>
+          
+          <dd class="description"><p>Indicates that dbm_open() should open the database in read/write mode, create it if it does not already exist, and delete all contents if it does already exist.</p></dd>
+          
+        
+          <dt><a name="READER">READER</a></dt>
+          
+          <dd class="description"><p>Indicates that dbm_open() should open the database in read-only mode</p></dd>
+          
+        
+          <dt><a name="VERSION">VERSION</a></dt>
+          
+          <dd class="description"><p>Identifies ndbm library version.</p>
+
+<p>Examples:</p>
+<ul><li>
+<p>“ndbm (4.3BSD)”</p>
+</li><li>
+<p>“Berkeley DB 4.8.30: (April  9, 2010)”</p>
+</li><li>
+<p>“Berkeley DB (unknown)” (4.4BSD, maybe)</p>
+</li><li>
+<p>“GDBM version 1.8.3. 10/15/2002 (built Jul  1 2011 12:32:45)”</p>
+</li><li>
+<p>“QDBM 1.8.78”</p>
+</li></ul></dd>
+          
+        
+          <dt><a name="WRCREAT">WRCREAT</a></dt>
+          
+          <dd class="description"><p>Indicates that dbm_open() should open the database in read/write mode, and create it if it does not already exist</p></dd>
+          
+        
+          <dt><a name="WRITER">WRITER</a></dt>
+          
+          <dd class="description"><p>Indicates that dbm_open() should open the database in read/write mode</p></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">new(filename[, mode[, flags]]) &rarr; dbm</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Open a dbm database with the specified name, which can include a directory path. Any file extensions needed will be supplied automatically by the dbm library. For example, Berkeley DB appends &#39;.db&#39;, and GNU gdbm uses two physical files with extensions &#39;.dir&#39; and &#39;.pag&#39;.</p>
+
+<p>The mode should be an integer, as for Unix chmod.</p>
+
+<p>Flags should be one of <a href="DBM.html#READER"><code>READER</code></a>, <a href="DBM.html#WRITER"><code>WRITER</code></a>, <a href="DBM.html#WRCREAT"><code>WRCREAT</code></a> or <a href="DBM.html#NEWDB"><code>NEWDB</code></a>.</p>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_initialize(int argc, VALUE *argv, VALUE obj)
+{
+    VALUE file, vmode, vflags;
+    DBM *dbm;
+    struct dbmdata *dbmp;
+    int mode, flags = 0;
+
+    TypedData_Get_Struct(obj, struct dbmdata, &amp;dbm_type, dbmp);
+    if (rb_scan_args(argc, argv, &quot;12&quot;, &amp;file, &amp;vmode, &amp;vflags) == 1) {
+        mode = 0666;           /* default value */
+    }
+    else if (NIL_P(vmode)) {
+        mode = -1;             /* return nil if DB not exist */
+    }
+    else {
+        mode = NUM2INT(vmode);
+    }
+
+    if (!NIL_P(vflags))
+        flags = NUM2INT(vflags);
+
+    FilePathValue(file);
+
+    /*
+     * Note:
+     * gdbm 1.10 works with O_CLOEXEC.  gdbm 1.9.1 silently ignore it.
+     */
+#ifndef O_CLOEXEC
+#   define O_CLOEXEC 0
+#endif
+
+    if (flags &amp; RUBY_DBM_RW_BIT) {
+        flags &amp;= ~RUBY_DBM_RW_BIT;
+        dbm = dbm_open(RSTRING_PTR(file), flags|O_CLOEXEC, mode);
+    }
+    else {
+        dbm = 0;
+        if (mode &gt;= 0) {
+            dbm = dbm_open(RSTRING_PTR(file), O_RDWR|O_CREAT|O_CLOEXEC, mode);
+        }
+        if (!dbm) {
+            dbm = dbm_open(RSTRING_PTR(file), O_RDWR|O_CLOEXEC, 0);
+        }
+        if (!dbm) {
+            dbm = dbm_open(RSTRING_PTR(file), O_RDONLY|O_CLOEXEC, 0);
+        }
+    }
+
+    if (dbm) {
+        /*
+         * History of dbm_pagfno() and dbm_dirfno() in ndbm and its compatibles.
+         * (dbm_pagfno() and dbm_dirfno() is not standardized.)
+         *
+         * 1986: 4.3BSD provides ndbm.
+         *       It provides dbm_pagfno() and dbm_dirfno() as macros.
+         * 1991: gdbm-1.5 provides them as functions.
+         *       They returns a same descriptor.
+         *       (Earlier releases may have the functions too.)
+         * 1991: Net/2 provides Berkeley DB.
+         *       It doesn&#39;t provide dbm_pagfno() and dbm_dirfno().
+         * 1992: 4.4BSD Alpha provides Berkeley DB with dbm_dirfno() as a function.
+         *       dbm_pagfno() is a macro as DBM_PAGFNO_NOT_AVAILABLE.
+         * 1997: Berkeley DB 2.0 is released by Sleepycat Software, Inc.
+         *       It defines dbm_pagfno() and dbm_dirfno() as macros.
+         * 2011: gdbm-1.9 creates a separate dir file.
+         *       dbm_pagfno() and dbm_dirfno() returns different descriptors.
+         */
+#if defined(HAVE_DBM_PAGFNO)
+        rb_fd_fix_cloexec(dbm_pagfno(dbm));
+#endif
+#if defined(HAVE_DBM_DIRFNO)
+        rb_fd_fix_cloexec(dbm_dirfno(dbm));
+#endif
+
+#if defined(RUBYDBM_DB_HEADER) &amp;&amp; defined(HAVE_TYPE_DBC)
+        /* Disable Berkeley DB error messages such as:
+         * DB-&gt;put: attempt to modify a read-only database */
+        ((DBC*)dbm)-&gt;dbp-&gt;set_errfile(((DBC*)dbm)-&gt;dbp, NULL);
+#endif
+    }
+
+    if (!dbm) {
+        if (mode == -1) return Qnil;
+        rb_sys_fail_str(file);
+    }
+
+    if (dbmp-&gt;di_dbm)
+        dbm_close(dbmp-&gt;di_dbm);
+    dbmp-&gt;di_dbm = dbm;
+    dbmp-&gt;di_size = -1;
+
+    return obj;
+}
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+        <div id="open-method" class="method-detail ">
+          <a name="method-c-open"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">open(filename[, mode[, flags]]) &rarr; dbm</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">open(filename[, mode[, flags]]) {|dbm| block}</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Open a dbm database and yields it if a block is given. See also <code>DBM.new</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="open-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_s_open(int argc, VALUE *argv, VALUE klass)
+{
+    VALUE obj = fdbm_alloc(klass);
+
+    if (NIL_P(fdbm_initialize(argc, argv, obj))) {
+        return Qnil;
+    }
+
+    if (rb_block_given_p()) {
+        return rb_ensure(rb_yield, obj, fdbm_close, obj);
+    }
+
+    return obj;
+}
+            </pre> 
+            </div><!-- open-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- open-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="5B-5D-method" class="method-detail ">
+          <a name="method-i-5B-5D"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">dbm[key] &rarr; string value or nil</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Return a value from the database by locating the key string provided.  If the key is not found, returns nil.</p>
+            
+
+            
+            <div class="method-source-code" id="5B-5D-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_aref(VALUE obj, VALUE keystr)
+{
+    return fdbm_fetch(obj, keystr, Qnil);
+}
+            </pre> 
+            </div><!-- 5B-5D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 5B-5D-method -->
+      
+        <div id="5B-5D-3D-method" class="method-detail ">
+          <a name="method-i-5B-5D-3D"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">dbm[key] = value</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Stores the specified string value in the database, indexed via the string key provided.</p>
+            
+
+            
+            <div class="method-source-code" id="5B-5D-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_store(VALUE obj, VALUE keystr, VALUE valstr)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+
+    fdbm_modify(obj);
+    keystr = rb_obj_as_string(keystr);
+    valstr = rb_obj_as_string(valstr);
+
+    key.dptr = RSTRING_PTR(keystr);
+    key.dsize = RSTRING_DSIZE(keystr);
+
+    val.dptr = RSTRING_PTR(valstr);
+    val.dsize = RSTRING_DSIZE(valstr);
+
+    GetDBM2(obj, dbmp, dbm);
+    dbmp-&gt;di_size = -1;
+    if (dbm_store(dbm, key, val, DBM_REPLACE)) {
+        dbm_clearerr(dbm);
+        if (errno == EPERM) rb_sys_fail(0);
+        rb_raise(rb_eDBMError, &quot;dbm_store failed&quot;);
+    }
+
+    return valstr;
+}
+            </pre> 
+            </div><!-- 5B-5D-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 5B-5D-3D-method -->
+      
+        <div id="clear-method" class="method-detail ">
+          <a name="method-i-clear"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">clear</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Deletes all data from the database.</p>
+            
+
+            
+            <div class="method-source-code" id="clear-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_clear(VALUE obj)
+{
+    datum key;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+
+    fdbm_modify(obj);
+    GetDBM2(obj, dbmp, dbm);
+    dbmp-&gt;di_size = -1;
+    while (key = dbm_firstkey(dbm), key.dptr) {
+        if (dbm_delete(dbm, key)) {
+            rb_raise(rb_eDBMError, &quot;dbm_delete failed&quot;);
+        }
+    }
+    dbmp-&gt;di_size = 0;
+
+    return obj;
+}
+            </pre> 
+            </div><!-- clear-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- clear-method -->
+      
+        <div id="close-method" class="method-detail ">
+          <a name="method-i-close"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">close</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Closes the database.</p>
+            
+
+            
+            <div class="method-source-code" id="close-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_close(VALUE obj)
+{
+    struct dbmdata *dbmp;
+
+    GetDBM(obj, dbmp);
+    dbm_close(dbmp-&gt;di_dbm);
+    dbmp-&gt;di_dbm = 0;
+
+    return Qnil;
+}
+            </pre> 
+            </div><!-- close-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- close-method -->
+      
+        <div id="closed-3F-method" class="method-detail ">
+          <a name="method-i-closed-3F"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">closed? &rarr; true or false</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns true if the database is closed, false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="closed-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_closed(VALUE obj)
+{
+    struct dbmdata *dbmp;
+
+    TypedData_Get_Struct(obj, struct dbmdata, &amp;dbm_type, dbmp);
+    if (dbmp-&gt;di_dbm == 0)
+        return Qtrue;
+
+    return Qfalse;
+}
+            </pre> 
+            </div><!-- closed-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- closed-3F-method -->
+      
+        <div id="delete-method" class="method-detail ">
+          <a name="method-i-delete"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">delete(key)</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Deletes an entry from the database.</p>
+            
+
+            
+            <div class="method-source-code" id="delete-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_delete(VALUE obj, VALUE keystr)
+{
+    datum key, value;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    VALUE valstr;
+    long len;
+
+    fdbm_modify(obj);
+    ExportStringValue(keystr);
+    len = RSTRING_LEN(keystr);
+    if (TOO_LONG(len)) goto not_found;
+    key.dptr = RSTRING_PTR(keystr);
+    key.dsize = (DSIZE_TYPE)len;
+
+    GetDBM2(obj, dbmp, dbm);
+
+    value = dbm_fetch(dbm, key);
+    if (value.dptr == 0) {
+      not_found:
+        if (rb_block_given_p()) return rb_yield(keystr);
+        return Qnil;
+    }
+
+    /* need to save value before dbm_delete() */
+    valstr = rb_str_new(value.dptr, value.dsize);
+
+    if (dbm_delete(dbm, key)) {
+        dbmp-&gt;di_size = -1;
+        rb_raise(rb_eDBMError, &quot;dbm_delete failed&quot;);
+    }
+    else if (dbmp-&gt;di_size &gt;= 0) {
+        dbmp-&gt;di_size--;
+    }
+    return valstr;
+}
+            </pre> 
+            </div><!-- delete-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- delete-method -->
+      
+        <div id="delete_if-method" class="method-detail ">
+          <a name="method-i-delete_if"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">delete_if {|key, value| block} &rarr; self</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Deletes all entries for which the code block returns true. Returns self.</p>
+            
+
+            
+            <div class="method-source-code" id="delete_if-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_delete_if(VALUE obj)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    VALUE keystr, valstr;
+    VALUE ret, ary = rb_ary_tmp_new(0);
+    int status = 0;
+    long i, n;
+
+    fdbm_modify(obj);
+    GetDBM2(obj, dbmp, dbm);
+    n = dbmp-&gt;di_size;
+    dbmp-&gt;di_size = -1;
+
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+        val = dbm_fetch(dbm, key);
+        keystr = rb_str_new(key.dptr, key.dsize);
+        OBJ_FREEZE(keystr);
+        valstr = rb_str_new(val.dptr, val.dsize);
+        ret = rb_protect(rb_yield, rb_assoc_new(rb_str_dup(keystr), valstr), &amp;status);
+        if (status != 0) break;
+        if (RTEST(ret)) rb_ary_push(ary, keystr);
+        GetDBM2(obj, dbmp, dbm);
+    }
+
+    for (i = 0; i &lt; RARRAY_LEN(ary); i++) {
+        keystr = RARRAY_AREF(ary, i);
+        key.dptr = RSTRING_PTR(keystr);
+        key.dsize = (DSIZE_TYPE)RSTRING_LEN(keystr);
+        if (dbm_delete(dbm, key)) {
+            rb_raise(rb_eDBMError, &quot;dbm_delete failed&quot;);
+        }
+    }
+    if (status) rb_jump_tag(status);
+    if (n &gt; 0) dbmp-&gt;di_size = n - RARRAY_LEN(ary);
+    rb_ary_clear(ary);
+
+    return obj;
+}
+            </pre> 
+            </div><!-- delete_if-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- delete_if-method -->
+      
+        <div id="each-method" class="method-detail ">
+          <a name="method-i-each"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">each_pair {|key,value| block} &rarr; self</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Calls the block once for each [key, value] pair in the database. Returns self.</p>
+            
+
+            
+            <div class="method-source-code" id="each-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_each_pair(VALUE obj)
+{
+    datum key, val;
+    DBM *dbm;
+    struct dbmdata *dbmp;
+    VALUE keystr, valstr;
+
+    RETURN_ENUMERATOR(obj, 0, 0);
+
+    GetDBM2(obj, dbmp, dbm);
+
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+        val = dbm_fetch(dbm, key);
+        keystr = rb_str_new(key.dptr, key.dsize);
+        valstr = rb_str_new(val.dptr, val.dsize);
+        rb_yield(rb_assoc_new(keystr, valstr));
+        GetDBM2(obj, dbmp, dbm);
+    }
+
+    return obj;
+}
+            </pre> 
+            </div><!-- each-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- each-method -->
+      
+        <div id="each_key-method" class="method-detail ">
+          <a name="method-i-each_key"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">each_key {|key| block} &rarr; self</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Calls the block once for each key string in the database. Returns self.</p>
+            
+
+            
+            <div class="method-source-code" id="each_key-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_each_key(VALUE obj)
+{
+    datum key;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+
+    RETURN_ENUMERATOR(obj, 0, 0);
+
+    GetDBM2(obj, dbmp, dbm);
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+        rb_yield(rb_str_new(key.dptr, key.dsize));
+        GetDBM2(obj, dbmp, dbm);
+    }
+    return obj;
+}
+            </pre> 
+            </div><!-- each_key-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- each_key-method -->
+      
+        <div id="each_pair-method" class="method-detail ">
+          <a name="method-i-each_pair"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">each_pair {|key,value| block} &rarr; self</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Calls the block once for each [key, value] pair in the database. Returns self.</p>
+            
+
+            
+            <div class="method-source-code" id="each_pair-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_each_pair(VALUE obj)
+{
+    datum key, val;
+    DBM *dbm;
+    struct dbmdata *dbmp;
+    VALUE keystr, valstr;
+
+    RETURN_ENUMERATOR(obj, 0, 0);
+
+    GetDBM2(obj, dbmp, dbm);
+
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+        val = dbm_fetch(dbm, key);
+        keystr = rb_str_new(key.dptr, key.dsize);
+        valstr = rb_str_new(val.dptr, val.dsize);
+        rb_yield(rb_assoc_new(keystr, valstr));
+        GetDBM2(obj, dbmp, dbm);
+    }
+
+    return obj;
+}
+            </pre> 
+            </div><!-- each_pair-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- each_pair-method -->
+      
+        <div id="each_value-method" class="method-detail ">
+          <a name="method-i-each_value"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">each_value {|value| block} &rarr; self</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Calls the block once for each value string in the database. Returns self.</p>
+            
+
+            
+            <div class="method-source-code" id="each_value-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_each_value(VALUE obj)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+
+    RETURN_ENUMERATOR(obj, 0, 0);
+
+    GetDBM2(obj, dbmp, dbm);
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+        val = dbm_fetch(dbm, key);
+        rb_yield(rb_str_new(val.dptr, val.dsize));
+        GetDBM2(obj, dbmp, dbm);
+    }
+    return obj;
+}
+            </pre> 
+            </div><!-- each_value-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- each_value-method -->
+      
+        <div id="empty-3F-method" class="method-detail ">
+          <a name="method-i-empty-3F"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">empty?</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns true if the database is empty, false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="empty-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_empty_p(VALUE obj)
+{
+    datum key;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+
+    GetDBM2(obj, dbmp, dbm);
+    if (dbmp-&gt;di_size &lt; 0) {
+        dbm = dbmp-&gt;di_dbm;
+
+        for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+            return Qfalse;
+        }
+    }
+    else {
+        if (dbmp-&gt;di_size)
+            return Qfalse;
+    }
+    return Qtrue;
+}
+            </pre> 
+            </div><!-- empty-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- empty-3F-method -->
+      
+        <div id="fetch-method" class="method-detail ">
+          <a name="method-i-fetch"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">fetch(key[, ifnone]) &rarr; value</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Return a value from the database by locating the key string provided.  If the key is not found, returns <code>ifnone</code>. If <code>ifnone</code> is not given, raises IndexError.</p>
+            
+
+            
+            <div class="method-source-code" id="fetch-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_fetch_m(int argc, VALUE *argv, VALUE obj)
+{
+    VALUE keystr, valstr, ifnone;
+
+    rb_scan_args(argc, argv, &quot;11&quot;, &amp;keystr, &amp;ifnone);
+    valstr = fdbm_fetch(obj, keystr, ifnone);
+    if (argc == 1 &amp;&amp; !rb_block_given_p() &amp;&amp; NIL_P(valstr))
+        rb_raise(rb_eIndexError, &quot;key not found&quot;);
+
+    return valstr;
+}
+            </pre> 
+            </div><!-- fetch-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- fetch-method -->
+      
+        <div id="has_key-3F-method" class="method-detail ">
+          <a name="method-i-has_key-3F"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">has_key?(key) &rarr; boolean</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns true if the database contains the specified key, false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="has_key-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_has_key(VALUE obj, VALUE keystr)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    long len;
+
+    ExportStringValue(keystr);
+    len = RSTRING_LEN(keystr);
+    if (TOO_LONG(len)) return Qfalse;
+    key.dptr = RSTRING_PTR(keystr);
+    key.dsize = (DSIZE_TYPE)len;
+
+    GetDBM2(obj, dbmp, dbm);
+    val = dbm_fetch(dbm, key);
+    if (val.dptr) return Qtrue;
+    return Qfalse;
+}
+            </pre> 
+            </div><!-- has_key-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- has_key-3F-method -->
+      
+        <div id="has_value-3F-method" class="method-detail ">
+          <a name="method-i-has_value-3F"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">has_value?(value) &rarr; boolean</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns true if the database contains the specified string value, false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="has_value-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_has_value(VALUE obj, VALUE valstr)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    long len;
+
+    ExportStringValue(valstr);
+    len = RSTRING_LEN(valstr);
+    if (TOO_LONG(len)) return Qfalse;
+    val.dptr = RSTRING_PTR(valstr);
+    val.dsize = (DSIZE_TYPE)len;
+
+    GetDBM2(obj, dbmp, dbm);
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+        val = dbm_fetch(dbm, key);
+        if ((DSIZE_TYPE)val.dsize == (DSIZE_TYPE)RSTRING_LEN(valstr) &amp;&amp;
+            memcmp(val.dptr, RSTRING_PTR(valstr), val.dsize) == 0)
+            return Qtrue;
+    }
+    return Qfalse;
+}
+            </pre> 
+            </div><!-- has_value-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- has_value-3F-method -->
+      
+        <div id="include-3F-method" class="method-detail ">
+          <a name="method-i-include-3F"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">include?(key) &rarr; boolean</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns true if the database contains the specified key, false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="include-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_has_key(VALUE obj, VALUE keystr)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    long len;
+
+    ExportStringValue(keystr);
+    len = RSTRING_LEN(keystr);
+    if (TOO_LONG(len)) return Qfalse;
+    key.dptr = RSTRING_PTR(keystr);
+    key.dsize = (DSIZE_TYPE)len;
+
+    GetDBM2(obj, dbmp, dbm);
+    val = dbm_fetch(dbm, key);
+    if (val.dptr) return Qtrue;
+    return Qfalse;
+}
+            </pre> 
+            </div><!-- include-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- include-3F-method -->
+      
+        <div id="invert-method" class="method-detail ">
+          <a name="method-i-invert"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">invert &rarr; hash</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns a Hash (not a <a href="DBM.html"><code>DBM</code></a> database) created by using each value in the database as a key, with the corresponding key as its value.</p>
+            
+
+            
+            <div class="method-source-code" id="invert-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_invert(VALUE obj)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    VALUE keystr, valstr;
+    VALUE hash = rb_hash_new();
+
+    GetDBM2(obj, dbmp, dbm);
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+        val = dbm_fetch(dbm, key);
+        keystr = rb_str_new(key.dptr, key.dsize);
+        valstr = rb_str_new(val.dptr, val.dsize);
+        rb_hash_aset(hash, valstr, keystr);
+    }
+    return hash;
+}
+            </pre> 
+            </div><!-- invert-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- invert-method -->
+      
+        <div id="key-method" class="method-detail ">
+          <a name="method-i-key"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">key(value) &rarr; string</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns the key for the specified value.</p>
+            
+
+            
+            <div class="method-source-code" id="key-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_key(VALUE obj, VALUE valstr)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    long len;
+
+    ExportStringValue(valstr);
+    len = RSTRING_LEN(valstr);
+    if (TOO_LONG(len)) return Qnil;
+
+    GetDBM2(obj, dbmp, dbm);
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+        val = dbm_fetch(dbm, key);
+        if ((long)val.dsize == RSTRING_LEN(valstr) &amp;&amp;
+            memcmp(val.dptr, RSTRING_PTR(valstr), val.dsize) == 0) {
+            return rb_str_new(key.dptr, key.dsize);
+        }
+    }
+    return Qnil;
+}
+            </pre> 
+            </div><!-- key-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- key-method -->
+      
+        <div id="key-3F-method" class="method-detail ">
+          <a name="method-i-key-3F"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">key?(key) &rarr; boolean</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns true if the database contains the specified key, false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="key-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_has_key(VALUE obj, VALUE keystr)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    long len;
+
+    ExportStringValue(keystr);
+    len = RSTRING_LEN(keystr);
+    if (TOO_LONG(len)) return Qfalse;
+    key.dptr = RSTRING_PTR(keystr);
+    key.dsize = (DSIZE_TYPE)len;
+
+    GetDBM2(obj, dbmp, dbm);
+    val = dbm_fetch(dbm, key);
+    if (val.dptr) return Qtrue;
+    return Qfalse;
+}
+            </pre> 
+            </div><!-- key-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- key-3F-method -->
+      
+        <div id="keys-method" class="method-detail ">
+          <a name="method-i-keys"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">keys &rarr; array</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns an array of all the string keys in the database.</p>
+            
+
+            
+            <div class="method-source-code" id="keys-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_keys(VALUE obj)
+{
+    datum key;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    VALUE ary;
+
+    GetDBM2(obj, dbmp, dbm);
+
+    ary = rb_ary_new();
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+        rb_ary_push(ary, rb_str_new(key.dptr, key.dsize));
+    }
+
+    return ary;
+}
+            </pre> 
+            </div><!-- keys-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- keys-method -->
+      
+        <div id="length-method" class="method-detail ">
+          <a name="method-i-length"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">length &rarr; integer</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns the number of entries in the database.</p>
+            
+
+            
+            <div class="method-source-code" id="length-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_length(VALUE obj)
+{
+    datum key;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    int i = 0;
+
+    GetDBM2(obj, dbmp, dbm);
+    if (dbmp-&gt;di_size &gt; 0) return INT2FIX(dbmp-&gt;di_size);
+
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+        i++;
+    }
+    dbmp-&gt;di_size = i;
+
+    return INT2FIX(i);
+}
+            </pre> 
+            </div><!-- length-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- length-method -->
+      
+        <div id="member-3F-method" class="method-detail ">
+          <a name="method-i-member-3F"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">member?(key) &rarr; boolean</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns true if the database contains the specified key, false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="member-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_has_key(VALUE obj, VALUE keystr)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    long len;
+
+    ExportStringValue(keystr);
+    len = RSTRING_LEN(keystr);
+    if (TOO_LONG(len)) return Qfalse;
+    key.dptr = RSTRING_PTR(keystr);
+    key.dsize = (DSIZE_TYPE)len;
+
+    GetDBM2(obj, dbmp, dbm);
+    val = dbm_fetch(dbm, key);
+    if (val.dptr) return Qtrue;
+    return Qfalse;
+}
+            </pre> 
+            </div><!-- member-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- member-3F-method -->
+      
+        <div id="reject-method" class="method-detail ">
+          <a name="method-i-reject"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">reject {|key,value| block} &rarr; Hash</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Converts the contents of the database to an in-memory Hash, then calls Hash#reject with the specified code block, returning a new Hash.</p>
+            
+
+            
+            <div class="method-source-code" id="reject-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_reject(VALUE obj)
+{
+    return rb_hash_delete_if(fdbm_to_hash(obj));
+}
+            </pre> 
+            </div><!-- reject-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- reject-method -->
+      
+        <div id="reject-21-method" class="method-detail ">
+          <a name="method-i-reject-21"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">reject! {|key, value| block} &rarr; self</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Deletes all entries for which the code block returns true. Returns self.</p>
+            
+
+            
+            <div class="method-source-code" id="reject-21-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_delete_if(VALUE obj)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    VALUE keystr, valstr;
+    VALUE ret, ary = rb_ary_tmp_new(0);
+    int status = 0;
+    long i, n;
+
+    fdbm_modify(obj);
+    GetDBM2(obj, dbmp, dbm);
+    n = dbmp-&gt;di_size;
+    dbmp-&gt;di_size = -1;
+
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+        val = dbm_fetch(dbm, key);
+        keystr = rb_str_new(key.dptr, key.dsize);
+        OBJ_FREEZE(keystr);
+        valstr = rb_str_new(val.dptr, val.dsize);
+        ret = rb_protect(rb_yield, rb_assoc_new(rb_str_dup(keystr), valstr), &amp;status);
+        if (status != 0) break;
+        if (RTEST(ret)) rb_ary_push(ary, keystr);
+        GetDBM2(obj, dbmp, dbm);
+    }
+
+    for (i = 0; i &lt; RARRAY_LEN(ary); i++) {
+        keystr = RARRAY_AREF(ary, i);
+        key.dptr = RSTRING_PTR(keystr);
+        key.dsize = (DSIZE_TYPE)RSTRING_LEN(keystr);
+        if (dbm_delete(dbm, key)) {
+            rb_raise(rb_eDBMError, &quot;dbm_delete failed&quot;);
+        }
+    }
+    if (status) rb_jump_tag(status);
+    if (n &gt; 0) dbmp-&gt;di_size = n - RARRAY_LEN(ary);
+    rb_ary_clear(ary);
+
+    return obj;
+}
+            </pre> 
+            </div><!-- reject-21-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- reject-21-method -->
+      
+        <div id="replace-method" class="method-detail ">
+          <a name="method-i-replace"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">replace(obj)</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Replaces the contents of the database with the contents of the specified object. Takes any object which implements the <a href="DBM.html#method-i-each_pair"><code>each_pair</code></a> method, including Hash and <a href="DBM.html"><code>DBM</code></a> objects.</p>
+            
+
+            
+            <div class="method-source-code" id="replace-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_replace(VALUE obj, VALUE other)
+{
+    fdbm_clear(obj);
+    rb_block_call(other, rb_intern(&quot;each_pair&quot;), 0, 0, update_i, obj);
+    return obj;
+}
+            </pre> 
+            </div><!-- replace-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- replace-method -->
+      
+        <div id="select-method" class="method-detail ">
+          <a name="method-i-select"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">select {|key, value| block} &rarr; array</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns a new array consisting of the [key, value] pairs for which the code block returns true.</p>
+            
+
+            
+            <div class="method-source-code" id="select-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_select(VALUE obj)
+{
+    VALUE new = rb_ary_new();
+    datum key, val;
+    DBM *dbm;
+    struct dbmdata *dbmp;
+
+    GetDBM2(obj, dbmp, dbm);
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+        VALUE assoc, v;
+        val = dbm_fetch(dbm, key);
+        assoc = rb_assoc_new(rb_str_new(key.dptr, key.dsize),
+                             rb_str_new(val.dptr, val.dsize));
+        v = rb_yield(assoc);
+        if (RTEST(v)) {
+            rb_ary_push(new, assoc);
+        }
+        GetDBM2(obj, dbmp, dbm);
+    }
+
+    return new;
+}
+            </pre> 
+            </div><!-- select-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- select-method -->
+      
+        <div id="shift-method" class="method-detail ">
+          <a name="method-i-shift"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">shift() &rarr; [key, value]</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Removes a [key, value] pair from the database, and returns it. If the database is empty, returns nil. The order in which values are removed/returned is not guaranteed.</p>
+            
+
+            
+            <div class="method-source-code" id="shift-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_shift(VALUE obj)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    VALUE keystr, valstr;
+
+    fdbm_modify(obj);
+    GetDBM2(obj, dbmp, dbm);
+    dbmp-&gt;di_size = -1;
+
+    key = dbm_firstkey(dbm);
+    if (!key.dptr) return Qnil;
+    val = dbm_fetch(dbm, key);
+    keystr = rb_str_new(key.dptr, key.dsize);
+    valstr = rb_str_new(val.dptr, val.dsize);
+    dbm_delete(dbm, key);
+
+    return rb_assoc_new(keystr, valstr);
+}
+            </pre> 
+            </div><!-- shift-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- shift-method -->
+      
+        <div id="size-method" class="method-detail ">
+          <a name="method-i-size"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">size &rarr; integer</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns the number of entries in the database.</p>
+            
+
+            
+            <div class="method-source-code" id="size-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_length(VALUE obj)
+{
+    datum key;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    int i = 0;
+
+    GetDBM2(obj, dbmp, dbm);
+    if (dbmp-&gt;di_size &gt; 0) return INT2FIX(dbmp-&gt;di_size);
+
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+        i++;
+    }
+    dbmp-&gt;di_size = i;
+
+    return INT2FIX(i);
+}
+            </pre> 
+            </div><!-- size-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- size-method -->
+      
+        <div id="store-method" class="method-detail ">
+          <a name="method-i-store"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">store(key, value) &rarr; value</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Stores the specified string value in the database, indexed via the string key provided.</p>
+            
+
+            
+            <div class="method-source-code" id="store-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_store(VALUE obj, VALUE keystr, VALUE valstr)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+
+    fdbm_modify(obj);
+    keystr = rb_obj_as_string(keystr);
+    valstr = rb_obj_as_string(valstr);
+
+    key.dptr = RSTRING_PTR(keystr);
+    key.dsize = RSTRING_DSIZE(keystr);
+
+    val.dptr = RSTRING_PTR(valstr);
+    val.dsize = RSTRING_DSIZE(valstr);
+
+    GetDBM2(obj, dbmp, dbm);
+    dbmp-&gt;di_size = -1;
+    if (dbm_store(dbm, key, val, DBM_REPLACE)) {
+        dbm_clearerr(dbm);
+        if (errno == EPERM) rb_sys_fail(0);
+        rb_raise(rb_eDBMError, &quot;dbm_store failed&quot;);
+    }
+
+    return valstr;
+}
+            </pre> 
+            </div><!-- store-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- store-method -->
+      
+        <div id="to_a-method" class="method-detail ">
+          <a name="method-i-to_a"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">to_a &rarr; array</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Converts the contents of the database to an array of [key, value] arrays, and returns it.</p>
+            
+
+            
+            <div class="method-source-code" id="to_a-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_to_a(VALUE obj)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    VALUE ary;
+
+    GetDBM2(obj, dbmp, dbm);
+    ary = rb_ary_new();
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+        val = dbm_fetch(dbm, key);
+        rb_ary_push(ary, rb_assoc_new(rb_str_new(key.dptr, key.dsize),
+                                      rb_str_new(val.dptr, val.dsize)));
+    }
+
+    return ary;
+}
+            </pre> 
+            </div><!-- to_a-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_a-method -->
+      
+        <div id="to_hash-method" class="method-detail ">
+          <a name="method-i-to_hash"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">to_hash &rarr; hash</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Converts the contents of the database to an in-memory Hash object, and returns it.</p>
+            
+
+            
+            <div class="method-source-code" id="to_hash-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_to_hash(VALUE obj)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    VALUE hash;
+
+    GetDBM2(obj, dbmp, dbm);
+    hash = rb_hash_new();
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+        val = dbm_fetch(dbm, key);
+        rb_hash_aset(hash, rb_str_new(key.dptr, key.dsize),
+                           rb_str_new(val.dptr, val.dsize));
+    }
+
+    return hash;
+}
+            </pre> 
+            </div><!-- to_hash-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_hash-method -->
+      
+        <div id="update-method" class="method-detail ">
+          <a name="method-i-update"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">update(obj)</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Updates the database with multiple values from the specified object. Takes any object which implements the <a href="DBM.html#method-i-each_pair"><code>each_pair</code></a> method, including Hash and <a href="DBM.html"><code>DBM</code></a> objects.</p>
+            
+
+            
+            <div class="method-source-code" id="update-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_update(VALUE obj, VALUE other)
+{
+    rb_block_call(other, rb_intern(&quot;each_pair&quot;), 0, 0, update_i, obj);
+    return obj;
+}
+            </pre> 
+            </div><!-- update-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- update-method -->
+      
+        <div id="value-3F-method" class="method-detail ">
+          <a name="method-i-value-3F"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">value?(value) &rarr; boolean</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns true if the database contains the specified string value, false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="value-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_has_value(VALUE obj, VALUE valstr)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    long len;
+
+    ExportStringValue(valstr);
+    len = RSTRING_LEN(valstr);
+    if (TOO_LONG(len)) return Qfalse;
+    val.dptr = RSTRING_PTR(valstr);
+    val.dsize = (DSIZE_TYPE)len;
+
+    GetDBM2(obj, dbmp, dbm);
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+        val = dbm_fetch(dbm, key);
+        if ((DSIZE_TYPE)val.dsize == (DSIZE_TYPE)RSTRING_LEN(valstr) &amp;&amp;
+            memcmp(val.dptr, RSTRING_PTR(valstr), val.dsize) == 0)
+            return Qtrue;
+    }
+    return Qfalse;
+}
+            </pre> 
+            </div><!-- value-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- value-3F-method -->
+      
+        <div id="values-method" class="method-detail ">
+          <a name="method-i-values"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">values &rarr; array</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns an array of all the string values in the database.</p>
+            
+
+            
+            <div class="method-source-code" id="values-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_values(VALUE obj)
+{
+    datum key, val;
+    struct dbmdata *dbmp;
+    DBM *dbm;
+    VALUE ary;
+
+    GetDBM2(obj, dbmp, dbm);
+    ary = rb_ary_new();
+    for (key = dbm_firstkey(dbm); key.dptr; key = dbm_nextkey(dbm)) {
+        val = dbm_fetch(dbm, key);
+        rb_ary_push(ary, rb_str_new(val.dptr, val.dsize));
+    }
+
+    return ary;
+}
+            </pre> 
+            </div><!-- values-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- values-method -->
+      
+        <div id="values_at-method" class="method-detail ">
+          <a name="method-i-values_at"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">values_at(key, ...) &rarr; Array</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns an array containing the values associated with the given keys.</p>
+            
+
+            
+            <div class="method-source-code" id="values_at-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+fdbm_values_at(int argc, VALUE *argv, VALUE obj)
+{
+    VALUE new = rb_ary_new2(argc);
+    int i;
+
+    for (i=0; i&lt;argc; i++) {
+        rb_ary_push(new, fdbm_fetch(obj, argv[i], Qnil));
+    }
+
+    return new;
+}
+            </pre> 
+            </div><!-- values_at-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- values_at-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_DBM_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_DBM_versioned").load("/associated/2.7.4/DBM.ihtml");</script> <div id='tx_DBM' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_DBM").load("/associated/DBM.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Maximum R+D</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_DBM.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_DBM.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

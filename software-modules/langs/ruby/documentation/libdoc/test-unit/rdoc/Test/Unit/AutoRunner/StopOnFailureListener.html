@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : Test::Unit::AutoRunner::StopOnFailureListener  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:33:02 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '../../..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '../../..'   asset_rel_prefix = '../../..'  --> 
+  <title>Class: Test::Unit::AutoRunner::StopOnFailureListener (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../../../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="../../..css/obf.css"  -->
+  <link rel="stylesheet" href="../../../css/inuit.css" >
+  <link rel="stylesheet" href="../../../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../../../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../../../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../../../css/carbon17.css" type="text/css" >
+
+
+  <script src="../../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../../../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../../index.html">Home</a>
+          <a href="../../../index.html#classes">Classes</a>
+          <a href="../../../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/autorunner.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="../../../Object.html">Object</a></p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-attach_to_mediator">#attach_to_mediator</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../../../Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="../../../Test.html">Test</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit.html">Test::Unit</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/AssertionFailedError.html">Test::Unit::AssertionFailedError</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Assertions.html">Test::Unit::Assertions</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Assertions/AssertExceptionHelper.html">Test::Unit::Assertions::AssertExceptionHelper</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Assertions/AssertExceptionHelper/WrappedException.html">Test::Unit::Assertions::AssertExceptionHelper::WrappedException</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Assertions/AssertionMessage.html">Test::Unit::Assertions::AssertionMessage</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Assertions/AssertionMessage/ArrayInspector.html">Test::Unit::Assertions::AssertionMessage::ArrayInspector</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Assertions/AssertionMessage/DelayedLiteral.html">Test::Unit::Assertions::AssertionMessage::DelayedLiteral</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Assertions/AssertionMessage/HashInspector.html">Test::Unit::Assertions::AssertionMessage::HashInspector</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Assertions/AssertionMessage/Inspector.html">Test::Unit::Assertions::AssertionMessage::Inspector</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Assertions/AssertionMessage/Literal.html">Test::Unit::Assertions::AssertionMessage::Literal</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Assertions/AssertionMessage/MaybeContainer.html">Test::Unit::Assertions::AssertionMessage::MaybeContainer</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Assertions/AssertionMessage/NumericInspector.html">Test::Unit::Assertions::AssertionMessage::NumericInspector</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Assertions/AssertionMessage/Template.html">Test::Unit::Assertions::AssertionMessage::Template</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Assertions/ThrowTagExtractor.html">Test::Unit::Assertions::ThrowTagExtractor</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Attribute.html">Test::Unit::Attribute</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Attribute/BaseClassMethods.html">Test::Unit::Attribute::BaseClassMethods</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Attribute/ClassMethods.html">Test::Unit::Attribute::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Attribute/StringifyKeyHash.html">Test::Unit::Attribute::StringifyKeyHash</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/AttributeMatcher.html">Test::Unit::AttributeMatcher</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/AutoRunner.html">Test::Unit::AutoRunner</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/AutoRunner/StopOnFailureListener.html">Test::Unit::AutoRunner::StopOnFailureListener</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/AutoRunnerLoader.html">Test::Unit::AutoRunnerLoader</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/CodeSnippetFetcher.html">Test::Unit::CodeSnippetFetcher</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Collector.html">Test::Unit::Collector</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Collector/Descendant.html">Test::Unit::Collector::Descendant</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Collector/Dir.html">Test::Unit::Collector::Dir</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Collector/Load.html">Test::Unit::Collector::Load</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Collector/ObjectSpace.html">Test::Unit::Collector::ObjectSpace</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Collector/XML.html">Test::Unit::Collector::XML</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Collector/XML/Listener.html">Test::Unit::Collector::XML::Listener</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Color.html">Test::Unit::Color</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Color/Error.html">Test::Unit::Color::Error</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Color/ParseError.html">Test::Unit::Color::ParseError</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/ColorScheme.html">Test::Unit::ColorScheme</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Data.html">Test::Unit::Data</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Data/ClassMethods.html">Test::Unit::Data::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Data/ClassMethods/Loader.html">Test::Unit::Data::ClassMethods::Loader</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/DataSets.html">Test::Unit::DataSets</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Diff.html">Test::Unit::Diff</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Diff/Differ.html">Test::Unit::Diff::Differ</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Diff/ReadableDiffer.html">Test::Unit::Diff::ReadableDiffer</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Diff/SequenceMatcher.html">Test::Unit::Diff::SequenceMatcher</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Diff/UTF8Line.html">Test::Unit::Diff::UTF8Line</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Diff/UnifiedDiffer.html">Test::Unit::Diff::UnifiedDiffer</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Error.html">Test::Unit::Error</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/ErrorHandler.html">Test::Unit::ErrorHandler</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/ExceptionHandler.html">Test::Unit::ExceptionHandler</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/ExceptionHandler/ClassMethods.html">Test::Unit::ExceptionHandler::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Failure.html">Test::Unit::Failure</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/FailureHandler.html">Test::Unit::FailureHandler</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/FaultLocationDetector.html">Test::Unit::FaultLocationDetector</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Fixture.html">Test::Unit::Fixture</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Fixture/ClassMethods.html">Test::Unit::Fixture::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Fixture/Fixture.html">Test::Unit::Fixture::Fixture</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Fixture/HookPoint.html">Test::Unit::Fixture::HookPoint</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/MixColor.html">Test::Unit::MixColor</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Notification.html">Test::Unit::Notification</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/NotificationHandler.html">Test::Unit::NotificationHandler</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/NotifiedError.html">Test::Unit::NotifiedError</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/NullResultContainerInitializer.html">Test::Unit::NullResultContainerInitializer</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Omission.html">Test::Unit::Omission</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/OmissionHandler.html">Test::Unit::OmissionHandler</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/OmittedError.html">Test::Unit::OmittedError</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/PendedError.html">Test::Unit::PendedError</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Pending.html">Test::Unit::Pending</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/PendingHandler.html">Test::Unit::PendingHandler</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Priority.html">Test::Unit::Priority</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Priority/Checker.html">Test::Unit::Priority::Checker</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Priority/ClassMethods.html">Test::Unit::Priority::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/TestCase.html">Test::Unit::TestCase</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/TestCase/InternalData.html">Test::Unit::TestCase::InternalData</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/TestCaseNotificationSupport.html">Test::Unit::TestCaseNotificationSupport</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/TestCaseOmissionSupport.html">Test::Unit::TestCaseOmissionSupport</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/TestCasePendingSupport.html">Test::Unit::TestCasePendingSupport</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/TestResult.html">Test::Unit::TestResult</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/TestResultErrorSupport.html">Test::Unit::TestResultErrorSupport</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/TestResultFailureSupport.html">Test::Unit::TestResultFailureSupport</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/TestResultNotificationSupport.html">Test::Unit::TestResultNotificationSupport</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/TestResultOmissionSupport.html">Test::Unit::TestResultOmissionSupport</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/TestResultPendingSupport.html">Test::Unit::TestResultPendingSupport</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/TestSuite.html">Test::Unit::TestSuite</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/UI.html">Test::Unit::UI</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/UI/Console.html">Test::Unit::UI::Console</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/UI/Console/ColorizedReadableDiffer.html">Test::Unit::UI::Console::ColorizedReadableDiffer</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/UI/Console/OutputLevel.html">Test::Unit::UI::Console::OutputLevel</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/UI/Console/TestRunner.html">Test::Unit::UI::Console::TestRunner</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/UI/Emacs.html">Test::Unit::UI::Emacs</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/UI/Emacs/TestRunner.html">Test::Unit::UI::Emacs::TestRunner</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/UI/TestRunner.html">Test::Unit::UI::TestRunner</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/UI/TestRunnerMediator.html">Test::Unit::UI::TestRunnerMediator</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/UI/TestRunnerUtilities.html">Test::Unit::UI::TestRunnerUtilities</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/UI/XML.html">Test::Unit::UI::XML</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/UI/XML/TestRunner.html">Test::Unit::UI::XML::TestRunner</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Util.html">Test::Unit::Util</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Util/BacktraceFilter.html">Test::Unit::Util::BacktraceFilter</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Util/MethodOwnerFinder.html">Test::Unit::Util::MethodOwnerFinder</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Util/Observable.html">Test::Unit::Util::Observable</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Util/Output.html">Test::Unit::Util::Output</a></li>
+        
+          
+          
+          <li><a href="../../../Test/Unit/Util/ProcWrapper.html">Test::Unit::Util::ProcWrapper</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">Test::Unit::AutoRunner::StopOnFailureListener</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="attach_to_mediator-method" class="method-detail ">
+          <a name="method-i-attach_to_mediator"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">attach_to_mediator</span><span
+              class="method-args">(mediator)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="attach_to_mediator-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File test-unit-3.3.4/lib/test/unit/autorunner.rb, line 525</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">attach_to_mediator</span>(<span class="ruby-identifier">mediator</span>)
+  <span class="ruby-identifier">mediator</span>.<span class="ruby-identifier">add_listener</span>(<span class="ruby-constant">TestResult</span><span class="ruby-operator">::</span><span class="ruby-constant">FINISHED</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">result</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">result</span>.<span class="ruby-identifier">stop</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">passed?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- attach_to_mediator-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- attach_to_mediator-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_StopOnFailureListener_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_StopOnFailureListener_versioned").load("/associated/2.7.4/StopOnFailureListener.ihtml");</script> <div id='tx_StopOnFailureListener' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_StopOnFailureListener").load("/associated/StopOnFailureListener.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Maximum R+D</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_StopOnFailureListener.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_StopOnFailureListener.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

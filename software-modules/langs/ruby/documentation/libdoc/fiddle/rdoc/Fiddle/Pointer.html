@@ -1,0 +1,1687 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : Fiddle::Pointer  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:20:23 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '..'   asset_rel_prefix = '..'  --> 
+  <title>Class: Fiddle::Pointer (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="..css/obf.css"  -->
+  <link rel="stylesheet" href="../css/inuit.css" >
+  <link rel="stylesheet" href="../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../css/carbon17.css" type="text/css" >
+
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>fiddle/closure.c</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-5B-5D">::[]</a></li>
+          
+          <li><a href="#method-c-malloc">::malloc</a></li>
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-c-to_ptr">::to_ptr</a></li>
+          
+          <li><a href="#method-i-2B">#+</a></li>
+          
+          <li><a href="#method-i-2B-40">#+@</a></li>
+          
+          <li><a href="#method-i-2D">#-</a></li>
+          
+          <li><a href="#method-i-2D-40">#-@</a></li>
+          
+          <li><a href="#method-i-3C-3D-3E">#<=></a></li>
+          
+          <li><a href="#method-i-3D-3D">#==</a></li>
+          
+          <li><a href="#method-i-5B-5D">#[]</a></li>
+          
+          <li><a href="#method-i-5B-5D-3D">#[]=</a></li>
+          
+          <li><a href="#method-i-eql-3F">#eql?</a></li>
+          
+          <li><a href="#method-i-free">#free</a></li>
+          
+          <li><a href="#method-i-free-3D">#free=</a></li>
+          
+          <li><a href="#method-i-inspect">#inspect</a></li>
+          
+          <li><a href="#method-i-null-3F">#null?</a></li>
+          
+          <li><a href="#method-i-ptr">#ptr</a></li>
+          
+          <li><a href="#method-i-ref">#ref</a></li>
+          
+          <li><a href="#method-i-size">#size</a></li>
+          
+          <li><a href="#method-i-size-3D">#size=</a></li>
+          
+          <li><a href="#method-i-to_i">#to_i</a></li>
+          
+          <li><a href="#method-i-to_int">#to_int</a></li>
+          
+          <li><a href="#method-i-to_s">#to_s</a></li>
+          
+          <li><a href="#method-i-to_str">#to_str</a></li>
+          
+          <li><a href="#method-i-to_value">#to_value</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../Fiddle.html">Fiddle</a></li>
+        
+          
+          
+          <li><a href="../Fiddle/BasicTypes.html">Fiddle::BasicTypes</a></li>
+        
+          
+          
+          <li><a href="../Fiddle/CParser.html">Fiddle::CParser</a></li>
+        
+          
+          
+          <li><a href="../Fiddle/CStruct.html">Fiddle::CStruct</a></li>
+        
+          
+          
+          <li><a href="../Fiddle/CStructBuilder.html">Fiddle::CStructBuilder</a></li>
+        
+          
+          
+          <li><a href="../Fiddle/CStructEntity.html">Fiddle::CStructEntity</a></li>
+        
+          
+          
+          <li><a href="../Fiddle/CUnion.html">Fiddle::CUnion</a></li>
+        
+          
+          
+          <li><a href="../Fiddle/CUnionEntity.html">Fiddle::CUnionEntity</a></li>
+        
+          
+          
+          <li><a href="../Fiddle/Closure.html">Fiddle::Closure</a></li>
+        
+          
+          
+          <li><a href="../Fiddle/Closure/BlockCaller.html">Fiddle::Closure::BlockCaller</a></li>
+        
+          
+          
+          <li><a href="../Fiddle/CompositeHandler.html">Fiddle::CompositeHandler</a></li>
+        
+          
+          
+          <li><a href="../Fiddle/DLError.html">Fiddle::DLError</a></li>
+        
+          
+          
+          <li><a href="../Fiddle/Function.html">Fiddle::Function</a></li>
+        
+          
+          
+          <li><a href="../Fiddle/Handle.html">Fiddle::Handle</a></li>
+        
+          
+          
+          <li><a href="../Fiddle/Importer.html">Fiddle::Importer</a></li>
+        
+          
+          
+          <li><a href="../Fiddle/Pointer.html">Fiddle::Pointer</a></li>
+        
+          
+          
+          <li><a href="../Fiddle/Win32Types.html">Fiddle::Win32Types</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">Fiddle::Pointer</h1>
+
+    <div id="description" class="description">
+      
+<p><a href="Pointer.html"><code>Fiddle::Pointer</code></a> is a class to handle C pointers</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="5B-5D-method" class="method-detail ">
+          <a name="method-c-5B-5D"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">Fiddle::Pointer[val]         => cptr</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">to_ptr(val)  => cptr</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Get the underlying pointer for ruby object <code>val</code> and return it as a <a href="Pointer.html"><code>Fiddle::Pointer</code></a> object.</p>
+            
+
+            
+            <div class="method-source-code" id="5B-5D-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_s_to_ptr(VALUE self, VALUE val)
+{
+    VALUE ptr, wrap = val, vptr;
+
+    if (RTEST(rb_obj_is_kind_of(val, rb_cIO))){
+        rb_io_t *fptr;
+        FILE *fp;
+        GetOpenFile(val, fptr);
+        fp = rb_io_stdio_file(fptr);
+        ptr = rb_fiddle_ptr_new(fp, 0, NULL);
+    }
+    else if (RTEST(rb_obj_is_kind_of(val, rb_cString))){
+        char *str = StringValuePtr(val);
+        ptr = rb_fiddle_ptr_new(str, RSTRING_LEN(val), NULL);
+    }
+    else if ((vptr = rb_check_funcall(val, id_to_ptr, 0, 0)) != Qundef){
+        if (rb_obj_is_kind_of(vptr, rb_cPointer)){
+            ptr = vptr;
+            wrap = 0;
+        }
+        else{
+            rb_raise(rb_eFiddleError, &quot;to_ptr should return a Fiddle::Pointer object&quot;);
+        }
+    }
+    else{
+        VALUE num = rb_Integer(val);
+        if (num == val) wrap = 0;
+        ptr = rb_fiddle_ptr_new(NUM2PTR(num), 0, NULL);
+    }
+    if (wrap) RPTR_DATA(ptr)-&gt;wrap[0] = wrap;
+    return ptr;
+}
+            </pre> 
+            </div><!-- 5B-5D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 5B-5D-method -->
+      
+        <div id="malloc-method" class="method-detail ">
+          <a name="method-c-malloc"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">Fiddle::Pointer.malloc(size, freefunc = nil)  => fiddle pointer instance</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Allocate <code>size</code> bytes of memory and associate it with an optional <code>freefunc</code> that will be called when the pointer is garbage collected.</p>
+
+<p><code>freefunc</code> must be an address pointing to a function or an instance of <a href="Function.html"><code>Fiddle::Function</code></a></p>
+            
+
+            
+            <div class="method-source-code" id="malloc-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_s_malloc(int argc, VALUE argv[], VALUE klass)
+{
+    VALUE size, sym, obj, wrap = 0;
+    long s;
+    freefunc_t f;
+
+    switch (rb_scan_args(argc, argv, &quot;11&quot;, &amp;size, &amp;sym)) {
+      case 1:
+        s = NUM2LONG(size);
+        f = NULL;
+        break;
+      case 2:
+        s = NUM2LONG(size);
+        f = get_freefunc(sym, &amp;wrap);
+        break;
+      default:
+        rb_bug(&quot;rb_fiddle_ptr_s_malloc&quot;);
+    }
+
+    obj = rb_fiddle_ptr_malloc(s,f);
+    if (wrap) RPTR_DATA(obj)-&gt;wrap[1] = wrap;
+
+    return obj;
+}
+            </pre> 
+            </div><!-- malloc-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- malloc-method -->
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">Fiddle::Pointer.new(address)      => fiddle_cptr</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">new(address, size)                => fiddle_cptr</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">new(address, size, freefunc)      => fiddle_cptr</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Create a new pointer to <code>address</code> with an optional <code>size</code> and <code>freefunc</code>.</p>
+
+<p><code>freefunc</code> will be called when the instance is garbage collected.</p>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_initialize(int argc, VALUE argv[], VALUE self)
+{
+    VALUE ptr, sym, size, wrap = 0, funcwrap = 0;
+    struct ptr_data *data;
+    void *p = NULL;
+    freefunc_t f = NULL;
+    long s = 0;
+
+    if (rb_scan_args(argc, argv, &quot;12&quot;, &amp;ptr, &amp;size, &amp;sym) &gt;= 1) {
+        VALUE addrnum = rb_Integer(ptr);
+        if (addrnum != ptr) wrap = ptr;
+        p = NUM2PTR(addrnum);
+    }
+    if (argc &gt;= 2) {
+        s = NUM2LONG(size);
+    }
+    if (argc &gt;= 3) {
+        f = get_freefunc(sym, &amp;funcwrap);
+    }
+
+    if (p) {
+        TypedData_Get_Struct(self, struct ptr_data, &amp;fiddle_ptr_data_type, data);
+        if (data-&gt;ptr &amp;&amp; data-&gt;free) {
+            /* Free previous memory. Use of inappropriate initialize may cause SEGV. */
+            (*(data-&gt;free))(data-&gt;ptr);
+        }
+        data-&gt;wrap[0] = wrap;
+        data-&gt;wrap[1] = funcwrap;
+        data-&gt;ptr  = p;
+        data-&gt;size = s;
+        data-&gt;free = f;
+    }
+
+    return Qnil;
+}
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+        <div id="to_ptr-method" class="method-detail ">
+          <a name="method-c-to_ptr"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">to_ptr(val)  => cptr</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Get the underlying pointer for ruby object <code>val</code> and return it as a <a href="Pointer.html"><code>Fiddle::Pointer</code></a> object.</p>
+            
+
+            
+            <div class="method-source-code" id="to_ptr-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_s_to_ptr(VALUE self, VALUE val)
+{
+    VALUE ptr, wrap = val, vptr;
+
+    if (RTEST(rb_obj_is_kind_of(val, rb_cIO))){
+        rb_io_t *fptr;
+        FILE *fp;
+        GetOpenFile(val, fptr);
+        fp = rb_io_stdio_file(fptr);
+        ptr = rb_fiddle_ptr_new(fp, 0, NULL);
+    }
+    else if (RTEST(rb_obj_is_kind_of(val, rb_cString))){
+        char *str = StringValuePtr(val);
+        ptr = rb_fiddle_ptr_new(str, RSTRING_LEN(val), NULL);
+    }
+    else if ((vptr = rb_check_funcall(val, id_to_ptr, 0, 0)) != Qundef){
+        if (rb_obj_is_kind_of(vptr, rb_cPointer)){
+            ptr = vptr;
+            wrap = 0;
+        }
+        else{
+            rb_raise(rb_eFiddleError, &quot;to_ptr should return a Fiddle::Pointer object&quot;);
+        }
+    }
+    else{
+        VALUE num = rb_Integer(val);
+        if (num == val) wrap = 0;
+        ptr = rb_fiddle_ptr_new(NUM2PTR(num), 0, NULL);
+    }
+    if (wrap) RPTR_DATA(ptr)-&gt;wrap[0] = wrap;
+    return ptr;
+}
+            </pre> 
+            </div><!-- to_ptr-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_ptr-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="2B-method" class="method-detail ">
+          <a name="method-i-2B"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">ptr + n   => new cptr</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns a new pointer instance that has been advanced <code>n</code> bytes.</p>
+            
+
+            
+            <div class="method-source-code" id="2B-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_plus(VALUE self, VALUE other)
+{
+    void *ptr;
+    long num, size;
+
+    ptr = rb_fiddle_ptr2cptr(self);
+    size = RPTR_DATA(self)-&gt;size;
+    num = NUM2LONG(other);
+    return rb_fiddle_ptr_new((char *)ptr + num, size - num, 0);
+}
+            </pre> 
+            </div><!-- 2B-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 2B-method -->
+      
+        <div id="2B-40-method" class="method-detail ">
+          <a name="method-i-2B-40"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">ptr</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns a new <a href="Pointer.html"><code>Fiddle::Pointer</code></a> instance that is a dereferenced pointer for this pointer.</p>
+
+<p>Analogous to the star operator in C.</p>
+            
+
+            
+            <div class="method-source-code" id="2B-40-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_ptr(VALUE self)
+{
+    struct ptr_data *data;
+
+    TypedData_Get_Struct(self, struct ptr_data, &amp;fiddle_ptr_data_type, data);
+    return rb_fiddle_ptr_new(*((void**)(data-&gt;ptr)),0,0);
+}
+            </pre> 
+            </div><!-- 2B-40-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 2B-40-method -->
+      
+        <div id="2D-method" class="method-detail ">
+          <a name="method-i-2D"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">ptr - n   => new cptr</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns a new pointer instance that has been moved back <code>n</code> bytes.</p>
+            
+
+            
+            <div class="method-source-code" id="2D-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_minus(VALUE self, VALUE other)
+{
+    void *ptr;
+    long num, size;
+
+    ptr = rb_fiddle_ptr2cptr(self);
+    size = RPTR_DATA(self)-&gt;size;
+    num = NUM2LONG(other);
+    return rb_fiddle_ptr_new((char *)ptr - num, size + num, 0);
+}
+            </pre> 
+            </div><!-- 2D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 2D-method -->
+      
+        <div id="2D-40-method" class="method-detail ">
+          <a name="method-i-2D-40"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">ref</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns a new <a href="Pointer.html"><code>Fiddle::Pointer</code></a> instance that is a reference pointer for this pointer.</p>
+
+<p>Analogous to the ampersand operator in C.</p>
+            
+
+            
+            <div class="method-source-code" id="2D-40-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_ref(VALUE self)
+{
+    struct ptr_data *data;
+
+    TypedData_Get_Struct(self, struct ptr_data, &amp;fiddle_ptr_data_type, data);
+    return rb_fiddle_ptr_new(&amp;(data-&gt;ptr),0,0);
+}
+            </pre> 
+            </div><!-- 2D-40-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 2D-40-method -->
+      
+        <div id="3C-3D-3E-method" class="method-detail ">
+          <a name="method-i-3C-3D-3E"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">ptr <=> other   => -1, 0, 1, or nil</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns -1 if less than, 0 if equal to, 1 if greater than <code>other</code>.</p>
+
+<p>Returns nil if <code>ptr</code> cannot be compared to <code>other</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="3C-3D-3E-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_cmp(VALUE self, VALUE other)
+{
+    void *ptr1, *ptr2;
+    SIGNED_VALUE diff;
+
+    if(!rb_obj_is_kind_of(other, rb_cPointer)) return Qnil;
+
+    ptr1 = rb_fiddle_ptr2cptr(self);
+    ptr2 = rb_fiddle_ptr2cptr(other);
+    diff = (SIGNED_VALUE)ptr1 - (SIGNED_VALUE)ptr2;
+    if (!diff) return INT2FIX(0);
+    return diff &gt; 0 ? INT2NUM(1) : INT2NUM(-1);
+}
+            </pre> 
+            </div><!-- 3C-3D-3E-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 3C-3D-3E-method -->
+      
+        <div id="3D-3D-method" class="method-detail ">
+          <a name="method-i-3D-3D"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">ptr == other    => true or false</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns true if <code>other</code> wraps the same pointer, otherwise returns false.</p>
+            
+
+            
+            <div class="method-source-code" id="3D-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_eql(VALUE self, VALUE other)
+{
+    void *ptr1, *ptr2;
+
+    if(!rb_obj_is_kind_of(other, rb_cPointer)) return Qfalse;
+
+    ptr1 = rb_fiddle_ptr2cptr(self);
+    ptr2 = rb_fiddle_ptr2cptr(other);
+
+    return ptr1 == ptr2 ? Qtrue : Qfalse;
+}
+            </pre> 
+            </div><!-- 3D-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 3D-3D-method -->
+      
+        <div id="5B-5D-method" class="method-detail ">
+          <a name="method-i-5B-5D"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">ptr[index]                &rarr; an_integer</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">ptr[start, length]        &rarr; a_string</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns integer stored at <em>index</em>.</p>
+
+<p>If <em>start</em> and <em>length</em> are given, a string containing the bytes from <em>start</em> of <em>length</em> will be returned.</p>
+            
+
+            
+            <div class="method-source-code" id="5B-5D-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_aref(int argc, VALUE argv[], VALUE self)
+{
+    VALUE arg0, arg1;
+    VALUE retval = Qnil;
+    size_t offset, len;
+    struct ptr_data *data;
+
+    TypedData_Get_Struct(self, struct ptr_data, &amp;fiddle_ptr_data_type, data);
+    if (!data-&gt;ptr) rb_raise(rb_eFiddleError, &quot;NULL pointer dereference&quot;);
+    switch( rb_scan_args(argc, argv, &quot;11&quot;, &amp;arg0, &amp;arg1) ){
+      case 1:
+        offset = NUM2ULONG(arg0);
+        retval = INT2NUM(*((char *)data-&gt;ptr + offset));
+        break;
+      case 2:
+        offset = NUM2ULONG(arg0);
+        len    = NUM2ULONG(arg1);
+        retval = rb_str_new((char *)data-&gt;ptr + offset, len);
+        break;
+      default:
+        rb_bug(&quot;rb_fiddle_ptr_aref()&quot;);
+    }
+    return retval;
+}
+            </pre> 
+            </div><!-- 5B-5D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 5B-5D-method -->
+      
+        <div id="5B-5D-3D-method" class="method-detail ">
+          <a name="method-i-5B-5D-3D"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">ptr[index]         = int                    &rarr;  int</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">ptr[start, length] = string or cptr or addr &rarr;  string or dl_cptr or addr</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Set the value at <code>index</code> to <code>int</code>.</p>
+
+<p>Or, set the memory at <code>start</code> until <code>length</code> with the contents of <code>string</code>, the memory from <code>dl_cptr</code>, or the memory pointed at by the memory address <code>addr</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="5B-5D-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_aset(int argc, VALUE argv[], VALUE self)
+{
+    VALUE arg0, arg1, arg2;
+    VALUE retval = Qnil;
+    size_t offset, len;
+    void *mem;
+    struct ptr_data *data;
+
+    TypedData_Get_Struct(self, struct ptr_data, &amp;fiddle_ptr_data_type, data);
+    if (!data-&gt;ptr) rb_raise(rb_eFiddleError, &quot;NULL pointer dereference&quot;);
+    switch( rb_scan_args(argc, argv, &quot;21&quot;, &amp;arg0, &amp;arg1, &amp;arg2) ){
+      case 2:
+        offset = NUM2ULONG(arg0);
+        ((char*)data-&gt;ptr)[offset] = NUM2UINT(arg1);
+        retval = arg1;
+        break;
+      case 3:
+        offset = NUM2ULONG(arg0);
+        len    = NUM2ULONG(arg1);
+        if (RB_TYPE_P(arg2, T_STRING)) {
+            mem = StringValuePtr(arg2);
+        }
+        else if( rb_obj_is_kind_of(arg2, rb_cPointer) ){
+            mem = rb_fiddle_ptr2cptr(arg2);
+        }
+        else{
+            mem    = NUM2PTR(arg2);
+        }
+        memcpy((char *)data-&gt;ptr + offset, mem, len);
+        retval = arg2;
+        break;
+      default:
+        rb_bug(&quot;rb_fiddle_ptr_aset()&quot;);
+    }
+    return retval;
+}
+            </pre> 
+            </div><!-- 5B-5D-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 5B-5D-3D-method -->
+      
+        <div id="eql-3F-method" class="method-detail ">
+          <a name="method-i-eql-3F"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">eql?(other) => true or false</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns true if <code>other</code> wraps the same pointer, otherwise returns false.</p>
+            
+
+            
+            <div class="method-source-code" id="eql-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_eql(VALUE self, VALUE other)
+{
+    void *ptr1, *ptr2;
+
+    if(!rb_obj_is_kind_of(other, rb_cPointer)) return Qfalse;
+
+    ptr1 = rb_fiddle_ptr2cptr(self);
+    ptr2 = rb_fiddle_ptr2cptr(other);
+
+    return ptr1 == ptr2 ? Qtrue : Qfalse;
+}
+            </pre> 
+            </div><!-- eql-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- eql-3F-method -->
+      
+        <div id="free-method" class="method-detail ">
+          <a name="method-i-free"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">free => Fiddle::Function</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Get the free function for this pointer.</p>
+
+<p>Returns a new instance of <a href="Function.html"><code>Fiddle::Function</code></a>.</p>
+
+<p>See <a href="Function.html#method-c-new"><code>Fiddle::Function.new</code></a></p>
+            
+
+            
+            <div class="method-source-code" id="free-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_free_get(VALUE self)
+{
+    struct ptr_data *pdata;
+    VALUE address;
+    VALUE arg_types;
+    VALUE ret_type;
+
+    TypedData_Get_Struct(self, struct ptr_data, &amp;fiddle_ptr_data_type, pdata);
+
+    if (!pdata-&gt;free)
+        return Qnil;
+
+    address = PTR2NUM(pdata-&gt;free);
+    ret_type = INT2NUM(TYPE_VOID);
+    arg_types = rb_ary_new();
+    rb_ary_push(arg_types, INT2NUM(TYPE_VOIDP));
+
+    return rb_fiddle_new_function(address, arg_types, ret_type);
+}
+            </pre> 
+            </div><!-- free-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- free-method -->
+      
+        <div id="free-3D-method" class="method-detail ">
+          <a name="method-i-free-3D"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">free=(function)</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Set the free function for this pointer to <code>function</code> in the given <a href="Function.html"><code>Fiddle::Function</code></a>.</p>
+            
+
+            
+            <div class="method-source-code" id="free-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_free_set(VALUE self, VALUE val)
+{
+    struct ptr_data *data;
+
+    TypedData_Get_Struct(self, struct ptr_data, &amp;fiddle_ptr_data_type, data);
+    data-&gt;free = get_freefunc(val, &amp;data-&gt;wrap[1]);
+
+    return Qnil;
+}
+            </pre> 
+            </div><!-- free-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- free-3D-method -->
+      
+        <div id="inspect-method" class="method-detail ">
+          <a name="method-i-inspect"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">inspect</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns a string formatted with an easily readable representation of the internal state of the pointer.</p>
+            
+
+            
+            <div class="method-source-code" id="inspect-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_inspect(VALUE self)
+{
+    struct ptr_data *data;
+
+    TypedData_Get_Struct(self, struct ptr_data, &amp;fiddle_ptr_data_type, data);
+    return rb_sprintf(&quot;#&lt;%&quot;PRIsVALUE&quot;:%p ptr=%p size=%ld free=%p&gt;&quot;,
+                      RB_OBJ_CLASSNAME(self), (void *)data, data-&gt;ptr, data-&gt;size, (void *)data-&gt;free);
+}
+            </pre> 
+            </div><!-- inspect-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- inspect-method -->
+      
+        <div id="null-3F-method" class="method-detail ">
+          <a name="method-i-null-3F"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">null?</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns <code>true</code> if this is a null pointer.</p>
+            
+
+            
+            <div class="method-source-code" id="null-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_null_p(VALUE self)
+{
+    struct ptr_data *data;
+
+    TypedData_Get_Struct(self, struct ptr_data, &amp;fiddle_ptr_data_type, data);
+    return data-&gt;ptr ? Qfalse : Qtrue;
+}
+            </pre> 
+            </div><!-- null-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- null-3F-method -->
+      
+        <div id="ptr-method" class="method-detail ">
+          <a name="method-i-ptr"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">ptr</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns a new <a href="Pointer.html"><code>Fiddle::Pointer</code></a> instance that is a dereferenced pointer for this pointer.</p>
+
+<p>Analogous to the star operator in C.</p>
+            
+
+            
+            <div class="method-source-code" id="ptr-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_ptr(VALUE self)
+{
+    struct ptr_data *data;
+
+    TypedData_Get_Struct(self, struct ptr_data, &amp;fiddle_ptr_data_type, data);
+    return rb_fiddle_ptr_new(*((void**)(data-&gt;ptr)),0,0);
+}
+            </pre> 
+            </div><!-- ptr-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ptr-method -->
+      
+        <div id="ref-method" class="method-detail ">
+          <a name="method-i-ref"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">ref</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns a new <a href="Pointer.html"><code>Fiddle::Pointer</code></a> instance that is a reference pointer for this pointer.</p>
+
+<p>Analogous to the ampersand operator in C.</p>
+            
+
+            
+            <div class="method-source-code" id="ref-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_ref(VALUE self)
+{
+    struct ptr_data *data;
+
+    TypedData_Get_Struct(self, struct ptr_data, &amp;fiddle_ptr_data_type, data);
+    return rb_fiddle_ptr_new(&amp;(data-&gt;ptr),0,0);
+}
+            </pre> 
+            </div><!-- ref-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ref-method -->
+      
+        <div id="size-method" class="method-detail ">
+          <a name="method-i-size"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">size</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Get the size of this pointer.</p>
+            
+
+            
+            <div class="method-source-code" id="size-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_size_get(VALUE self)
+{
+    return LONG2NUM(RPTR_DATA(self)-&gt;size);
+}
+            </pre> 
+            </div><!-- size-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- size-method -->
+      
+        <div id="size-3D-method" class="method-detail ">
+          <a name="method-i-size-3D"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">size=(size)</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Set the size of this pointer to <code>size</code></p>
+            
+
+            
+            <div class="method-source-code" id="size-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_size_set(VALUE self, VALUE size)
+{
+    RPTR_DATA(self)-&gt;size = NUM2LONG(size);
+    return size;
+}
+            </pre> 
+            </div><!-- size-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- size-3D-method -->
+      
+        <div id="to_i-method" class="method-detail ">
+          <a name="method-i-to_i"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">to_i</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns the integer memory location of this pointer.</p>
+            
+
+            
+            <div class="method-source-code" id="to_i-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_to_i(VALUE self)
+{
+    struct ptr_data *data;
+
+    TypedData_Get_Struct(self, struct ptr_data, &amp;fiddle_ptr_data_type, data);
+    return PTR2NUM(data-&gt;ptr);
+}
+            </pre> 
+            </div><!-- to_i-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_i-method -->
+      
+        <div id="to_int-method" class="method-detail ">
+          <a name="method-i-to_int"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">to_i</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns the integer memory location of this pointer.</p>
+            
+
+            
+            <div class="method-source-code" id="to_int-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_to_i(VALUE self)
+{
+    struct ptr_data *data;
+
+    TypedData_Get_Struct(self, struct ptr_data, &amp;fiddle_ptr_data_type, data);
+    return PTR2NUM(data-&gt;ptr);
+}
+            </pre> 
+            </div><!-- to_int-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_int-method -->
+      
+        <div id="to_s-method" class="method-detail ">
+          <a name="method-i-to_s"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">to_s        => string</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">to_s(len)   => string</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns the pointer contents as a string.</p>
+
+<p>When called with no arguments, this method will return the contents until the first NULL byte.</p>
+
+<p>When called with <code>len</code>, a string of <code>len</code> bytes will be returned.</p>
+
+<p>See <a href="Pointer.html#method-i-to_str"><code>to_str</code></a></p>
+            
+
+            
+            <div class="method-source-code" id="to_s-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_to_s(int argc, VALUE argv[], VALUE self)
+{
+    struct ptr_data *data;
+    VALUE arg1, val;
+    int len;
+
+    TypedData_Get_Struct(self, struct ptr_data, &amp;fiddle_ptr_data_type, data);
+    switch (rb_scan_args(argc, argv, &quot;01&quot;, &amp;arg1)) {
+      case 0:
+        val = rb_str_new2((char*)(data-&gt;ptr));
+        break;
+      case 1:
+        len = NUM2INT(arg1);
+        val = rb_str_new((char*)(data-&gt;ptr), len);
+        break;
+      default:
+        rb_bug(&quot;rb_fiddle_ptr_to_s&quot;);
+    }
+
+    return val;
+}
+            </pre> 
+            </div><!-- to_s-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_s-method -->
+      
+        <div id="to_str-method" class="method-detail ">
+          <a name="method-i-to_str"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">to_str        => string</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">to_str(len)   => string</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns the pointer contents as a string.</p>
+
+<p>When called with no arguments, this method will return the contents with the length of this pointer&#39;s <code>size</code>.</p>
+
+<p>When called with <code>len</code>, a string of <code>len</code> bytes will be returned.</p>
+
+<p>See <a href="Pointer.html#method-i-to_s"><code>to_s</code></a></p>
+            
+
+            
+            <div class="method-source-code" id="to_str-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_to_str(int argc, VALUE argv[], VALUE self)
+{
+    struct ptr_data *data;
+    VALUE arg1, val;
+    int len;
+
+    TypedData_Get_Struct(self, struct ptr_data, &amp;fiddle_ptr_data_type, data);
+    switch (rb_scan_args(argc, argv, &quot;01&quot;, &amp;arg1)) {
+      case 0:
+        val = rb_str_new((char*)(data-&gt;ptr),data-&gt;size);
+        break;
+      case 1:
+        len = NUM2INT(arg1);
+        val = rb_str_new((char*)(data-&gt;ptr), len);
+        break;
+      default:
+        rb_bug(&quot;rb_fiddle_ptr_to_str&quot;);
+    }
+
+    return val;
+}
+            </pre> 
+            </div><!-- to_str-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_str-method -->
+      
+        <div id="to_value-method" class="method-detail ">
+          <a name="method-i-to_value"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">to_value</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Cast this pointer to a ruby object.</p>
+            
+
+            
+            <div class="method-source-code" id="to_value-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_fiddle_ptr_to_value(VALUE self)
+{
+    struct ptr_data *data;
+    TypedData_Get_Struct(self, struct ptr_data, &amp;fiddle_ptr_data_type, data);
+    return (VALUE)(data-&gt;ptr);
+}
+            </pre> 
+            </div><!-- to_value-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_value-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Pointer_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Pointer_versioned").load("/associated/2.7.4/Pointer.ihtml");</script> <div id='tx_Pointer' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Pointer").load("/associated/Pointer.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Maximum R+D</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Pointer.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Pointer.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

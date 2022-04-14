@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Module : XMLRPC  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:35:23 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = ''  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = ''  --> 
+  <title>Module: XMLRPC (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href=".css/obf.css"  -->
+  <link rel="stylesheet" href="css/inuit.css" >
+  <link rel="stylesheet" href="css/grid.inuit.css" >
+  <link rel="stylesheet" href="css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="css/carbon17.css" type="text/css" >
+
+
+  <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="/js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="module rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>xmlrpc-0.3.0/lib/xmlrpc.rb</li>      
+            
+          
+          <li class='in-file'>xmlrpc-0.3.0/lib/xmlrpc/base64.rb</li>      
+            
+          
+          <li class='in-file'>xmlrpc-0.3.0/lib/xmlrpc/client.rb</li>      
+            
+          
+          <li class='in-file'>xmlrpc-0.3.0/lib/xmlrpc/config.rb</li>      
+            
+          
+          <li class='in-file'>xmlrpc-0.3.0/lib/xmlrpc/create.rb</li>      
+            
+          
+          <li class='in-file'>xmlrpc-0.3.0/lib/xmlrpc/datetime.rb</li>      
+            
+          
+          <li class='in-file'>xmlrpc-0.3.0/lib/xmlrpc/marshal.rb</li>      
+            
+          
+          <li class='in-file'>xmlrpc-0.3.0/lib/xmlrpc/parser.rb</li>      
+            
+          
+          <li class='in-file'>xmlrpc-0.3.0/lib/xmlrpc/server.rb</li>      
+            
+          
+          <li class='in-file'>xmlrpc-0.3.0/lib/xmlrpc/utils.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">MODULE</span> <a href="XMLRPC/Config.html">XMLRPC::Config</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="XMLRPC/Convert.html">XMLRPC::Convert</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="XMLRPC/Marshallable.html">XMLRPC::Marshallable</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="XMLRPC/ParseContentType.html">XMLRPC::ParseContentType</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="XMLRPC/ParserWriterChooseMixin.html">XMLRPC::ParserWriterChooseMixin</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="XMLRPC/Service.html">XMLRPC::Service</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="XMLRPC/XMLParser.html">XMLRPC::XMLParser</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="XMLRPC/XMLWriter.html">XMLRPC::XMLWriter</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="XMLRPC/Base64.html">XMLRPC::Base64</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="XMLRPC/BasicServer.html">XMLRPC::BasicServer</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="XMLRPC/CGIServer.html">XMLRPC::CGIServer</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="XMLRPC/Client.html">XMLRPC::Client</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="XMLRPC/Create.html">XMLRPC::Create</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="XMLRPC/DateTime.html">XMLRPC::DateTime</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="XMLRPC/FaultException.html">XMLRPC::FaultException</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="XMLRPC/Marshal.html">XMLRPC::Marshal</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="XMLRPC/ModRubyServer.html">XMLRPC::ModRubyServer</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="XMLRPC/Server.html">XMLRPC::Server</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="XMLRPC/WEBrickServlet.html">XMLRPC::WEBrickServlet</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="./XMLRPC.html">XMLRPC</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/Base64.html">XMLRPC::Base64</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/BasicServer.html">XMLRPC::BasicServer</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/CGIServer.html">XMLRPC::CGIServer</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/Client.html">XMLRPC::Client</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/Client/Proxy.html">XMLRPC::Client::Proxy</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/Config.html">XMLRPC::Config</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/Convert.html">XMLRPC::Convert</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/Create.html">XMLRPC::Create</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/DateTime.html">XMLRPC::DateTime</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/FaultException.html">XMLRPC::FaultException</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/Marshal.html">XMLRPC::Marshal</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/Marshallable.html">XMLRPC::Marshallable</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/ModRubyServer.html">XMLRPC::ModRubyServer</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/ParseContentType.html">XMLRPC::ParseContentType</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/ParserWriterChooseMixin.html">XMLRPC::ParserWriterChooseMixin</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/Server.html">XMLRPC::Server</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/Service.html">XMLRPC::Service</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/Service/BasicInterface.html">XMLRPC::Service::BasicInterface</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/Service/Interface.html">XMLRPC::Service::Interface</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/Service/PublicInstanceMethodsInterface.html">XMLRPC::Service::PublicInstanceMethodsInterface</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/WEBrickServlet.html">XMLRPC::WEBrickServlet</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/XMLParser.html">XMLRPC::XMLParser</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/XMLParser/AbstractStreamParser.html">XMLRPC::XMLParser::AbstractStreamParser</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/XMLParser/AbstractTreeParser.html">XMLRPC::XMLParser::AbstractTreeParser</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/XMLParser/LibXMLStreamParser.html">XMLRPC::XMLParser::LibXMLStreamParser</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/XMLParser/LibXMLStreamParser/LibXMLStreamListener.html">XMLRPC::XMLParser::LibXMLStreamParser::LibXMLStreamListener</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/XMLParser/REXMLStreamParser.html">XMLRPC::XMLParser::REXMLStreamParser</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/XMLParser/REXMLStreamParser/StreamListener.html">XMLRPC::XMLParser::REXMLStreamParser::StreamListener</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/XMLParser/StreamParserMixin.html">XMLRPC::XMLParser::StreamParserMixin</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/XMLWriter.html">XMLRPC::XMLWriter</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/XMLWriter/Abstract.html">XMLRPC::XMLWriter::Abstract</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/XMLWriter/Simple.html">XMLRPC::XMLWriter::Simple</a></li>
+        
+          
+          
+          <li><a href="./XMLRPC/XMLWriter/XMLParser.html">XMLRPC::XMLWriter::XMLParser</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="module">XMLRPC</h1>
+
+    <div id="description" class="description">
+      
+<h2 id="module-XMLRPC-label-Author+and+Copyright">Author and Copyright<span><a href="#module-XMLRPC-label-Author+and+Copyright">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Copyright (C) 2001-2004 by Michael Neumann (<a href="mailto:mneumann@ntecs.de">mneumann@ntecs.de</a>)</p>
+
+<p>Released under the same term of license as Ruby.</p>
+
+<h2 id="module-XMLRPC-label-Overview">Overview<span><a href="#module-XMLRPC-label-Overview">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p><a href="XMLRPC.html"><code>XMLRPC</code></a> is a lightweight protocol that enables remote procedure calls over HTTP.  It is defined at <a href="http://www.xmlrpc.com">www.xmlrpc.com</a>.</p>
+
+<p><a href="XMLRPC.html"><code>XMLRPC</code></a> allows you to create simple distributed computing solutions that span computer languages.  Its distinctive feature is its simplicity compared to other approaches like SOAP and CORBA.</p>
+
+<p>The Ruby standard library package &#39;xmlrpc&#39; enables you to create a server that implements remote procedures and a client that calls them.  Very little code is required to achieve either of these.</p>
+
+<h2 id="module-XMLRPC-label-Example">Example<span><a href="#module-XMLRPC-label-Example">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Try the following code.  It calls a standard demonstration remote procedure.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;xmlrpc/client&#39;</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">&#39;pp&#39;</span>
+
+<span class="ruby-identifier">server</span> = <span class="ruby-constant">XMLRPC</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span>.<span class="ruby-identifier">new2</span>(<span class="ruby-string">&quot;http://xmlrpc-c.sourceforge.net/api/sample.php&quot;</span>)
+<span class="ruby-identifier">result</span> = <span class="ruby-identifier">server</span>.<span class="ruby-identifier">call</span>(<span class="ruby-string">&quot;sample.sumAndDifference&quot;</span>, <span class="ruby-value">5</span>, <span class="ruby-value">3</span>)
+<span class="ruby-identifier">pp</span> <span class="ruby-identifier">result</span>
+</pre>
+
+<h2 id="module-XMLRPC-label-Documentation">Documentation<span><a href="#module-XMLRPC-label-Documentation">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>See <a href="http://www.ntecs.de/ruby/xmlrpc4r">www.ntecs.de/ruby/xmlrpc4r</a>/.  There is plenty of detail there to use the client and implement a server.</p>
+
+<h2 id="module-XMLRPC-label-Features+of+XMLRPC+for+Ruby">Features of <a href="XMLRPC.html"><code>XMLRPC</code></a> for Ruby<span><a href="#module-XMLRPC-label-Features+of+XMLRPC+for+Ruby">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Extensions</p>
+<ul><li>
+<p>Introspection</p>
+</li><li>
+<p>multiCall</p>
+</li><li>
+<p>optionally nil values and integers larger than 32 Bit</p>
+</li></ul>
+</li><li>
+<p><a href="XMLRPC/Server.html"><code>Server</code></a></p>
+<ul><li>
+<p>Standalone XML-RPC server</p>
+</li><li>
+<p>CGI-based (works with FastCGI)</p>
+</li><li>
+<p>Apache mod_ruby server</p>
+</li><li>
+<p>WEBrick servlet</p>
+</li></ul>
+</li><li>
+<p><a href="XMLRPC/Client.html"><code>Client</code></a></p>
+<ul><li>
+<p>synchronous/asynchronous calls</p>
+</li><li>
+<p>Basic HTTP-401 Authentication</p>
+</li><li>
+<p>HTTPS protocol (SSL)</p>
+</li></ul>
+</li><li>
+<p>Parsers</p>
+<ul><li>
+<p>REXML (<a href="XMLRPC/XMLParser/REXMLStreamParser.html"><code>XMLParser::REXMLStreamParser</code></a>)</p>
+<ul><li>
+<p>Not compiled (pure ruby)</p>
+</li><li>
+<p>See ruby standard library</p>
+</li></ul>
+</li><li>
+<p>libxml (LibXMLStreamParser)</p>
+<ul><li>
+<p>Compiled</p>
+</li><li>
+<p>See <a href="https://rubygems.org/gems/libxml-ruby">rubygems.org/gems/libxml-ruby</a>/</p>
+</li></ul>
+</li></ul>
+</li><li>
+<p>General</p>
+<ul><li>
+<p>possible to choose between <a href="XMLRPC/XMLParser.html"><code>XMLParser</code></a> module (Expat wrapper) and REXML (pure Ruby) parsers</p>
+</li><li>
+<p>Marshalling Ruby objects to Hashes and reconstruct them later from a Hash</p>
+</li><li>
+<p>SandStorm component architecture <a href="XMLRPC/Client.html"><code>XMLRPC::Client</code></a> interface</p>
+</li></ul>
+</li></ul>
+
+<h2 id="module-XMLRPC-label-Howto">Howto<span><a href="#module-XMLRPC-label-Howto">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="module-XMLRPC-label-Client"><a href="XMLRPC/Client.html"><code>Client</code></a><span><a href="#module-XMLRPC-label-Client">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;xmlrpc/client&quot;</span>
+
+<span class="ruby-comment"># Make an object to represent the XML-RPC server.</span>
+<span class="ruby-identifier">server</span> = <span class="ruby-constant">XMLRPC</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span>.<span class="ruby-identifier">new</span>( <span class="ruby-string">&quot;xmlrpc-c.sourceforge.net&quot;</span>, <span class="ruby-string">&quot;/api/sample.php&quot;</span>)
+
+<span class="ruby-comment"># Call the remote server and get our result</span>
+<span class="ruby-identifier">result</span> = <span class="ruby-identifier">server</span>.<span class="ruby-identifier">call</span>(<span class="ruby-string">&quot;sample.sumAndDifference&quot;</span>, <span class="ruby-value">5</span>, <span class="ruby-value">3</span>)
+
+<span class="ruby-identifier">sum</span> = <span class="ruby-identifier">result</span>[<span class="ruby-string">&quot;sum&quot;</span>]
+<span class="ruby-identifier">difference</span> = <span class="ruby-identifier">result</span>[<span class="ruby-string">&quot;difference&quot;</span>]
+
+<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Sum: #{sum}, Difference: #{difference}&quot;</span>
+</pre>
+
+<h3 id="module-XMLRPC-label-XMLRPC-3A-3AClient+with+XML-RPC+fault-structure+handling"><a href="XMLRPC/Client.html"><code>XMLRPC::Client</code></a> with XML-RPC fault-structure handling<span><a href="#module-XMLRPC-label-XMLRPC-3A-3AClient+with+XML-RPC+fault-structure+handling">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>There are two possible ways, of handling a fault-structure:</p>
+
+<h4 id="module-XMLRPC-label-by+catching+a+XMLRPC-3A-3AFaultException+exception">by catching a <a href="XMLRPC/FaultException.html"><code>XMLRPC::FaultException</code></a> exception<span><a href="#module-XMLRPC-label-by+catching+a+XMLRPC-3A-3AFaultException+exception">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;xmlrpc/client&quot;</span>
+
+<span class="ruby-comment"># Make an object to represent the XML-RPC server.</span>
+<span class="ruby-identifier">server</span> = <span class="ruby-constant">XMLRPC</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span>.<span class="ruby-identifier">new</span>( <span class="ruby-string">&quot;xmlrpc-c.sourceforge.net&quot;</span>, <span class="ruby-string">&quot;/api/sample.php&quot;</span>)
+
+<span class="ruby-keyword">begin</span>
+  <span class="ruby-comment"># Call the remote server and get our result</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">server</span>.<span class="ruby-identifier">call</span>(<span class="ruby-string">&quot;sample.sumAndDifference&quot;</span>, <span class="ruby-value">5</span>, <span class="ruby-value">3</span>)
+
+  <span class="ruby-identifier">sum</span> = <span class="ruby-identifier">result</span>[<span class="ruby-string">&quot;sum&quot;</span>]
+  <span class="ruby-identifier">difference</span> = <span class="ruby-identifier">result</span>[<span class="ruby-string">&quot;difference&quot;</span>]
+
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Sum: #{sum}, Difference: #{difference}&quot;</span>
+
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">XMLRPC</span><span class="ruby-operator">::</span><span class="ruby-constant">FaultException</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Error: &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">faultCode</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">faultString</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h4 id="module-XMLRPC-label-by+calling+-22call2-22+which+returns+a+boolean">by calling “call2” which returns a boolean<span><a href="#module-XMLRPC-label-by+calling+-22call2-22+which+returns+a+boolean">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;xmlrpc/client&quot;</span>
+
+<span class="ruby-comment"># Make an object to represent the XML-RPC server.</span>
+<span class="ruby-identifier">server</span> = <span class="ruby-constant">XMLRPC</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span>.<span class="ruby-identifier">new</span>( <span class="ruby-string">&quot;xmlrpc-c.sourceforge.net&quot;</span>, <span class="ruby-string">&quot;/api/sample.php&quot;</span>)
+
+<span class="ruby-comment"># Call the remote server and get our result</span>
+<span class="ruby-identifier">ok</span>, <span class="ruby-identifier">result</span> = <span class="ruby-identifier">server</span>.<span class="ruby-identifier">call2</span>(<span class="ruby-string">&quot;sample.sumAndDifference&quot;</span>, <span class="ruby-value">5</span>, <span class="ruby-value">3</span>)
+
+<span class="ruby-keyword">if</span> <span class="ruby-identifier">ok</span>
+  <span class="ruby-identifier">sum</span> = <span class="ruby-identifier">result</span>[<span class="ruby-string">&quot;sum&quot;</span>]
+  <span class="ruby-identifier">difference</span> = <span class="ruby-identifier">result</span>[<span class="ruby-string">&quot;difference&quot;</span>]
+
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Sum: #{sum}, Difference: #{difference}&quot;</span>
+<span class="ruby-keyword">else</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Error: &quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">faultCode</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">faultString</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h3 id="module-XMLRPC-label-Using+XMLRPC-3A-3AClient-3A-3AProxy">Using <a href="XMLRPC/Client/Proxy.html"><code>XMLRPC::Client::Proxy</code></a><span><a href="#module-XMLRPC-label-Using+XMLRPC-3A-3AClient-3A-3AProxy">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>You can create a Proxy object onto which you can call methods. This way it looks nicer. Both forms, <em>call</em> and <em>call2</em> are supported through <em>proxy</em> and <em>proxy2</em>.  You can additionally give arguments to the Proxy, which will be given to each XML-RPC call using that Proxy.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;xmlrpc/client&quot;</span>
+
+<span class="ruby-comment"># Make an object to represent the XML-RPC server.</span>
+<span class="ruby-identifier">server</span> = <span class="ruby-constant">XMLRPC</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span>.<span class="ruby-identifier">new</span>( <span class="ruby-string">&quot;xmlrpc-c.sourceforge.net&quot;</span>, <span class="ruby-string">&quot;/api/sample.php&quot;</span>)
+
+<span class="ruby-comment"># Create a Proxy object</span>
+<span class="ruby-identifier">sample</span> = <span class="ruby-identifier">server</span>.<span class="ruby-identifier">proxy</span>(<span class="ruby-string">&quot;sample&quot;</span>)
+
+<span class="ruby-comment"># Call the remote server and get our result</span>
+<span class="ruby-identifier">result</span> = <span class="ruby-identifier">sample</span>.<span class="ruby-identifier">sumAndDifference</span>(<span class="ruby-value">5</span>,<span class="ruby-value">3</span>)
+
+<span class="ruby-identifier">sum</span> = <span class="ruby-identifier">result</span>[<span class="ruby-string">&quot;sum&quot;</span>]
+<span class="ruby-identifier">difference</span> = <span class="ruby-identifier">result</span>[<span class="ruby-string">&quot;difference&quot;</span>]
+
+<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Sum: #{sum}, Difference: #{difference}&quot;</span>
+</pre>
+
+<h3 id="module-XMLRPC-label-CGI-based+server+using+XMLRPC-3A-3ACGIServer">CGI-based server using <a href="XMLRPC/CGIServer.html"><code>XMLRPC::CGIServer</code></a><span><a href="#module-XMLRPC-label-CGI-based+server+using+XMLRPC-3A-3ACGIServer">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>There are also two ways to define handler, the first is like C/PHP, the second like Java, of course both ways can be mixed:</p>
+
+<h4 id="module-XMLRPC-label-C-2FPHP-like+-28handler+functions-29">C/PHP-like (handler functions)<span><a href="#module-XMLRPC-label-C-2FPHP-like+-28handler+functions-29">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;xmlrpc/server&quot;</span>
+
+<span class="ruby-identifier">s</span> = <span class="ruby-constant">XMLRPC</span><span class="ruby-operator">::</span><span class="ruby-constant">CGIServer</span>.<span class="ruby-identifier">new</span>
+
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">add_handler</span>(<span class="ruby-string">&quot;sample.sumAndDifference&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">|</span>
+  { <span class="ruby-string">&quot;sum&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">a</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">b</span>, <span class="ruby-string">&quot;difference&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">a</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">b</span> }
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">serve</span>
+</pre>
+
+<h4 id="module-XMLRPC-label-Java-like+-28handler+classes-29">Java-like (handler classes)<span><a href="#module-XMLRPC-label-Java-like+-28handler+classes-29">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;xmlrpc/server&quot;</span>
+
+<span class="ruby-identifier">s</span> = <span class="ruby-constant">XMLRPC</span><span class="ruby-operator">::</span><span class="ruby-constant">CGIServer</span>.<span class="ruby-identifier">new</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">MyHandler</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sumAndDifference</span>(<span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>)
+    { <span class="ruby-string">&quot;sum&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">a</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">b</span>, <span class="ruby-string">&quot;difference&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">a</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">b</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># NOTE: Security Hole (read below)!!!</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">add_handler</span>(<span class="ruby-string">&quot;sample&quot;</span>, <span class="ruby-constant">MyHandler</span>.<span class="ruby-identifier">new</span>)
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">serve</span>
+</pre>
+
+<p>To return a fault-structure you have to raise an <a href="XMLRPC/FaultException.html"><code>XMLRPC::FaultException</code></a> e.g.:</p>
+
+<pre class="ruby"><span class="ruby-identifier">raise</span> <span class="ruby-constant">XMLRPC</span><span class="ruby-operator">::</span><span class="ruby-constant">FaultException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>, <span class="ruby-string">&quot;division by Zero&quot;</span>)
+</pre>
+
+<h5 id="module-XMLRPC-label-Security+Note">Security Note<span><a href="#module-XMLRPC-label-Security+Note">&para;</a> <a href="#top">&uarr;</a></span></h5>
+
+<p>From Brian Candler:</p>
+
+<pre>Above code sample has an extremely nasty security hole, in that you can now call
+any method of &#39;MyHandler&#39; remotely, including methods inherited from Object
+and Kernel! For example, in the client code, you can use
+
+  puts server.call(&quot;sample.send&quot;,&quot;`&quot;,&quot;ls&quot;)
+
+(backtick being the method name for running system processes). Needless to
+say, &#39;ls&#39; can be replaced with something else.
+
+The version which binds proc objects (or the version presented below in the next section)
+doesn&#39;t have this problem, but people may be tempted to use the second version because it&#39;s
+so nice and &#39;Rubyesque&#39;. I think it needs a big red disclaimer.</pre>
+
+<p>From Michael:</p>
+
+<p>A solution is to undef insecure methods or to use <a href="XMLRPC/Service/PublicInstanceMethodsInterface.html"><code>XMLRPC::Service::PublicInstanceMethodsInterface</code></a> as shown below:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">MyHandler</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sumAndDifference</span>(<span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>)
+    { <span class="ruby-string">&quot;sum&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">a</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">b</span>, <span class="ruby-string">&quot;difference&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">a</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">b</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># ... server initialization ...</span>
+
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">add_handler</span>(<span class="ruby-constant">XMLRPC</span><span class="ruby-operator">::</span><span class="ruby-identifier">iPIMethods</span>(<span class="ruby-string">&quot;sample&quot;</span>), <span class="ruby-constant">MyHandler</span>.<span class="ruby-identifier">new</span>)
+
+<span class="ruby-comment"># ...</span>
+</pre>
+
+<p>This adds only public instance methods explicitly declared in class MyHandler (and not those inherited from any other class).</p>
+
+<h4 id="module-XMLRPC-label-With+interface+declarations">With interface declarations<span><a href="#module-XMLRPC-label-With+interface+declarations">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>Code sample from the book Ruby Developer&#39;s Guide:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;xmlrpc/server&quot;</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">Num</span>
+  <span class="ruby-constant">INTERFACE</span> = <span class="ruby-constant">XMLRPC</span><span class="ruby-operator">::</span><span class="ruby-identifier">interface</span>(<span class="ruby-string">&quot;num&quot;</span>) {
+    <span class="ruby-identifier">meth</span> <span class="ruby-string">&#39;int add(int, int)&#39;</span>, <span class="ruby-string">&#39;Add two numbers&#39;</span>, <span class="ruby-string">&#39;add&#39;</span>
+    <span class="ruby-identifier">meth</span> <span class="ruby-string">&#39;int div(int, int)&#39;</span>, <span class="ruby-string">&#39;Divide two numbers&#39;</span>
+  }
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add</span>(<span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>) <span class="ruby-identifier">a</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">b</span> <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">div</span>(<span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>) <span class="ruby-identifier">a</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">b</span> <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">s</span> = <span class="ruby-constant">XMLRPC</span><span class="ruby-operator">::</span><span class="ruby-constant">CGIServer</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">add_handler</span>(<span class="ruby-constant">Num</span><span class="ruby-operator">::</span><span class="ruby-constant">INTERFACE</span>, <span class="ruby-constant">Num</span>.<span class="ruby-identifier">new</span>)
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">serve</span>
+</pre>
+
+<h3 id="module-XMLRPC-label-Standalone+XMLRPC-3A-3AServer">Standalone <a href="XMLRPC/Server.html"><code>XMLRPC::Server</code></a><span><a href="#module-XMLRPC-label-Standalone+XMLRPC-3A-3AServer">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Same as CGI-based server, the only difference being</p>
+
+<pre class="ruby"><span class="ruby-identifier">server</span> = <span class="ruby-constant">XMLRPC</span><span class="ruby-operator">::</span><span class="ruby-constant">CGIServer</span>.<span class="ruby-identifier">new</span>
+</pre>
+
+<p>must be changed to</p>
+
+<pre class="ruby"><span class="ruby-identifier">server</span> = <span class="ruby-constant">XMLRPC</span><span class="ruby-operator">::</span><span class="ruby-constant">Server</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">8080</span>)
+</pre>
+
+<p>if you want a server listening on port 8080. The rest is the same.</p>
+
+<h3 id="module-XMLRPC-label-Choosing+a+different+XMLParser+or+XMLWriter">Choosing a different <a href="XMLRPC/XMLParser.html"><code>XMLParser</code></a> or <a href="XMLRPC/XMLWriter.html"><code>XMLWriter</code></a><span><a href="#module-XMLRPC-label-Choosing+a+different+XMLParser+or+XMLWriter">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The examples above all use the default parser (which is now since 1.8 <a href="XMLRPC/XMLParser/REXMLStreamParser.html"><code>XMLParser::REXMLStreamParser</code></a>) and a default <a href="XMLRPC/XMLWriter.html"><code>XMLRPC::XMLWriter</code></a>. If you want to use a different <a href="XMLRPC/XMLParser.html"><code>XMLParser</code></a>, then you have to call the <a href="XMLRPC/ParserWriterChooseMixin.html#method-i-set_parser"><code>ParserWriterChooseMixin#set_parser</code></a> method of <a href="XMLRPC/Client.html"><code>XMLRPC::Client</code></a> instances or instances of subclasses of <a href="XMLRPC/BasicServer.html"><code>XMLRPC::BasicServer</code></a> or by editing xmlrpc/config.rb.</p>
+
+<p><a href="XMLRPC/Client.html"><code>XMLRPC::Client</code></a> Example:</p>
+
+<pre class="ruby"><span class="ruby-comment"># ...</span>
+<span class="ruby-identifier">server</span> = <span class="ruby-constant">XMLRPC</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span>.<span class="ruby-identifier">new</span>( <span class="ruby-string">&quot;xmlrpc-c.sourceforge.net&quot;</span>, <span class="ruby-string">&quot;/api/sample.php&quot;</span>)
+<span class="ruby-identifier">server</span>.<span class="ruby-identifier">set_parser</span>(<span class="ruby-constant">XMLRPC</span><span class="ruby-operator">::</span><span class="ruby-constant">XMLParser</span><span class="ruby-operator">::</span><span class="ruby-constant">XMLParser</span>.<span class="ruby-identifier">new</span>)
+<span class="ruby-comment"># ...</span>
+</pre>
+
+<p><a href="XMLRPC/Server.html"><code>XMLRPC::Server</code></a> Example:</p>
+
+<pre class="ruby"><span class="ruby-comment"># ...</span>
+<span class="ruby-identifier">s</span> = <span class="ruby-constant">XMLRPC</span><span class="ruby-operator">::</span><span class="ruby-constant">CGIServer</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">set_parser</span>(<span class="ruby-constant">XMLRPC</span><span class="ruby-operator">::</span><span class="ruby-constant">XMLParser</span><span class="ruby-operator">::</span><span class="ruby-constant">XMLParser</span>.<span class="ruby-identifier">new</span>)
+<span class="ruby-comment"># ...</span>
+</pre>
+
+<p>You can change the XML-writer by calling method <a href="XMLRPC/ParserWriterChooseMixin.html#method-i-set_writer"><code>ParserWriterChooseMixin#set_writer</code></a>.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="VERSION">VERSION</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_XMLRPC_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_XMLRPC_versioned").load("/associated/2.7.4/XMLRPC.ihtml");</script> <div id='tx_XMLRPC' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_XMLRPC").load("/associated/XMLRPC.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Hack your world.  Feed your head.  Live curious</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_XMLRPC.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_XMLRPC.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

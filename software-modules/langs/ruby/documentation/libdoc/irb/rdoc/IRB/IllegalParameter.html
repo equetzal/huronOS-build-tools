@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : IRB::IllegalParameter  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:22:22 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '..'   asset_rel_prefix = '..'  --> 
+  <title>Class: IRB::IllegalParameter (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="..css/obf.css"  -->
+  <link rel="stylesheet" href="../css/inuit.css" >
+  <link rel="stylesheet" href="../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../css/carbon17.css" type="text/css" >
+
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>irb/lc/error.rb</li>      
+            
+          
+          <li class='in-file'>irb/lc/ja/error.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">StandardError</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../Binding.html">Binding</a></li>
+        
+          
+          
+          <li><a href="../IRB/Abort.html">IRB::Abort</a></li>
+        
+          
+          
+          <li><a href="../IRB/Canvas.html">IRB::Canvas</a></li>
+        
+          
+          
+          <li><a href="../IRB/Color.html">IRB::Color</a></li>
+        
+          
+          
+          <li><a href="../IRB/Color/SymbolState.html">IRB::Color::SymbolState</a></li>
+        
+          
+          
+          <li><a href="../IRB/Context.html">IRB::Context</a></li>
+        
+          
+          
+          <li><a href="../IRB/ContextExtender.html">IRB::ContextExtender</a></li>
+        
+          
+          
+          <li><a href="../IRB/ExtendCommandBundle.html">IRB::ExtendCommandBundle</a></li>
+        
+          
+          
+          <li><a href="../IRB/FileInputMethod.html">IRB::FileInputMethod</a></li>
+        
+          
+          
+          <li><a href="../IRB/Frame.html">IRB::Frame</a></li>
+        
+          
+          
+          <li><a href="../IRB/Frame/FrameOverflow.html">IRB::Frame::FrameOverflow</a></li>
+        
+          
+          
+          <li><a href="../IRB/Frame/FrameUnderflow.html">IRB::Frame::FrameUnderflow</a></li>
+        
+          
+          
+          <li><a href="../IRB/History.html">IRB::History</a></li>
+        
+          
+          
+          <li><a href="../IRB/InputMethod.html">IRB::InputMethod</a></li>
+        
+          
+          
+          <li><a href="../IRB/Inspector.html">IRB::Inspector</a></li>
+        
+          
+          
+          <li><a href="../IRB/Irb.html">IRB::Irb</a></li>
+        
+          
+          
+          <li><a href="../IRB/IrbLoader.html">IRB::IrbLoader</a></li>
+        
+          
+          
+          <li><a href="../IRB/JobManager.html">IRB::JobManager</a></li>
+        
+          
+          
+          <li><a href="../IRB/LoadAbort.html">IRB::LoadAbort</a></li>
+        
+          
+          
+          <li><a href="../IRB/MethodExtender.html">IRB::MethodExtender</a></li>
+        
+          
+          
+          <li><a href="../IRB/Notifier.html">IRB::Notifier</a></li>
+        
+          
+          
+          <li><a href="../IRB/Notifier/AbstractNotifier.html">IRB::Notifier::AbstractNotifier</a></li>
+        
+          
+          
+          <li><a href="../IRB/Notifier/CompositeNotifier.html">IRB::Notifier::CompositeNotifier</a></li>
+        
+          
+          
+          <li><a href="../IRB/Notifier/ErrUndefinedNotifier.html">IRB::Notifier::ErrUndefinedNotifier</a></li>
+        
+          
+          
+          <li><a href="../IRB/Notifier/ErrUnrecognizedLevel.html">IRB::Notifier::ErrUnrecognizedLevel</a></li>
+        
+          
+          
+          <li><a href="../IRB/Notifier/LeveledNotifier.html">IRB::Notifier::LeveledNotifier</a></li>
+        
+          
+          
+          <li><a href="../IRB/Notifier/NoMsgNotifier.html">IRB::Notifier::NoMsgNotifier</a></li>
+        
+          
+          
+          <li><a href="../IRB/OutputMethod.html">IRB::OutputMethod</a></li>
+        
+          
+          
+          <li><a href="../IRB/OutputMethod/NotImplementedError.html">IRB::OutputMethod::NotImplementedError</a></li>
+        
+          
+          
+          <li><a href="../IRB/ReadlineInputMethod.html">IRB::ReadlineInputMethod</a></li>
+        
+          
+          
+          <li><a href="../IRB/ReidlineInputMethod.html">IRB::ReidlineInputMethod</a></li>
+        
+          
+          
+          <li><a href="../IRB/RubyModel.html">IRB::RubyModel</a></li>
+        
+          
+          
+          <li><a href="../IRB/StdioInputMethod.html">IRB::StdioInputMethod</a></li>
+        
+          
+          
+          <li><a href="../IRB/StdioOutputMethod.html">IRB::StdioOutputMethod</a></li>
+        
+          
+          
+          <li><a href="../IRB/Vec.html">IRB::Vec</a></li>
+        
+          
+          
+          <li><a href="../IRB/WorkSpace.html">IRB::WorkSpace</a></li>
+        
+          
+          
+          <li><a href="../Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="../XMP.html">XMP</a></li>
+        
+          
+          
+          <li><a href="../XMP/StringInputMethod.html">XMP::StringInputMethod</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">IRB::IllegalParameter</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_IllegalParameter_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_IllegalParameter_versioned").load("/associated/2.7.4/IllegalParameter.ihtml");</script> <div id='tx_IllegalParameter' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_IllegalParameter").load("/associated/IllegalParameter.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, an erratic source of art, music, and technology.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_IllegalParameter.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_IllegalParameter.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

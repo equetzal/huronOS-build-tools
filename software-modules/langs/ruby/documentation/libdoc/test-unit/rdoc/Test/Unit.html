@@ -1,0 +1,1479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Module : Test::Unit  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:33:01 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '..'   asset_rel_prefix = '..'  --> 
+  <title>Module: Test::Unit (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="..css/obf.css"  -->
+  <link rel="stylesheet" href="../css/inuit.css" >
+  <link rel="stylesheet" href="../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../css/carbon17.css" type="text/css" >
+
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="module rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test-unit.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/assertion-failed-error.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/assertions.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/attribute-matcher.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/attribute.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/auto-runner-loader.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/autorunner.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/code-snippet-fetcher.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/collector.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/collector/descendant.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/collector/dir.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/collector/load.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/collector/objectspace.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/collector/xml.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/color-scheme.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/color.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/data-sets.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/data.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/diff.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/error.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/exception-handler.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/failure.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/fault-location-detector.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/fixture.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/notification.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/omission.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/pending.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/priority.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/runner/console.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/runner/emacs.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/runner/xml.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/test-suite-creator.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/testcase.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/testresult.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/testsuite.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/ui/console/outputlevel.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/ui/console/testrunner.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/ui/emacs/testrunner.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/ui/testrunner.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/ui/testrunnermediator.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/ui/testrunnerutilities.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/ui/xml/testrunner.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/util/backtracefilter.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/util/method-owner-finder.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/util/observable.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/util/output.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/util/procwrapper.rb</li>      
+            
+          
+          <li class='in-file'>test-unit-3.3.4/lib/test/unit/version.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">MODULE</span> <a href="Unit/Assertions.html">Test::Unit::Assertions</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Unit/Attribute.html">Test::Unit::Attribute</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Unit/AutoRunnerLoader.html">Test::Unit::AutoRunnerLoader</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Unit/Collector.html">Test::Unit::Collector</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Unit/Data.html">Test::Unit::Data</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Unit/Diff.html">Test::Unit::Diff</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Unit/ErrorHandler.html">Test::Unit::ErrorHandler</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Unit/ExceptionHandler.html">Test::Unit::ExceptionHandler</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Unit/FailureHandler.html">Test::Unit::FailureHandler</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Unit/Fixture.html">Test::Unit::Fixture</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Unit/NotificationHandler.html">Test::Unit::NotificationHandler</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Unit/NullResultContainerInitializer.html">Test::Unit::NullResultContainerInitializer</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Unit/OmissionHandler.html">Test::Unit::OmissionHandler</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Unit/PendingHandler.html">Test::Unit::PendingHandler</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Unit/Priority.html">Test::Unit::Priority</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Unit/TestCaseNotificationSupport.html">Test::Unit::TestCaseNotificationSupport</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Unit/TestCaseOmissionSupport.html">Test::Unit::TestCaseOmissionSupport</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Unit/TestCasePendingSupport.html">Test::Unit::TestCasePendingSupport</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Unit/TestResultErrorSupport.html">Test::Unit::TestResultErrorSupport</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Unit/TestResultFailureSupport.html">Test::Unit::TestResultFailureSupport</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Unit/TestResultNotificationSupport.html">Test::Unit::TestResultNotificationSupport</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Unit/TestResultOmissionSupport.html">Test::Unit::TestResultOmissionSupport</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Unit/TestResultPendingSupport.html">Test::Unit::TestResultPendingSupport</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Unit/UI.html">Test::Unit::UI</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Unit/Util.html">Test::Unit::Util</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Unit/AssertionFailedError.html">Test::Unit::AssertionFailedError</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Unit/AttributeMatcher.html">Test::Unit::AttributeMatcher</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Unit/AutoRunner.html">Test::Unit::AutoRunner</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Unit/CodeSnippetFetcher.html">Test::Unit::CodeSnippetFetcher</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Unit/Color.html">Test::Unit::Color</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Unit/ColorScheme.html">Test::Unit::ColorScheme</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Unit/DataSets.html">Test::Unit::DataSets</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Unit/Error.html">Test::Unit::Error</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Unit/Failure.html">Test::Unit::Failure</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Unit/FaultLocationDetector.html">Test::Unit::FaultLocationDetector</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Unit/MixColor.html">Test::Unit::MixColor</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Unit/Notification.html">Test::Unit::Notification</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Unit/NotifiedError.html">Test::Unit::NotifiedError</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Unit/Omission.html">Test::Unit::Omission</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Unit/OmittedError.html">Test::Unit::OmittedError</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Unit/PendedError.html">Test::Unit::PendedError</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Unit/Pending.html">Test::Unit::Pending</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Unit/TestCase.html">Test::Unit::TestCase</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Unit/TestResult.html">Test::Unit::TestResult</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Unit/TestSuite.html">Test::Unit::TestSuite</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-at_exit">::at_exit</a></li>
+          
+          <li><a href="#method-c-at_start">::at_start</a></li>
+          
+          <li><a href="#method-c-run-3D">::run=</a></li>
+          
+          <li><a href="#method-c-run-3F">::run?</a></li>
+          
+          <li><a href="#method-c-run_at_exit_hooks">::run_at_exit_hooks</a></li>
+          
+          <li><a href="#method-c-run_at_start_hooks">::run_at_start_hooks</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="../Test.html">Test</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit.html">Test::Unit</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/AssertionFailedError.html">Test::Unit::AssertionFailedError</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Assertions.html">Test::Unit::Assertions</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Assertions/AssertExceptionHelper.html">Test::Unit::Assertions::AssertExceptionHelper</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Assertions/AssertExceptionHelper/WrappedException.html">Test::Unit::Assertions::AssertExceptionHelper::WrappedException</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Assertions/AssertionMessage.html">Test::Unit::Assertions::AssertionMessage</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Assertions/AssertionMessage/ArrayInspector.html">Test::Unit::Assertions::AssertionMessage::ArrayInspector</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Assertions/AssertionMessage/DelayedLiteral.html">Test::Unit::Assertions::AssertionMessage::DelayedLiteral</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Assertions/AssertionMessage/HashInspector.html">Test::Unit::Assertions::AssertionMessage::HashInspector</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Assertions/AssertionMessage/Inspector.html">Test::Unit::Assertions::AssertionMessage::Inspector</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Assertions/AssertionMessage/Literal.html">Test::Unit::Assertions::AssertionMessage::Literal</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Assertions/AssertionMessage/MaybeContainer.html">Test::Unit::Assertions::AssertionMessage::MaybeContainer</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Assertions/AssertionMessage/NumericInspector.html">Test::Unit::Assertions::AssertionMessage::NumericInspector</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Assertions/AssertionMessage/Template.html">Test::Unit::Assertions::AssertionMessage::Template</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Assertions/ThrowTagExtractor.html">Test::Unit::Assertions::ThrowTagExtractor</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Attribute.html">Test::Unit::Attribute</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Attribute/BaseClassMethods.html">Test::Unit::Attribute::BaseClassMethods</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Attribute/ClassMethods.html">Test::Unit::Attribute::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Attribute/StringifyKeyHash.html">Test::Unit::Attribute::StringifyKeyHash</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/AttributeMatcher.html">Test::Unit::AttributeMatcher</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/AutoRunner.html">Test::Unit::AutoRunner</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/AutoRunner/StopOnFailureListener.html">Test::Unit::AutoRunner::StopOnFailureListener</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/AutoRunnerLoader.html">Test::Unit::AutoRunnerLoader</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/CodeSnippetFetcher.html">Test::Unit::CodeSnippetFetcher</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Collector.html">Test::Unit::Collector</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Collector/Descendant.html">Test::Unit::Collector::Descendant</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Collector/Dir.html">Test::Unit::Collector::Dir</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Collector/Load.html">Test::Unit::Collector::Load</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Collector/ObjectSpace.html">Test::Unit::Collector::ObjectSpace</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Collector/XML.html">Test::Unit::Collector::XML</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Collector/XML/Listener.html">Test::Unit::Collector::XML::Listener</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Color.html">Test::Unit::Color</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Color/Error.html">Test::Unit::Color::Error</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Color/ParseError.html">Test::Unit::Color::ParseError</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/ColorScheme.html">Test::Unit::ColorScheme</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Data.html">Test::Unit::Data</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Data/ClassMethods.html">Test::Unit::Data::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Data/ClassMethods/Loader.html">Test::Unit::Data::ClassMethods::Loader</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/DataSets.html">Test::Unit::DataSets</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Diff.html">Test::Unit::Diff</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Diff/Differ.html">Test::Unit::Diff::Differ</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Diff/ReadableDiffer.html">Test::Unit::Diff::ReadableDiffer</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Diff/SequenceMatcher.html">Test::Unit::Diff::SequenceMatcher</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Diff/UTF8Line.html">Test::Unit::Diff::UTF8Line</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Diff/UnifiedDiffer.html">Test::Unit::Diff::UnifiedDiffer</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Error.html">Test::Unit::Error</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/ErrorHandler.html">Test::Unit::ErrorHandler</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/ExceptionHandler.html">Test::Unit::ExceptionHandler</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/ExceptionHandler/ClassMethods.html">Test::Unit::ExceptionHandler::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Failure.html">Test::Unit::Failure</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/FailureHandler.html">Test::Unit::FailureHandler</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/FaultLocationDetector.html">Test::Unit::FaultLocationDetector</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Fixture.html">Test::Unit::Fixture</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Fixture/ClassMethods.html">Test::Unit::Fixture::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Fixture/Fixture.html">Test::Unit::Fixture::Fixture</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Fixture/HookPoint.html">Test::Unit::Fixture::HookPoint</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/MixColor.html">Test::Unit::MixColor</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Notification.html">Test::Unit::Notification</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/NotificationHandler.html">Test::Unit::NotificationHandler</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/NotifiedError.html">Test::Unit::NotifiedError</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/NullResultContainerInitializer.html">Test::Unit::NullResultContainerInitializer</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Omission.html">Test::Unit::Omission</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/OmissionHandler.html">Test::Unit::OmissionHandler</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/OmittedError.html">Test::Unit::OmittedError</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/PendedError.html">Test::Unit::PendedError</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Pending.html">Test::Unit::Pending</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/PendingHandler.html">Test::Unit::PendingHandler</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Priority.html">Test::Unit::Priority</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Priority/Checker.html">Test::Unit::Priority::Checker</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Priority/ClassMethods.html">Test::Unit::Priority::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/TestCase.html">Test::Unit::TestCase</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/TestCase/InternalData.html">Test::Unit::TestCase::InternalData</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/TestCaseNotificationSupport.html">Test::Unit::TestCaseNotificationSupport</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/TestCaseOmissionSupport.html">Test::Unit::TestCaseOmissionSupport</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/TestCasePendingSupport.html">Test::Unit::TestCasePendingSupport</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/TestResult.html">Test::Unit::TestResult</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/TestResultErrorSupport.html">Test::Unit::TestResultErrorSupport</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/TestResultFailureSupport.html">Test::Unit::TestResultFailureSupport</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/TestResultNotificationSupport.html">Test::Unit::TestResultNotificationSupport</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/TestResultOmissionSupport.html">Test::Unit::TestResultOmissionSupport</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/TestResultPendingSupport.html">Test::Unit::TestResultPendingSupport</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/TestSuite.html">Test::Unit::TestSuite</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/UI.html">Test::Unit::UI</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/UI/Console.html">Test::Unit::UI::Console</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/UI/Console/ColorizedReadableDiffer.html">Test::Unit::UI::Console::ColorizedReadableDiffer</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/UI/Console/OutputLevel.html">Test::Unit::UI::Console::OutputLevel</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/UI/Console/TestRunner.html">Test::Unit::UI::Console::TestRunner</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/UI/Emacs.html">Test::Unit::UI::Emacs</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/UI/Emacs/TestRunner.html">Test::Unit::UI::Emacs::TestRunner</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/UI/TestRunner.html">Test::Unit::UI::TestRunner</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/UI/TestRunnerMediator.html">Test::Unit::UI::TestRunnerMediator</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/UI/TestRunnerUtilities.html">Test::Unit::UI::TestRunnerUtilities</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/UI/XML.html">Test::Unit::UI::XML</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/UI/XML/TestRunner.html">Test::Unit::UI::XML::TestRunner</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Util.html">Test::Unit::Util</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Util/BacktraceFilter.html">Test::Unit::Util::BacktraceFilter</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Util/MethodOwnerFinder.html">Test::Unit::Util::MethodOwnerFinder</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Util/Observable.html">Test::Unit::Util::Observable</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Util/Output.html">Test::Unit::Util::Output</a></li>
+        
+          
+          
+          <li><a href="../Test/Unit/Util/ProcWrapper.html">Test::Unit::Util::ProcWrapper</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="module">Test::Unit</h1>
+
+    <div id="description" class="description">
+      
+<p># <a href="Unit.html"><code>Test::Unit</code></a> - Ruby <a href="Unit.html"><code>Unit</code></a> Testing Framework</p>
+
+<p>## Introduction</p>
+
+<p><a href="Unit.html"><code>Unit</code></a> testing is making waves all over the place, largely due to the fact that it is a core practice of XP. While XP is great, unit testing has been around for a long time and has always been a good idea. One of the keys to good unit testing, though, is not just writing tests, but having tests. What&#39;s the difference? Well, if you just <em>write</em> a test and throw it away, you have no guarantee that something won&#39;t change later which breaks your code. If, on the other hand, you <em>have</em> tests (obviously you have to write them first), and run them as often as possible, you slowly build up a wall of things that cannot break without you immediately knowing about it. This is when unit testing hits its peak usefulness.</p>
+
+<p>Enter <a href="Unit.html"><code>Test::Unit</code></a>, a framework for unit testing in Ruby, helping you to design, debug and evaluate your code by making it easy to write and have tests for it.</p>
+
+<p>## Notes</p>
+
+<p><a href="Unit.html"><code>Test::Unit</code></a> has grown out of and superceded Lapidary.</p>
+
+<p>## Feedback</p>
+
+<p>I like (and do my best to practice) XP, so I value early releases, user feedback, and clean, simple, expressive code. There is always room for improvement in everything I do, and <a href="Unit.html"><code>Test::Unit</code></a> is no exception. Please, let me know what you think of <a href="Unit.html"><code>Test::Unit</code></a> as it stands, and what you&#39;d like to see expanded/changed/improved/etc. If you find a bug, let me know ASAP; one good way to let me know what the bug is is to submit a new test that catches it :-) Also, I&#39;d love to hear about any successes you have with <a href="Unit.html"><code>Test::Unit</code></a>, and any documentation you might add will be greatly appreciated. My contact info is below.</p>
+
+<p>## Contact Information</p>
+
+<p>A lot of discussion happens about Ruby in general on the ruby-talk mailing list (<a href="http://www.ruby-lang.org/en/ml.html">www.ruby-lang.org/en/ml.html</a>), and you can ask any questions you might have there. I monitor the list, as do many other helpful Rubyists, and you&#39;re sure to get a quick answer. Of course, you&#39;re also welcome to email me (Nathaniel Talbott) directly at <a href="mailto:testunit@talbott.ws">testunit@talbott.ws</a>, and I&#39;ll do my best to help you out.</p>
+
+<p>## Credits</p>
+
+<p>I&#39;d like to thank…</p>
+
+<p>Matz, for a great language!</p>
+
+<p>Masaki Suketa, for his work on RubyUnit, which filled a vital need in the Ruby world for a very long time. I&#39;m also grateful for his help in polishing <a href="Unit.html"><code>Test::Unit</code></a> and getting the RubyUnit compatibility layer right. His graciousness in allowing <a href="Unit.html"><code>Test::Unit</code></a> to supercede RubyUnit continues to be a challenge to me to be more willing to defer my own rights.</p>
+
+<p>Ken McKinlay, for his interest and work on unit testing, and for his willingness to dialog about it. He was also a great help in pointing out some of the holes in the RubyUnit compatibility layer.</p>
+
+<p>Dave Thomas, for the original idea that led to the extremely simple “require &#39;test/unit&#39;”, plus his code to improve it even more by allowing the selection of tests from the command-line. Also, without RDoc, the documentation for <a href="Unit.html"><code>Test::Unit</code></a> would stink a lot more than it does now.</p>
+
+<p>Everyone who&#39;s helped out with bug reports, feature ideas, encouragement to continue, etc. It&#39;s a real privilege to be a part of the Ruby community.</p>
+
+<p>The guys at RoleModel Software, for putting up with me repeating, “But this would be so much easier in Ruby!” whenever we&#39;re coding in Java.</p>
+
+<p>My Creator, for giving me life, and giving it more abundantly.</p>
+
+<p>## License</p>
+
+<p><a href="Unit.html"><code>Test::Unit</code></a> is copyright © 2000-2003 Nathaniel Talbott. It is free software, and is distributed under the Ruby license. See the COPYING file.</p>
+
+<p>Exception: lib/test/unit/diff.rb is copyright © 2008-2010 Kouhei Sutou and 2001-2008 Python Software Foundation. It is free software, and is distributed under the Ruby license and/or the PSF license. See the COPYING file and PSFL file.</p>
+
+<p>## Warranty</p>
+
+<p>This software is provided “as is” and without any express or implied warranties, including, without limitation, the implied warranties of merchantibility and fitness for a particular purpose.</p>
+
+<p>## Author</p>
+
+<p>Nathaniel Talbott. Copyright © 2000-2003, Nathaniel Talbott</p>
+<hr>
+
+<p># Usage</p>
+
+<p>The general idea behind unit testing is that you write a <em>test</em> <em>method</em> that makes certain <em>assertions</em> about your code, working against a <em>test</em> <em>fixture</em>. A bunch of these <em>test</em> <em>methods</em> are bundled up into a <em>test</em> <em>suite</em> and can be run any time the developer wants. The results of a run are gathered in a <em>test</em> <em>result</em> and displayed to the user through some <a href="Unit/UI.html"><code>UI</code></a>. So, lets break this down and see how <a href="Unit.html"><code>Test::Unit</code></a> provides each of these necessary pieces.</p>
+
+<p>## <a href="Unit/Assertions.html"><code>Assertions</code></a></p>
+
+<p>These are the heart of the framework. Think of an assertion as a statement of expected outcome, i.e. “I assert that x should be equal to y”. If, when the assertion is executed, it turns out to be correct, nothing happens, and life is good. If, on the other hand, your assertion turns out to be false, an error is propagated with pertinent information so that you can go back and make your assertion succeed, and, once again, life is good. For an explanation of the current assertions, see <a href="Unit/Assertions.html"><code>Test::Unit::Assertions</code></a>.</p>
+
+<p>## <a href="../Test.html"><code>Test</code></a> Method &amp; <a href="../Test.html"><code>Test</code></a> <a href="Unit/Fixture.html"><code>Fixture</code></a></p>
+
+<p>Obviously, these assertions have to be called within a context that knows about them and can do something meaningful with their pass/fail value. Also, it&#39;s handy to collect a bunch of related tests, each test represented by a method, into a common test class that knows how to run them. The tests will be in a separate class from the code they&#39;re testing for a couple of reasons. First of all, it allows your code to stay uncluttered with test code, making it easier to maintain. Second, it allows the tests to be stripped out for deployment, since they&#39;re really there for you, the developer, and your users don&#39;t need them. Third, and most importantly, it allows you to set up a common test fixture for your tests to run against.</p>
+
+<p>What&#39;s a test fixture? Well, tests do not live in a vacuum; rather, they&#39;re run against the code they are testing. Often, a collection of tests will run against a common set of data, also called a fixture. If they&#39;re all bundled into the same test class, they can all share the setting up and tearing down of that data, eliminating unnecessary duplication and making it much easier to add related tests.</p>
+
+<p><a href="Unit/TestCase.html"><code>Test::Unit::TestCase</code></a> wraps up a collection of test methods together and allows you to easily set up and tear down the same test fixture for each test. This is done by overriding setup and/or teardown, which will be called before and after each test method that is run. The <a href="Unit/TestCase.html"><code>TestCase</code></a> also knows how to collect the results of your assertions into a <a href="Unit/TestResult.html"><code>Test::Unit::TestResult</code></a>, which can then be reported back to you… but I&#39;m getting ahead of myself. To write a test, follow these steps:</p>
+<ul><li>
+<p>Make sure <a href="Unit.html"><code>Test::Unit</code></a> is in your library path.</p>
+</li><li>
+<p>require &#39;test/unit&#39; in your test script.</p>
+</li><li>
+<p>Create a class that subclasses <a href="Unit/TestCase.html"><code>Test::Unit::TestCase</code></a>.</p>
+</li><li>
+<p>Add a method that begins with “test” to your class.</p>
+</li><li>
+<p>Make assertions in your test method.</p>
+</li><li>
+<p>Optionally define setup and/or teardown to set up and/or tear down your common test fixture.</p>
+</li><li>
+<p>You can now run your test as you would any other Ruby script… try it and see!</p>
+</li></ul>
+
+<p>A really simple test might look like this (setup and teardown are commented out to indicate that they are completely optional):</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;test/unit&#39;</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">MyTest</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Test</span><span class="ruby-operator">::</span><span class="ruby-constant">Unit</span><span class="ruby-operator">::</span><span class="ruby-constant">TestCase</span>
+  <span class="ruby-comment"># def setup</span>
+  <span class="ruby-comment"># end</span>
+
+  <span class="ruby-comment"># def teardown</span>
+  <span class="ruby-comment"># end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_fail</span>
+    <span class="ruby-identifier">assert</span>(<span class="ruby-keyword">false</span>, <span class="ruby-string">&#39;Assertion was false.&#39;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>## <a href="../Test.html"><code>Test</code></a> Runners</p>
+
+<p>So, now you have this great test class, but you still need a way to run it and view any failures that occur during the run. There are some test runner; console test runner, GTK+ test runner and so on. The console test runner is automatically invoked for you if you require &#39;test/unit&#39; and simply run the file. To use another runner simply set default test runner ID to Test::Unit::AutoRunner:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;test/unit&#39;</span>
+<span class="ruby-constant">Test</span><span class="ruby-operator">::</span><span class="ruby-constant">Unit</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoRunner</span>.<span class="ruby-identifier">default_runner</span> = <span class="ruby-string">&quot;gtk2&quot;</span>
+</pre>
+
+<p>## <a href="../Test.html"><code>Test</code></a> Suite</p>
+
+<p>As more and more unit tests accumulate for a given project, it becomes a real drag running them one at a time, and it also introduces the potential to overlook a failing test because you forget to run it. Suddenly it becomes very handy that the TestRunners can take any object that returns a <a href="Unit/TestSuite.html"><code>Test::Unit::TestSuite</code></a> in response to a suite method. The <a href="Unit/TestSuite.html"><code>TestSuite</code></a> can, in turn, contain other TestSuites or individual tests (typically created by a <a href="Unit/TestCase.html"><code>TestCase</code></a>). In other words, you can easily wrap up a group of TestCases and TestSuites.</p>
+
+<p><a href="Unit.html"><code>Test::Unit</code></a> does a little bit more for you, by wrapping these up automatically when you require &#39;test/unit&#39;. What does this mean? It means you could write the above test case like this instead:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;test/unit&#39;</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">&#39;test_myfirsttests&#39;</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">&#39;test_moretestsbyme&#39;</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">&#39;test_anothersetoftests&#39;</span>
+</pre>
+
+<p><a href="Unit.html"><code>Test::Unit</code></a> is smart enough to find all the test cases existing in the ObjectSpace and wrap them up into a suite for you. It then runs the dynamic suite using the console TestRunner.</p>
+
+<p>## Configuration file</p>
+
+<p><a href="Unit.html"><code>Test::Unit</code></a> reads &#39;test-unit.yml&#39; in the current working directory as Test::Unit&#39;s configuration file. It can contain the following configurations:</p>
+<ul><li>
+<p>color scheme definitions</p>
+</li><li>
+<p>test runner to be used</p>
+</li><li>
+<p>test runner options</p>
+</li><li>
+<p>test collector to be used</p>
+</li></ul>
+
+<p>Except color scheme definitions, all of them are specified by command line option.</p>
+
+<p>Here are sample color scheme definitions:</p>
+
+<pre>color_schemes:
+  inverted:
+    success:
+      name: red
+      bold: true
+    failure:
+      name: green
+      bold: true
+  other_scheme:
+    ...</pre>
+
+<p>Here are the syntax of color scheme definitions:</p>
+
+<pre>color_schemes:
+  SCHEME_NAME:
+    EVENT_NAME:
+      name: COLOR_NAME
+      intensity: BOOLEAN
+      bold: BOOLEAN
+      italic: BOOLEAN
+      underline: BOOLEAN
+    ...
+  ...</pre>
+
+<p>SCHEME_NAME : the name of the color scheme</p>
+
+<p>EVENT_NAME : one of [success, failure, pending, omission, notification, error]</p>
+
+<p>COLOR_NAME : one of [black, red, green, yellow, blue, magenta, cyan, white]</p>
+
+<p>BOOLEAN : true or false</p>
+
+<p>You can use the above &#39;inverted&#39; color scheme with the following configuration:</p>
+
+<pre>runner: console
+console_options:
+  color_scheme: inverted
+color_schemes:
+  inverted:
+    success:
+      name: red
+      bold: true
+    failure:
+      name: green
+      bold: true</pre>
+
+<p>## Questions?</p>
+
+<p>I&#39;d really like to get feedback from all levels of Ruby practitioners about typos, grammatical errors, unclear statements, missing points, etc., in this document (or any other).</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="VERSION">VERSION</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="at_exit-method" class="method-detail ">
+          <a name="method-c-at_exit"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">at_exit</span><span
+              class="method-args">(&hook)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Regsiter a hook that is run after running tests. To register multiple hooks, call this method multiple times.</p>
+
+<p>Here is an example test case:</p>
+
+<pre class="ruby"><span class="ruby-constant">Test</span><span class="ruby-operator">::</span><span class="ruby-constant">Unit</span>.<span class="ruby-identifier">at_exit</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-comment"># ...</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">TestMyClass1</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Test</span><span class="ruby-operator">::</span><span class="ruby-constant">Unit</span><span class="ruby-operator">::</span><span class="ruby-constant">TestCase</span>
+  <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">shutdown</span>
+      <span class="ruby-comment"># ...</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">teardown</span>
+    <span class="ruby-comment"># ...</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_my_class1</span>
+    <span class="ruby-comment"># ...</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_my_class2</span>
+    <span class="ruby-comment"># ...</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">TestMyClass2</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Test</span><span class="ruby-operator">::</span><span class="ruby-constant">Unit</span><span class="ruby-operator">::</span><span class="ruby-constant">TestCase</span>
+  <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">shutdown</span>
+      <span class="ruby-comment"># ...</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">teardown</span>
+    <span class="ruby-comment"># ...</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_my_class1</span>
+    <span class="ruby-comment"># ...</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_my_class2</span>
+    <span class="ruby-comment"># ...</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>Here is a call order:</p>
+<ul><li>
+<p>TestMyClass1#test_my_class1</p>
+</li><li>
+<p>TestMyClass1#teardown</p>
+</li><li>
+<p>TestMyClass1#test_my_class2</p>
+</li><li>
+<p>TestMyClass1#teardown</p>
+</li><li>
+<p>TestMyClass1.shutdown</p>
+</li><li>
+<p>TestMyClass2#test_my_class1</p>
+</li><li>
+<p>TestMyClass2#teardown</p>
+</li><li>
+<p>TestMyClass2#test_my_class2</p>
+</li><li>
+<p>TestMyClass2#teardown</p>
+</li><li>
+<p>TestMyClass2.shutdown</p>
+</li><li>
+<p><a href="Unit.html#method-c-at_exit"><code>at_exit</code></a></p>
+</li></ul>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-constant">Test</span><span class="ruby-operator">::</span><span class="ruby-constant">Unit</span>.<span class="ruby-identifier">at_exit</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Exit!&quot;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>@yield A block that is run after running tests. @yieldreturn [void] @return [void]</p>
+
+<p>@since 2.5.2</p>
+            
+
+            
+            <div class="method-source-code" id="at_exit-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File test-unit-3.3.4/lib/test/unit.rb, line 494</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">at_exit</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">hook</span>)
+  <span class="ruby-identifier">@@at_exit_hooks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">hook</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- at_exit-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- at_exit-method -->
+      
+        <div id="at_start-method" class="method-detail ">
+          <a name="method-c-at_start"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">at_start</span><span
+              class="method-args">(&hook)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Regsiter a hook that is run before running tests. To register multiple hooks, call this method multiple times.</p>
+
+<p>Here is an example test case:</p>
+
+<pre class="ruby"><span class="ruby-constant">Test</span><span class="ruby-operator">::</span><span class="ruby-constant">Unit</span>.<span class="ruby-identifier">at_start</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-comment"># ...</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">TestMyClass1</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Test</span><span class="ruby-operator">::</span><span class="ruby-constant">Unit</span><span class="ruby-operator">::</span><span class="ruby-constant">TestCase</span>
+  <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">startup</span>
+      <span class="ruby-comment"># ...</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>
+    <span class="ruby-comment"># ...</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_my_class1</span>
+    <span class="ruby-comment"># ...</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_my_class2</span>
+    <span class="ruby-comment"># ...</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">TestMyClass2</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Test</span><span class="ruby-operator">::</span><span class="ruby-constant">Unit</span><span class="ruby-operator">::</span><span class="ruby-constant">TestCase</span>
+  <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">startup</span>
+      <span class="ruby-comment"># ...</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>
+    <span class="ruby-comment"># ...</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_my_class1</span>
+    <span class="ruby-comment"># ...</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_my_class2</span>
+    <span class="ruby-comment"># ...</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>Here is a call order:</p>
+<ul><li>
+<p><a href="Unit.html#method-c-at_start"><code>at_start</code></a></p>
+</li><li>
+<p>TestMyClass1.startup</p>
+</li><li>
+<p>TestMyClass1#setup</p>
+</li><li>
+<p>TestMyClass1#test_my_class1</p>
+</li><li>
+<p>TestMyClass1#setup</p>
+</li><li>
+<p>TestMyClass1#test_my_class2</p>
+</li><li>
+<p>TestMyClass2#setup</p>
+</li><li>
+<p>TestMyClass2#test_my_class1</p>
+</li><li>
+<p>TestMyClass2#setup</p>
+</li><li>
+<p>TestMyClass2#test_my_class2</p>
+</li></ul>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-constant">Test</span><span class="ruby-operator">::</span><span class="ruby-constant">Unit</span>.<span class="ruby-identifier">at_start</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Start!&quot;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>@yield A block that is run before running tests. @yieldreturn [void] @return [void]</p>
+
+<p>@since 2.5.2</p>
+            
+
+            
+            <div class="method-source-code" id="at_start-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File test-unit-3.3.4/lib/test/unit.rb, line 407</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">at_start</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">hook</span>)
+  <span class="ruby-identifier">@@at_start_hooks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">hook</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- at_start-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- at_start-method -->
+      
+        <div id="run-3D-method" class="method-detail ">
+          <a name="method-c-run-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">run=</span><span
+              class="method-args">(have_run)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Set true when <a href="Unit.html"><code>Test::Unit</code></a> has run.  If set to true <a href="Unit.html"><code>Test::Unit</code></a> will not automatically run at exit.</p>
+
+<p>@deprecated Use <a href="Unit/AutoRunner.html#method-c-need_auto_run-3D"><code>Test::Unit::AutoRunner.need_auto_run=</code></a> instead.</p>
+            
+
+            
+            <div class="method-source-code" id="run-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File test-unit-3.3.4/lib/test/unit.rb, line 321</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run=</span>(<span class="ruby-identifier">have_run</span>)
+  <span class="ruby-constant">AutoRunner</span>.<span class="ruby-identifier">need_auto_run</span> = (<span class="ruby-keyword">not</span> <span class="ruby-identifier">have_run</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- run-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- run-3D-method -->
+      
+        <div id="run-3F-method" class="method-detail ">
+          <a name="method-c-run-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">run?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Already tests have run?</p>
+
+<p>@deprecated Use <a href="Unit/AutoRunner.html#method-c-need_auto_run-3F"><code>Test::Unit::AutoRunner.need_auto_run?</code></a> instead.</p>
+            
+
+            
+            <div class="method-source-code" id="run-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File test-unit-3.3.4/lib/test/unit.rb, line 328</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run?</span>
+  <span class="ruby-keyword">not</span> <span class="ruby-constant">AutoRunner</span>.<span class="ruby-identifier">need_auto_run?</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- run-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- run-3F-method -->
+      
+        <div id="run_at_exit_hooks-method" class="method-detail ">
+          <a name="method-c-run_at_exit_hooks"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">run_at_exit_hooks</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>@api private</p>
+            
+
+            
+            <div class="method-source-code" id="run_at_exit_hooks-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File test-unit-3.3.4/lib/test/unit.rb, line 499</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run_at_exit_hooks</span>
+  <span class="ruby-identifier">@@at_exit_hooks</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hook</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">hook</span>.<span class="ruby-identifier">call</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- run_at_exit_hooks-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- run_at_exit_hooks-method -->
+      
+        <div id="run_at_start_hooks-method" class="method-detail ">
+          <a name="method-c-run_at_start_hooks"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">run_at_start_hooks</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>@api private</p>
+            
+
+            
+            <div class="method-source-code" id="run_at_start_hooks-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File test-unit-3.3.4/lib/test/unit.rb, line 412</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run_at_start_hooks</span>
+  <span class="ruby-identifier">@@at_start_hooks</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hook</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">hook</span>.<span class="ruby-identifier">call</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- run_at_start_hooks-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- run_at_start_hooks-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Unit_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Unit_versioned").load("/associated/2.7.4/Unit.ihtml");</script> <div id='tx_Unit' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Unit").load("/associated/Unit.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, purveyors of fine dance noise.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Unit.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Unit.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

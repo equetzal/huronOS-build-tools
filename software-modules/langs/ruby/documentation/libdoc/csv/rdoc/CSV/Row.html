@@ -1,0 +1,1643 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : CSV::Row  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:17:50 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '..'   asset_rel_prefix = '..'  --> 
+  <title>Class: CSV::Row (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="..css/obf.css"  -->
+  <link rel="stylesheet" href="../css/inuit.css" >
+  <link rel="stylesheet" href="../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../css/carbon17.css" type="text/css" >
+
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>csv/row.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="../Object.html">Object</a></p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-3C-3C">#<<</a></li>
+          
+          <li><a href="#method-i-3D-3D">#==</a></li>
+          
+          <li><a href="#method-i-5B-5D">#[]</a></li>
+          
+          <li><a href="#method-i-5B-5D-3D">#[]=</a></li>
+          
+          <li><a href="#method-i-delete">#delete</a></li>
+          
+          <li><a href="#method-i-delete_if">#delete_if</a></li>
+          
+          <li><a href="#method-i-dig">#dig</a></li>
+          
+          <li><a href="#method-i-each">#each</a></li>
+          
+          <li><a href="#method-i-each_pair">#each_pair</a></li>
+          
+          <li><a href="#method-i-fetch">#fetch</a></li>
+          
+          <li><a href="#method-i-field">#field</a></li>
+          
+          <li><a href="#method-i-field-3F">#field?</a></li>
+          
+          <li><a href="#method-i-field_row-3F">#field_row?</a></li>
+          
+          <li><a href="#method-i-fields">#fields</a></li>
+          
+          <li><a href="#method-i-has_key-3F">#has_key?</a></li>
+          
+          <li><a href="#method-i-header-3F">#header?</a></li>
+          
+          <li><a href="#method-i-header_row-3F">#header_row?</a></li>
+          
+          <li><a href="#method-i-headers">#headers</a></li>
+          
+          <li><a href="#method-i-include-3F">#include?</a></li>
+          
+          <li><a href="#method-i-index">#index</a></li>
+          
+          <li><a href="#method-i-initialize_copy">#initialize_copy</a></li>
+          
+          <li><a href="#method-i-inspect">#inspect</a></li>
+          
+          <li><a href="#method-i-key-3F">#key?</a></li>
+          
+          <li><a href="#method-i-member-3F">#member?</a></li>
+          
+          <li><a href="#method-i-push">#push</a></li>
+          
+          <li><a href="#method-i-to_csv">#to_csv</a></li>
+          
+          <li><a href="#method-i-to_h">#to_h</a></li>
+          
+          <li><a href="#method-i-to_hash">#to_hash</a></li>
+          
+          <li><a href="#method-i-to_s">#to_s</a></li>
+          
+          <li><a href="#method-i-values_at">#values_at</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Included Modules -->
+      <div id="includes-section" class="section">
+        <h3 class="section-header">Included Modules</h3>
+        <ul class="link-list">
+        
+        
+          <li><span class="include">Enumerable</span></li>
+        
+        
+        </ul>
+      </div>
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../CSV.html">CSV</a></li>
+        
+          
+          
+          <li><a href="../CSV/DeleteSuffix.html">CSV::DeleteSuffix</a></li>
+        
+          
+          
+          <li><a href="../CSV/FieldsConverter.html">CSV::FieldsConverter</a></li>
+        
+          
+          
+          <li><a href="../CSV/MalformedCSVError.html">CSV::MalformedCSVError</a></li>
+        
+          
+          
+          <li><a href="../CSV/MatchP.html">CSV::MatchP</a></li>
+        
+          
+          
+          <li><a href="../CSV/Parser.html">CSV::Parser</a></li>
+        
+          
+          
+          <li><a href="../CSV/Parser/InputsScanner.html">CSV::Parser::InputsScanner</a></li>
+        
+          
+          
+          <li><a href="../CSV/Parser/InvalidEncoding.html">CSV::Parser::InvalidEncoding</a></li>
+        
+          
+          
+          <li><a href="../CSV/Parser/Scanner.html">CSV::Parser::Scanner</a></li>
+        
+          
+          
+          <li><a href="../CSV/Parser/UnoptimizedStringIO.html">CSV::Parser::UnoptimizedStringIO</a></li>
+        
+          
+          
+          <li><a href="../CSV/Row.html">CSV::Row</a></li>
+        
+          
+          
+          <li><a href="../CSV/Table.html">CSV::Table</a></li>
+        
+          
+          
+          <li><a href="../CSV/Writer.html">CSV::Writer</a></li>
+        
+          
+          
+          <li><a href="../Object.html">Object</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">CSV::Row</h1>
+
+    <div id="description" class="description">
+      
+<p>A <a href="Row.html"><code>CSV::Row</code></a> is part Array and part Hash. It retains an order for the fields and allows duplicates just as an Array would, but also allows you to access fields by name just as you could if they were in a Hash.</p>
+
+<p>All rows returned by <a href="../CSV.html"><code>CSV</code></a> will be constructed from this class, if header row processing is activated.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+      <!-- Attributes -->
+      <div id="attribute-method-details" class="method-section section">
+        <h3 class="section-header">Attributes</h3>
+
+        
+        <div id="row-attribute-method" class="method-detail">
+          <a name="row"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">row</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description 245">
+          
+          <p>Internal data format used to compare equality.</p>
+          
+          </div>
+        </div>
+        
+      </div><!-- attribute-method-details -->
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(headers, fields, header_row = false)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Constructs a new <a href="Row.html"><code>CSV::Row</code></a> from <code>headers</code> and <code>fields</code>, which are expected to be Arrays. If one Array is shorter than the other, it will be padded with <code>nil</code> objects.</p>
+
+<p>The optional <code>header_row</code> parameter can be set to <code>true</code> to indicate, via <a href="Row.html#method-i-header_row-3F"><code>CSV::Row.header_row?()</code></a> and <a href="Row.html#method-i-field_row-3F"><code>CSV::Row.field_row?()</code></a>, that this is a header row. Otherwise, the row assumes to be a field row.</p>
+
+<p>A <a href="Row.html"><code>CSV::Row</code></a> object supports the following Array methods through delegation:</p>
+<ul><li>
+<p>empty?()</p>
+</li><li>
+<p>length()</p>
+</li><li>
+<p>size()</p>
+</li></ul>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File csv/row.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">headers</span>, <span class="ruby-identifier">fields</span>, <span class="ruby-identifier">header_row</span> = <span class="ruby-keyword">false</span>)
+  <span class="ruby-ivar">@header_row</span> = <span class="ruby-identifier">header_row</span>
+  <span class="ruby-identifier">headers</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">h</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>.<span class="ruby-identifier">freeze</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">h</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">String</span> }
+
+  <span class="ruby-comment"># handle extra headers or fields</span>
+  <span class="ruby-ivar">@row</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">headers</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">fields</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">headers</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-identifier">fields</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">fields</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-identifier">headers</span>).<span class="ruby-identifier">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:reverse!</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="3C-3C-method" class="method-detail ">
+          <a name="method-i-3C-3C"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq"><<( field )</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq"><<( header_and_field_array )</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq"><<( header_and_field_hash )</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>If a two-element Array is provided, it is assumed to be a header and field and the pair is appended. A Hash works the same way with the key being the header and the value being the field. Anything else is assumed to be a lone field which is appended with a <code>nil</code> header.</p>
+
+<p>This method returns the row for chaining.</p>
+            
+
+            
+            <div class="method-source-code" id="3C-3C-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File csv/row.rb, line 181</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;&lt;</span>(<span class="ruby-identifier">arg</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span>  <span class="ruby-comment"># appending a header and name</span>
+    <span class="ruby-ivar">@row</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">arg</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)                  <span class="ruby-comment"># append header and name pairs</span>
+    <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">pair</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@row</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">pair</span> }
+  <span class="ruby-keyword">else</span>                                   <span class="ruby-comment"># append field value</span>
+    <span class="ruby-ivar">@row</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">arg</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">self</span>  <span class="ruby-comment"># for chaining</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 3C-3C-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 3C-3C-method -->
+      
+        <div id="3D-3D-method" class="method-detail ">
+          <a name="method-i-3D-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">==</span><span
+              class="method-args">(other)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns <code>true</code> if this row contains the same headers and fields in the same order as <code>other</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="3D-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File csv/row.rb, line 322</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@row</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">row</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">CSV</span><span class="ruby-operator">::</span><span class="ruby-constant">Row</span>
+  <span class="ruby-ivar">@row</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 3D-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 3D-3D-method -->
+      
+        <div id="5B-5D-method" class="method-detail method-alias">
+          <a name="method-i-5B-5D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">[]</span><span
+              class="method-args">(header_or_index, minimum_index = 0)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Row.html#method-i-field">field</a>
+          </div>
+          
+        </div><!-- 5B-5D-method -->
+      
+        <div id="5B-5D-3D-method" class="method-detail ">
+          <a name="method-i-5B-5D-3D"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">[]=( header, value )</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">[]=( header, offset, value )</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">[]=( index, value )</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Looks up the field by the semantics described in <a href="Row.html#method-i-field"><code>CSV::Row.field()</code></a> and assigns the <code>value</code>.</p>
+
+<p>Assigning past the end of the row with an index will set all pairs between to <code>[nil, nil]</code>. Assigning to an unused header appends the new pair.</p>
+            
+
+            
+            <div class="method-source-code" id="5B-5D-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File csv/row.rb, line 148</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]=</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">value</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Integer</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@row</span>[<span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>].<span class="ruby-identifier">nil?</span>  <span class="ruby-comment"># extending past the end with index</span>
+      <span class="ruby-ivar">@row</span>[<span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>] = [<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">value</span>]
+      <span class="ruby-ivar">@row</span>.<span class="ruby-identifier">map!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">pair</span><span class="ruby-operator">|</span> <span class="ruby-identifier">pair</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> [<span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">pair</span> }
+    <span class="ruby-keyword">else</span>                      <span class="ruby-comment"># normal index assignment</span>
+      <span class="ruby-ivar">@row</span>[<span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>][<span class="ruby-value">1</span>] = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">index</span> = <span class="ruby-identifier">index</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">index</span>.<span class="ruby-identifier">nil?</span>             <span class="ruby-comment"># appending a field</span>
+      <span class="ruby-keyword">self</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>, <span class="ruby-identifier">value</span>]
+    <span class="ruby-keyword">else</span>                      <span class="ruby-comment"># normal header assignment</span>
+      <span class="ruby-ivar">@row</span>[<span class="ruby-identifier">index</span>][<span class="ruby-value">1</span>] = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 5B-5D-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 5B-5D-3D-method -->
+      
+        <div id="delete-method" class="method-detail ">
+          <a name="method-i-delete"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">delete( header )</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">delete( header, offset )</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">delete( index )</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Removes a pair from the row by <code>header</code> or <code>index</code>. The pair is located as described in <a href="Row.html#method-i-field"><code>CSV::Row.field()</code></a>. The deleted pair is returned, or <code>nil</code> if a pair could not be found.</p>
+            
+
+            
+            <div class="method-source-code" id="delete-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File csv/row.rb, line 216</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">delete</span>(<span class="ruby-identifier">header_or_index</span>, <span class="ruby-identifier">minimum_index</span> = <span class="ruby-value">0</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">header_or_index</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Integer</span>                 <span class="ruby-comment"># by index</span>
+    <span class="ruby-ivar">@row</span>.<span class="ruby-identifier">delete_at</span>(<span class="ruby-identifier">header_or_index</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">i</span> = <span class="ruby-identifier">index</span>(<span class="ruby-identifier">header_or_index</span>, <span class="ruby-identifier">minimum_index</span>)  <span class="ruby-comment"># by header</span>
+    <span class="ruby-ivar">@row</span>.<span class="ruby-identifier">delete_at</span>(<span class="ruby-identifier">i</span>)
+  <span class="ruby-keyword">else</span>
+    [ ]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- delete-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- delete-method -->
+      
+        <div id="delete_if-method" class="method-detail ">
+          <a name="method-i-delete_if"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">delete_if</span><span
+              class="method-args">(&block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>The provided <code>block</code> is passed a header and field for each pair in the row and expected to return <code>true</code> or <code>false</code>, depending on whether the pair should be deleted.</p>
+
+<p>This method returns the row for chaining.</p>
+
+<p>If no block is given, an Enumerator is returned.</p>
+            
+
+            
+            <div class="method-source-code" id="delete_if-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File csv/row.rb, line 235</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">delete_if</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">enum_for</span>(<span class="ruby-identifier">__method__</span>) { <span class="ruby-identifier">size</span> } <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
+
+  <span class="ruby-ivar">@row</span>.<span class="ruby-identifier">delete_if</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+
+  <span class="ruby-keyword">self</span>  <span class="ruby-comment"># for chaining</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- delete_if-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- delete_if-method -->
+      
+        <div id="dig-method" class="method-detail ">
+          <a name="method-i-dig"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">dig</span><span
+              class="method-args">(index_or_header, *indexes)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Extracts the nested value specified by the sequence of <code>index</code> or <code>header</code> objects by calling dig at each step, returning nil if any intermediate step is nil.</p>
+            
+
+            
+            <div class="method-source-code" id="dig-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File csv/row.rb, line 356</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dig</span>(<span class="ruby-identifier">index_or_header</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">indexes</span>)
+  <span class="ruby-identifier">value</span> = <span class="ruby-identifier">field</span>(<span class="ruby-identifier">index_or_header</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">indexes</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:dig</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-node">&quot;#{value.class} does not have \#dig method&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">dig</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">indexes</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- dig-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- dig-method -->
+      
+        <div id="each-method" class="method-detail ">
+          <a name="method-i-each"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">each</span><span
+              class="method-args">(&block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Yields each pair of the row as header and field tuples (much like iterating over a Hash). This method returns the row for chaining.</p>
+
+<p>If no block is given, an Enumerator is returned.</p>
+
+<p>Support for Enumerable.</p>
+            
+
+            
+            <div class="method-source-code" id="each-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File csv/row.rb, line 308</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">enum_for</span>(<span class="ruby-identifier">__method__</span>) { <span class="ruby-identifier">size</span> } <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
+
+  <span class="ruby-ivar">@row</span>.<span class="ruby-identifier">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+
+  <span class="ruby-keyword">self</span>  <span class="ruby-comment"># for chaining</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- each-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Row.html#method-i-each_pair">each_pair</a>
+          </div>
+          
+
+          
+        </div><!-- each-method -->
+      
+        <div id="each_pair-method" class="method-detail method-alias">
+          <a name="method-i-each_pair"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">each_pair</span><span
+              class="method-args">(&block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Row.html#method-i-each">each</a>
+          </div>
+          
+        </div><!-- each_pair-method -->
+      
+        <div id="fetch-method" class="method-detail ">
+          <a name="method-i-fetch"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">fetch( header )</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">fetch( header ) { |row| ... }</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">fetch( header, default )</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>This method will fetch the field value by <code>header</code>. It has the same behavior as Hash#fetch: if there is a field with the given <code>header</code>, its value is returned. Otherwise, if a block is given, it is yielded the <code>header</code> and its result is returned; if a <code>default</code> is given as the second argument, it is returned; otherwise a KeyError is raised.</p>
+            
+
+            
+            <div class="method-source-code" id="fetch-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File csv/row.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fetch</span>(<span class="ruby-identifier">header</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">varargs</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Too many arguments&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">varargs</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">pair</span> = <span class="ruby-ivar">@row</span>.<span class="ruby-identifier">assoc</span>(<span class="ruby-identifier">header</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">pair</span>
+    <span class="ruby-identifier">pair</span>.<span class="ruby-identifier">last</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+      <span class="ruby-keyword">yield</span> <span class="ruby-identifier">header</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">varargs</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">KeyError</span>, <span class="ruby-node">&quot;key not found: #{header}&quot;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">varargs</span>.<span class="ruby-identifier">first</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- fetch-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- fetch-method -->
+      
+        <div id="field-method" class="method-detail ">
+          <a name="method-i-field"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">field( header )</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">field( header, offset )</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">field( index )</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>This method will return the field value by <code>header</code> or <code>index</code>. If a field is not found, <code>nil</code> is returned.</p>
+
+<p>When provided, <code>offset</code> ensures that a header match occurs on or later than the <code>offset</code> index. You can use this to find duplicate headers, without resorting to hard-coding exact indices.</p>
+            
+
+            
+            <div class="method-source-code" id="field-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File csv/row.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">field</span>(<span class="ruby-identifier">header_or_index</span>, <span class="ruby-identifier">minimum_index</span> = <span class="ruby-value">0</span>)
+  <span class="ruby-comment"># locate the pair</span>
+  <span class="ruby-identifier">finder</span> = (<span class="ruby-identifier">header_or_index</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Integer</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">header_or_index</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Range</span>)) <span class="ruby-operator">?</span> <span class="ruby-value">:[]</span> <span class="ruby-operator">:</span> <span class="ruby-value">:assoc</span>
+  <span class="ruby-identifier">pair</span>   = <span class="ruby-ivar">@row</span>[<span class="ruby-identifier">minimum_index</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>].<span class="ruby-identifier">send</span>(<span class="ruby-identifier">finder</span>, <span class="ruby-identifier">header_or_index</span>)
+
+  <span class="ruby-comment"># return the field if we have a pair</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">pair</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">header_or_index</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Range</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">pair</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:last</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">pair</span>.<span class="ruby-identifier">last</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- field-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Row.html#method-i-5B-5D">[]</a>
+          </div>
+          
+
+          
+        </div><!-- field-method -->
+      
+        <div id="field-3F-method" class="method-detail ">
+          <a name="method-i-field-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">field?</span><span
+              class="method-args">(data)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns <code>true</code> if <code>data</code> matches a field in this row, and <code>false</code> otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="field-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File csv/row.rb, line 294</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">field?</span>(<span class="ruby-identifier">data</span>)
+  <span class="ruby-identifier">fields</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- field-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- field-3F-method -->
+      
+        <div id="field_row-3F-method" class="method-detail ">
+          <a name="method-i-field_row-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">field_row?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns <code>true</code> if this is a field row.</p>
+            
+
+            
+            <div class="method-source-code" id="field_row-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File csv/row.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">field_row?</span>
+  <span class="ruby-keyword">not</span> <span class="ruby-identifier">header_row?</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- field_row-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- field_row-3F-method -->
+      
+        <div id="fields-method" class="method-detail ">
+          <a name="method-i-fields"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">fields</span><span
+              class="method-args">(*headers_and_or_indices)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>This method accepts any number of arguments which can be headers, indices, Ranges of either, or two-element Arrays containing a header and offset. Each argument will be replaced with a field lookup as described in <a href="Row.html#method-i-field"><code>CSV::Row.field()</code></a>.</p>
+
+<p>If called with no arguments, all fields are returned.</p>
+            
+
+            
+            <div class="method-source-code" id="fields-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File csv/row.rb, line 251</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fields</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">headers_and_or_indices</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">headers_and_or_indices</span>.<span class="ruby-identifier">empty?</span>  <span class="ruby-comment"># return all fields--no arguments</span>
+    <span class="ruby-ivar">@row</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:last</span>)
+  <span class="ruby-keyword">else</span>                              <span class="ruby-comment"># or work like values_at()</span>
+    <span class="ruby-identifier">all</span> = []
+    <span class="ruby-identifier">headers_and_or_indices</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">h_or_i</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">h_or_i</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Range</span>
+        <span class="ruby-identifier">index_begin</span> = <span class="ruby-identifier">h_or_i</span>.<span class="ruby-identifier">begin</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Integer</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">h_or_i</span>.<span class="ruby-identifier">begin</span> <span class="ruby-operator">:</span>
+                                                    <span class="ruby-identifier">index</span>(<span class="ruby-identifier">h_or_i</span>.<span class="ruby-identifier">begin</span>)
+        <span class="ruby-identifier">index_end</span>   = <span class="ruby-identifier">h_or_i</span>.<span class="ruby-identifier">end</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Integer</span>)   <span class="ruby-operator">?</span> <span class="ruby-identifier">h_or_i</span>.<span class="ruby-identifier">end</span> <span class="ruby-operator">:</span>
+                                                    <span class="ruby-identifier">index</span>(<span class="ruby-identifier">h_or_i</span>.<span class="ruby-identifier">end</span>)
+        <span class="ruby-identifier">new_range</span>   = <span class="ruby-identifier">h_or_i</span>.<span class="ruby-identifier">exclude_end?</span> <span class="ruby-operator">?</span> (<span class="ruby-identifier">index_begin</span><span class="ruby-operator">...</span><span class="ruby-identifier">index_end</span>) <span class="ruby-operator">:</span>
+                                            (<span class="ruby-identifier">index_begin</span><span class="ruby-operator">..</span><span class="ruby-identifier">index_end</span>)
+        <span class="ruby-identifier">all</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">fields</span>.<span class="ruby-identifier">values_at</span>(<span class="ruby-identifier">new_range</span>))
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">all</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">field</span>(<span class="ruby-operator">*</span><span class="ruby-constant">Array</span>(<span class="ruby-identifier">h_or_i</span>))
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">all</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- fields-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Row.html#method-i-values_at">values_at</a>
+          </div>
+          
+
+          
+        </div><!-- fields-method -->
+      
+        <div id="has_key-3F-method" class="method-detail ">
+          <a name="method-i-has_key-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">has_key?</span><span
+              class="method-args">(header)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns <code>true</code> if there is a field with the given <code>header</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="has_key-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File csv/row.rb, line 127</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">has_key?</span>(<span class="ruby-identifier">header</span>)
+  <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-ivar">@row</span>.<span class="ruby-identifier">assoc</span>(<span class="ruby-identifier">header</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- has_key-3F-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Row.html#method-i-include-3F">include?</a>, <a href="Row.html#method-i-key-3F">key?</a>, <a href="Row.html#method-i-member-3F">member?</a>, <a href="Row.html#method-i-header-3F">header?</a>
+          </div>
+          
+
+          
+        </div><!-- has_key-3F-method -->
+      
+        <div id="header-3F-method" class="method-detail method-alias">
+          <a name="method-i-header-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">header?</span><span
+              class="method-args">(header)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Row.html#method-i-has_key-3F">has_key?</a>
+          </div>
+          
+        </div><!-- header-3F-method -->
+      
+        <div id="header_row-3F-method" class="method-detail ">
+          <a name="method-i-header_row-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">header_row?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns <code>true</code> if this is a header row.</p>
+            
+
+            
+            <div class="method-source-code" id="header_row-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File csv/row.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">header_row?</span>
+  <span class="ruby-ivar">@header_row</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- header_row-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- header_row-3F-method -->
+      
+        <div id="headers-method" class="method-detail ">
+          <a name="method-i-headers"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">headers</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns the headers of this row.</p>
+            
+
+            
+            <div class="method-source-code" id="headers-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File csv/row.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">headers</span>
+  <span class="ruby-ivar">@row</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:first</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- headers-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- headers-method -->
+      
+        <div id="include-3F-method" class="method-detail method-alias">
+          <a name="method-i-include-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">include?</span><span
+              class="method-args">(header)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Row.html#method-i-has_key-3F">has_key?</a>
+          </div>
+          
+        </div><!-- include-3F-method -->
+      
+        <div id="index-method" class="method-detail ">
+          <a name="method-i-index"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">index( header )</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">index( header, offset )</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>This method will return the index of a field with the provided <code>header</code>. The <code>offset</code> can be used to locate duplicate header names, as described in <a href="Row.html#method-i-field"><code>CSV::Row.field()</code></a>.</p>
+            
+
+            
+            <div class="method-source-code" id="index-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File csv/row.rb, line 283</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">index</span>(<span class="ruby-identifier">header</span>, <span class="ruby-identifier">minimum_index</span> = <span class="ruby-value">0</span>)
+  <span class="ruby-comment"># find the pair</span>
+  <span class="ruby-identifier">index</span> = <span class="ruby-identifier">headers</span>[<span class="ruby-identifier">minimum_index</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>].<span class="ruby-identifier">index</span>(<span class="ruby-identifier">header</span>)
+  <span class="ruby-comment"># return the index at the right offset, if we found one</span>
+  <span class="ruby-identifier">index</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">minimum_index</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- index-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- index-method -->
+      
+        <div id="initialize_copy-method" class="method-detail ">
+          <a name="method-i-initialize_copy"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">initialize_copy</span><span
+              class="method-args">(other)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="initialize_copy-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File csv/row.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize_copy</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-keyword">super</span>
+  <span class="ruby-ivar">@row</span> = <span class="ruby-ivar">@row</span>.<span class="ruby-identifier">dup</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- initialize_copy-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- initialize_copy-method -->
+      
+        <div id="inspect-method" class="method-detail ">
+          <a name="method-i-inspect"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">inspect</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>A summary of fields, by header, in an ASCII compatible String.</p>
+            
+
+            
+            <div class="method-source-code" id="inspect-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File csv/row.rb, line 373</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inspect</span>
+  <span class="ruby-identifier">str</span> = [<span class="ruby-string">&quot;#&lt;&quot;</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">to_s</span>]
+  <span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">header</span>, <span class="ruby-identifier">field</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">str</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot; &quot;</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">header</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Symbol</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">header</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">header</span>.<span class="ruby-identifier">inspect</span>) <span class="ruby-operator">&lt;&lt;</span>
+           <span class="ruby-string">&quot;:&quot;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">field</span>.<span class="ruby-identifier">inspect</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">str</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;&gt;&quot;</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">str</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39;&#39;</span>)
+  <span class="ruby-keyword">rescue</span>  <span class="ruby-comment"># any encoding error</span>
+    <span class="ruby-identifier">str</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">e</span> = <span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">Converter</span>.<span class="ruby-identifier">asciicompat_encoding</span>(<span class="ruby-identifier">s</span>.<span class="ruby-identifier">encoding</span>)
+      <span class="ruby-identifier">e</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">encode</span>(<span class="ruby-identifier">e</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">force_encoding</span>(<span class="ruby-string">&quot;ASCII-8BIT&quot;</span>)
+    <span class="ruby-keyword">end</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39;&#39;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- inspect-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- inspect-method -->
+      
+        <div id="key-3F-method" class="method-detail method-alias">
+          <a name="method-i-key-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">key?</span><span
+              class="method-args">(header)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Row.html#method-i-has_key-3F">has_key?</a>
+          </div>
+          
+        </div><!-- key-3F-method -->
+      
+        <div id="member-3F-method" class="method-detail method-alias">
+          <a name="method-i-member-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">member?</span><span
+              class="method-args">(header)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Row.html#method-i-has_key-3F">has_key?</a>
+          </div>
+          
+        </div><!-- member-3F-method -->
+      
+        <div id="push-method" class="method-detail ">
+          <a name="method-i-push"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">push</span><span
+              class="method-args">(*args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>A shortcut for appending multiple fields. Equivalent to:</p>
+
+<pre class="ruby"><span class="ruby-identifier">args</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span> <span class="ruby-identifier">csv_row</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">arg</span> }
+</pre>
+
+<p>This method returns the row for chaining.</p>
+            
+
+            
+            <div class="method-source-code" id="push-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File csv/row.rb, line 200</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">push</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">args</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">arg</span> }
+
+  <span class="ruby-keyword">self</span>  <span class="ruby-comment"># for chaining</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- push-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- push-method -->
+      
+        <div id="to_csv-method" class="method-detail ">
+          <a name="method-i-to_csv"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_csv</span><span
+              class="method-args">(**options)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns the row as a <a href="../CSV.html"><code>CSV</code></a> String. Headers are not used. Equivalent to:</p>
+
+<pre class="ruby"><span class="ruby-identifier">csv_row</span>.<span class="ruby-identifier">fields</span>.<span class="ruby-identifier">to_csv</span>( <span class="ruby-identifier">options</span> )
+</pre>
+            
+
+            
+            <div class="method-source-code" id="to_csv-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File csv/row.rb, line 347</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_csv</span>(<span class="ruby-operator">**</span><span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">fields</span>.<span class="ruby-identifier">to_csv</span>(<span class="ruby-operator">**</span><span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- to_csv-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Row.html#method-i-to_s">to_s</a>
+          </div>
+          
+
+          
+        </div><!-- to_csv-method -->
+      
+        <div id="to_h-method" class="method-detail ">
+          <a name="method-i-to_h"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_h</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Collapses the row into a simple Hash. Be warned that this discards field order and clobbers duplicate fields.</p>
+            
+
+            
+            <div class="method-source-code" id="to_h-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File csv/row.rb, line 331</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span>
+  <span class="ruby-identifier">hash</span> = {}
+  <span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">_value</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-keyword">self</span>[<span class="ruby-identifier">key</span>] <span class="ruby-keyword">unless</span> <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- to_h-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Row.html#method-i-to_hash">to_hash</a>
+          </div>
+          
+
+          
+        </div><!-- to_h-method -->
+      
+        <div id="to_hash-method" class="method-detail method-alias">
+          <a name="method-i-to_hash"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_hash</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Row.html#method-i-to_h">to_h</a>
+          </div>
+          
+        </div><!-- to_hash-method -->
+      
+        <div id="to_s-method" class="method-detail method-alias">
+          <a name="method-i-to_s"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_s</span><span
+              class="method-args">(**options)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Row.html#method-i-to_csv">to_csv</a>
+          </div>
+          
+        </div><!-- to_s-method -->
+      
+        <div id="values_at-method" class="method-detail method-alias">
+          <a name="method-i-values_at"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">values_at</span><span
+              class="method-args">(*headers_and_or_indices)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Row.html#method-i-fields">fields</a>
+          </div>
+          
+        </div><!-- values_at-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Row_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Row_versioned").load("/associated/2.7.4/Row.ihtml");</script> <div id='tx_Row' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Row").load("/associated/Row.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, an erratic source of art, music, and technology.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Row.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Row.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

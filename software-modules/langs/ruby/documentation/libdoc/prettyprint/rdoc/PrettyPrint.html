@@ -1,0 +1,989 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : PrettyPrint  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:27:01 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = ''  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = ''  --> 
+  <title>Class: PrettyPrint (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href=".css/obf.css"  -->
+  <link rel="stylesheet" href="css/inuit.css" >
+  <link rel="stylesheet" href="css/grid.inuit.css" >
+  <link rel="stylesheet" href="css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="css/carbon17.css" type="text/css" >
+
+
+  <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="/js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>prettyprint.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">CLASS</span> <a href="PrettyPrint/SingleLine.html">PrettyPrint::SingleLine</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-format">::format</a></li>
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-c-singleline_format">::singleline_format</a></li>
+          
+          <li><a href="#method-i-break_outmost_groups">#break_outmost_groups</a></li>
+          
+          <li><a href="#method-i-breakable">#breakable</a></li>
+          
+          <li><a href="#method-i-current_group">#current_group</a></li>
+          
+          <li><a href="#method-i-fill_breakable">#fill_breakable</a></li>
+          
+          <li><a href="#method-i-flush">#flush</a></li>
+          
+          <li><a href="#method-i-group">#group</a></li>
+          
+          <li><a href="#method-i-group_sub">#group_sub</a></li>
+          
+          <li><a href="#method-i-nest">#nest</a></li>
+          
+          <li><a href="#method-i-text">#text</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="./PrettyPrint.html">PrettyPrint</a></li>
+        
+          
+          
+          <li><a href="./PrettyPrint/SingleLine.html">PrettyPrint::SingleLine</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">PrettyPrint</h1>
+
+    <div id="description" class="description">
+      
+<p>This class implements a pretty printing algorithm. It finds line breaks and nice indentations for grouped structure.</p>
+
+<p>By default, the class assumes that primitive elements are strings and each byte in the strings have single column in width. But it can be used for other situations by giving suitable arguments for some methods:</p>
+<ul><li>
+<p>newline object and space generation block for <a href="PrettyPrint.html#method-c-new"><code>PrettyPrint.new</code></a></p>
+</li><li>
+<p>optional width argument for <a href="PrettyPrint.html#method-i-text"><code>PrettyPrint#text</code></a></p>
+</li><li>
+<p><a href="PrettyPrint.html#method-i-breakable"><code>PrettyPrint#breakable</code></a></p>
+</li></ul>
+
+<p>There are several candidate uses:</p>
+<ul><li>
+<p>text formatting using proportional fonts</p>
+</li><li>
+<p>multibyte characters which has columns different to number of bytes</p>
+</li><li>
+<p>non-string formatting</p>
+</li></ul>
+
+<h2 id="class-PrettyPrint-label-Bugs">Bugs<span><a href="#class-PrettyPrint-label-Bugs">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Box based formatting?</p>
+</li><li>
+<p>Other (better) model/algorithm?</p>
+</li></ul>
+
+<p>Report any bugs at <a href="http://bugs.ruby-lang.org">bugs.ruby-lang.org</a></p>
+
+<h2 id="class-PrettyPrint-label-References">References<span><a href="#class-PrettyPrint-label-References">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Christian Lindig, Strictly Pretty, March 2000, <a href="http://www.st.cs.uni-sb.de/~lindig/papers/#pretty">www.st.cs.uni-sb.de/~lindig/papers/#pretty</a></p>
+
+<p>Philip Wadler, A prettier printer, March 1998, <a href="http://homepages.inf.ed.ac.uk/wadler/topics/language-design.html#prettier">homepages.inf.ed.ac.uk/wadler/topics/language-design.html#prettier</a></p>
+
+<h2 id="class-PrettyPrint-label-Author">Author<span><a href="#class-PrettyPrint-label-Author">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Tanaka Akira &lt;akr@fsij.org&gt;</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+      <!-- Attributes -->
+      <div id="attribute-method-details" class="method-section section">
+        <h3 class="section-header">Attributes</h3>
+
+        
+        <div id="genspace-attribute-method" class="method-detail">
+          <a name="genspace"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">genspace</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description 245">
+          
+          <p>A lambda or Proc, that takes one argument, of a Fixnum, and returns the corresponding number of spaces.</p>
+
+<p>By default this is:</p>
+
+<pre class="ruby"><span class="ruby-identifier">lambda</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-string">&#39; &#39;</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">n</span>}
+</pre>
+          
+          </div>
+        </div>
+        
+        <div id="group_queue-attribute-method" class="method-detail">
+          <a name="group_queue"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">group_queue</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description 245">
+          
+          <p>The PrettyPrint::GroupQueue of groups in stack to be pretty printed</p>
+          
+          </div>
+        </div>
+        
+        <div id="indent-attribute-method" class="method-detail">
+          <a name="indent"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">indent</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description 245">
+          
+          <p>The number of spaces to be indented</p>
+          
+          </div>
+        </div>
+        
+        <div id="maxwidth-attribute-method" class="method-detail">
+          <a name="maxwidth"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">maxwidth</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description 245">
+          
+          <p>The maximum width of a line, before it is separated in to a newline</p>
+
+<p>This defaults to 79, and should be a Fixnum</p>
+          
+          </div>
+        </div>
+        
+        <div id="newline-attribute-method" class="method-detail">
+          <a name="newline"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">newline</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description 245">
+          
+          <p>The value that is appended to <code>output</code> to add a new line.</p>
+
+<p>This defaults to “n”, and should be String</p>
+          
+          </div>
+        </div>
+        
+        <div id="output-attribute-method" class="method-detail">
+          <a name="output"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">output</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description 245">
+          
+          <p>The output object.</p>
+
+<p>This defaults to &#39;&#39;, and should accept the &lt;&lt; method</p>
+          
+          </div>
+        </div>
+        
+      </div><!-- attribute-method-details -->
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="format-method" class="method-detail ">
+          <a name="method-c-format"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">format</span><span
+              class="method-args">(output=''.dup, maxwidth=79, newline="\n", genspace=lambda {|n| ' ' * n})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>This is a convenience method which is same as follows:</p>
+
+<pre class="ruby"><span class="ruby-keyword">begin</span>
+  <span class="ruby-identifier">q</span> = <span class="ruby-constant">PrettyPrint</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">output</span>, <span class="ruby-identifier">maxwidth</span>, <span class="ruby-identifier">newline</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">genspace</span>)
+  <span class="ruby-operator">...</span>
+  <span class="ruby-identifier">q</span>.<span class="ruby-identifier">flush</span>
+  <span class="ruby-identifier">output</span>
+<span class="ruby-keyword">end</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="format-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File prettyprint.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">PrettyPrint</span>.<span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">output</span>=<span class="ruby-string">&#39;&#39;</span>.<span class="ruby-identifier">dup</span>, <span class="ruby-identifier">maxwidth</span>=<span class="ruby-value">79</span>, <span class="ruby-identifier">newline</span>=<span class="ruby-string">&quot;\n&quot;</span>, <span class="ruby-identifier">genspace</span>=<span class="ruby-identifier">lambda</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-string">&#39; &#39;</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">n</span>})
+  <span class="ruby-identifier">q</span> = <span class="ruby-constant">PrettyPrint</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">output</span>, <span class="ruby-identifier">maxwidth</span>, <span class="ruby-identifier">newline</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">genspace</span>)
+  <span class="ruby-keyword">yield</span> <span class="ruby-identifier">q</span>
+  <span class="ruby-identifier">q</span>.<span class="ruby-identifier">flush</span>
+  <span class="ruby-identifier">output</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- format-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- format-method -->
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(output=''.dup, maxwidth=79, newline="\n", &genspace)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Creates a buffer for pretty printing.</p>
+
+<p><code>output</code> is an output target. If it is not specified, &#39;&#39; is assumed. It should have a &lt;&lt; method which accepts the first argument <code>obj</code> of <a href="PrettyPrint.html#method-i-text"><code>PrettyPrint#text</code></a>, the first argument <code>sep</code> of <a href="PrettyPrint.html#method-i-breakable"><code>PrettyPrint#breakable</code></a>, the first argument <code>newline</code> of <a href="PrettyPrint.html#method-c-new"><code>PrettyPrint.new</code></a>, and the result of a given block for <a href="PrettyPrint.html#method-c-new"><code>PrettyPrint.new</code></a>.</p>
+
+<p><code>maxwidth</code> specifies maximum line length. If it is not specified, 79 is assumed. However actual outputs may overflow <code>maxwidth</code> if long non-breakable texts are provided.</p>
+
+<p><code>newline</code> is used for line breaks. “n” is used if it is not specified.</p>
+
+<p>The block is used to generate spaces. {|width| &#39; &#39; * width} is used if it is not given.</p>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File prettyprint.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">output</span>=<span class="ruby-string">&#39;&#39;</span>.<span class="ruby-identifier">dup</span>, <span class="ruby-identifier">maxwidth</span>=<span class="ruby-value">79</span>, <span class="ruby-identifier">newline</span>=<span class="ruby-string">&quot;\n&quot;</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">genspace</span>)
+  <span class="ruby-ivar">@output</span> = <span class="ruby-identifier">output</span>
+  <span class="ruby-ivar">@maxwidth</span> = <span class="ruby-identifier">maxwidth</span>
+  <span class="ruby-ivar">@newline</span> = <span class="ruby-identifier">newline</span>
+  <span class="ruby-ivar">@genspace</span> = <span class="ruby-identifier">genspace</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">lambda</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-string">&#39; &#39;</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">n</span>}
+
+  <span class="ruby-ivar">@output_width</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@buffer_width</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@buffer</span> = []
+
+  <span class="ruby-identifier">root_group</span> = <span class="ruby-constant">Group</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)
+  <span class="ruby-ivar">@group_stack</span> = [<span class="ruby-identifier">root_group</span>]
+  <span class="ruby-ivar">@group_queue</span> = <span class="ruby-constant">GroupQueue</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">root_group</span>)
+  <span class="ruby-ivar">@indent</span> = <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+        <div id="singleline_format-method" class="method-detail ">
+          <a name="method-c-singleline_format"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">singleline_format</span><span
+              class="method-args">(output=''.dup, maxwidth=nil, newline=nil, genspace=nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>This is similar to <a href="PrettyPrint.html#method-c-format"><code>PrettyPrint::format</code></a> but the result has no breaks.</p>
+
+<p><code>maxwidth</code>, <code>newline</code> and <code>genspace</code> are ignored.</p>
+
+<p>The invocation of <code>breakable</code> in the block doesn&#39;t break a line and is treated as just an invocation of <code>text</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="singleline_format-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File prettyprint.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">PrettyPrint</span>.<span class="ruby-identifier ruby-title">singleline_format</span>(<span class="ruby-identifier">output</span>=<span class="ruby-string">&#39;&#39;</span>.<span class="ruby-identifier">dup</span>, <span class="ruby-identifier">maxwidth</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">newline</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">genspace</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">q</span> = <span class="ruby-constant">SingleLine</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">output</span>)
+  <span class="ruby-keyword">yield</span> <span class="ruby-identifier">q</span>
+  <span class="ruby-identifier">output</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- singleline_format-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- singleline_format-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="break_outmost_groups-method" class="method-detail ">
+          <a name="method-i-break_outmost_groups"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">break_outmost_groups</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Breaks the buffer into lines that are shorter than <a href="PrettyPrint.html#attribute-i-maxwidth"><code>maxwidth</code></a></p>
+            
+
+            
+            <div class="method-source-code" id="break_outmost_groups-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File prettyprint.rb, line 160</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">break_outmost_groups</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-ivar">@maxwidth</span> <span class="ruby-operator">&lt;</span> <span class="ruby-ivar">@output_width</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@buffer_width</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">group</span> = <span class="ruby-ivar">@group_queue</span>.<span class="ruby-identifier">deq</span>
+    <span class="ruby-keyword">until</span> <span class="ruby-identifier">group</span>.<span class="ruby-identifier">breakables</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">data</span> = <span class="ruby-ivar">@buffer</span>.<span class="ruby-identifier">shift</span>
+      <span class="ruby-ivar">@output_width</span> = <span class="ruby-identifier">data</span>.<span class="ruby-identifier">output</span>(<span class="ruby-ivar">@output</span>, <span class="ruby-ivar">@output_width</span>)
+      <span class="ruby-ivar">@buffer_width</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">width</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">while</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@buffer</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Text</span> <span class="ruby-operator">===</span> <span class="ruby-ivar">@buffer</span>.<span class="ruby-identifier">first</span>
+      <span class="ruby-identifier">text</span> = <span class="ruby-ivar">@buffer</span>.<span class="ruby-identifier">shift</span>
+      <span class="ruby-ivar">@output_width</span> = <span class="ruby-identifier">text</span>.<span class="ruby-identifier">output</span>(<span class="ruby-ivar">@output</span>, <span class="ruby-ivar">@output_width</span>)
+      <span class="ruby-ivar">@buffer_width</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">width</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- break_outmost_groups-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- break_outmost_groups-method -->
+      
+        <div id="breakable-method" class="method-detail ">
+          <a name="method-i-breakable"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">breakable</span><span
+              class="method-args">(sep=' ', width=sep.length)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>This says “you can break a line here if necessary”, and a <code>width</code>-column text <code>sep</code> is inserted if a line is not broken at the point.</p>
+
+<p>If <code>sep</code> is not specified, “ ” is used.</p>
+
+<p>If <code>width</code> is not specified, <code>sep.length</code> is used. You will have to specify this when <code>sep</code> is a multibyte character, for example.</p>
+            
+
+            
+            <div class="method-source-code" id="breakable-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File prettyprint.rb, line 224</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">breakable</span>(<span class="ruby-identifier">sep</span>=<span class="ruby-string">&#39; &#39;</span>, <span class="ruby-identifier">width</span>=<span class="ruby-identifier">sep</span>.<span class="ruby-identifier">length</span>)
+  <span class="ruby-identifier">group</span> = <span class="ruby-ivar">@group_stack</span>.<span class="ruby-identifier">last</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">group</span>.<span class="ruby-identifier">break?</span>
+    <span class="ruby-identifier">flush</span>
+    <span class="ruby-ivar">@output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@newline</span>
+    <span class="ruby-ivar">@output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@genspace</span>.<span class="ruby-identifier">call</span>(<span class="ruby-ivar">@indent</span>)
+    <span class="ruby-ivar">@output_width</span> = <span class="ruby-ivar">@indent</span>
+    <span class="ruby-ivar">@buffer_width</span> = <span class="ruby-value">0</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@buffer</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Breakable</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">sep</span>, <span class="ruby-identifier">width</span>, <span class="ruby-keyword">self</span>)
+    <span class="ruby-ivar">@buffer_width</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">width</span>
+    <span class="ruby-identifier">break_outmost_groups</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- breakable-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- breakable-method -->
+      
+        <div id="current_group-method" class="method-detail ">
+          <a name="method-i-current_group"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">current_group</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns the group most recently added to the stack.</p>
+
+<p>Contrived example:</p>
+
+<pre>out = &quot;&quot;
+=&gt; &quot;&quot;
+q = PrettyPrint.new(out)
+=&gt; #&lt;PrettyPrint:0x82f85c0 @output=&quot;&quot;, @maxwidth=79, @newline=&quot;\n&quot;, @genspace=#&lt;Proc:0x82f8368@/home/vbatts/.rvm/rubies/ruby-head/lib/ruby/2.0.0/prettyprint.rb:82 (lambda)&gt;, @output_width=0, @buffer_width=0, @buffer=[], @group_stack=[#&lt;PrettyPrint::Group:0x82f8138 @depth=0, @breakables=[], @break=false&gt;], @group_queue=#&lt;PrettyPrint::GroupQueue:0x82fb7c0 @queue=[[#&lt;PrettyPrint::Group:0x82f8138 @depth=0, @breakables=[], @break=false&gt;]]&gt;, @indent=0&gt;
+q.group {
+  q.text q.current_group.inspect
+  q.text q.newline
+  q.group(q.current_group.depth + 1) {
+    q.text q.current_group.inspect
+    q.text q.newline
+    q.group(q.current_group.depth + 1) {
+      q.text q.current_group.inspect
+      q.text q.newline
+      q.group(q.current_group.depth + 1) {
+        q.text q.current_group.inspect
+        q.text q.newline
+      }
+    }
+  }
+}
+=&gt; 284
+ puts out
+#&lt;PrettyPrint::Group:0x8354758 @depth=1, @breakables=[], @break=false&gt;
+#&lt;PrettyPrint::Group:0x8354550 @depth=2, @breakables=[], @break=false&gt;
+#&lt;PrettyPrint::Group:0x83541cc @depth=3, @breakables=[], @break=false&gt;
+#&lt;PrettyPrint::Group:0x8347e54 @depth=4, @breakables=[], @break=false&gt;</pre>
+            
+
+            
+            <div class="method-source-code" id="current_group-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File prettyprint.rb, line 155</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">current_group</span>
+  <span class="ruby-ivar">@group_stack</span>.<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- current_group-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- current_group-method -->
+      
+        <div id="fill_breakable-method" class="method-detail ">
+          <a name="method-i-fill_breakable"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">fill_breakable</span><span
+              class="method-args">(sep=' ', width=sep.length)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>This is similar to <a href="PrettyPrint.html#method-i-breakable"><code>breakable</code></a> except the decision to break or not is determined individually.</p>
+
+<p>Two <a href="PrettyPrint.html#method-i-fill_breakable"><code>fill_breakable</code></a> under a group may cause 4 results: (break,break), (break,non-break), (non-break,break), (non-break,non-break). This is different to <a href="PrettyPrint.html#method-i-breakable"><code>breakable</code></a> because two <a href="PrettyPrint.html#method-i-breakable"><code>breakable</code></a> under a group may cause 2 results: (break,break), (non-break,non-break).</p>
+
+<p>The text <code>sep</code> is inserted if a line is not broken at this point.</p>
+
+<p>If <code>sep</code> is not specified, “ ” is used.</p>
+
+<p>If <code>width</code> is not specified, <code>sep.length</code> is used. You will have to specify this when <code>sep</code> is a multibyte character, for example.</p>
+            
+
+            
+            <div class="method-source-code" id="fill_breakable-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File prettyprint.rb, line 212</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fill_breakable</span>(<span class="ruby-identifier">sep</span>=<span class="ruby-string">&#39; &#39;</span>, <span class="ruby-identifier">width</span>=<span class="ruby-identifier">sep</span>.<span class="ruby-identifier">length</span>)
+  <span class="ruby-identifier">group</span> { <span class="ruby-identifier">breakable</span> <span class="ruby-identifier">sep</span>, <span class="ruby-identifier">width</span> }
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- fill_breakable-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- fill_breakable-method -->
+      
+        <div id="flush-method" class="method-detail ">
+          <a name="method-i-flush"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">flush</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>outputs buffered data.</p>
+            
+
+            
+            <div class="method-source-code" id="flush-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File prettyprint.rb, line 288</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">flush</span>
+  <span class="ruby-ivar">@buffer</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">data</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@output_width</span> = <span class="ruby-identifier">data</span>.<span class="ruby-identifier">output</span>(<span class="ruby-ivar">@output</span>, <span class="ruby-ivar">@output_width</span>)
+  }
+  <span class="ruby-ivar">@buffer</span>.<span class="ruby-identifier">clear</span>
+  <span class="ruby-ivar">@buffer_width</span> = <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- flush-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- flush-method -->
+      
+        <div id="group-method" class="method-detail ">
+          <a name="method-i-group"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">group</span><span
+              class="method-args">(indent=0, open_obj='', close_obj='', open_width=open_obj.length, close_width=close_obj.length)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Groups line break hints added in the block. The line break hints are all to be used or not.</p>
+
+<p>If <code>indent</code> is specified, the method call is regarded as nested by nest(indent) { … }.</p>
+
+<p>If <code>open_obj</code> is specified, <code>text open_obj, open_width</code> is called before grouping. If <code>close_obj</code> is specified, <code>text close_obj, close_width</code> is called after grouping.</p>
+            
+
+            
+            <div class="method-source-code" id="group-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File prettyprint.rb, line 249</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">group</span>(<span class="ruby-identifier">indent</span>=<span class="ruby-value">0</span>, <span class="ruby-identifier">open_obj</span>=<span class="ruby-string">&#39;&#39;</span>, <span class="ruby-identifier">close_obj</span>=<span class="ruby-string">&#39;&#39;</span>, <span class="ruby-identifier">open_width</span>=<span class="ruby-identifier">open_obj</span>.<span class="ruby-identifier">length</span>, <span class="ruby-identifier">close_width</span>=<span class="ruby-identifier">close_obj</span>.<span class="ruby-identifier">length</span>)
+  <span class="ruby-identifier">text</span> <span class="ruby-identifier">open_obj</span>, <span class="ruby-identifier">open_width</span>
+  <span class="ruby-identifier">group_sub</span> {
+    <span class="ruby-identifier">nest</span>(<span class="ruby-identifier">indent</span>) {
+      <span class="ruby-keyword">yield</span>
+    }
+  }
+  <span class="ruby-identifier">text</span> <span class="ruby-identifier">close_obj</span>, <span class="ruby-identifier">close_width</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- group-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- group-method -->
+      
+        <div id="group_sub-method" class="method-detail ">
+          <a name="method-i-group_sub"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">group_sub</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Takes a block and queues a new group that is indented 1 level further.</p>
+            
+
+            
+            <div class="method-source-code" id="group_sub-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File prettyprint.rb, line 260</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">group_sub</span>
+  <span class="ruby-identifier">group</span> = <span class="ruby-constant">Group</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@group_stack</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">depth</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)
+  <span class="ruby-ivar">@group_stack</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">group</span>
+  <span class="ruby-ivar">@group_queue</span>.<span class="ruby-identifier">enq</span> <span class="ruby-identifier">group</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">ensure</span>
+    <span class="ruby-ivar">@group_stack</span>.<span class="ruby-identifier">pop</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">group</span>.<span class="ruby-identifier">breakables</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-ivar">@group_queue</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">group</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- group_sub-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- group_sub-method -->
+      
+        <div id="nest-method" class="method-detail ">
+          <a name="method-i-nest"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">nest</span><span
+              class="method-args">(indent)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Increases left margin after newline with <code>indent</code> for line breaks added in the block.</p>
+            
+
+            
+            <div class="method-source-code" id="nest-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File prettyprint.rb, line 277</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">nest</span>(<span class="ruby-identifier">indent</span>)
+  <span class="ruby-ivar">@indent</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">indent</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">ensure</span>
+    <span class="ruby-ivar">@indent</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">indent</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- nest-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- nest-method -->
+      
+        <div id="text-method" class="method-detail ">
+          <a name="method-i-text"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">text</span><span
+              class="method-args">(obj, width=obj.length)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>This adds <code>obj</code> as a text of <code>width</code> columns in width.</p>
+
+<p>If <code>width</code> is not specified, obj.length is used.</p>
+            
+
+            
+            <div class="method-source-code" id="text-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File prettyprint.rb, line 180</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">text</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">width</span>=<span class="ruby-identifier">obj</span>.<span class="ruby-identifier">length</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@buffer</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-ivar">@output</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">obj</span>
+    <span class="ruby-ivar">@output_width</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">width</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">text</span> = <span class="ruby-ivar">@buffer</span>.<span class="ruby-identifier">last</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-constant">Text</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">text</span>
+      <span class="ruby-identifier">text</span> = <span class="ruby-constant">Text</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-ivar">@buffer</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">text</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">text</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">width</span>)
+    <span class="ruby-ivar">@buffer_width</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">width</span>
+    <span class="ruby-identifier">break_outmost_groups</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- text-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- text-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_PrettyPrint_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_PrettyPrint_versioned").load("/associated/2.7.4/PrettyPrint.ihtml");</script> <div id='tx_PrettyPrint' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_PrettyPrint").load("/associated/PrettyPrint.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Hack your world.  Feed your head.  Live curious</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_PrettyPrint.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_PrettyPrint.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Module : Singleton  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:31:52 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = ''  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = ''  --> 
+  <title>Module: Singleton (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href=".css/obf.css"  -->
+  <link rel="stylesheet" href="css/inuit.css" >
+  <link rel="stylesheet" href="css/grid.inuit.css" >
+  <link rel="stylesheet" href="css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="css/carbon17.css" type="text/css" >
+
+
+  <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="/js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="module rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>singleton.rb</li>      
+            
+          
+          <li class='in-file'>singleton/version.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-_load">::_load</a></li>
+          
+          <li><a href="#method-c-instance">::instance</a></li>
+          
+          <li><a href="#method-i-_dump">#_dump</a></li>
+          
+          <li><a href="#method-i-clone">#clone</a></li>
+          
+          <li><a href="#method-i-dup">#dup</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="./Singleton.html">Singleton</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="module">Singleton</h1>
+
+    <div id="description" class="description">
+      
+<p>The <a href="Singleton.html"><code>Singleton</code></a> module implements the <a href="Singleton.html"><code>Singleton</code></a> pattern.</p>
+
+<h2 id="module-Singleton-label-Usage">Usage<span><a href="#module-Singleton-label-Usage">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>To use <a href="Singleton.html"><code>Singleton</code></a>, include the module in your class.</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Klass</span>
+   <span class="ruby-identifier">include</span> <span class="ruby-constant">Singleton</span>
+   <span class="ruby-comment"># ...</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>This ensures that only one instance of Klass can be created.</p>
+
+<pre class="ruby"><span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span>  = <span class="ruby-constant">Klass</span>.<span class="ruby-identifier">instance</span>, <span class="ruby-constant">Klass</span>.<span class="ruby-identifier">instance</span>
+
+<span class="ruby-identifier">a</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">b</span>
+<span class="ruby-comment"># =&gt; true</span>
+
+<span class="ruby-constant">Klass</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-comment"># =&gt; NoMethodError - new is private ...</span>
+</pre>
+
+<p>The instance is created at upon the first call of Klass.instance().</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">OtherKlass</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">Singleton</span>
+  <span class="ruby-comment"># ...</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-constant">ObjectSpace</span>.<span class="ruby-identifier">each_object</span>(<span class="ruby-constant">OtherKlass</span>){}
+<span class="ruby-comment"># =&gt; 0</span>
+
+<span class="ruby-constant">OtherKlass</span>.<span class="ruby-identifier">instance</span>
+<span class="ruby-constant">ObjectSpace</span>.<span class="ruby-identifier">each_object</span>(<span class="ruby-constant">OtherKlass</span>){}
+<span class="ruby-comment"># =&gt; 1</span>
+</pre>
+
+<p>This behavior is preserved under inheritance and cloning.</p>
+
+<h2 id="module-Singleton-label-Implementation">Implementation<span><a href="#module-Singleton-label-Implementation">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>This above is achieved by:</p>
+<ul><li>
+<p>Making Klass.new and Klass.allocate private.</p>
+</li><li>
+<p>Overriding Klass.inherited(sub_klass) and Klass.clone() to ensure that the <a href="Singleton.html"><code>Singleton</code></a> properties are kept when inherited and cloned.</p>
+</li><li>
+<p>Providing the Klass.instance() method that returns the same object each time it is called.</p>
+</li><li>
+<p>Overriding Klass._load(str) to call Klass.instance().</p>
+</li><li>
+<p>Overriding Klass#clone and Klass#dup to raise TypeErrors to prevent cloning or duping.</p>
+</li></ul>
+
+<h2 id="module-Singleton-label-Singleton+and+Marshal"><a href="Singleton.html"><code>Singleton</code></a> and Marshal<span><a href="#module-Singleton-label-Singleton+and+Marshal">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>By default Singleton&#39;s #_dump(depth) returns the empty string. Marshalling by default will strip state information, e.g. instance variables from the instance. Classes using <a href="Singleton.html"><code>Singleton</code></a> can provide custom _load(str) and _dump(depth) methods to retain some of the previous state of the instance.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;singleton&#39;</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">Example</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">Singleton</span>
+  <span class="ruby-identifier">attr_accessor</span> <span class="ruby-value">:keep</span>, <span class="ruby-value">:strip</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_dump</span>(<span class="ruby-identifier">depth</span>)
+    <span class="ruby-comment"># this strips the @strip information from the instance</span>
+    <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">dump</span>(<span class="ruby-ivar">@keep</span>, <span class="ruby-identifier">depth</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">_load</span>(<span class="ruby-identifier">str</span>)
+    <span class="ruby-identifier">instance</span>.<span class="ruby-identifier">keep</span> = <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">load</span>(<span class="ruby-identifier">str</span>)
+    <span class="ruby-identifier">instance</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">a</span> = <span class="ruby-constant">Example</span>.<span class="ruby-identifier">instance</span>
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">keep</span> = <span class="ruby-string">&quot;keep this&quot;</span>
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">strip</span> = <span class="ruby-string">&quot;get rid of this&quot;</span>
+
+<span class="ruby-identifier">stored_state</span> = <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">dump</span>(<span class="ruby-identifier">a</span>)
+
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">keep</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-identifier">a</span>.<span class="ruby-identifier">strip</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-identifier">b</span> = <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">load</span>(<span class="ruby-identifier">stored_state</span>)
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">a</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">b</span>  <span class="ruby-comment">#  =&gt; true</span>
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">keep</span>  <span class="ruby-comment">#  =&gt; &quot;keep this&quot;</span>
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">strip</span> <span class="ruby-comment">#  =&gt; nil</span>
+</pre>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="VERSION">VERSION</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="_load-method" class="method-detail ">
+          <a name="method-c-_load"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">_load</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>By default calls instance(). Override to retain singleton state.</p>
+            
+
+            
+            <div class="method-source-code" id="_load-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File singleton.rb, line 169</span>
+  
+            </pre> 
+            </div><!-- _load-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- _load-method -->
+      
+        <div id="instance-method" class="method-detail ">
+          <a name="method-c-instance"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">instance</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns the singleton instance.</p>
+            
+
+            
+            <div class="method-source-code" id="instance-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File singleton.rb, line 173</span>
+
+            </pre> 
+            </div><!-- instance-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- instance-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="_dump-method" class="method-detail ">
+          <a name="method-i-_dump"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">_dump</span><span
+              class="method-args">(depth = -1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>By default, do not retain any state when marshalling.</p>
+            
+
+            
+            <div class="method-source-code" id="_dump-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File singleton.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">_dump</span>(<span class="ruby-identifier">depth</span> = <span class="ruby-value">-1</span>)
+  <span class="ruby-string">&#39;&#39;</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- _dump-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- _dump-method -->
+      
+        <div id="clone-method" class="method-detail ">
+          <a name="method-i-clone"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">clone</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Raises a TypeError to prevent cloning.</p>
+            
+
+            
+            <div class="method-source-code" id="clone-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File singleton.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">clone</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-node">&quot;can&#39;t clone instance of singleton #{self.class}&quot;</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- clone-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- clone-method -->
+      
+        <div id="dup-method" class="method-detail ">
+          <a name="method-i-dup"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">dup</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Raises a TypeError to prevent duping.</p>
+            
+
+            
+            <div class="method-source-code" id="dup-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File singleton.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dup</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-node">&quot;can&#39;t dup instance of singleton #{self.class}&quot;</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- dup-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- dup-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Singleton_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Singleton_versioned").load("/associated/2.7.4/Singleton.ihtml");</script> <div id='tx_Singleton' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Singleton").load("/associated/Singleton.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, an erratic source of art, music, and technology.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Singleton.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Singleton.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

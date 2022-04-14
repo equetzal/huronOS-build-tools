@@ -1,0 +1,1517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : OpenSSL::X509::Request  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:26:03 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '../..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '../..'   asset_rel_prefix = '../..'  --> 
+  <title>Class: OpenSSL::X509::Request (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="../..css/obf.css"  -->
+  <link rel="stylesheet" href="../../css/inuit.css" >
+  <link rel="stylesheet" href="../../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../../css/carbon17.css" type="text/css" >
+
+
+  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>openssl/lib/openssl/x509.rb</li>      
+            
+          
+          <li class='in-file'>openssl/ossl_x509attr.c</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-3D-3D">#==</a></li>
+          
+          <li><a href="#method-i-add_attribute">#add_attribute</a></li>
+          
+          <li><a href="#method-i-attributes">#attributes</a></li>
+          
+          <li><a href="#method-i-attributes-3D">#attributes=</a></li>
+          
+          <li><a href="#method-i-initialize_copy">#initialize_copy</a></li>
+          
+          <li><a href="#method-i-public_key">#public_key</a></li>
+          
+          <li><a href="#method-i-public_key-3D">#public_key=</a></li>
+          
+          <li><a href="#method-i-sign">#sign</a></li>
+          
+          <li><a href="#method-i-signature_algorithm">#signature_algorithm</a></li>
+          
+          <li><a href="#method-i-subject">#subject</a></li>
+          
+          <li><a href="#method-i-subject-3D">#subject=</a></li>
+          
+          <li><a href="#method-i-to_der">#to_der</a></li>
+          
+          <li><a href="#method-i-to_pem">#to_pem</a></li>
+          
+          <li><a href="#method-i-to_s">#to_s</a></li>
+          
+          <li><a href="#method-i-to_text">#to_text</a></li>
+          
+          <li><a href="#method-i-verify">#verify</a></li>
+          
+          <li><a href="#method-i-version">#version</a></li>
+          
+          <li><a href="#method-i-version-3D">#version=</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../../IO.html">IO</a></li>
+        
+          
+          
+          <li><a href="../../IO/WaitReadable.html">IO::WaitReadable</a></li>
+        
+          
+          
+          <li><a href="../../IO/WaitWritable.html">IO::WaitWritable</a></li>
+        
+          
+          
+          <li><a href="../../Integer.html">Integer</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL.html">OpenSSL</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/ASN1.html">OpenSSL::ASN1</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/ASN1/ASN1Data.html">OpenSSL::ASN1::ASN1Data</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/ASN1/ASN1Error.html">OpenSSL::ASN1::ASN1Error</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/ASN1/Constructive.html">OpenSSL::ASN1::Constructive</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/ASN1/ObjectId.html">OpenSSL::ASN1::ObjectId</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/ASN1/Primitive.html">OpenSSL::ASN1::Primitive</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/BN.html">OpenSSL::BN</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/BNError.html">OpenSSL::BNError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Buffering.html">OpenSSL::Buffering</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Cipher.html">OpenSSL::Cipher</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Cipher/Cipher.html">OpenSSL::Cipher::Cipher</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Cipher/CipherError.html">OpenSSL::Cipher::CipherError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Config.html">OpenSSL::Config</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/ConfigError.html">OpenSSL::ConfigError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Digest.html">OpenSSL::Digest</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Digest/DigestError.html">OpenSSL::Digest::DigestError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Engine.html">OpenSSL::Engine</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Engine/EngineError.html">OpenSSL::Engine::EngineError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/ExtConfig.html">OpenSSL::ExtConfig</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/HMAC.html">OpenSSL::HMAC</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/HMACError.html">OpenSSL::HMACError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/KDF.html">OpenSSL::KDF</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/KDF/KDFError.html">OpenSSL::KDF::KDFError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Netscape.html">OpenSSL::Netscape</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Netscape/SPKI.html">OpenSSL::Netscape::SPKI</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Netscape/SPKIError.html">OpenSSL::Netscape::SPKIError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/OCSP.html">OpenSSL::OCSP</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/OCSP/BasicResponse.html">OpenSSL::OCSP::BasicResponse</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/OCSP/CertificateId.html">OpenSSL::OCSP::CertificateId</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/OCSP/OCSPError.html">OpenSSL::OCSP::OCSPError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/OCSP/Request.html">OpenSSL::OCSP::Request</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/OCSP/Response.html">OpenSSL::OCSP::Response</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/OCSP/SingleResponse.html">OpenSSL::OCSP::SingleResponse</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/OpenSSLError.html">OpenSSL::OpenSSLError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKCS12.html">OpenSSL::PKCS12</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKCS12/PKCS12Error.html">OpenSSL::PKCS12::PKCS12Error</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKCS5.html">OpenSSL::PKCS5</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKCS7.html">OpenSSL::PKCS7</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKCS7/PKCS7Error.html">OpenSSL::PKCS7::PKCS7Error</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKCS7/RecipientInfo.html">OpenSSL::PKCS7::RecipientInfo</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKCS7/SignerInfo.html">OpenSSL::PKCS7::SignerInfo</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey.html">OpenSSL::PKey</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/DH.html">OpenSSL::PKey::DH</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/DHError.html">OpenSSL::PKey::DHError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/DSA.html">OpenSSL::PKey::DSA</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/DSAError.html">OpenSSL::PKey::DSAError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/EC.html">OpenSSL::PKey::EC</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/EC/Group.html">OpenSSL::PKey::EC::Group</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/EC/Group/Error.html">OpenSSL::PKey::EC::Group::Error</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/EC/Point.html">OpenSSL::PKey::EC::Point</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/EC/Point/Error.html">OpenSSL::PKey::EC::Point::Error</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/ECError.html">OpenSSL::PKey::ECError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/PKey.html">OpenSSL::PKey::PKey</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/PKeyError.html">OpenSSL::PKey::PKeyError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/RSA.html">OpenSSL::PKey::RSA</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/PKey/RSAError.html">OpenSSL::PKey::RSAError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Random.html">OpenSSL::Random</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/Random/RandomError.html">OpenSSL::Random::RandomError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/SSL.html">OpenSSL::SSL</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/SSL/SSLContext.html">OpenSSL::SSL::SSLContext</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/SSL/SSLError.html">OpenSSL::SSL::SSLError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/SSL/SSLErrorWaitReadable.html">OpenSSL::SSL::SSLErrorWaitReadable</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/SSL/SSLErrorWaitWritable.html">OpenSSL::SSL::SSLErrorWaitWritable</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/SSL/SSLServer.html">OpenSSL::SSL::SSLServer</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/SSL/SSLSocket.html">OpenSSL::SSL::SSLSocket</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/SSL/Session.html">OpenSSL::SSL::Session</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/SSL/Session/SessionError.html">OpenSSL::SSL::Session::SessionError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/SSL/SocketForwarder.html">OpenSSL::SSL::SocketForwarder</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509.html">OpenSSL::X509</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/Attribute.html">OpenSSL::X509::Attribute</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/AttributeError.html">OpenSSL::X509::AttributeError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/CRL.html">OpenSSL::X509::CRL</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/CRLError.html">OpenSSL::X509::CRLError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/Certificate.html">OpenSSL::X509::Certificate</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/CertificateError.html">OpenSSL::X509::CertificateError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/Extension.html">OpenSSL::X509::Extension</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/ExtensionError.html">OpenSSL::X509::ExtensionError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/ExtensionFactory.html">OpenSSL::X509::ExtensionFactory</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/Name.html">OpenSSL::X509::Name</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/Name/RFC2253DN.html">OpenSSL::X509::Name::RFC2253DN</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/NameError.html">OpenSSL::X509::NameError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/Request.html">OpenSSL::X509::Request</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/RequestError.html">OpenSSL::X509::RequestError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/Revoked.html">OpenSSL::X509::Revoked</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/RevokedError.html">OpenSSL::X509::RevokedError</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/Store.html">OpenSSL::X509::Store</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/StoreContext.html">OpenSSL::X509::StoreContext</a></li>
+        
+          
+          
+          <li><a href="../../OpenSSL/X509/StoreError.html">OpenSSL::X509::StoreError</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">OpenSSL::X509::Request</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(p1 = v1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_x509req_initialize(int argc, VALUE *argv, VALUE self)
+{
+    BIO *in;
+    X509_REQ *req, *x = DATA_PTR(self);
+    VALUE arg;
+
+    if (rb_scan_args(argc, argv, &quot;01&quot;, &amp;arg) == 0) {
+        return self;
+    }
+    arg = ossl_to_der_if_possible(arg);
+    in = ossl_obj2bio(&amp;arg);
+    req = PEM_read_bio_X509_REQ(in, &amp;x, NULL, NULL);
+    DATA_PTR(self) = x;
+    if (!req) {
+        OSSL_BIO_reset(in);
+        req = d2i_X509_REQ_bio(in, &amp;x);
+        DATA_PTR(self) = x;
+    }
+    BIO_free(in);
+    if (!req) ossl_raise(eX509ReqError, NULL);
+
+    return self;
+}
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="3D-3D-method" class="method-detail ">
+          <a name="method-i-3D-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">==</span><span
+              class="method-args">(other)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="3D-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File openssl/lib/openssl/x509.rb, line 209</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">Request</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">other</span>
+  <span class="ruby-identifier">to_der</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_der</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 3D-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 3D-3D-method -->
+      
+        <div id="add_attribute-method" class="method-detail ">
+          <a name="method-i-add_attribute"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">add_attribute</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="add_attribute-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_x509req_add_attribute(VALUE self, VALUE attr)
+{
+    X509_REQ *req;
+
+    GetX509Req(self, req);
+    if (!X509_REQ_add1_attr(req, GetX509AttrPtr(attr))) {
+        ossl_raise(eX509ReqError, NULL);
+    }
+
+    return attr;
+}
+            </pre> 
+            </div><!-- add_attribute-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- add_attribute-method -->
+      
+        <div id="attributes-method" class="method-detail ">
+          <a name="method-i-attributes"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">attributes</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="attributes-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_x509req_get_attributes(VALUE self)
+{
+    X509_REQ *req;
+    int count, i;
+    X509_ATTRIBUTE *attr;
+    VALUE ary;
+
+    GetX509Req(self, req);
+
+    count = X509_REQ_get_attr_count(req);
+    if (count &lt; 0) {
+        OSSL_Debug(&quot;count &lt; 0???&quot;);
+        return rb_ary_new();
+    }
+    ary = rb_ary_new2(count);
+    for (i=0; i&lt;count; i++) {
+        attr = X509_REQ_get_attr(req, i);
+        rb_ary_push(ary, ossl_x509attr_new(attr));
+    }
+
+    return ary;
+}
+            </pre> 
+            </div><!-- attributes-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- attributes-method -->
+      
+        <div id="attributes-3D-method" class="method-detail ">
+          <a name="method-i-attributes-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">attributes=</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="attributes-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_x509req_set_attributes(VALUE self, VALUE ary)
+{
+    X509_REQ *req;
+    X509_ATTRIBUTE *attr;
+    long i;
+    VALUE item;
+
+    Check_Type(ary, T_ARRAY);
+    for (i=0;i&lt;RARRAY_LEN(ary); i++) {
+        OSSL_Check_Kind(RARRAY_AREF(ary, i), cX509Attr);
+    }
+    GetX509Req(self, req);
+    while ((attr = X509_REQ_delete_attr(req, 0)))
+        X509_ATTRIBUTE_free(attr);
+    for (i=0;i&lt;RARRAY_LEN(ary); i++) {
+        item = RARRAY_AREF(ary, i);
+        attr = GetX509AttrPtr(item);
+        if (!X509_REQ_add1_attr(req, attr)) {
+            ossl_raise(eX509ReqError, NULL);
+        }
+    }
+    return ary;
+}
+            </pre> 
+            </div><!-- attributes-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- attributes-3D-method -->
+      
+        <div id="initialize_copy-method" class="method-detail ">
+          <a name="method-i-initialize_copy"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">initialize_copy</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="initialize_copy-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_x509req_copy(VALUE self, VALUE other)
+{
+    X509_REQ *a, *b, *req;
+
+    rb_check_frozen(self);
+    if (self == other) return self;
+    GetX509Req(self, a);
+    GetX509Req(other, b);
+    if (!(req = X509_REQ_dup(b))) {
+        ossl_raise(eX509ReqError, NULL);
+    }
+    X509_REQ_free(a);
+    DATA_PTR(self) = req;
+
+    return self;
+}
+            </pre> 
+            </div><!-- initialize_copy-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- initialize_copy-method -->
+      
+        <div id="public_key-method" class="method-detail ">
+          <a name="method-i-public_key"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">public_key</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="public_key-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_x509req_get_public_key(VALUE self)
+{
+    X509_REQ *req;
+    EVP_PKEY *pkey;
+
+    GetX509Req(self, req);
+    if (!(pkey = X509_REQ_get_pubkey(req))) { /* adds reference */
+        ossl_raise(eX509ReqError, NULL);
+    }
+
+    return ossl_pkey_new(pkey); /* NO DUP - OK */
+}
+            </pre> 
+            </div><!-- public_key-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- public_key-method -->
+      
+        <div id="public_key-3D-method" class="method-detail ">
+          <a name="method-i-public_key-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">public_key=</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="public_key-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_x509req_set_public_key(VALUE self, VALUE key)
+{
+    X509_REQ *req;
+    EVP_PKEY *pkey;
+
+    GetX509Req(self, req);
+    pkey = GetPKeyPtr(key);
+    ossl_pkey_check_public_key(pkey);
+    if (!X509_REQ_set_pubkey(req, pkey))
+        ossl_raise(eX509ReqError, &quot;X509_REQ_set_pubkey&quot;);
+    return key;
+}
+            </pre> 
+            </div><!-- public_key-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- public_key-3D-method -->
+      
+        <div id="sign-method" class="method-detail ">
+          <a name="method-i-sign"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">sign</span><span
+              class="method-args">(p1, p2)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="sign-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_x509req_sign(VALUE self, VALUE key, VALUE digest)
+{
+    X509_REQ *req;
+    EVP_PKEY *pkey;
+    const EVP_MD *md;
+
+    GetX509Req(self, req);
+    pkey = GetPrivPKeyPtr(key); /* NO NEED TO DUP */
+    md = ossl_evp_get_digestbyname(digest);
+    if (!X509_REQ_sign(req, pkey, md)) {
+        ossl_raise(eX509ReqError, NULL);
+    }
+
+    return self;
+}
+            </pre> 
+            </div><!-- sign-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- sign-method -->
+      
+        <div id="signature_algorithm-method" class="method-detail ">
+          <a name="method-i-signature_algorithm"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">signature_algorithm</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="signature_algorithm-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_x509req_get_signature_algorithm(VALUE self)
+{
+    X509_REQ *req;
+    const X509_ALGOR *alg;
+    BIO *out;
+
+    GetX509Req(self, req);
+
+    if (!(out = BIO_new(BIO_s_mem()))) {
+        ossl_raise(eX509ReqError, NULL);
+    }
+    X509_REQ_get0_signature(req, NULL, &amp;alg);
+    if (!i2a_ASN1_OBJECT(out, alg-&gt;algorithm)) {
+        BIO_free(out);
+        ossl_raise(eX509ReqError, NULL);
+    }
+
+    return ossl_membio2str(out);
+}
+            </pre> 
+            </div><!-- signature_algorithm-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- signature_algorithm-method -->
+      
+        <div id="subject-method" class="method-detail ">
+          <a name="method-i-subject"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">subject</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="subject-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_x509req_get_subject(VALUE self)
+{
+    X509_REQ *req;
+    X509_NAME *name;
+
+    GetX509Req(self, req);
+    if (!(name = X509_REQ_get_subject_name(req))) { /* NO DUP - don&#39;t free */
+        ossl_raise(eX509ReqError, NULL);
+    }
+
+    return ossl_x509name_new(name);
+}
+            </pre> 
+            </div><!-- subject-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- subject-method -->
+      
+        <div id="subject-3D-method" class="method-detail ">
+          <a name="method-i-subject-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">subject=</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="subject-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_x509req_set_subject(VALUE self, VALUE subject)
+{
+    X509_REQ *req;
+
+    GetX509Req(self, req);
+    /* DUPs name */
+    if (!X509_REQ_set_subject_name(req, GetX509NamePtr(subject))) {
+        ossl_raise(eX509ReqError, NULL);
+    }
+
+    return subject;
+}
+            </pre> 
+            </div><!-- subject-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- subject-3D-method -->
+      
+        <div id="to_der-method" class="method-detail ">
+          <a name="method-i-to_der"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_der</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="to_der-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_x509req_to_der(VALUE self)
+{
+    X509_REQ *req;
+    VALUE str;
+    long len;
+    unsigned char *p;
+
+    GetX509Req(self, req);
+    if ((len = i2d_X509_REQ(req, NULL)) &lt;= 0)
+        ossl_raise(eX509ReqError, NULL);
+    str = rb_str_new(0, len);
+    p = (unsigned char *)RSTRING_PTR(str);
+    if (i2d_X509_REQ(req, &amp;p) &lt;= 0)
+        ossl_raise(eX509ReqError, NULL);
+    ossl_str_adjust(str, p);
+
+    return str;
+}
+            </pre> 
+            </div><!-- to_der-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_der-method -->
+      
+        <div id="to_pem-method" class="method-detail ">
+          <a name="method-i-to_pem"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_pem</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="to_pem-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_x509req_to_pem(VALUE self)
+{
+    X509_REQ *req;
+    BIO *out;
+
+    GetX509Req(self, req);
+    if (!(out = BIO_new(BIO_s_mem()))) {
+        ossl_raise(eX509ReqError, NULL);
+    }
+    if (!PEM_write_bio_X509_REQ(out, req)) {
+        BIO_free(out);
+        ossl_raise(eX509ReqError, NULL);
+    }
+
+    return ossl_membio2str(out);
+}
+            </pre> 
+            </div><!-- to_pem-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Request.html#method-i-to_s">to_s</a>
+          </div>
+          
+
+          
+        </div><!-- to_pem-method -->
+      
+        <div id="to_s-method" class="method-detail method-alias">
+          <a name="method-i-to_s"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_s</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Request.html#method-i-to_pem">to_pem</a>
+          </div>
+          
+        </div><!-- to_s-method -->
+      
+        <div id="to_text-method" class="method-detail ">
+          <a name="method-i-to_text"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_text</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="to_text-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_x509req_to_text(VALUE self)
+{
+    X509_REQ *req;
+    BIO *out;
+
+    GetX509Req(self, req);
+    if (!(out = BIO_new(BIO_s_mem()))) {
+        ossl_raise(eX509ReqError, NULL);
+    }
+    if (!X509_REQ_print(out, req)) {
+        BIO_free(out);
+        ossl_raise(eX509ReqError, NULL);
+    }
+
+    return ossl_membio2str(out);
+}
+            </pre> 
+            </div><!-- to_text-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_text-method -->
+      
+        <div id="verify-method" class="method-detail ">
+          <a name="method-i-verify"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">verify</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Checks that cert signature is made with PRIVversion of this PUBLIC &#39;key&#39;</p>
+            
+
+            
+            <div class="method-source-code" id="verify-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_x509req_verify(VALUE self, VALUE key)
+{
+    X509_REQ *req;
+    EVP_PKEY *pkey;
+
+    GetX509Req(self, req);
+    pkey = GetPKeyPtr(key);
+    ossl_pkey_check_public_key(pkey);
+    switch (X509_REQ_verify(req, pkey)) {
+      case 1:
+        return Qtrue;
+      case 0:
+        ossl_clear_error();
+        return Qfalse;
+      default:
+        ossl_raise(eX509ReqError, NULL);
+    }
+}
+            </pre> 
+            </div><!-- verify-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- verify-method -->
+      
+        <div id="version-method" class="method-detail ">
+          <a name="method-i-version"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">version</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="version-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_x509req_get_version(VALUE self)
+{
+    X509_REQ *req;
+    long version;
+
+    GetX509Req(self, req);
+    version = X509_REQ_get_version(req);
+
+    return LONG2NUM(version);
+}
+            </pre> 
+            </div><!-- version-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- version-method -->
+      
+        <div id="version-3D-method" class="method-detail ">
+          <a name="method-i-version-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">version=</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="version-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_x509req_set_version(VALUE self, VALUE version)
+{
+    X509_REQ *req;
+    long ver;
+
+    if ((ver = NUM2LONG(version)) &lt; 0) {
+        ossl_raise(eX509ReqError, &quot;version must be &gt;= 0!&quot;);
+    }
+    GetX509Req(self, req);
+    if (!X509_REQ_set_version(req, ver)) {
+        ossl_raise(eX509ReqError, &quot;X509_REQ_set_version&quot;);
+    }
+
+    return version;
+}
+            </pre> 
+            </div><!-- version-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- version-3D-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Request_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Request_versioned").load("/associated/2.7.4/Request.ihtml");</script> <div id='tx_Request' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Request").load("/associated/Request.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, an erratic source of art, music, and technology.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Request.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Request.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

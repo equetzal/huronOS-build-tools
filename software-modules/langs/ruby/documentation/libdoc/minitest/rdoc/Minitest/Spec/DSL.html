@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Module : Minitest::Spec::DSL  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:23:15 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '../..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '../..'   asset_rel_prefix = '../..'  --> 
+  <title>Module: Minitest::Spec::DSL (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="../..css/obf.css"  -->
+  <link rel="stylesheet" href="../../css/inuit.css" >
+  <link rel="stylesheet" href="../../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../../css/carbon17.css" type="text/css" >
+
+
+  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="module rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>minitest-5.13.0/lib/minitest/spec.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">MODULE</span> <a href="DSL/InstanceMethods.html">Minitest::Spec::DSL::InstanceMethods</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-after">#after</a></li>
+          
+          <li><a href="#method-i-before">#before</a></li>
+          
+          <li><a href="#method-i-it">#it</a></li>
+          
+          <li><a href="#method-i-let">#let</a></li>
+          
+          <li><a href="#method-i-register_spec_type">#register_spec_type</a></li>
+          
+          <li><a href="#method-i-spec_type">#spec_type</a></li>
+          
+          <li><a href="#method-i-specify">#specify</a></li>
+          
+          <li><a href="#method-i-subject">#subject</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul id='files'>
+        
+          
+          <li class="file"><a href="../../minitest-5_13_0/History_rdoc.html">History.rdoc</a></li>
+        
+          
+          <li class="file"><a href="../../minitest-5_13_0/README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../../Kernel.html">Kernel</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/AbstractReporter.html">Minitest::AbstractReporter</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/Assertion.html">Minitest::Assertion</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/Assertions.html">Minitest::Assertions</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/BacktraceFilter.html">Minitest::BacktraceFilter</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/BenchSpec.html">Minitest::BenchSpec</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/Benchmark.html">Minitest::Benchmark</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/CompositeReporter.html">Minitest::CompositeReporter</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/Expectations.html">Minitest::Expectations</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/Guard.html">Minitest::Guard</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/Mock.html">Minitest::Mock</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/Parallel.html">Minitest::Parallel</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/Parallel/Executor.html">Minitest::Parallel::Executor</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/PrideIO.html">Minitest::PrideIO</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/PrideLOL.html">Minitest::PrideLOL</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/ProgressReporter.html">Minitest::ProgressReporter</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/Reportable.html">Minitest::Reportable</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/Result.html">Minitest::Result</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/Skip.html">Minitest::Skip</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/Spec.html">Minitest::Spec</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/Spec/DSL.html">Minitest::Spec::DSL</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/Spec/DSL/InstanceMethods.html">Minitest::Spec::DSL::InstanceMethods</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/StatisticsReporter.html">Minitest::StatisticsReporter</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/SummaryReporter.html">Minitest::SummaryReporter</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/Test.html">Minitest::Test</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/Test/LifecycleHooks.html">Minitest::Test::LifecycleHooks</a></li>
+        
+          
+          
+          <li><a href="../../Minitest/UnexpectedError.html">Minitest::UnexpectedError</a></li>
+        
+          
+          
+          <li><a href="../../Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="../../SubThingySpec.html">SubThingySpec</a></li>
+        
+          
+          
+          <li><a href="../../ThingySpec.html">ThingySpec</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="module">Minitest::Spec::DSL</h1>
+
+    <div id="description" class="description">
+      
+<p>Oh look! A <a href="DSL.html"><code>Minitest::Spec::DSL</code></a> module! Eat your heart out DHH.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="TYPES">TYPES</a></dt>
+          
+          <dd class="description"><p>Contains pairs of matchers and <a href="../Spec.html"><code>Spec</code></a> classes to be used to calculate the superclass of a top-level describe. This allows for automatically customizable spec types.</p>
+
+<p>See: <a href="DSL.html#method-i-register_spec_type"><code>register_spec_type</code></a> and <a href="DSL.html#method-i-spec_type"><code>spec_type</code></a></p></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="after-method" class="method-detail ">
+          <a name="method-i-after"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">after</span><span
+              class="method-args">(_type = nil, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Define an &#39;after&#39; action. Inherits the way normal methods should.</p>
+
+<p>NOTE: <code>type</code> is ignored and is only there to make porting easier.</p>
+
+<p>Equivalent to <a href="../Test/LifecycleHooks.html#method-i-teardown"><code>Minitest::Test#teardown</code></a>.</p>
+            
+
+            
+            <div class="method-source-code" id="after-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/spec.rb, line 198</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">after</span> <span class="ruby-identifier">_type</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+  <span class="ruby-identifier">define_method</span> <span class="ruby-value">:teardown</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-keyword">super</span>()
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- after-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- after-method -->
+      
+        <div id="before-method" class="method-detail ">
+          <a name="method-i-before"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">before</span><span
+              class="method-args">(_type = nil, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Define a &#39;before&#39; action. Inherits the way normal methods should.</p>
+
+<p>NOTE: <code>type</code> is ignored and is only there to make porting easier.</p>
+
+<p>Equivalent to <a href="../Test/LifecycleHooks.html#method-i-setup"><code>Minitest::Test#setup</code></a>.</p>
+            
+
+            
+            <div class="method-source-code" id="before-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/spec.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">before</span> <span class="ruby-identifier">_type</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+  <span class="ruby-identifier">define_method</span> <span class="ruby-value">:setup</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">super</span>()
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- before-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- before-method -->
+      
+        <div id="it-method" class="method-detail ">
+          <a name="method-i-it"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">it</span><span
+              class="method-args">(desc = "anonymous", &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Define an expectation with name <code>desc</code>. Name gets morphed to a proper test method name. For some freakish reason, people who write specs don&#39;t like class inheritance, so this goes way out of its way to make sure that expectations aren&#39;t inherited.</p>
+
+<p>This is also aliased to <a href="DSL.html#method-i-specify"><code>specify</code></a> and doesn&#39;t require a <code>desc</code> arg.</p>
+
+<p>Hint: If you <em>do</em> want inheritance, use minitest/test. You can mix and match between assertions and expectations as much as you want.</p>
+            
+
+            
+            <div class="method-source-code" id="it-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/spec.rb, line 216</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">it</span> <span class="ruby-identifier">desc</span> = <span class="ruby-string">&quot;anonymous&quot;</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+  <span class="ruby-identifier">block</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">proc</span> { <span class="ruby-identifier">skip</span> <span class="ruby-string">&quot;(no tests defined)&quot;</span> }
+
+  <span class="ruby-ivar">@specs</span> <span class="ruby-operator">||=</span> <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@specs</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+
+  <span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;test_%04d_%s&quot;</span> <span class="ruby-operator">%</span> [ <span class="ruby-ivar">@specs</span>, <span class="ruby-identifier">desc</span> ]
+
+  <span class="ruby-identifier">undef_klasses</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">reject</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">public_method_defined?</span> <span class="ruby-identifier">name</span> }
+
+  <span class="ruby-identifier">define_method</span> <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+
+  <span class="ruby-identifier">undef_klasses</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">undef_klass</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">undef_klass</span>.<span class="ruby-identifier">send</span> <span class="ruby-value">:undef_method</span>, <span class="ruby-identifier">name</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- it-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="DSL.html#method-i-specify">specify</a>
+          </div>
+          
+
+          
+        </div><!-- it-method -->
+      
+        <div id="let-method" class="method-detail ">
+          <a name="method-i-let"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">let</span><span
+              class="method-args">(name, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Essentially, define an accessor for <code>name</code> with <code>block</code>.</p>
+
+<p>Why use let instead of def? I honestly don&#39;t know.</p>
+            
+
+            
+            <div class="method-source-code" id="let-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/spec.rb, line 240</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">let</span> <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">pre</span>, <span class="ruby-identifier">post</span> = <span class="ruby-node">&quot;let &#39;#{name}&#39; cannot &quot;</span>, <span class="ruby-string">&quot;. Please use another name.&quot;</span>
+  <span class="ruby-identifier">methods</span> = <span class="ruby-constant">Minitest</span><span class="ruby-operator">::</span><span class="ruby-constant">Spec</span>.<span class="ruby-identifier">instance_methods</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_s</span>) <span class="ruby-operator">-</span> <span class="ruby-node">%w[subject]</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;#{pre}begin with &#39;test&#39;#{post}&quot;</span> <span class="ruby-keyword">if</span>
+    <span class="ruby-identifier">name</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/\Atest/</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;#{pre}override a method in Minitest::Spec#{post}&quot;</span> <span class="ruby-keyword">if</span>
+    <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">name</span>
+
+  <span class="ruby-identifier">define_method</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@_memoized</span> <span class="ruby-operator">||=</span> {}
+    <span class="ruby-ivar">@_memoized</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">name</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@_memoized</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- let-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- let-method -->
+      
+        <div id="register_spec_type-method" class="method-detail ">
+          <a name="method-i-register_spec_type"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">register_spec_type</span><span
+              class="method-args">(*args, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Register a new type of spec that matches the spec&#39;s description. This method can take either a Regexp and a spec class or a spec class and a block that takes the description and returns true if it matches.</p>
+
+<p>Eg:</p>
+
+<pre class="ruby"><span class="ruby-identifier">register_spec_type</span>(<span class="ruby-regexp">/Controller$/</span>, <span class="ruby-constant">Minitest</span><span class="ruby-operator">::</span><span class="ruby-constant">Spec</span><span class="ruby-operator">::</span><span class="ruby-constant">Rails</span>)
+</pre>
+
+<p>or:</p>
+
+<pre class="ruby"><span class="ruby-identifier">register_spec_type</span>(<span class="ruby-constant">Minitest</span><span class="ruby-operator">::</span><span class="ruby-constant">Spec</span><span class="ruby-operator">::</span><span class="ruby-constant">RailsModel</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">desc</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">desc</span>.<span class="ruby-identifier">superclass</span> <span class="ruby-operator">==</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+<span class="ruby-keyword">end</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="register_spec_type-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/spec.rb, line 139</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">register_spec_type</span> <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">matcher</span>, <span class="ruby-identifier">klass</span> = <span class="ruby-identifier">block</span>, <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">matcher</span>, <span class="ruby-identifier">klass</span> = <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">TYPES</span>.<span class="ruby-identifier">unshift</span> [<span class="ruby-identifier">matcher</span>, <span class="ruby-identifier">klass</span>]
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- register_spec_type-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- register_spec_type-method -->
+      
+        <div id="spec_type-method" class="method-detail ">
+          <a name="method-i-spec_type"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">spec_type</span><span
+              class="method-args">(desc, *additional)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Figure out the spec class to use based on a spec&#39;s description. Eg:</p>
+
+<pre class="ruby"><span class="ruby-identifier">spec_type</span>(<span class="ruby-string">&quot;BlahController&quot;</span>) <span class="ruby-comment"># =&gt; Minitest::Spec::Rails</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="spec_type-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/spec.rb, line 153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">spec_type</span> <span class="ruby-identifier">desc</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">additional</span>
+  <span class="ruby-constant">TYPES</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">matcher</span>, <span class="ruby-identifier">_klass</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">matcher</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:call</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">matcher</span>.<span class="ruby-identifier">call</span> <span class="ruby-identifier">desc</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">additional</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">matcher</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">desc</span>.<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword">end</span>
+  }.<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- spec_type-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- spec_type-method -->
+      
+        <div id="specify-method" class="method-detail method-alias">
+          <a name="method-i-specify"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">specify</span><span
+              class="method-args">(desc = "anonymous", &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="DSL.html#method-i-it">it</a>
+          </div>
+          
+        </div><!-- specify-method -->
+      
+        <div id="subject-method" class="method-detail ">
+          <a name="method-i-subject"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">subject</span><span
+              class="method-args">(&block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Another lazy man&#39;s accessor generator. Made even more lazy by setting the name for you to <code>subject</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="subject-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/spec.rb, line 259</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">subject</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+  <span class="ruby-identifier">let</span> <span class="ruby-value">:subject</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- subject-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- subject-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_DSL_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_DSL_versioned").load("/associated/2.7.4/DSL.ihtml");</script> <div id='tx_DSL' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_DSL").load("/associated/DSL.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Maximum R+D</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_DSL.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_DSL.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

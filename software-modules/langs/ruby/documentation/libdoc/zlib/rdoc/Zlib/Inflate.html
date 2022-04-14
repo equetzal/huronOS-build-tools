@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : Zlib::Inflate  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:35:49 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '..'   asset_rel_prefix = '..'  --> 
+  <title>Class: Zlib::Inflate (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="..css/obf.css"  -->
+  <link rel="stylesheet" href="../css/inuit.css" >
+  <link rel="stylesheet" href="../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../css/carbon17.css" type="text/css" >
+
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>zlib/zlib.c</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="ZStream.html">Zlib::ZStream</a></p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-inflate">::inflate</a></li>
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-3C-3C">#<<</a></li>
+          
+          <li><a href="#method-i-add_dictionary">#add_dictionary</a></li>
+          
+          <li><a href="#method-i-inflate">#inflate</a></li>
+          
+          <li><a href="#method-i-set_dictionary">#set_dictionary</a></li>
+          
+          <li><a href="#method-i-sync">#sync</a></li>
+          
+          <li><a href="#method-i-sync_point-3F">#sync_point?</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../Zlib.html">Zlib</a></li>
+        
+          
+          
+          <li><a href="../Zlib/BufError.html">Zlib::BufError</a></li>
+        
+          
+          
+          <li><a href="../Zlib/DataError.html">Zlib::DataError</a></li>
+        
+          
+          
+          <li><a href="../Zlib/Deflate.html">Zlib::Deflate</a></li>
+        
+          
+          
+          <li><a href="../Zlib/Error.html">Zlib::Error</a></li>
+        
+          
+          
+          <li><a href="../Zlib/GzipFile.html">Zlib::GzipFile</a></li>
+        
+          
+          
+          <li><a href="../Zlib/GzipFile/CRCError.html">Zlib::GzipFile::CRCError</a></li>
+        
+          
+          
+          <li><a href="../Zlib/GzipFile/Error.html">Zlib::GzipFile::Error</a></li>
+        
+          
+          
+          <li><a href="../Zlib/GzipFile/LengthError.html">Zlib::GzipFile::LengthError</a></li>
+        
+          
+          
+          <li><a href="../Zlib/GzipFile/NoFooter.html">Zlib::GzipFile::NoFooter</a></li>
+        
+          
+          
+          <li><a href="../Zlib/GzipReader.html">Zlib::GzipReader</a></li>
+        
+          
+          
+          <li><a href="../Zlib/GzipWriter.html">Zlib::GzipWriter</a></li>
+        
+          
+          
+          <li><a href="../Zlib/Inflate.html">Zlib::Inflate</a></li>
+        
+          
+          
+          <li><a href="../Zlib/MemError.html">Zlib::MemError</a></li>
+        
+          
+          
+          <li><a href="../Zlib/NeedDict.html">Zlib::NeedDict</a></li>
+        
+          
+          
+          <li><a href="../Zlib/StreamEnd.html">Zlib::StreamEnd</a></li>
+        
+          
+          
+          <li><a href="../Zlib/StreamError.html">Zlib::StreamError</a></li>
+        
+          
+          
+          <li><a href="../Zlib/VersionError.html">Zlib::VersionError</a></li>
+        
+          
+          
+          <li><a href="../Zlib/ZStream.html">Zlib::ZStream</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">Zlib::Inflate</h1>
+
+    <div id="description" class="description">
+      
+<p>Zlib:Inflate is the class for decompressing compressed data.  Unlike <a href="Deflate.html"><code>Zlib::Deflate</code></a>, an instance of this class is not able to duplicate (clone, dup) itself.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="inflate-method" class="method-detail ">
+          <a name="method-c-inflate"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">inflate(string)</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">Zlib::Inflate.inflate(string)</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Decompresses <code>string</code>. Raises a <a href="NeedDict.html"><code>Zlib::NeedDict</code></a> exception if a preset dictionary is needed for decompression.</p>
+
+<p>This method is almost equivalent to the following code:</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inflate</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-identifier">zstream</span> = <span class="ruby-constant">Zlib</span><span class="ruby-operator">::</span><span class="ruby-constant">Inflate</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">buf</span> = <span class="ruby-identifier">zstream</span>.<span class="ruby-identifier">inflate</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-identifier">zstream</span>.<span class="ruby-identifier">finish</span>
+  <span class="ruby-identifier">zstream</span>.<span class="ruby-identifier">close</span>
+  <span class="ruby-identifier">buf</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>See also <a href="../Zlib.html#method-c-deflate"><code>Zlib.deflate</code></a></p>
+            
+
+            
+            <div class="method-source-code" id="inflate-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_inflate_s_inflate(VALUE obj, VALUE src)
+{
+    struct zstream z;
+    VALUE dst, args[2];
+    int err;
+
+    StringValue(src);
+    zstream_init_inflate(&amp;z);
+    err = inflateInit(&amp;z.stream);
+    if (err != Z_OK) {
+        raise_zlib_error(err, z.stream.msg);
+    }
+    ZSTREAM_READY(&amp;z);
+
+    args[0] = (VALUE)&amp;z;
+    args[1] = src;
+    dst = rb_ensure(inflate_run, (VALUE)args, zstream_ensure_end, (VALUE)&amp;z);
+
+    return dst;
+}
+            </pre> 
+            </div><!-- inflate-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- inflate-method -->
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">Zlib::Inflate.new(window_bits = Zlib::MAX_WBITS)</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Creates a new inflate stream for decompression.  <code>window_bits</code> sets the size of the history buffer and can have the following values:</p>
+<dl class="rdoc-list note-list"><dt>0
+<dd>
+<p>Have inflate use the window size from the zlib header of the compressed stream.</p>
+</dd><dt>(8..15)
+<dd>
+<p>Overrides the window size of the inflate header in the compressed stream. The window size must be greater than or equal to the window size of the compressed stream.</p>
+</dd><dt>Greater than 15
+<dd>
+<p>Add 32 to window_bits to enable zlib and gzip decoding with automatic header detection, or add 16 to decode only the gzip format (a <a href="DataError.html"><code>Zlib::DataError</code></a> will be raised for a non-gzip stream).</p>
+</dd><dt>(-8..-15)
+<dd>
+<p>Enables raw deflate mode which will not generate a check value, and will not look for any check values for comparison at the end of the stream.</p>
+
+<p>This is for use with other formats that use the deflate compressed data format such as zip which provide their own check values.</p>
+</dd></dl>
+
+<h2 id="method-c-new-label-Example">Example<span><a href="#method-c-new-label-Example">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<pre class="ruby"><span class="ruby-identifier">open</span> <span class="ruby-string">&quot;compressed.file&quot;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">compressed_io</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">zi</span> = <span class="ruby-constant">Zlib</span><span class="ruby-operator">::</span><span class="ruby-constant">Inflate</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Zlib</span><span class="ruby-operator">::</span><span class="ruby-constant">MAX_WBITS</span> <span class="ruby-operator">+</span> <span class="ruby-value">32</span>)
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">open</span> <span class="ruby-string">&quot;uncompressed.file&quot;</span>, <span class="ruby-string">&quot;w+&quot;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">uncompressed_io</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">uncompressed_io</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">zi</span>.<span class="ruby-identifier">inflate</span>(<span class="ruby-identifier">compressed_io</span>.<span class="ruby-identifier">read</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">ensure</span>
+    <span class="ruby-identifier">zi</span>.<span class="ruby-identifier">close</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_inflate_initialize(int argc, VALUE *argv, VALUE obj)
+{
+    struct zstream *z;
+    VALUE wbits;
+    int err;
+
+    rb_scan_args(argc, argv, &quot;01&quot;, &amp;wbits);
+    TypedData_Get_Struct(obj, struct zstream, &amp;zstream_data_type, z);
+
+    err = inflateInit2(&amp;z-&gt;stream, ARG_WBITS(wbits));
+    if (err != Z_OK) {
+        raise_zlib_error(err, z-&gt;stream.msg);
+    }
+    ZSTREAM_READY(z);
+
+    return obj;
+}
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="3C-3C-method" class="method-detail ">
+          <a name="method-i-3C-3C"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">&lt;&lt;</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Same as IO.</p>
+            
+
+            
+            <div class="method-source-code" id="3C-3C-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_inflate_addstr(VALUE obj, VALUE src)
+{
+    struct zstream *z = get_zstream(obj);
+
+    if (ZSTREAM_IS_FINISHED(z)) {
+        if (!NIL_P(src)) {
+            StringValue(src);
+            zstream_append_buffer2(z, src);
+        }
+    }
+    else {
+        do_inflate(z, src);
+        if (ZSTREAM_IS_FINISHED(z)) {
+            zstream_passthrough_input(z);
+        }
+    }
+
+    return obj;
+}
+            </pre> 
+            </div><!-- 3C-3C-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 3C-3C-method -->
+      
+        <div id="add_dictionary-method" class="method-detail ">
+          <a name="method-i-add_dictionary"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">add_dictionary(string)</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Provide the inflate stream with a dictionary that may be required in the future.  Multiple dictionaries may be provided.  The inflate stream will automatically choose the correct user-provided dictionary based on the stream&#39;s required dictionary.</p>
+            
+
+            
+            <div class="method-source-code" id="add_dictionary-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_inflate_add_dictionary(VALUE obj, VALUE dictionary)
+{
+    VALUE dictionaries = rb_ivar_get(obj, id_dictionaries);
+    VALUE checksum = do_checksum(1, &amp;dictionary, adler32);
+
+    rb_hash_aset(dictionaries, checksum, dictionary);
+
+    return obj;
+}
+            </pre> 
+            </div><!-- add_dictionary-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- add_dictionary-method -->
+      
+        <div id="inflate-method" class="method-detail ">
+          <a name="method-i-inflate"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">inflate(deflate_string)                 &rarr; String</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">inflate(deflate_string) { |chunk| ... } &rarr; nil</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Inputs <code>deflate_string</code> into the inflate stream and returns the output from the stream.  Calling this method, both the input and the output buffer of the stream are flushed.  If string is <code>nil</code>, this method finishes the stream, just like <a href="ZStream.html#method-i-finish"><code>Zlib::ZStream#finish</code></a>.</p>
+
+<p>If a block is given consecutive inflated chunks from the <code>deflate_string</code> are yielded to the block and <code>nil</code> is returned.</p>
+
+<p>Raises a <a href="NeedDict.html"><code>Zlib::NeedDict</code></a> exception if a preset dictionary is needed to decompress.  Set the dictionary by <a href="Inflate.html#method-i-set_dictionary"><code>Zlib::Inflate#set_dictionary</code></a> and then call this method again with an empty string to flush the stream:</p>
+
+<pre class="ruby"><span class="ruby-identifier">inflater</span> = <span class="ruby-constant">Zlib</span><span class="ruby-operator">::</span><span class="ruby-constant">Inflate</span>.<span class="ruby-identifier">new</span>
+
+<span class="ruby-keyword">begin</span>
+  <span class="ruby-identifier">out</span> = <span class="ruby-identifier">inflater</span>.<span class="ruby-identifier">inflate</span> <span class="ruby-identifier">compressed</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Zlib</span><span class="ruby-operator">::</span><span class="ruby-constant">NeedDict</span>
+  <span class="ruby-comment"># ensure the dictionary matches the stream&#39;s required dictionary</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">inflater</span>.<span class="ruby-identifier">adler</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Zlib</span>.<span class="ruby-identifier">adler32</span>(<span class="ruby-identifier">dictionary</span>)
+
+  <span class="ruby-identifier">inflater</span>.<span class="ruby-identifier">set_dictionary</span> <span class="ruby-identifier">dictionary</span>
+  <span class="ruby-identifier">inflater</span>.<span class="ruby-identifier">inflate</span> <span class="ruby-string">&#39;&#39;</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># ...</span>
+
+<span class="ruby-identifier">inflater</span>.<span class="ruby-identifier">close</span>
+</pre>
+
+<p>See also <a href="Inflate.html#method-c-new"><code>Zlib::Inflate.new</code></a></p>
+            
+
+            
+            <div class="method-source-code" id="inflate-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_inflate_inflate(VALUE obj, VALUE src)
+{
+    struct zstream *z = get_zstream(obj);
+    VALUE dst;
+
+    if (ZSTREAM_IS_FINISHED(z)) {
+        if (NIL_P(src)) {
+            dst = zstream_detach_buffer(z);
+        }
+        else {
+            StringValue(src);
+            zstream_append_buffer2(z, src);
+            dst = rb_str_new(0, 0);
+        }
+    }
+    else {
+        do_inflate(z, src);
+        dst = zstream_detach_buffer(z);
+        if (ZSTREAM_IS_FINISHED(z)) {
+            zstream_passthrough_input(z);
+        }
+    }
+
+    return dst;
+}
+            </pre> 
+            </div><!-- inflate-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- inflate-method -->
+      
+        <div id="set_dictionary-method" class="method-detail ">
+          <a name="method-i-set_dictionary"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">set_dictionary</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Sets the preset dictionary and returns <code>string</code>.  This method is available just only after a <a href="NeedDict.html"><code>Zlib::NeedDict</code></a> exception was raised.  See zlib.h for details.</p>
+            
+
+            
+            <div class="method-source-code" id="set_dictionary-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_inflate_set_dictionary(VALUE obj, VALUE dic)
+{
+    struct zstream *z = get_zstream(obj);
+    VALUE src = dic;
+    int err;
+
+    StringValue(src);
+    err = inflateSetDictionary(&amp;z-&gt;stream,
+                               (Bytef*)RSTRING_PTR(src), RSTRING_LENINT(src));
+    if (err != Z_OK) {
+        raise_zlib_error(err, z-&gt;stream.msg);
+    }
+
+    return dic;
+}
+            </pre> 
+            </div><!-- set_dictionary-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- set_dictionary-method -->
+      
+        <div id="sync-method" class="method-detail ">
+          <a name="method-i-sync"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">sync(string)</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Inputs <code>string</code> into the end of input buffer and skips data until a full flush point can be found.  If the point is found in the buffer, this method flushes the buffer and returns false.  Otherwise it returns <code>true</code> and the following data of full flush point is preserved in the buffer.</p>
+            
+
+            
+            <div class="method-source-code" id="sync-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_inflate_sync(VALUE obj, VALUE src)
+{
+    struct zstream *z = get_zstream(obj);
+
+    StringValue(src);
+    return zstream_sync(z, (Bytef*)RSTRING_PTR(src), RSTRING_LEN(src));
+}
+            </pre> 
+            </div><!-- sync-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- sync-method -->
+      
+        <div id="sync_point-3F-method" class="method-detail ">
+          <a name="method-i-sync_point-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">sync_point?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Quoted verbatim from original documentation:</p>
+
+<pre class="ruby"><span class="ruby-constant">What</span> <span class="ruby-identifier">is</span> <span class="ruby-identifier">this?</span>
+</pre>
+
+<p><code>:)</code></p>
+            
+
+            
+            <div class="method-source-code" id="sync_point-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_inflate_sync_point_p(VALUE obj)
+{
+    struct zstream *z = get_zstream(obj);
+    int err;
+
+    err = inflateSyncPoint(&amp;z-&gt;stream);
+    if (err == 1) {
+        return Qtrue;
+    }
+    if (err != Z_OK) {
+        raise_zlib_error(err, z-&gt;stream.msg);
+    }
+    return Qfalse;
+}
+            </pre> 
+            </div><!-- sync_point-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- sync_point-3F-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Inflate_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Inflate_versioned").load("/associated/2.7.4/Inflate.ihtml");</script> <div id='tx_Inflate' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Inflate").load("/associated/Inflate.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, an erratic source of art, music, and technology.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Inflate.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Inflate.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

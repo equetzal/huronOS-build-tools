@@ -1,0 +1,1030 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Module : BigMath  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:16:35 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = ''  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = ''  --> 
+  <title>Module: BigMath (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href=".css/obf.css"  -->
+  <link rel="stylesheet" href="css/inuit.css" >
+  <link rel="stylesheet" href="css/grid.inuit.css" >
+  <link rel="stylesheet" href="css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="css/carbon17.css" type="text/css" >
+
+
+  <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="/js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="module rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>bigdecimal/bigdecimal.c</li>      
+            
+          
+          <li class='in-file'>bigdecimal/lib/bigdecimal/math.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-exp">::exp</a></li>
+          
+          <li><a href="#method-c-log">::log</a></li>
+          
+          <li><a href="#method-i-E">#E</a></li>
+          
+          <li><a href="#method-i-PI">#PI</a></li>
+          
+          <li><a href="#method-i-atan">#atan</a></li>
+          
+          <li><a href="#method-i-cos">#cos</a></li>
+          
+          <li><a href="#method-i-sin">#sin</a></li>
+          
+          <li><a href="#method-i-sqrt">#sqrt</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="./BigDecimal.html">BigDecimal</a></li>
+        
+          
+          
+          <li><a href="./BigMath.html">BigMath</a></li>
+        
+          
+          
+          <li><a href="./Float.html">Float</a></li>
+        
+          
+          
+          <li><a href="./Integer.html">Integer</a></li>
+        
+          
+          
+          <li><a href="./Jacobian.html">Jacobian</a></li>
+        
+          
+          
+          <li><a href="./Kernel.html">Kernel</a></li>
+        
+          
+          
+          <li><a href="./LUSolve.html">LUSolve</a></li>
+        
+          
+          
+          <li><a href="./Newton.html">Newton</a></li>
+        
+          
+          
+          <li><a href="./NilClass.html">NilClass</a></li>
+        
+          
+          
+          <li><a href="./Rational.html">Rational</a></li>
+        
+          
+          
+          <li><a href="./String.html">String</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="module">BigMath</h1>
+
+    <div id="description" class="description">
+      
+<p>Provides mathematical functions.</p>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;bigdecimal/math&quot;</span>
+
+<span class="ruby-identifier">include</span> <span class="ruby-constant">BigMath</span>
+
+<span class="ruby-identifier">a</span> = <span class="ruby-constant">BigDecimal</span>((<span class="ruby-constant">PI</span>(<span class="ruby-value">100</span>)<span class="ruby-operator">/</span><span class="ruby-value">2</span>).<span class="ruby-identifier">to_s</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">sin</span>(<span class="ruby-identifier">a</span>,<span class="ruby-value">100</span>) <span class="ruby-comment"># =&gt; 0.99999999999999999999......e0</span>
+</pre>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="exp-method" class="method-detail ">
+          <a name="method-c-exp"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">exp(decimal, numeric)    &rarr; BigDecimal</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Computes the value of e (the base of natural logarithms) raised to the power of <code>decimal</code>, to the specified number of digits of precision.</p>
+
+<p>If <code>decimal</code> is infinity, returns Infinity.</p>
+
+<p>If <code>decimal</code> is NaN, returns NaN.</p>
+            
+
+            
+            <div class="method-source-code" id="exp-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+BigMath_s_exp(VALUE klass, VALUE x, VALUE vprec)
+{
+    ssize_t prec, n, i;
+    Real* vx = NULL;
+    VALUE one, d, y;
+    int negative = 0;
+    int infinite = 0;
+    int nan = 0;
+    double flo;
+
+    prec = NUM2SSIZET(vprec);
+    if (prec &lt;= 0) {
+        rb_raise(rb_eArgError, &quot;Zero or negative precision for exp&quot;);
+    }
+
+    /* TODO: the following switch statement is almost same as one in the
+     *       BigDecimalCmp function. */
+    switch (TYPE(x)) {
+      case T_DATA:
+        if (!is_kind_of_BigDecimal(x)) break;
+        vx = DATA_PTR(x);
+        negative = BIGDECIMAL_NEGATIVE_P(vx);
+        infinite = VpIsPosInf(vx) || VpIsNegInf(vx);
+        nan = VpIsNaN(vx);
+        break;
+
+      case T_FIXNUM:
+        /* fall through */
+      case T_BIGNUM:
+        vx = GetVpValue(x, 0);
+        break;
+
+      case T_FLOAT:
+        flo = RFLOAT_VALUE(x);
+        negative = flo &lt; 0;
+        infinite = isinf(flo);
+        nan = isnan(flo);
+        if (!infinite &amp;&amp; !nan) {
+            vx = GetVpValueWithPrec(x, DBL_DIG+1, 0);
+        }
+        break;
+
+      case T_RATIONAL:
+        vx = GetVpValueWithPrec(x, prec, 0);
+        break;
+
+      default:
+        break;
+    }
+    if (infinite) {
+        if (negative) {
+            return ToValue(GetVpValueWithPrec(INT2FIX(0), prec, 1));
+        }
+        else {
+            Real* vy;
+            vy = VpCreateRbObject(prec, &quot;#0&quot;);
+            VpSetInf(vy, VP_SIGN_POSITIVE_INFINITE);
+            RB_GC_GUARD(vy-&gt;obj);
+            return ToValue(vy);
+        }
+    }
+    else if (nan) {
+        Real* vy;
+        vy = VpCreateRbObject(prec, &quot;#0&quot;);
+        VpSetNaN(vy);
+        RB_GC_GUARD(vy-&gt;obj);
+        return ToValue(vy);
+    }
+    else if (vx == NULL) {
+        cannot_be_coerced_into_BigDecimal(rb_eArgError, x);
+    }
+    x = vx-&gt;obj;
+
+    n = prec + rmpd_double_figures();
+    negative = BIGDECIMAL_NEGATIVE_P(vx);
+    if (negative) {
+        VALUE x_zero = INT2NUM(1);
+        VALUE x_copy = f_BigDecimal(1, &amp;x_zero, klass);
+        x = BigDecimal_initialize_copy(x_copy, x);
+        vx = DATA_PTR(x);
+        VpSetSign(vx, 1);
+    }
+
+    one = ToValue(VpCreateRbObject(1, &quot;1&quot;));
+    y   = one;
+    d   = y;
+    i   = 1;
+
+    while (!VpIsZero((Real*)DATA_PTR(d))) {
+        SIGNED_VALUE const ey = VpExponent10(DATA_PTR(y));
+        SIGNED_VALUE const ed = VpExponent10(DATA_PTR(d));
+        ssize_t m = n - vabs(ey - ed);
+
+        rb_thread_check_ints();
+
+        if (m &lt;= 0) {
+            break;
+        }
+        else if ((size_t)m &lt; rmpd_double_figures()) {
+            m = rmpd_double_figures();
+        }
+
+        d = BigDecimal_mult(d, x);                             /* d &lt;- d * x */
+        d = BigDecimal_div2(d, SSIZET2NUM(i), SSIZET2NUM(m));  /* d &lt;- d / i */
+        y = BigDecimal_add(y, d);                              /* y &lt;- y + d  */
+        ++i;                                                   /* i  &lt;- i + 1 */
+    }
+
+    if (negative) {
+        return BigDecimal_div2(one, y, vprec);
+    }
+    else {
+        vprec = SSIZET2NUM(prec - VpExponent10(DATA_PTR(y)));
+        return BigDecimal_round(1, &amp;vprec, y);
+    }
+
+    RB_GC_GUARD(one);
+    RB_GC_GUARD(x);
+    RB_GC_GUARD(y);
+    RB_GC_GUARD(d);
+}
+            </pre> 
+            </div><!-- exp-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- exp-method -->
+      
+        <div id="log-method" class="method-detail ">
+          <a name="method-c-log"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">log(decimal, numeric)    &rarr; BigDecimal</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Computes the natural logarithm of <code>decimal</code> to the specified number of digits of precision, <code>numeric</code>.</p>
+
+<p>If <code>decimal</code> is zero or negative, raises Math::DomainError.</p>
+
+<p>If <code>decimal</code> is positive infinity, returns Infinity.</p>
+
+<p>If <code>decimal</code> is NaN, returns NaN.</p>
+            
+
+            
+            <div class="method-source-code" id="log-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+BigMath_s_log(VALUE klass, VALUE x, VALUE vprec)
+{
+    ssize_t prec, n, i;
+    SIGNED_VALUE expo;
+    Real* vx = NULL;
+    VALUE vn, one, two, w, x2, y, d;
+    int zero = 0;
+    int negative = 0;
+    int infinite = 0;
+    int nan = 0;
+    double flo;
+    long fix;
+
+    if (!is_integer(vprec)) {
+        rb_raise(rb_eArgError, &quot;precision must be an Integer&quot;);
+    }
+
+    prec = NUM2SSIZET(vprec);
+    if (prec &lt;= 0) {
+        rb_raise(rb_eArgError, &quot;Zero or negative precision for exp&quot;);
+    }
+
+    /* TODO: the following switch statement is almost same as one in the
+     *       BigDecimalCmp function. */
+    switch (TYPE(x)) {
+      case T_DATA:
+          if (!is_kind_of_BigDecimal(x)) break;
+          vx = DATA_PTR(x);
+          zero = VpIsZero(vx);
+          negative = BIGDECIMAL_NEGATIVE_P(vx);
+          infinite = VpIsPosInf(vx) || VpIsNegInf(vx);
+          nan = VpIsNaN(vx);
+          break;
+
+      case T_FIXNUM:
+        fix = FIX2LONG(x);
+        zero = fix == 0;
+        negative = fix &lt; 0;
+        goto get_vp_value;
+
+      case T_BIGNUM:
+        i = FIX2INT(rb_big_cmp(x, INT2FIX(0)));
+        zero = i == 0;
+        negative = i &lt; 0;
+get_vp_value:
+        if (zero || negative) break;
+        vx = GetVpValue(x, 0);
+        break;
+
+      case T_FLOAT:
+        flo = RFLOAT_VALUE(x);
+        zero = flo == 0;
+        negative = flo &lt; 0;
+        infinite = isinf(flo);
+        nan = isnan(flo);
+        if (!zero &amp;&amp; !negative &amp;&amp; !infinite &amp;&amp; !nan) {
+            vx = GetVpValueWithPrec(x, DBL_DIG+1, 1);
+        }
+        break;
+
+      case T_RATIONAL:
+        zero = RRATIONAL_ZERO_P(x);
+        negative = RRATIONAL_NEGATIVE_P(x);
+        if (zero || negative) break;
+        vx = GetVpValueWithPrec(x, prec, 1);
+        break;
+
+      case T_COMPLEX:
+        rb_raise(rb_eMathDomainError,
+                 &quot;Complex argument for BigMath.log&quot;);
+
+      default:
+        break;
+    }
+    if (infinite &amp;&amp; !negative) {
+        Real* vy;
+        vy = VpCreateRbObject(prec, &quot;#0&quot;);
+        RB_GC_GUARD(vy-&gt;obj);
+        VpSetInf(vy, VP_SIGN_POSITIVE_INFINITE);
+        return ToValue(vy);
+    }
+    else if (nan) {
+        Real* vy;
+        vy = VpCreateRbObject(prec, &quot;#0&quot;);
+        RB_GC_GUARD(vy-&gt;obj);
+        VpSetNaN(vy);
+        return ToValue(vy);
+    }
+    else if (zero || negative) {
+        rb_raise(rb_eMathDomainError,
+                 &quot;Zero or negative argument for log&quot;);
+    }
+    else if (vx == NULL) {
+        cannot_be_coerced_into_BigDecimal(rb_eArgError, x);
+    }
+    x = ToValue(vx);
+
+    RB_GC_GUARD(one) = ToValue(VpCreateRbObject(1, &quot;1&quot;));
+    RB_GC_GUARD(two) = ToValue(VpCreateRbObject(1, &quot;2&quot;));
+
+    n = prec + rmpd_double_figures();
+    RB_GC_GUARD(vn) = SSIZET2NUM(n);
+    expo = VpExponent10(vx);
+    if (expo &lt; 0 || expo &gt;= 3) {
+        char buf[DECIMAL_SIZE_OF_BITS(SIZEOF_VALUE * CHAR_BIT) + 4];
+        snprintf(buf, sizeof(buf), &quot;1E%&quot;PRIdVALUE, -expo);
+        x = BigDecimal_mult2(x, ToValue(VpCreateRbObject(1, buf)), vn);
+    }
+    else {
+        expo = 0;
+    }
+    w = BigDecimal_sub(x, one);
+    x = BigDecimal_div2(w, BigDecimal_add(x, one), vn);
+    RB_GC_GUARD(x2) = BigDecimal_mult2(x, x, vn);
+    RB_GC_GUARD(y)  = x;
+    RB_GC_GUARD(d)  = y;
+    i = 1;
+    while (!VpIsZero((Real*)DATA_PTR(d))) {
+        SIGNED_VALUE const ey = VpExponent10(DATA_PTR(y));
+        SIGNED_VALUE const ed = VpExponent10(DATA_PTR(d));
+        ssize_t m = n - vabs(ey - ed);
+        if (m &lt;= 0) {
+            break;
+        }
+        else if ((size_t)m &lt; rmpd_double_figures()) {
+            m = rmpd_double_figures();
+        }
+
+        x = BigDecimal_mult2(x2, x, vn);
+        i += 2;
+        d = BigDecimal_div2(x, SSIZET2NUM(i), SSIZET2NUM(m));
+        y = BigDecimal_add(y, d);
+    }
+
+    y = BigDecimal_mult(y, two);
+    if (expo != 0) {
+        VALUE log10, vexpo, dy;
+        log10 = BigMath_s_log(klass, INT2FIX(10), vprec);
+        vexpo = ToValue(GetVpValue(SSIZET2NUM(expo), 1));
+        dy = BigDecimal_mult(log10, vexpo);
+        y = BigDecimal_add(y, dy);
+    }
+
+    return y;
+}
+            </pre> 
+            </div><!-- log-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- log-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="E-method" class="method-detail ">
+          <a name="method-i-E"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">E(numeric) &rarr; BigDecimal</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Computes e (the base of natural logarithms) to the specified number of digits of precision, <code>numeric</code>.</p>
+
+<pre class="ruby"><span class="ruby-constant">BigMath</span>.<span class="ruby-constant">E</span>(<span class="ruby-value">10</span>).<span class="ruby-identifier">to_s</span>
+<span class="ruby-comment">#=&gt; &quot;0.271828182845904523536028752390026306410273e1&quot;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="E-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bigdecimal/lib/bigdecimal/math.rb, line 228</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">E</span>(<span class="ruby-identifier ruby-title">prec</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Zero or negative precision for E&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">prec</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">0</span>
+  <span class="ruby-constant">BigMath</span>.<span class="ruby-identifier">exp</span>(<span class="ruby-value">1</span>, <span class="ruby-identifier">prec</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- E-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- E-method -->
+      
+        <div id="PI-method" class="method-detail ">
+          <a name="method-i-PI"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">PI(numeric) &rarr; BigDecimal</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Computes the value of pi to the specified number of digits of precision, <code>numeric</code>.</p>
+
+<pre class="ruby"><span class="ruby-constant">BigMath</span>.<span class="ruby-constant">PI</span>(<span class="ruby-value">10</span>).<span class="ruby-identifier">to_s</span>
+<span class="ruby-comment">#=&gt; &quot;0.3141592653589793238462643388813853786957412e1&quot;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="PI-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bigdecimal/lib/bigdecimal/math.rb, line 183</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">PI</span>(<span class="ruby-identifier ruby-title">prec</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Zero or negative precision for PI&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">prec</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">0</span>
+  <span class="ruby-identifier">n</span>      = <span class="ruby-identifier">prec</span> <span class="ruby-operator">+</span> <span class="ruby-constant">BigDecimal</span>.<span class="ruby-identifier">double_fig</span>
+  <span class="ruby-identifier">zero</span>   = <span class="ruby-constant">BigDecimal</span>(<span class="ruby-string">&quot;0&quot;</span>)
+  <span class="ruby-identifier">one</span>    = <span class="ruby-constant">BigDecimal</span>(<span class="ruby-string">&quot;1&quot;</span>)
+  <span class="ruby-identifier">two</span>    = <span class="ruby-constant">BigDecimal</span>(<span class="ruby-string">&quot;2&quot;</span>)
+
+  <span class="ruby-identifier">m25</span>    = <span class="ruby-constant">BigDecimal</span>(<span class="ruby-string">&quot;-0.04&quot;</span>)
+  <span class="ruby-identifier">m57121</span> = <span class="ruby-constant">BigDecimal</span>(<span class="ruby-string">&quot;-57121&quot;</span>)
+
+  <span class="ruby-identifier">pi</span>     = <span class="ruby-identifier">zero</span>
+
+  <span class="ruby-identifier">d</span> = <span class="ruby-identifier">one</span>
+  <span class="ruby-identifier">k</span> = <span class="ruby-identifier">one</span>
+  <span class="ruby-identifier">t</span> = <span class="ruby-constant">BigDecimal</span>(<span class="ruby-string">&quot;-80&quot;</span>)
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">nonzero?</span> <span class="ruby-operator">&amp;&amp;</span> ((<span class="ruby-identifier">m</span> = <span class="ruby-identifier">n</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">pi</span>.<span class="ruby-identifier">exponent</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">exponent</span>).<span class="ruby-identifier">abs</span>) <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>)
+    <span class="ruby-identifier">m</span> = <span class="ruby-constant">BigDecimal</span>.<span class="ruby-identifier">double_fig</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">m</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">BigDecimal</span>.<span class="ruby-identifier">double_fig</span>
+    <span class="ruby-identifier">t</span>   = <span class="ruby-identifier">t</span><span class="ruby-operator">*</span><span class="ruby-identifier">m25</span>
+    <span class="ruby-identifier">d</span>   = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">div</span>(<span class="ruby-identifier">k</span>,<span class="ruby-identifier">m</span>)
+    <span class="ruby-identifier">k</span>   = <span class="ruby-identifier">k</span><span class="ruby-operator">+</span><span class="ruby-identifier">two</span>
+    <span class="ruby-identifier">pi</span>  = <span class="ruby-identifier">pi</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">d</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">d</span> = <span class="ruby-identifier">one</span>
+  <span class="ruby-identifier">k</span> = <span class="ruby-identifier">one</span>
+  <span class="ruby-identifier">t</span> = <span class="ruby-constant">BigDecimal</span>(<span class="ruby-string">&quot;956&quot;</span>)
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">nonzero?</span> <span class="ruby-operator">&amp;&amp;</span> ((<span class="ruby-identifier">m</span> = <span class="ruby-identifier">n</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">pi</span>.<span class="ruby-identifier">exponent</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">exponent</span>).<span class="ruby-identifier">abs</span>) <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>)
+    <span class="ruby-identifier">m</span> = <span class="ruby-constant">BigDecimal</span>.<span class="ruby-identifier">double_fig</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">m</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">BigDecimal</span>.<span class="ruby-identifier">double_fig</span>
+    <span class="ruby-identifier">t</span>   = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">div</span>(<span class="ruby-identifier">m57121</span>,<span class="ruby-identifier">n</span>)
+    <span class="ruby-identifier">d</span>   = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">div</span>(<span class="ruby-identifier">k</span>,<span class="ruby-identifier">m</span>)
+    <span class="ruby-identifier">pi</span>  = <span class="ruby-identifier">pi</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">d</span>
+    <span class="ruby-identifier">k</span>   = <span class="ruby-identifier">k</span><span class="ruby-operator">+</span><span class="ruby-identifier">two</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">pi</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- PI-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- PI-method -->
+      
+        <div id="atan-method" class="method-detail ">
+          <a name="method-i-atan"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">atan(decimal, numeric) &rarr; BigDecimal</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Computes the arctangent of <code>decimal</code> to the specified number of digits of precision, <code>numeric</code>.</p>
+
+<p>If <code>decimal</code> is NaN, returns NaN.</p>
+
+<pre class="ruby"><span class="ruby-constant">BigMath</span>.<span class="ruby-identifier">atan</span>(<span class="ruby-constant">BigDecimal</span>(<span class="ruby-string">&#39;-1&#39;</span>), <span class="ruby-value">16</span>).<span class="ruby-identifier">to_s</span>
+<span class="ruby-comment">#=&gt; &quot;-0.785398163397448309615660845819878471907514682065e0&quot;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="atan-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bigdecimal/lib/bigdecimal/math.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">atan</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">prec</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Zero or negative precision for atan&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">prec</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">BigDecimal</span>(<span class="ruby-string">&quot;NaN&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">nan?</span>
+  <span class="ruby-identifier">pi</span> = <span class="ruby-constant">PI</span>(<span class="ruby-identifier">prec</span>)
+  <span class="ruby-identifier">x</span> = <span class="ruby-operator">-</span><span class="ruby-identifier">x</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">neg</span> = <span class="ruby-identifier">x</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">pi</span>.<span class="ruby-identifier">div</span>(<span class="ruby-identifier">neg</span> <span class="ruby-operator">?</span> <span class="ruby-value">-2</span> <span class="ruby-operator">:</span> <span class="ruby-value">2</span>, <span class="ruby-identifier">prec</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">infinite?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">pi</span> <span class="ruby-operator">/</span> (<span class="ruby-identifier">neg</span> <span class="ruby-operator">?</span> <span class="ruby-value">-4</span> <span class="ruby-operator">:</span> <span class="ruby-value">4</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">round</span>(<span class="ruby-identifier">prec</span>) <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">x</span> = <span class="ruby-constant">BigDecimal</span>(<span class="ruby-string">&quot;1&quot;</span>).<span class="ruby-identifier">div</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">prec</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">inv</span> = <span class="ruby-identifier">x</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">x</span> = (<span class="ruby-value">-1</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">sqrt</span>(<span class="ruby-value">1</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">x</span><span class="ruby-operator">**</span><span class="ruby-value">2</span>, <span class="ruby-identifier">prec</span>))<span class="ruby-operator">/</span><span class="ruby-identifier">x</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">dbl</span> = <span class="ruby-identifier">x</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0.5</span>
+  <span class="ruby-identifier">n</span>    = <span class="ruby-identifier">prec</span> <span class="ruby-operator">+</span> <span class="ruby-constant">BigDecimal</span>.<span class="ruby-identifier">double_fig</span>
+  <span class="ruby-identifier">y</span> = <span class="ruby-identifier">x</span>
+  <span class="ruby-identifier">d</span> = <span class="ruby-identifier">y</span>
+  <span class="ruby-identifier">t</span> = <span class="ruby-identifier">x</span>
+  <span class="ruby-identifier">r</span> = <span class="ruby-constant">BigDecimal</span>(<span class="ruby-string">&quot;3&quot;</span>)
+  <span class="ruby-identifier">x2</span> = <span class="ruby-identifier">x</span>.<span class="ruby-identifier">mult</span>(<span class="ruby-identifier">x</span>,<span class="ruby-identifier">n</span>)
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">nonzero?</span> <span class="ruby-operator">&amp;&amp;</span> ((<span class="ruby-identifier">m</span> = <span class="ruby-identifier">n</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">y</span>.<span class="ruby-identifier">exponent</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">exponent</span>).<span class="ruby-identifier">abs</span>) <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>)
+    <span class="ruby-identifier">m</span> = <span class="ruby-constant">BigDecimal</span>.<span class="ruby-identifier">double_fig</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">m</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">BigDecimal</span>.<span class="ruby-identifier">double_fig</span>
+    <span class="ruby-identifier">t</span> = <span class="ruby-operator">-</span><span class="ruby-identifier">t</span>.<span class="ruby-identifier">mult</span>(<span class="ruby-identifier">x2</span>,<span class="ruby-identifier">n</span>)
+    <span class="ruby-identifier">d</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">div</span>(<span class="ruby-identifier">r</span>,<span class="ruby-identifier">m</span>)
+    <span class="ruby-identifier">y</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">d</span>
+    <span class="ruby-identifier">r</span> <span class="ruby-operator">+=</span> <span class="ruby-value">2</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">y</span> <span class="ruby-operator">*=</span> <span class="ruby-value">2</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">dbl</span>
+  <span class="ruby-identifier">y</span> = <span class="ruby-identifier">pi</span> <span class="ruby-operator">/</span> <span class="ruby-value">2</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">y</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">inv</span>
+  <span class="ruby-identifier">y</span> = <span class="ruby-operator">-</span><span class="ruby-identifier">y</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">neg</span>
+  <span class="ruby-identifier">y</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- atan-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- atan-method -->
+      
+        <div id="cos-method" class="method-detail ">
+          <a name="method-i-cos"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">cos(decimal, numeric) &rarr; BigDecimal</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Computes the cosine of <code>decimal</code> to the specified number of digits of precision, <code>numeric</code>.</p>
+
+<p>If <code>decimal</code> is Infinity or NaN, returns NaN.</p>
+
+<pre class="ruby"><span class="ruby-constant">BigMath</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-constant">BigMath</span>.<span class="ruby-constant">PI</span>(<span class="ruby-value">4</span>), <span class="ruby-value">16</span>).<span class="ruby-identifier">to_s</span>
+<span class="ruby-comment">#=&gt; &quot;-0.999999999999999999999999999999856613163740061349e0&quot;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="cos-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bigdecimal/lib/bigdecimal/math.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cos</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">prec</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Zero or negative precision for cos&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">prec</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">BigDecimal</span>(<span class="ruby-string">&quot;NaN&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">infinite?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">nan?</span>
+  <span class="ruby-identifier">n</span>    = <span class="ruby-identifier">prec</span> <span class="ruby-operator">+</span> <span class="ruby-constant">BigDecimal</span>.<span class="ruby-identifier">double_fig</span>
+  <span class="ruby-identifier">one</span>  = <span class="ruby-constant">BigDecimal</span>(<span class="ruby-string">&quot;1&quot;</span>)
+  <span class="ruby-identifier">two</span>  = <span class="ruby-constant">BigDecimal</span>(<span class="ruby-string">&quot;2&quot;</span>)
+  <span class="ruby-identifier">x</span> = <span class="ruby-operator">-</span><span class="ruby-identifier">x</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">&gt;</span> (<span class="ruby-identifier">twopi</span> = <span class="ruby-identifier">two</span> <span class="ruby-operator">*</span> <span class="ruby-constant">BigMath</span>.<span class="ruby-constant">PI</span>(<span class="ruby-identifier">prec</span>))
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">30</span>
+      <span class="ruby-identifier">x</span> <span class="ruby-operator">%=</span> <span class="ruby-identifier">twopi</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">x</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">twopi</span> <span class="ruby-keyword">while</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">twopi</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">x1</span> = <span class="ruby-identifier">one</span>
+  <span class="ruby-identifier">x2</span> = <span class="ruby-identifier">x</span>.<span class="ruby-identifier">mult</span>(<span class="ruby-identifier">x</span>,<span class="ruby-identifier">n</span>)
+  <span class="ruby-identifier">sign</span> = <span class="ruby-value">1</span>
+  <span class="ruby-identifier">y</span> = <span class="ruby-identifier">one</span>
+  <span class="ruby-identifier">d</span> = <span class="ruby-identifier">y</span>
+  <span class="ruby-identifier">i</span> = <span class="ruby-constant">BigDecimal</span>(<span class="ruby-string">&quot;0&quot;</span>)
+  <span class="ruby-identifier">z</span> = <span class="ruby-identifier">one</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">nonzero?</span> <span class="ruby-operator">&amp;&amp;</span> ((<span class="ruby-identifier">m</span> = <span class="ruby-identifier">n</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">y</span>.<span class="ruby-identifier">exponent</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">exponent</span>).<span class="ruby-identifier">abs</span>) <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>)
+    <span class="ruby-identifier">m</span> = <span class="ruby-constant">BigDecimal</span>.<span class="ruby-identifier">double_fig</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">m</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">BigDecimal</span>.<span class="ruby-identifier">double_fig</span>
+    <span class="ruby-identifier">sign</span> = <span class="ruby-operator">-</span><span class="ruby-identifier">sign</span>
+    <span class="ruby-identifier">x1</span>  = <span class="ruby-identifier">x2</span>.<span class="ruby-identifier">mult</span>(<span class="ruby-identifier">x1</span>,<span class="ruby-identifier">n</span>)
+    <span class="ruby-identifier">i</span>  <span class="ruby-operator">+=</span> <span class="ruby-identifier">two</span>
+    <span class="ruby-identifier">z</span>  <span class="ruby-operator">*=</span> (<span class="ruby-identifier">i</span><span class="ruby-operator">-</span><span class="ruby-identifier">one</span>) <span class="ruby-operator">*</span> <span class="ruby-identifier">i</span>
+    <span class="ruby-identifier">d</span>   = <span class="ruby-identifier">sign</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">x1</span>.<span class="ruby-identifier">div</span>(<span class="ruby-identifier">z</span>,<span class="ruby-identifier">m</span>)
+    <span class="ruby-identifier">y</span>  <span class="ruby-operator">+=</span> <span class="ruby-identifier">d</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">y</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- cos-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- cos-method -->
+      
+        <div id="sin-method" class="method-detail ">
+          <a name="method-i-sin"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">sin(decimal, numeric) &rarr; BigDecimal</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Computes the sine of <code>decimal</code> to the specified number of digits of precision, <code>numeric</code>.</p>
+
+<p>If <code>decimal</code> is Infinity or NaN, returns NaN.</p>
+
+<pre class="ruby"><span class="ruby-constant">BigMath</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-constant">BigMath</span>.<span class="ruby-constant">PI</span>(<span class="ruby-value">5</span>)<span class="ruby-operator">/</span><span class="ruby-value">4</span>, <span class="ruby-value">5</span>).<span class="ruby-identifier">to_s</span>
+<span class="ruby-comment">#=&gt; &quot;0.70710678118654752440082036563292800375e0&quot;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="sin-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bigdecimal/lib/bigdecimal/math.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sin</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">prec</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Zero or negative precision for sin&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">prec</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">BigDecimal</span>(<span class="ruby-string">&quot;NaN&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">infinite?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">nan?</span>
+  <span class="ruby-identifier">n</span>    = <span class="ruby-identifier">prec</span> <span class="ruby-operator">+</span> <span class="ruby-constant">BigDecimal</span>.<span class="ruby-identifier">double_fig</span>
+  <span class="ruby-identifier">one</span>  = <span class="ruby-constant">BigDecimal</span>(<span class="ruby-string">&quot;1&quot;</span>)
+  <span class="ruby-identifier">two</span>  = <span class="ruby-constant">BigDecimal</span>(<span class="ruby-string">&quot;2&quot;</span>)
+  <span class="ruby-identifier">x</span> = <span class="ruby-operator">-</span><span class="ruby-identifier">x</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">neg</span> = <span class="ruby-identifier">x</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">&gt;</span> (<span class="ruby-identifier">twopi</span> = <span class="ruby-identifier">two</span> <span class="ruby-operator">*</span> <span class="ruby-constant">BigMath</span>.<span class="ruby-constant">PI</span>(<span class="ruby-identifier">prec</span>))
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">30</span>
+      <span class="ruby-identifier">x</span> <span class="ruby-operator">%=</span> <span class="ruby-identifier">twopi</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">x</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">twopi</span> <span class="ruby-keyword">while</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">twopi</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">x1</span>   = <span class="ruby-identifier">x</span>
+  <span class="ruby-identifier">x2</span>   = <span class="ruby-identifier">x</span>.<span class="ruby-identifier">mult</span>(<span class="ruby-identifier">x</span>,<span class="ruby-identifier">n</span>)
+  <span class="ruby-identifier">sign</span> = <span class="ruby-value">1</span>
+  <span class="ruby-identifier">y</span>    = <span class="ruby-identifier">x</span>
+  <span class="ruby-identifier">d</span>    = <span class="ruby-identifier">y</span>
+  <span class="ruby-identifier">i</span>    = <span class="ruby-identifier">one</span>
+  <span class="ruby-identifier">z</span>    = <span class="ruby-identifier">one</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">nonzero?</span> <span class="ruby-operator">&amp;&amp;</span> ((<span class="ruby-identifier">m</span> = <span class="ruby-identifier">n</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">y</span>.<span class="ruby-identifier">exponent</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">exponent</span>).<span class="ruby-identifier">abs</span>) <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>)
+    <span class="ruby-identifier">m</span> = <span class="ruby-constant">BigDecimal</span>.<span class="ruby-identifier">double_fig</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">m</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">BigDecimal</span>.<span class="ruby-identifier">double_fig</span>
+    <span class="ruby-identifier">sign</span> = <span class="ruby-operator">-</span><span class="ruby-identifier">sign</span>
+    <span class="ruby-identifier">x1</span>  = <span class="ruby-identifier">x2</span>.<span class="ruby-identifier">mult</span>(<span class="ruby-identifier">x1</span>,<span class="ruby-identifier">n</span>)
+    <span class="ruby-identifier">i</span>  <span class="ruby-operator">+=</span> <span class="ruby-identifier">two</span>
+    <span class="ruby-identifier">z</span>  <span class="ruby-operator">*=</span> (<span class="ruby-identifier">i</span><span class="ruby-operator">-</span><span class="ruby-identifier">one</span>) <span class="ruby-operator">*</span> <span class="ruby-identifier">i</span>
+    <span class="ruby-identifier">d</span>   = <span class="ruby-identifier">sign</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">x1</span>.<span class="ruby-identifier">div</span>(<span class="ruby-identifier">z</span>,<span class="ruby-identifier">m</span>)
+    <span class="ruby-identifier">y</span>  <span class="ruby-operator">+=</span> <span class="ruby-identifier">d</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">neg</span> <span class="ruby-operator">?</span> <span class="ruby-operator">-</span><span class="ruby-identifier">y</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">y</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- sin-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- sin-method -->
+      
+        <div id="sqrt-method" class="method-detail ">
+          <a name="method-i-sqrt"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">sqrt(decimal, numeric) &rarr; BigDecimal</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Computes the square root of <code>decimal</code> to the specified number of digits of precision, <code>numeric</code>.</p>
+
+<pre class="ruby"><span class="ruby-constant">BigMath</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-constant">BigDecimal</span>(<span class="ruby-string">&#39;2&#39;</span>), <span class="ruby-value">16</span>).<span class="ruby-identifier">to_s</span>
+<span class="ruby-comment">#=&gt; &quot;0.1414213562373095048801688724e1&quot;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="sqrt-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bigdecimal/lib/bigdecimal/math.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sqrt</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">prec</span>)
+  <span class="ruby-identifier">x</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">prec</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- sqrt-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- sqrt-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_BigMath_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_BigMath_versioned").load("/associated/2.7.4/BigMath.ihtml");</script> <div id='tx_BigMath' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_BigMath").load("/associated/BigMath.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, purveyors of fine dance noise.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_BigMath.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_BigMath.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

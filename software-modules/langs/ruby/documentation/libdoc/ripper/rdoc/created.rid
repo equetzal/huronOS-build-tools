@@ -1,0 +1,15 @@
+Wed, 08 Dec 2021 17:29:58 -0700
+ripper/eventids1.c	Wed, 07 Jul 2021 03:48:24 -0700
+ripper/eventids2.c	Wed, 07 Jul 2021 03:48:22 -0700
+ripper/eventids2table.c	Wed, 07 Jul 2021 03:48:24 -0700
+ripper/lib/ripper/core.rb	Wed, 07 Jul 2021 03:48:22 -0700
+ripper/lib/ripper/filter.rb	Wed, 07 Jul 2021 03:48:22 -0700
+ripper/lib/ripper/lexer.rb	Wed, 07 Jul 2021 03:48:22 -0700
+ripper/lib/ripper/sexp.rb	Wed, 07 Jul 2021 03:48:22 -0700
+ripper/lib/ripper.rb	Wed, 07 Jul 2021 03:48:22 -0700
+ripper/ripper.c	Wed, 07 Jul 2021 03:48:24 -0700
+ripper/tools/dsl.rb	Wed, 07 Jul 2021 03:48:22 -0700
+ripper/tools/generate-param-macros.rb	Wed, 07 Jul 2021 03:48:22 -0700
+ripper/tools/generate.rb	Wed, 07 Jul 2021 03:48:22 -0700
+ripper/tools/preproc.rb	Wed, 07 Jul 2021 03:48:22 -0700
+ripper/tools/strip.rb	Wed, 07 Jul 2021 03:48:22 -0700

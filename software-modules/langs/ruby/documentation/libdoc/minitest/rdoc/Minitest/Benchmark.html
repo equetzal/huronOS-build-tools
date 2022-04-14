@@ -1,0 +1,1143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : Minitest::Benchmark  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:23:15 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '..'   asset_rel_prefix = '..'  --> 
+  <title>Class: Minitest::Benchmark (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="..css/obf.css"  -->
+  <link rel="stylesheet" href="../css/inuit.css" >
+  <link rel="stylesheet" href="../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../css/carbon17.css" type="text/css" >
+
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>minitest-5.13.0/lib/minitest/benchmark.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Test</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-bench_exp">::bench_exp</a></li>
+          
+          <li><a href="#method-c-bench_linear">::bench_linear</a></li>
+          
+          <li><a href="#method-c-bench_range">::bench_range</a></li>
+          
+          <li><a href="#method-i-assert_performance">#assert_performance</a></li>
+          
+          <li><a href="#method-i-assert_performance_constant">#assert_performance_constant</a></li>
+          
+          <li><a href="#method-i-assert_performance_exponential">#assert_performance_exponential</a></li>
+          
+          <li><a href="#method-i-assert_performance_linear">#assert_performance_linear</a></li>
+          
+          <li><a href="#method-i-assert_performance_logarithmic">#assert_performance_logarithmic</a></li>
+          
+          <li><a href="#method-i-assert_performance_power">#assert_performance_power</a></li>
+          
+          <li><a href="#method-i-fit_error">#fit_error</a></li>
+          
+          <li><a href="#method-i-fit_exponential">#fit_exponential</a></li>
+          
+          <li><a href="#method-i-fit_linear">#fit_linear</a></li>
+          
+          <li><a href="#method-i-fit_logarithmic">#fit_logarithmic</a></li>
+          
+          <li><a href="#method-i-fit_power">#fit_power</a></li>
+          
+          <li><a href="#method-i-sigma">#sigma</a></li>
+          
+          <li><a href="#method-i-validation_for_fit">#validation_for_fit</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul id='files'>
+        
+          
+          <li class="file"><a href="../minitest-5_13_0/History_rdoc.html">History.rdoc</a></li>
+        
+          
+          <li class="file"><a href="../minitest-5_13_0/README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../Kernel.html">Kernel</a></li>
+        
+          
+          
+          <li><a href="../Minitest/AbstractReporter.html">Minitest::AbstractReporter</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Assertion.html">Minitest::Assertion</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Assertions.html">Minitest::Assertions</a></li>
+        
+          
+          
+          <li><a href="../Minitest/BacktraceFilter.html">Minitest::BacktraceFilter</a></li>
+        
+          
+          
+          <li><a href="../Minitest/BenchSpec.html">Minitest::BenchSpec</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Benchmark.html">Minitest::Benchmark</a></li>
+        
+          
+          
+          <li><a href="../Minitest/CompositeReporter.html">Minitest::CompositeReporter</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Expectations.html">Minitest::Expectations</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Guard.html">Minitest::Guard</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Mock.html">Minitest::Mock</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Parallel.html">Minitest::Parallel</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Parallel/Executor.html">Minitest::Parallel::Executor</a></li>
+        
+          
+          
+          <li><a href="../Minitest/PrideIO.html">Minitest::PrideIO</a></li>
+        
+          
+          
+          <li><a href="../Minitest/PrideLOL.html">Minitest::PrideLOL</a></li>
+        
+          
+          
+          <li><a href="../Minitest/ProgressReporter.html">Minitest::ProgressReporter</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Reportable.html">Minitest::Reportable</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Result.html">Minitest::Result</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Skip.html">Minitest::Skip</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Spec.html">Minitest::Spec</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Spec/DSL.html">Minitest::Spec::DSL</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Spec/DSL/InstanceMethods.html">Minitest::Spec::DSL::InstanceMethods</a></li>
+        
+          
+          
+          <li><a href="../Minitest/StatisticsReporter.html">Minitest::StatisticsReporter</a></li>
+        
+          
+          
+          <li><a href="../Minitest/SummaryReporter.html">Minitest::SummaryReporter</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Test.html">Minitest::Test</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Test/LifecycleHooks.html">Minitest::Test::LifecycleHooks</a></li>
+        
+          
+          
+          <li><a href="../Minitest/UnexpectedError.html">Minitest::UnexpectedError</a></li>
+        
+          
+          
+          <li><a href="../Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="../SubThingySpec.html">SubThingySpec</a></li>
+        
+          
+          
+          <li><a href="../ThingySpec.html">ThingySpec</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">Minitest::Benchmark</h1>
+
+    <div id="description" class="description">
+      
+<p>Subclass <a href="Benchmark.html"><code>Benchmark</code></a> to create your own benchmark runs. Methods starting with “bench_” get executed on a per-class.</p>
+
+<p>See <a href="Assertions.html"><code>Minitest::Assertions</code></a></p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="bench_exp-method" class="method-detail ">
+          <a name="method-c-bench_exp"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">bench_exp</span><span
+              class="method-args">(min, max, base = 10)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns a set of ranges stepped exponentially from <code>min</code> to <code>max</code> by powers of <code>base</code>. Eg:</p>
+
+<pre class="ruby"><span class="ruby-identifier">bench_exp</span>(<span class="ruby-value">2</span>, <span class="ruby-value">16</span>, <span class="ruby-value">2</span>) <span class="ruby-comment"># =&gt; [2, 4, 8, 16]</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="bench_exp-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/benchmark.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">bench_exp</span> <span class="ruby-identifier">min</span>, <span class="ruby-identifier">max</span>, <span class="ruby-identifier">base</span> = <span class="ruby-value">10</span>
+  <span class="ruby-identifier">min</span> = (<span class="ruby-constant">Math</span>.<span class="ruby-identifier">log10</span>(<span class="ruby-identifier">min</span>) <span class="ruby-operator">/</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">log10</span>(<span class="ruby-identifier">base</span>)).<span class="ruby-identifier">to_i</span>
+  <span class="ruby-identifier">max</span> = (<span class="ruby-constant">Math</span>.<span class="ruby-identifier">log10</span>(<span class="ruby-identifier">max</span>) <span class="ruby-operator">/</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">log10</span>(<span class="ruby-identifier">base</span>)).<span class="ruby-identifier">to_i</span>
+
+  (<span class="ruby-identifier">min</span><span class="ruby-operator">..</span><span class="ruby-identifier">max</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">base</span> <span class="ruby-operator">**</span> <span class="ruby-identifier">m</span> }.<span class="ruby-identifier">to_a</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- bench_exp-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- bench_exp-method -->
+      
+        <div id="bench_linear-method" class="method-detail ">
+          <a name="method-c-bench_linear"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">bench_linear</span><span
+              class="method-args">(min, max, step = 10)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns a set of ranges stepped linearly from <code>min</code> to <code>max</code> by <code>step</code>. Eg:</p>
+
+<pre class="ruby"><span class="ruby-identifier">bench_linear</span>(<span class="ruby-value">20</span>, <span class="ruby-value">40</span>, <span class="ruby-value">10</span>) <span class="ruby-comment"># =&gt; [20, 30, 40]</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="bench_linear-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/benchmark.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">bench_linear</span> <span class="ruby-identifier">min</span>, <span class="ruby-identifier">max</span>, <span class="ruby-identifier">step</span> = <span class="ruby-value">10</span>
+  (<span class="ruby-identifier">min</span><span class="ruby-operator">..</span><span class="ruby-identifier">max</span>).<span class="ruby-identifier">step</span>(<span class="ruby-identifier">step</span>).<span class="ruby-identifier">to_a</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">LocalJumpError</span> <span class="ruby-comment"># 1.8.6</span>
+  <span class="ruby-identifier">r</span> = []; (<span class="ruby-identifier">min</span><span class="ruby-operator">..</span><span class="ruby-identifier">max</span>).<span class="ruby-identifier">step</span>(<span class="ruby-identifier">step</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">r</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">n</span> }; <span class="ruby-identifier">r</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- bench_linear-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- bench_linear-method -->
+      
+        <div id="bench_range-method" class="method-detail ">
+          <a name="method-c-bench_range"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">bench_range</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Specifies the ranges used for benchmarking for that class. Defaults to exponential growth from 1 to 10k by powers of 10. Override if you need different ranges for your benchmarks.</p>
+
+<p>See also: <a href="Benchmark.html#method-c-bench_exp"><code>::bench_exp</code></a> and <a href="Benchmark.html#method-c-bench_linear"><code>::bench_linear</code></a>.</p>
+            
+
+            
+            <div class="method-source-code" id="bench_range-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/benchmark.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">bench_range</span>
+  <span class="ruby-identifier">bench_exp</span> <span class="ruby-value">1</span>, <span class="ruby-value">10_000</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- bench_range-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- bench_range-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="assert_performance-method" class="method-detail ">
+          <a name="method-i-assert_performance"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_performance</span><span
+              class="method-args">(validation, &work)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Runs the given <code>work</code>, gathering the times of each run. Range and times are then passed to a given <code>validation</code> proc. Outputs the benchmark name and times in tab-separated format, making it easy to paste into a spreadsheet for graphing or further analysis.</p>
+
+<p>Ranges are specified by <a href="Benchmark.html#method-c-bench_range"><code>::bench_range</code></a>.</p>
+
+<p>Eg:</p>
+
+<pre>def bench_algorithm
+  validation = proc { |x, y| ... }
+  assert_performance validation do |n|
+    @obj.algorithm(n)
+  end
+end</pre>
+            
+
+            
+            <div class="method-source-code" id="assert_performance-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/benchmark.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_performance</span> <span class="ruby-identifier">validation</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">work</span>
+  <span class="ruby-identifier">range</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">bench_range</span>
+
+  <span class="ruby-identifier">io</span>.<span class="ruby-identifier">print</span> <span class="ruby-node">&quot;#{self.name}&quot;</span>
+
+  <span class="ruby-identifier">times</span> = []
+
+  <span class="ruby-identifier">range</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">GC</span>.<span class="ruby-identifier">start</span>
+    <span class="ruby-identifier">t0</span> = <span class="ruby-constant">Minitest</span>.<span class="ruby-identifier">clock_time</span>
+    <span class="ruby-identifier">instance_exec</span>(<span class="ruby-identifier">x</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">work</span>)
+    <span class="ruby-identifier">t</span> = <span class="ruby-constant">Minitest</span>.<span class="ruby-identifier">clock_time</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">t0</span>
+
+    <span class="ruby-identifier">io</span>.<span class="ruby-identifier">print</span> <span class="ruby-string">&quot;\t%9.6f&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">t</span>
+    <span class="ruby-identifier">times</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">t</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">io</span>.<span class="ruby-identifier">puts</span>
+
+  <span class="ruby-identifier">validation</span>[<span class="ruby-identifier">range</span>, <span class="ruby-identifier">times</span>]
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_performance-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_performance-method -->
+      
+        <div id="assert_performance_constant-method" class="method-detail ">
+          <a name="method-i-assert_performance_constant"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_performance_constant</span><span
+              class="method-args">(threshold = 0.99, &work)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Runs the given <code>work</code> and asserts that the times gathered fit to match a constant rate (eg, linear slope == 0) within a given <code>threshold</code>. Note: because we&#39;re testing for a slope of 0, R^2 is not a good determining factor for the fit, so the threshold is applied against the slope itself. As such, you probably want to tighten it from the default.</p>
+
+<p>See <a href="https://www.graphpad.com/guides/prism/8/curve-fitting/reg_intepretingnonlinr2.htm">www.graphpad.com/guides/prism/8/curve-fitting/reg_intepretingnonlinr2.htm</a> for more details.</p>
+
+<p>Fit is calculated by <a href="Benchmark.html#method-i-fit_linear"><code>fit_linear</code></a>.</p>
+
+<p>Ranges are specified by <a href="Benchmark.html#method-c-bench_range"><code>::bench_range</code></a>.</p>
+
+<p>Eg:</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bench_algorithm</span>
+  <span class="ruby-identifier">assert_performance_constant</span> <span class="ruby-value">0.9999</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@obj</span>.<span class="ruby-identifier">algorithm</span>(<span class="ruby-identifier">n</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="assert_performance_constant-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/benchmark.rb, line 127</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_performance_constant</span> <span class="ruby-identifier">threshold</span> = <span class="ruby-value">0.99</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">work</span>
+  <span class="ruby-identifier">validation</span> = <span class="ruby-identifier">proc</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">range</span>, <span class="ruby-identifier">times</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">rr</span> = <span class="ruby-identifier">fit_linear</span> <span class="ruby-identifier">range</span>, <span class="ruby-identifier">times</span>
+    <span class="ruby-identifier">assert_in_delta</span> <span class="ruby-value">0</span>, <span class="ruby-identifier">b</span>, <span class="ruby-value">1</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">threshold</span>
+    [<span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">rr</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_performance</span> <span class="ruby-identifier">validation</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">work</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_performance_constant-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_performance_constant-method -->
+      
+        <div id="assert_performance_exponential-method" class="method-detail ">
+          <a name="method-i-assert_performance_exponential"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_performance_exponential</span><span
+              class="method-args">(threshold = 0.99, &work)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Runs the given <code>work</code> and asserts that the times gathered fit to match a exponential curve within a given error <code>threshold</code>.</p>
+
+<p>Fit is calculated by <a href="Benchmark.html#method-i-fit_exponential"><code>fit_exponential</code></a>.</p>
+
+<p>Ranges are specified by <a href="Benchmark.html#method-c-bench_range"><code>::bench_range</code></a>.</p>
+
+<p>Eg:</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bench_algorithm</span>
+  <span class="ruby-identifier">assert_performance_exponential</span> <span class="ruby-value">0.9999</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@obj</span>.<span class="ruby-identifier">algorithm</span>(<span class="ruby-identifier">n</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="assert_performance_exponential-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/benchmark.rb, line 153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_performance_exponential</span> <span class="ruby-identifier">threshold</span> = <span class="ruby-value">0.99</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">work</span>
+  <span class="ruby-identifier">assert_performance</span> <span class="ruby-identifier">validation_for_fit</span>(<span class="ruby-value">:exponential</span>, <span class="ruby-identifier">threshold</span>), <span class="ruby-operator">&amp;</span><span class="ruby-identifier">work</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_performance_exponential-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_performance_exponential-method -->
+      
+        <div id="assert_performance_linear-method" class="method-detail ">
+          <a name="method-i-assert_performance_linear"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_performance_linear</span><span
+              class="method-args">(threshold = 0.99, &work)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Runs the given <code>work</code> and asserts that the times gathered fit to match a straight line within a given error <code>threshold</code>.</p>
+
+<p>Fit is calculated by <a href="Benchmark.html#method-i-fit_linear"><code>fit_linear</code></a>.</p>
+
+<p>Ranges are specified by <a href="Benchmark.html#method-c-bench_range"><code>::bench_range</code></a>.</p>
+
+<p>Eg:</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bench_algorithm</span>
+  <span class="ruby-identifier">assert_performance_linear</span> <span class="ruby-value">0.9999</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@obj</span>.<span class="ruby-identifier">algorithm</span>(<span class="ruby-identifier">n</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="assert_performance_linear-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/benchmark.rb, line 193</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_performance_linear</span> <span class="ruby-identifier">threshold</span> = <span class="ruby-value">0.99</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">work</span>
+  <span class="ruby-identifier">assert_performance</span> <span class="ruby-identifier">validation_for_fit</span>(<span class="ruby-value">:linear</span>, <span class="ruby-identifier">threshold</span>), <span class="ruby-operator">&amp;</span><span class="ruby-identifier">work</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_performance_linear-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_performance_linear-method -->
+      
+        <div id="assert_performance_logarithmic-method" class="method-detail ">
+          <a name="method-i-assert_performance_logarithmic"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_performance_logarithmic</span><span
+              class="method-args">(threshold = 0.99, &work)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Runs the given <code>work</code> and asserts that the times gathered fit to match a logarithmic curve within a given error <code>threshold</code>.</p>
+
+<p>Fit is calculated by <a href="Benchmark.html#method-i-fit_logarithmic"><code>fit_logarithmic</code></a>.</p>
+
+<p>Ranges are specified by <a href="Benchmark.html#method-c-bench_range"><code>::bench_range</code></a>.</p>
+
+<p>Eg:</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bench_algorithm</span>
+  <span class="ruby-identifier">assert_performance_logarithmic</span> <span class="ruby-value">0.9999</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@obj</span>.<span class="ruby-identifier">algorithm</span>(<span class="ruby-identifier">n</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="assert_performance_logarithmic-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/benchmark.rb, line 173</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_performance_logarithmic</span> <span class="ruby-identifier">threshold</span> = <span class="ruby-value">0.99</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">work</span>
+  <span class="ruby-identifier">assert_performance</span> <span class="ruby-identifier">validation_for_fit</span>(<span class="ruby-value">:logarithmic</span>, <span class="ruby-identifier">threshold</span>), <span class="ruby-operator">&amp;</span><span class="ruby-identifier">work</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_performance_logarithmic-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_performance_logarithmic-method -->
+      
+        <div id="assert_performance_power-method" class="method-detail ">
+          <a name="method-i-assert_performance_power"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_performance_power</span><span
+              class="method-args">(threshold = 0.99, &work)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Runs the given <code>work</code> and asserts that the times gathered curve fit to match a power curve within a given error <code>threshold</code>.</p>
+
+<p>Fit is calculated by <a href="Benchmark.html#method-i-fit_power"><code>fit_power</code></a>.</p>
+
+<p>Ranges are specified by <a href="Benchmark.html#method-c-bench_range"><code>::bench_range</code></a>.</p>
+
+<p>Eg:</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bench_algorithm</span>
+  <span class="ruby-identifier">assert_performance_power</span> <span class="ruby-value">0.9999</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@obj</span>.<span class="ruby-identifier">algorithm</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="assert_performance_power-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/benchmark.rb, line 213</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_performance_power</span> <span class="ruby-identifier">threshold</span> = <span class="ruby-value">0.99</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">work</span>
+  <span class="ruby-identifier">assert_performance</span> <span class="ruby-identifier">validation_for_fit</span>(<span class="ruby-value">:power</span>, <span class="ruby-identifier">threshold</span>), <span class="ruby-operator">&amp;</span><span class="ruby-identifier">work</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_performance_power-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_performance_power-method -->
+      
+        <div id="fit_error-method" class="method-detail ">
+          <a name="method-i-fit_error"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">fit_error</span><span
+              class="method-args">(xys)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Takes an array of x/y pairs and calculates the general R^2 value.</p>
+
+<p>See: <a href="http://en.wikipedia.org/wiki/Coefficient_of_determination">en.wikipedia.org/wiki/Coefficient_of_determination</a></p>
+            
+
+            
+            <div class="method-source-code" id="fit_error-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/benchmark.rb, line 222</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fit_error</span> <span class="ruby-identifier">xys</span>
+  <span class="ruby-identifier">y_bar</span>  = <span class="ruby-identifier">sigma</span>(<span class="ruby-identifier">xys</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">y</span><span class="ruby-operator">|</span> <span class="ruby-identifier">y</span> } <span class="ruby-operator">/</span> <span class="ruby-identifier">xys</span>.<span class="ruby-identifier">size</span>.<span class="ruby-identifier">to_f</span>
+  <span class="ruby-identifier">ss_tot</span> = <span class="ruby-identifier">sigma</span>(<span class="ruby-identifier">xys</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">y</span><span class="ruby-operator">|</span> (<span class="ruby-identifier">y</span>    <span class="ruby-operator">-</span> <span class="ruby-identifier">y_bar</span>) <span class="ruby-operator">**</span> <span class="ruby-value">2</span> }
+  <span class="ruby-identifier">ss_err</span> = <span class="ruby-identifier">sigma</span>(<span class="ruby-identifier">xys</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span><span class="ruby-operator">|</span> (<span class="ruby-keyword">yield</span>(<span class="ruby-identifier">x</span>) <span class="ruby-operator">-</span> <span class="ruby-identifier">y</span>) <span class="ruby-operator">**</span> <span class="ruby-value">2</span> }
+
+  <span class="ruby-value">1</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">ss_err</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">ss_tot</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- fit_error-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- fit_error-method -->
+      
+        <div id="fit_exponential-method" class="method-detail ">
+          <a name="method-i-fit_exponential"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">fit_exponential</span><span
+              class="method-args">(xs, ys)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>To fit a functional form: y = ae^(bx).</p>
+
+<p>Takes x and y values and returns [a, b, r^2].</p>
+
+<p>See: <a href="http://mathworld.wolfram.com/LeastSquaresFittingExponential.html">mathworld.wolfram.com/LeastSquaresFittingExponential.html</a></p>
+            
+
+            
+            <div class="method-source-code" id="fit_exponential-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/benchmark.rb, line 237</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fit_exponential</span> <span class="ruby-identifier">xs</span>, <span class="ruby-identifier">ys</span>
+  <span class="ruby-identifier">n</span>     = <span class="ruby-identifier">xs</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">xys</span>   = <span class="ruby-identifier">xs</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-identifier">ys</span>)
+  <span class="ruby-identifier">sxlny</span> = <span class="ruby-identifier">sigma</span>(<span class="ruby-identifier">xys</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">log</span>(<span class="ruby-identifier">y</span>) }
+  <span class="ruby-identifier">slny</span>  = <span class="ruby-identifier">sigma</span>(<span class="ruby-identifier">xys</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">y</span><span class="ruby-operator">|</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">log</span>(<span class="ruby-identifier">y</span>)     }
+  <span class="ruby-identifier">sx2</span>   = <span class="ruby-identifier">sigma</span>(<span class="ruby-identifier">xys</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>, <span class="ruby-identifier">_</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">x</span>           }
+  <span class="ruby-identifier">sx</span>    = <span class="ruby-identifier">sigma</span> <span class="ruby-identifier">xs</span>
+
+  <span class="ruby-identifier">c</span> = <span class="ruby-identifier">n</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">sx2</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">sx</span> <span class="ruby-operator">**</span> <span class="ruby-value">2</span>
+  <span class="ruby-identifier">a</span> = (<span class="ruby-identifier">slny</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">sx2</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">sx</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">sxlny</span>) <span class="ruby-operator">/</span> <span class="ruby-identifier">c</span>
+  <span class="ruby-identifier">b</span> = ( <span class="ruby-identifier">n</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">sxlny</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">sx</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">slny</span> ) <span class="ruby-operator">/</span> <span class="ruby-identifier">c</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">exp</span>(<span class="ruby-identifier">a</span>), <span class="ruby-identifier">b</span>, <span class="ruby-identifier">fit_error</span>(<span class="ruby-identifier">xys</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">exp</span>(<span class="ruby-identifier">a</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">b</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">x</span>) }
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- fit_exponential-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- fit_exponential-method -->
+      
+        <div id="fit_linear-method" class="method-detail ">
+          <a name="method-i-fit_linear"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">fit_linear</span><span
+              class="method-args">(xs, ys)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fits the functional form: a + bx.</p>
+
+<p>Takes x and y values and returns [a, b, r^2].</p>
+
+<p>See: <a href="http://mathworld.wolfram.com/LeastSquaresFitting.html">mathworld.wolfram.com/LeastSquaresFitting.html</a></p>
+            
+
+            
+            <div class="method-source-code" id="fit_linear-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/benchmark.rb, line 281</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fit_linear</span> <span class="ruby-identifier">xs</span>, <span class="ruby-identifier">ys</span>
+  <span class="ruby-identifier">n</span>   = <span class="ruby-identifier">xs</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">xys</span> = <span class="ruby-identifier">xs</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-identifier">ys</span>)
+  <span class="ruby-identifier">sx</span>  = <span class="ruby-identifier">sigma</span> <span class="ruby-identifier">xs</span>
+  <span class="ruby-identifier">sy</span>  = <span class="ruby-identifier">sigma</span> <span class="ruby-identifier">ys</span>
+  <span class="ruby-identifier">sx2</span> = <span class="ruby-identifier">sigma</span>(<span class="ruby-identifier">xs</span>)  { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>   <span class="ruby-identifier">x</span> <span class="ruby-operator">**</span> <span class="ruby-value">2</span> }
+  <span class="ruby-identifier">sxy</span> = <span class="ruby-identifier">sigma</span>(<span class="ruby-identifier">xys</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">y</span>  }
+
+  <span class="ruby-identifier">c</span> = <span class="ruby-identifier">n</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">sx2</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">sx</span><span class="ruby-operator">**</span><span class="ruby-value">2</span>
+  <span class="ruby-identifier">a</span> = (<span class="ruby-identifier">sy</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">sx2</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">sx</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">sxy</span>) <span class="ruby-operator">/</span> <span class="ruby-identifier">c</span>
+  <span class="ruby-identifier">b</span> = ( <span class="ruby-identifier">n</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">sxy</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">sx</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">sy</span> ) <span class="ruby-operator">/</span> <span class="ruby-identifier">c</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">fit_error</span>(<span class="ruby-identifier">xys</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">b</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">x</span> }
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- fit_linear-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- fit_linear-method -->
+      
+        <div id="fit_logarithmic-method" class="method-detail ">
+          <a name="method-i-fit_logarithmic"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">fit_logarithmic</span><span
+              class="method-args">(xs, ys)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>To fit a functional form: y = a + b*ln(x).</p>
+
+<p>Takes x and y values and returns [a, b, r^2].</p>
+
+<p>See: <a href="http://mathworld.wolfram.com/LeastSquaresFittingLogarithmic.html">mathworld.wolfram.com/LeastSquaresFittingLogarithmic.html</a></p>
+            
+
+            
+            <div class="method-source-code" id="fit_logarithmic-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/benchmark.rb, line 259</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fit_logarithmic</span> <span class="ruby-identifier">xs</span>, <span class="ruby-identifier">ys</span>
+  <span class="ruby-identifier">n</span>     = <span class="ruby-identifier">xs</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">xys</span>   = <span class="ruby-identifier">xs</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-identifier">ys</span>)
+  <span class="ruby-identifier">slnx2</span> = <span class="ruby-identifier">sigma</span>(<span class="ruby-identifier">xys</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>, <span class="ruby-identifier">_</span><span class="ruby-operator">|</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">log</span>(<span class="ruby-identifier">x</span>) <span class="ruby-operator">**</span> <span class="ruby-value">2</span> }
+  <span class="ruby-identifier">slnx</span>  = <span class="ruby-identifier">sigma</span>(<span class="ruby-identifier">xys</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>, <span class="ruby-identifier">_</span><span class="ruby-operator">|</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">log</span>(<span class="ruby-identifier">x</span>)      }
+  <span class="ruby-identifier">sylnx</span> = <span class="ruby-identifier">sigma</span>(<span class="ruby-identifier">xys</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span><span class="ruby-operator">|</span> <span class="ruby-identifier">y</span> <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">log</span>(<span class="ruby-identifier">x</span>)  }
+  <span class="ruby-identifier">sy</span>    = <span class="ruby-identifier">sigma</span>(<span class="ruby-identifier">xys</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">y</span><span class="ruby-operator">|</span> <span class="ruby-identifier">y</span>                }
+
+  <span class="ruby-identifier">c</span> = <span class="ruby-identifier">n</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">slnx2</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">slnx</span> <span class="ruby-operator">**</span> <span class="ruby-value">2</span>
+  <span class="ruby-identifier">b</span> = ( <span class="ruby-identifier">n</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">sylnx</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">sy</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">slnx</span> ) <span class="ruby-operator">/</span> <span class="ruby-identifier">c</span>
+  <span class="ruby-identifier">a</span> = (<span class="ruby-identifier">sy</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">b</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">slnx</span>) <span class="ruby-operator">/</span> <span class="ruby-identifier">n</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">fit_error</span>(<span class="ruby-identifier">xys</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">b</span> <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">log</span>(<span class="ruby-identifier">x</span>) }
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- fit_logarithmic-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- fit_logarithmic-method -->
+      
+        <div id="fit_power-method" class="method-detail ">
+          <a name="method-i-fit_power"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">fit_power</span><span
+              class="method-args">(xs, ys)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>To fit a functional form: y = ax^b.</p>
+
+<p>Takes x and y values and returns [a, b, r^2].</p>
+
+<p>See: <a href="http://mathworld.wolfram.com/LeastSquaresFittingPowerLaw.html">mathworld.wolfram.com/LeastSquaresFittingPowerLaw.html</a></p>
+            
+
+            
+            <div class="method-source-code" id="fit_power-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/benchmark.rb, line 303</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fit_power</span> <span class="ruby-identifier">xs</span>, <span class="ruby-identifier">ys</span>
+  <span class="ruby-identifier">n</span>       = <span class="ruby-identifier">xs</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">xys</span>     = <span class="ruby-identifier">xs</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-identifier">ys</span>)
+  <span class="ruby-identifier">slnxlny</span> = <span class="ruby-identifier">sigma</span>(<span class="ruby-identifier">xys</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span><span class="ruby-operator">|</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">log</span>(<span class="ruby-identifier">x</span>) <span class="ruby-operator">*</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">log</span>(<span class="ruby-identifier">y</span>) }
+  <span class="ruby-identifier">slnx</span>    = <span class="ruby-identifier">sigma</span>(<span class="ruby-identifier">xs</span>)  { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>   <span class="ruby-operator">|</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">log</span>(<span class="ruby-identifier">x</span>)               }
+  <span class="ruby-identifier">slny</span>    = <span class="ruby-identifier">sigma</span>(<span class="ruby-identifier">ys</span>)  { <span class="ruby-operator">|</span>   <span class="ruby-identifier">y</span><span class="ruby-operator">|</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">log</span>(<span class="ruby-identifier">y</span>)               }
+  <span class="ruby-identifier">slnx2</span>   = <span class="ruby-identifier">sigma</span>(<span class="ruby-identifier">xs</span>)  { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>   <span class="ruby-operator">|</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">log</span>(<span class="ruby-identifier">x</span>) <span class="ruby-operator">**</span> <span class="ruby-value">2</span>          }
+
+  <span class="ruby-identifier">b</span> = (<span class="ruby-identifier">n</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">slnxlny</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">slnx</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">slny</span>) <span class="ruby-operator">/</span> (<span class="ruby-identifier">n</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">slnx2</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">slnx</span> <span class="ruby-operator">**</span> <span class="ruby-value">2</span>)
+  <span class="ruby-identifier">a</span> = (<span class="ruby-identifier">slny</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">b</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">slnx</span>) <span class="ruby-operator">/</span> <span class="ruby-identifier">n</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">Math</span>.<span class="ruby-identifier">exp</span>(<span class="ruby-identifier">a</span>), <span class="ruby-identifier">b</span>, <span class="ruby-identifier">fit_error</span>(<span class="ruby-identifier">xys</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> (<span class="ruby-constant">Math</span>.<span class="ruby-identifier">exp</span>(<span class="ruby-identifier">a</span>) <span class="ruby-operator">*</span> (<span class="ruby-identifier">x</span> <span class="ruby-operator">**</span> <span class="ruby-identifier">b</span>)) }
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- fit_power-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- fit_power-method -->
+      
+        <div id="sigma-method" class="method-detail ">
+          <a name="method-i-sigma"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">sigma</span><span
+              class="method-args">(enum, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Enumerates over <code>enum</code> mapping <code>block</code> if given, returning the sum of the result. Eg:</p>
+
+<pre class="ruby"><span class="ruby-identifier">sigma</span>([<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>])                <span class="ruby-comment"># =&gt; 1 + 2 + 3 =&gt; 6</span>
+<span class="ruby-identifier">sigma</span>([<span class="ruby-value">1</span>, <span class="ruby-value">2</span>, <span class="ruby-value">3</span>]) { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">**</span> <span class="ruby-value">2</span> } <span class="ruby-comment"># =&gt; 1 + 4 + 9 =&gt; 14</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="sigma-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/benchmark.rb, line 324</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sigma</span> <span class="ruby-identifier">enum</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+  <span class="ruby-identifier">enum</span> = <span class="ruby-identifier">enum</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>
+  <span class="ruby-identifier">enum</span>.<span class="ruby-identifier">inject</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">sum</span>, <span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">sum</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">n</span> }
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- sigma-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- sigma-method -->
+      
+        <div id="validation_for_fit-method" class="method-detail ">
+          <a name="method-i-validation_for_fit"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">validation_for_fit</span><span
+              class="method-args">(msg, threshold)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns a proc that calls the specified fit method and asserts that the error is within a tolerable threshold.</p>
+            
+
+            
+            <div class="method-source-code" id="validation_for_fit-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/benchmark.rb, line 333</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">validation_for_fit</span> <span class="ruby-identifier">msg</span>, <span class="ruby-identifier">threshold</span>
+  <span class="ruby-identifier">proc</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">range</span>, <span class="ruby-identifier">times</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">rr</span> = <span class="ruby-identifier">send</span> <span class="ruby-node">&quot;fit_#{msg}&quot;</span>, <span class="ruby-identifier">range</span>, <span class="ruby-identifier">times</span>
+    <span class="ruby-identifier">assert_operator</span> <span class="ruby-identifier">rr</span>, <span class="ruby-value">:&gt;=</span>, <span class="ruby-identifier">threshold</span>
+    [<span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">rr</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- validation_for_fit-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- validation_for_fit-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Benchmark_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Benchmark_versioned").load("/associated/2.7.4/Benchmark.ihtml");</script> <div id='tx_Benchmark' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Benchmark").load("/associated/Benchmark.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, purveyors of fine dance noise.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Benchmark.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Benchmark.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

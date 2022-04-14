@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : Digest::Base  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:18:48 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '..'   asset_rel_prefix = '..'  --> 
+  <title>Class: Digest::Base (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="..css/obf.css"  -->
+  <link rel="stylesheet" href="../css/inuit.css" >
+  <link rel="stylesheet" href="../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../css/carbon17.css" type="text/css" >
+
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>digest/bubblebabble/bubblebabble.c</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="Class.html">Digest::Class</a></p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-3C-3C">#<<</a></li>
+          
+          <li><a href="#method-i-block_length">#block_length</a></li>
+          
+          <li><a href="#method-i-digest_length">#digest_length</a></li>
+          
+          <li><a href="#method-i-reset">#reset</a></li>
+          
+          <li><a href="#method-i-update">#update</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../Digest.html">Digest</a></li>
+        
+          
+          
+          <li><a href="../Digest/Base.html">Digest::Base</a></li>
+        
+          
+          
+          <li><a href="../Digest/Class.html">Digest::Class</a></li>
+        
+          
+          
+          <li><a href="../Digest/Instance.html">Digest::Instance</a></li>
+        
+          
+          
+          <li><a href="../Digest/MD5.html">Digest::MD5</a></li>
+        
+          
+          
+          <li><a href="../Digest/RMD160.html">Digest::RMD160</a></li>
+        
+          
+          
+          <li><a href="../Digest/SHA1.html">Digest::SHA1</a></li>
+        
+          
+          
+          <li><a href="../Digest/SHA2.html">Digest::SHA2</a></li>
+        
+          
+          
+          <li><a href="../Object.html">Object</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">Digest::Base</h1>
+
+    <div id="description" class="description">
+      
+<p>This abstract class provides a common interface to message digest implementation classes written in C.</p>
+
+<h2 id="class-Digest::Base-label-Write+a+Digest+subclass+in+C">Write a <a href="../Digest.html"><code>Digest</code></a> subclass in C<span><a href="#class-Digest::Base-label-Write+a+Digest+subclass+in+C">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p><a href="Base.html"><code>Digest::Base</code></a> provides a common interface to message digest classes written in C. These classes must provide a struct of type rb_digest_metadata_t:</p>
+
+<pre>typedef int (*rb_digest_hash_init_func_t)(void *);
+typedef void (*rb_digest_hash_update_func_t)(void *, unsigned char *, size_t);
+typedef int (*rb_digest_hash_finish_func_t)(void *, unsigned char *);
+
+typedef struct {
+  int api_version;
+  size_t digest_len;
+  size_t block_len;
+  size_t ctx_size;
+  rb_digest_hash_init_func_t init_func;
+  rb_digest_hash_update_func_t update_func;
+  rb_digest_hash_finish_func_t finish_func;
+} rb_digest_metadata_t;</pre>
+
+<p>This structure must be set as an instance variable named <code>metadata</code> (without the +@+ in front of the name). By example:</p>
+
+<pre> static const rb_digest_metadata_t sha1 = {
+    RUBY_DIGEST_API_VERSION,
+    SHA1_DIGEST_LENGTH,
+    SHA1_BLOCK_LENGTH,
+    sizeof(SHA1_CTX),
+    (rb_digest_hash_init_func_t)SHA1_Init,
+    (rb_digest_hash_update_func_t)SHA1_Update,
+    (rb_digest_hash_finish_func_t)SHA1_Finish,
+};
+
+rb_ivar_set(cDigest_SHA1, rb_intern(&quot;metadata&quot;),
+            Data_Wrap_Struct(0, 0, 0, (void *)&amp;sha1));</pre>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="3C-3C-method" class="method-detail ">
+          <a name="method-i-3C-3C"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">digest_base << string &rarr; digest_base</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Update the digest using given <em>string</em> and return <code>self</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="3C-3C-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_digest_base_update(VALUE self, VALUE str)
+{
+    rb_digest_metadata_t *algo;
+    void *pctx;
+
+    algo = get_digest_obj_metadata(self);
+
+    TypedData_Get_Struct(self, void, &amp;digest_type, pctx);
+
+    StringValue(str);
+    algo-&gt;update_func(pctx, (unsigned char *)RSTRING_PTR(str), RSTRING_LEN(str));
+    RB_GC_GUARD(str);
+
+    return self;
+}
+            </pre> 
+            </div><!-- 3C-3C-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 3C-3C-method -->
+      
+        <div id="block_length-method" class="method-detail ">
+          <a name="method-i-block_length"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">block_length &rarr; Integer</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Return the block length of the digest in bytes.</p>
+            
+
+            
+            <div class="method-source-code" id="block_length-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_digest_base_block_length(VALUE self)
+{
+    rb_digest_metadata_t *algo;
+
+    algo = get_digest_obj_metadata(self);
+
+    return INT2NUM(algo-&gt;block_len);
+}
+            </pre> 
+            </div><!-- block_length-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- block_length-method -->
+      
+        <div id="digest_length-method" class="method-detail ">
+          <a name="method-i-digest_length"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">digest_length &rarr; Integer</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Return the length of the hash value in bytes.</p>
+            
+
+            
+            <div class="method-source-code" id="digest_length-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_digest_base_digest_length(VALUE self)
+{
+    rb_digest_metadata_t *algo;
+
+    algo = get_digest_obj_metadata(self);
+
+    return INT2NUM(algo-&gt;digest_len);
+}
+            </pre> 
+            </div><!-- digest_length-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- digest_length-method -->
+      
+        <div id="reset-method" class="method-detail ">
+          <a name="method-i-reset"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">reset &rarr; digest_base</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Reset the digest to its initial state and return <code>self</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="reset-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_digest_base_reset(VALUE self)
+{
+    rb_digest_metadata_t *algo;
+    void *pctx;
+
+    algo = get_digest_obj_metadata(self);
+
+    TypedData_Get_Struct(self, void, &amp;digest_type, pctx);
+
+    algo_init(algo, pctx);
+
+    return self;
+}
+            </pre> 
+            </div><!-- reset-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- reset-method -->
+      
+        <div id="update-method" class="method-detail ">
+          <a name="method-i-update"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">update(string) &rarr; digest_base</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Update the digest using given <em>string</em> and return <code>self</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="update-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_digest_base_update(VALUE self, VALUE str)
+{
+    rb_digest_metadata_t *algo;
+    void *pctx;
+
+    algo = get_digest_obj_metadata(self);
+
+    TypedData_Get_Struct(self, void, &amp;digest_type, pctx);
+
+    StringValue(str);
+    algo-&gt;update_func(pctx, (unsigned char *)RSTRING_PTR(str), RSTRING_LEN(str));
+    RB_GC_GUARD(str);
+
+    return self;
+}
+            </pre> 
+            </div><!-- update-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- update-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Base_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Base_versioned").load("/associated/2.7.4/Base.ihtml");</script> <div id='tx_Base' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Base").load("/associated/Base.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Maximum R+D</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Base.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Base.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

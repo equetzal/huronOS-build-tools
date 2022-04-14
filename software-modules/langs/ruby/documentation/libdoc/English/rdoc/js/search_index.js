@@ -1,0 +1,1 @@
+var search_data = {"index":{"searchIndex":["english","object"],"longSearchIndex":["english","object"],"info":[["English","","English.html","","<p>Include the English library file in a Ruby script, and you can reference the global variables such as …\n"],["Object","","Object.html","",""]]}}

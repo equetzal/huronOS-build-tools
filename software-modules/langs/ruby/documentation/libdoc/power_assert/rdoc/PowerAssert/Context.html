@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : PowerAssert::Context  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:26:50 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '..'   asset_rel_prefix = '..'  --> 
+  <title>Class: PowerAssert::Context (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="..css/obf.css"  -->
+  <link rel="stylesheet" href="../css/inuit.css" >
+  <link rel="stylesheet" href="../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../css/carbon17.css" type="text/css" >
+
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>power_assert-1.1.7/lib/power_assert/context.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-message">#message</a></li>
+          
+          <li><a href="#method-i-message_proc">#message_proc</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul id='files'>
+        
+          
+          <li class="file"><a href="../power_assert-1_1_7/README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../PowerAssert.html">PowerAssert</a></li>
+        
+          
+          
+          <li><a href="../PowerAssert/BlockContext.html">PowerAssert::BlockContext</a></li>
+        
+          
+          
+          <li><a href="../PowerAssert/Configuration.html">PowerAssert::Configuration</a></li>
+        
+          
+          
+          <li><a href="../PowerAssert/Context.html">PowerAssert::Context</a></li>
+        
+          
+          
+          <li><a href="../PowerAssert/Empty.html">PowerAssert::Empty</a></li>
+        
+          
+          
+          <li><a href="../PowerAssert/Formatter.html">PowerAssert::Formatter</a></li>
+        
+          
+          
+          <li><a href="../PowerAssert/InspectedValue.html">PowerAssert::InspectedValue</a></li>
+        
+          
+          
+          <li><a href="../PowerAssert/Parser.html">PowerAssert::Parser</a></li>
+        
+          
+          
+          <li><a href="../PowerAssert/Parser/Branch.html">PowerAssert::Parser::Branch</a></li>
+        
+          
+          
+          <li><a href="../PowerAssert/Parser/DummyParser.html">PowerAssert::Parser::DummyParser</a></li>
+        
+          
+          
+          <li><a href="../PowerAssert/SafeInspectable.html">PowerAssert::SafeInspectable</a></li>
+        
+          
+          
+          <li><a href="../PowerAssert/TraceContext.html">PowerAssert::TraceContext</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">PowerAssert::Context</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="Value">Value</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(base_caller_length)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File power_assert-1.1.7/lib/power_assert/context.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">base_caller_length</span>)
+  <span class="ruby-ivar">@fired</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@target_thread</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>
+  <span class="ruby-identifier">method_id_set</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@return_values</span> = []
+  <span class="ruby-identifier">trace_alias_method</span> = <span class="ruby-constant">PowerAssert</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">_trace_alias_method</span>
+  <span class="ruby-ivar">@trace_return</span> = <span class="ruby-constant">TracePoint</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:return</span>, <span class="ruby-value">:c_return</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">tp</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">method_id_set</span>
+        <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@target_thread</span>
+        <span class="ruby-identifier">method_id_set</span> = <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">method_id_set</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">method_id</span> = <span class="ruby-constant">SUPPORT_ALIAS_METHOD</span>                      <span class="ruby-operator">?</span> <span class="ruby-identifier">tp</span>.<span class="ruby-identifier">callee_id</span> <span class="ruby-operator">:</span>
+                  <span class="ruby-identifier">trace_alias_method</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">tp</span>.<span class="ruby-identifier">event</span> <span class="ruby-operator">==</span> <span class="ruby-value">:return</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">tp</span>.<span class="ruby-identifier">binding</span>.<span class="ruby-identifier">eval</span>(<span class="ruby-string">&#39;::Kernel.__callee__&#39;</span>) <span class="ruby-operator">:</span>
+                                                              <span class="ruby-identifier">tp</span>.<span class="ruby-identifier">method_id</span>
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span> <span class="ruby-identifier">method_id_set</span>[<span class="ruby-identifier">method_id</span>]
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">tp</span>.<span class="ruby-identifier">event</span> <span class="ruby-operator">==</span> <span class="ruby-value">:c_return</span> <span class="ruby-keyword">and</span>
+              <span class="ruby-keyword">not</span> (<span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">lineno</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">tp</span>.<span class="ruby-identifier">lineno</span> <span class="ruby-keyword">and</span> <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">path</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">tp</span>.<span class="ruby-identifier">path</span>)
+      <span class="ruby-identifier">locs</span> = <span class="ruby-constant">PowerAssert</span>.<span class="ruby-identifier">app_caller_locations</span>
+      <span class="ruby-identifier">diff</span> = <span class="ruby-identifier">locs</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">base_caller_length</span>
+      <span class="ruby-keyword">if</span> (<span class="ruby-identifier">tp</span>.<span class="ruby-identifier">event</span> <span class="ruby-operator">==</span> <span class="ruby-value">:c_return</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">diff</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">tp</span>.<span class="ruby-identifier">event</span> <span class="ruby-operator">==</span> <span class="ruby-value">:return</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">diff</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">2</span>) <span class="ruby-keyword">and</span> <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@target_thread</span>
+        <span class="ruby-identifier">idx</span> = <span class="ruby-operator">-</span>(<span class="ruby-identifier">base_caller_length</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">path</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">locs</span>[<span class="ruby-identifier">idx</span>].<span class="ruby-identifier">path</span> <span class="ruby-keyword">and</span> <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">lineno</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">locs</span>[<span class="ruby-identifier">idx</span>].<span class="ruby-identifier">lineno</span>
+          <span class="ruby-identifier">val</span> = <span class="ruby-constant">PowerAssert</span>.<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">lazy_inspection</span> <span class="ruby-operator">?</span>
+            <span class="ruby-identifier">tp</span>.<span class="ruby-identifier">return_value</span> <span class="ruby-operator">:</span>
+            <span class="ruby-constant">InspectedValue</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">SafeInspectable</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">tp</span>.<span class="ruby-identifier">return_value</span>).<span class="ruby-identifier">inspect</span>)
+          <span class="ruby-ivar">@return_values</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Value</span>[<span class="ruby-identifier">method_id</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">val</span>, <span class="ruby-identifier">locs</span>[<span class="ruby-identifier">idx</span>].<span class="ruby-identifier">lineno</span>, <span class="ruby-keyword">nil</span>]
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;power_assert: [BUG] Failed to trace: #{e.class}: #{e.message}&quot;</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:full_message</span>)
+        <span class="ruby-identifier">warn</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">full_message</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/^/</span>, <span class="ruby-string">&#39;power_assert:     &#39;</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="message-method" class="method-detail ">
+          <a name="method-i-message"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">message</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="message-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File power_assert-1.1.7/lib/power_assert/context.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">message</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">&#39;call #yield or #enable at first&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">fired?</span>
+  <span class="ruby-ivar">@message</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">build_assertion_message</span>(<span class="ruby-ivar">@parser</span>, <span class="ruby-ivar">@return_values</span>).<span class="ruby-identifier">freeze</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- message-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- message-method -->
+      
+        <div id="message_proc-method" class="method-detail ">
+          <a name="method-i-message_proc"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">message_proc</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="message_proc-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File power_assert-1.1.7/lib/power_assert/context.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">message_proc</span>
+  <span class="ruby-operator">-&gt;</span> { <span class="ruby-identifier">message</span> }
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- message_proc-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- message_proc-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Context_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Context_versioned").load("/associated/2.7.4/Context.ihtml");</script> <div id='tx_Context' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Context").load("/associated/Context.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, purveyors of fine dance noise.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Context.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Context.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

@@ -1,0 +1,2601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Module : Minitest::Assertions  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:23:14 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '..'   asset_rel_prefix = '..'  --> 
+  <title>Module: Minitest::Assertions (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="..css/obf.css"  -->
+  <link rel="stylesheet" href="../css/inuit.css" >
+  <link rel="stylesheet" href="../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../css/carbon17.css" type="text/css" >
+
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="module rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>minitest-5.13.0/lib/minitest/assertions.rb</li>      
+            
+          
+          <li class='in-file'>minitest-5.13.0/lib/minitest/mock.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-diff">::diff</a></li>
+          
+          <li><a href="#method-c-diff-3D">::diff=</a></li>
+          
+          <li><a href="#method-i-assert">#assert</a></li>
+          
+          <li><a href="#method-i-assert_empty">#assert_empty</a></li>
+          
+          <li><a href="#method-i-assert_equal">#assert_equal</a></li>
+          
+          <li><a href="#method-i-assert_in_delta">#assert_in_delta</a></li>
+          
+          <li><a href="#method-i-assert_in_epsilon">#assert_in_epsilon</a></li>
+          
+          <li><a href="#method-i-assert_includes">#assert_includes</a></li>
+          
+          <li><a href="#method-i-assert_instance_of">#assert_instance_of</a></li>
+          
+          <li><a href="#method-i-assert_kind_of">#assert_kind_of</a></li>
+          
+          <li><a href="#method-i-assert_match">#assert_match</a></li>
+          
+          <li><a href="#method-i-assert_mock">#assert_mock</a></li>
+          
+          <li><a href="#method-i-assert_nil">#assert_nil</a></li>
+          
+          <li><a href="#method-i-assert_operator">#assert_operator</a></li>
+          
+          <li><a href="#method-i-assert_output">#assert_output</a></li>
+          
+          <li><a href="#method-i-assert_path_exists">#assert_path_exists</a></li>
+          
+          <li><a href="#method-i-assert_predicate">#assert_predicate</a></li>
+          
+          <li><a href="#method-i-assert_raises">#assert_raises</a></li>
+          
+          <li><a href="#method-i-assert_respond_to">#assert_respond_to</a></li>
+          
+          <li><a href="#method-i-assert_same">#assert_same</a></li>
+          
+          <li><a href="#method-i-assert_send">#assert_send</a></li>
+          
+          <li><a href="#method-i-assert_silent">#assert_silent</a></li>
+          
+          <li><a href="#method-i-assert_throws">#assert_throws</a></li>
+          
+          <li><a href="#method-i-capture_io">#capture_io</a></li>
+          
+          <li><a href="#method-i-capture_subprocess_io">#capture_subprocess_io</a></li>
+          
+          <li><a href="#method-i-diff">#diff</a></li>
+          
+          <li><a href="#method-i-exception_details">#exception_details</a></li>
+          
+          <li><a href="#method-i-fail_after">#fail_after</a></li>
+          
+          <li><a href="#method-i-flunk">#flunk</a></li>
+          
+          <li><a href="#method-i-message">#message</a></li>
+          
+          <li><a href="#method-i-mu_pp">#mu_pp</a></li>
+          
+          <li><a href="#method-i-mu_pp_for_diff">#mu_pp_for_diff</a></li>
+          
+          <li><a href="#method-i-pass">#pass</a></li>
+          
+          <li><a href="#method-i-refute">#refute</a></li>
+          
+          <li><a href="#method-i-refute_empty">#refute_empty</a></li>
+          
+          <li><a href="#method-i-refute_equal">#refute_equal</a></li>
+          
+          <li><a href="#method-i-refute_in_delta">#refute_in_delta</a></li>
+          
+          <li><a href="#method-i-refute_in_epsilon">#refute_in_epsilon</a></li>
+          
+          <li><a href="#method-i-refute_includes">#refute_includes</a></li>
+          
+          <li><a href="#method-i-refute_instance_of">#refute_instance_of</a></li>
+          
+          <li><a href="#method-i-refute_kind_of">#refute_kind_of</a></li>
+          
+          <li><a href="#method-i-refute_match">#refute_match</a></li>
+          
+          <li><a href="#method-i-refute_nil">#refute_nil</a></li>
+          
+          <li><a href="#method-i-refute_operator">#refute_operator</a></li>
+          
+          <li><a href="#method-i-refute_path_exists">#refute_path_exists</a></li>
+          
+          <li><a href="#method-i-refute_predicate">#refute_predicate</a></li>
+          
+          <li><a href="#method-i-refute_respond_to">#refute_respond_to</a></li>
+          
+          <li><a href="#method-i-refute_same">#refute_same</a></li>
+          
+          <li><a href="#method-i-skip">#skip</a></li>
+          
+          <li><a href="#method-i-skip_until">#skip_until</a></li>
+          
+          <li><a href="#method-i-skipped-3F">#skipped?</a></li>
+          
+          <li><a href="#method-i-things_to_diff">#things_to_diff</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul id='files'>
+        
+          
+          <li class="file"><a href="../minitest-5_13_0/History_rdoc.html">History.rdoc</a></li>
+        
+          
+          <li class="file"><a href="../minitest-5_13_0/README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../Kernel.html">Kernel</a></li>
+        
+          
+          
+          <li><a href="../Minitest/AbstractReporter.html">Minitest::AbstractReporter</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Assertion.html">Minitest::Assertion</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Assertions.html">Minitest::Assertions</a></li>
+        
+          
+          
+          <li><a href="../Minitest/BacktraceFilter.html">Minitest::BacktraceFilter</a></li>
+        
+          
+          
+          <li><a href="../Minitest/BenchSpec.html">Minitest::BenchSpec</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Benchmark.html">Minitest::Benchmark</a></li>
+        
+          
+          
+          <li><a href="../Minitest/CompositeReporter.html">Minitest::CompositeReporter</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Expectations.html">Minitest::Expectations</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Guard.html">Minitest::Guard</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Mock.html">Minitest::Mock</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Parallel.html">Minitest::Parallel</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Parallel/Executor.html">Minitest::Parallel::Executor</a></li>
+        
+          
+          
+          <li><a href="../Minitest/PrideIO.html">Minitest::PrideIO</a></li>
+        
+          
+          
+          <li><a href="../Minitest/PrideLOL.html">Minitest::PrideLOL</a></li>
+        
+          
+          
+          <li><a href="../Minitest/ProgressReporter.html">Minitest::ProgressReporter</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Reportable.html">Minitest::Reportable</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Result.html">Minitest::Result</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Skip.html">Minitest::Skip</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Spec.html">Minitest::Spec</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Spec/DSL.html">Minitest::Spec::DSL</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Spec/DSL/InstanceMethods.html">Minitest::Spec::DSL::InstanceMethods</a></li>
+        
+          
+          
+          <li><a href="../Minitest/StatisticsReporter.html">Minitest::StatisticsReporter</a></li>
+        
+          
+          
+          <li><a href="../Minitest/SummaryReporter.html">Minitest::SummaryReporter</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Test.html">Minitest::Test</a></li>
+        
+          
+          
+          <li><a href="../Minitest/Test/LifecycleHooks.html">Minitest::Test::LifecycleHooks</a></li>
+        
+          
+          
+          <li><a href="../Minitest/UnexpectedError.html">Minitest::UnexpectedError</a></li>
+        
+          
+          
+          <li><a href="../Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="../SubThingySpec.html">SubThingySpec</a></li>
+        
+          
+          
+          <li><a href="../ThingySpec.html">ThingySpec</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="module">Minitest::Assertions</h1>
+
+    <div id="description" class="description">
+      
+<p>Minitest <a href="Assertions.html"><code>Assertions</code></a>.  All assertion methods accept a <code>msg</code> which is printed if the assertion fails.</p>
+
+<p>Protocol: Nearly everything here boils up to <code>assert</code>, which expects to be able to increment an instance accessor named <code>assertions</code>. This is not provided by <a href="Assertions.html"><code>Assertions</code></a> and must be provided by the thing including <a href="Assertions.html"><code>Assertions</code></a>. See Minitest::Runnable for an example.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="diff-method" class="method-detail ">
+          <a name="method-c-diff"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">diff</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns the diff command to use in <a href="Assertions.html#method-i-diff"><code>diff</code></a>. Tries to intelligently figure out what diff to use.</p>
+            
+
+            
+            <div class="method-source-code" id="diff-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">diff</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@diff</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span> <span class="ruby-ivar">@diff</span>
+
+  <span class="ruby-ivar">@diff</span> = <span class="ruby-keyword">if</span> (<span class="ruby-constant">RbConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>[<span class="ruby-string">&quot;host_os&quot;</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp">/mswin|mingw/</span> <span class="ruby-operator">&amp;&amp;</span>
+              <span class="ruby-identifier">system</span>(<span class="ruby-string">&quot;diff.exe&quot;</span>, <span class="ruby-keyword">__FILE__</span>, <span class="ruby-keyword">__FILE__</span>)) <span class="ruby-keyword">then</span>
+            <span class="ruby-string">&quot;diff.exe -u&quot;</span>
+          <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">system</span>(<span class="ruby-string">&quot;gdiff&quot;</span>, <span class="ruby-keyword">__FILE__</span>, <span class="ruby-keyword">__FILE__</span>)
+            <span class="ruby-string">&quot;gdiff -u&quot;</span> <span class="ruby-comment"># solaris and kin suck</span>
+          <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">system</span>(<span class="ruby-string">&quot;diff&quot;</span>, <span class="ruby-keyword">__FILE__</span>, <span class="ruby-keyword">__FILE__</span>)
+            <span class="ruby-string">&quot;diff -u&quot;</span>
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-keyword">nil</span>
+          <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- diff-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- diff-method -->
+      
+        <div id="diff-3D-method" class="method-detail ">
+          <a name="method-c-diff-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">diff=</span><span
+              class="method-args">(o)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Set the diff command to use in <a href="Assertions.html#method-i-diff"><code>diff</code></a>.</p>
+            
+
+            
+            <div class="method-source-code" id="diff-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">diff=</span> <span class="ruby-identifier">o</span>
+  <span class="ruby-ivar">@diff</span> = <span class="ruby-identifier">o</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- diff-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- diff-3D-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="assert-method" class="method-detail ">
+          <a name="method-i-assert"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert</span><span
+              class="method-args">(test, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails unless <code>test</code> is truthy.</p>
+            
+
+            
+            <div class="method-source-code" id="assert-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 178</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert</span> <span class="ruby-identifier">test</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">assertions</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">test</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">msg</span> <span class="ruby-operator">||=</span> <span class="ruby-node">&quot;Expected #{mu_pp test} to be truthy.&quot;</span>
+    <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">msg</span>.<span class="ruby-identifier">call</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Proc</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">msg</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">Minitest</span><span class="ruby-operator">::</span><span class="ruby-constant">Assertion</span>, <span class="ruby-identifier">msg</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert-method -->
+      
+        <div id="assert_empty-method" class="method-detail ">
+          <a name="method-i-assert_empty"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_empty</span><span
+              class="method-args">(obj, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails unless <code>obj</code> is empty.</p>
+            
+
+            
+            <div class="method-source-code" id="assert_empty-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 195</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_empty</span> <span class="ruby-identifier">obj</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) { <span class="ruby-node">&quot;Expected #{mu_pp(obj)} to be empty&quot;</span> }
+  <span class="ruby-identifier">assert_respond_to</span> <span class="ruby-identifier">obj</span>, <span class="ruby-value">:empty?</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">empty?</span>, <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_empty-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_empty-method -->
+      
+        <div id="assert_equal-method" class="method-detail ">
+          <a name="method-i-assert_equal"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_equal</span><span
+              class="method-args">(exp, act, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails unless <code>exp == act</code> printing the difference between the two, if possible.</p>
+
+<p>If there is no visible difference but the assertion fails, you should suspect that your #== is buggy, or your inspect output is missing crucial details.  For nicer structural diffing, set <a href="Test.html#method-c-make_my_diffs_pretty-21"><code>Minitest::Test.make_my_diffs_pretty!</code></a></p>
+
+<p>For floats use assert_in_delta.</p>
+
+<p>See also: <a href="Assertions.html#method-c-diff"><code>Minitest::Assertions.diff</code></a></p>
+            
+
+            
+            <div class="method-source-code" id="assert_equal-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 216</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_equal</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">act</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>, <span class="ruby-constant">E</span>) { <span class="ruby-identifier">diff</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">act</span> }
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">assert</span> <span class="ruby-identifier">exp</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">act</span>, <span class="ruby-identifier">msg</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">exp</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">Minitest</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^6/</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">refute_nil</span> <span class="ruby-identifier">exp</span>, <span class="ruby-string">&quot;Use assert_nil if expecting nil.&quot;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">where</span> = <span class="ruby-constant">Minitest</span>.<span class="ruby-identifier">filter_backtrace</span>(<span class="ruby-identifier">caller</span>).<span class="ruby-identifier">first</span>
+      <span class="ruby-identifier">where</span> = <span class="ruby-identifier">where</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/:in /</span>, <span class="ruby-value">2</span>).<span class="ruby-identifier">first</span> <span class="ruby-comment"># clean up noise</span>
+
+      <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;DEPRECATED: Use assert_nil if expecting nil from #{where}. This will fail in Minitest 6.&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_equal-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_equal-method -->
+      
+        <div id="assert_in_delta-method" class="method-detail ">
+          <a name="method-i-assert_in_delta"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_in_delta</span><span
+              class="method-args">(exp, act, delta = 0.001, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>For comparing Floats.  Fails unless <code>exp</code> and <code>act</code> are within <code>delta</code> of each other.</p>
+
+<pre class="ruby"><span class="ruby-identifier">assert_in_delta</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span>, (<span class="ruby-value">22.0</span> <span class="ruby-operator">/</span> <span class="ruby-value">7.0</span>), <span class="ruby-value">0.01</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="assert_in_delta-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 240</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_in_delta</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">act</span>, <span class="ruby-identifier">delta</span> = <span class="ruby-value">0.001</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">n</span> = (<span class="ruby-identifier">exp</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">act</span>).<span class="ruby-identifier">abs</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) {
+    <span class="ruby-node">&quot;Expected |#{exp} - #{act}| (#{n}) to be &lt;= #{delta}&quot;</span>
+  }
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">delta</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">n</span>, <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_in_delta-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_in_delta-method -->
+      
+        <div id="assert_in_epsilon-method" class="method-detail ">
+          <a name="method-i-assert_in_epsilon"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_in_epsilon</span><span
+              class="method-args">(exp, act, epsilon = 0.001, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>For comparing Floats.  Fails unless <code>exp</code> and <code>act</code> have a relative error less than <code>epsilon</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="assert_in_epsilon-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 252</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_in_epsilon</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">act</span>, <span class="ruby-identifier">epsilon</span> = <span class="ruby-value">0.001</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">assert_in_delta</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">act</span>, [<span class="ruby-identifier">exp</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-identifier">act</span>.<span class="ruby-identifier">abs</span>].<span class="ruby-identifier">min</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">epsilon</span>, <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_in_epsilon-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_in_epsilon-method -->
+      
+        <div id="assert_includes-method" class="method-detail ">
+          <a name="method-i-assert_includes"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_includes</span><span
+              class="method-args">(collection, obj, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails unless <code>collection</code> includes <code>obj</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="assert_includes-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 259</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_includes</span> <span class="ruby-identifier">collection</span>, <span class="ruby-identifier">obj</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) {
+    <span class="ruby-node">&quot;Expected #{mu_pp(collection)} to include #{mu_pp(obj)}&quot;</span>
+  }
+  <span class="ruby-identifier">assert_respond_to</span> <span class="ruby-identifier">collection</span>, <span class="ruby-value">:include?</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">obj</span>), <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_includes-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_includes-method -->
+      
+        <div id="assert_instance_of-method" class="method-detail ">
+          <a name="method-i-assert_instance_of"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_instance_of</span><span
+              class="method-args">(cls, obj, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails unless <code>obj</code> is an instance of <code>cls</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="assert_instance_of-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 270</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_instance_of</span> <span class="ruby-identifier">cls</span>, <span class="ruby-identifier">obj</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) {
+    <span class="ruby-node">&quot;Expected #{mu_pp(obj)} to be an instance of #{cls}, not #{obj.class}&quot;</span>
+  }
+
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">instance_of?</span>(<span class="ruby-identifier">cls</span>), <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_instance_of-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_instance_of-method -->
+      
+        <div id="assert_kind_of-method" class="method-detail ">
+          <a name="method-i-assert_kind_of"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_kind_of</span><span
+              class="method-args">(cls, obj, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails unless <code>obj</code> is a kind of <code>cls</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="assert_kind_of-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 281</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_kind_of</span> <span class="ruby-identifier">cls</span>, <span class="ruby-identifier">obj</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) {
+    <span class="ruby-node">&quot;Expected #{mu_pp(obj)} to be a kind of #{cls}, not #{obj.class}&quot;</span> }
+
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-identifier">cls</span>), <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_kind_of-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_kind_of-method -->
+      
+        <div id="assert_match-method" class="method-detail ">
+          <a name="method-i-assert_match"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_match</span><span
+              class="method-args">(matcher, obj, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails unless <code>matcher</code> <code>=~</code> <code>obj</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="assert_match-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 291</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_match</span> <span class="ruby-identifier">matcher</span>, <span class="ruby-identifier">obj</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) { <span class="ruby-node">&quot;Expected #{mu_pp matcher} to match #{mu_pp obj}&quot;</span> }
+  <span class="ruby-identifier">assert_respond_to</span> <span class="ruby-identifier">matcher</span>, <span class="ruby-value">:&quot;=~&quot;</span>
+  <span class="ruby-identifier">matcher</span> = <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">new</span> <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">escape</span> <span class="ruby-identifier">matcher</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">matcher</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">matcher</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">obj</span>, <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_match-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_match-method -->
+      
+        <div id="assert_mock-method" class="method-detail ">
+          <a name="method-i-assert_mock"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_mock</span><span
+              class="method-args">(mock)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Assert that the mock verifies correctly.</p>
+            
+
+            
+            <div class="method-source-code" id="assert_mock-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/mock.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_mock</span> <span class="ruby-identifier">mock</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">mock</span>.<span class="ruby-identifier">verify</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_mock-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_mock-method -->
+      
+        <div id="assert_nil-method" class="method-detail ">
+          <a name="method-i-assert_nil"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_nil</span><span
+              class="method-args">(obj, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails unless <code>obj</code> is nil</p>
+            
+
+            
+            <div class="method-source-code" id="assert_nil-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 301</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_nil</span> <span class="ruby-identifier">obj</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) { <span class="ruby-node">&quot;Expected #{mu_pp(obj)} to be nil&quot;</span> }
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">nil?</span>, <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_nil-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_nil-method -->
+      
+        <div id="assert_operator-method" class="method-detail ">
+          <a name="method-i-assert_operator"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_operator</span><span
+              class="method-args">(o1, op, o2 = UNDEFINED, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>For testing with binary operators. Eg:</p>
+
+<pre class="ruby"><span class="ruby-identifier">assert_operator</span> <span class="ruby-value">5</span>, <span class="ruby-value">:&lt;=</span>, <span class="ruby-value">4</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="assert_operator-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 311</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_operator</span> <span class="ruby-identifier">o1</span>, <span class="ruby-identifier">op</span>, <span class="ruby-identifier">o2</span> = <span class="ruby-constant">UNDEFINED</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">assert_predicate</span> <span class="ruby-identifier">o1</span>, <span class="ruby-identifier">op</span>, <span class="ruby-identifier">msg</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">UNDEFINED</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o2</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) { <span class="ruby-node">&quot;Expected #{mu_pp(o1)} to be #{op} #{mu_pp(o2)}&quot;</span> }
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">o1</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">op</span>, <span class="ruby-identifier">o2</span>), <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_operator-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_operator-method -->
+      
+        <div id="assert_output-method" class="method-detail ">
+          <a name="method-i-assert_output"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_output</span><span
+              class="method-args">(stdout = nil, stderr = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails if stdout or stderr do not output the expected results. Pass in nil if you don&#39;t care about that streams output. Pass in “” if you require it to be silent. Pass in a regexp if you want to pattern match.</p>
+
+<pre class="ruby"><span class="ruby-identifier">assert_output</span>(<span class="ruby-regexp">/hey/</span>) { <span class="ruby-identifier">method_with_output</span> }
+</pre>
+
+<p>NOTE: this uses <a href="Assertions.html#method-i-capture_io"><code>capture_io</code></a>, not <a href="Assertions.html#method-i-capture_subprocess_io"><code>capture_subprocess_io</code></a>.</p>
+
+<p>See also: <a href="Assertions.html#method-i-assert_silent"><code>assert_silent</code></a></p>
+            
+
+            
+            <div class="method-source-code" id="assert_output-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 329</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_output</span> <span class="ruby-identifier">stdout</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">stderr</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">flunk</span> <span class="ruby-string">&quot;assert_output requires a block to capture output.&quot;</span> <span class="ruby-keyword">unless</span>
+    <span class="ruby-identifier">block_given?</span>
+
+  <span class="ruby-identifier">out</span>, <span class="ruby-identifier">err</span> = <span class="ruby-identifier">capture_io</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">err_msg</span> = <span class="ruby-constant">Regexp</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">stderr</span> <span class="ruby-operator">?</span> <span class="ruby-value">:assert_match</span> <span class="ruby-operator">:</span> <span class="ruby-value">:assert_equal</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">stderr</span>
+  <span class="ruby-identifier">out_msg</span> = <span class="ruby-constant">Regexp</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">stdout</span> <span class="ruby-operator">?</span> <span class="ruby-value">:assert_match</span> <span class="ruby-operator">:</span> <span class="ruby-value">:assert_equal</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">stdout</span>
+
+  <span class="ruby-identifier">y</span> = <span class="ruby-identifier">send</span> <span class="ruby-identifier">err_msg</span>, <span class="ruby-identifier">stderr</span>, <span class="ruby-identifier">err</span>, <span class="ruby-string">&quot;In stderr&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">err_msg</span>
+  <span class="ruby-identifier">x</span> = <span class="ruby-identifier">send</span> <span class="ruby-identifier">out_msg</span>, <span class="ruby-identifier">stdout</span>, <span class="ruby-identifier">out</span>, <span class="ruby-string">&quot;In stdout&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">out_msg</span>
+
+  (<span class="ruby-operator">!</span><span class="ruby-identifier">stdout</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">x</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-operator">!</span><span class="ruby-identifier">stderr</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">y</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_output-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_output-method -->
+      
+        <div id="assert_path_exists-method" class="method-detail ">
+          <a name="method-i-assert_path_exists"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_path_exists</span><span
+              class="method-args">(path, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails unless <code>path</code> exists.</p>
+            
+
+            
+            <div class="method-source-code" id="assert_path_exists-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 349</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_path_exists</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) { <span class="ruby-node">&quot;Expected path &#39;#{path}&#39; to exist&quot;</span> }
+  <span class="ruby-identifier">assert</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">path</span>), <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_path_exists-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_path_exists-method -->
+      
+        <div id="assert_predicate-method" class="method-detail ">
+          <a name="method-i-assert_predicate"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_predicate</span><span
+              class="method-args">(o1, op, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>For testing with predicates. Eg:</p>
+
+<pre class="ruby"><span class="ruby-identifier">assert_predicate</span> <span class="ruby-identifier">str</span>, <span class="ruby-value">:empty?</span>
+</pre>
+
+<p>This is really meant for specs and is front-ended by <a href="Assertions.html#method-i-assert_operator"><code>assert_operator</code></a>:</p>
+
+<pre class="ruby"><span class="ruby-identifier">str</span>.<span class="ruby-identifier">must_be</span> <span class="ruby-value">:empty?</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="assert_predicate-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 363</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_predicate</span> <span class="ruby-identifier">o1</span>, <span class="ruby-identifier">op</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) { <span class="ruby-node">&quot;Expected #{mu_pp(o1)} to be #{op}&quot;</span> }
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">o1</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">op</span>), <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_predicate-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_predicate-method -->
+      
+        <div id="assert_raises-method" class="method-detail ">
+          <a name="method-i-assert_raises"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_raises</span><span
+              class="method-args">(*exp)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails unless the block raises one of <code>exp</code>. Returns the exception matched so you can check the message, attributes, etc.</p>
+
+<p><code>exp</code> takes an optional message on the end to help explain failures and defaults to StandardError if no exception class is passed. Eg:</p>
+
+<pre class="ruby"><span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">CustomError</span>) { <span class="ruby-identifier">method_with_custom_error</span> }
+</pre>
+
+<p>With custom error message:</p>
+
+<pre class="ruby"><span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">CustomError</span>, <span class="ruby-string">&#39;This should have raised CustomError&#39;</span>) { <span class="ruby-identifier">method_with_custom_error</span> }
+</pre>
+
+<p>Using the returned object:</p>
+
+<pre class="ruby"><span class="ruby-identifier">error</span> = <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">CustomError</span>) <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">CustomError</span>, <span class="ruby-string">&#39;This is really bad&#39;</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&#39;This is really bad&#39;</span>, <span class="ruby-identifier">error</span>.<span class="ruby-identifier">message</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="assert_raises-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 390</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_raises</span> <span class="ruby-operator">*</span><span class="ruby-identifier">exp</span>
+  <span class="ruby-identifier">flunk</span> <span class="ruby-string">&quot;assert_raises requires a block to capture errors.&quot;</span> <span class="ruby-keyword">unless</span>
+    <span class="ruby-identifier">block_given?</span>
+
+  <span class="ruby-identifier">msg</span> = <span class="ruby-node">&quot;#{exp.pop}.\n&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">last</span>
+  <span class="ruby-identifier">exp</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">StandardError</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-operator">*</span><span class="ruby-identifier">exp</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">pass</span> <span class="ruby-comment"># count assertion</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Minitest</span><span class="ruby-operator">::</span><span class="ruby-constant">Skip</span>, <span class="ruby-constant">Minitest</span><span class="ruby-operator">::</span><span class="ruby-constant">Assertion</span>
+    <span class="ruby-comment"># don&#39;t count assertion</span>
+    <span class="ruby-identifier">raise</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">SignalException</span>, <span class="ruby-constant">SystemExit</span>
+    <span class="ruby-identifier">raise</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">flunk</span> <span class="ruby-identifier">proc</span> {
+      <span class="ruby-identifier">exception_details</span>(<span class="ruby-identifier">e</span>, <span class="ruby-node">&quot;#{msg}#{mu_pp(exp)} exception expected, not&quot;</span>)
+    }
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">exp</span> = <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">first</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+
+  <span class="ruby-identifier">flunk</span> <span class="ruby-node">&quot;#{msg}#{mu_pp(exp)} expected but nothing was raised.&quot;</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_raises-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_raises-method -->
+      
+        <div id="assert_respond_to-method" class="method-detail ">
+          <a name="method-i-assert_respond_to"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_respond_to</span><span
+              class="method-args">(obj, meth, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails unless <code>obj</code> responds to <code>meth</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="assert_respond_to-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 421</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_respond_to</span> <span class="ruby-identifier">obj</span>, <span class="ruby-identifier">meth</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) {
+    <span class="ruby-node">&quot;Expected #{mu_pp(obj)} (#{obj.class}) to respond to ##{meth}&quot;</span>
+  }
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">meth</span>), <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_respond_to-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_respond_to-method -->
+      
+        <div id="assert_same-method" class="method-detail ">
+          <a name="method-i-assert_same"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_same</span><span
+              class="method-args">(exp, act, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails unless <code>exp</code> and <code>act</code> are equal?</p>
+            
+
+            
+            <div class="method-source-code" id="assert_same-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 431</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_same</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">act</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) {
+    <span class="ruby-identifier">data</span> = [<span class="ruby-identifier">mu_pp</span>(<span class="ruby-identifier">act</span>), <span class="ruby-identifier">act</span>.<span class="ruby-identifier">object_id</span>, <span class="ruby-identifier">mu_pp</span>(<span class="ruby-identifier">exp</span>), <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">object_id</span>]
+    <span class="ruby-string">&quot;Expected %s (oid=%d) to be the same as %s (oid=%d)&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">data</span>
+  }
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">equal?</span>(<span class="ruby-identifier">act</span>), <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_same-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_same-method -->
+      
+        <div id="assert_send-method" class="method-detail ">
+          <a name="method-i-assert_send"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_send</span><span
+              class="method-args">(send_ary, m = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p><code>send_ary</code> is a receiver, message and arguments.</p>
+
+<p>Fails unless the call returns a true value</p>
+            
+
+            
+            <div class="method-source-code" id="assert_send-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 444</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_send</span> <span class="ruby-identifier">send_ary</span>, <span class="ruby-identifier">m</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">where</span> = <span class="ruby-constant">Minitest</span>.<span class="ruby-identifier">filter_backtrace</span>(<span class="ruby-identifier">caller</span>).<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">where</span> = <span class="ruby-identifier">where</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/:in /</span>, <span class="ruby-value">2</span>).<span class="ruby-identifier">first</span> <span class="ruby-comment"># clean up noise</span>
+  <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;DEPRECATED: assert_send. From #{where}&quot;</span>
+
+  <span class="ruby-identifier">recv</span>, <span class="ruby-identifier">msg</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span> = <span class="ruby-identifier">send_ary</span>
+  <span class="ruby-identifier">m</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">m</span>) {
+    <span class="ruby-node">&quot;Expected #{mu_pp(recv)}.#{msg}(*#{mu_pp(args)}) to return true&quot;</span> }
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">recv</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">msg</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>), <span class="ruby-identifier">m</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_send-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_send-method -->
+      
+        <div id="assert_silent-method" class="method-detail ">
+          <a name="method-i-assert_silent"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_silent</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails if the block outputs anything to stderr or stdout.</p>
+
+<p>See also: <a href="Assertions.html#method-i-assert_output"><code>assert_output</code></a></p>
+            
+
+            
+            <div class="method-source-code" id="assert_silent-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 460</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_silent</span>
+  <span class="ruby-identifier">assert_output</span> <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-string">&quot;&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_silent-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_silent-method -->
+      
+        <div id="assert_throws-method" class="method-detail ">
+          <a name="method-i-assert_throws"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">assert_throws</span><span
+              class="method-args">(sym, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails unless the block throws <code>sym</code></p>
+            
+
+            
+            <div class="method-source-code" id="assert_throws-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 469</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">assert_throws</span> <span class="ruby-identifier">sym</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">default</span> = <span class="ruby-node">&quot;Expected #{mu_pp(sym)} to have been thrown&quot;</span>
+  <span class="ruby-identifier">caught</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">catch</span>(<span class="ruby-identifier">sym</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-keyword">yield</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">ThreadError</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>       <span class="ruby-comment"># wtf?!? 1.8 + threads == suck</span>
+      <span class="ruby-identifier">default</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;, not \:#{e.message[/uncaught throw \`(\w+?)\&#39;/, 1]}&quot;</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>     <span class="ruby-comment"># 1.9 exception</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;uncaught throw&quot;</span>)
+      <span class="ruby-identifier">default</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;, not #{e.message.split(/ /).last}&quot;</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">NameError</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>         <span class="ruby-comment"># 1.8 exception</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">sym</span>
+      <span class="ruby-identifier">default</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;, not #{e.name.inspect}&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">caught</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">caught</span>, <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) { <span class="ruby-identifier">default</span> }
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- assert_throws-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- assert_throws-method -->
+      
+        <div id="capture_io-method" class="method-detail ">
+          <a name="method-i-capture_io"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">capture_io</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Captures $stdout and $stderr into strings:</p>
+
+<pre class="ruby"><span class="ruby-identifier">out</span>, <span class="ruby-identifier">err</span> = <span class="ruby-identifier">capture_io</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Some info&quot;</span>
+  <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;You did a bad thing&quot;</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">assert_match</span> <span class="ruby-regexp">%r%info%</span>, <span class="ruby-identifier">out</span>
+<span class="ruby-identifier">assert_match</span> <span class="ruby-regexp">%r%bad%</span>, <span class="ruby-identifier">err</span>
+</pre>
+
+<p>NOTE: For efficiency, this method uses StringIO and does not capture IO for subprocesses. Use <a href="Assertions.html#method-i-capture_subprocess_io"><code>capture_subprocess_io</code></a> for that.</p>
+            
+
+            
+            <div class="method-source-code" id="capture_io-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 505</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">capture_io</span>
+  <span class="ruby-identifier">_synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">captured_stdout</span>, <span class="ruby-identifier">captured_stderr</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>, <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>
+
+      <span class="ruby-identifier">orig_stdout</span>, <span class="ruby-identifier">orig_stderr</span> = <span class="ruby-identifier">$stdout</span>, <span class="ruby-identifier">$stderr</span>
+      <span class="ruby-identifier">$stdout</span>, <span class="ruby-identifier">$stderr</span>         = <span class="ruby-identifier">captured_stdout</span>, <span class="ruby-identifier">captured_stderr</span>
+
+      <span class="ruby-keyword">yield</span>
+
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">captured_stdout</span>.<span class="ruby-identifier">string</span>, <span class="ruby-identifier">captured_stderr</span>.<span class="ruby-identifier">string</span>
+    <span class="ruby-keyword">ensure</span>
+      <span class="ruby-identifier">$stdout</span> = <span class="ruby-identifier">orig_stdout</span>
+      <span class="ruby-identifier">$stderr</span> = <span class="ruby-identifier">orig_stderr</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- capture_io-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- capture_io-method -->
+      
+        <div id="capture_subprocess_io-method" class="method-detail ">
+          <a name="method-i-capture_subprocess_io"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">capture_subprocess_io</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Captures $stdout and $stderr into strings, using Tempfile to ensure that subprocess IO is captured as well.</p>
+
+<pre class="ruby"><span class="ruby-identifier">out</span>, <span class="ruby-identifier">err</span> = <span class="ruby-identifier">capture_subprocess_io</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">system</span> <span class="ruby-string">&quot;echo Some info&quot;</span>
+  <span class="ruby-identifier">system</span> <span class="ruby-string">&quot;echo You did a bad thing 1&gt;&amp;2&quot;</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">assert_match</span> <span class="ruby-regexp">%r%info%</span>, <span class="ruby-identifier">out</span>
+<span class="ruby-identifier">assert_match</span> <span class="ruby-regexp">%r%bad%</span>, <span class="ruby-identifier">err</span>
+</pre>
+
+<p>NOTE: This method is approximately 10x slower than <a href="Assertions.html#method-i-capture_io"><code>capture_io</code></a> so only use it when you need to test the output of a subprocess.</p>
+            
+
+            
+            <div class="method-source-code" id="capture_subprocess_io-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 538</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">capture_subprocess_io</span>
+  <span class="ruby-identifier">_synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">require</span> <span class="ruby-string">&quot;tempfile&quot;</span>
+
+      <span class="ruby-identifier">captured_stdout</span>, <span class="ruby-identifier">captured_stderr</span> = <span class="ruby-constant">Tempfile</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;out&quot;</span>), <span class="ruby-constant">Tempfile</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;err&quot;</span>)
+
+      <span class="ruby-identifier">orig_stdout</span>, <span class="ruby-identifier">orig_stderr</span> = <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">dup</span>, <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">dup</span>
+      <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">reopen</span> <span class="ruby-identifier">captured_stdout</span>
+      <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">reopen</span> <span class="ruby-identifier">captured_stderr</span>
+
+      <span class="ruby-keyword">yield</span>
+
+      <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">rewind</span>
+      <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">rewind</span>
+
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">captured_stdout</span>.<span class="ruby-identifier">read</span>, <span class="ruby-identifier">captured_stderr</span>.<span class="ruby-identifier">read</span>
+    <span class="ruby-keyword">ensure</span>
+      <span class="ruby-identifier">captured_stdout</span>.<span class="ruby-identifier">unlink</span>
+      <span class="ruby-identifier">captured_stderr</span>.<span class="ruby-identifier">unlink</span>
+      <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">reopen</span> <span class="ruby-identifier">orig_stdout</span>
+      <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">reopen</span> <span class="ruby-identifier">orig_stderr</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- capture_subprocess_io-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- capture_subprocess_io-method -->
+      
+        <div id="diff-method" class="method-detail ">
+          <a name="method-i-diff"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">diff</span><span
+              class="method-args">(exp, act)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns a diff between <code>exp</code> and <code>act</code>. If there is no known diff command or if it doesn&#39;t make sense to diff the output (single line, short output), then it simply returns a basic comparison between the two.</p>
+
+<p>See <code>things_to_diff</code> for more info.</p>
+            
+
+            
+            <div class="method-source-code" id="diff-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">diff</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">act</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-identifier">expect</span>, <span class="ruby-identifier">butwas</span> = <span class="ruby-identifier">things_to_diff</span>(<span class="ruby-identifier">exp</span>, <span class="ruby-identifier">act</span>)
+
+  <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;Expected: #{mu_pp exp}\n  Actual: #{mu_pp act}&quot;</span> <span class="ruby-keyword">unless</span>
+    <span class="ruby-identifier">expect</span>
+
+  <span class="ruby-constant">Tempfile</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;expect&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">a</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">expect</span>
+    <span class="ruby-identifier">a</span>.<span class="ruby-identifier">flush</span>
+
+    <span class="ruby-constant">Tempfile</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;butwas&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">b</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">b</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">butwas</span>
+      <span class="ruby-identifier">b</span>.<span class="ruby-identifier">flush</span>
+
+      <span class="ruby-identifier">result</span> = <span class="ruby-node">`#{Minitest::Assertions.diff} #{a.path} #{b.path}`</span>
+      <span class="ruby-identifier">result</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp">/^\-\-\- .+/</span>, <span class="ruby-string">&quot;--- expected&quot;</span>)
+      <span class="ruby-identifier">result</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp">/^\+\+\+ .+/</span>, <span class="ruby-string">&quot;+++ actual&quot;</span>)
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">klass</span> = <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">class</span>
+        <span class="ruby-identifier">result</span> = [
+                  <span class="ruby-node">&quot;No visible difference in the #{klass}#inspect output.\n&quot;</span>,
+                  <span class="ruby-string">&quot;You should look at the implementation of #== on &quot;</span>,
+                  <span class="ruby-node">&quot;#{klass} or its members.\n&quot;</span>,
+                  <span class="ruby-identifier">expect</span>,
+                 ].<span class="ruby-identifier">join</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- diff-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- diff-method -->
+      
+        <div id="exception_details-method" class="method-detail ">
+          <a name="method-i-exception_details"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">exception_details</span><span
+              class="method-args">(e, msg)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns details for exception <code>e</code></p>
+            
+
+            
+            <div class="method-source-code" id="exception_details-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 567</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">exception_details</span> <span class="ruby-identifier">e</span>, <span class="ruby-identifier">msg</span>
+  [
+   <span class="ruby-node">&quot;#{msg}&quot;</span>,
+   <span class="ruby-node">&quot;Class: &lt;#{e.class}&gt;&quot;</span>,
+   <span class="ruby-node">&quot;Message: &lt;#{e.message.inspect}&gt;&quot;</span>,
+   <span class="ruby-string">&quot;---Backtrace---&quot;</span>,
+   <span class="ruby-node">&quot;#{Minitest.filter_backtrace(e.backtrace).join(&quot;\n&quot;)}&quot;</span>,
+   <span class="ruby-string">&quot;---------------&quot;</span>,
+  ].<span class="ruby-identifier">join</span> <span class="ruby-string">&quot;\n&quot;</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- exception_details-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- exception_details-method -->
+      
+        <div id="fail_after-method" class="method-detail ">
+          <a name="method-i-fail_after"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">fail_after</span><span
+              class="method-args">(y,m,d,msg)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails after a given date (in the local time zone). This allows you to put time-bombs in your tests if you need to keep something around until a later date lest you forget about it.</p>
+            
+
+            
+            <div class="method-source-code" id="fail_after-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 583</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fail_after</span> <span class="ruby-identifier">y</span>,<span class="ruby-identifier">m</span>,<span class="ruby-identifier">d</span>,<span class="ruby-identifier">msg</span>
+  <span class="ruby-identifier">flunk</span> <span class="ruby-identifier">msg</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">y</span>, <span class="ruby-identifier">m</span>, <span class="ruby-identifier">d</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- fail_after-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- fail_after-method -->
+      
+        <div id="flunk-method" class="method-detail ">
+          <a name="method-i-flunk"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">flunk</span><span
+              class="method-args">(msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails with <code>msg</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="flunk-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 590</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">flunk</span> <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">msg</span> <span class="ruby-operator">||=</span> <span class="ruby-string">&quot;Epic Fail!&quot;</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- flunk-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- flunk-method -->
+      
+        <div id="message-method" class="method-detail ">
+          <a name="method-i-message"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">message</span><span
+              class="method-args">(msg = nil, ending = nil, &default)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns a proc that will output <code>msg</code> along with the default message.</p>
+            
+
+            
+            <div class="method-source-code" id="message-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 598</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">message</span> <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">ending</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">default</span>
+  <span class="ruby-identifier">proc</span> {
+    <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">msg</span>.<span class="ruby-identifier">call</span>.<span class="ruby-identifier">chomp</span>(<span class="ruby-string">&quot;.&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-constant">Proc</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">msg</span>
+    <span class="ruby-identifier">custom_message</span> = <span class="ruby-node">&quot;#{msg}.\n&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">msg</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">msg</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-node">&quot;#{custom_message}#{default.call}#{ending || &quot;.&quot;}&quot;</span>
+  }
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- message-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- message-method -->
+      
+        <div id="mu_pp-method" class="method-detail ">
+          <a name="method-i-mu_pp"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">mu_pp</span><span
+              class="method-args">(obj)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>This returns a human-readable version of <code>obj</code>. By default inspect is called. You can override this to use pretty_inspect if you want.</p>
+
+<p>See <a href="Test.html#method-c-make_my_diffs_pretty-21"><code>Minitest::Test.make_my_diffs_pretty!</code></a></p>
+            
+
+            
+            <div class="method-source-code" id="mu_pp-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">mu_pp</span> <span class="ruby-identifier">obj</span>
+  <span class="ruby-identifier">s</span> = <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">inspect</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span> <span class="ruby-constant">Encoding</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">s</span> = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">encode</span> <span class="ruby-constant">Encoding</span>.<span class="ruby-identifier">default_external</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">obj</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">obj</span>.<span class="ruby-identifier">encoding</span> <span class="ruby-operator">!=</span> <span class="ruby-constant">Encoding</span>.<span class="ruby-identifier">default_external</span> <span class="ruby-operator">||</span>
+                          <span class="ruby-operator">!</span><span class="ruby-identifier">obj</span>.<span class="ruby-identifier">valid_encoding?</span>) <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">enc</span> = <span class="ruby-node">&quot;# encoding: #{obj.encoding}&quot;</span>
+      <span class="ruby-identifier">val</span> = <span class="ruby-node">&quot;#    valid: #{obj.valid_encoding?}&quot;</span>
+      <span class="ruby-identifier">s</span> = <span class="ruby-node">&quot;#{enc}\n#{val}\n#{s}&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">s</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- mu_pp-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- mu_pp-method -->
+      
+        <div id="mu_pp_for_diff-method" class="method-detail ">
+          <a name="method-i-mu_pp_for_diff"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">mu_pp_for_diff</span><span
+              class="method-args">(obj)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>This returns a diff-able more human-readable version of <code>obj</code>. This differs from the regular <a href="Assertions.html#method-i-mu_pp"><code>mu_pp</code></a> because it expands escaped newlines and makes hex-values (like object_ids) generic. This uses <a href="Assertions.html#method-i-mu_pp"><code>mu_pp</code></a> to do the first pass and then cleans it up.</p>
+            
+
+            
+            <div class="method-source-code" id="mu_pp_for_diff-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">mu_pp_for_diff</span> <span class="ruby-identifier">obj</span>
+  <span class="ruby-identifier">str</span> = <span class="ruby-identifier">mu_pp</span> <span class="ruby-identifier">obj</span>
+
+  <span class="ruby-comment"># both &#39;\n&#39; &amp; &#39;\\n&#39; (_after_ mu_pp (aka inspect))</span>
+  <span class="ruby-identifier">single</span> = <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">str</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp">/(?&lt;!\\|^)\\n/</span>)
+  <span class="ruby-identifier">double</span> = <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">str</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp">/(?&lt;=\\|^)\\n/</span>)
+
+  <span class="ruby-identifier">process</span> =
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">single</span> <span class="ruby-operator">^</span> <span class="ruby-identifier">double</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">single</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">lambda</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;\\n&quot;</span>   <span class="ruby-operator">?</span> <span class="ruby-string">&quot;\n&quot;</span>    <span class="ruby-operator">:</span> <span class="ruby-identifier">s</span> } <span class="ruby-comment"># unescape</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">lambda</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;\\\\n&quot;</span> <span class="ruby-operator">?</span> <span class="ruby-string">&quot;\\n\n&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">s</span> } <span class="ruby-comment"># unescape a bit, add nls</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-value">:itself</span>                                     <span class="ruby-comment"># leave it alone</span>
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">str</span>.
+    <span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\\?\\n/</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">process</span>).
+    <span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/:0x[a-fA-F0-9]{4,}/m</span>, <span class="ruby-string">&quot;:0xXXXXXX&quot;</span>) <span class="ruby-comment"># anonymize hex values</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- mu_pp_for_diff-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- mu_pp_for_diff-method -->
+      
+        <div id="pass-method" class="method-detail ">
+          <a name="method-i-pass"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">pass</span><span
+              class="method-args">(_msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>used for counting assertions</p>
+            
+
+            
+            <div class="method-source-code" id="pass-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 609</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pass</span> <span class="ruby-identifier">_msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- pass-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- pass-method -->
+      
+        <div id="refute-method" class="method-detail ">
+          <a name="method-i-refute"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">refute</span><span
+              class="method-args">(test, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails if <code>test</code> is truthy.</p>
+            
+
+            
+            <div class="method-source-code" id="refute-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 616</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">refute</span> <span class="ruby-identifier">test</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">msg</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">message</span> { <span class="ruby-node">&quot;Expected #{mu_pp(test)} to not be truthy&quot;</span> }
+  <span class="ruby-keyword">not</span> <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">test</span>, <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- refute-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- refute-method -->
+      
+        <div id="refute_empty-method" class="method-detail ">
+          <a name="method-i-refute_empty"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">refute_empty</span><span
+              class="method-args">(obj, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails if <code>obj</code> is empty.</p>
+            
+
+            
+            <div class="method-source-code" id="refute_empty-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 624</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">refute_empty</span> <span class="ruby-identifier">obj</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) { <span class="ruby-node">&quot;Expected #{mu_pp(obj)} to not be empty&quot;</span> }
+  <span class="ruby-identifier">assert_respond_to</span> <span class="ruby-identifier">obj</span>, <span class="ruby-value">:empty?</span>
+  <span class="ruby-identifier">refute</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">empty?</span>, <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- refute_empty-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- refute_empty-method -->
+      
+        <div id="refute_equal-method" class="method-detail ">
+          <a name="method-i-refute_equal"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">refute_equal</span><span
+              class="method-args">(exp, act, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails if <code>exp == act</code>.</p>
+
+<p>For floats use refute_in_delta.</p>
+            
+
+            
+            <div class="method-source-code" id="refute_equal-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 635</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">refute_equal</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">act</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) {
+    <span class="ruby-node">&quot;Expected #{mu_pp(act)} to not be equal to #{mu_pp(exp)}&quot;</span>
+  }
+  <span class="ruby-identifier">refute</span> <span class="ruby-identifier">exp</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">act</span>, <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- refute_equal-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- refute_equal-method -->
+      
+        <div id="refute_in_delta-method" class="method-detail ">
+          <a name="method-i-refute_in_delta"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">refute_in_delta</span><span
+              class="method-args">(exp, act, delta = 0.001, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>For comparing Floats.  Fails if <code>exp</code> is within <code>delta</code> of <code>act</code>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">refute_in_delta</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span>, (<span class="ruby-value">22.0</span> <span class="ruby-operator">/</span> <span class="ruby-value">7.0</span>)
+</pre>
+            
+
+            
+            <div class="method-source-code" id="refute_in_delta-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 647</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">refute_in_delta</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">act</span>, <span class="ruby-identifier">delta</span> = <span class="ruby-value">0.001</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">n</span> = (<span class="ruby-identifier">exp</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">act</span>).<span class="ruby-identifier">abs</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) {
+    <span class="ruby-node">&quot;Expected |#{exp} - #{act}| (#{n}) to not be &lt;= #{delta}&quot;</span>
+  }
+  <span class="ruby-identifier">refute</span> <span class="ruby-identifier">delta</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">n</span>, <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- refute_in_delta-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- refute_in_delta-method -->
+      
+        <div id="refute_in_epsilon-method" class="method-detail ">
+          <a name="method-i-refute_in_epsilon"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">refute_in_epsilon</span><span
+              class="method-args">(a, b, epsilon = 0.001, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>For comparing Floats.  Fails if <code>exp</code> and <code>act</code> have a relative error less than <code>epsilon</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="refute_in_epsilon-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 659</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">refute_in_epsilon</span> <span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">epsilon</span> = <span class="ruby-value">0.001</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">refute_in_delta</span> <span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">a</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">epsilon</span>, <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- refute_in_epsilon-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- refute_in_epsilon-method -->
+      
+        <div id="refute_includes-method" class="method-detail ">
+          <a name="method-i-refute_includes"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">refute_includes</span><span
+              class="method-args">(collection, obj, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails if <code>collection</code> includes <code>obj</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="refute_includes-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 666</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">refute_includes</span> <span class="ruby-identifier">collection</span>, <span class="ruby-identifier">obj</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) {
+    <span class="ruby-node">&quot;Expected #{mu_pp(collection)} to not include #{mu_pp(obj)}&quot;</span>
+  }
+  <span class="ruby-identifier">assert_respond_to</span> <span class="ruby-identifier">collection</span>, <span class="ruby-value">:include?</span>
+  <span class="ruby-identifier">refute</span> <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">obj</span>), <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- refute_includes-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- refute_includes-method -->
+      
+        <div id="refute_instance_of-method" class="method-detail ">
+          <a name="method-i-refute_instance_of"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">refute_instance_of</span><span
+              class="method-args">(cls, obj, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails if <code>obj</code> is an instance of <code>cls</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="refute_instance_of-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 677</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">refute_instance_of</span> <span class="ruby-identifier">cls</span>, <span class="ruby-identifier">obj</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) {
+    <span class="ruby-node">&quot;Expected #{mu_pp(obj)} to not be an instance of #{cls}&quot;</span>
+  }
+  <span class="ruby-identifier">refute</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">instance_of?</span>(<span class="ruby-identifier">cls</span>), <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- refute_instance_of-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- refute_instance_of-method -->
+      
+        <div id="refute_kind_of-method" class="method-detail ">
+          <a name="method-i-refute_kind_of"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">refute_kind_of</span><span
+              class="method-args">(cls, obj, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails if <code>obj</code> is a kind of <code>cls</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="refute_kind_of-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 687</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">refute_kind_of</span> <span class="ruby-identifier">cls</span>, <span class="ruby-identifier">obj</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) { <span class="ruby-node">&quot;Expected #{mu_pp(obj)} to not be a kind of #{cls}&quot;</span> }
+  <span class="ruby-identifier">refute</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-identifier">cls</span>), <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- refute_kind_of-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- refute_kind_of-method -->
+      
+        <div id="refute_match-method" class="method-detail ">
+          <a name="method-i-refute_match"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">refute_match</span><span
+              class="method-args">(matcher, obj, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails if <code>matcher</code> <code>=~</code> <code>obj</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="refute_match-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 695</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">refute_match</span> <span class="ruby-identifier">matcher</span>, <span class="ruby-identifier">obj</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) { <span class="ruby-node">&quot;Expected #{mu_pp matcher} to not match #{mu_pp obj}&quot;</span> }
+  <span class="ruby-identifier">assert_respond_to</span> <span class="ruby-identifier">matcher</span>, <span class="ruby-value">:&quot;=~&quot;</span>
+  <span class="ruby-identifier">matcher</span> = <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">new</span> <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">escape</span> <span class="ruby-identifier">matcher</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">matcher</span>
+  <span class="ruby-identifier">refute</span> <span class="ruby-identifier">matcher</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">obj</span>, <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- refute_match-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- refute_match-method -->
+      
+        <div id="refute_nil-method" class="method-detail ">
+          <a name="method-i-refute_nil"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">refute_nil</span><span
+              class="method-args">(obj, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails if <code>obj</code> is nil.</p>
+            
+
+            
+            <div class="method-source-code" id="refute_nil-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 705</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">refute_nil</span> <span class="ruby-identifier">obj</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) { <span class="ruby-node">&quot;Expected #{mu_pp(obj)} to not be nil&quot;</span> }
+  <span class="ruby-identifier">refute</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">nil?</span>, <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- refute_nil-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- refute_nil-method -->
+      
+        <div id="refute_operator-method" class="method-detail ">
+          <a name="method-i-refute_operator"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">refute_operator</span><span
+              class="method-args">(o1, op, o2 = UNDEFINED, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails if <code>o1</code> is not <code>op</code> <code>o2</code>. Eg:</p>
+
+<pre class="ruby"><span class="ruby-identifier">refute_operator</span> <span class="ruby-value">1</span>, <span class="ruby-value">:&gt;</span>, <span class="ruby-value">2</span> <span class="ruby-comment">#=&gt; pass</span>
+<span class="ruby-identifier">refute_operator</span> <span class="ruby-value">1</span>, <span class="ruby-value">:&lt;</span>, <span class="ruby-value">2</span> <span class="ruby-comment">#=&gt; fail</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="refute_operator-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 716</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">refute_operator</span> <span class="ruby-identifier">o1</span>, <span class="ruby-identifier">op</span>, <span class="ruby-identifier">o2</span> = <span class="ruby-constant">UNDEFINED</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">refute_predicate</span> <span class="ruby-identifier">o1</span>, <span class="ruby-identifier">op</span>, <span class="ruby-identifier">msg</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">UNDEFINED</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">o2</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) { <span class="ruby-node">&quot;Expected #{mu_pp(o1)} to not be #{op} #{mu_pp(o2)}&quot;</span> }
+  <span class="ruby-identifier">refute</span> <span class="ruby-identifier">o1</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">op</span>, <span class="ruby-identifier">o2</span>), <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- refute_operator-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- refute_operator-method -->
+      
+        <div id="refute_path_exists-method" class="method-detail ">
+          <a name="method-i-refute_path_exists"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">refute_path_exists</span><span
+              class="method-args">(path, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails if <code>path</code> exists.</p>
+            
+
+            
+            <div class="method-source-code" id="refute_path_exists-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 725</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">refute_path_exists</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) { <span class="ruby-node">&quot;Expected path &#39;#{path}&#39; to not exist&quot;</span> }
+  <span class="ruby-identifier">refute</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">path</span>), <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- refute_path_exists-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- refute_path_exists-method -->
+      
+        <div id="refute_predicate-method" class="method-detail ">
+          <a name="method-i-refute_predicate"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">refute_predicate</span><span
+              class="method-args">(o1, op, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>For testing with predicates.</p>
+
+<pre class="ruby"><span class="ruby-identifier">refute_predicate</span> <span class="ruby-identifier">str</span>, <span class="ruby-value">:empty?</span>
+</pre>
+
+<p>This is really meant for specs and is front-ended by <a href="Assertions.html#method-i-refute_operator"><code>refute_operator</code></a>:</p>
+
+<pre class="ruby"><span class="ruby-identifier">str</span>.<span class="ruby-identifier">wont_be</span> <span class="ruby-value">:empty?</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="refute_predicate-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 739</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">refute_predicate</span> <span class="ruby-identifier">o1</span>, <span class="ruby-identifier">op</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) { <span class="ruby-node">&quot;Expected #{mu_pp(o1)} to not be #{op}&quot;</span> }
+  <span class="ruby-identifier">refute</span> <span class="ruby-identifier">o1</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">op</span>), <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- refute_predicate-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- refute_predicate-method -->
+      
+        <div id="refute_respond_to-method" class="method-detail ">
+          <a name="method-i-refute_respond_to"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">refute_respond_to</span><span
+              class="method-args">(obj, meth, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails if <code>obj</code> responds to the message <code>meth</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="refute_respond_to-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 747</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">refute_respond_to</span> <span class="ruby-identifier">obj</span>, <span class="ruby-identifier">meth</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) { <span class="ruby-node">&quot;Expected #{mu_pp(obj)} to not respond to #{meth}&quot;</span> }
+
+  <span class="ruby-identifier">refute</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">meth</span>), <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- refute_respond_to-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- refute_respond_to-method -->
+      
+        <div id="refute_same-method" class="method-detail ">
+          <a name="method-i-refute_same"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">refute_same</span><span
+              class="method-args">(exp, act, msg = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fails if <code>exp</code> is the same (by object identity) as <code>act</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="refute_same-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 756</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">refute_same</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">act</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">message</span>(<span class="ruby-identifier">msg</span>) {
+    <span class="ruby-identifier">data</span> = [<span class="ruby-identifier">mu_pp</span>(<span class="ruby-identifier">act</span>), <span class="ruby-identifier">act</span>.<span class="ruby-identifier">object_id</span>, <span class="ruby-identifier">mu_pp</span>(<span class="ruby-identifier">exp</span>), <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">object_id</span>]
+    <span class="ruby-string">&quot;Expected %s (oid=%d) to not be the same as %s (oid=%d)&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">data</span>
+  }
+  <span class="ruby-identifier">refute</span> <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">equal?</span>(<span class="ruby-identifier">act</span>), <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- refute_same-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- refute_same-method -->
+      
+        <div id="skip-method" class="method-detail ">
+          <a name="method-i-skip"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">skip</span><span
+              class="method-args">(msg = nil, bt = caller)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Skips the current run. If run in verbose-mode, the skipped run gets listed at the end of the run but doesn&#39;t cause a failure exit code.</p>
+            
+
+            
+            <div class="method-source-code" id="skip-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 769</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">skip</span> <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">bt</span> = <span class="ruby-identifier">caller</span>
+  <span class="ruby-identifier">msg</span> <span class="ruby-operator">||=</span> <span class="ruby-string">&quot;Skipped, no message given&quot;</span>
+  <span class="ruby-ivar">@skip</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Minitest</span><span class="ruby-operator">::</span><span class="ruby-constant">Skip</span>, <span class="ruby-identifier">msg</span>, <span class="ruby-identifier">bt</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- skip-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- skip-method -->
+      
+        <div id="skip_until-method" class="method-detail ">
+          <a name="method-i-skip_until"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">skip_until</span><span
+              class="method-args">(y,m,d,msg)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Skips the current run until a given date (in the local time zone). This allows you to put some fixes on hold until a later date, but still holds you accountable and prevents you from forgetting it.</p>
+            
+
+            
+            <div class="method-source-code" id="skip_until-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 781</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">skip_until</span> <span class="ruby-identifier">y</span>,<span class="ruby-identifier">m</span>,<span class="ruby-identifier">d</span>,<span class="ruby-identifier">msg</span>
+  <span class="ruby-identifier">skip</span> <span class="ruby-identifier">msg</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">y</span>, <span class="ruby-identifier">m</span>, <span class="ruby-identifier">d</span>)
+  <span class="ruby-identifier">where</span> = <span class="ruby-identifier">caller</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/:/</span>, <span class="ruby-value">3</span>).<span class="ruby-identifier">first</span>(<span class="ruby-value">2</span>).<span class="ruby-identifier">join</span> <span class="ruby-string">&quot;:&quot;</span>
+  <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;Stale skip_until %p at %s&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">msg</span>, <span class="ruby-identifier">where</span>]
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- skip_until-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- skip_until-method -->
+      
+        <div id="skipped-3F-method" class="method-detail ">
+          <a name="method-i-skipped-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">skipped?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Was this testcase skipped? Meant for teardown.</p>
+            
+
+            
+            <div class="method-source-code" id="skipped-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 790</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">skipped?</span>
+  <span class="ruby-keyword">defined?</span>(<span class="ruby-ivar">@skip</span>) <span class="ruby-keyword">and</span> <span class="ruby-ivar">@skip</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- skipped-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- skipped-3F-method -->
+      
+        <div id="things_to_diff-method" class="method-detail ">
+          <a name="method-i-things_to_diff"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">things_to_diff</span><span
+              class="method-args">(exp, act)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns things to diff [expect, butwas], or [nil, nil] if nothing to diff.</p>
+
+<p>Criterion:</p>
+<ol><li>
+<p>Strings include newlines or escaped newlines, but not both.</p>
+</li><li>
+<p>or:  String lengths are &gt; 30 characters.</p>
+</li><li>
+<p>or:  Strings are equal to each other (but maybe different encodings?).</p>
+</li><li>
+<p>and: we found a diff executable.</p>
+</li></ol>
+            
+
+            
+            <div class="method-source-code" id="things_to_diff-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File minitest-5.13.0/lib/minitest/assertions.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">things_to_diff</span> <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">act</span>
+  <span class="ruby-identifier">expect</span> = <span class="ruby-identifier">mu_pp_for_diff</span> <span class="ruby-identifier">exp</span>
+  <span class="ruby-identifier">butwas</span> = <span class="ruby-identifier">mu_pp_for_diff</span> <span class="ruby-identifier">act</span>
+
+  <span class="ruby-identifier">e1</span>, <span class="ruby-identifier">e2</span> = <span class="ruby-identifier">expect</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;\n&quot;</span>), <span class="ruby-identifier">expect</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;\\n&quot;</span>)
+  <span class="ruby-identifier">b1</span>, <span class="ruby-identifier">b2</span> = <span class="ruby-identifier">butwas</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;\n&quot;</span>), <span class="ruby-identifier">butwas</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;\\n&quot;</span>)
+
+  <span class="ruby-identifier">need_to_diff</span> =
+    (<span class="ruby-identifier">e1</span> <span class="ruby-operator">^</span> <span class="ruby-identifier">e2</span>                  <span class="ruby-operator">||</span>
+     <span class="ruby-identifier">b1</span> <span class="ruby-operator">^</span> <span class="ruby-identifier">b2</span>                  <span class="ruby-operator">||</span>
+     <span class="ruby-identifier">expect</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">30</span>         <span class="ruby-operator">||</span>
+     <span class="ruby-identifier">butwas</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">30</span>         <span class="ruby-operator">||</span>
+     <span class="ruby-identifier">expect</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">butwas</span>)        <span class="ruby-operator">&amp;&amp;</span>
+    <span class="ruby-constant">Minitest</span><span class="ruby-operator">::</span><span class="ruby-constant">Assertions</span>.<span class="ruby-identifier">diff</span>
+
+  <span class="ruby-identifier">need_to_diff</span> <span class="ruby-operator">&amp;&amp;</span> [<span class="ruby-identifier">expect</span>, <span class="ruby-identifier">butwas</span>]
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- things_to_diff-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- things_to_diff-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Assertions_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Assertions_versioned").load("/associated/2.7.4/Assertions.ihtml");</script> <div id='tx_Assertions' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Assertions").load("/associated/Assertions.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Hack your world.  Feed your head.  Live curious</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Assertions.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Assertions.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

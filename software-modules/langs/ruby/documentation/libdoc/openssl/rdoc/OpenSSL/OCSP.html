@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Module : OpenSSL::OCSP  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:26:01 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '..'   asset_rel_prefix = '..'  --> 
+  <title>Module: OpenSSL::OCSP (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="..css/obf.css"  -->
+  <link rel="stylesheet" href="../css/inuit.css" >
+  <link rel="stylesheet" href="../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../css/carbon17.css" type="text/css" >
+
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="module rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>openssl/ossl.c</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">CLASS</span> <a href="OCSP/BasicResponse.html">OpenSSL::OCSP::BasicResponse</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="OCSP/CertificateId.html">OpenSSL::OCSP::CertificateId</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="OCSP/OCSPError.html">OpenSSL::OCSP::OCSPError</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="OCSP/Request.html">OpenSSL::OCSP::Request</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="OCSP/Response.html">OpenSSL::OCSP::Response</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="OCSP/SingleResponse.html">OpenSSL::OCSP::SingleResponse</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../IO.html">IO</a></li>
+        
+          
+          
+          <li><a href="../IO/WaitReadable.html">IO::WaitReadable</a></li>
+        
+          
+          
+          <li><a href="../IO/WaitWritable.html">IO::WaitWritable</a></li>
+        
+          
+          
+          <li><a href="../Integer.html">Integer</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL.html">OpenSSL</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/ASN1.html">OpenSSL::ASN1</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/ASN1/ASN1Data.html">OpenSSL::ASN1::ASN1Data</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/ASN1/ASN1Error.html">OpenSSL::ASN1::ASN1Error</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/ASN1/Constructive.html">OpenSSL::ASN1::Constructive</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/ASN1/ObjectId.html">OpenSSL::ASN1::ObjectId</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/ASN1/Primitive.html">OpenSSL::ASN1::Primitive</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/BN.html">OpenSSL::BN</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/BNError.html">OpenSSL::BNError</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/Buffering.html">OpenSSL::Buffering</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/Cipher.html">OpenSSL::Cipher</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/Cipher/Cipher.html">OpenSSL::Cipher::Cipher</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/Cipher/CipherError.html">OpenSSL::Cipher::CipherError</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/Config.html">OpenSSL::Config</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/ConfigError.html">OpenSSL::ConfigError</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/Digest.html">OpenSSL::Digest</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/Digest/DigestError.html">OpenSSL::Digest::DigestError</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/Engine.html">OpenSSL::Engine</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/Engine/EngineError.html">OpenSSL::Engine::EngineError</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/ExtConfig.html">OpenSSL::ExtConfig</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/HMAC.html">OpenSSL::HMAC</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/HMACError.html">OpenSSL::HMACError</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/KDF.html">OpenSSL::KDF</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/KDF/KDFError.html">OpenSSL::KDF::KDFError</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/Netscape.html">OpenSSL::Netscape</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/Netscape/SPKI.html">OpenSSL::Netscape::SPKI</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/Netscape/SPKIError.html">OpenSSL::Netscape::SPKIError</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/OCSP.html">OpenSSL::OCSP</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/OCSP/BasicResponse.html">OpenSSL::OCSP::BasicResponse</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/OCSP/CertificateId.html">OpenSSL::OCSP::CertificateId</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/OCSP/OCSPError.html">OpenSSL::OCSP::OCSPError</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/OCSP/Request.html">OpenSSL::OCSP::Request</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/OCSP/Response.html">OpenSSL::OCSP::Response</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/OCSP/SingleResponse.html">OpenSSL::OCSP::SingleResponse</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/OpenSSLError.html">OpenSSL::OpenSSLError</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/PKCS12.html">OpenSSL::PKCS12</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/PKCS12/PKCS12Error.html">OpenSSL::PKCS12::PKCS12Error</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/PKCS5.html">OpenSSL::PKCS5</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/PKCS7.html">OpenSSL::PKCS7</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/PKCS7/PKCS7Error.html">OpenSSL::PKCS7::PKCS7Error</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/PKCS7/RecipientInfo.html">OpenSSL::PKCS7::RecipientInfo</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/PKCS7/SignerInfo.html">OpenSSL::PKCS7::SignerInfo</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/PKey.html">OpenSSL::PKey</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/PKey/DH.html">OpenSSL::PKey::DH</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/PKey/DHError.html">OpenSSL::PKey::DHError</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/PKey/DSA.html">OpenSSL::PKey::DSA</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/PKey/DSAError.html">OpenSSL::PKey::DSAError</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/PKey/EC.html">OpenSSL::PKey::EC</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/PKey/EC/Group.html">OpenSSL::PKey::EC::Group</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/PKey/EC/Group/Error.html">OpenSSL::PKey::EC::Group::Error</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/PKey/EC/Point.html">OpenSSL::PKey::EC::Point</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/PKey/EC/Point/Error.html">OpenSSL::PKey::EC::Point::Error</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/PKey/ECError.html">OpenSSL::PKey::ECError</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/PKey/PKey.html">OpenSSL::PKey::PKey</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/PKey/PKeyError.html">OpenSSL::PKey::PKeyError</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/PKey/RSA.html">OpenSSL::PKey::RSA</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/PKey/RSAError.html">OpenSSL::PKey::RSAError</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/Random.html">OpenSSL::Random</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/Random/RandomError.html">OpenSSL::Random::RandomError</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/SSL.html">OpenSSL::SSL</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/SSL/SSLContext.html">OpenSSL::SSL::SSLContext</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/SSL/SSLError.html">OpenSSL::SSL::SSLError</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/SSL/SSLErrorWaitReadable.html">OpenSSL::SSL::SSLErrorWaitReadable</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/SSL/SSLErrorWaitWritable.html">OpenSSL::SSL::SSLErrorWaitWritable</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/SSL/SSLServer.html">OpenSSL::SSL::SSLServer</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/SSL/SSLSocket.html">OpenSSL::SSL::SSLSocket</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/SSL/Session.html">OpenSSL::SSL::Session</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/SSL/Session/SessionError.html">OpenSSL::SSL::Session::SessionError</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/SSL/SocketForwarder.html">OpenSSL::SSL::SocketForwarder</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/X509.html">OpenSSL::X509</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/X509/Attribute.html">OpenSSL::X509::Attribute</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/X509/AttributeError.html">OpenSSL::X509::AttributeError</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/X509/CRL.html">OpenSSL::X509::CRL</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/X509/CRLError.html">OpenSSL::X509::CRLError</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/X509/Certificate.html">OpenSSL::X509::Certificate</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/X509/CertificateError.html">OpenSSL::X509::CertificateError</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/X509/Extension.html">OpenSSL::X509::Extension</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/X509/ExtensionError.html">OpenSSL::X509::ExtensionError</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/X509/ExtensionFactory.html">OpenSSL::X509::ExtensionFactory</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/X509/Name.html">OpenSSL::X509::Name</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/X509/Name/RFC2253DN.html">OpenSSL::X509::Name::RFC2253DN</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/X509/NameError.html">OpenSSL::X509::NameError</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/X509/Request.html">OpenSSL::X509::Request</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/X509/RequestError.html">OpenSSL::X509::RequestError</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/X509/Revoked.html">OpenSSL::X509::Revoked</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/X509/RevokedError.html">OpenSSL::X509::RevokedError</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/X509/Store.html">OpenSSL::X509::Store</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/X509/StoreContext.html">OpenSSL::X509::StoreContext</a></li>
+        
+          
+          
+          <li><a href="../OpenSSL/X509/StoreError.html">OpenSSL::X509::StoreError</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="module">OpenSSL::OCSP</h1>
+
+    <div id="description" class="description">
+      
+<p><a href="OCSP.html"><code>OpenSSL::OCSP</code></a> implements Online Certificate Status Protocol requests and responses.</p>
+
+<p>Creating and sending an <a href="OCSP.html"><code>OCSP</code></a> request requires a subject certificate that contains an <a href="OCSP.html"><code>OCSP</code></a> URL in an authorityInfoAccess extension and the issuer certificate for the subject certificate.  First, load the issuer and subject certificates:</p>
+
+<pre class="ruby"><span class="ruby-identifier">subject</span> = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">X509</span><span class="ruby-operator">::</span><span class="ruby-constant">Certificate</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">subject_pem</span>
+<span class="ruby-identifier">issuer</span>  = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">X509</span><span class="ruby-operator">::</span><span class="ruby-constant">Certificate</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">issuer_pem</span>
+</pre>
+
+<p>To create the request we need to create a certificate ID for the subject certificate so the CA knows which certificate we are asking about:</p>
+
+<pre class="ruby"><span class="ruby-identifier">digest</span> = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">SHA1</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">certificate_id</span> =
+  <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">OCSP</span><span class="ruby-operator">::</span><span class="ruby-constant">CertificateId</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">subject</span>, <span class="ruby-identifier">issuer</span>, <span class="ruby-identifier">digest</span>
+</pre>
+
+<p>Then create a request and add the certificate ID to it:</p>
+
+<pre class="ruby"><span class="ruby-identifier">request</span> = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">OCSP</span><span class="ruby-operator">::</span><span class="ruby-constant">Request</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">request</span>.<span class="ruby-identifier">add_certid</span> <span class="ruby-identifier">certificate_id</span>
+</pre>
+
+<p>Adding a nonce to the request protects against replay attacks but not all CA process the nonce.</p>
+
+<pre class="ruby"><span class="ruby-identifier">request</span>.<span class="ruby-identifier">add_nonce</span>
+</pre>
+
+<p>To submit the request to the CA for verification we need to extract the <a href="OCSP.html"><code>OCSP</code></a> URI from the subject certificate:</p>
+
+<pre class="ruby"><span class="ruby-identifier">authority_info_access</span> = <span class="ruby-identifier">subject</span>.<span class="ruby-identifier">extensions</span>.<span class="ruby-identifier">find</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">extension</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">extension</span>.<span class="ruby-identifier">oid</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;authorityInfoAccess&#39;</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">descriptions</span> = <span class="ruby-identifier">authority_info_access</span>.<span class="ruby-identifier">value</span>.<span class="ruby-identifier">split</span> <span class="ruby-string">&quot;\n&quot;</span>
+<span class="ruby-identifier">ocsp</span> = <span class="ruby-identifier">descriptions</span>.<span class="ruby-identifier">find</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">description</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">description</span>.<span class="ruby-identifier">start_with?</span> <span class="ruby-string">&#39;OCSP&#39;</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">require</span> <span class="ruby-string">&#39;uri&#39;</span>
+
+<span class="ruby-identifier">ocsp_uri</span> = <span class="ruby-constant">URI</span> <span class="ruby-identifier">ocsp</span>[<span class="ruby-regexp">/URI:(.*)/</span>, <span class="ruby-value">1</span>]
+</pre>
+
+<p>To submit the request we&#39;ll POST the request to the <a href="OCSP.html"><code>OCSP</code></a> URI (per RFC 2560).  Note that we only handle HTTP requests and don&#39;t handle any redirects in this example, so this is insufficient for serious use.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;net/http&#39;</span>
+
+<span class="ruby-identifier">http_response</span> =
+  <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">start</span> <span class="ruby-identifier">ocsp_uri</span>.<span class="ruby-identifier">hostname</span>, <span class="ruby-identifier">ocsp</span>.<span class="ruby-identifier">port</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">http</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">http</span>.<span class="ruby-identifier">post</span> <span class="ruby-identifier">ocsp_uri</span>.<span class="ruby-identifier">path</span>, <span class="ruby-identifier">request</span>.<span class="ruby-identifier">to_der</span>,
+              <span class="ruby-string">&#39;content-type&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;application/ocsp-request&#39;</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">response</span> = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">OCSP</span><span class="ruby-operator">::</span><span class="ruby-constant">Response</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">http_response</span>.<span class="ruby-identifier">body</span>
+<span class="ruby-identifier">response_basic</span> = <span class="ruby-identifier">response</span>.<span class="ruby-identifier">basic</span>
+</pre>
+
+<p>First we check if the response has a valid signature.  Without a valid signature we cannot trust it.  If you get a failure here you may be missing a system certificate store or may be missing the intermediate certificates.</p>
+
+<pre class="ruby"><span class="ruby-identifier">store</span> = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">X509</span><span class="ruby-operator">::</span><span class="ruby-constant">Store</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">store</span>.<span class="ruby-identifier">set_default_paths</span>
+
+<span class="ruby-keyword">unless</span> <span class="ruby-identifier">response_basic</span>.<span class="ruby-identifier">verify</span> [], <span class="ruby-identifier">store</span> <span class="ruby-keyword">then</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">&#39;response is not signed by a trusted certificate&#39;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>The response contains the status information (success/fail).  We can display the status as a string:</p>
+
+<pre class="ruby"><span class="ruby-identifier">puts</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">status_string</span> <span class="ruby-comment">#=&gt; successful</span>
+</pre>
+
+<p>Next we need to know the response details to determine if the response matches our request.  First we check the nonce.  Again, not all CAs support a nonce.  See <a href="OCSP/Request.html#method-i-check_nonce"><code>Request#check_nonce</code></a> for the meanings of the return values.</p>
+
+<pre class="ruby"><span class="ruby-identifier">p</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">check_nonce</span> <span class="ruby-identifier">basic_response</span> <span class="ruby-comment">#=&gt; value from -1 to 3</span>
+</pre>
+
+<p>Then extract the status information for the certificate from the basic response.</p>
+
+<pre class="ruby"><span class="ruby-identifier">single_response</span> = <span class="ruby-identifier">basic_response</span>.<span class="ruby-identifier">find_response</span>(<span class="ruby-identifier">certificate_id</span>)
+
+<span class="ruby-keyword">unless</span> <span class="ruby-identifier">single_response</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">&#39;basic_response does not have the status for the certificiate&#39;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>Then check the validity. A status issued in the future must be rejected.</p>
+
+<pre>unless single_response.check_validity
+  raise &#39;this_update is in the future or next_update time has passed&#39;
+end
+
+case single_response.cert_status
+when OpenSSL::OCSP::V_CERTSTATUS_GOOD
+  puts &#39;certificate is still valid&#39;
+when OpenSSL::OCSP::V_CERTSTATUS_REVOKED
+  puts &quot;certificate has been revoked at #{single_response.revocation_time}&quot;
+when OpenSSL::OCSP::V_CERTSTATUS_UNKNOWN
+  puts &#39;responder doesn&#39;t know about the certificate&#39;
+end</pre>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="NOCASIGN">NOCASIGN</a></dt>
+          
+          <dd class="description"><p>(This flag is not used by <a href="../OpenSSL.html"><code>OpenSSL</code></a> 1.0.1g)</p></dd>
+          
+        
+          <dt><a name="NOCERTS">NOCERTS</a></dt>
+          
+          <dd class="description"><p>Do not include certificates in the response</p></dd>
+          
+        
+          <dt><a name="NOCHAIN">NOCHAIN</a></dt>
+          
+          <dd class="description"><p>Do not verify the certificate chain on the response</p></dd>
+          
+        
+          <dt><a name="NOCHECKS">NOCHECKS</a></dt>
+          
+          <dd class="description"><p>Do not make additional signing certificate checks</p></dd>
+          
+        
+          <dt><a name="NODELEGATED">NODELEGATED</a></dt>
+          
+          <dd class="description"><p>(This flag is not used by <a href="../OpenSSL.html"><code>OpenSSL</code></a> 1.0.1g)</p></dd>
+          
+        
+          <dt><a name="NOEXPLICIT">NOEXPLICIT</a></dt>
+          
+          <dd class="description"><p>Do not check trust</p></dd>
+          
+        
+          <dt><a name="NOINTERN">NOINTERN</a></dt>
+          
+          <dd class="description"><p>Do not search certificates contained in the response for a signer</p></dd>
+          
+        
+          <dt><a name="NOSIGS">NOSIGS</a></dt>
+          
+          <dd class="description"><p>Do not check the signature on the response</p></dd>
+          
+        
+          <dt><a name="NOTIME">NOTIME</a></dt>
+          
+          <dd class="description"><p>Do not include producedAt time in response</p></dd>
+          
+        
+          <dt><a name="NOVERIFY">NOVERIFY</a></dt>
+          
+          <dd class="description"><p>Do not verify the response at all</p></dd>
+          
+        
+          <dt><a name="RESPID_KEY">RESPID_KEY</a></dt>
+          
+          <dd class="description"><p>Identify the response by signing the certificate key ID</p></dd>
+          
+        
+          <dt><a name="RESPONSE_STATUS_INTERNALERROR">RESPONSE_STATUS_INTERNALERROR</a></dt>
+          
+          <dd class="description"><p>Internal error in issuer</p></dd>
+          
+        
+          <dt><a name="RESPONSE_STATUS_MALFORMEDREQUEST">RESPONSE_STATUS_MALFORMEDREQUEST</a></dt>
+          
+          <dd class="description"><p>Illegal confirmation request</p></dd>
+          
+        
+          <dt><a name="RESPONSE_STATUS_SIGREQUIRED">RESPONSE_STATUS_SIGREQUIRED</a></dt>
+          
+          <dd class="description"><p>You must sign the request and resubmit</p></dd>
+          
+        
+          <dt><a name="RESPONSE_STATUS_SUCCESSFUL">RESPONSE_STATUS_SUCCESSFUL</a></dt>
+          
+          <dd class="description"><p><a href="OCSP/Response.html"><code>Response</code></a> has valid confirmations</p></dd>
+          
+        
+          <dt><a name="RESPONSE_STATUS_TRYLATER">RESPONSE_STATUS_TRYLATER</a></dt>
+          
+          <dd class="description"><p>Try again later</p></dd>
+          
+        
+          <dt><a name="RESPONSE_STATUS_UNAUTHORIZED">RESPONSE_STATUS_UNAUTHORIZED</a></dt>
+          
+          <dd class="description"><p>Your request is unauthorized.</p></dd>
+          
+        
+          <dt><a name="REVOKED_STATUS_AFFILIATIONCHANGED">REVOKED_STATUS_AFFILIATIONCHANGED</a></dt>
+          
+          <dd class="description"><p>The certificate subject&#39;s name or other information changed</p></dd>
+          
+        
+          <dt><a name="REVOKED_STATUS_CACOMPROMISE">REVOKED_STATUS_CACOMPROMISE</a></dt>
+          
+          <dd class="description"><p>This CA certificate was revoked due to a key compromise</p></dd>
+          
+        
+          <dt><a name="REVOKED_STATUS_CERTIFICATEHOLD">REVOKED_STATUS_CERTIFICATEHOLD</a></dt>
+          
+          <dd class="description"><p>The certificate is on hold</p></dd>
+          
+        
+          <dt><a name="REVOKED_STATUS_CESSATIONOFOPERATION">REVOKED_STATUS_CESSATIONOFOPERATION</a></dt>
+          
+          <dd class="description"><p>The certificate is no longer needed</p></dd>
+          
+        
+          <dt><a name="REVOKED_STATUS_KEYCOMPROMISE">REVOKED_STATUS_KEYCOMPROMISE</a></dt>
+          
+          <dd class="description"><p>The certificate was revoked due to a key compromise</p></dd>
+          
+        
+          <dt><a name="REVOKED_STATUS_NOSTATUS">REVOKED_STATUS_NOSTATUS</a></dt>
+          
+          <dd class="description"><p>The certificate was revoked for an unknown reason</p></dd>
+          
+        
+          <dt><a name="REVOKED_STATUS_REMOVEFROMCRL">REVOKED_STATUS_REMOVEFROMCRL</a></dt>
+          
+          <dd class="description"><p>The certificate was previously on hold and should now be removed from the CRL</p></dd>
+          
+        
+          <dt><a name="REVOKED_STATUS_SUPERSEDED">REVOKED_STATUS_SUPERSEDED</a></dt>
+          
+          <dd class="description"><p>The certificate was superseded by a new certificate</p></dd>
+          
+        
+          <dt><a name="REVOKED_STATUS_UNSPECIFIED">REVOKED_STATUS_UNSPECIFIED</a></dt>
+          
+          <dd class="description"><p>The certificate was revoked for an unspecified reason</p></dd>
+          
+        
+          <dt><a name="TRUSTOTHER">TRUSTOTHER</a></dt>
+          
+          <dd class="description"><p>Do not verify additional certificates</p></dd>
+          
+        
+          <dt><a name="V_CERTSTATUS_GOOD">V_CERTSTATUS_GOOD</a></dt>
+          
+          <dd class="description"><p>Indicates the certificate is not revoked but does not necessarily mean the certificate was issued or that this response is within the certificate&#39;s validity interval</p></dd>
+          
+        
+          <dt><a name="V_CERTSTATUS_REVOKED">V_CERTSTATUS_REVOKED</a></dt>
+          
+          <dd class="description"><p>Indicates the certificate has been revoked either permanently or temporarily (on hold).</p></dd>
+          
+        
+          <dt><a name="V_CERTSTATUS_UNKNOWN">V_CERTSTATUS_UNKNOWN</a></dt>
+          
+          <dd class="description"><p>Indicates the responder does not know about the certificate being requested.</p></dd>
+          
+        
+          <dt><a name="V_RESPID_KEY">V_RESPID_KEY</a></dt>
+          
+          <dd class="description"><p>The responder ID is based on the public key.</p></dd>
+          
+        
+          <dt><a name="V_RESPID_NAME">V_RESPID_NAME</a></dt>
+          
+          <dd class="description"><p>The responder ID is based on the key name.</p></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_OCSP_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_OCSP_versioned").load("/associated/2.7.4/OCSP.ihtml");</script> <div id='tx_OCSP' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_OCSP").load("/associated/OCSP.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, an erratic source of art, music, and technology.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_OCSP.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_OCSP.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

@@ -1,0 +1,1088 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : Object  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:29:59 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = ''  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = ''  --> 
+  <title>Class: Object (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href=".css/obf.css"  -->
+  <link rel="stylesheet" href="css/inuit.css" >
+  <link rel="stylesheet" href="css/grid.inuit.css" >
+  <link rel="stylesheet" href="css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="css/carbon17.css" type="text/css" >
+
+
+  <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="/js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>ripper/ripper.c</li>      
+            
+          
+          <li class='in-file'>ripper/tools/dsl.rb</li>      
+            
+          
+          <li class='in-file'>ripper/tools/generate.rb</li>      
+            
+          
+          <li class='in-file'>ripper/tools/preproc.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">BasicObject</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-const_missing">::const_missing</a></li>
+          
+          <li><a href="#method-i-add_event">#add_event</a></li>
+          
+          <li><a href="#method-i-check_arity">#check_arity</a></li>
+          
+          <li><a href="#method-i-generate_eventids1">#generate_eventids1</a></li>
+          
+          <li><a href="#method-i-generate_eventids2_table">#generate_eventids2_table</a></li>
+          
+          <li><a href="#method-i-grammar">#grammar</a></li>
+          
+          <li><a href="#method-i-main">#main</a></li>
+          
+          <li><a href="#method-i-method_missing">#method_missing</a></li>
+          
+          <li><a href="#method-i-new_var">#new_var</a></li>
+          
+          <li><a href="#method-i-opt_event">#opt_event</a></li>
+          
+          <li><a href="#method-i-prelude">#prelude</a></li>
+          
+          <li><a href="#method-i-read_ids1">#read_ids1</a></li>
+          
+          <li><a href="#method-i-read_ids1_with_locations">#read_ids1_with_locations</a></li>
+          
+          <li><a href="#method-i-read_ids2">#read_ids2</a></li>
+          
+          <li><a href="#method-i-strip_locations">#strip_locations</a></li>
+          
+          <li><a href="#method-i-usage">#usage</a></li>
+          
+          <li><a href="#method-i-usercode">#usercode</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="./DSL.html">DSL</a></li>
+        
+          
+          
+          <li><a href="./Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="./Ripper.html">Ripper</a></li>
+        
+          
+          
+          <li><a href="./Ripper/Filter.html">Ripper::Filter</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">Object</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="SCRIPT_LINES__">SCRIPT_LINES__</a></dt>
+          
+          <dd class="description"><p>When a Hash is assigned to <code>SCRIPT_LINES__</code> the contents of files loaded after the assignment will be added as an Array of lines with the file name as the key.</p></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="const_missing-method" class="method-detail ">
+          <a name="method-c-const_missing"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">const_missing</span><span
+              class="method-args">(name)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="const_missing-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File ripper/tools/dsl.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">const_missing</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- const_missing-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- const_missing-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="add_event-method" class="method-detail ">
+          <a name="method-i-add_event"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">add_event</span><span
+              class="method-args">(event, args, qundef_check = false)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="add_event-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File ripper/tools/dsl.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_event</span>(<span class="ruby-identifier">event</span>, <span class="ruby-identifier">args</span>, <span class="ruby-identifier">qundef_check</span> = <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">event</span> = <span class="ruby-identifier">event</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/!\z/</span>, <span class="ruby-string">&quot;&quot;</span>)
+  <span class="ruby-ivar">@events</span>[<span class="ruby-identifier">event</span>] = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">vars</span> = []
+  <span class="ruby-identifier">args</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">vars</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">v</span> = <span class="ruby-identifier">new_var</span>
+    <span class="ruby-ivar">@code</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{ v }=#{ arg };&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">v</span> = <span class="ruby-identifier">new_var</span>
+  <span class="ruby-identifier">d</span> = <span class="ruby-node">&quot;dispatch#{ args.size }(#{ [event, *vars].join(&quot;,&quot;) })&quot;</span>
+  <span class="ruby-identifier">d</span> = <span class="ruby-node">&quot;#{ vars.last }==Qundef ? #{ vars.first } : #{ d }&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">qundef_check</span>
+  <span class="ruby-ivar">@code</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{ v }=#{ d };&quot;</span>
+  <span class="ruby-identifier">v</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- add_event-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- add_event-method -->
+      
+        <div id="check_arity-method" class="method-detail ">
+          <a name="method-i-check_arity"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">check_arity</span><span
+              class="method-args">(h)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="check_arity-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File ripper/tools/generate.rb, line 126</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">check_arity</span>(<span class="ruby-identifier">h</span>)
+  <span class="ruby-identifier">invalid</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">h</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">event</span>, <span class="ruby-identifier">list</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">list</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span>, <span class="ruby-identifier">arity</span><span class="ruby-operator">|</span> <span class="ruby-identifier">arity</span> }.<span class="ruby-identifier">uniq</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+      <span class="ruby-identifier">invalid</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-identifier">locations</span> = <span class="ruby-identifier">list</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">line</span>, <span class="ruby-identifier">a</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;#{line}:#{a}&quot;</span> }.<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39;, &#39;</span>)
+      <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;arity crash [event=#{event}]: #{locations}&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">abort</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">invalid</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- check_arity-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- check_arity-method -->
+      
+        <div id="generate_eventids1-method" class="method-detail ">
+          <a name="method-i-generate_eventids1"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">generate_eventids1</span><span
+              class="method-args">(ids)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="generate_eventids1-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File ripper/tools/generate.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">generate_eventids1</span>(<span class="ruby-identifier">ids</span>)
+  <span class="ruby-identifier">buf</span> = <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">%Q[static struct {\n]</span>
+  <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">id</span>, <span class="ruby-identifier">arity</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">%Q[    ID id_#{id};\n]</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">%Q[} ripper_parser_ids;\n]</span>
+  <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">%Q[\n]</span>
+  <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">id</span>, <span class="ruby-identifier">arity</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">%Q[#define ripper_id_#{id} ripper_parser_ids.id_#{id}\n]</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">%Q[\n]</span>
+  <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">%Q[static void\n]</span>
+  <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">%Q[ripper_init_eventids1(void)\n]</span>
+  <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">%Q[{\n]</span>
+  <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">%Q[#define set_id1(name) ripper_id_##name = rb_intern_const(&quot;on_&quot;#name)\n]</span>
+  <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">id</span>, <span class="ruby-identifier">arity</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">%Q[    set_id1(#{id});\n]</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">%Q[}\n]</span>
+  <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">%Q[\n]</span>
+  <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">%Q[static void\n]</span>
+  <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">%Q[ripper_init_eventids1_table(VALUE self)\n]</span>
+  <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">%Q[{\n]</span>
+  <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">%Q[    VALUE h = rb_hash_new();\n]</span>
+  <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">%Q[    rb_define_const(self, &quot;PARSER_EVENT_TABLE&quot;, h);\n]</span>
+  <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">id</span>, <span class="ruby-identifier">arity</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">%Q[    rb_hash_aset(h, intern_sym(&quot;#{id}&quot;), INT2FIX(#{arity}));\n]</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">%Q[}\n]</span>
+  <span class="ruby-identifier">buf</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- generate_eventids1-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- generate_eventids1-method -->
+      
+        <div id="generate_eventids2_table-method" class="method-detail ">
+          <a name="method-i-generate_eventids2_table"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">generate_eventids2_table</span><span
+              class="method-args">(ids)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="generate_eventids2_table-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File ripper/tools/generate.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">generate_eventids2_table</span>(<span class="ruby-identifier">ids</span>)
+  <span class="ruby-identifier">buf</span> = <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">%Q[static void\n]</span>
+  <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">%Q[ripper_init_eventids2_table(VALUE self)\n]</span>
+  <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">%Q[{\n]</span>
+  <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">%Q[    VALUE h = rb_hash_new();\n]</span>
+  <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">%Q[    rb_define_const(self, &quot;SCANNER_EVENT_TABLE&quot;, h);\n]</span>
+  <span class="ruby-identifier">ids</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">id</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">%Q[    rb_hash_aset(h, intern_sym(&quot;#{id}&quot;), INT2FIX(1));\n]</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">%Q[}\n]</span>
+  <span class="ruby-identifier">buf</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- generate_eventids2_table-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- generate_eventids2_table-method -->
+      
+        <div id="grammar-method" class="method-detail ">
+          <a name="method-i-grammar"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">grammar</span><span
+              class="method-args">(f, out)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="grammar-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File ripper/tools/preproc.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">grammar</span>(<span class="ruby-identifier">f</span>, <span class="ruby-identifier">out</span>)
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">line</span> = <span class="ruby-identifier">f</span>.<span class="ruby-identifier">gets</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">line</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r&lt;/\*% *ripper(?:\[(.*?)\])?: *(.*?) *%\*/&gt;</span>
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">DSL</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">$2</span>, (<span class="ruby-node">$1</span> <span class="ruby-operator">||</span> <span class="ruby-string">&quot;&quot;</span>).<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;,&quot;</span>)).<span class="ruby-identifier">generate</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">$/</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r&lt;/\*%%%\*/&gt;</span>
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&#39;#if 0&#39;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">$/</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r&lt;/\*%&gt;</span>
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&#39;#endif&#39;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">$/</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r&lt;%\*/&gt;</span>
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">$/</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\A%%/</span>
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&#39;%%&#39;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">$/</span>
+      <span class="ruby-keyword">return</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">line</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- grammar-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- grammar-method -->
+      
+        <div id="main-method" class="method-detail ">
+          <a name="method-i-main"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">main</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="main-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File ripper/tools/generate.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">main</span>
+  <span class="ruby-identifier">mode</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">ids1src</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">ids2src</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">output</span> = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-identifier">parser</span> = <span class="ruby-ivar">@parser</span> = <span class="ruby-constant">OptionParser</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">banner</span> = <span class="ruby-node">&quot;Usage: #{File.basename($0)} --mode=MODE [--ids1src=PATH] [--ids2src=PATH] [--output=PATH]&quot;</span>
+  <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&#39;--mode=MODE&#39;</span>, <span class="ruby-string">&#39;check, eventids1, or eventids2table.&#39;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">mode</span> = <span class="ruby-identifier">m</span>
+  }
+  <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&#39;--ids1src=PATH&#39;</span>, <span class="ruby-string">&#39;A source file of event-IDs 1 (parse.y).&#39;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">ids1src</span> = <span class="ruby-identifier">path</span>
+  }
+  <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&#39;--ids2src=PATH&#39;</span>, <span class="ruby-string">&#39;A source file of event-IDs 2 (eventids2.c).&#39;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">ids2src</span> = <span class="ruby-identifier">path</span>
+  }
+  <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&#39;--output=PATH&#39;</span>, <span class="ruby-string">&#39;An output file.&#39;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">output</span> = <span class="ruby-identifier">path</span>
+  }
+  <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&#39;--help&#39;</span>, <span class="ruby-string">&#39;Prints this message and quit.&#39;</span>) {
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">help</span>
+    <span class="ruby-identifier">exit</span> <span class="ruby-keyword">true</span>
+  }
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse!</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">OptionParser</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseError</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">err</span>
+    <span class="ruby-identifier">usage</span> <span class="ruby-identifier">err</span>.<span class="ruby-identifier">message</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">usage</span> <span class="ruby-string">&#39;no mode given&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">mode</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">mode</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;check&#39;</span>
+    <span class="ruby-identifier">usage</span> <span class="ruby-string">&#39;no --ids1src&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ids1src</span>
+    <span class="ruby-identifier">usage</span> <span class="ruby-string">&#39;no --ids2src&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ids2src</span>
+    <span class="ruby-identifier">h</span> = <span class="ruby-identifier">read_ids1_with_locations</span>(<span class="ruby-identifier">ids1src</span>)
+    <span class="ruby-identifier">check_arity</span> <span class="ruby-identifier">h</span>
+    <span class="ruby-identifier">ids2</span> = <span class="ruby-identifier">read_ids2</span>(<span class="ruby-identifier">ids2src</span>)
+    <span class="ruby-identifier">common</span> = <span class="ruby-identifier">h</span>.<span class="ruby-identifier">keys</span> <span class="ruby-operator">&amp;</span> <span class="ruby-identifier">ids2</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">common</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">abort</span> <span class="ruby-node">&quot;event crash: #{common.join(&#39; &#39;)}&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">exit</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;eventids1&#39;</span>
+    <span class="ruby-identifier">usage</span> <span class="ruby-string">&#39;no --ids1src&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ids1src</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">generate_eventids1</span>(<span class="ruby-identifier">read_ids1</span>(<span class="ruby-identifier">ids1src</span>))
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;eventids2table&#39;</span>
+    <span class="ruby-identifier">usage</span> <span class="ruby-string">&#39;no --ids2src&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ids2src</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">generate_eventids2_table</span>(<span class="ruby-identifier">read_ids2</span>(<span class="ruby-identifier">ids2src</span>))
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">output</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">output</span>, <span class="ruby-string">&#39;w&#39;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span> <span class="ruby-identifier">result</span>
+    }
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">result</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- main-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- main-method -->
+      
+        <div id="method_missing-method" class="method-detail ">
+          <a name="method-i-method_missing"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">method_missing</span><span
+              class="method-args">(event, *args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="method_missing-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File ripper/tools/dsl.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">method_missing</span>(<span class="ruby-identifier">event</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">event</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/!\z/</span>
+    <span class="ruby-identifier">add_event</span>(<span class="ruby-identifier">event</span>, <span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">and</span> <span class="ruby-regexp">/\Aid[A-Z_]/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">event</span>.<span class="ruby-identifier">to_s</span>
+    <span class="ruby-identifier">event</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-node">&quot;#{ event }(#{ args.join(&quot;, &quot;) })&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- method_missing-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- method_missing-method -->
+      
+        <div id="new_var-method" class="method-detail ">
+          <a name="method-i-new_var"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new_var</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="new_var-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File ripper/tools/dsl.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">new_var</span>
+  <span class="ruby-node">&quot;v#{ @vars += 1 }&quot;</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- new_var-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new_var-method -->
+      
+        <div id="opt_event-method" class="method-detail ">
+          <a name="method-i-opt_event"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">opt_event</span><span
+              class="method-args">(event, default, addend)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="opt_event-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File ripper/tools/dsl.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">opt_event</span>(<span class="ruby-identifier">event</span>, <span class="ruby-identifier">default</span>, <span class="ruby-identifier">addend</span>)
+  <span class="ruby-identifier">add_event</span>(<span class="ruby-identifier">event</span>, [<span class="ruby-identifier">default</span>, <span class="ruby-identifier">addend</span>], <span class="ruby-keyword">true</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- opt_event-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- opt_event-method -->
+      
+        <div id="prelude-method" class="method-detail ">
+          <a name="method-i-prelude"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">prelude</span><span
+              class="method-args">(f, out)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="prelude-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File ripper/tools/preproc.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">prelude</span>(<span class="ruby-identifier">f</span>, <span class="ruby-identifier">out</span>)
+  <span class="ruby-ivar">@exprs</span> = {}
+  <span class="ruby-identifier">lex_state_def</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">line</span> = <span class="ruby-identifier">f</span>.<span class="ruby-identifier">gets</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">line</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\A%%/</span>
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&#39;%%&#39;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">$/</span>
+      <span class="ruby-keyword">return</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\A%token/</span>
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/&lt;\w+&gt;/</span>, <span class="ruby-string">&#39;&lt;val&gt;&#39;</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">/\A%type/</span>
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/&lt;\w+&gt;/</span>, <span class="ruby-string">&#39;&lt;val&gt;&#39;</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">/^enum lex_state_(?:bits|e) \{/</span>
+      <span class="ruby-identifier">lex_state_def</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">line</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">/^\}/</span>
+      <span class="ruby-identifier">lex_state_def</span> = <span class="ruby-keyword">false</span>
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">line</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">out</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">line</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">lex_state_def</span>
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">line</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-regexp">/^\s*(EXPR_\w+),\s+\/\*(.+)\*\//</span>
+        <span class="ruby-ivar">@exprs</span>[<span class="ruby-node">$1</span>.<span class="ruby-identifier">chomp</span>(<span class="ruby-string">&quot;_bit&quot;</span>)] = <span class="ruby-node">$2</span>.<span class="ruby-identifier">strip</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-regexp">/^\s*(EXPR_\w+)\s+=\s+(.+)$/</span>
+        <span class="ruby-identifier">name</span> = <span class="ruby-node">$1</span>
+        <span class="ruby-identifier">val</span> = <span class="ruby-node">$2</span>.<span class="ruby-identifier">chomp</span>(<span class="ruby-string">&quot;,&quot;</span>)
+        <span class="ruby-ivar">@exprs</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-string">&quot;equals to &quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">val</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&quot;(&quot;</span>) <span class="ruby-operator">?</span> <span class="ruby-node">&quot;&lt;tt&gt;#{val}&lt;/tt&gt;&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-node">&quot;+#{val}+&quot;</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- prelude-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- prelude-method -->
+      
+        <div id="read_ids1-method" class="method-detail ">
+          <a name="method-i-read_ids1"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">read_ids1</span><span
+              class="method-args">(path)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="read_ids1-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File ripper/tools/generate.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_ids1</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">strip_locations</span>(<span class="ruby-identifier">read_ids1_with_locations</span>(<span class="ruby-identifier">path</span>))
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- read_ids1-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- read_ids1-method -->
+      
+        <div id="read_ids1_with_locations-method" class="method-detail ">
+          <a name="method-i-read_ids1_with_locations"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">read_ids1_with_locations</span><span
+              class="method-args">(path)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="read_ids1_with_locations-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File ripper/tools/generate.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_ids1_with_locations</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">h</span> = {}
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">path</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">f</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-regexp">/\A\#\s*define\s+dispatch/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">line</span>
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-regexp">/ripper_dispatch/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">line</span>
+      <span class="ruby-identifier">line</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/\bdispatch(\d)\((\w+)/</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">arity</span>, <span class="ruby-identifier">event</span><span class="ruby-operator">|</span>
+        (<span class="ruby-identifier">h</span>[<span class="ruby-identifier">event</span>] <span class="ruby-operator">||=</span> []).<span class="ruby-identifier">push</span> [<span class="ruby-identifier">f</span>.<span class="ruby-identifier">lineno</span>, <span class="ruby-identifier">arity</span>.<span class="ruby-identifier">to_i</span>]
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r&lt;/\*% *ripper(?:\[(.*?)\])?: *(.*?) *%\*/&gt;</span>
+        <span class="ruby-identifier">gen</span> = <span class="ruby-constant">DSL</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">$2</span>, (<span class="ruby-node">$1</span> <span class="ruby-operator">||</span> <span class="ruby-string">&quot;&quot;</span>).<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;,&quot;</span>))
+        <span class="ruby-identifier">gen</span>.<span class="ruby-identifier">generate</span>
+        <span class="ruby-identifier">gen</span>.<span class="ruby-identifier">events</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">event</span>, <span class="ruby-identifier">arity</span><span class="ruby-operator">|</span>
+          (<span class="ruby-identifier">h</span>[<span class="ruby-identifier">event</span>] <span class="ruby-operator">||=</span> []).<span class="ruby-identifier">push</span> [<span class="ruby-identifier">f</span>.<span class="ruby-identifier">lineno</span>, <span class="ruby-identifier">arity</span>.<span class="ruby-identifier">to_i</span>]
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  }
+  <span class="ruby-identifier">h</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- read_ids1_with_locations-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- read_ids1_with_locations-method -->
+      
+        <div id="read_ids2-method" class="method-detail ">
+          <a name="method-i-read_ids2"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">read_ids2</span><span
+              class="method-args">(path)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="read_ids2-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File ripper/tools/generate.rb, line 161</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_ids2</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">src</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">path</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">read</span>}
+  <span class="ruby-identifier">ids2</span> = <span class="ruby-identifier">src</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/ID\s+ripper_id_(\w+)/</span>).<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">uniq</span>.<span class="ruby-identifier">sort</span>
+  <span class="ruby-identifier">diff</span> = <span class="ruby-identifier">src</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/set_id2\((\w+)\);/</span>).<span class="ruby-identifier">flatten</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">ids2</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">diff</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">abort</span> <span class="ruby-node">&quot;missing scanner IDs: #{diff}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">ids2</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- read_ids2-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- read_ids2-method -->
+      
+        <div id="strip_locations-method" class="method-detail ">
+          <a name="method-i-strip_locations"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">strip_locations</span><span
+              class="method-args">(h)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="strip_locations-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File ripper/tools/generate.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">strip_locations</span>(<span class="ruby-identifier">h</span>)
+  <span class="ruby-identifier">h</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">event</span>, <span class="ruby-identifier">list</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">event</span>, <span class="ruby-identifier">list</span>.<span class="ruby-identifier">first</span>[<span class="ruby-value">1</span>]] }\
+      .<span class="ruby-identifier">sort_by</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">event</span>, <span class="ruby-identifier">arity</span><span class="ruby-operator">|</span> <span class="ruby-identifier">event</span>.<span class="ruby-identifier">to_s</span> }
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- strip_locations-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- strip_locations-method -->
+      
+        <div id="usage-method" class="method-detail ">
+          <a name="method-i-usage"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">usage</span><span
+              class="method-args">(msg)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="usage-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File ripper/tools/generate.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">usage</span>(<span class="ruby-identifier">msg</span>)
+  <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">msg</span>
+  <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">help</span>
+  <span class="ruby-identifier">exit</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- usage-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- usage-method -->
+      
+        <div id="usercode-method" class="method-detail ">
+          <a name="method-i-usercode"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">usercode</span><span
+              class="method-args">(f, out)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="usercode-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File ripper/tools/preproc.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">usercode</span>(<span class="ruby-identifier">f</span>, <span class="ruby-identifier">out</span>)
+  <span class="ruby-identifier">require</span> <span class="ruby-string">&#39;erb&#39;</span>
+  <span class="ruby-identifier">compiler</span> = <span class="ruby-constant">ERB</span><span class="ruby-operator">::</span><span class="ruby-constant">Compiler</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;%-&#39;</span>)
+  <span class="ruby-identifier">compiler</span>.<span class="ruby-identifier">put_cmd</span> = <span class="ruby-identifier">compiler</span>.<span class="ruby-identifier">insert_cmd</span> = <span class="ruby-string">&quot;out.&lt;&lt;&quot;</span>
+  <span class="ruby-identifier">lineno</span> = <span class="ruby-identifier">f</span>.<span class="ruby-identifier">lineno</span>
+  <span class="ruby-identifier">src</span>, = <span class="ruby-identifier">compiler</span>.<span class="ruby-identifier">compile</span>(<span class="ruby-identifier">f</span>.<span class="ruby-identifier">read</span>)
+  <span class="ruby-identifier">eval</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">binding</span>, <span class="ruby-identifier">f</span>.<span class="ruby-identifier">path</span>, <span class="ruby-identifier">lineno</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- usercode-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- usercode-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Object_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Object_versioned").load("/associated/2.7.4/Object.ihtml");</script> <div id='tx_Object' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Object").load("/associated/Object.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Maximum R+D</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Object.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Object.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

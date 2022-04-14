@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : Benchmark::Tms  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:16:23 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '..'   asset_rel_prefix = '..'  --> 
+  <title>Class: Benchmark::Tms (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="..css/obf.css"  -->
+  <link rel="stylesheet" href="../css/inuit.css" >
+  <link rel="stylesheet" href="../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../css/carbon17.css" type="text/css" >
+
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>benchmark.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-2A">#*</a></li>
+          
+          <li><a href="#method-i-2B">#+</a></li>
+          
+          <li><a href="#method-i-2D">#-</a></li>
+          
+          <li><a href="#method-i-2F">#/</a></li>
+          
+          <li><a href="#method-i-add">#add</a></li>
+          
+          <li><a href="#method-i-add-21">#add!</a></li>
+          
+          <li><a href="#method-i-format">#format</a></li>
+          
+          <li><a href="#method-i-memberwise">#memberwise</a></li>
+          
+          <li><a href="#method-i-to_a">#to_a</a></li>
+          
+          <li><a href="#method-i-to_s">#to_s</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../Benchmark.html">Benchmark</a></li>
+        
+          
+          
+          <li><a href="../Benchmark/Tms.html">Benchmark::Tms</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">Benchmark::Tms</h1>
+
+    <div id="description" class="description">
+      
+<p>A data object, representing the times associated with a benchmark measurement.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="CAPTION">CAPTION</a></dt>
+          
+          <dd class="description"><p>Default caption, see also Benchmark::CAPTION</p></dd>
+          
+        
+          <dt><a name="FORMAT">FORMAT</a></dt>
+          
+          <dd class="description"><p>Default format string, see also Benchmark::FORMAT</p></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+      <!-- Attributes -->
+      <div id="attribute-method-details" class="method-section section">
+        <h3 class="section-header">Attributes</h3>
+
+        
+        <div id="cstime-attribute-method" class="method-detail">
+          <a name="cstime"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">cstime</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description 245">
+          
+          <p>System CPU time of children</p>
+          
+          </div>
+        </div>
+        
+        <div id="cutime-attribute-method" class="method-detail">
+          <a name="cutime"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">cutime</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description 245">
+          
+          <p>User CPU time of children</p>
+          
+          </div>
+        </div>
+        
+        <div id="label-attribute-method" class="method-detail">
+          <a name="label"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">label</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description 245">
+          
+          <p>Label</p>
+          
+          </div>
+        </div>
+        
+        <div id="real-attribute-method" class="method-detail">
+          <a name="real"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">real</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description 245">
+          
+          <p>Elapsed real time</p>
+          
+          </div>
+        </div>
+        
+        <div id="stime-attribute-method" class="method-detail">
+          <a name="stime"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">stime</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description 245">
+          
+          <p>System CPU time</p>
+          
+          </div>
+        </div>
+        
+        <div id="total-attribute-method" class="method-detail">
+          <a name="total"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">total</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description 245">
+          
+          <p>Total time, that is <code>utime</code> + <code>stime</code> + <code>cutime</code> + <code>cstime</code></p>
+          
+          </div>
+        </div>
+        
+        <div id="utime-attribute-method" class="method-detail">
+          <a name="utime"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">utime</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description 245">
+          
+          <p>User CPU time</p>
+          
+          </div>
+        </div>
+        
+      </div><!-- attribute-method-details -->
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(utime = 0.0, stime = 0.0, cutime = 0.0, cstime = 0.0, real = 0.0, label = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns an initialized <a href="Tms.html"><code>Tms</code></a> object which has <code>utime</code> as the user CPU time, <code>stime</code> as the system CPU time, <code>cutime</code> as the children&#39;s user CPU time, <code>cstime</code> as the children&#39;s system CPU time, <code>real</code> as the elapsed real time and <code>label</code> as the label.</p>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File benchmark.rb, line 427</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">utime</span> = <span class="ruby-value">0.0</span>, <span class="ruby-identifier">stime</span> = <span class="ruby-value">0.0</span>, <span class="ruby-identifier">cutime</span> = <span class="ruby-value">0.0</span>, <span class="ruby-identifier">cstime</span> = <span class="ruby-value">0.0</span>, <span class="ruby-identifier">real</span> = <span class="ruby-value">0.0</span>, <span class="ruby-identifier">label</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-ivar">@utime</span>, <span class="ruby-ivar">@stime</span>, <span class="ruby-ivar">@cutime</span>, <span class="ruby-ivar">@cstime</span>, <span class="ruby-ivar">@real</span>, <span class="ruby-ivar">@label</span> = <span class="ruby-identifier">utime</span>, <span class="ruby-identifier">stime</span>, <span class="ruby-identifier">cutime</span>, <span class="ruby-identifier">cstime</span>, <span class="ruby-identifier">real</span>, <span class="ruby-identifier">label</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-ivar">@total</span> = <span class="ruby-ivar">@utime</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@stime</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@cutime</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@cstime</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="2A-method" class="method-detail ">
+          <a name="method-i-2A"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">*</span><span
+              class="method-args">(x)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns a new <a href="Tms.html"><code>Tms</code></a> object obtained by memberwise multiplication of the individual times for this <a href="Tms.html"><code>Tms</code></a> object by <code>x</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="2A-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File benchmark.rb, line 475</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">*</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">memberwise</span>(<span class="ruby-value">:*</span>, <span class="ruby-identifier">x</span>) <span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 2A-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 2A-method -->
+      
+        <div id="2B-method" class="method-detail ">
+          <a name="method-i-2B"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">+</span><span
+              class="method-args">(other)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns a new <a href="Tms.html"><code>Tms</code></a> object obtained by memberwise summation of the individual times for this <a href="Tms.html"><code>Tms</code></a> object with those of the <code>other</code> <a href="Tms.html"><code>Tms</code></a> object. This method and #/() are useful for taking statistics.</p>
+            
+
+            
+            <div class="method-source-code" id="2B-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File benchmark.rb, line 462</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">+</span>(<span class="ruby-identifier">other</span>); <span class="ruby-identifier">memberwise</span>(<span class="ruby-value">:+</span>, <span class="ruby-identifier">other</span>) <span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 2B-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 2B-method -->
+      
+        <div id="2D-method" class="method-detail ">
+          <a name="method-i-2D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">-</span><span
+              class="method-args">(other)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns a new <a href="Tms.html"><code>Tms</code></a> object obtained by memberwise subtraction of the individual times for the <code>other</code> <a href="Tms.html"><code>Tms</code></a> object from those of this <a href="Tms.html"><code>Tms</code></a> object.</p>
+            
+
+            
+            <div class="method-source-code" id="2D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File benchmark.rb, line 469</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">other</span>); <span class="ruby-identifier">memberwise</span>(<span class="ruby-value">:-</span>, <span class="ruby-identifier">other</span>) <span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 2D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 2D-method -->
+      
+        <div id="2F-method" class="method-detail ">
+          <a name="method-i-2F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">/</span><span
+              class="method-args">(x)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns a new <a href="Tms.html"><code>Tms</code></a> object obtained by memberwise division of the individual times for this <a href="Tms.html"><code>Tms</code></a> object by <code>x</code>. This method and <a href="Tms.html#method-i-2B"><code>+()</code></a> are useful for taking statistics.</p>
+            
+
+            
+            <div class="method-source-code" id="2F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File benchmark.rb, line 482</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">/</span>(<span class="ruby-identifier">x</span>); <span class="ruby-identifier">memberwise</span>(<span class="ruby-value">:/</span>, <span class="ruby-identifier">x</span>) <span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 2F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 2F-method -->
+      
+        <div id="add-method" class="method-detail ">
+          <a name="method-i-add"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">add</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns a new <a href="Tms.html"><code>Tms</code></a> object whose times are the sum of the times for this <a href="Tms.html"><code>Tms</code></a> object, plus the time required to execute the code block (<code>blk</code>).</p>
+            
+
+            
+            <div class="method-source-code" id="add-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File benchmark.rb, line 436</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>) <span class="ruby-comment"># :yield:</span>
+  <span class="ruby-keyword">self</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Benchmark</span>.<span class="ruby-identifier">measure</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- add-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- add-method -->
+      
+        <div id="add-21-method" class="method-detail ">
+          <a name="method-i-add-21"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">add!</span><span
+              class="method-args">(&blk)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>An in-place version of <a href="Tms.html#method-i-add"><code>add</code></a>. Changes the times of this <a href="Tms.html"><code>Tms</code></a> object by making it the sum of the times for this <a href="Tms.html"><code>Tms</code></a> object, plus the time required to execute the code block (<code>blk</code>).</p>
+            
+
+            
+            <div class="method-source-code" id="add-21-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File benchmark.rb, line 446</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add!</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">t</span> = <span class="ruby-constant">Benchmark</span>.<span class="ruby-identifier">measure</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-ivar">@utime</span>  = <span class="ruby-identifier">utime</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">utime</span>
+  <span class="ruby-ivar">@stime</span>  = <span class="ruby-identifier">stime</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">stime</span>
+  <span class="ruby-ivar">@cutime</span> = <span class="ruby-identifier">cutime</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">cutime</span>
+  <span class="ruby-ivar">@cstime</span> = <span class="ruby-identifier">cstime</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">cstime</span>
+  <span class="ruby-ivar">@real</span>   = <span class="ruby-identifier">real</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">real</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- add-21-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- add-21-method -->
+      
+        <div id="format-method" class="method-detail ">
+          <a name="method-i-format"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">format</span><span
+              class="method-args">(format = nil, *args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns the contents of this <a href="Tms.html"><code>Tms</code></a> object as a formatted string, according to a <code>format</code> string like that passed to Kernel.format. In addition, <a href="Tms.html#method-i-format"><code>format</code></a> accepts the following extensions:</p>
+<dl class="rdoc-list note-list"><dt><code>%u</code>
+<dd>
+<p>Replaced by the user CPU time, as reported by <a href="Tms.html#attribute-i-utime"><code>Tms#utime</code></a>.</p>
+</dd><dt><code>%y</code>
+<dd>
+<p>Replaced by the system CPU time, as reported by <a href="Tms.html#attribute-i-stime"><code>stime</code></a> (Mnemonic: y of “s*y*stem”)</p>
+</dd><dt><code>%U</code>
+<dd>
+<p>Replaced by the children&#39;s user CPU time, as reported by <a href="Tms.html#attribute-i-cutime"><code>Tms#cutime</code></a></p>
+</dd><dt><code>%Y</code>
+<dd>
+<p>Replaced by the children&#39;s system CPU time, as reported by <a href="Tms.html#attribute-i-cstime"><code>Tms#cstime</code></a></p>
+</dd><dt><code>%t</code>
+<dd>
+<p>Replaced by the total CPU time, as reported by <a href="Tms.html#attribute-i-total"><code>Tms#total</code></a></p>
+</dd><dt><code>%r</code>
+<dd>
+<p>Replaced by the elapsed real time, as reported by <a href="Tms.html#attribute-i-real"><code>Tms#real</code></a></p>
+</dd><dt><code>%n</code>
+<dd>
+<p>Replaced by the label string, as reported by <a href="Tms.html#attribute-i-label"><code>Tms#label</code></a> (Mnemonic: n of “*n*ame”)</p>
+</dd></dl>
+
+<p>If <code>format</code> is not given, <a href="Tms.html#FORMAT"><code>FORMAT</code></a> is used as default value, detailing the user, system and real elapsed time.</p>
+            
+
+            
+            <div class="method-source-code" id="format-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File benchmark.rb, line 501</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">format</span>(<span class="ruby-identifier">format</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">str</span> = (<span class="ruby-identifier">format</span> <span class="ruby-operator">||</span> <span class="ruby-constant">FORMAT</span>).<span class="ruby-identifier">dup</span>
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/(%[-+.\d]*)n/</span>) { <span class="ruby-node">&quot;#{$1}s&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">label</span> }
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/(%[-+.\d]*)u/</span>) { <span class="ruby-node">&quot;#{$1}f&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">utime</span> }
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/(%[-+.\d]*)y/</span>) { <span class="ruby-node">&quot;#{$1}f&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">stime</span> }
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/(%[-+.\d]*)U/</span>) { <span class="ruby-node">&quot;#{$1}f&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">cutime</span> }
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/(%[-+.\d]*)Y/</span>) { <span class="ruby-node">&quot;#{$1}f&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">cstime</span> }
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/(%[-+.\d]*)t/</span>) { <span class="ruby-node">&quot;#{$1}f&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">total</span> }
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/(%[-+.\d]*)r/</span>) { <span class="ruby-node">&quot;(#{$1}f)&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">real</span> }
+  <span class="ruby-identifier">format</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">str</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">args</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">str</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- format-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- format-method -->
+      
+        <div id="to_a-method" class="method-detail ">
+          <a name="method-i-to_a"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_a</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns a new 6-element array, consisting of the label, user CPU time, system CPU time, children&#39;s user CPU time, children&#39;s system CPU time and elapsed real time.</p>
+            
+
+            
+            <div class="method-source-code" id="to_a-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File benchmark.rb, line 526</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span>
+  [<span class="ruby-ivar">@label</span>, <span class="ruby-ivar">@utime</span>, <span class="ruby-ivar">@stime</span>, <span class="ruby-ivar">@cutime</span>, <span class="ruby-ivar">@cstime</span>, <span class="ruby-ivar">@real</span>]
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- to_a-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_a-method -->
+      
+        <div id="to_s-method" class="method-detail ">
+          <a name="method-i-to_s"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_s</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Same as <a href="Tms.html#method-i-format"><code>format</code></a>.</p>
+            
+
+            
+            <div class="method-source-code" id="to_s-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File benchmark.rb, line 516</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
+  <span class="ruby-identifier">format</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- to_s-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_s-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+      <div id="protected-instance-method-details" class="method-section section">
+        <h3 class="section-header">Protected Instance Methods</h3>
+
+      
+        <div id="memberwise-method" class="method-detail ">
+          <a name="method-i-memberwise"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">memberwise</span><span
+              class="method-args">(op, x)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns a new <a href="Tms.html"><code>Tms</code></a> object obtained by memberwise operation <code>op</code> of the individual times for this <a href="Tms.html"><code>Tms</code></a> object with those of the other <a href="Tms.html"><code>Tms</code></a> object (<code>x</code>).</p>
+
+<p><code>op</code> can be a mathematical operation such as <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code></p>
+            
+
+            
+            <div class="method-source-code" id="memberwise-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File benchmark.rb, line 540</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">memberwise</span>(<span class="ruby-identifier">op</span>, <span class="ruby-identifier">x</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">x</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Benchmark</span><span class="ruby-operator">::</span><span class="ruby-constant">Tms</span>
+    <span class="ruby-constant">Benchmark</span><span class="ruby-operator">::</span><span class="ruby-constant">Tms</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">utime</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">op</span>, <span class="ruby-identifier">x</span>.<span class="ruby-identifier">utime</span>),
+                       <span class="ruby-identifier">stime</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">op</span>, <span class="ruby-identifier">x</span>.<span class="ruby-identifier">stime</span>),
+                       <span class="ruby-identifier">cutime</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">op</span>, <span class="ruby-identifier">x</span>.<span class="ruby-identifier">cutime</span>),
+                       <span class="ruby-identifier">cstime</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">op</span>, <span class="ruby-identifier">x</span>.<span class="ruby-identifier">cstime</span>),
+                       <span class="ruby-identifier">real</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">op</span>, <span class="ruby-identifier">x</span>.<span class="ruby-identifier">real</span>)
+                       )
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Benchmark</span><span class="ruby-operator">::</span><span class="ruby-constant">Tms</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">utime</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">op</span>, <span class="ruby-identifier">x</span>),
+                       <span class="ruby-identifier">stime</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">op</span>, <span class="ruby-identifier">x</span>),
+                       <span class="ruby-identifier">cutime</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">op</span>, <span class="ruby-identifier">x</span>),
+                       <span class="ruby-identifier">cstime</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">op</span>, <span class="ruby-identifier">x</span>),
+                       <span class="ruby-identifier">real</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">op</span>, <span class="ruby-identifier">x</span>)
+                       )
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- memberwise-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- memberwise-method -->
+      
+      </div><!-- protected-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Tms_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Tms_versioned").load("/associated/2.7.4/Tms.ihtml");</script> <div id='tx_Tms' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Tms").load("/associated/Tms.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Maximum R+D</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Tms.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Tms.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Module : Digest  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:18:48 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = ''  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = ''  --> 
+  <title>Module: Digest (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href=".css/obf.css"  -->
+  <link rel="stylesheet" href="css/inuit.css" >
+  <link rel="stylesheet" href="css/grid.inuit.css" >
+  <link rel="stylesheet" href="css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="css/carbon17.css" type="text/css" >
+
+
+  <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="/js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="module rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>digest/bubblebabble/bubblebabble.c</li>      
+            
+          
+          <li class='in-file'>digest/digest.c</li>      
+            
+          
+          <li class='in-file'>digest/lib/digest.rb</li>      
+            
+          
+          <li class='in-file'>digest/md5/md5init.c</li>      
+            
+          
+          <li class='in-file'>digest/rmd160/rmd160init.c</li>      
+            
+          
+          <li class='in-file'>digest/sha1/sha1init.c</li>      
+            
+          
+          <li class='in-file'>digest/sha2/lib/sha2.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">MODULE</span> <a href="Digest/Instance.html">Digest::Instance</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Digest/Base.html">Digest::Base</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Digest/Class.html">Digest::Class</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Digest/MD5.html">Digest::MD5</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Digest/RMD160.html">Digest::RMD160</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Digest/SHA1.html">Digest::SHA1</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Digest/SHA2.html">Digest::SHA2</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-bubblebabble">::bubblebabble</a></li>
+          
+          <li><a href="#method-c-hexencode">::hexencode</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="./Digest.html">Digest</a></li>
+        
+          
+          
+          <li><a href="./Digest/Base.html">Digest::Base</a></li>
+        
+          
+          
+          <li><a href="./Digest/Class.html">Digest::Class</a></li>
+        
+          
+          
+          <li><a href="./Digest/Instance.html">Digest::Instance</a></li>
+        
+          
+          
+          <li><a href="./Digest/MD5.html">Digest::MD5</a></li>
+        
+          
+          
+          <li><a href="./Digest/RMD160.html">Digest::RMD160</a></li>
+        
+          
+          
+          <li><a href="./Digest/SHA1.html">Digest::SHA1</a></li>
+        
+          
+          
+          <li><a href="./Digest/SHA2.html">Digest::SHA2</a></li>
+        
+          
+          
+          <li><a href="./Object.html">Object</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="module">Digest</h1>
+
+    <div id="description" class="description">
+      
+<p>This module provides a framework for message digest libraries.</p>
+
+<p>You may want to look at OpenSSL::Digest as it supports more algorithms.</p>
+
+<p>A cryptographic hash function is a procedure that takes data and returns a fixed bit string: the hash value, also known as <em>digest</em>. Hash functions are also called one-way functions, it is easy to compute a digest from a message, but it is infeasible to generate a message from a digest.</p>
+
+<h2 id="module-Digest-label-Examples">Examples<span><a href="#module-Digest-label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;digest&#39;</span>
+
+<span class="ruby-comment"># Compute a complete digest</span>
+<span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">SHA256</span>.<span class="ruby-identifier">digest</span> <span class="ruby-string">&#39;message&#39;</span>       <span class="ruby-comment">#=&gt; &quot;\xABS\n\x13\xE4Y...&quot;</span>
+
+<span class="ruby-identifier">sha256</span> = <span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">SHA256</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">sha256</span>.<span class="ruby-identifier">digest</span> <span class="ruby-string">&#39;message&#39;</span>               <span class="ruby-comment">#=&gt; &quot;\xABS\n\x13\xE4Y...&quot;</span>
+
+<span class="ruby-comment"># Other encoding formats</span>
+<span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">SHA256</span>.<span class="ruby-identifier">hexdigest</span> <span class="ruby-string">&#39;message&#39;</span>    <span class="ruby-comment">#=&gt; &quot;ab530a13e459...&quot;</span>
+<span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">SHA256</span>.<span class="ruby-identifier">base64digest</span> <span class="ruby-string">&#39;message&#39;</span> <span class="ruby-comment">#=&gt; &quot;q1MKE+RZFJgr...&quot;</span>
+
+<span class="ruby-comment"># Compute digest by chunks</span>
+<span class="ruby-identifier">md5</span> = <span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">MD5</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">md5</span>.<span class="ruby-identifier">update</span> <span class="ruby-string">&#39;message1&#39;</span>
+<span class="ruby-identifier">md5</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&#39;message2&#39;</span>                     <span class="ruby-comment"># &lt;&lt; is an alias for update</span>
+
+<span class="ruby-identifier">md5</span>.<span class="ruby-identifier">hexdigest</span>                         <span class="ruby-comment">#=&gt; &quot;94af09c09bb9...&quot;</span>
+
+<span class="ruby-comment"># Compute digest for a file</span>
+<span class="ruby-identifier">sha256</span> = <span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">SHA256</span>.<span class="ruby-identifier">file</span> <span class="ruby-string">&#39;testfile&#39;</span>
+<span class="ruby-identifier">sha256</span>.<span class="ruby-identifier">hexdigest</span>
+</pre>
+
+<p>Additionally digests can be encoded in “bubble babble” format as a sequence of consonants and vowels which is more recognizable and comparable than a hexadecimal digest.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;digest/bubblebabble&#39;</span>
+
+<span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">SHA256</span>.<span class="ruby-identifier">bubblebabble</span> <span class="ruby-string">&#39;message&#39;</span> <span class="ruby-comment">#=&gt; &quot;xopoh-fedac-fenyh-...&quot;</span>
+</pre>
+
+<p>See the bubble babble specification at <a href="http://web.mit.edu/kenta/www/one/bubblebabble/spec/jrtrjwzi/draft-huima-01.txt">web.mit.edu/kenta/www/one/bubblebabble/spec/jrtrjwzi/draft-huima-01.txt</a>.</p>
+
+<h2 id="module-Digest-label-Digest+algorithms"><a href="Digest.html"><code>Digest</code></a> algorithms<span><a href="#module-Digest-label-Digest+algorithms">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Different digest algorithms (or hash functions) are available:</p>
+<dl class="rdoc-list note-list"><dt><a href="Digest/MD5.html"><code>MD5</code></a>
+<dd>
+<p>See RFC 1321 The <a href="Digest/MD5.html"><code>MD5</code></a> Message-Digest Algorithm</p>
+</dd><dt>RIPEMD-160
+<dd>
+<p>As <a href="Digest/RMD160.html"><code>Digest::RMD160</code></a>. See <a href="http://homes.esat.kuleuven.be/~bosselae/ripemd160.html">homes.esat.kuleuven.be/~bosselae/ripemd160.html</a>.</p>
+</dd><dt><a href="Digest/SHA1.html"><code>SHA1</code></a>
+<dd>
+<p>See FIPS 180 Secure Hash Standard.</p>
+</dd><dt><a href="Digest/SHA2.html"><code>SHA2</code></a> family
+<dd>
+<p>See FIPS 180 Secure Hash Standard which defines the following algorithms:</p>
+<ul><li>
+<p>SHA512</p>
+</li><li>
+<p>SHA384</p>
+</li><li>
+<p>SHA256</p>
+</li></ul>
+</dd></dl>
+
+<p>The latest versions of the FIPS publications can be found here: <a href="http://csrc.nist.gov/publications/PubsFIPS.html">csrc.nist.gov/publications/PubsFIPS.html</a>.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="REQUIRE_MUTEX">REQUIRE_MUTEX</a></dt>
+          
+          <dd class="description"><p>A mutex for Digest().</p></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="bubblebabble-method" class="method-detail ">
+          <a name="method-c-bubblebabble"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">bubblebabble(string) &rarr; bubblebabble_string</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns a BubbleBabble encoded version of a given <em>string</em>.</p>
+            
+
+            
+            <div class="method-source-code" id="bubblebabble-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_digest_s_bubblebabble(VALUE klass, VALUE str)
+{
+    return bubblebabble_str_new(str);
+}
+            </pre> 
+            </div><!-- bubblebabble-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- bubblebabble-method -->
+      
+        <div id="hexencode-method" class="method-detail ">
+          <a name="method-c-hexencode"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">hexencode(string) &rarr; hexencoded_string</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Generates a hex-encoded version of a given <em>string</em>.</p>
+            
+
+            
+            <div class="method-source-code" id="hexencode-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_digest_s_hexencode(VALUE klass, VALUE str)
+{
+    return hexencode_str_new(str);
+}
+            </pre> 
+            </div><!-- hexencode-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- hexencode-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Digest_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Digest_versioned").load("/associated/2.7.4/Digest.ihtml");</script> <div id='tx_Digest' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Digest").load("/associated/Digest.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Maximum R+D</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Digest.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Digest.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

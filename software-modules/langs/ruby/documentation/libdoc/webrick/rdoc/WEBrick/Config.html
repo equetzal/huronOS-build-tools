@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Module : WEBrick::Config  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:34:57 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '..'   asset_rel_prefix = '..'  --> 
+  <title>Module: WEBrick::Config (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="..css/obf.css"  -->
+  <link rel="stylesheet" href="../css/inuit.css" >
+  <link rel="stylesheet" href="../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../css/carbon17.css" type="text/css" >
+
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="module rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>webrick/config.rb</li>      
+            
+          
+          <li class='in-file'>webrick/https.rb</li>      
+            
+          
+          <li class='in-file'>webrick/ssl.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../Errno.html">Errno</a></li>
+        
+          
+          
+          <li><a href="../Errno/ECONNABORTED.html">Errno::ECONNABORTED</a></li>
+        
+          
+          
+          <li><a href="../Errno/ECONNRESET.html">Errno::ECONNRESET</a></li>
+        
+          
+          
+          <li><a href="../Errno/EPROTO.html">Errno::EPROTO</a></li>
+        
+          
+          
+          <li><a href="../Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="../WEBrick.html">WEBrick</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/AccessLog.html">WEBrick::AccessLog</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/AccessLog/AccessLogError.html">WEBrick::AccessLog::AccessLogError</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/BasicLog.html">WEBrick::BasicLog</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/CGI.html">WEBrick::CGI</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/Config.html">WEBrick::Config</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/Cookie.html">WEBrick::Cookie</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/Daemon.html">WEBrick::Daemon</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/GenericServer.html">WEBrick::GenericServer</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTMLUtils.html">WEBrick::HTMLUtils</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPAuth.html">WEBrick::HTTPAuth</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPAuth/Authenticator.html">WEBrick::HTTPAuth::Authenticator</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPAuth/BasicAuth.html">WEBrick::HTTPAuth::BasicAuth</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPAuth/DigestAuth.html">WEBrick::HTTPAuth::DigestAuth</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPAuth/Htdigest.html">WEBrick::HTTPAuth::Htdigest</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPAuth/Htgroup.html">WEBrick::HTTPAuth::Htgroup</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPAuth/Htpasswd.html">WEBrick::HTTPAuth::Htpasswd</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPAuth/ProxyAuthenticator.html">WEBrick::HTTPAuth::ProxyAuthenticator</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPAuth/ProxyBasicAuth.html">WEBrick::HTTPAuth::ProxyBasicAuth</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPAuth/ProxyDigestAuth.html">WEBrick::HTTPAuth::ProxyDigestAuth</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPAuth/UserDB.html">WEBrick::HTTPAuth::UserDB</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPProxyServer.html">WEBrick::HTTPProxyServer</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPRequest.html">WEBrick::HTTPRequest</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPResponse.html">WEBrick::HTTPResponse</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPResponse/InvalidHeader.html">WEBrick::HTTPResponse::InvalidHeader</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPServer.html">WEBrick::HTTPServer</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPServerError.html">WEBrick::HTTPServerError</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPServlet.html">WEBrick::HTTPServlet</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPServlet/AbstractServlet.html">WEBrick::HTTPServlet::AbstractServlet</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPServlet/CGIHandler.html">WEBrick::HTTPServlet::CGIHandler</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPServlet/DefaultFileHandler.html">WEBrick::HTTPServlet::DefaultFileHandler</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPServlet/ERBHandler.html">WEBrick::HTTPServlet::ERBHandler</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPServlet/FileHandler.html">WEBrick::HTTPServlet::FileHandler</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPServlet/HTTPServletError.html">WEBrick::HTTPServlet::HTTPServletError</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPServlet/ProcHandler.html">WEBrick::HTTPServlet::ProcHandler</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPStatus.html">WEBrick::HTTPStatus</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPStatus/ClientError.html">WEBrick::HTTPStatus::ClientError</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPStatus/EOFError.html">WEBrick::HTTPStatus::EOFError</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPStatus/Error.html">WEBrick::HTTPStatus::Error</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPStatus/Info.html">WEBrick::HTTPStatus::Info</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPStatus/Redirect.html">WEBrick::HTTPStatus::Redirect</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPStatus/ServerError.html">WEBrick::HTTPStatus::ServerError</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPStatus/Status.html">WEBrick::HTTPStatus::Status</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPStatus/Success.html">WEBrick::HTTPStatus::Success</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPUtils.html">WEBrick::HTTPUtils</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPUtils/FormData.html">WEBrick::HTTPUtils::FormData</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPVersion.html">WEBrick::HTTPVersion</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/Log.html">WEBrick::Log</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/SNIRequest.html">WEBrick::SNIRequest</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/ServerError.html">WEBrick::ServerError</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/SimpleServer.html">WEBrick::SimpleServer</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/Utils.html">WEBrick::Utils</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/Utils/TimeoutHandler.html">WEBrick::Utils::TimeoutHandler</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="module">WEBrick::Config</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="BasicAuth">BasicAuth</a></dt>
+          
+          <dd class="description"><p>Default configuration for <a href="HTTPAuth/BasicAuth.html"><code>WEBrick::HTTPAuth::BasicAuth</code></a></p>
+<dl class="rdoc-list note-list"><dt>:AutoReloadUserDB
+<dd>
+<p>Reload the user database provided by :UserDB automatically?</p>
+</dd></dl></dd>
+          
+        
+          <dt><a name="DigestAuth">DigestAuth</a></dt>
+          
+          <dd class="description"><p>Default configuration for <a href="HTTPAuth/DigestAuth.html"><code>WEBrick::HTTPAuth::DigestAuth</code></a>.</p>
+<dl class="rdoc-list note-list"><dt>:Algorithm
+<dd>
+<p>MD5, MD5-sess (default), SHA1, SHA1-sess</p>
+</dd><dt>:Domain
+<dd>
+<p>An Array of URIs that define the protected space</p>
+</dd><dt>:Qop
+<dd>
+<p>&#39;auth&#39; for authentication, &#39;auth-int&#39; for integrity protection or both</p>
+</dd><dt>:UseOpaque
+<dd>
+<p>Should the server send opaque values to the client?  This helps prevent replay attacks.</p>
+</dd><dt>:CheckNc
+<dd>
+<p>Should the server check the nonce count?  This helps the server detect replay attacks.</p>
+</dd><dt>:UseAuthenticationInfoHeader
+<dd>
+<p>Should the server send an AuthenticationInfo header?</p>
+</dd><dt>:AutoReloadUserDB
+<dd>
+<p>Reload the user database provided by :UserDB automatically?</p>
+</dd><dt>:NonceExpirePeriod
+<dd>
+<p>How long should we store used nonces?  Default is 30 minutes.</p>
+</dd><dt>:NonceExpireDelta
+<dd>
+<p>How long is a nonce valid?  Default is 1 minute</p>
+</dd><dt>:InternetExplorerHack
+<dd>
+<p>Hack which allows Internet Explorer to work.</p>
+</dd><dt>:OperaHack
+<dd>
+<p>Hack which allows Opera to work.</p>
+</dd></dl></dd>
+          
+        
+          <dt><a name="FileHandler">FileHandler</a></dt>
+          
+          <dd class="description"><p>Default configuration for <a href="HTTPServlet/FileHandler.html"><code>WEBrick::HTTPServlet::FileHandler</code></a></p>
+<dl class="rdoc-list note-list"><dt>:AcceptableLanguages
+<dd>
+<p>Array of languages allowed for accept-language.  There is no default</p>
+</dd><dt>:DirectoryCallback
+<dd>
+<p>Allows preprocessing of directory requests.  There is no default callback.</p>
+</dd><dt>:FancyIndexing
+<dd>
+<p>If true, show an index for directories.  The default is true.</p>
+</dd><dt>:FileCallback
+<dd>
+<p>Allows preprocessing of file requests.  There is no default callback.</p>
+</dd><dt>:HandlerCallback
+<dd>
+<p>Allows preprocessing of requests.  There is no default callback.</p>
+</dd><dt>:HandlerTable
+<dd>
+<p>Maps file suffixes to file handlers.  DefaultFileHandler is used by default but any servlet can be used.</p>
+</dd><dt>:NondisclosureName
+<dd>
+<p>Do not show files matching this array of globs.  .ht* and *~ are excluded by default.</p>
+</dd><dt>:UserDir
+<dd>
+<p>Directory inside ~user to serve content from for /~user requests. Only works if mounted on /.  Disabled by default.</p>
+</dd></dl></dd>
+          
+        
+          <dt><a name="General">General</a></dt>
+          
+          <dd class="description"><p>for <a href="GenericServer.html"><code>GenericServer</code></a></p></dd>
+          
+        
+          <dt><a name="HTTP">HTTP</a></dt>
+          
+          <dd class="description"><p>for <a href="HTTPServer.html"><code>HTTPServer</code></a>, <a href="HTTPRequest.html"><code>HTTPRequest</code></a>, <a href="HTTPResponse.html"><code>HTTPResponse</code></a> …</p></dd>
+          
+        
+          <dt><a name="SSL">SSL</a></dt>
+          
+          <dd class="description"><p>Default <a href="Config.html#SSL"><code>SSL</code></a> server configuration.</p>
+
+<p><a href="../WEBrick.html"><code>WEBrick</code></a> can automatically create a self-signed certificate if <code>:SSLCertName</code> is set.  For more information on the various <a href="Config.html#SSL"><code>SSL</code></a> options see OpenSSL::SSL::SSLContext.</p>
+<dl class="rdoc-list note-list"><dt>:ServerSoftware       
+<dd>
+<p>The server software name used in the Server: header.</p>
+</dd><dt>:SSLEnable            
+<dd>
+<p>false,</p>
+</dd></dl>
+
+<pre>Enable SSL for this server.  Defaults to false.</pre>
+<dl class="rdoc-list note-list"><dt>:SSLCertificate       
+<dd>
+<p>The <a href="Config.html#SSL"><code>SSL</code></a> certificate for the server.</p>
+</dd><dt>:SSLPrivateKey        
+<dd>
+<p>The <a href="Config.html#SSL"><code>SSL</code></a> private key for the server certificate.</p>
+</dd><dt>:SSLClientCA          
+<dd>
+<p>nil,</p>
+</dd></dl>
+
+<pre>Array of certificates that will be sent to the client.</pre>
+<dl class="rdoc-list note-list"><dt>:SSLExtraChainCert    
+<dd>
+<p>nil,</p>
+</dd></dl>
+
+<pre class="ruby"><span class="ruby-constant">Array</span> <span class="ruby-identifier">of</span> <span class="ruby-identifier">certificates</span> <span class="ruby-identifier">that</span> <span class="ruby-identifier">will</span> <span class="ruby-identifier">be</span> <span class="ruby-identifier">added</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">certificate</span> <span class="ruby-identifier">chain</span>
+</pre>
+<dl class="rdoc-list note-list"><dt>:SSLCACertificateFile 
+<dd>
+<p>nil,</p>
+</dd></dl>
+
+<pre class="ruby"><span class="ruby-constant">Path</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">a</span> <span class="ruby-constant">CA</span> <span class="ruby-identifier">certificate</span> <span class="ruby-identifier">file</span>
+</pre>
+<dl class="rdoc-list note-list"><dt>:SSLCACertificatePath 
+<dd>
+<p>nil,</p>
+</dd></dl>
+
+<pre class="ruby"><span class="ruby-constant">Path</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">directory</span> <span class="ruby-identifier">containing</span> <span class="ruby-constant">CA</span> <span class="ruby-identifier">certificates</span>
+</pre>
+<dl class="rdoc-list note-list"><dt>:SSLCertificateStore  
+<dd>
+<p>nil,</p>
+</dd></dl>
+
+<pre>OpenSSL::X509::Store used for certificate validation of the client</pre>
+<dl class="rdoc-list note-list"><dt>:SSLTmpDhCallback     
+<dd>
+<p>nil,</p>
+</dd></dl>
+
+<pre>Callback invoked when DH parameters are required.</pre>
+<dl class="rdoc-list note-list"><dt>:SSLVerifyClient      
+<dd>
+<p>Sets whether the client is verified.  This defaults to VERIFY_NONE which is typical for an HTTPS server.</p>
+</dd><dt>:SSLVerifyDepth       
+<dd>
+<p>Number of CA certificates to walk when verifying a certificate chain</p>
+</dd><dt>:SSLVerifyCallback    
+<dd>
+<p>Custom certificate verification callback</p>
+</dd><dt>:SSLServerNameCallback
+<dd>
+<p>Custom servername indication callback</p>
+</dd><dt>:SSLTimeout           
+<dd>
+<p>Maximum session lifetime</p>
+</dd><dt>:SSLOptions           
+<dd>
+<p>Various <a href="Config.html#SSL"><code>SSL</code></a> options</p>
+</dd><dt>:SSLCiphers           
+<dd>
+<p>Ciphers to be used</p>
+</dd><dt>:SSLStartImmediately  
+<dd>
+<p>Immediately start <a href="Config.html#SSL"><code>SSL</code></a> upon connection?  Defaults to true</p>
+</dd><dt>:SSLCertName          
+<dd>
+<p><a href="Config.html#SSL"><code>SSL</code></a> certificate name.  Must be set to enable automatic certificate creation.</p>
+</dd><dt>:SSLCertComment       
+<dd>
+<p>Comment used during automatic certificate creation.</p>
+</dd></dl></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Config_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Config_versioned").load("/associated/2.7.4/Config.ihtml");</script> <div id='tx_Config' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Config").load("/associated/Config.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Maximum R+D</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Config.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Config.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

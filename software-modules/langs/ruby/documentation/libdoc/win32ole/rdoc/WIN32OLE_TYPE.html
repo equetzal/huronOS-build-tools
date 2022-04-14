@@ -1,0 +1,1460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : WIN32OLE_TYPE  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:35:12 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = ''  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = ''  --> 
+  <title>Class: WIN32OLE_TYPE (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href=".css/obf.css"  -->
+  <link rel="stylesheet" href="css/inuit.css" >
+  <link rel="stylesheet" href="css/grid.inuit.css" >
+  <link rel="stylesheet" href="css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="css/carbon17.css" type="text/css" >
+
+
+  <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="/js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>win32ole/win32ole_type.c</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-c-ole_classes">::ole_classes</a></li>
+          
+          <li><a href="#method-c-progids">::progids</a></li>
+          
+          <li><a href="#method-c-typelibs">::typelibs</a></li>
+          
+          <li><a href="#method-i-default_event_sources">#default_event_sources</a></li>
+          
+          <li><a href="#method-i-default_ole_types">#default_ole_types</a></li>
+          
+          <li><a href="#method-i-guid">#guid</a></li>
+          
+          <li><a href="#method-i-helpcontext">#helpcontext</a></li>
+          
+          <li><a href="#method-i-helpfile">#helpfile</a></li>
+          
+          <li><a href="#method-i-helpstring">#helpstring</a></li>
+          
+          <li><a href="#method-i-implemented_ole_types">#implemented_ole_types</a></li>
+          
+          <li><a href="#method-i-inspect">#inspect</a></li>
+          
+          <li><a href="#method-i-major_version">#major_version</a></li>
+          
+          <li><a href="#method-i-minor_version">#minor_version</a></li>
+          
+          <li><a href="#method-i-name">#name</a></li>
+          
+          <li><a href="#method-i-ole_methods">#ole_methods</a></li>
+          
+          <li><a href="#method-i-ole_type">#ole_type</a></li>
+          
+          <li><a href="#method-i-ole_typelib">#ole_typelib</a></li>
+          
+          <li><a href="#method-i-progid">#progid</a></li>
+          
+          <li><a href="#method-i-source_ole_types">#source_ole_types</a></li>
+          
+          <li><a href="#method-i-src_type">#src_type</a></li>
+          
+          <li><a href="#method-i-to_s">#to_s</a></li>
+          
+          <li><a href="#method-i-typekind">#typekind</a></li>
+          
+          <li><a href="#method-i-variables">#variables</a></li>
+          
+          <li><a href="#method-i-visible-3F">#visible?</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="./OLEProperty.html">OLEProperty</a></li>
+        
+          
+          
+          <li><a href="./WIN32OLE.html">WIN32OLE</a></li>
+        
+          
+          
+          <li><a href="./WIN32OLE/VARIANT.html">WIN32OLE::VARIANT</a></li>
+        
+          
+          
+          <li><a href="./WIN32OLEQueryInterfaceError.html">WIN32OLEQueryInterfaceError</a></li>
+        
+          
+          
+          <li><a href="./WIN32OLERuntimeError.html">WIN32OLERuntimeError</a></li>
+        
+          
+          
+          <li><a href="./WIN32OLE_EVENT.html">WIN32OLE_EVENT</a></li>
+        
+          
+          
+          <li><a href="./WIN32OLE_METHOD.html">WIN32OLE_METHOD</a></li>
+        
+          
+          
+          <li><a href="./WIN32OLE_PARAM.html">WIN32OLE_PARAM</a></li>
+        
+          
+          
+          <li><a href="./WIN32OLE_RECORD.html">WIN32OLE_RECORD</a></li>
+        
+          
+          
+          <li><a href="./WIN32OLE_TYPE.html">WIN32OLE_TYPE</a></li>
+        
+          
+          
+          <li><a href="./WIN32OLE_TYPELIB.html">WIN32OLE_TYPELIB</a></li>
+        
+          
+          
+          <li><a href="./WIN32OLE_VARIABLE.html">WIN32OLE_VARIABLE</a></li>
+        
+          
+          
+          <li><a href="./WIN32OLE_VARIANT.html">WIN32OLE_VARIANT</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">WIN32OLE_TYPE</h1>
+
+    <div id="description" class="description">
+      
+<p><code>WIN32OLE_TYPE</code> objects represent OLE type libarary information.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">new(typelib, ole_class) &rarr; WIN32OLE_TYPE object</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns a new <a href="WIN32OLE_TYPE.html"><code>WIN32OLE_TYPE</code></a> object. The first argument <em>typelib</em> specifies OLE type library name. The second argument specifies OLE class name.</p>
+
+<pre class="ruby"><span class="ruby-constant">WIN32OLE_TYPE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Microsoft Excel 9.0 Object Library&#39;</span>, <span class="ruby-string">&#39;Application&#39;</span>)
+    <span class="ruby-comment"># =&gt; WIN32OLE_TYPE object of Application class of Excel.</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+foletype_initialize(VALUE self, VALUE typelib, VALUE oleclass)
+{
+    VALUE file;
+    OLECHAR * pbuf;
+    ITypeLib *pTypeLib;
+    HRESULT hr;
+
+    SafeStringValue(oleclass);
+    SafeStringValue(typelib);
+    file = typelib_file(typelib);
+    if (file == Qnil) {
+        file = typelib;
+    }
+    pbuf = ole_vstr2wc(file);
+    hr = LoadTypeLibEx(pbuf, REGKIND_NONE, &amp;pTypeLib);
+    if (FAILED(hr))
+        ole_raise(hr, eWIN32OLERuntimeError, &quot;failed to LoadTypeLibEx&quot;);
+    SysFreeString(pbuf);
+    if (oleclass_from_typelib(self, pTypeLib, oleclass) == Qfalse) {
+        OLE_RELEASE(pTypeLib);
+        rb_raise(eWIN32OLERuntimeError, &quot;not found `%s` in `%s`&quot;,
+                 StringValuePtr(oleclass), StringValuePtr(typelib));
+    }
+    OLE_RELEASE(pTypeLib);
+    return self;
+}
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+        <div id="ole_classes-method" class="method-detail ">
+          <a name="method-c-ole_classes"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">ole_classes(typelib)</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns array of <a href="WIN32OLE_TYPE.html"><code>WIN32OLE_TYPE</code></a> objects defined by the <em>typelib</em> type library. This method will be OBSOLETE. Use <a href="WIN32OLE_TYPELIB.html#method-c-new"><code>WIN32OLE_TYPELIB.new(typelib)</code></a>.ole_classes instead.</p>
+            
+
+            
+            <div class="method-source-code" id="ole_classes-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+foletype_s_ole_classes(VALUE self, VALUE typelib)
+{
+    VALUE obj;
+
+    /*
+    rb_warn(&quot;%s is obsolete; use %s instead.&quot;,
+            &quot;WIN32OLE_TYPE.ole_classes&quot;,
+            &quot;WIN32OLE_TYPELIB.new(typelib).ole_types&quot;);
+    */
+    obj = rb_funcall(cWIN32OLE_TYPELIB, rb_intern(&quot;new&quot;), 1, typelib);
+    return rb_funcall(obj, rb_intern(&quot;ole_types&quot;), 0);
+}
+            </pre> 
+            </div><!-- ole_classes-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ole_classes-method -->
+      
+        <div id="progids-method" class="method-detail ">
+          <a name="method-c-progids"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">progids</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns array of ProgID.</p>
+            
+
+            
+            <div class="method-source-code" id="progids-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+foletype_s_progids(VALUE self)
+{
+    HKEY hclsids, hclsid;
+    DWORD i;
+    LONG err;
+    VALUE clsid;
+    VALUE v = rb_str_new2(&quot;&quot;);
+    VALUE progids = rb_ary_new();
+
+    err = reg_open_key(HKEY_CLASSES_ROOT, &quot;CLSID&quot;, &amp;hclsids);
+    if(err != ERROR_SUCCESS) {
+        return progids;
+    }
+    for(i = 0; ; i++) {
+        clsid = reg_enum_key(hclsids, i);
+        if (clsid == Qnil)
+            break;
+        err = reg_open_vkey(hclsids, clsid, &amp;hclsid);
+        if (err != ERROR_SUCCESS)
+            continue;
+        if ((v = reg_get_val2(hclsid, &quot;ProgID&quot;)) != Qnil)
+            rb_ary_push(progids, v);
+        if ((v = reg_get_val2(hclsid, &quot;VersionIndependentProgID&quot;)) != Qnil)
+            rb_ary_push(progids, v);
+        RegCloseKey(hclsid);
+    }
+    RegCloseKey(hclsids);
+    return progids;
+}
+            </pre> 
+            </div><!-- progids-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- progids-method -->
+      
+        <div id="typelibs-method" class="method-detail ">
+          <a name="method-c-typelibs"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">typelibs</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns array of type libraries. This method will be OBSOLETE. Use <a href="WIN32OLE_TYPELIB.html#method-c-typelibs"><code>WIN32OLE_TYPELIB.typelibs</code></a>.collect{|t| t.name} instead.</p>
+            
+
+            
+            <div class="method-source-code" id="typelibs-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+foletype_s_typelibs(VALUE self)
+{
+    /*
+    rb_warn(&quot;%s is obsolete. use %s instead.&quot;,
+            &quot;WIN32OLE_TYPE.typelibs&quot;,
+            &quot;WIN32OLE_TYPELIB.typelibs.collect{t|t.name}&quot;);
+    */
+    return rb_eval_string(&quot;WIN32OLE_TYPELIB.typelibs.collect{|t|t.name}&quot;);
+}
+            </pre> 
+            </div><!-- typelibs-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- typelibs-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="default_event_sources-method" class="method-detail ">
+          <a name="method-i-default_event_sources"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">WIN32OLE_TYPE#default_event_sources</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns the array of <a href="WIN32OLE_TYPE.html"><code>WIN32OLE_TYPE</code></a> object which is implemented by the <a href="WIN32OLE_TYPE.html"><code>WIN32OLE_TYPE</code></a> object and having IMPLTYPEFLAG_FSOURCE and IMPLTYPEFLAG_FDEFAULT.</p>
+
+<pre class="ruby"><span class="ruby-identifier">tobj</span> = <span class="ruby-constant">WIN32OLE_TYPE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Microsoft Internet Controls&#39;</span>, <span class="ruby-string">&quot;InternetExplorer&quot;</span>)
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">tobj</span>.<span class="ruby-identifier">default_event_sources</span>  <span class="ruby-comment"># =&gt; [#&lt;WIN32OLE_TYPE:DWebBrowserEvents2&gt;]</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="default_event_sources-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+foletype_default_event_sources(VALUE self)
+{
+    ITypeInfo *pTypeInfo = itypeinfo(self);
+    return ole_type_impl_ole_types(pTypeInfo, IMPLTYPEFLAG_FSOURCE|IMPLTYPEFLAG_FDEFAULT);
+}
+            </pre> 
+            </div><!-- default_event_sources-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- default_event_sources-method -->
+      
+        <div id="default_ole_types-method" class="method-detail ">
+          <a name="method-i-default_ole_types"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">WIN32OLE_TYPE#default_ole_types</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns the array of <a href="WIN32OLE_TYPE.html"><code>WIN32OLE_TYPE</code></a> object which is implemented by the <a href="WIN32OLE_TYPE.html"><code>WIN32OLE_TYPE</code></a> object and having IMPLTYPEFLAG_FDEFAULT.</p>
+
+<pre class="ruby"><span class="ruby-identifier">tobj</span> = <span class="ruby-constant">WIN32OLE_TYPE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Microsoft Internet Controls&#39;</span>, <span class="ruby-string">&quot;InternetExplorer&quot;</span>)
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">tobj</span>.<span class="ruby-identifier">default_ole_types</span>
+<span class="ruby-comment"># =&gt; [#&lt;WIN32OLE_TYPE:IWebBrowser2&gt;, #&lt;WIN32OLE_TYPE:DWebBrowserEvents2&gt;]</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="default_ole_types-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+foletype_default_ole_types(VALUE self)
+{
+    ITypeInfo *pTypeInfo = itypeinfo(self);
+    return ole_type_impl_ole_types(pTypeInfo, IMPLTYPEFLAG_FDEFAULT);
+}
+            </pre> 
+            </div><!-- default_ole_types-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- default_ole_types-method -->
+      
+        <div id="guid-method" class="method-detail ">
+          <a name="method-i-guid"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">WIN32OLE_TYPE#guid  #=> GUID</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns GUID.</p>
+
+<pre class="ruby"><span class="ruby-identifier">tobj</span> = <span class="ruby-constant">WIN32OLE_TYPE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Microsoft Excel 9.0 Object Library&#39;</span>, <span class="ruby-string">&#39;Application&#39;</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">tobj</span>.<span class="ruby-identifier">guid</span>  <span class="ruby-comment"># =&gt; {00024500-0000-0000-C000-000000000046}</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="guid-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+foletype_guid(VALUE self)
+{
+    ITypeInfo *pTypeInfo = itypeinfo(self);
+    return ole_type_guid(pTypeInfo);
+}
+            </pre> 
+            </div><!-- guid-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- guid-method -->
+      
+        <div id="helpcontext-method" class="method-detail ">
+          <a name="method-i-helpcontext"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">WIN32OLE_TYPE#helpcontext</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns helpcontext. If helpcontext is not found, then returns nil.</p>
+
+<pre class="ruby"><span class="ruby-identifier">tobj</span> = <span class="ruby-constant">WIN32OLE_TYPE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Microsoft Excel 9.0 Object Library&#39;</span>, <span class="ruby-string">&#39;Worksheet&#39;</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">tobj</span>.<span class="ruby-identifier">helpfile</span> <span class="ruby-comment"># =&gt; 131185</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="helpcontext-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+foletype_helpcontext(VALUE self)
+{
+    ITypeInfo *pTypeInfo = itypeinfo(self);
+    return ole_type_helpcontext(pTypeInfo);
+}
+            </pre> 
+            </div><!-- helpcontext-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- helpcontext-method -->
+      
+        <div id="helpfile-method" class="method-detail ">
+          <a name="method-i-helpfile"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">WIN32OLE_TYPE#helpfile</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns helpfile path. If helpfile is not found, then returns nil.</p>
+
+<pre class="ruby"><span class="ruby-identifier">tobj</span> = <span class="ruby-constant">WIN32OLE_TYPE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Microsoft Excel 9.0 Object Library&#39;</span>, <span class="ruby-string">&#39;Worksheet&#39;</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">tobj</span>.<span class="ruby-identifier">helpfile</span> <span class="ruby-comment"># =&gt; C:\...\VBAXL9.CHM</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="helpfile-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+foletype_helpfile(VALUE self)
+{
+    ITypeInfo *pTypeInfo = itypeinfo(self);
+    return ole_type_helpfile(pTypeInfo);
+}
+            </pre> 
+            </div><!-- helpfile-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- helpfile-method -->
+      
+        <div id="helpstring-method" class="method-detail ">
+          <a name="method-i-helpstring"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">WIN32OLE_TYPE#helpstring #=> help string.</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns help string.</p>
+
+<pre class="ruby"><span class="ruby-identifier">tobj</span> = <span class="ruby-constant">WIN32OLE_TYPE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Microsoft Internet Controls&#39;</span>, <span class="ruby-string">&#39;IWebBrowser&#39;</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">tobj</span>.<span class="ruby-identifier">helpstring</span> <span class="ruby-comment"># =&gt; Web Browser interface</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="helpstring-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+foletype_helpstring(VALUE self)
+{
+    ITypeInfo *pTypeInfo = itypeinfo(self);
+    return ole_type_helpstring(pTypeInfo);
+}
+            </pre> 
+            </div><!-- helpstring-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- helpstring-method -->
+      
+        <div id="implemented_ole_types-method" class="method-detail ">
+          <a name="method-i-implemented_ole_types"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">WIN32OLE_TYPE#implemented_ole_types</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns the array of <a href="WIN32OLE_TYPE.html"><code>WIN32OLE_TYPE</code></a> object which is implemented by the <a href="WIN32OLE_TYPE.html"><code>WIN32OLE_TYPE</code></a> object.</p>
+
+<pre class="ruby"><span class="ruby-identifier">tobj</span> = <span class="ruby-constant">WIN32OLE_TYPE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Microsoft Excel 9.0 Object Library&#39;</span>, <span class="ruby-string">&#39;Worksheet&#39;</span>)
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">tobj</span>.<span class="ruby-identifier">implemented_ole_types</span> <span class="ruby-comment"># =&gt; [_Worksheet, DocEvents]</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="implemented_ole_types-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+foletype_impl_ole_types(VALUE self)
+{
+    ITypeInfo *pTypeInfo = itypeinfo(self);
+    return ole_type_impl_ole_types(pTypeInfo, 0);
+}
+            </pre> 
+            </div><!-- implemented_ole_types-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- implemented_ole_types-method -->
+      
+        <div id="inspect-method" class="method-detail ">
+          <a name="method-i-inspect"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">WIN32OLE_TYPE#inspect &rarr; String</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns the type name with class name.</p>
+
+<pre>ie = WIN32OLE.new(&#39;InternetExplorer.Application&#39;)
+ie.ole_type.inspect =&gt; #&lt;WIN32OLE_TYPE:IWebBrowser2&gt;</pre>
+            
+
+            
+            <div class="method-source-code" id="inspect-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+foletype_inspect(VALUE self)
+{
+    return default_inspect(self, &quot;WIN32OLE_TYPE&quot;);
+}
+            </pre> 
+            </div><!-- inspect-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- inspect-method -->
+      
+        <div id="major_version-method" class="method-detail ">
+          <a name="method-i-major_version"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">WIN32OLE_TYPE#major_version</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns major version.</p>
+
+<pre class="ruby"><span class="ruby-identifier">tobj</span> = <span class="ruby-constant">WIN32OLE_TYPE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Microsoft Word 10.0 Object Library&#39;</span>, <span class="ruby-string">&#39;Documents&#39;</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">tobj</span>.<span class="ruby-identifier">major_version</span> <span class="ruby-comment"># =&gt; 8</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="major_version-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+foletype_major_version(VALUE self)
+{
+    ITypeInfo *pTypeInfo = itypeinfo(self);
+    return ole_type_major_version(pTypeInfo);
+}
+            </pre> 
+            </div><!-- major_version-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- major_version-method -->
+      
+        <div id="minor_version-method" class="method-detail ">
+          <a name="method-i-minor_version"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">WIN32OLE_TYPE#minor_version #=> OLE minor version</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns minor version.</p>
+
+<pre class="ruby"><span class="ruby-identifier">tobj</span> = <span class="ruby-constant">WIN32OLE_TYPE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Microsoft Word 10.0 Object Library&#39;</span>, <span class="ruby-string">&#39;Documents&#39;</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">tobj</span>.<span class="ruby-identifier">minor_version</span> <span class="ruby-comment"># =&gt; 2</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="minor_version-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+foletype_minor_version(VALUE self)
+{
+    ITypeInfo *pTypeInfo = itypeinfo(self);
+    return ole_type_minor_version(pTypeInfo);
+}
+            </pre> 
+            </div><!-- minor_version-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- minor_version-method -->
+      
+        <div id="name-method" class="method-detail ">
+          <a name="method-i-name"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">WIN32OLE_TYPE#name #=> OLE type name</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns OLE type name.</p>
+
+<pre class="ruby"><span class="ruby-identifier">tobj</span> = <span class="ruby-constant">WIN32OLE_TYPE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Microsoft Excel 9.0 Object Library&#39;</span>, <span class="ruby-string">&#39;Application&#39;</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">tobj</span>.<span class="ruby-identifier">name</span>  <span class="ruby-comment"># =&gt; Application</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="name-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+foletype_name(VALUE self)
+{
+    return rb_ivar_get(self, rb_intern(&quot;name&quot;));
+}
+            </pre> 
+            </div><!-- name-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="WIN32OLE_TYPE.html#method-i-to_s">to_s</a>
+          </div>
+          
+
+          
+        </div><!-- name-method -->
+      
+        <div id="ole_methods-method" class="method-detail ">
+          <a name="method-i-ole_methods"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">WIN32OLE_TYPE#ole_methods # the array of WIN32OLE_METHOD objects.</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns array of <a href="WIN32OLE_METHOD.html"><code>WIN32OLE_METHOD</code></a> objects which represent OLE method defined in OLE type library.</p>
+
+<pre class="ruby"><span class="ruby-identifier">tobj</span> = <span class="ruby-constant">WIN32OLE_TYPE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Microsoft Excel 9.0 Object Library&#39;</span>, <span class="ruby-string">&#39;Worksheet&#39;</span>)
+<span class="ruby-identifier">methods</span> = <span class="ruby-identifier">tobj</span>.<span class="ruby-identifier">ole_methods</span>.<span class="ruby-identifier">collect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">m</span>.<span class="ruby-identifier">name</span>
+}
+<span class="ruby-comment"># =&gt; [&#39;Activate&#39;, &#39;Copy&#39;, &#39;Delete&#39;,....]</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="ole_methods-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+foletype_methods(VALUE self)
+{
+    ITypeInfo *pTypeInfo = itypeinfo(self);
+    return ole_methods_from_typeinfo(pTypeInfo, INVOKE_FUNC | INVOKE_PROPERTYGET | INVOKE_PROPERTYPUT | INVOKE_PROPERTYPUTREF);
+}
+            </pre> 
+            </div><!-- ole_methods-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ole_methods-method -->
+      
+        <div id="ole_type-method" class="method-detail ">
+          <a name="method-i-ole_type"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">WIN32OLE_TYPE#ole_type #=> OLE type string.</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>returns type of OLE class.</p>
+
+<pre class="ruby"><span class="ruby-identifier">tobj</span> = <span class="ruby-constant">WIN32OLE_TYPE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Microsoft Excel 9.0 Object Library&#39;</span>, <span class="ruby-string">&#39;Application&#39;</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">tobj</span>.<span class="ruby-identifier">ole_type</span>  <span class="ruby-comment"># =&gt; Class</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="ole_type-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+foletype_ole_type(VALUE self)
+{
+    ITypeInfo *pTypeInfo = itypeinfo(self);
+    return ole_ole_type(pTypeInfo);
+}
+            </pre> 
+            </div><!-- ole_type-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ole_type-method -->
+      
+        <div id="ole_typelib-method" class="method-detail ">
+          <a name="method-i-ole_typelib"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">WIN32OLE_TYPE#ole_typelib</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns the <a href="WIN32OLE_TYPELIB.html"><code>WIN32OLE_TYPELIB</code></a> object which is including the <a href="WIN32OLE_TYPE.html"><code>WIN32OLE_TYPE</code></a> object. If it is not found, then returns nil.</p>
+
+<pre class="ruby"><span class="ruby-identifier">tobj</span> = <span class="ruby-constant">WIN32OLE_TYPE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Microsoft Excel 9.0 Object Library&#39;</span>, <span class="ruby-string">&#39;Worksheet&#39;</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">tobj</span>.<span class="ruby-identifier">ole_typelib</span> <span class="ruby-comment"># =&gt; &#39;Microsoft Excel 9.0 Object Library&#39;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="ole_typelib-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+foletype_ole_typelib(VALUE self)
+{
+    ITypeInfo *pTypeInfo = itypeinfo(self);
+    return ole_typelib_from_itypeinfo(pTypeInfo);
+}
+            </pre> 
+            </div><!-- ole_typelib-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ole_typelib-method -->
+      
+        <div id="progid-method" class="method-detail ">
+          <a name="method-i-progid"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">WIN32OLE_TYPE#progid  #=> ProgID</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns ProgID if it exists. If not found, then returns nil.</p>
+
+<pre class="ruby"><span class="ruby-identifier">tobj</span> = <span class="ruby-constant">WIN32OLE_TYPE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Microsoft Excel 9.0 Object Library&#39;</span>, <span class="ruby-string">&#39;Application&#39;</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">tobj</span>.<span class="ruby-identifier">progid</span>  <span class="ruby-comment"># =&gt;   Excel.Application.9</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="progid-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+foletype_progid(VALUE self)
+{
+    ITypeInfo *pTypeInfo = itypeinfo(self);
+    return ole_type_progid(pTypeInfo);
+}
+            </pre> 
+            </div><!-- progid-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- progid-method -->
+      
+        <div id="source_ole_types-method" class="method-detail ">
+          <a name="method-i-source_ole_types"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">WIN32OLE_TYPE#source_ole_types</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns the array of <a href="WIN32OLE_TYPE.html"><code>WIN32OLE_TYPE</code></a> object which is implemented by the <a href="WIN32OLE_TYPE.html"><code>WIN32OLE_TYPE</code></a> object and having IMPLTYPEFLAG_FSOURCE.</p>
+
+<pre class="ruby"><span class="ruby-identifier">tobj</span> = <span class="ruby-constant">WIN32OLE_TYPE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Microsoft Internet Controls&#39;</span>, <span class="ruby-string">&quot;InternetExplorer&quot;</span>)
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">tobj</span>.<span class="ruby-identifier">source_ole_types</span>
+<span class="ruby-comment"># =&gt; [#&lt;WIN32OLE_TYPE:DWebBrowserEvents2&gt;, #&lt;WIN32OLE_TYPE:DWebBrowserEvents&gt;]</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="source_ole_types-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+foletype_source_ole_types(VALUE self)
+{
+    ITypeInfo *pTypeInfo = itypeinfo(self);
+    return ole_type_impl_ole_types(pTypeInfo, IMPLTYPEFLAG_FSOURCE);
+}
+            </pre> 
+            </div><!-- source_ole_types-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- source_ole_types-method -->
+      
+        <div id="src_type-method" class="method-detail ">
+          <a name="method-i-src_type"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">WIN32OLE_TYPE#src_type #=> OLE source class</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns source class when the OLE class is &#39;Alias&#39;.</p>
+
+<pre class="ruby"><span class="ruby-identifier">tobj</span> =  <span class="ruby-constant">WIN32OLE_TYPE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Microsoft Office 9.0 Object Library&#39;</span>, <span class="ruby-string">&#39;MsoRGBType&#39;</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">tobj</span>.<span class="ruby-identifier">src_type</span> <span class="ruby-comment"># =&gt; I4</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="src_type-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+foletype_src_type(VALUE self)
+{
+    ITypeInfo *pTypeInfo = itypeinfo(self);
+    return ole_type_src_type(pTypeInfo);
+}
+            </pre> 
+            </div><!-- src_type-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- src_type-method -->
+      
+        <div id="to_s-method" class="method-detail method-alias">
+          <a name="method-i-to_s"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_s</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="WIN32OLE_TYPE.html#method-i-name">name</a>
+          </div>
+          
+        </div><!-- to_s-method -->
+      
+        <div id="typekind-method" class="method-detail ">
+          <a name="method-i-typekind"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">WIN32OLE_TYPE#typekind #=> number of type.</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns number which represents type.</p>
+
+<pre class="ruby"><span class="ruby-identifier">tobj</span> = <span class="ruby-constant">WIN32OLE_TYPE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Microsoft Word 10.0 Object Library&#39;</span>, <span class="ruby-string">&#39;Documents&#39;</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">tobj</span>.<span class="ruby-identifier">typekind</span> <span class="ruby-comment"># =&gt; 4</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="typekind-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+foletype_typekind(VALUE self)
+{
+    ITypeInfo *pTypeInfo = itypeinfo(self);
+    return ole_type_typekind(pTypeInfo);
+}
+            </pre> 
+            </div><!-- typekind-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- typekind-method -->
+      
+        <div id="variables-method" class="method-detail ">
+          <a name="method-i-variables"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">WIN32OLE_TYPE#variables</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns array of <a href="WIN32OLE_VARIABLE.html"><code>WIN32OLE_VARIABLE</code></a> objects which represent variables defined in OLE class.</p>
+
+<pre class="ruby"><span class="ruby-identifier">tobj</span> = <span class="ruby-constant">WIN32OLE_TYPE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Microsoft Excel 9.0 Object Library&#39;</span>, <span class="ruby-string">&#39;XlSheetType&#39;</span>)
+<span class="ruby-identifier">vars</span> = <span class="ruby-identifier">tobj</span>.<span class="ruby-identifier">variables</span>
+<span class="ruby-identifier">vars</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{v.name} = #{v.value}&quot;</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-constant">The</span> <span class="ruby-identifier">result</span> <span class="ruby-identifier">of</span> <span class="ruby-identifier">above</span> <span class="ruby-identifier">sample</span> <span class="ruby-identifier">script</span> <span class="ruby-identifier">is</span> <span class="ruby-value">follows:</span>
+  <span class="ruby-identifier">xlChart</span> = <span class="ruby-value">-4109</span>
+  <span class="ruby-identifier">xlDialogSheet</span> = <span class="ruby-value">-4116</span>
+  <span class="ruby-identifier">xlExcel4IntlMacroSheet</span> = <span class="ruby-value">4</span>
+  <span class="ruby-identifier">xlExcel4MacroSheet</span> = <span class="ruby-value">3</span>
+  <span class="ruby-identifier">xlWorksheet</span> = <span class="ruby-value">-4167</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="variables-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+foletype_variables(VALUE self)
+{
+    ITypeInfo *pTypeInfo = itypeinfo(self);
+    return ole_variables(pTypeInfo);
+}
+            </pre> 
+            </div><!-- variables-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- variables-method -->
+      
+        <div id="visible-3F-method" class="method-detail ">
+          <a name="method-i-visible-3F"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">WIN32OLE_TYPE#visible?  #=> true or false</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns true if the OLE class is public.</p>
+
+<pre class="ruby"><span class="ruby-identifier">tobj</span> = <span class="ruby-constant">WIN32OLE_TYPE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;Microsoft Excel 9.0 Object Library&#39;</span>, <span class="ruby-string">&#39;Application&#39;</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">tobj</span>.<span class="ruby-identifier">visible</span>  <span class="ruby-comment"># =&gt; true</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="visible-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+foletype_visible(VALUE self)
+{
+    ITypeInfo *pTypeInfo = itypeinfo(self);
+    return ole_type_visible(pTypeInfo);
+}
+            </pre> 
+            </div><!-- visible-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- visible-3F-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_WIN32OLE_TYPE_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_WIN32OLE_TYPE_versioned").load("/associated/2.7.4/WIN32OLE_TYPE.ihtml");</script> <div id='tx_WIN32OLE_TYPE' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_WIN32OLE_TYPE").load("/associated/WIN32OLE_TYPE.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, an erratic source of art, music, and technology.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_WIN32OLE_TYPE.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_WIN32OLE_TYPE.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

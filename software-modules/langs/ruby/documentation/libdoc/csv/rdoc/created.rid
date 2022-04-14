@@ -1,0 +1,12 @@
+Wed, 08 Dec 2021 17:17:48 -0700
+csv.rb	Wed, 07 Jul 2021 03:48:22 -0700
+csv/core_ext/array.rb	Wed, 07 Jul 2021 03:48:22 -0700
+csv/core_ext/string.rb	Wed, 07 Jul 2021 03:48:22 -0700
+csv/delete_suffix.rb	Wed, 07 Jul 2021 03:48:22 -0700
+csv/fields_converter.rb	Wed, 07 Jul 2021 03:48:22 -0700
+csv/match_p.rb	Wed, 07 Jul 2021 03:48:22 -0700
+csv/parser.rb	Wed, 07 Jul 2021 03:48:22 -0700
+csv/row.rb	Wed, 07 Jul 2021 03:48:22 -0700
+csv/table.rb	Wed, 07 Jul 2021 03:48:22 -0700
+csv/version.rb	Wed, 07 Jul 2021 03:48:22 -0700
+csv/writer.rb	Wed, 07 Jul 2021 03:48:22 -0700

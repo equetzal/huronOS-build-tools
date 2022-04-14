@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : Dir  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:33:38 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = ''  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = ''  --> 
+  <title>Class: Dir (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href=".css/obf.css"  -->
+  <link rel="stylesheet" href="css/inuit.css" >
+  <link rel="stylesheet" href="css/grid.inuit.css" >
+  <link rel="stylesheet" href="css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="css/carbon17.css" type="text/css" >
+
+
+  <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="/js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>tmpdir.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-mktmpdir">::mktmpdir</a></li>
+          
+          <li><a href="#method-c-tmpdir">::tmpdir</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="./Dir.html">Dir</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">Dir</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="mktmpdir-method" class="method-detail ">
+          <a name="method-c-mktmpdir"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">mktmpdir</span><span
+              class="method-args">(prefix_suffix=nil, *rest, **options)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p><a href="Dir.html#method-c-mktmpdir"><code>Dir.mktmpdir</code></a> creates a temporary directory.</p>
+
+<p>The directory is created with 0700 permission. Application should not change the permission to make the temporary directory accessible from other users.</p>
+
+<p>The prefix and suffix of the name of the directory is specified by the optional first argument, <em>prefix_suffix</em>.</p>
+<ul><li>
+<p>If it is not specified or nil, “d” is used as the prefix and no suffix is used.</p>
+</li><li>
+<p>If it is a string, it is used as the prefix and no suffix is used.</p>
+</li><li>
+<p>If it is an array, first element is used as the prefix and second element is used as a suffix.</p>
+</li></ul>
+
+<pre class="ruby"><span class="ruby-constant">Dir</span>.<span class="ruby-identifier">mktmpdir</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span> <span class="ruby-identifier">dir</span> <span class="ruby-identifier">is</span> <span class="ruby-string">&quot;.../d...&quot;</span> }
+<span class="ruby-constant">Dir</span>.<span class="ruby-identifier">mktmpdir</span>(<span class="ruby-string">&quot;foo&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span> <span class="ruby-identifier">dir</span> <span class="ruby-identifier">is</span> <span class="ruby-string">&quot;.../foo...&quot;</span> }
+<span class="ruby-constant">Dir</span>.<span class="ruby-identifier">mktmpdir</span>([<span class="ruby-string">&quot;foo&quot;</span>, <span class="ruby-string">&quot;bar&quot;</span>]) {<span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span> <span class="ruby-identifier">dir</span> <span class="ruby-identifier">is</span> <span class="ruby-string">&quot;.../foo...bar&quot;</span> }
+</pre>
+
+<p>The directory is created under <a href="Dir.html#method-c-tmpdir"><code>Dir.tmpdir</code></a> or the optional second argument <em>tmpdir</em> if non-nil value is given.</p>
+
+<pre class="ruby"><span class="ruby-constant">Dir</span>.<span class="ruby-identifier">mktmpdir</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span> <span class="ruby-identifier">dir</span> <span class="ruby-identifier">is</span> <span class="ruby-node">&quot;#{Dir.tmpdir}/d...&quot;</span> }
+<span class="ruby-constant">Dir</span>.<span class="ruby-identifier">mktmpdir</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-string">&quot;/var/tmp&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span> <span class="ruby-identifier">dir</span> <span class="ruby-identifier">is</span> <span class="ruby-string">&quot;/var/tmp/d...&quot;</span> }
+</pre>
+
+<p>If a block is given, it is yielded with the path of the directory. The directory and its contents are removed using FileUtils.remove_entry before <a href="Dir.html#method-c-mktmpdir"><code>Dir.mktmpdir</code></a> returns. The value of the block is returned.</p>
+
+<pre>Dir.mktmpdir {|dir|
+  # use the directory...
+  open(&quot;#{dir}/foo&quot;, &quot;w&quot;) { ... }
+}</pre>
+
+<p>If a block is not given, The path of the directory is returned. In this case, <a href="Dir.html#method-c-mktmpdir"><code>Dir.mktmpdir</code></a> doesn&#39;t remove the directory.</p>
+
+<pre>dir = Dir.mktmpdir
+begin
+  # use the directory...
+  open(&quot;#{dir}/foo&quot;, &quot;w&quot;) { ... }
+ensure
+  # remove the directory.
+  FileUtils.remove_entry dir
+end</pre>
+            
+
+            
+            <div class="method-source-code" id="mktmpdir-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File tmpdir.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">mktmpdir</span>(<span class="ruby-identifier">prefix_suffix</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">rest</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">base</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">path</span> = <span class="ruby-constant">Tmpname</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">prefix_suffix</span> <span class="ruby-operator">||</span> <span class="ruby-string">&quot;d&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">rest</span>, <span class="ruby-operator">**</span><span class="ruby-identifier">options</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">path</span>, <span class="ruby-identifier">_</span>, <span class="ruby-identifier">_</span>, <span class="ruby-identifier">d</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">base</span> = <span class="ruby-identifier">d</span>
+    <span class="ruby-identifier">mkdir</span>(<span class="ruby-identifier">path</span>, <span class="ruby-value">0700</span>)
+  }
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-keyword">yield</span> <span class="ruby-identifier">path</span>.<span class="ruby-identifier">dup</span>
+    <span class="ruby-keyword">ensure</span>
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">base</span>
+        <span class="ruby-identifier">stat</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">path</span>))
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">world_writable?</span> <span class="ruby-keyword">and</span> <span class="ruby-operator">!</span><span class="ruby-identifier">stat</span>.<span class="ruby-identifier">sticky?</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;parent directory is world writable but not sticky&quot;</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">remove_entry</span> <span class="ruby-identifier">path</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">path</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- mktmpdir-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- mktmpdir-method -->
+      
+        <div id="tmpdir-method" class="method-detail ">
+          <a name="method-c-tmpdir"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">tmpdir</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns the operating system&#39;s temporary file path.</p>
+            
+
+            
+            <div class="method-source-code" id="tmpdir-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File tmpdir.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">tmpdir</span>
+  <span class="ruby-identifier">tmp</span> = <span class="ruby-keyword">nil</span>
+  [<span class="ruby-constant">ENV</span>[<span class="ruby-string">&#39;TMPDIR&#39;</span>], <span class="ruby-constant">ENV</span>[<span class="ruby-string">&#39;TMP&#39;</span>], <span class="ruby-constant">ENV</span>[<span class="ruby-string">&#39;TEMP&#39;</span>], <span class="ruby-identifier">@@systmpdir</span>, <span class="ruby-string">&#39;/tmp&#39;</span>, <span class="ruby-string">&#39;.&#39;</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">dir</span>
+    <span class="ruby-identifier">dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">dir</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">stat</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-identifier">dir</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">writable?</span> <span class="ruby-keyword">and</span>
+        (<span class="ruby-operator">!</span><span class="ruby-identifier">stat</span>.<span class="ruby-identifier">world_writable?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">sticky?</span>)
+      <span class="ruby-identifier">tmp</span> = <span class="ruby-identifier">dir</span>
+      <span class="ruby-keyword">break</span>
+    <span class="ruby-keyword">end</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;could not find a temporary directory&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">tmp</span>
+  <span class="ruby-identifier">tmp</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- tmpdir-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- tmpdir-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Dir_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Dir_versioned").load("/associated/2.7.4/Dir.ihtml");</script> <div id='tx_Dir' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Dir").load("/associated/Dir.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, an erratic source of art, music, and technology.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Dir.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Dir.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

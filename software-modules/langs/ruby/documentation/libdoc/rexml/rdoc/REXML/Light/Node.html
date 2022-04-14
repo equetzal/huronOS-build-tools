@@ -1,0 +1,1417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : REXML::Light::Node  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:29:34 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '../..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '../..'   asset_rel_prefix = '../..'  --> 
+  <title>Class: REXML::Light::Node (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="../..css/obf.css"  -->
+  <link rel="stylesheet" href="../../css/inuit.css" >
+  <link rel="stylesheet" href="../../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../../css/carbon17.css" type="text/css" >
+
+
+  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>rexml/light/node.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="../../Object.html">Object</a></p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-3C-3C">#<<</a></li>
+          
+          <li><a href="#method-i-3D~">#=~</a></li>
+          
+          <li><a href="#method-i-5B-5D">#[]</a></li>
+          
+          <li><a href="#method-i-5B-5D-3D">#[]=</a></li>
+          
+          <li><a href="#method-i-children">#children</a></li>
+          
+          <li><a href="#method-i-each">#each</a></li>
+          
+          <li><a href="#method-i-has_name-3F">#has_name?</a></li>
+          
+          <li><a href="#method-i-local_name">#local_name</a></li>
+          
+          <li><a href="#method-i-local_name-3D">#local_name=</a></li>
+          
+          <li><a href="#method-i-name">#name</a></li>
+          
+          <li><a href="#method-i-name-3D">#name=</a></li>
+          
+          <li><a href="#method-i-namespace">#namespace</a></li>
+          
+          <li><a href="#method-i-namespace-3D">#namespace=</a></li>
+          
+          <li><a href="#method-i-node_type">#node_type</a></li>
+          
+          <li><a href="#method-i-parent">#parent</a></li>
+          
+          <li><a href="#method-i-parent-3D">#parent=</a></li>
+          
+          <li><a href="#method-i-prefix">#prefix</a></li>
+          
+          <li><a href="#method-i-root">#root</a></li>
+          
+          <li><a href="#method-i-size">#size</a></li>
+          
+          <li><a href="#method-i-text-3D">#text=</a></li>
+          
+          <li><a href="#method-i-to_s">#to_s</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../../Array.html">Array</a></li>
+        
+          
+          
+          <li><a href="../../Float.html">Float</a></li>
+        
+          
+          
+          <li><a href="../../Integer.html">Integer</a></li>
+        
+          
+          
+          <li><a href="../../Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="../../REXML.html">REXML</a></li>
+        
+          
+          
+          <li><a href="../../REXML/AttlistDecl.html">REXML::AttlistDecl</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Attribute.html">REXML::Attribute</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Attributes.html">REXML::Attributes</a></li>
+        
+          
+          
+          <li><a href="../../REXML/CData.html">REXML::CData</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Child.html">REXML::Child</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Comment.html">REXML::Comment</a></li>
+        
+          
+          
+          <li><a href="../../REXML/DTD.html">REXML::DTD</a></li>
+        
+          
+          
+          <li><a href="../../REXML/DTD/AttlistDecl.html">REXML::DTD::AttlistDecl</a></li>
+        
+          
+          
+          <li><a href="../../REXML/DTD/ElementDecl.html">REXML::DTD::ElementDecl</a></li>
+        
+          
+          
+          <li><a href="../../REXML/DTD/EntityDecl.html">REXML::DTD::EntityDecl</a></li>
+        
+          
+          
+          <li><a href="../../REXML/DTD/NotationDecl.html">REXML::DTD::NotationDecl</a></li>
+        
+          
+          
+          <li><a href="../../REXML/DTD/Parser.html">REXML::DTD::Parser</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Declaration.html">REXML::Declaration</a></li>
+        
+          
+          
+          <li><a href="../../REXML/DocType.html">REXML::DocType</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Document.html">REXML::Document</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Element.html">REXML::Element</a></li>
+        
+          
+          
+          <li><a href="../../REXML/ElementDecl.html">REXML::ElementDecl</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Elements.html">REXML::Elements</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Encoding.html">REXML::Encoding</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Entity.html">REXML::Entity</a></li>
+        
+          
+          
+          <li><a href="../../REXML/EntityConst.html">REXML::EntityConst</a></li>
+        
+          
+          
+          <li><a href="../../REXML/ExternalEntity.html">REXML::ExternalEntity</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Formatters.html">REXML::Formatters</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Formatters/Default.html">REXML::Formatters::Default</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Formatters/Pretty.html">REXML::Formatters::Pretty</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Formatters/Transitive.html">REXML::Formatters::Transitive</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Functions.html">REXML::Functions</a></li>
+        
+          
+          
+          <li><a href="../../REXML/IOSource.html">REXML::IOSource</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Instruction.html">REXML::Instruction</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Light.html">REXML::Light</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Light/Node.html">REXML::Light::Node</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Namespace.html">REXML::Namespace</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Node.html">REXML::Node</a></li>
+        
+          
+          
+          <li><a href="../../REXML/NotationDecl.html">REXML::NotationDecl</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Output.html">REXML::Output</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Parent.html">REXML::Parent</a></li>
+        
+          
+          
+          <li><a href="../../REXML/ParseException.html">REXML::ParseException</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Parsers.html">REXML::Parsers</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Parsers/BaseParser.html">REXML::Parsers::BaseParser</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Parsers/LightParser.html">REXML::Parsers::LightParser</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Parsers/PullEvent.html">REXML::Parsers::PullEvent</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Parsers/PullParser.html">REXML::Parsers::PullParser</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Parsers/SAX2Parser.html">REXML::Parsers::SAX2Parser</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Parsers/StreamParser.html">REXML::Parsers::StreamParser</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Parsers/TreeParser.html">REXML::Parsers::TreeParser</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Parsers/UltraLightParser.html">REXML::Parsers::UltraLightParser</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Parsers/XPathParser.html">REXML::Parsers::XPathParser</a></li>
+        
+          
+          
+          <li><a href="../../REXML/QuickPath.html">REXML::QuickPath</a></li>
+        
+          
+          
+          <li><a href="../../REXML/ReferenceWriter.html">REXML::ReferenceWriter</a></li>
+        
+          
+          
+          <li><a href="../../REXML/SAX2Listener.html">REXML::SAX2Listener</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Security.html">REXML::Security</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Source.html">REXML::Source</a></li>
+        
+          
+          
+          <li><a href="../../REXML/SourceFactory.html">REXML::SourceFactory</a></li>
+        
+          
+          
+          <li><a href="../../REXML/StreamListener.html">REXML::StreamListener</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Text.html">REXML::Text</a></li>
+        
+          
+          
+          <li><a href="../../REXML/UndefinedNamespaceException.html">REXML::UndefinedNamespaceException</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Validation.html">REXML::Validation</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Validation/Choice.html">REXML::Validation::Choice</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Validation/Event.html">REXML::Validation::Event</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Validation/Interleave.html">REXML::Validation::Interleave</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Validation/OneOrMore.html">REXML::Validation::OneOrMore</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Validation/Optional.html">REXML::Validation::Optional</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Validation/Ref.html">REXML::Validation::Ref</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Validation/RelaxNG.html">REXML::Validation::RelaxNG</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Validation/Sequence.html">REXML::Validation::Sequence</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Validation/State.html">REXML::Validation::State</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Validation/ValidationException.html">REXML::Validation::ValidationException</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Validation/Validator.html">REXML::Validation::Validator</a></li>
+        
+          
+          
+          <li><a href="../../REXML/Validation/ZeroOrMore.html">REXML::Validation::ZeroOrMore</a></li>
+        
+          
+          
+          <li><a href="../../REXML/XMLDecl.html">REXML::XMLDecl</a></li>
+        
+          
+          
+          <li><a href="../../REXML/XMLTokens.html">REXML::XMLTokens</a></li>
+        
+          
+          
+          <li><a href="../../REXML/XPath.html">REXML::XPath</a></li>
+        
+          
+          
+          <li><a href="../../REXML/XPathNode.html">REXML::XPathNode</a></li>
+        
+          
+          
+          <li><a href="../../REXML/XPathParser.html">REXML::XPathParser</a></li>
+        
+          
+          
+          <li><a href="../../Symbol.html">Symbol</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">REXML::Light::Node</h1>
+
+    <div id="description" class="description">
+      
+<p>Represents a tagged XML element.  <a href="../Elements.html"><code>Elements</code></a> are characterized by having children, attributes, and names, and can themselves be children.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="NAMESPLIT">NAMESPLIT</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="PARENTS">PARENTS</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(node=nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Create a new element.</p>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rexml/light/node.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span> <span class="ruby-identifier">node</span>=<span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@node</span> = <span class="ruby-identifier">node</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">String</span>
+    <span class="ruby-identifier">node</span> = [ <span class="ruby-value">:text</span>, <span class="ruby-identifier">node</span> ]
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">node</span> = [ <span class="ruby-value">:document</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span> ]
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">node</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-value">:start_element</span>
+    <span class="ruby-identifier">node</span>[<span class="ruby-value">0</span>] = <span class="ruby-value">:element</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">node</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-value">:start_doctype</span>
+    <span class="ruby-identifier">node</span>[<span class="ruby-value">0</span>] = <span class="ruby-value">:doctype</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">node</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-value">:start_document</span>
+    <span class="ruby-identifier">node</span>[<span class="ruby-value">0</span>] = <span class="ruby-value">:document</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="3C-3C-method" class="method-detail ">
+          <a name="method-i-3C-3C"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">&lt;&lt;</span><span
+              class="method-args">(element)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Append a child to this element, optionally under a provided namespace. The namespace argument is ignored if the element argument is an <a href="../Element.html"><code>Element</code></a> object.  Otherwise, the element argument is a string, the namespace (if provided) is the namespace the element is created in.</p>
+            
+
+            
+            <div class="method-source-code" id="3C-3C-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rexml/light/node.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;&lt;</span> <span class="ruby-identifier">element</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">node_type</span>() <span class="ruby-operator">==</span> <span class="ruby-value">:text</span>
+    <span class="ruby-identifier">at</span>(<span class="ruby-value">-1</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">element</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">newnode</span> = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>( <span class="ruby-identifier">element</span> )
+    <span class="ruby-identifier">newnode</span>.<span class="ruby-identifier">parent</span> = <span class="ruby-keyword">self</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">push</span>( <span class="ruby-identifier">newnode</span> )
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">at</span>(<span class="ruby-value">-1</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 3C-3C-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 3C-3C-method -->
+      
+        <div id="3D~-method" class="method-detail ">
+          <a name="method-i-3D~"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">=~</span><span
+              class="method-args">( path )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="3D~-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rexml/light/node.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">=~</span>( <span class="ruby-identifier">path</span> )
+  <span class="ruby-constant">XPath</span>.<span class="ruby-identifier">match</span>( <span class="ruby-keyword">self</span>, <span class="ruby-identifier">path</span> )
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 3D~-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 3D~-method -->
+      
+        <div id="5B-5D-method" class="method-detail ">
+          <a name="method-i-5B-5D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">[]</span><span
+              class="method-args">( reference, ns=nil )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="5B-5D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rexml/light/node.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]</span>( <span class="ruby-identifier">reference</span>, <span class="ruby-identifier">ns</span>=<span class="ruby-keyword">nil</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">reference</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">String</span>
+    <span class="ruby-identifier">pfx</span> = <span class="ruby-string">&#39;&#39;</span>
+    <span class="ruby-identifier">pfx</span> = <span class="ruby-node">&quot;#{prefix(ns)}:&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ns</span>
+    <span class="ruby-identifier">at</span>(<span class="ruby-value">3</span>)[<span class="ruby-node">&quot;#{pfx}#{reference}&quot;</span>]
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">reference</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Range</span>
+    <span class="ruby-identifier">_old_get</span>( <span class="ruby-constant">Range</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">4</span><span class="ruby-operator">+</span><span class="ruby-identifier">reference</span>.<span class="ruby-identifier">begin</span>, <span class="ruby-identifier">reference</span>.<span class="ruby-identifier">end</span>, <span class="ruby-identifier">reference</span>.<span class="ruby-identifier">exclude_end?</span>) )
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">_old_get</span>( <span class="ruby-value">4</span><span class="ruby-operator">+</span><span class="ruby-identifier">reference</span> )
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 5B-5D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 5B-5D-method -->
+      
+        <div id="5B-5D-3D-method" class="method-detail ">
+          <a name="method-i-5B-5D-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">[]=</span><span
+              class="method-args">( reference, ns, value=nil )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Doesn&#39;t handle namespaces yet</p>
+            
+
+            
+            <div class="method-source-code" id="5B-5D-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rexml/light/node.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]=</span>( <span class="ruby-identifier">reference</span>, <span class="ruby-identifier">ns</span>, <span class="ruby-identifier">value</span>=<span class="ruby-keyword">nil</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">reference</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">String</span>
+    <span class="ruby-identifier">value</span> = <span class="ruby-identifier">ns</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-identifier">at</span>( <span class="ruby-value">3</span> )[<span class="ruby-identifier">reference</span>] = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">reference</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Range</span>
+    <span class="ruby-identifier">_old_put</span>( <span class="ruby-constant">Range</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span><span class="ruby-operator">+</span><span class="ruby-identifier">reference</span>.<span class="ruby-identifier">begin</span>, <span class="ruby-identifier">reference</span>.<span class="ruby-identifier">end</span>, <span class="ruby-identifier">reference</span>.<span class="ruby-identifier">exclude_end?</span>), <span class="ruby-identifier">ns</span> )
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>
+      <span class="ruby-identifier">_old_put</span>( <span class="ruby-value">4</span><span class="ruby-operator">+</span><span class="ruby-identifier">reference</span>, <span class="ruby-identifier">ns</span>, <span class="ruby-identifier">value</span> )
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">_old_put</span>( <span class="ruby-value">4</span><span class="ruby-operator">+</span><span class="ruby-identifier">reference</span>, <span class="ruby-identifier">ns</span> )
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 5B-5D-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 5B-5D-3D-method -->
+      
+        <div id="children-method" class="method-detail ">
+          <a name="method-i-children"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">children</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="children-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rexml/light/node.rb, line 151</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">children</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- children-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- children-method -->
+      
+        <div id="each-method" class="method-detail ">
+          <a name="method-i-each"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">each</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="each-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rexml/light/node.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span>
+  <span class="ruby-identifier">size</span>.<span class="ruby-identifier">times</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-keyword">yield</span>( <span class="ruby-identifier">at</span>(<span class="ruby-identifier">x</span><span class="ruby-value">+4</span>) ) }
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- each-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- each-method -->
+      
+        <div id="has_name-3F-method" class="method-detail ">
+          <a name="method-i-has_name-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">has_name?</span><span
+              class="method-args">( name, namespace = '' )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="has_name-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rexml/light/node.rb, line 147</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">has_name?</span>( <span class="ruby-identifier">name</span>, <span class="ruby-identifier">namespace</span> = <span class="ruby-string">&#39;&#39;</span> )
+  <span class="ruby-identifier">at</span>(<span class="ruby-value">3</span>) <span class="ruby-operator">==</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">namespace</span>() <span class="ruby-operator">==</span> <span class="ruby-identifier">namespace</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- has_name-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- has_name-3F-method -->
+      
+        <div id="local_name-method" class="method-detail ">
+          <a name="method-i-local_name"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">local_name</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="local_name-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rexml/light/node.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">local_name</span>
+  <span class="ruby-identifier">namesplit</span>
+  <span class="ruby-ivar">@name</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- local_name-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- local_name-method -->
+      
+        <div id="local_name-3D-method" class="method-detail ">
+          <a name="method-i-local_name-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">local_name=</span><span
+              class="method-args">( name_str )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="local_name-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rexml/light/node.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">local_name=</span>( <span class="ruby-identifier">name_str</span> )
+  <span class="ruby-identifier">_old_put</span>( <span class="ruby-value">1</span>, <span class="ruby-node">&quot;#@prefix:#{name_str}&quot;</span> )
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- local_name-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- local_name-3D-method -->
+      
+        <div id="name-method" class="method-detail ">
+          <a name="method-i-name"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">name</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="name-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rexml/light/node.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">name</span>
+  <span class="ruby-identifier">at</span>(<span class="ruby-value">2</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- name-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- name-method -->
+      
+        <div id="name-3D-method" class="method-detail ">
+          <a name="method-i-name-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">name=</span><span
+              class="method-args">( name_str, ns=nil )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="name-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rexml/light/node.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">name=</span>( <span class="ruby-identifier">name_str</span>, <span class="ruby-identifier">ns</span>=<span class="ruby-keyword">nil</span> )
+  <span class="ruby-identifier">pfx</span> = <span class="ruby-string">&#39;&#39;</span>
+  <span class="ruby-identifier">pfx</span> = <span class="ruby-node">&quot;#{prefix(ns)}:&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ns</span>
+  <span class="ruby-identifier">_old_put</span>(<span class="ruby-value">2</span>, <span class="ruby-node">&quot;#{pfx}#{name_str}&quot;</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- name-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- name-3D-method -->
+      
+        <div id="namespace-method" class="method-detail ">
+          <a name="method-i-namespace"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">namespace</span><span
+              class="method-args">( prefix=prefix() )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="namespace-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rexml/light/node.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">namespace</span>( <span class="ruby-identifier">prefix</span>=<span class="ruby-identifier">prefix</span>() )
+  <span class="ruby-identifier">namespace_of</span>( <span class="ruby-keyword">self</span>, <span class="ruby-identifier">prefix</span> )
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- namespace-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- namespace-method -->
+      
+        <div id="namespace-3D-method" class="method-detail ">
+          <a name="method-i-namespace-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">namespace=</span><span
+              class="method-args">( namespace )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="namespace-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rexml/light/node.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">namespace=</span>( <span class="ruby-identifier">namespace</span> )
+  <span class="ruby-ivar">@prefix</span> = <span class="ruby-identifier">prefix</span>( <span class="ruby-identifier">namespace</span> )
+  <span class="ruby-identifier">pfx</span> = <span class="ruby-string">&#39;&#39;</span>
+  <span class="ruby-identifier">pfx</span> = <span class="ruby-string">&quot;#@prefix:&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@prefix</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+  <span class="ruby-identifier">_old_put</span>(<span class="ruby-value">1</span>, <span class="ruby-node">&quot;#{pfx}#@name&quot;</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- namespace-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- namespace-3D-method -->
+      
+        <div id="node_type-method" class="method-detail ">
+          <a name="method-i-node_type"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">node_type</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="node_type-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rexml/light/node.rb, line 133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">node_type</span>
+  <span class="ruby-identifier">_old_get</span>(<span class="ruby-value">0</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- node_type-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- node_type-method -->
+      
+        <div id="parent-method" class="method-detail ">
+          <a name="method-i-parent"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">parent</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="parent-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rexml/light/node.rb, line 155</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parent</span>
+  <span class="ruby-identifier">at</span>(<span class="ruby-value">1</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- parent-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- parent-method -->
+      
+        <div id="parent-3D-method" class="method-detail ">
+          <a name="method-i-parent-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">parent=</span><span
+              class="method-args">( node )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="parent-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rexml/light/node.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parent=</span>( <span class="ruby-identifier">node</span> )
+  <span class="ruby-identifier">_old_put</span>(<span class="ruby-value">1</span>,<span class="ruby-identifier">node</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- parent-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- parent-3D-method -->
+      
+        <div id="prefix-method" class="method-detail ">
+          <a name="method-i-prefix"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">prefix</span><span
+              class="method-args">( namespace=nil )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="prefix-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rexml/light/node.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">prefix</span>( <span class="ruby-identifier">namespace</span>=<span class="ruby-keyword">nil</span> )
+  <span class="ruby-identifier">prefix_of</span>( <span class="ruby-keyword">self</span>, <span class="ruby-identifier">namespace</span> )
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- prefix-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- prefix-method -->
+      
+        <div id="root-method" class="method-detail ">
+          <a name="method-i-root"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">root</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="root-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rexml/light/node.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">root</span>
+  <span class="ruby-identifier">context</span> = <span class="ruby-keyword">self</span>
+  <span class="ruby-identifier">context</span> = <span class="ruby-identifier">context</span>.<span class="ruby-identifier">at</span>(<span class="ruby-value">1</span>) <span class="ruby-keyword">while</span> <span class="ruby-identifier">context</span>.<span class="ruby-identifier">at</span>(<span class="ruby-value">1</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- root-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- root-method -->
+      
+        <div id="size-method" class="method-detail ">
+          <a name="method-i-size"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">size</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="size-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rexml/light/node.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">size</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">PARENTS</span>.<span class="ruby-identifier">include?</span> <span class="ruby-ivar">@node</span>[<span class="ruby-value">0</span>]
+    <span class="ruby-ivar">@node</span>[<span class="ruby-value">-1</span>].<span class="ruby-identifier">size</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-value">0</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- size-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- size-method -->
+      
+        <div id="text-3D-method" class="method-detail ">
+          <a name="method-i-text-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">text=</span><span
+              class="method-args">( foo )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="text-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rexml/light/node.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">text=</span>( <span class="ruby-identifier">foo</span> )
+  <span class="ruby-identifier">replace</span> = <span class="ruby-identifier">at</span>(<span class="ruby-value">4</span>).<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)<span class="ruby-operator">?</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">_old_put</span>(<span class="ruby-value">4</span>,<span class="ruby-identifier">replace</span>, <span class="ruby-identifier">normalizefoo</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- text-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- text-3D-method -->
+      
+        <div id="to_s-method" class="method-detail ">
+          <a name="method-i-to_s"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_s</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="to_s-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rexml/light/node.rb, line 159</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
+
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- to_s-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_s-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Node_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Node_versioned").load("/associated/2.7.4/Node.ihtml");</script> <div id='tx_Node' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Node").load("/associated/Node.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, an erratic source of art, music, and technology.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Node.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Node.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

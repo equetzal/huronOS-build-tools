@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Module : Rake  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:28:22 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = ''  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = ''  --> 
+  <title>Module: Rake (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href=".css/obf.css"  -->
+  <link rel="stylesheet" href="css/inuit.css" >
+  <link rel="stylesheet" href="css/grid.inuit.css" >
+  <link rel="stylesheet" href="css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="css/carbon17.css" type="text/css" >
+
+
+  <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="/js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="module rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>rake-13.0.1/lib/rake.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/application.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/backtrace.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/clean.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/cloneable.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/cpu_counter.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/default_loader.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/dsl_definition.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/early_time.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/file_creation_task.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/file_list.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/file_task.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/file_utils.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/file_utils_ext.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/invocation_chain.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/invocation_exception_mixin.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/late_time.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/linked_list.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/loaders/makefile.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/multi_task.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/name_space.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/packagetask.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/phony.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/private_reader.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/promise.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/pseudo_status.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/rake_module.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/rule_recursion_overflow_error.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/scope.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/task.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/task_argument_error.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/task_arguments.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/task_manager.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/tasklib.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/testtask.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/thread_history_display.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/thread_pool.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/trace_output.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/version.rb</li>      
+            
+          
+          <li class='in-file'>rake-13.0.1/lib/rake/win32.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">MODULE</span> <a href="Rake/Cleaner.html">Rake::Cleaner</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Rake/DSL.html">Rake::DSL</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Rake/FileUtilsExt.html">Rake::FileUtilsExt</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Rake/InvocationExceptionMixin.html">Rake::InvocationExceptionMixin</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Rake/PrivateReader.html">Rake::PrivateReader</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Rake/FileUtilsExt.html">Rake::RakeFileUtils</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Rake/TaskManager.html">Rake::TaskManager</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="Rake/Win32.html">Rake::Win32</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Rake/Application.html">Rake::Application</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Rake/DefaultLoader.html">Rake::DefaultLoader</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Rake/EarlyTime.html">Rake::EarlyTime</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Rake/FileCreationTask.html">Rake::FileCreationTask</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Rake/FileList.html">Rake::FileList</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Rake/FileTask.html">Rake::FileTask</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Rake/InvocationChain.html">Rake::InvocationChain</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Rake/LateTime.html">Rake::LateTime</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Rake/LinkedList.html">Rake::LinkedList</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Rake/MakefileLoader.html">Rake::MakefileLoader</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Rake/MultiTask.html">Rake::MultiTask</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Rake/NameSpace.html">Rake::NameSpace</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Rake/PackageTask.html">Rake::PackageTask</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Rake/RuleRecursionOverflowError.html">Rake::RuleRecursionOverflowError</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Rake/Scope.html">Rake::Scope</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Rake/Task.html">Rake::Task</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Rake/TaskArgumentError.html">Rake::TaskArgumentError</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Rake/TaskArguments.html">Rake::TaskArguments</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Rake/TaskLib.html">Rake::TaskLib</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Rake/TestTask.html">Rake::TestTask</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-add_rakelib">::add_rakelib</a></li>
+          
+          <li><a href="#method-c-application">::application</a></li>
+          
+          <li><a href="#method-c-application-3D">::application=</a></li>
+          
+          <li><a href="#method-c-load_rakefile">::load_rakefile</a></li>
+          
+          <li><a href="#method-c-original_dir">::original_dir</a></li>
+          
+          <li><a href="#method-c-with_application">::with_application</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul id='files'>
+        
+          
+          <li class="file"><a href="./rake-13_0_1/CONTRIBUTING_rdoc.html">CONTRIBUTING.rdoc</a></li>
+        
+          
+          <li class="file"><a href="./rake-13_0_1/History_rdoc.html">History.rdoc</a></li>
+        
+          
+          <li class="file"><a href="./rake-13_0_1/README_rdoc.html">README.rdoc</a></li>
+        
+          
+          <li class="file"><a href="./rake-13_0_1/doc/command_line_usage_rdoc.html">command_line_usage.rdoc</a></li>
+        
+          
+          <li class="file"><a href="./rake-13_0_1/doc/glossary_rdoc.html">glossary.rdoc</a></li>
+        
+          
+          <li class="file"><a href="./rake-13_0_1/doc/proto_rake_rdoc.html">proto_rake.rdoc</a></li>
+        
+          
+          <li class="file"><a href="./rake-13_0_1/doc/rakefile_rdoc.html">rakefile.rdoc</a></li>
+        
+          
+          <li class="file"><a href="./rake-13_0_1/doc/rational_rdoc.html">rational.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="./FileUtils.html">FileUtils</a></li>
+        
+          
+          
+          <li><a href="./Module.html">Module</a></li>
+        
+          
+          
+          <li><a href="./Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="./RDoc.html">RDoc</a></li>
+        
+          
+          
+          <li><a href="./RDoc/Page.html">RDoc::Page</a></li>
+        
+          
+          
+          <li><a href="./Rake/Application.html">Rake::Application</a></li>
+        
+          
+          
+          <li><a href="./Rake/DSL.html">Rake::DSL</a></li>
+        
+          
+          
+          <li><a href="./Rake/DefaultLoader.html">Rake::DefaultLoader</a></li>
+        
+          
+          
+          <li><a href="./Rake/EarlyTime.html">Rake::EarlyTime</a></li>
+        
+          
+          
+          <li><a href="./Rake/FileCreationTask.html">Rake::FileCreationTask</a></li>
+        
+          
+          
+          <li><a href="./Rake/FileList.html">Rake::FileList</a></li>
+        
+          
+          
+          <li><a href="./Rake/FileTask.html">Rake::FileTask</a></li>
+        
+          
+          
+          <li><a href="./Rake/FileUtilsExt.html">Rake::FileUtilsExt</a></li>
+        
+          
+          
+          <li><a href="./Rake/InvocationChain.html">Rake::InvocationChain</a></li>
+        
+          
+          
+          <li><a href="./Rake/InvocationChain/EmptyInvocationChain.html">Rake::InvocationChain::EmptyInvocationChain</a></li>
+        
+          
+          
+          <li><a href="./Rake/InvocationExceptionMixin.html">Rake::InvocationExceptionMixin</a></li>
+        
+          
+          
+          <li><a href="./Rake/LateTime.html">Rake::LateTime</a></li>
+        
+          
+          
+          <li><a href="./Rake/LinkedList.html">Rake::LinkedList</a></li>
+        
+          
+          
+          <li><a href="./Rake/LinkedList/EmptyLinkedList.html">Rake::LinkedList::EmptyLinkedList</a></li>
+        
+          
+          
+          <li><a href="./Rake/MakefileLoader.html">Rake::MakefileLoader</a></li>
+        
+          
+          
+          <li><a href="./Rake/MultiTask.html">Rake::MultiTask</a></li>
+        
+          
+          
+          <li><a href="./Rake/NameSpace.html">Rake::NameSpace</a></li>
+        
+          
+          
+          <li><a href="./Rake/PackageTask.html">Rake::PackageTask</a></li>
+        
+          
+          
+          <li><a href="./Rake/PrivateReader.html">Rake::PrivateReader</a></li>
+        
+          
+          
+          <li><a href="./Rake/FileUtilsExt.html">Rake::RakeFileUtils</a></li>
+        
+          
+          
+          <li><a href="./Rake/RuleRecursionOverflowError.html">Rake::RuleRecursionOverflowError</a></li>
+        
+          
+          
+          <li><a href="./Rake/Scope.html">Rake::Scope</a></li>
+        
+          
+          
+          <li><a href="./Rake/Task.html">Rake::Task</a></li>
+        
+          
+          
+          <li><a href="./Rake/TaskArgumentError.html">Rake::TaskArgumentError</a></li>
+        
+          
+          
+          <li><a href="./Rake/TaskArguments.html">Rake::TaskArguments</a></li>
+        
+          
+          
+          <li><a href="./Rake/TaskLib.html">Rake::TaskLib</a></li>
+        
+          
+          
+          <li><a href="./Rake/TaskManager.html">Rake::TaskManager</a></li>
+        
+          
+          
+          <li><a href="./Rake/TestTask.html">Rake::TestTask</a></li>
+        
+          
+          
+          <li><a href="./Rake/Win32.html">Rake::Win32</a></li>
+        
+          
+          
+          <li><a href="./String.html">String</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="module">Rake</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="CommandLineOptionError">CommandLineOptionError</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="EARLY">EARLY</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="LATE">LATE</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="RakeFileUtils">RakeFileUtils</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="VERSION">VERSION</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="add_rakelib-method" class="method-detail ">
+          <a name="method-c-add_rakelib"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">add_rakelib</span><span
+              class="method-args">(*files)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Add files to the rakelib list</p>
+            
+
+            
+            <div class="method-source-code" id="add_rakelib-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rake-13.0.1/lib/rake/rake_module.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_rakelib</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">files</span>)
+  <span class="ruby-identifier">application</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">rakelib</span> <span class="ruby-operator">||=</span> []
+  <span class="ruby-identifier">application</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">rakelib</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">files</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- add_rakelib-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- add_rakelib-method -->
+      
+        <div id="application-method" class="method-detail ">
+          <a name="method-c-application"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">application</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Current Rake <a href="Rake/Application.html"><code>Application</code></a></p>
+            
+
+            
+            <div class="method-source-code" id="application-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rake-13.0.1/lib/rake/rake_module.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">application</span>
+  <span class="ruby-ivar">@application</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Rake</span><span class="ruby-operator">::</span><span class="ruby-constant">Application</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- application-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- application-method -->
+      
+        <div id="application-3D-method" class="method-detail ">
+          <a name="method-c-application-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">application=</span><span
+              class="method-args">(app)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Set the current Rake application object.</p>
+            
+
+            
+            <div class="method-source-code" id="application-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rake-13.0.1/lib/rake/rake_module.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">application=</span>(<span class="ruby-identifier">app</span>)
+  <span class="ruby-ivar">@application</span> = <span class="ruby-identifier">app</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- application-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- application-3D-method -->
+      
+        <div id="load_rakefile-method" class="method-detail ">
+          <a name="method-c-load_rakefile"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">load_rakefile</span><span
+              class="method-args">(path)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Load a rakefile.</p>
+            
+
+            
+            <div class="method-source-code" id="load_rakefile-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rake-13.0.1/lib/rake/rake_module.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">load_rakefile</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">load</span>(<span class="ruby-identifier">path</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- load_rakefile-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- load_rakefile-method -->
+      
+        <div id="original_dir-method" class="method-detail ">
+          <a name="method-c-original_dir"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">original_dir</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Return the original directory where the Rake application was started.</p>
+            
+
+            
+            <div class="method-source-code" id="original_dir-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rake-13.0.1/lib/rake/rake_module.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">original_dir</span>
+  <span class="ruby-identifier">application</span>.<span class="ruby-identifier">original_dir</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- original_dir-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- original_dir-method -->
+      
+        <div id="with_application-method" class="method-detail ">
+          <a name="method-c-with_application"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">with_application</span><span
+              class="method-args">(block_application = Rake::Application.new)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Make <code>block_application</code> the default rake application inside a block so you can load rakefiles into a different application.</p>
+
+<p>This is useful when you want to run rake tasks inside a library without running rake in a sub-shell.</p>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span> <span class="ruby-string">&#39;other/directory&#39;</span>
+
+<span class="ruby-identifier">other_rake</span> = <span class="ruby-constant">Rake</span>.<span class="ruby-identifier">with_application</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">rake</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">rake</span>.<span class="ruby-identifier">load_rakefile</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">other_rake</span>.<span class="ruby-identifier">tasks</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="with_application-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rake-13.0.1/lib/rake/rake_module.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">with_application</span>(<span class="ruby-identifier">block_application</span> = <span class="ruby-constant">Rake</span><span class="ruby-operator">::</span><span class="ruby-constant">Application</span>.<span class="ruby-identifier">new</span>)
+  <span class="ruby-identifier">orig_application</span> = <span class="ruby-constant">Rake</span>.<span class="ruby-identifier">application</span>
+
+  <span class="ruby-constant">Rake</span>.<span class="ruby-identifier">application</span> = <span class="ruby-identifier">block_application</span>
+
+  <span class="ruby-keyword">yield</span> <span class="ruby-identifier">block_application</span>
+
+  <span class="ruby-identifier">block_application</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-constant">Rake</span>.<span class="ruby-identifier">application</span> = <span class="ruby-identifier">orig_application</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- with_application-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- with_application-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Rake_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Rake_versioned").load("/associated/2.7.4/Rake.ihtml");</script> <div id='tx_Rake' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Rake").load("/associated/Rake.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, an erratic source of art, music, and technology.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Rake.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Rake.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

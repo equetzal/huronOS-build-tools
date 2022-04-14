@@ -1,0 +1,27 @@
+
+/* associated content */
+.associated a, .associated  a:visited,.associated  a:link {
+  color: #a80101 ! important;
+  font-weight:bold ! important;
+}
+
+.associated {
+  margin: 10px ! important;
+  margin-top: 30px ! important;
+
+  padding: 10px ! important;
+  padding-bottom: 30px ! important;
+
+  background-color: #feffb6 ! important;
+  margin-bottom: 20px ! important;
+
+}
+
+
+#documentation  .associated h3.section-header {
+  margin-top: 0px ! important;
+  background-color: #d4d598 ! important;
+
+}
+
+

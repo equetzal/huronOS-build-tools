@@ -1,0 +1,2225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Module : Bundler::SharedHelpers  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:17:02 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '..'   asset_rel_prefix = '..'  --> 
+  <title>Module: Bundler::SharedHelpers (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="..css/obf.css"  -->
+  <link rel="stylesheet" href="../css/inuit.css" >
+  <link rel="stylesheet" href="../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../css/carbon17.css" type="text/css" >
+
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="module rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>bundler/shared_helpers.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-chdir">#chdir</a></li>
+          
+          <li><a href="#method-i-const_get_safely">#const_get_safely</a></li>
+          
+          <li><a href="#method-i-default_bundle_dir">#default_bundle_dir</a></li>
+          
+          <li><a href="#method-i-default_gemfile">#default_gemfile</a></li>
+          
+          <li><a href="#method-i-default_lockfile">#default_lockfile</a></li>
+          
+          <li><a href="#method-i-digest">#digest</a></li>
+          
+          <li><a href="#method-i-ensure_same_dependencies">#ensure_same_dependencies</a></li>
+          
+          <li><a href="#method-i-filesystem_access">#filesystem_access</a></li>
+          
+          <li><a href="#method-i-in_bundle-3F">#in_bundle?</a></li>
+          
+          <li><a href="#method-i-major_deprecation">#major_deprecation</a></li>
+          
+          <li><a href="#method-i-md5_available-3F">#md5_available?</a></li>
+          
+          <li><a href="#method-i-pretty_dependency">#pretty_dependency</a></li>
+          
+          <li><a href="#method-i-print_major_deprecations-21">#print_major_deprecations!</a></li>
+          
+          <li><a href="#method-i-pwd">#pwd</a></li>
+          
+          <li><a href="#method-i-root">#root</a></li>
+          
+          <li><a href="#method-i-set_bundle_environment">#set_bundle_environment</a></li>
+          
+          <li><a href="#method-i-set_env">#set_env</a></li>
+          
+          <li><a href="#method-i-trap">#trap</a></li>
+          
+          <li><a href="#method-i-with_clean_git_env">#with_clean_git_env</a></li>
+          
+          <li><a href="#method-i-write_to_gemfile">#write_to_gemfile</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../AmbiguousCommandError.html">AmbiguousCommandError</a></li>
+        
+          
+          
+          <li><a href="../AmbiguousTaskError.html">AmbiguousTaskError</a></li>
+        
+          
+          
+          <li><a href="../Bundler.html">Bundler</a></li>
+        
+          
+          
+          <li><a href="../Bundler/APIResponseMismatchError.html">Bundler::APIResponseMismatchError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/BuildMetadata.html">Bundler::BuildMetadata</a></li>
+        
+          
+          
+          <li><a href="../Bundler/BundlerError.html">Bundler::BundlerError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI.html">Bundler::CLI</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Add.html">Bundler::CLI::Add</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Binstubs.html">Bundler::CLI::Binstubs</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Cache.html">Bundler::CLI::Cache</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Check.html">Bundler::CLI::Check</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Clean.html">Bundler::CLI::Clean</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Common.html">Bundler::CLI::Common</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Config.html">Bundler::CLI::Config</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Config/Base.html">Bundler::CLI::Config::Base</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Console.html">Bundler::CLI::Console</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Doctor.html">Bundler::CLI::Doctor</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Exec.html">Bundler::CLI::Exec</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Gem.html">Bundler::CLI::Gem</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Info.html">Bundler::CLI::Info</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Init.html">Bundler::CLI::Init</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Inject.html">Bundler::CLI::Inject</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Install.html">Bundler::CLI::Install</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Issue.html">Bundler::CLI::Issue</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/List.html">Bundler::CLI::List</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Lock.html">Bundler::CLI::Lock</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Open.html">Bundler::CLI::Open</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Outdated.html">Bundler::CLI::Outdated</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Package.html">Bundler::CLI::Package</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Platform.html">Bundler::CLI::Platform</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Plugin.html">Bundler::CLI::Plugin</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Pristine.html">Bundler::CLI::Pristine</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Remove.html">Bundler::CLI::Remove</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Show.html">Bundler::CLI::Show</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Update.html">Bundler::CLI::Update</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CLI/Viz.html">Bundler::CLI::Viz</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CompactIndexClient.html">Bundler::CompactIndexClient</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CompactIndexClient/Cache.html">Bundler::CompactIndexClient::Cache</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CompactIndexClient/Error.html">Bundler::CompactIndexClient::Error</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CompactIndexClient/Updater.html">Bundler::CompactIndexClient::Updater</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CompactIndexClient/Updater/MisMatchedChecksumError.html">Bundler::CompactIndexClient::Updater::MisMatchedChecksumError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/ConnectionPool.html">Bundler::ConnectionPool</a></li>
+        
+          
+          
+          <li><a href="../Bundler/ConnectionPool/Error.html">Bundler::ConnectionPool::Error</a></li>
+        
+          
+          
+          <li><a href="../Bundler/ConnectionPool/PoolShuttingDownError.html">Bundler::ConnectionPool::PoolShuttingDownError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/ConnectionPool/TimedStack.html">Bundler::ConnectionPool::TimedStack</a></li>
+        
+          
+          
+          <li><a href="../Bundler/ConnectionPool/Wrapper.html">Bundler::ConnectionPool::Wrapper</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CurrentRuby.html">Bundler::CurrentRuby</a></li>
+        
+          
+          
+          <li><a href="../Bundler/CyclicDependencyError.html">Bundler::CyclicDependencyError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Definition.html">Bundler::Definition</a></li>
+        
+          
+          
+          <li><a href="../Bundler/DepProxy.html">Bundler::DepProxy</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Dependency.html">Bundler::Dependency</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Deployment.html">Bundler::Deployment</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Deprecate.html">Bundler::Deprecate</a></li>
+        
+          
+          
+          <li><a href="../Bundler/DeprecatedError.html">Bundler::DeprecatedError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Dsl.html">Bundler::Dsl</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Dsl/DSLError.html">Bundler::Dsl::DSLError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/EndpointSpecification.html">Bundler::EndpointSpecification</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Env.html">Bundler::Env</a></li>
+        
+          
+          
+          <li><a href="../Bundler/EnvironmentPreserver.html">Bundler::EnvironmentPreserver</a></li>
+        
+          
+          
+          <li><a href="../Bundler/FeatureFlag.html">Bundler::FeatureFlag</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher.html">Bundler::Fetcher</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher/AuthenticationRequiredError.html">Bundler::Fetcher::AuthenticationRequiredError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher/BadAuthenticationError.html">Bundler::Fetcher::BadAuthenticationError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher/Base.html">Bundler::Fetcher::Base</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher/CertificateFailureError.html">Bundler::Fetcher::CertificateFailureError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher/CompactIndex.html">Bundler::Fetcher::CompactIndex</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher/Dependency.html">Bundler::Fetcher::Dependency</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher/Downloader.html">Bundler::Fetcher::Downloader</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher/FallbackError.html">Bundler::Fetcher::FallbackError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher/Index.html">Bundler::Fetcher::Index</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher/NetworkDownError.html">Bundler::Fetcher::NetworkDownError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher/SSLError.html">Bundler::Fetcher::SSLError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Fetcher/TooManyRequestsError.html">Bundler::Fetcher::TooManyRequestsError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/FileUtils.html">Bundler::FileUtils</a></li>
+        
+          
+          
+          <li><a href="../Bundler/FileUtils/DryRun.html">Bundler::FileUtils::DryRun</a></li>
+        
+          
+          
+          <li><a href="../Bundler/FileUtils/NoWrite.html">Bundler::FileUtils::NoWrite</a></li>
+        
+          
+          
+          <li><a href="../Bundler/FileUtils/StreamUtils_.html">Bundler::FileUtils::StreamUtils_</a></li>
+        
+          
+          
+          <li><a href="../Bundler/FileUtils/Verbose.html">Bundler::FileUtils::Verbose</a></li>
+        
+          
+          
+          <li><a href="../Bundler/FriendlyErrors.html">Bundler::FriendlyErrors</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemHelper.html">Bundler::GemHelper</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemHelpers.html">Bundler::GemHelpers</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemHelpers/PlatformMatch.html">Bundler::GemHelpers::PlatformMatch</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemInstaller.html">Bundler::GemInstaller</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemNotFound.html">Bundler::GemNotFound</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemRemoteFetcher.html">Bundler::GemRemoteFetcher</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemRequireError.html">Bundler::GemRequireError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemVersionPromoter.html">Bundler::GemVersionPromoter</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Gemdeps.html">Bundler::Gemdeps</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemfileError.html">Bundler::GemfileError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemfileEvalError.html">Bundler::GemfileEvalError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemfileLockNotFound.html">Bundler::GemfileLockNotFound</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemfileNotFound.html">Bundler::GemfileNotFound</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GemspecError.html">Bundler::GemspecError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GenericSystemCallError.html">Bundler::GenericSystemCallError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/GitError.html">Bundler::GitError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Graph.html">Bundler::Graph</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Graph/GraphVizClient.html">Bundler::Graph::GraphVizClient</a></li>
+        
+          
+          
+          <li><a href="../Bundler/HTTPError.html">Bundler::HTTPError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Index.html">Bundler::Index</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Injector.html">Bundler::Injector</a></li>
+        
+          
+          
+          <li><a href="../Bundler/InstallError.html">Bundler::InstallError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/InstallHookError.html">Bundler::InstallHookError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Installer.html">Bundler::Installer</a></li>
+        
+          
+          
+          <li><a href="../Bundler/InvalidOption.html">Bundler::InvalidOption</a></li>
+        
+          
+          
+          <li><a href="../Bundler/LazySpecification.html">Bundler::LazySpecification</a></li>
+        
+          
+          
+          <li><a href="../Bundler/LazySpecification/Identifier.html">Bundler::LazySpecification::Identifier</a></li>
+        
+          
+          
+          <li><a href="../Bundler/LockfileError.html">Bundler::LockfileError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/LockfileGenerator.html">Bundler::LockfileGenerator</a></li>
+        
+          
+          
+          <li><a href="../Bundler/LockfileParser.html">Bundler::LockfileParser</a></li>
+        
+          
+          
+          <li><a href="../Bundler/MarshalError.html">Bundler::MarshalError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/MatchPlatform.html">Bundler::MatchPlatform</a></li>
+        
+          
+          
+          <li><a href="../Bundler/MirrorSockets.html">Bundler::MirrorSockets</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo.html">Bundler::Molinillo</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/CircularDependencyError.html">Bundler::Molinillo::CircularDependencyError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/Compatibility.html">Bundler::Molinillo::Compatibility</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/Delegates.html">Bundler::Molinillo::Delegates</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/Delegates/ResolutionState.html">Bundler::Molinillo::Delegates::ResolutionState</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/Delegates/SpecificationProvider.html">Bundler::Molinillo::Delegates::SpecificationProvider</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/DependencyGraph.html">Bundler::Molinillo::DependencyGraph</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/DependencyGraph/Action.html">Bundler::Molinillo::DependencyGraph::Action</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/DependencyGraph/AddEdgeNoCircular.html">Bundler::Molinillo::DependencyGraph::AddEdgeNoCircular</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/DependencyGraph/DeleteEdge.html">Bundler::Molinillo::DependencyGraph::DeleteEdge</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/DependencyGraph/DetachVertexNamed.html">Bundler::Molinillo::DependencyGraph::DetachVertexNamed</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/DependencyGraph/Log.html">Bundler::Molinillo::DependencyGraph::Log</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/DependencyGraph/Tag.html">Bundler::Molinillo::DependencyGraph::Tag</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/DependencyGraph/Vertex.html">Bundler::Molinillo::DependencyGraph::Vertex</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/DependencyState.html">Bundler::Molinillo::DependencyState</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/NoSuchDependencyError.html">Bundler::Molinillo::NoSuchDependencyError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/PossibilityState.html">Bundler::Molinillo::PossibilityState</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/ResolutionState.html">Bundler::Molinillo::ResolutionState</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/Resolver.html">Bundler::Molinillo::Resolver</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/Resolver/Resolution.html">Bundler::Molinillo::Resolver::Resolution</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/Resolver/Resolution/Conflict.html">Bundler::Molinillo::Resolver::Resolution::Conflict</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/Resolver/Resolution/PossibilitySet.html">Bundler::Molinillo::Resolver::Resolution::PossibilitySet</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/Resolver/Resolution/UnwindDetails.html">Bundler::Molinillo::Resolver::Resolution::UnwindDetails</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/ResolverError.html">Bundler::Molinillo::ResolverError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/SpecificationProvider.html">Bundler::Molinillo::SpecificationProvider</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/UI.html">Bundler::Molinillo::UI</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Molinillo/VersionConflict.html">Bundler::Molinillo::VersionConflict</a></li>
+        
+          
+          
+          <li><a href="../Bundler/NoSpaceOnDeviceError.html">Bundler::NoSpaceOnDeviceError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/OperationNotSupportedError.html">Bundler::OperationNotSupportedError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/ParallelInstaller.html">Bundler::ParallelInstaller</a></li>
+        
+          
+          
+          <li><a href="../Bundler/ParallelInstaller/SpecInstallation.html">Bundler::ParallelInstaller::SpecInstallation</a></li>
+        
+          
+          
+          <li><a href="../Bundler/PathError.html">Bundler::PathError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/PermissionError.html">Bundler::PermissionError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Persistent.html">Bundler::Persistent</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Persistent/Net.html">Bundler::Persistent::Net</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Persistent/Net/HTTP.html">Bundler::Persistent::Net::HTTP</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Persistent/Net/HTTP/Persistent.html">Bundler::Persistent::Net::HTTP::Persistent</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Persistent/Net/HTTP/Persistent/Error.html">Bundler::Persistent::Net::HTTP::Persistent::Error</a></li>
+        
+          
+          
+          <li><a href="../Bundler/PersistentHTTP.html">Bundler::PersistentHTTP</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin.html">Bundler::Plugin</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/API.html">Bundler::Plugin::API</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/API/Source.html">Bundler::Plugin::API::Source</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/DSL.html">Bundler::Plugin::DSL</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/DSL/PluginGemfileError.html">Bundler::Plugin::DSL::PluginGemfileError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/Events.html">Bundler::Plugin::Events</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/Index.html">Bundler::Plugin::Index</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/Index/CommandConflict.html">Bundler::Plugin::Index::CommandConflict</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/Index/SourceConflict.html">Bundler::Plugin::Index::SourceConflict</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/Installer.html">Bundler::Plugin::Installer</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/Installer/Git.html">Bundler::Plugin::Installer::Git</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/Installer/Rubygems.html">Bundler::Plugin::Installer::Rubygems</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/MalformattedPlugin.html">Bundler::Plugin::MalformattedPlugin</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/SourceList.html">Bundler::Plugin::SourceList</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/UndefinedCommandError.html">Bundler::Plugin::UndefinedCommandError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Plugin/UnknownSourceError.html">Bundler::Plugin::UnknownSourceError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/PluginError.html">Bundler::PluginError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/ProcessLock.html">Bundler::ProcessLock</a></li>
+        
+          
+          
+          <li><a href="../Bundler/ProductionError.html">Bundler::ProductionError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/RemoteSpecification.html">Bundler::RemoteSpecification</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Resolver.html">Bundler::Resolver</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Resolver/SpecGroup.html">Bundler::Resolver::SpecGroup</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Retry.html">Bundler::Retry</a></li>
+        
+          
+          
+          <li><a href="../Bundler/RubyDsl.html">Bundler::RubyDsl</a></li>
+        
+          
+          
+          <li><a href="../Bundler/RubyGemsGemInstaller.html">Bundler::RubyGemsGemInstaller</a></li>
+        
+          
+          
+          <li><a href="../Bundler/RubyVersion.html">Bundler::RubyVersion</a></li>
+        
+          
+          
+          <li><a href="../Bundler/RubyVersionMismatch.html">Bundler::RubyVersionMismatch</a></li>
+        
+          
+          
+          <li><a href="../Bundler/RubygemsIntegration.html">Bundler::RubygemsIntegration</a></li>
+        
+          
+          
+          <li><a href="../Bundler/RubygemsIntegration/Gem.html">Bundler::RubygemsIntegration::Gem</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Runtime.html">Bundler::Runtime</a></li>
+        
+          
+          
+          <li><a href="../Bundler/SecurityError.html">Bundler::SecurityError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Settings.html">Bundler::Settings</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Settings/Mirror.html">Bundler::Settings::Mirror</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Settings/MirrorConfig.html">Bundler::Settings::MirrorConfig</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Settings/Mirrors.html">Bundler::Settings::Mirrors</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Settings/TCPSocketProbe.html">Bundler::Settings::TCPSocketProbe</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Settings/Validator.html">Bundler::Settings::Validator</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Settings/Validator/Rule.html">Bundler::Settings::Validator::Rule</a></li>
+        
+          
+          
+          <li><a href="../Bundler/SharedHelpers.html">Bundler::SharedHelpers</a></li>
+        
+          
+          
+          <li><a href="../Bundler/SimilarityDetector.html">Bundler::SimilarityDetector</a></li>
+        
+          
+          
+          <li><a href="../Bundler/SocketAddress.html">Bundler::SocketAddress</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source.html">Bundler::Source</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source/Gemspec.html">Bundler::Source::Gemspec</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source/Git.html">Bundler::Source::Git</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source/Git/GitCommandError.html">Bundler::Source::Git::GitCommandError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source/Git/GitNotAllowedError.html">Bundler::Source::Git::GitNotAllowedError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source/Git/GitNotInstalledError.html">Bundler::Source::Git::GitNotInstalledError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source/Git/GitProxy.html">Bundler::Source::Git::GitProxy</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source/Git/MissingGitRevisionError.html">Bundler::Source::Git::MissingGitRevisionError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source/Metadata.html">Bundler::Source::Metadata</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source/Path.html">Bundler::Source::Path</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source/Path/Installer.html">Bundler::Source::Path::Installer</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source/Rubygems.html">Bundler::Source::Rubygems</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Source/Rubygems/Remote.html">Bundler::Source::Rubygems::Remote</a></li>
+        
+          
+          
+          <li><a href="../Bundler/SourceList.html">Bundler::SourceList</a></li>
+        
+          
+          
+          <li><a href="../Bundler/SpecSet.html">Bundler::SpecSet</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Standalone.html">Bundler::Standalone</a></li>
+        
+          
+          
+          <li><a href="../Bundler/StubSpecification.html">Bundler::StubSpecification</a></li>
+        
+          
+          
+          <li><a href="../Bundler/SudoNotPermittedError.html">Bundler::SudoNotPermittedError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/TemporaryResourceError.html">Bundler::TemporaryResourceError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Actions.html">Bundler::Thor::Actions</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Actions/CapturableERB.html">Bundler::Thor::Actions::CapturableERB</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Actions/ClassMethods.html">Bundler::Thor::Actions::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Base.html">Bundler::Thor::Base</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Base/ClassMethods.html">Bundler::Thor::Base::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Command.html">Bundler::Thor::Command</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/CoreExt.html">Bundler::Thor::CoreExt</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/CoreExt/OrderedHash.html">Bundler::Thor::CoreExt::OrderedHash</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/DynamicCommand.html">Bundler::Thor::DynamicCommand</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/DynamicCommand.html">Bundler::Thor::DynamicTask</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Group.html">Bundler::Thor::Group</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/HiddenCommand.html">Bundler::Thor::HiddenCommand</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/HiddenCommand.html">Bundler::Thor::HiddenTask</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Invocation.html">Bundler::Thor::Invocation</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Invocation/ClassMethods.html">Bundler::Thor::Invocation::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/LineEditor.html">Bundler::Thor::LineEditor</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/LineEditor/Basic.html">Bundler::Thor::LineEditor::Basic</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/LineEditor/Readline.html">Bundler::Thor::LineEditor::Readline</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/LineEditor/Readline/PathCompletion.html">Bundler::Thor::LineEditor::Readline::PathCompletion</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/NestedContext.html">Bundler::Thor::NestedContext</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/RakeCompat.html">Bundler::Thor::RakeCompat</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Shell.html">Bundler::Thor::Shell</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Shell/Basic.html">Bundler::Thor::Shell::Basic</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Shell/Color.html">Bundler::Thor::Shell::Color</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Shell/HTML.html">Bundler::Thor::Shell::HTML</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Command.html">Bundler::Thor::Task</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Thor/Util.html">Bundler::Thor::Util</a></li>
+        
+          
+          
+          <li><a href="../Bundler/ThreadCreationError.html">Bundler::ThreadCreationError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/UI.html">Bundler::UI</a></li>
+        
+          
+          
+          <li><a href="../Bundler/UI/RGProxy.html">Bundler::UI::RGProxy</a></li>
+        
+          
+          
+          <li><a href="../Bundler/UI/Shell.html">Bundler::UI::Shell</a></li>
+        
+          
+          
+          <li><a href="../Bundler/UI/Silent.html">Bundler::UI::Silent</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI.html">Bundler::URI</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/BadURIError.html">Bundler::URI::BadURIError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/Error.html">Bundler::URI::Error</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/Escape.html">Bundler::URI::Escape</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/FTP.html">Bundler::URI::FTP</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/File.html">Bundler::URI::File</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/Generic.html">Bundler::URI::Generic</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/HTTP.html">Bundler::URI::HTTP</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/HTTPS.html">Bundler::URI::HTTPS</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/InvalidComponentError.html">Bundler::URI::InvalidComponentError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/InvalidURIError.html">Bundler::URI::InvalidURIError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/LDAP.html">Bundler::URI::LDAP</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/LDAPS.html">Bundler::URI::LDAPS</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/MailTo.html">Bundler::URI::MailTo</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/RFC2396_Parser.html">Bundler::URI::Parser</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/RFC2396_REGEXP.html">Bundler::URI::REGEXP</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/RFC2396_Parser.html">Bundler::URI::RFC2396_Parser</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/RFC2396_REGEXP.html">Bundler::URI::RFC2396_REGEXP</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URI/RFC2396_REGEXP/PATTERN.html">Bundler::URI::RFC2396_REGEXP::PATTERN</a></li>
+        
+          
+          
+          <li><a href="../Bundler/URICredentialsFilter.html">Bundler::URICredentialsFilter</a></li>
+        
+          
+          
+          <li><a href="../Bundler/VersionConflict.html">Bundler::VersionConflict</a></li>
+        
+          
+          
+          <li><a href="../Bundler/VersionRanges.html">Bundler::VersionRanges</a></li>
+        
+          
+          
+          <li><a href="../Bundler/VersionRanges/ReqR.html">Bundler::VersionRanges::ReqR</a></li>
+        
+          
+          
+          <li><a href="../Bundler/VirtualProtocolError.html">Bundler::VirtualProtocolError</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Worker.html">Bundler::Worker</a></li>
+        
+          
+          
+          <li><a href="../Bundler/Worker/WrappedException.html">Bundler::Worker::WrappedException</a></li>
+        
+          
+          
+          <li><a href="../Bundler/YAMLSerializer.html">Bundler::YAMLSerializer</a></li>
+        
+          
+          
+          <li><a href="../Bundler/YamlSyntaxError.html">Bundler::YamlSyntaxError</a></li>
+        
+          
+          
+          <li><a href="../Error.html">Error</a></li>
+        
+          
+          
+          <li><a href="../Gem.html">Gem</a></li>
+        
+          
+          
+          <li><a href="../Gem/Dependency.html">Gem::Dependency</a></li>
+        
+          
+          
+          <li><a href="../Gem/Platform.html">Gem::Platform</a></li>
+        
+          
+          
+          <li><a href="../Gem/Specification.html">Gem::Specification</a></li>
+        
+          
+          
+          <li><a href="../InvocationError.html">InvocationError</a></li>
+        
+          
+          
+          <li><a href="../Kernel.html">Kernel</a></li>
+        
+          
+          
+          <li><a href="../MalformattedArgumentError.html">MalformattedArgumentError</a></li>
+        
+          
+          
+          <li><a href="../Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="../RequiredArgumentMissingError.html">RequiredArgumentMissingError</a></li>
+        
+          
+          
+          <li><a href="../UndefinedCommandError.html">UndefinedCommandError</a></li>
+        
+          
+          
+          <li><a href="../UndefinedCommandError/SpellChecker.html">UndefinedCommandError::SpellChecker</a></li>
+        
+          
+          
+          <li><a href="../UndefinedTaskError.html">UndefinedTaskError</a></li>
+        
+          
+          
+          <li><a href="../UnknownArgumentError.html">UnknownArgumentError</a></li>
+        
+          
+          
+          <li><a href="../UnknownArgumentError/SpellChecker.html">UnknownArgumentError::SpellChecker</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="module">Bundler::SharedHelpers</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="chdir-method" class="method-detail ">
+          <a name="method-i-chdir"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">chdir</span><span
+              class="method-args">(dir, &blk)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="chdir-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/shared_helpers.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">chdir</span>(<span class="ruby-identifier">dir</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>)
+  <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">rubygems</span>.<span class="ruby-identifier">ext_lock</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span> <span class="ruby-identifier">dir</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blk</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- chdir-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- chdir-method -->
+      
+        <div id="const_get_safely-method" class="method-detail ">
+          <a name="method-i-const_get_safely"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">const_get_safely</span><span
+              class="method-args">(constant_name, namespace)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="const_get_safely-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/shared_helpers.rb, line 120</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">const_get_safely</span>(<span class="ruby-identifier">constant_name</span>, <span class="ruby-identifier">namespace</span>)
+  <span class="ruby-identifier">const_in_namespace</span> = <span class="ruby-identifier">namespace</span>.<span class="ruby-identifier">constants</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">constant_name</span>.<span class="ruby-identifier">to_s</span>) <span class="ruby-operator">||</span>
+    <span class="ruby-identifier">namespace</span>.<span class="ruby-identifier">constants</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">constant_name</span>.<span class="ruby-identifier">to_sym</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">const_in_namespace</span>
+  <span class="ruby-identifier">namespace</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">constant_name</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- const_get_safely-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- const_get_safely-method -->
+      
+        <div id="default_bundle_dir-method" class="method-detail ">
+          <a name="method-i-default_bundle_dir"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">default_bundle_dir</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="default_bundle_dir-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/shared_helpers.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">default_bundle_dir</span>
+  <span class="ruby-identifier">bundle_dir</span> = <span class="ruby-identifier">find_directory</span>(<span class="ruby-string">&quot;.bundle&quot;</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">bundle_dir</span>
+
+  <span class="ruby-identifier">bundle_dir</span> = <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">bundle_dir</span>)
+
+  <span class="ruby-identifier">global_bundle_dir</span> = <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">user_home</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;.bundle&quot;</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">bundle_dir</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">global_bundle_dir</span>
+
+  <span class="ruby-identifier">bundle_dir</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- default_bundle_dir-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- default_bundle_dir-method -->
+      
+        <div id="default_gemfile-method" class="method-detail ">
+          <a name="method-i-default_gemfile"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">default_gemfile</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="default_gemfile-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/shared_helpers.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">default_gemfile</span>
+  <span class="ruby-identifier">gemfile</span> = <span class="ruby-identifier">find_gemfile</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">GemfileNotFound</span>, <span class="ruby-string">&quot;Could not locate Gemfile&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">gemfile</span>
+  <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">gemfile</span>).<span class="ruby-identifier">tap</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">untaint</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">&lt;</span> <span class="ruby-string">&quot;2.7&quot;</span> }.<span class="ruby-identifier">expand_path</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- default_gemfile-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- default_gemfile-method -->
+      
+        <div id="default_lockfile-method" class="method-detail ">
+          <a name="method-i-default_lockfile"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">default_lockfile</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="default_lockfile-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/shared_helpers.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">default_lockfile</span>
+  <span class="ruby-identifier">gemfile</span> = <span class="ruby-identifier">default_gemfile</span>
+
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">gemfile</span>.<span class="ruby-identifier">basename</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;gems.rb&quot;</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">gemfile</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/.rb$/</span>, <span class="ruby-string">&quot;.locked&quot;</span>))
+  <span class="ruby-keyword">else</span> <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;#{gemfile}.lock&quot;</span>)
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">tap</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">untaint</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">&lt;</span> <span class="ruby-string">&quot;2.7&quot;</span> }
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- default_lockfile-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- default_lockfile-method -->
+      
+        <div id="digest-method" class="method-detail ">
+          <a name="method-i-digest"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">digest</span><span
+              class="method-args">(name)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="digest-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/shared_helpers.rb, line 206</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">digest</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">require</span> <span class="ruby-string">&quot;digest&quot;</span>
+  <span class="ruby-constant">Digest</span>(<span class="ruby-identifier">name</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- digest-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- digest-method -->
+      
+        <div id="ensure_same_dependencies-method" class="method-detail ">
+          <a name="method-i-ensure_same_dependencies"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ensure_same_dependencies</span><span
+              class="method-args">(spec, old_deps, new_deps)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="ensure_same_dependencies-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/shared_helpers.rb, line 162</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ensure_same_dependencies</span>(<span class="ruby-identifier">spec</span>, <span class="ruby-identifier">old_deps</span>, <span class="ruby-identifier">new_deps</span>)
+  <span class="ruby-identifier">new_deps</span> = <span class="ruby-identifier">new_deps</span>.<span class="ruby-identifier">reject</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:development</span> }
+  <span class="ruby-identifier">old_deps</span> = <span class="ruby-identifier">old_deps</span>.<span class="ruby-identifier">reject</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:development</span> }
+
+  <span class="ruby-identifier">without_type</span> = <span class="ruby-identifier">proc</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Dependency</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">d</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">d</span>.<span class="ruby-identifier">requirements_list</span>.<span class="ruby-identifier">sort</span>) }
+  <span class="ruby-identifier">new_deps</span>.<span class="ruby-identifier">map!</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">without_type</span>)
+  <span class="ruby-identifier">old_deps</span>.<span class="ruby-identifier">map!</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">without_type</span>)
+
+  <span class="ruby-identifier">extra_deps</span> = <span class="ruby-identifier">new_deps</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">old_deps</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">extra_deps</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;#{spec.full_name} from #{spec.remote} has either corrupted API or lockfile dependencies&quot;</span> \
+    <span class="ruby-node">&quot; (was expecting #{old_deps.map(&amp;:to_s)}, but the real spec has #{new_deps.map(&amp;:to_s)})&quot;</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">APIResponseMismatchError</span>,
+    <span class="ruby-node">&quot;Downloading #{spec.full_name} revealed dependencies not in the API or the lockfile (#{extra_deps.join(&quot;, &quot;)}).&quot;</span> \
+    <span class="ruby-node">&quot;\nEither installing with `--full-index` or running `bundle update #{spec.name}` should fix the problem.&quot;</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- ensure_same_dependencies-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ensure_same_dependencies-method -->
+      
+        <div id="filesystem_access-method" class="method-detail ">
+          <a name="method-i-filesystem_access"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">filesystem_access</span><span
+              class="method-args">(path, action = :write, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Rescues permissions errors raised by file system operations (ie. Errno:EACCESS, Errno::EAGAIN) and raises more friendly errors instead.</p>
+
+<p>@param path [String] the path that the action will be attempted to @param action [Symbol, to_s] the type of operation that will be</p>
+
+<pre>performed. For example: :write, :read, :exec</pre>
+
+<p>@yield path</p>
+
+<p>@raise [Bundler::PermissionError] if Errno:EACCES is raised in the</p>
+
+<pre class="ruby"><span class="ruby-identifier">given</span> <span class="ruby-identifier">block</span>
+</pre>
+
+<p>@raise [Bundler::TemporaryResourceError] if Errno:EAGAIN is raised in the</p>
+
+<pre class="ruby"><span class="ruby-identifier">given</span> <span class="ruby-identifier">block</span>
+</pre>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-identifier">filesystem_access</span>(<span class="ruby-string">&quot;vendor/cache&quot;</span>, <span class="ruby-value">:write</span>) <span class="ruby-keyword">do</span>
+  <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span>(<span class="ruby-string">&quot;vendor/cache&quot;</span>)
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>@see {Bundler::PermissionError}</p>
+            
+
+            
+            <div class="method-source-code" id="filesystem_access-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/shared_helpers.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">filesystem_access</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">action</span> = <span class="ruby-value">:write</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">path</span>.<span class="ruby-identifier">dup</span>.<span class="ruby-identifier">tap</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">untaint</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">&lt;</span> <span class="ruby-string">&quot;2.7&quot;</span> })
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EACCES</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">PermissionError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">action</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EAGAIN</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TemporaryResourceError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">action</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EPROTO</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">VirtualProtocolError</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOSPC</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NoSpaceOnDeviceError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">action</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-operator">*</span>[<span class="ruby-identifier">const_get_safely</span>(<span class="ruby-value">:ENOTSUP</span>, <span class="ruby-constant">Errno</span>)].<span class="ruby-identifier">compact</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">OperationNotSupportedError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">action</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EEXIST</span>, <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span>
+  <span class="ruby-identifier">raise</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">SystemCallError</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">GenericSystemCallError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>, <span class="ruby-node">&quot;There was an error accessing `#{path}`.&quot;</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- filesystem_access-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- filesystem_access-method -->
+      
+        <div id="in_bundle-3F-method" class="method-detail ">
+          <a name="method-i-in_bundle-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">in_bundle?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="in_bundle-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/shared_helpers.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">in_bundle?</span>
+  <span class="ruby-identifier">find_gemfile</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- in_bundle-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- in_bundle-3F-method -->
+      
+        <div id="major_deprecation-method" class="method-detail ">
+          <a name="method-i-major_deprecation"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">major_deprecation</span><span
+              class="method-args">(major_version, message, print_caller_location: false)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="major_deprecation-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/shared_helpers.rb, line 127</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">major_deprecation</span>(<span class="ruby-identifier">major_version</span>, <span class="ruby-identifier">message</span>, <span class="ruby-value">print_caller_location:</span> <span class="ruby-keyword">false</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">print_caller_location</span>
+    <span class="ruby-identifier">caller_location</span> = <span class="ruby-identifier">caller_locations</span>(<span class="ruby-value">2</span>, <span class="ruby-value">2</span>).<span class="ruby-identifier">first</span>
+    <span class="ruby-identifier">message</span> = <span class="ruby-node">&quot;#{message} (called at #{caller_location.path}:#{caller_location.lineno})&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">bundler_major_version</span> = <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">bundler_major_version</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">bundler_major_version</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">major_version</span>
+    <span class="ruby-identifier">require_relative</span> <span class="ruby-string">&quot;errors&quot;</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">DeprecatedError</span>, <span class="ruby-node">&quot;[REMOVED] #{message}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">bundler_major_version</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">major_version</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">prints_major_deprecations?</span>
+  <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">warn</span>(<span class="ruby-node">&quot;[DEPRECATED] #{message}&quot;</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- major_deprecation-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- major_deprecation-method -->
+      
+        <div id="md5_available-3F-method" class="method-detail ">
+          <a name="method-i-md5_available-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">md5_available?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="md5_available-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/shared_helpers.rb, line 193</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">md5_available?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@md5_available</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-ivar">@md5_available</span>)
+  <span class="ruby-ivar">@md5_available</span> = <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">&quot;openssl&quot;</span>
+    <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">MD5</span>.<span class="ruby-identifier">digest</span>(<span class="ruby-string">&quot;&quot;</span>)
+    <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">LoadError</span>
+    <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">DigestError</span>
+    <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- md5_available-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- md5_available-3F-method -->
+      
+        <div id="pretty_dependency-method" class="method-detail ">
+          <a name="method-i-pretty_dependency"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">pretty_dependency</span><span
+              class="method-args">(dep, print_source = false)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="pretty_dependency-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/shared_helpers.rb, line 180</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pretty_dependency</span>(<span class="ruby-identifier">dep</span>, <span class="ruby-identifier">print_source</span> = <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">msg</span> = <span class="ruby-constant">String</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">dep</span>.<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">msg</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; (#{dep.requirement})&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">dep</span>.<span class="ruby-identifier">requirement</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Requirement</span>.<span class="ruby-identifier">default</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">dep</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Bundler</span><span class="ruby-operator">::</span><span class="ruby-constant">Dependency</span>)
+    <span class="ruby-identifier">platform_string</span> = <span class="ruby-identifier">dep</span>.<span class="ruby-identifier">platforms</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;, &quot;</span>)
+    <span class="ruby-identifier">msg</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot; &quot;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">platform_string</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">platform_string</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">platform_string</span> <span class="ruby-operator">!=</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span><span class="ruby-operator">::</span><span class="ruby-constant">RUBY</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">msg</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; from the `#{dep.source}` source&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">print_source</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">dep</span>.<span class="ruby-identifier">source</span>
+  <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- pretty_dependency-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- pretty_dependency-method -->
+      
+        <div id="print_major_deprecations-21-method" class="method-detail ">
+          <a name="method-i-print_major_deprecations-21"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">print_major_deprecations!</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="print_major_deprecations-21-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/shared_helpers.rb, line 143</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">print_major_deprecations!</span>
+  <span class="ruby-identifier">multiple_gemfiles</span> = <span class="ruby-identifier">search_up</span>(<span class="ruby-string">&quot;.&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">gemfiles</span> = <span class="ruby-identifier">gemfile_names</span>.<span class="ruby-identifier">select</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">gf</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">gf</span>, <span class="ruby-identifier">dir</span>) }
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">gemfiles</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-keyword">break</span> <span class="ruby-identifier">gemfiles</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">!=</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">multiple_gemfiles</span>
+  <span class="ruby-identifier">message</span> = <span class="ruby-string">&quot;Multiple gemfiles (gems.rb and Gemfile) detected. &quot;</span> \
+            <span class="ruby-string">&quot;Make sure you remove Gemfile and Gemfile.lock since bundler is ignoring them in favor of gems.rb and gems.rb.locked.&quot;</span>
+  <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">ui</span>.<span class="ruby-identifier">warn</span> <span class="ruby-identifier">message</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- print_major_deprecations-21-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- print_major_deprecations-21-method -->
+      
+        <div id="pwd-method" class="method-detail ">
+          <a name="method-i-pwd"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">pwd</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="pwd-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/shared_helpers.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pwd</span>
+  <span class="ruby-constant">Bundler</span>.<span class="ruby-identifier">rubygems</span>.<span class="ruby-identifier">ext_lock</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">pwd</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- pwd-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- pwd-method -->
+      
+        <div id="root-method" class="method-detail ">
+          <a name="method-i-root"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">root</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="root-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/shared_helpers.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">root</span>
+  <span class="ruby-identifier">gemfile</span> = <span class="ruby-identifier">find_gemfile</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">GemfileNotFound</span>, <span class="ruby-string">&quot;Could not locate Gemfile&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">gemfile</span>
+  <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">gemfile</span>).<span class="ruby-identifier">tap</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">untaint</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">&lt;</span> <span class="ruby-string">&quot;2.7&quot;</span> }.<span class="ruby-identifier">expand_path</span>.<span class="ruby-identifier">parent</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- root-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- root-method -->
+      
+        <div id="set_bundle_environment-method" class="method-detail ">
+          <a name="method-i-set_bundle_environment"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">set_bundle_environment</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="set_bundle_environment-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/shared_helpers.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_bundle_environment</span>
+  <span class="ruby-identifier">set_bundle_variables</span>
+  <span class="ruby-identifier">set_path</span>
+  <span class="ruby-identifier">set_rubyopt</span>
+  <span class="ruby-identifier">set_rubylib</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- set_bundle_environment-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- set_bundle_environment-method -->
+      
+        <div id="set_env-method" class="method-detail ">
+          <a name="method-i-set_env"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">set_env</span><span
+              class="method-args">(key, value)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="set_env-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/shared_helpers.rb, line 278</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_env</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;new key #{key}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">EnvironmentPreserver</span><span class="ruby-operator">::</span><span class="ruby-constant">BUNDLER_KEYS</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">orig_key</span> = <span class="ruby-node">&quot;#{EnvironmentPreserver::BUNDLER_PREFIX}#{key}&quot;</span>
+  <span class="ruby-identifier">orig</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-identifier">key</span>]
+  <span class="ruby-identifier">orig</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">EnvironmentPreserver</span><span class="ruby-operator">::</span><span class="ruby-constant">INTENTIONALLY_NIL</span>
+  <span class="ruby-constant">ENV</span>[<span class="ruby-identifier">orig_key</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">orig</span>
+
+  <span class="ruby-constant">ENV</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- set_env-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- set_env-method -->
+      
+        <div id="trap-method" class="method-detail ">
+          <a name="method-i-trap"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">trap</span><span
+              class="method-args">(signal, override = false, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="trap-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/shared_helpers.rb, line 155</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">trap</span>(<span class="ruby-identifier">signal</span>, <span class="ruby-identifier">override</span> = <span class="ruby-keyword">false</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">prior</span> = <span class="ruby-constant">Signal</span>.<span class="ruby-identifier">trap</span>(<span class="ruby-identifier">signal</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>
+    <span class="ruby-identifier">prior</span>.<span class="ruby-identifier">call</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">override</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- trap-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- trap-method -->
+      
+        <div id="with_clean_git_env-method" class="method-detail ">
+          <a name="method-i-with_clean_git_env"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">with_clean_git_env</span><span
+              class="method-args">(&block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="with_clean_git_env-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/shared_helpers.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">with_clean_git_env</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">keys</span>    = <span class="ruby-node">%w[GIT_DIR GIT_WORK_TREE]</span>
+  <span class="ruby-identifier">old_env</span> = <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">inject</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>, <span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">h</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">k</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-constant">ENV</span>[<span class="ruby-identifier">k</span>])
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-constant">ENV</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">key</span>) }
+
+  <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-constant">ENV</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">old_env</span>[<span class="ruby-identifier">key</span>] }
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- with_clean_git_env-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- with_clean_git_env-method -->
+      
+        <div id="write_to_gemfile-method" class="method-detail ">
+          <a name="method-i-write_to_gemfile"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">write_to_gemfile</span><span
+              class="method-args">(gemfile_path, contents)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="write_to_gemfile-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/shared_helpers.rb, line 211</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write_to_gemfile</span>(<span class="ruby-identifier">gemfile_path</span>, <span class="ruby-identifier">contents</span>)
+  <span class="ruby-identifier">filesystem_access</span>(<span class="ruby-identifier">gemfile_path</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">g</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">g</span>, <span class="ruby-string">&quot;w&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span> <span class="ruby-identifier">file</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">contents</span> } }
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- write_to_gemfile-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- write_to_gemfile-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_SharedHelpers_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_SharedHelpers_versioned").load("/associated/2.7.4/SharedHelpers.ihtml");</script> <div id='tx_SharedHelpers' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_SharedHelpers").load("/associated/SharedHelpers.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Maximum R+D</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_SharedHelpers.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_SharedHelpers.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

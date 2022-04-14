@@ -1,0 +1,774 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : DRb::DRbSSLSocket::SSLConfig  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:19:00 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '../..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '../..'   asset_rel_prefix = '../..'  --> 
+  <title>Class: DRb::DRbSSLSocket::SSLConfig (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="../..css/obf.css"  -->
+  <link rel="stylesheet" href="../../css/inuit.css" >
+  <link rel="stylesheet" href="../../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../../css/carbon17.css" type="text/css" >
+
+
+  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>drb/ssl.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="../../Object.html">Object</a></p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-5B-5D">#[]</a></li>
+          
+          <li><a href="#method-i-accept">#accept</a></li>
+          
+          <li><a href="#method-i-connect">#connect</a></li>
+          
+          <li><a href="#method-i-setup_certificate">#setup_certificate</a></li>
+          
+          <li><a href="#method-i-setup_ssl_context">#setup_ssl_context</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../../ACL.html">ACL</a></li>
+        
+          
+          
+          <li><a href="../../ACL/ACLEntry.html">ACL::ACLEntry</a></li>
+        
+          
+          
+          <li><a href="../../ACL/ACLList.html">ACL::ACLList</a></li>
+        
+          
+          
+          <li><a href="../../DRb.html">DRb</a></li>
+        
+          
+          
+          <li><a href="../../DRb/DRbArray.html">DRb::DRbArray</a></li>
+        
+          
+          
+          <li><a href="../../DRb/DRbBadScheme.html">DRb::DRbBadScheme</a></li>
+        
+          
+          
+          <li><a href="../../DRb/DRbBadURI.html">DRb::DRbBadURI</a></li>
+        
+          
+          
+          <li><a href="../../DRb/DRbConn.html">DRb::DRbConn</a></li>
+        
+          
+          
+          <li><a href="../../DRb/DRbConnError.html">DRb::DRbConnError</a></li>
+        
+          
+          
+          <li><a href="../../DRb/DRbError.html">DRb::DRbError</a></li>
+        
+          
+          
+          <li><a href="../../DRb/DRbIdConv.html">DRb::DRbIdConv</a></li>
+        
+          
+          
+          <li><a href="../../DRb/DRbIdConv.html">DRb::DRbIdConv</a></li>
+        
+          
+          
+          <li><a href="../../DRb/DRbMessage.html">DRb::DRbMessage</a></li>
+        
+          
+          
+          <li><a href="../../DRb/DRbObject.html">DRb::DRbObject</a></li>
+        
+          
+          
+          <li><a href="../../DRb/DRbObject.html">DRb::DRbObject</a></li>
+        
+          
+          
+          <li><a href="../../DRb/DRbObservable.html">DRb::DRbObservable</a></li>
+        
+          
+          
+          <li><a href="../../DRb/DRbProtocol.html">DRb::DRbProtocol</a></li>
+        
+          
+          
+          <li><a href="../../DRb/DRbRemoteError.html">DRb::DRbRemoteError</a></li>
+        
+          
+          
+          <li><a href="../../DRb/DRbSSLSocket.html">DRb::DRbSSLSocket</a></li>
+        
+          
+          
+          <li><a href="../../DRb/DRbSSLSocket/SSLConfig.html">DRb::DRbSSLSocket::SSLConfig</a></li>
+        
+          
+          
+          <li><a href="../../DRb/DRbServerNotFound.html">DRb::DRbServerNotFound</a></li>
+        
+          
+          
+          <li><a href="../../DRb/DRbTCPSocket.html">DRb::DRbTCPSocket</a></li>
+        
+          
+          
+          <li><a href="../../DRb/DRbUNIXSocket.html">DRb::DRbUNIXSocket</a></li>
+        
+          
+          
+          <li><a href="../../DRb/DRbUndumped.html">DRb::DRbUndumped</a></li>
+        
+          
+          
+          <li><a href="../../DRb/DRbUndumped.html">DRb::DRbUndumped</a></li>
+        
+          
+          
+          <li><a href="../../DRb/DRbUnknown.html">DRb::DRbUnknown</a></li>
+        
+          
+          
+          <li><a href="../../DRb/DRbUnknownError.html">DRb::DRbUnknownError</a></li>
+        
+          
+          
+          <li><a href="../../DRb/ExtServ.html">DRb::ExtServ</a></li>
+        
+          
+          
+          <li><a href="../../DRb/ExtServManager.html">DRb::ExtServManager</a></li>
+        
+          
+          
+          <li><a href="../../DRb/GW.html">DRb::GW</a></li>
+        
+          
+          
+          <li><a href="../../DRb/GWIdConv.html">DRb::GWIdConv</a></li>
+        
+          
+          
+          <li><a href="../../DRb/ThreadObject.html">DRb::ThreadObject</a></li>
+        
+          
+          
+          <li><a href="../../DRb/TimerIdConv.html">DRb::TimerIdConv</a></li>
+        
+          
+          
+          <li><a href="../../DRb/TimerIdConv/TimerHolder2.html">DRb::TimerIdConv::TimerHolder2</a></li>
+        
+          
+          
+          <li><a href="../../DRb/TimerIdConv/TimerHolder2/InvalidIndexError.html">DRb::TimerIdConv::TimerHolder2::InvalidIndexError</a></li>
+        
+          
+          
+          <li><a href="../../DRb/WeakIdConv.html">DRb::WeakIdConv</a></li>
+        
+          
+          
+          <li><a href="../../DRb/WeakIdConv/WeakSet.html">DRb::WeakIdConv::WeakSet</a></li>
+        
+          
+          
+          <li><a href="../../Object.html">Object</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">DRb::DRbSSLSocket::SSLConfig</h1>
+
+    <div id="description" class="description">
+      
+<p><a href="SSLConfig.html"><code>SSLConfig</code></a> handles the needed SSL information for establishing a <a href="../DRbSSLSocket.html"><code>DRbSSLSocket</code></a> connection, including generating the X509 / RSA pair.</p>
+
+<p>An instance of this config can be passed to <a href="../DRbSSLSocket.html#method-c-new"><code>DRbSSLSocket.new</code></a>, <a href="../DRbSSLSocket.html#method-c-open"><code>DRbSSLSocket.open</code></a> and <a href="../DRbSSLSocket.html#method-c-open_server"><code>DRbSSLSocket.open_server</code></a></p>
+
+<p>See <a href="SSLConfig.html#method-c-new"><code>DRb::DRbSSLSocket::SSLConfig.new</code></a> for more details</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="DEFAULT">DEFAULT</a></dt>
+          
+          <dd class="description"><p>Default values for a <a href="SSLConfig.html"><code>SSLConfig</code></a> instance.</p>
+
+<p>See <a href="SSLConfig.html#method-c-new"><code>DRb::DRbSSLSocket::SSLConfig.new</code></a> for more details</p></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(config)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Create a new <a href="SSLConfig.html"><code>DRb::DRbSSLSocket::SSLConfig</code></a> instance</p>
+
+<p>The <a href="../DRbSSLSocket.html"><code>DRb::DRbSSLSocket</code></a> will take either a <code>config</code> Hash or an instance of <a href="SSLConfig.html"><code>SSLConfig</code></a>, and will setup the certificate for its session for the configuration. If want it to generate a generic certificate, the bare minimum is to provide the :SSLCertName</p>
+
+<h3 id="method-c-new-label-Config+options">Config options<span><a href="#method-c-new-label-Config+options">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>From <code>config</code> Hash:</p>
+<dl class="rdoc-list note-list"><dt>:SSLCertificate 
+<dd>
+<p>An instance of OpenSSL::X509::Certificate.  If this is not provided, then a generic X509 is generated, with a correspond :SSLPrivateKey</p>
+</dd><dt>:SSLPrivateKey 
+<dd>
+<p>A private key instance, like OpenSSL::PKey::RSA.  This key must be the key that signed the :SSLCertificate</p>
+</dd><dt>:SSLClientCA 
+<dd>
+<p>An OpenSSL::X509::Certificate, or Array of certificates that will used as ClientCAs in the SSL Context</p>
+</dd><dt>:SSLCACertificatePath 
+<dd>
+<p>A path to the directory of CA certificates.  The certificates must be in PEM format.</p>
+</dd><dt>:SSLCACertificateFile 
+<dd>
+<p>A path to a CA certificate file, in PEM format.</p>
+</dd><dt>:SSLTmpDhCallback 
+<dd>
+<p>A DH callback. See OpenSSL::SSL::SSLContext.tmp_dh_callback</p>
+</dd><dt>:SSLVerifyMode 
+<dd>
+<p>This is the SSL verification mode.  See OpenSSL::SSL::VERIFY_* for available modes.  The default is OpenSSL::SSL::VERIFY_NONE</p>
+</dd><dt>:SSLVerifyDepth 
+<dd>
+<p>Number of CA certificates to walk, when verifying a certificate chain.</p>
+</dd><dt>:SSLVerifyCallback 
+<dd>
+<p>A callback to be used for additional verification.  See OpenSSL::SSL::SSLContext.verify_callback</p>
+</dd><dt>:SSLCertificateStore 
+<dd>
+<p>A OpenSSL::X509::Store used for verification of certificates</p>
+</dd><dt>:SSLCertName 
+<dd>
+<p>Issuer name for the certificate.  This is required when generating the certificate (if :SSLCertificate and :SSLPrivateKey were not given).  The value of this is to be an Array of pairs:</p>
+
+<pre class="ruby">[[<span class="ruby-string">&quot;C&quot;</span>, <span class="ruby-string">&quot;Raleigh&quot;</span>], [<span class="ruby-string">&quot;ST&quot;</span>,<span class="ruby-string">&quot;North Carolina&quot;</span>],
+ [<span class="ruby-string">&quot;CN&quot;</span>,<span class="ruby-string">&quot;fqdn.example.com&quot;</span>]]
+</pre>
+
+<p>See also OpenSSL::X509::Name</p>
+</dd><dt>:SSLCertComment 
+<dd>
+<p>A comment to be used for generating the certificate.  The default is “Generated by Ruby/OpenSSL”</p>
+</dd></dl>
+
+<h3 id="method-c-new-label-Example">Example<span><a href="#method-c-new-label-Example">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>These values can be added after the fact, like a Hash.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;drb/ssl&#39;</span>
+<span class="ruby-identifier">c</span> = <span class="ruby-constant">DRb</span><span class="ruby-operator">::</span><span class="ruby-constant">DRbSSLSocket</span><span class="ruby-operator">::</span><span class="ruby-constant">SSLConfig</span>.<span class="ruby-identifier">new</span> {}
+<span class="ruby-identifier">c</span>[<span class="ruby-value">:SSLCertificate</span>] =
+  <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">X509</span><span class="ruby-operator">::</span><span class="ruby-constant">Certificate</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">&#39;mycert.crt&#39;</span>))
+<span class="ruby-identifier">c</span>[<span class="ruby-value">:SSLPrivateKey</span>] = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">PKey</span><span class="ruby-operator">::</span><span class="ruby-constant">RSA</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">&#39;mycert.key&#39;</span>))
+<span class="ruby-identifier">c</span>[<span class="ruby-value">:SSLVerifyMode</span>] = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SSL</span><span class="ruby-operator">::</span><span class="ruby-constant">VERIFY_PEER</span>
+<span class="ruby-identifier">c</span>[<span class="ruby-value">:SSLCACertificatePath</span>] = <span class="ruby-string">&quot;/etc/ssl/certs/&quot;</span>
+<span class="ruby-identifier">c</span>.<span class="ruby-identifier">setup_certificate</span>
+</pre>
+
+<p>or</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;drb/ssl&#39;</span>
+<span class="ruby-identifier">c</span> = <span class="ruby-constant">DRb</span><span class="ruby-operator">::</span><span class="ruby-constant">DRbSSLSocket</span><span class="ruby-operator">::</span><span class="ruby-constant">SSLConfig</span>.<span class="ruby-identifier">new</span>({
+        <span class="ruby-value">:SSLCertName</span> <span class="ruby-operator">=&gt;</span> [[<span class="ruby-string">&quot;CN&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-constant">DRb</span><span class="ruby-operator">::</span><span class="ruby-constant">DRbSSLSocket</span>.<span class="ruby-identifier">getservername</span>]]
+        })
+<span class="ruby-identifier">c</span>.<span class="ruby-identifier">setup_certificate</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File drb/ssl.rb, line 127</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">config</span>)
+  <span class="ruby-ivar">@config</span>  = <span class="ruby-identifier">config</span>
+  <span class="ruby-ivar">@cert</span>    = <span class="ruby-identifier">config</span>[<span class="ruby-value">:SSLCertificate</span>]
+  <span class="ruby-ivar">@pkey</span>    = <span class="ruby-identifier">config</span>[<span class="ruby-value">:SSLPrivateKey</span>]
+  <span class="ruby-ivar">@ssl_ctx</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="5B-5D-method" class="method-detail ">
+          <a name="method-i-5B-5D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">[]</span><span
+              class="method-args">(key)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>A convenience method to access the values like a Hash</p>
+            
+
+            
+            <div class="method-source-code" id="5B-5D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File drb/ssl.rb, line 135</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]</span>(<span class="ruby-identifier">key</span>);
+  <span class="ruby-ivar">@config</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">DEFAULT</span>[<span class="ruby-identifier">key</span>]
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 5B-5D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 5B-5D-method -->
+      
+        <div id="accept-method" class="method-detail ">
+          <a name="method-i-accept"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">accept</span><span
+              class="method-args">(tcp)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Accept connection to IO <code>tcp</code>, with context of the current certificate configuration</p>
+            
+
+            
+            <div class="method-source-code" id="accept-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File drb/ssl.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept</span>(<span class="ruby-identifier">tcp</span>)
+  <span class="ruby-identifier">ssl</span> = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SSLSocket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">tcp</span>, <span class="ruby-ivar">@ssl_ctx</span>)
+  <span class="ruby-identifier">ssl</span>.<span class="ruby-identifier">sync</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">ssl</span>.<span class="ruby-identifier">accept</span>
+  <span class="ruby-identifier">ssl</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- accept-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- accept-method -->
+      
+        <div id="connect-method" class="method-detail ">
+          <a name="method-i-connect"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">connect</span><span
+              class="method-args">(tcp)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Connect to IO <code>tcp</code>, with context of the current certificate configuration</p>
+            
+
+            
+            <div class="method-source-code" id="connect-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File drb/ssl.rb, line 141</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">connect</span>(<span class="ruby-identifier">tcp</span>)
+  <span class="ruby-identifier">ssl</span> = <span class="ruby-operator">::</span><span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SSLSocket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">tcp</span>, <span class="ruby-ivar">@ssl_ctx</span>)
+  <span class="ruby-identifier">ssl</span>.<span class="ruby-identifier">sync</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">ssl</span>.<span class="ruby-identifier">connect</span>
+  <span class="ruby-identifier">ssl</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- connect-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- connect-method -->
+      
+        <div id="setup_certificate-method" class="method-detail ">
+          <a name="method-i-setup_certificate"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">setup_certificate</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Ensures that :SSLCertificate and :SSLPrivateKey have been provided or that a new certificate is generated with the other parameters provided.</p>
+            
+
+            
+            <div class="method-source-code" id="setup_certificate-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File drb/ssl.rb, line 160</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup_certificate</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@cert</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@pkey</span>
+    <span class="ruby-keyword">return</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">rsa</span> = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">PKey</span><span class="ruby-operator">::</span><span class="ruby-constant">RSA</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2048</span>){<span class="ruby-operator">|</span><span class="ruby-identifier">p</span>, <span class="ruby-identifier">n</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">:verbose</span>]
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">p</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">0</span>; <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">putc</span> <span class="ruby-string">&quot;.&quot;</span>  <span class="ruby-comment"># BN_generate_prime</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">1</span>; <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">putc</span> <span class="ruby-string">&quot;+&quot;</span>  <span class="ruby-comment"># BN_generate_prime</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">2</span>; <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">putc</span> <span class="ruby-string">&quot;*&quot;</span>  <span class="ruby-comment"># searching good prime,</span>
+                              <span class="ruby-comment"># n = #of try,</span>
+                              <span class="ruby-comment"># but also data from BN_generate_prime</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">3</span>; <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">putc</span> <span class="ruby-string">&quot;\n&quot;</span> <span class="ruby-comment"># found good prime, n==0 - p, n==1 - q,</span>
+                              <span class="ruby-comment"># but also data from BN_generate_prime</span>
+    <span class="ruby-keyword">else</span>;   <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">putc</span> <span class="ruby-string">&quot;*&quot;</span>  <span class="ruby-comment"># BN_generate_prime</span>
+    <span class="ruby-keyword">end</span>
+  }
+
+  <span class="ruby-identifier">cert</span> = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">X509</span><span class="ruby-operator">::</span><span class="ruby-constant">Certificate</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">cert</span>.<span class="ruby-identifier">version</span> = <span class="ruby-value">3</span>
+  <span class="ruby-identifier">cert</span>.<span class="ruby-identifier">serial</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">name</span> = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">X509</span><span class="ruby-operator">::</span><span class="ruby-constant">Name</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>[<span class="ruby-value">:SSLCertName</span>])
+  <span class="ruby-identifier">cert</span>.<span class="ruby-identifier">subject</span> = <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">cert</span>.<span class="ruby-identifier">issuer</span> = <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">cert</span>.<span class="ruby-identifier">not_before</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+  <span class="ruby-identifier">cert</span>.<span class="ruby-identifier">not_after</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">+</span> (<span class="ruby-value">365</span><span class="ruby-operator">*</span><span class="ruby-value">24</span><span class="ruby-operator">*</span><span class="ruby-value">60</span><span class="ruby-operator">*</span><span class="ruby-value">60</span>)
+  <span class="ruby-identifier">cert</span>.<span class="ruby-identifier">public_key</span> = <span class="ruby-identifier">rsa</span>.<span class="ruby-identifier">public_key</span>
+
+  <span class="ruby-identifier">ef</span> = <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">X509</span><span class="ruby-operator">::</span><span class="ruby-constant">ExtensionFactory</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">nil</span>,<span class="ruby-identifier">cert</span>)
+  <span class="ruby-identifier">cert</span>.<span class="ruby-identifier">extensions</span> = [
+    <span class="ruby-identifier">ef</span>.<span class="ruby-identifier">create_extension</span>(<span class="ruby-string">&quot;basicConstraints&quot;</span>,<span class="ruby-string">&quot;CA:FALSE&quot;</span>),
+    <span class="ruby-identifier">ef</span>.<span class="ruby-identifier">create_extension</span>(<span class="ruby-string">&quot;subjectKeyIdentifier&quot;</span>, <span class="ruby-string">&quot;hash&quot;</span>) ]
+  <span class="ruby-identifier">ef</span>.<span class="ruby-identifier">issuer_certificate</span> = <span class="ruby-identifier">cert</span>
+  <span class="ruby-identifier">cert</span>.<span class="ruby-identifier">add_extension</span>(<span class="ruby-identifier">ef</span>.<span class="ruby-identifier">create_extension</span>(<span class="ruby-string">&quot;authorityKeyIdentifier&quot;</span>,
+                                         <span class="ruby-string">&quot;keyid:always,issuer:always&quot;</span>))
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">comment</span> = <span class="ruby-keyword">self</span>[<span class="ruby-value">:SSLCertComment</span>]
+    <span class="ruby-identifier">cert</span>.<span class="ruby-identifier">add_extension</span>(<span class="ruby-identifier">ef</span>.<span class="ruby-identifier">create_extension</span>(<span class="ruby-string">&quot;nsComment&quot;</span>, <span class="ruby-identifier">comment</span>))
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">cert</span>.<span class="ruby-identifier">sign</span>(<span class="ruby-identifier">rsa</span>, <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">SHA256</span>.<span class="ruby-identifier">new</span>)
+
+  <span class="ruby-ivar">@cert</span> = <span class="ruby-identifier">cert</span>
+  <span class="ruby-ivar">@pkey</span> = <span class="ruby-identifier">rsa</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- setup_certificate-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- setup_certificate-method -->
+      
+        <div id="setup_ssl_context-method" class="method-detail ">
+          <a name="method-i-setup_ssl_context"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">setup_ssl_context</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Establish the OpenSSL::SSL::SSLContext with the configuration parameters provided.</p>
+            
+
+            
+            <div class="method-source-code" id="setup_ssl_context-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File drb/ssl.rb, line 207</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup_ssl_context</span>
+  <span class="ruby-identifier">ctx</span> = <span class="ruby-operator">::</span><span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SSLContext</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">ctx</span>.<span class="ruby-identifier">cert</span>            = <span class="ruby-ivar">@cert</span>
+  <span class="ruby-identifier">ctx</span>.<span class="ruby-identifier">key</span>             = <span class="ruby-ivar">@pkey</span>
+  <span class="ruby-identifier">ctx</span>.<span class="ruby-identifier">client_ca</span>       = <span class="ruby-keyword">self</span>[<span class="ruby-value">:SSLClientCA</span>]
+  <span class="ruby-identifier">ctx</span>.<span class="ruby-identifier">ca_path</span>         = <span class="ruby-keyword">self</span>[<span class="ruby-value">:SSLCACertificatePath</span>]
+  <span class="ruby-identifier">ctx</span>.<span class="ruby-identifier">ca_file</span>         = <span class="ruby-keyword">self</span>[<span class="ruby-value">:SSLCACertificateFile</span>]
+  <span class="ruby-identifier">ctx</span>.<span class="ruby-identifier">tmp_dh_callback</span> = <span class="ruby-keyword">self</span>[<span class="ruby-value">:SSLTmpDhCallback</span>]
+  <span class="ruby-identifier">ctx</span>.<span class="ruby-identifier">verify_mode</span>     = <span class="ruby-keyword">self</span>[<span class="ruby-value">:SSLVerifyMode</span>]
+  <span class="ruby-identifier">ctx</span>.<span class="ruby-identifier">verify_depth</span>    = <span class="ruby-keyword">self</span>[<span class="ruby-value">:SSLVerifyDepth</span>]
+  <span class="ruby-identifier">ctx</span>.<span class="ruby-identifier">verify_callback</span> = <span class="ruby-keyword">self</span>[<span class="ruby-value">:SSLVerifyCallback</span>]
+  <span class="ruby-identifier">ctx</span>.<span class="ruby-identifier">cert_store</span>      = <span class="ruby-keyword">self</span>[<span class="ruby-value">:SSLCertificateStore</span>]
+  <span class="ruby-ivar">@ssl_ctx</span> = <span class="ruby-identifier">ctx</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- setup_ssl_context-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- setup_ssl_context-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_SSLConfig_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_SSLConfig_versioned").load("/associated/2.7.4/SSLConfig.ihtml");</script> <div id='tx_SSLConfig' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_SSLConfig").load("/associated/SSLConfig.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, an erratic source of art, music, and technology.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_SSLConfig.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_SSLConfig.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

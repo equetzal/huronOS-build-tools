@@ -1,0 +1,2895 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : Addrinfo  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:32:04 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = ''  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = ''  --> 
+  <title>Class: Addrinfo (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href=".css/obf.css"  -->
+  <link rel="stylesheet" href="css/inuit.css" >
+  <link rel="stylesheet" href="css/grid.inuit.css" >
+  <link rel="stylesheet" href="css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="css/carbon17.css" type="text/css" >
+
+
+  <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="/js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>socket/lib/socket.rb</li>      
+            
+          
+          <li class='in-file'>socket/raddrinfo.c</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Data</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-foreach">::foreach</a></li>
+          
+          <li><a href="#method-c-getaddrinfo">::getaddrinfo</a></li>
+          
+          <li><a href="#method-c-ip">::ip</a></li>
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-c-tcp">::tcp</a></li>
+          
+          <li><a href="#method-c-udp">::udp</a></li>
+          
+          <li><a href="#method-c-unix">::unix</a></li>
+          
+          <li><a href="#method-i-afamily">#afamily</a></li>
+          
+          <li><a href="#method-i-bind">#bind</a></li>
+          
+          <li><a href="#method-i-canonname">#canonname</a></li>
+          
+          <li><a href="#method-i-connect">#connect</a></li>
+          
+          <li><a href="#method-i-connect_from">#connect_from</a></li>
+          
+          <li><a href="#method-i-connect_internal">#connect_internal</a></li>
+          
+          <li><a href="#method-i-connect_to">#connect_to</a></li>
+          
+          <li><a href="#method-i-family_addrinfo">#family_addrinfo</a></li>
+          
+          <li><a href="#method-i-getnameinfo">#getnameinfo</a></li>
+          
+          <li><a href="#method-i-inspect">#inspect</a></li>
+          
+          <li><a href="#method-i-inspect_sockaddr">#inspect_sockaddr</a></li>
+          
+          <li><a href="#method-i-ip-3F">#ip?</a></li>
+          
+          <li><a href="#method-i-ip_address">#ip_address</a></li>
+          
+          <li><a href="#method-i-ip_port">#ip_port</a></li>
+          
+          <li><a href="#method-i-ip_unpack">#ip_unpack</a></li>
+          
+          <li><a href="#method-i-ipv4-3F">#ipv4?</a></li>
+          
+          <li><a href="#method-i-ipv4_loopback-3F">#ipv4_loopback?</a></li>
+          
+          <li><a href="#method-i-ipv4_multicast-3F">#ipv4_multicast?</a></li>
+          
+          <li><a href="#method-i-ipv4_private-3F">#ipv4_private?</a></li>
+          
+          <li><a href="#method-i-ipv6-3F">#ipv6?</a></li>
+          
+          <li><a href="#method-i-ipv6_linklocal-3F">#ipv6_linklocal?</a></li>
+          
+          <li><a href="#method-i-ipv6_loopback-3F">#ipv6_loopback?</a></li>
+          
+          <li><a href="#method-i-ipv6_mc_global-3F">#ipv6_mc_global?</a></li>
+          
+          <li><a href="#method-i-ipv6_mc_linklocal-3F">#ipv6_mc_linklocal?</a></li>
+          
+          <li><a href="#method-i-ipv6_mc_nodelocal-3F">#ipv6_mc_nodelocal?</a></li>
+          
+          <li><a href="#method-i-ipv6_mc_orglocal-3F">#ipv6_mc_orglocal?</a></li>
+          
+          <li><a href="#method-i-ipv6_mc_sitelocal-3F">#ipv6_mc_sitelocal?</a></li>
+          
+          <li><a href="#method-i-ipv6_multicast-3F">#ipv6_multicast?</a></li>
+          
+          <li><a href="#method-i-ipv6_sitelocal-3F">#ipv6_sitelocal?</a></li>
+          
+          <li><a href="#method-i-ipv6_to_ipv4">#ipv6_to_ipv4</a></li>
+          
+          <li><a href="#method-i-ipv6_unique_local-3F">#ipv6_unique_local?</a></li>
+          
+          <li><a href="#method-i-ipv6_unspecified-3F">#ipv6_unspecified?</a></li>
+          
+          <li><a href="#method-i-ipv6_v4compat-3F">#ipv6_v4compat?</a></li>
+          
+          <li><a href="#method-i-ipv6_v4mapped-3F">#ipv6_v4mapped?</a></li>
+          
+          <li><a href="#method-i-listen">#listen</a></li>
+          
+          <li><a href="#method-i-pfamily">#pfamily</a></li>
+          
+          <li><a href="#method-i-protocol">#protocol</a></li>
+          
+          <li><a href="#method-i-socktype">#socktype</a></li>
+          
+          <li><a href="#method-i-to_s">#to_s</a></li>
+          
+          <li><a href="#method-i-to_sockaddr">#to_sockaddr</a></li>
+          
+          <li><a href="#method-i-unix-3F">#unix?</a></li>
+          
+          <li><a href="#method-i-unix_path">#unix_path</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="./Addrinfo.html">Addrinfo</a></li>
+        
+          
+          
+          <li><a href="./BasicSocket.html">BasicSocket</a></li>
+        
+          
+          
+          <li><a href="./IPSocket.html">IPSocket</a></li>
+        
+          
+          
+          <li><a href="./Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="./SOCKSSocket.html">SOCKSSocket</a></li>
+        
+          
+          
+          <li><a href="./Socket.html">Socket</a></li>
+        
+          
+          
+          <li><a href="./Socket/AncillaryData.html">Socket::AncillaryData</a></li>
+        
+          
+          
+          <li><a href="./Socket/Constants.html">Socket::Constants</a></li>
+        
+          
+          
+          <li><a href="./Socket/Ifaddr.html">Socket::Ifaddr</a></li>
+        
+          
+          
+          <li><a href="./Socket/Option.html">Socket::Option</a></li>
+        
+          
+          
+          <li><a href="./Socket/UDPSource.html">Socket::UDPSource</a></li>
+        
+          
+          
+          <li><a href="./SocketError.html">SocketError</a></li>
+        
+          
+          
+          <li><a href="./TCPServer.html">TCPServer</a></li>
+        
+          
+          
+          <li><a href="./TCPSocket.html">TCPSocket</a></li>
+        
+          
+          
+          <li><a href="./UDPSocket.html">UDPSocket</a></li>
+        
+          
+          
+          <li><a href="./UNIXServer.html">UNIXServer</a></li>
+        
+          
+          
+          <li><a href="./UNIXSocket.html">UNIXSocket</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">Addrinfo</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="foreach-method" class="method-detail ">
+          <a name="method-c-foreach"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">foreach</span><span
+              class="method-args">(nodename, service, family=nil, socktype=nil, protocol=nil, flags=nil, timeout: nil, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>iterates over the list of <a href="Addrinfo.html"><code>Addrinfo</code></a> objects obtained by <a href="Addrinfo.html#method-c-getaddrinfo"><code>Addrinfo.getaddrinfo</code></a>.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">foreach</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-value">80</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span> <span class="ruby-identifier">x</span> }
+<span class="ruby-comment">#=&gt; #&lt;Addrinfo: 127.0.0.1:80 TCP (:80)&gt;</span>
+<span class="ruby-comment">#   #&lt;Addrinfo: 127.0.0.1:80 UDP (:80)&gt;</span>
+<span class="ruby-comment">#   #&lt;Addrinfo: [::1]:80 TCP (:80)&gt;</span>
+<span class="ruby-comment">#   #&lt;Addrinfo: [::1]:80 UDP (:80)&gt;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="foreach-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File socket/lib/socket.rb, line 226</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">foreach</span>(<span class="ruby-identifier">nodename</span>, <span class="ruby-identifier">service</span>, <span class="ruby-identifier">family</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">socktype</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">protocol</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">flags</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-value">timeout:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">getaddrinfo</span>(<span class="ruby-identifier">nodename</span>, <span class="ruby-identifier">service</span>, <span class="ruby-identifier">family</span>, <span class="ruby-identifier">socktype</span>, <span class="ruby-identifier">protocol</span>, <span class="ruby-identifier">flags</span>, <span class="ruby-value">timeout:</span> <span class="ruby-identifier">timeout</span>).<span class="ruby-identifier">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- foreach-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- foreach-method -->
+      
+        <div id="getaddrinfo-method" class="method-detail ">
+          <a name="method-c-getaddrinfo"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">getaddrinfo(nodename, service, family, socktype, protocol, flags) => [addrinfo, ...]</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">getaddrinfo(nodename, service, family, socktype, protocol)        => [addrinfo, ...]</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">getaddrinfo(nodename, service, family, socktype)                  => [addrinfo, ...]</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">getaddrinfo(nodename, service, family)                            => [addrinfo, ...]</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">getaddrinfo(nodename, service)                                    => [addrinfo, ...]</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>returns a list of addrinfo objects as an array.</p>
+
+<p>This method converts nodename (hostname) and service (port) to addrinfo. Since the conversion is not unique, the result is a list of addrinfo objects.</p>
+
+<p>nodename or service can be nil if no conversion intended.</p>
+
+<p>family, socktype and protocol are hint for preferred protocol. If the result will be used for a socket with SOCK_STREAM, SOCK_STREAM should be specified as socktype. If so, <a href="Addrinfo.html#method-c-getaddrinfo"><code>Addrinfo.getaddrinfo</code></a> returns addrinfo list appropriate for SOCK_STREAM. If they are omitted or nil is given, the result is not restricted.</p>
+
+<p>Similarly, PF_INET6 as family restricts for IPv6.</p>
+
+<p>flags should be bitwise OR of Socket::AI_??? constants such as follows. Note that the exact list of the constants depends on OS.</p>
+
+<pre>AI_PASSIVE      Get address to use with bind()
+AI_CANONNAME    Fill in the canonical name
+AI_NUMERICHOST  Prevent host name resolution
+AI_NUMERICSERV  Prevent service name resolution
+AI_V4MAPPED     Accept IPv4-mapped IPv6 addresses
+AI_ALL          Allow all addresses
+AI_ADDRCONFIG   Accept only if any address is assigned</pre>
+
+<p>Note that socktype should be specified whenever application knows the usage of the address. Some platform causes an error when socktype is omitted and servname is specified as an integer because some port numbers, 512 for example, are ambiguous without socktype.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">getaddrinfo</span>(<span class="ruby-string">&quot;www.kame.net&quot;</span>, <span class="ruby-value">80</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-value">:STREAM</span>)
+<span class="ruby-comment">#=&gt; [#&lt;Addrinfo: 203.178.141.194:80 TCP (www.kame.net)&gt;,</span>
+<span class="ruby-comment">#    #&lt;Addrinfo: [2001:200:dff:fff1:216:3eff:feb1:44d7]:80 TCP (www.kame.net)&gt;]</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="getaddrinfo-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_s_getaddrinfo(int argc, VALUE *argv, VALUE self)
+{
+    VALUE node, service, family, socktype, protocol, flags, opts, timeout;
+
+    rb_scan_args(argc, argv, &quot;24:&quot;, &amp;node, &amp;service, &amp;family, &amp;socktype,
+                 &amp;protocol, &amp;flags, &amp;opts);
+    rb_get_kwargs(opts, &amp;id_timeout, 0, 1, &amp;timeout);
+    if (timeout == Qundef) {
+        timeout = Qnil;
+    }
+
+    return addrinfo_list_new(node, service, family, socktype, protocol, flags, timeout);
+}
+            </pre> 
+            </div><!-- getaddrinfo-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- getaddrinfo-method -->
+      
+        <div id="ip-method" class="method-detail ">
+          <a name="method-c-ip"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">ip(host) => addrinfo</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>returns an addrinfo object for IP address.</p>
+
+<p>The port, socktype, protocol of the result is filled by zero. So, it is not appropriate to create a socket.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">ip</span>(<span class="ruby-string">&quot;localhost&quot;</span>) <span class="ruby-comment">#=&gt; #&lt;Addrinfo: 127.0.0.1 (localhost)&gt;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="ip-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_s_ip(VALUE self, VALUE host)
+{
+    VALUE ret;
+    rb_addrinfo_t *rai;
+    ret = addrinfo_firstonly_new(host, Qnil,
+            INT2NUM(PF_UNSPEC), INT2FIX(0), INT2FIX(0), INT2FIX(0));
+    rai = get_addrinfo(ret);
+    rai-&gt;socktype = 0;
+    rai-&gt;protocol = 0;
+    return ret;
+}
+            </pre> 
+            </div><!-- ip-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ip-method -->
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">new(sockaddr)                             => addrinfo</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">new(sockaddr, family)                     => addrinfo</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">new(sockaddr, family, socktype)           => addrinfo</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">new(sockaddr, family, socktype, protocol) => addrinfo</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>returns a new instance of <a href="Addrinfo.html"><code>Addrinfo</code></a>. The instance contains sockaddr, family, socktype, protocol. sockaddr means struct sockaddr which can be used for connect(2), etc. family, socktype and protocol are integers which is used for arguments of socket(2).</p>
+
+<p>sockaddr is specified as an array or a string. The array should be compatible to the value of <a href="IPSocket.html#method-i-addr"><code>IPSocket#addr</code></a> or <a href="UNIXSocket.html#method-i-addr"><code>UNIXSocket#addr</code></a>. The string should be struct sockaddr as generated by <a href="Socket.html#method-c-sockaddr_in"><code>Socket.sockaddr_in</code></a> or <a href="Socket.html#method-c-unpack_sockaddr_un"><code>Socket.unpack_sockaddr_un</code></a>.</p>
+
+<p>sockaddr examples:</p>
+<ul><li><dl class="rdoc-list label-list"><dt>“AF_INET”, 46102, “localhost.localdomain”, “127.0.0.1”
+<dd></dd></dl>
+</li><li><dl class="rdoc-list label-list"><dt>“AF_INET6”, 42304, “ip6-localhost”, “::1”
+<dd></dd></dl>
+</li><li><dl class="rdoc-list label-list"><dt>“AF_UNIX”, “/tmp/sock”
+<dd></dd></dl>
+</li><li>
+<p><a href="Socket.html#method-c-sockaddr_in"><code>Socket.sockaddr_in</code></a>(“smtp”, “2001:DB8::1”)</p>
+</li><li>
+<p><a href="Socket.html#method-c-sockaddr_in"><code>Socket.sockaddr_in</code></a>(80, “172.18.22.42”)</p>
+</li><li>
+<p><a href="Socket.html#method-c-sockaddr_in"><code>Socket.sockaddr_in</code></a>(80, “<a href="www.ruby-lang.org">www.ruby-lang.org</a>”)</p>
+</li><li>
+<p><a href="Socket.html#method-c-sockaddr_un"><code>Socket.sockaddr_un</code></a>(“/tmp/sock”)</p>
+</li></ul>
+
+<p>In an AF_INET/AF_INET6 sockaddr array, the 4th element, numeric IP address, is used to construct socket address in the <a href="Addrinfo.html"><code>Addrinfo</code></a> instance. If the 3rd element, textual host name, is non-nil, it is also recorded but used only for <a href="Addrinfo.html#method-i-inspect"><code>Addrinfo#inspect</code></a>.</p>
+
+<p>family is specified as an integer to specify the protocol family such as Socket::PF_INET. It can be a symbol or a string which is the constant name with or without PF_ prefix such as :INET, :INET6, :UNIX, “PF_INET”, etc. If omitted, PF_UNSPEC is assumed.</p>
+
+<p>socktype is specified as an integer to specify the socket type such as Socket::SOCK_STREAM. It can be a symbol or a string which is the constant name with or without SOCK_ prefix such as :STREAM, :DGRAM, :RAW, “SOCK_STREAM”, etc. If omitted, 0 is assumed.</p>
+
+<p>protocol is specified as an integer to specify the protocol such as Socket::IPPROTO_TCP. It must be an integer, unlike family and socktype. If omitted, 0 is assumed. Note that 0 is reasonable value for most protocols, except raw socket.</p>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_initialize(int argc, VALUE *argv, VALUE self)
+{
+    rb_addrinfo_t *rai;
+    VALUE sockaddr_arg, sockaddr_ary, pfamily, socktype, protocol;
+    int i_pfamily, i_socktype, i_protocol;
+    struct sockaddr *sockaddr_ptr;
+    socklen_t sockaddr_len;
+    VALUE canonname = Qnil, inspectname = Qnil;
+
+    if (check_addrinfo(self))
+        rb_raise(rb_eTypeError, &quot;already initialized socket address&quot;);
+    DATA_PTR(self) = rai = alloc_addrinfo();
+
+    rb_scan_args(argc, argv, &quot;13&quot;, &amp;sockaddr_arg, &amp;pfamily, &amp;socktype, &amp;protocol);
+
+    i_pfamily = NIL_P(pfamily) ? PF_UNSPEC : rsock_family_arg(pfamily);
+    i_socktype = NIL_P(socktype) ? 0 : rsock_socktype_arg(socktype);
+    i_protocol = NIL_P(protocol) ? 0 : NUM2INT(protocol);
+
+    sockaddr_ary = rb_check_array_type(sockaddr_arg);
+    if (!NIL_P(sockaddr_ary)) {
+        VALUE afamily = rb_ary_entry(sockaddr_ary, 0);
+        int af;
+        StringValue(afamily);
+        if (rsock_family_to_int(RSTRING_PTR(afamily), RSTRING_LEN(afamily), &amp;af) == -1)
+            rb_raise(rb_eSocket, &quot;unknown address family: %s&quot;, StringValueCStr(afamily));
+        switch (af) {
+          case AF_INET: /* [&quot;AF_INET&quot;, 46102, &quot;localhost.localdomain&quot;, &quot;127.0.0.1&quot;] */
+#ifdef INET6
+          case AF_INET6: /* [&quot;AF_INET6&quot;, 42304, &quot;ip6-localhost&quot;, &quot;::1&quot;] */
+#endif
+          {
+            VALUE service = rb_ary_entry(sockaddr_ary, 1);
+            VALUE nodename = rb_ary_entry(sockaddr_ary, 2);
+            VALUE numericnode = rb_ary_entry(sockaddr_ary, 3);
+            int flags;
+
+            service = INT2NUM(NUM2INT(service));
+            if (!NIL_P(nodename))
+                StringValue(nodename);
+            StringValue(numericnode);
+            flags = AI_NUMERICHOST;
+#ifdef AI_NUMERICSERV
+            flags |= AI_NUMERICSERV;
+#endif
+
+            init_addrinfo_getaddrinfo(rai, numericnode, service,
+                    INT2NUM(i_pfamily ? i_pfamily : af), INT2NUM(i_socktype), INT2NUM(i_protocol),
+                    INT2NUM(flags),
+                    nodename, service);
+            break;
+          }
+
+#ifdef HAVE_SYS_UN_H
+          case AF_UNIX: /* [&quot;AF_UNIX&quot;, &quot;/tmp/sock&quot;] */
+          {
+            VALUE path = rb_ary_entry(sockaddr_ary, 1);
+            StringValue(path);
+            init_unix_addrinfo(rai, path, SOCK_STREAM);
+            break;
+          }
+#endif
+
+          default:
+            rb_raise(rb_eSocket, &quot;unexpected address family&quot;);
+        }
+    }
+    else {
+        StringValue(sockaddr_arg);
+        sockaddr_ptr = (struct sockaddr *)RSTRING_PTR(sockaddr_arg);
+        sockaddr_len = RSTRING_SOCKLEN(sockaddr_arg);
+        init_addrinfo(rai, sockaddr_ptr, sockaddr_len,
+                      i_pfamily, i_socktype, i_protocol,
+                      canonname, inspectname);
+    }
+
+    return self;
+}
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+        <div id="tcp-method" class="method-detail ">
+          <a name="method-c-tcp"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">tcp(host, port) => addrinfo</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>returns an addrinfo object for TCP address.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;localhost&quot;</span>, <span class="ruby-string">&quot;smtp&quot;</span>) <span class="ruby-comment">#=&gt; #&lt;Addrinfo: 127.0.0.1:25 TCP (localhost:smtp)&gt;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="tcp-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_s_tcp(VALUE self, VALUE host, VALUE port)
+{
+    return addrinfo_firstonly_new(host, port,
+            INT2NUM(PF_UNSPEC), INT2NUM(SOCK_STREAM), INT2NUM(IPPROTO_TCP), INT2FIX(0));
+}
+            </pre> 
+            </div><!-- tcp-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- tcp-method -->
+      
+        <div id="udp-method" class="method-detail ">
+          <a name="method-c-udp"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">udp(host, port) => addrinfo</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>returns an addrinfo object for UDP address.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">udp</span>(<span class="ruby-string">&quot;localhost&quot;</span>, <span class="ruby-string">&quot;daytime&quot;</span>) <span class="ruby-comment">#=&gt; #&lt;Addrinfo: 127.0.0.1:13 UDP (localhost:daytime)&gt;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="udp-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_s_udp(VALUE self, VALUE host, VALUE port)
+{
+    return addrinfo_firstonly_new(host, port,
+            INT2NUM(PF_UNSPEC), INT2NUM(SOCK_DGRAM), INT2NUM(IPPROTO_UDP), INT2FIX(0));
+}
+            </pre> 
+            </div><!-- udp-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- udp-method -->
+      
+        <div id="unix-method" class="method-detail ">
+          <a name="method-c-unix"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">unix(path [, socktype]) => addrinfo</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>returns an addrinfo object for UNIX socket address.</p>
+
+<p><em>socktype</em> specifies the socket type. If it is omitted, :STREAM is used.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">unix</span>(<span class="ruby-string">&quot;/tmp/sock&quot;</span>)         <span class="ruby-comment">#=&gt; #&lt;Addrinfo: /tmp/sock SOCK_STREAM&gt;</span>
+<span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">unix</span>(<span class="ruby-string">&quot;/tmp/sock&quot;</span>, <span class="ruby-value">:DGRAM</span>) <span class="ruby-comment">#=&gt; #&lt;Addrinfo: /tmp/sock SOCK_DGRAM&gt;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="unix-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_s_unix(int argc, VALUE *argv, VALUE self)
+{
+    VALUE path, vsocktype, addr;
+    int socktype;
+    rb_addrinfo_t *rai;
+
+    rb_scan_args(argc, argv, &quot;11&quot;, &amp;path, &amp;vsocktype);
+
+    if (NIL_P(vsocktype))
+        socktype = SOCK_STREAM;
+    else
+        socktype = rsock_socktype_arg(vsocktype);
+
+    addr = addrinfo_s_allocate(rb_cAddrinfo);
+    DATA_PTR(addr) = rai = alloc_addrinfo();
+    init_unix_addrinfo(rai, path, socktype);
+    return addr;
+}
+            </pre> 
+            </div><!-- unix-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- unix-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="afamily-method" class="method-detail ">
+          <a name="method-i-afamily"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">afamily => integer</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>returns the address family as an integer.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;localhost&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">afamily</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Socket</span><span class="ruby-operator">::</span><span class="ruby-constant">AF_INET</span> <span class="ruby-comment">#=&gt; true</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="afamily-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_afamily(VALUE self)
+{
+    rb_addrinfo_t *rai = get_addrinfo(self);
+    return INT2NUM(ai_get_afamily(rai));
+}
+            </pre> 
+            </div><!-- afamily-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- afamily-method -->
+      
+        <div id="bind-method" class="method-detail ">
+          <a name="method-i-bind"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">bind</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>creates a socket bound to self.</p>
+
+<p>If a block is given, it is called with the socket and the value of the block is returned. The socket is returned otherwise.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">udp</span>(<span class="ruby-string">&quot;0.0.0.0&quot;</span>, <span class="ruby-value">9981</span>).<span class="ruby-identifier">bind</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">local_address</span>.<span class="ruby-identifier">connect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">send</span> <span class="ruby-string">&quot;hello&quot;</span>, <span class="ruby-value">0</span> }
+  <span class="ruby-identifier">p</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">recv</span>(<span class="ruby-value">10</span>) <span class="ruby-comment">#=&gt; &quot;hello&quot;</span>
+}
+</pre>
+            
+
+            
+            <div class="method-source-code" id="bind-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File socket/lib/socket.rb, line 174</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">bind</span>
+  <span class="ruby-identifier">sock</span> = <span class="ruby-constant">Socket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">pfamily</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">socktype</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">protocol</span>)
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">ipv6only!</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ipv6?</span>
+    <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">setsockopt</span>(<span class="ruby-value">:SOCKET</span>, <span class="ruby-value">:REUSEADDR</span>, <span class="ruby-value">1</span>)
+    <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">bind</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span>
+    <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">close</span>
+    <span class="ruby-identifier">raise</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-keyword">yield</span> <span class="ruby-identifier">sock</span>
+    <span class="ruby-keyword">ensure</span>
+      <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">close</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">sock</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- bind-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- bind-method -->
+      
+        <div id="canonname-method" class="method-detail ">
+          <a name="method-i-canonname"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">canonname => string or nil</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>returns the canonical name as an string.</p>
+
+<p>nil is returned if no canonical name.</p>
+
+<p>The canonical name is set by <a href="Addrinfo.html#method-c-getaddrinfo"><code>Addrinfo.getaddrinfo</code></a> when AI_CANONNAME is specified.</p>
+
+<pre class="ruby"><span class="ruby-identifier">list</span> = <span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">getaddrinfo</span>(<span class="ruby-string">&quot;www.ruby-lang.org&quot;</span>, <span class="ruby-value">80</span>, <span class="ruby-value">:INET</span>, <span class="ruby-value">:STREAM</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-constant">Socket</span><span class="ruby-operator">::</span><span class="ruby-constant">AI_CANONNAME</span>)
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">list</span>[<span class="ruby-value">0</span>] <span class="ruby-comment">#=&gt; #&lt;Addrinfo: 221.186.184.68:80 TCP carbon.ruby-lang.org (www.ruby-lang.org)&gt;</span>
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">list</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">canonname</span> <span class="ruby-comment">#=&gt; &quot;carbon.ruby-lang.org&quot;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="canonname-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_canonname(VALUE self)
+{
+    rb_addrinfo_t *rai = get_addrinfo(self);
+    return rai-&gt;canonname;
+}
+            </pre> 
+            </div><!-- canonname-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- canonname-method -->
+      
+        <div id="connect-method" class="method-detail ">
+          <a name="method-i-connect"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">connect([opts]) {|socket| ... }</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">connect([opts])</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>creates a socket connected to the address of self.</p>
+
+<p>The optional argument <em>opts</em> is options represented by a hash. <em>opts</em> may have following options:</p>
+<dl class="rdoc-list label-list"><dt>:timeout
+<dd>
+<p>specify the timeout in seconds.</p>
+</dd></dl>
+
+<p>If a block is given, it is called with the socket and the value of the block is returned. The socket is returned otherwise.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;www.ruby-lang.org&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">connect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">print</span> <span class="ruby-string">&quot;GET / HTTP/1.0\r\nHost: www.ruby-lang.org\r\n\r\n&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">read</span>
+}
+</pre>
+            
+
+            
+            <div class="method-source-code" id="connect-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File socket/lib/socket.rb, line 136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">connect</span>(<span class="ruby-value">timeout:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">connect_internal</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">timeout</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- connect-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- connect-method -->
+      
+        <div id="connect_from-method" class="method-detail ">
+          <a name="method-i-connect_from"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">connect_from([local_addr_args], [opts]) {|socket| ... }</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">connect_from([local_addr_args], [opts])</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>creates a socket connected to the address of self.</p>
+
+<p>If one or more arguments given as <em>local_addr_args</em>, it is used as the local address of the socket. <em>local_addr_args</em> is given for <a href="Addrinfo.html#method-i-family_addrinfo"><code>family_addrinfo</code></a> to obtain actual address.</p>
+
+<p>If <em>local_addr_args</em> is not given, the local address of the socket is not bound.</p>
+
+<p>The optional last argument <em>opts</em> is options represented by a hash. <em>opts</em> may have following options:</p>
+<dl class="rdoc-list label-list"><dt>:timeout
+<dd>
+<p>specify the timeout in seconds.</p>
+</dd></dl>
+
+<p>If a block is given, it is called with the socket and the value of the block is returned. The socket is returned otherwise.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;www.ruby-lang.org&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">connect_from</span>(<span class="ruby-string">&quot;0.0.0.0&quot;</span>, <span class="ruby-value">4649</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">print</span> <span class="ruby-string">&quot;GET / HTTP/1.0\r\nHost: www.ruby-lang.org\r\n\r\n&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">read</span>
+}
+
+<span class="ruby-comment"># Addrinfo object can be taken for the argument.</span>
+<span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;www.ruby-lang.org&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">connect_from</span>(<span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;0.0.0.0&quot;</span>, <span class="ruby-value">4649</span>)) {<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">print</span> <span class="ruby-string">&quot;GET / HTTP/1.0\r\nHost: www.ruby-lang.org\r\n\r\n&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">read</span>
+}
+</pre>
+            
+
+            
+            <div class="method-source-code" id="connect_from-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File socket/lib/socket.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">connect_from</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-value">timeout:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">connect_internal</span>(<span class="ruby-identifier">family_addrinfo</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>), <span class="ruby-identifier">timeout</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- connect_from-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- connect_from-method -->
+      
+        <div id="connect_to-method" class="method-detail ">
+          <a name="method-i-connect_to"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">connect_to([remote_addr_args], [opts]) {|socket| ... }</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">connect_to([remote_addr_args], [opts])</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>creates a socket connected to <em>remote_addr_args</em> and bound to self.</p>
+
+<p>The optional last argument <em>opts</em> is options represented by a hash. <em>opts</em> may have following options:</p>
+<dl class="rdoc-list label-list"><dt>:timeout
+<dd>
+<p>specify the timeout in seconds.</p>
+</dd></dl>
+
+<p>If a block is given, it is called with the socket and the value of the block is returned. The socket is returned otherwise.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;0.0.0.0&quot;</span>, <span class="ruby-value">4649</span>).<span class="ruby-identifier">connect_to</span>(<span class="ruby-string">&quot;www.ruby-lang.org&quot;</span>, <span class="ruby-value">80</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">print</span> <span class="ruby-string">&quot;GET / HTTP/1.0\r\nHost: www.ruby-lang.org\r\n\r\n&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">read</span>
+}
+</pre>
+            
+
+            
+            <div class="method-source-code" id="connect_to-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File socket/lib/socket.rb, line 159</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">connect_to</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-value">timeout:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">remote_addrinfo</span> = <span class="ruby-identifier">family_addrinfo</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">remote_addrinfo</span>.<span class="ruby-identifier">connect_internal</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">timeout</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- connect_to-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- connect_to-method -->
+      
+        <div id="family_addrinfo-method" class="method-detail ">
+          <a name="method-i-family_addrinfo"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">family_addrinfo</span><span
+              class="method-args">(*args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>creates an <a href="Addrinfo.html"><code>Addrinfo</code></a> object from the arguments.</p>
+
+<p>The arguments are interpreted as similar to self.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;0.0.0.0&quot;</span>, <span class="ruby-value">4649</span>).<span class="ruby-identifier">family_addrinfo</span>(<span class="ruby-string">&quot;www.ruby-lang.org&quot;</span>, <span class="ruby-value">80</span>)
+<span class="ruby-comment">#=&gt; #&lt;Addrinfo: 221.186.184.68:80 TCP (www.ruby-lang.org:80)&gt;</span>
+
+<span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">unix</span>(<span class="ruby-string">&quot;/tmp/sock&quot;</span>).<span class="ruby-identifier">family_addrinfo</span>(<span class="ruby-string">&quot;/tmp/sock2&quot;</span>)
+<span class="ruby-comment">#=&gt; #&lt;Addrinfo: /tmp/sock2 SOCK_STREAM&gt;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="family_addrinfo-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File socket/lib/socket.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">family_addrinfo</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;no address specified&quot;</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-constant">Addrinfo</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;too many arguments&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">!=</span> <span class="ruby-value">1</span>
+    <span class="ruby-identifier">addrinfo</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">pfamily</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">addrinfo</span>.<span class="ruby-identifier">pfamily</span>) <span class="ruby-operator">||</span>
+       (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">socktype</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">addrinfo</span>.<span class="ruby-identifier">socktype</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Addrinfo type mismatch&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">addrinfo</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ip?</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;IP address needs host and port but #{args.length} arguments given&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">!=</span> <span class="ruby-value">2</span>
+    <span class="ruby-identifier">host</span>, <span class="ruby-identifier">port</span> = <span class="ruby-identifier">args</span>
+    <span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">getaddrinfo</span>(<span class="ruby-identifier">host</span>, <span class="ruby-identifier">port</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">pfamily</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">socktype</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">protocol</span>)[<span class="ruby-value">0</span>]
+  <span class="ruby-keyword">elsif</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">unix?</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;UNIX socket needs single path argument but #{args.length} arguments given&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">!=</span> <span class="ruby-value">1</span>
+    <span class="ruby-identifier">path</span>, = <span class="ruby-identifier">args</span>
+    <span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">unix</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;unexpected family&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- family_addrinfo-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- family_addrinfo-method -->
+      
+        <div id="getnameinfo-method" class="method-detail ">
+          <a name="method-i-getnameinfo"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">getnameinfo        => [nodename, service]</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">getnameinfo(flags) => [nodename, service]</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>returns nodename and service as a pair of strings. This converts struct sockaddr in addrinfo to textual representation.</p>
+
+<p>flags should be bitwise OR of Socket::NI_??? constants.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;127.0.0.1&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">getnameinfo</span> <span class="ruby-comment">#=&gt; [&quot;localhost&quot;, &quot;www&quot;]</span>
+
+<span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;127.0.0.1&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">getnameinfo</span>(<span class="ruby-constant">Socket</span><span class="ruby-operator">::</span><span class="ruby-constant">NI_NUMERICSERV</span>)
+<span class="ruby-comment">#=&gt; [&quot;localhost&quot;, &quot;80&quot;]</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="getnameinfo-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_getnameinfo(int argc, VALUE *argv, VALUE self)
+{
+    rb_addrinfo_t *rai = get_addrinfo(self);
+    VALUE vflags;
+    char hbuf[1024], pbuf[1024];
+    int flags, error;
+
+    rb_scan_args(argc, argv, &quot;01&quot;, &amp;vflags);
+
+    flags = NIL_P(vflags) ? 0 : NUM2INT(vflags);
+
+    if (rai-&gt;socktype == SOCK_DGRAM)
+        flags |= NI_DGRAM;
+
+    error = getnameinfo(&amp;rai-&gt;addr.addr, rai-&gt;sockaddr_len,
+                        hbuf, (socklen_t)sizeof(hbuf), pbuf, (socklen_t)sizeof(pbuf),
+                        flags);
+    if (error) {
+        rsock_raise_socket_error(&quot;getnameinfo&quot;, error);
+    }
+
+    return rb_assoc_new(rb_str_new2(hbuf), rb_str_new2(pbuf));
+}
+            </pre> 
+            </div><!-- getnameinfo-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- getnameinfo-method -->
+      
+        <div id="inspect-method" class="method-detail ">
+          <a name="method-i-inspect"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">inspect => string</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>returns a string which shows addrinfo in human-readable form.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;localhost&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">inspect</span> <span class="ruby-comment">#=&gt; &quot;#&lt;Addrinfo: 127.0.0.1:80 TCP (localhost)&gt;&quot;</span>
+<span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">unix</span>(<span class="ruby-string">&quot;/tmp/sock&quot;</span>).<span class="ruby-identifier">inspect</span>    <span class="ruby-comment">#=&gt; &quot;#&lt;Addrinfo: /tmp/sock SOCK_STREAM&gt;&quot;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="inspect-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_inspect(VALUE self)
+{
+    rb_addrinfo_t *rai = get_addrinfo(self);
+    int internet_p;
+    VALUE ret;
+
+    ret = rb_sprintf(&quot;#&lt;%s: &quot;, rb_obj_classname(self));
+
+    inspect_sockaddr(self, ret);
+
+    if (rai-&gt;pfamily &amp;&amp; ai_get_afamily(rai) != rai-&gt;pfamily) {
+        ID id = rsock_intern_protocol_family(rai-&gt;pfamily);
+        if (id)
+            rb_str_catf(ret, &quot; %s&quot;, rb_id2name(id));
+        else
+            rb_str_catf(ret, &quot; PF_\?\?\?(%d)&quot;, rai-&gt;pfamily);
+    }
+
+    internet_p = rai-&gt;pfamily == PF_INET;
+#ifdef INET6
+    internet_p = internet_p || rai-&gt;pfamily == PF_INET6;
+#endif
+    if (internet_p &amp;&amp; rai-&gt;socktype == SOCK_STREAM &amp;&amp;
+        (rai-&gt;protocol == 0 || rai-&gt;protocol == IPPROTO_TCP)) {
+        rb_str_cat2(ret, &quot; TCP&quot;);
+    }
+    else if (internet_p &amp;&amp; rai-&gt;socktype == SOCK_DGRAM &amp;&amp;
+        (rai-&gt;protocol == 0 || rai-&gt;protocol == IPPROTO_UDP)) {
+        rb_str_cat2(ret, &quot; UDP&quot;);
+    }
+    else {
+        if (rai-&gt;socktype) {
+            ID id = rsock_intern_socktype(rai-&gt;socktype);
+            if (id)
+                rb_str_catf(ret, &quot; %s&quot;, rb_id2name(id));
+            else
+                rb_str_catf(ret, &quot; SOCK_\?\?\?(%d)&quot;, rai-&gt;socktype);
+        }
+
+        if (rai-&gt;protocol) {
+            if (internet_p) {
+                ID id = rsock_intern_ipproto(rai-&gt;protocol);
+                if (id)
+                    rb_str_catf(ret, &quot; %s&quot;, rb_id2name(id));
+                else
+                    goto unknown_protocol;
+            }
+            else {
+              unknown_protocol:
+                rb_str_catf(ret, &quot; UNKNOWN_PROTOCOL(%d)&quot;, rai-&gt;protocol);
+            }
+        }
+    }
+
+    if (!NIL_P(rai-&gt;canonname)) {
+        VALUE name = rai-&gt;canonname;
+        rb_str_catf(ret, &quot; %s&quot;, StringValueCStr(name));
+    }
+
+    if (!NIL_P(rai-&gt;inspectname)) {
+        VALUE name = rai-&gt;inspectname;
+        rb_str_catf(ret, &quot; (%s)&quot;, StringValueCStr(name));
+    }
+
+    rb_str_buf_cat2(ret, &quot;&gt;&quot;);
+    return ret;
+}
+            </pre> 
+            </div><!-- inspect-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- inspect-method -->
+      
+        <div id="inspect_sockaddr-method" class="method-detail ">
+          <a name="method-i-inspect_sockaddr"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">inspect_sockaddr => string</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>returns a string which shows the sockaddr in <em>addrinfo</em> with human-readable form.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;localhost&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">inspect_sockaddr</span>     <span class="ruby-comment">#=&gt; &quot;127.0.0.1:80&quot;</span>
+<span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;ip6-localhost&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">inspect_sockaddr</span> <span class="ruby-comment">#=&gt; &quot;[::1]:80&quot;</span>
+<span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">unix</span>(<span class="ruby-string">&quot;/tmp/sock&quot;</span>).<span class="ruby-identifier">inspect_sockaddr</span>        <span class="ruby-comment">#=&gt; &quot;/tmp/sock&quot;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="inspect_sockaddr-source">
+              <pre> <!-- method.markup_code 290 -->
+               VALUE
+rsock_addrinfo_inspect_sockaddr(VALUE self)
+{
+    return inspect_sockaddr(self, rb_str_new(&quot;&quot;, 0));
+}
+            </pre> 
+            </div><!-- inspect_sockaddr-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- inspect_sockaddr-method -->
+      
+        <div id="ip-3F-method" class="method-detail ">
+          <a name="method-i-ip-3F"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">ip? => true or false</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>returns true if addrinfo is internet (IPv4/IPv6) address. returns false otherwise.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;127.0.0.1&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">ip?</span> <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;::1&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">ip?</span>       <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">unix</span>(<span class="ruby-string">&quot;/tmp/sock&quot;</span>).<span class="ruby-identifier">ip?</span>    <span class="ruby-comment">#=&gt; false</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="ip-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_ip_p(VALUE self)
+{
+    rb_addrinfo_t *rai = get_addrinfo(self);
+    int family = ai_get_afamily(rai);
+    return IS_IP_FAMILY(family) ? Qtrue : Qfalse;
+}
+            </pre> 
+            </div><!-- ip-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ip-3F-method -->
+      
+        <div id="ip_address-method" class="method-detail ">
+          <a name="method-i-ip_address"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">ip_address => string</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns the IP address as a string.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;127.0.0.1&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">ip_address</span>    <span class="ruby-comment">#=&gt; &quot;127.0.0.1&quot;</span>
+<span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;::1&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">ip_address</span>          <span class="ruby-comment">#=&gt; &quot;::1&quot;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="ip_address-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_ip_address(VALUE self)
+{
+    rb_addrinfo_t *rai = get_addrinfo(self);
+    int family = ai_get_afamily(rai);
+    VALUE vflags;
+    VALUE ret;
+
+    if (!IS_IP_FAMILY(family))
+        rb_raise(rb_eSocket, &quot;need IPv4 or IPv6 address&quot;);
+
+    vflags = INT2NUM(NI_NUMERICHOST|NI_NUMERICSERV);
+    ret = addrinfo_getnameinfo(1, &amp;vflags, self);
+    return rb_ary_entry(ret, 0);
+}
+            </pre> 
+            </div><!-- ip_address-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ip_address-method -->
+      
+        <div id="ip_port-method" class="method-detail ">
+          <a name="method-i-ip_port"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">ip_port => port</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns the port number as an integer.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;127.0.0.1&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">ip_port</span>    <span class="ruby-comment">#=&gt; 80</span>
+<span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;::1&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">ip_port</span>          <span class="ruby-comment">#=&gt; 80</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="ip_port-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_ip_port(VALUE self)
+{
+    rb_addrinfo_t *rai = get_addrinfo(self);
+    int family = ai_get_afamily(rai);
+    int port;
+
+    if (!IS_IP_FAMILY(family)) {
+      bad_family:
+#ifdef AF_INET6
+        rb_raise(rb_eSocket, &quot;need IPv4 or IPv6 address&quot;);
+#else
+        rb_raise(rb_eSocket, &quot;need IPv4 address&quot;);
+#endif
+    }
+
+    switch (family) {
+      case AF_INET:
+        if (rai-&gt;sockaddr_len != sizeof(struct sockaddr_in))
+            rb_raise(rb_eSocket, &quot;unexpected sockaddr size for IPv4&quot;);
+        port = ntohs(rai-&gt;addr.in.sin_port);
+        break;
+
+#ifdef AF_INET6
+      case AF_INET6:
+        if (rai-&gt;sockaddr_len != sizeof(struct sockaddr_in6))
+            rb_raise(rb_eSocket, &quot;unexpected sockaddr size for IPv6&quot;);
+        port = ntohs(rai-&gt;addr.in6.sin6_port);
+        break;
+#endif
+
+      default:
+        goto bad_family;
+    }
+
+    return INT2NUM(port);
+}
+            </pre> 
+            </div><!-- ip_port-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ip_port-method -->
+      
+        <div id="ip_unpack-method" class="method-detail ">
+          <a name="method-i-ip_unpack"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">ip_unpack => [addr, port]</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns the IP address and port number as 2-element array.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;127.0.0.1&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">ip_unpack</span>    <span class="ruby-comment">#=&gt; [&quot;127.0.0.1&quot;, 80]</span>
+<span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;::1&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">ip_unpack</span>          <span class="ruby-comment">#=&gt; [&quot;::1&quot;, 80]</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="ip_unpack-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_ip_unpack(VALUE self)
+{
+    rb_addrinfo_t *rai = get_addrinfo(self);
+    int family = ai_get_afamily(rai);
+    VALUE vflags;
+    VALUE ret, portstr;
+
+    if (!IS_IP_FAMILY(family))
+        rb_raise(rb_eSocket, &quot;need IPv4 or IPv6 address&quot;);
+
+    vflags = INT2NUM(NI_NUMERICHOST|NI_NUMERICSERV);
+    ret = addrinfo_getnameinfo(1, &amp;vflags, self);
+    portstr = rb_ary_entry(ret, 1);
+    rb_ary_store(ret, 1, INT2NUM(atoi(StringValueCStr(portstr))));
+    return ret;
+}
+            </pre> 
+            </div><!-- ip_unpack-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ip_unpack-method -->
+      
+        <div id="ipv4-3F-method" class="method-detail ">
+          <a name="method-i-ipv4-3F"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">ipv4? => true or false</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>returns true if addrinfo is IPv4 address. returns false otherwise.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;127.0.0.1&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">ipv4?</span> <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;::1&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">ipv4?</span>       <span class="ruby-comment">#=&gt; false</span>
+<span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">unix</span>(<span class="ruby-string">&quot;/tmp/sock&quot;</span>).<span class="ruby-identifier">ipv4?</span>    <span class="ruby-comment">#=&gt; false</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="ipv4-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_ipv4_p(VALUE self)
+{
+    rb_addrinfo_t *rai = get_addrinfo(self);
+    return ai_get_afamily(rai) == AF_INET ? Qtrue : Qfalse;
+}
+            </pre> 
+            </div><!-- ipv4-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ipv4-3F-method -->
+      
+        <div id="ipv4_loopback-3F-method" class="method-detail ">
+          <a name="method-i-ipv4_loopback-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ipv4_loopback?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns true for IPv4 loopback address (127.0.0.0/8). It returns false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="ipv4_loopback-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_ipv4_loopback_p(VALUE self)
+{
+    uint32_t a;
+    if (!extract_in_addr(self, &amp;a)) return Qfalse;
+    if ((a &amp; 0xff000000) == 0x7f000000) /* 127.0.0.0/8 */
+        return Qtrue;
+    return Qfalse;
+}
+            </pre> 
+            </div><!-- ipv4_loopback-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ipv4_loopback-3F-method -->
+      
+        <div id="ipv4_multicast-3F-method" class="method-detail ">
+          <a name="method-i-ipv4_multicast-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ipv4_multicast?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns true for IPv4 multicast address (224.0.0.0/4). It returns false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="ipv4_multicast-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_ipv4_multicast_p(VALUE self)
+{
+    uint32_t a;
+    if (!extract_in_addr(self, &amp;a)) return Qfalse;
+    if ((a &amp; 0xf0000000) == 0xe0000000) /* 224.0.0.0/4 */
+        return Qtrue;
+    return Qfalse;
+}
+            </pre> 
+            </div><!-- ipv4_multicast-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ipv4_multicast-3F-method -->
+      
+        <div id="ipv4_private-3F-method" class="method-detail ">
+          <a name="method-i-ipv4_private-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ipv4_private?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns true for IPv4 private address (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16). It returns false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="ipv4_private-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_ipv4_private_p(VALUE self)
+{
+    uint32_t a;
+    if (!extract_in_addr(self, &amp;a)) return Qfalse;
+    if ((a &amp; 0xff000000) == 0x0a000000 || /* 10.0.0.0/8 */
+        (a &amp; 0xfff00000) == 0xac100000 || /* 172.16.0.0/12 */
+        (a &amp; 0xffff0000) == 0xc0a80000)   /* 192.168.0.0/16 */
+        return Qtrue;
+    return Qfalse;
+}
+            </pre> 
+            </div><!-- ipv4_private-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ipv4_private-3F-method -->
+      
+        <div id="ipv6-3F-method" class="method-detail ">
+          <a name="method-i-ipv6-3F"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">ipv6? => true or false</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>returns true if addrinfo is IPv6 address. returns false otherwise.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;127.0.0.1&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">ipv6?</span> <span class="ruby-comment">#=&gt; false</span>
+<span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;::1&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">ipv6?</span>       <span class="ruby-comment">#=&gt; true</span>
+<span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">unix</span>(<span class="ruby-string">&quot;/tmp/sock&quot;</span>).<span class="ruby-identifier">ipv6?</span>    <span class="ruby-comment">#=&gt; false</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="ipv6-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_ipv6_p(VALUE self)
+{
+#ifdef AF_INET6
+    rb_addrinfo_t *rai = get_addrinfo(self);
+    return ai_get_afamily(rai) == AF_INET6 ? Qtrue : Qfalse;
+#else
+    return Qfalse;
+#endif
+}
+            </pre> 
+            </div><!-- ipv6-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ipv6-3F-method -->
+      
+        <div id="ipv6_linklocal-3F-method" class="method-detail ">
+          <a name="method-i-ipv6_linklocal-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ipv6_linklocal?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns true for IPv6 link local address (ff80::/10). It returns false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="ipv6_linklocal-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_ipv6_linklocal_p(VALUE self)
+{
+    struct in6_addr *addr = extract_in6_addr(self);
+    if (addr &amp;&amp; IN6_IS_ADDR_LINKLOCAL(addr)) return Qtrue;
+    return Qfalse;
+}
+            </pre> 
+            </div><!-- ipv6_linklocal-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ipv6_linklocal-3F-method -->
+      
+        <div id="ipv6_loopback-3F-method" class="method-detail ">
+          <a name="method-i-ipv6_loopback-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ipv6_loopback?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns true for IPv6 loopback address (::1). It returns false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="ipv6_loopback-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_ipv6_loopback_p(VALUE self)
+{
+    struct in6_addr *addr = extract_in6_addr(self);
+    if (addr &amp;&amp; IN6_IS_ADDR_LOOPBACK(addr)) return Qtrue;
+    return Qfalse;
+}
+            </pre> 
+            </div><!-- ipv6_loopback-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ipv6_loopback-3F-method -->
+      
+        <div id="ipv6_mc_global-3F-method" class="method-detail ">
+          <a name="method-i-ipv6_mc_global-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ipv6_mc_global?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns true for IPv6 multicast global scope address. It returns false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="ipv6_mc_global-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_ipv6_mc_global_p(VALUE self)
+{
+    struct in6_addr *addr = extract_in6_addr(self);
+    if (addr &amp;&amp; IN6_IS_ADDR_MC_GLOBAL(addr)) return Qtrue;
+    return Qfalse;
+}
+            </pre> 
+            </div><!-- ipv6_mc_global-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ipv6_mc_global-3F-method -->
+      
+        <div id="ipv6_mc_linklocal-3F-method" class="method-detail ">
+          <a name="method-i-ipv6_mc_linklocal-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ipv6_mc_linklocal?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns true for IPv6 multicast link-local scope address. It returns false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="ipv6_mc_linklocal-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_ipv6_mc_linklocal_p(VALUE self)
+{
+    struct in6_addr *addr = extract_in6_addr(self);
+    if (addr &amp;&amp; IN6_IS_ADDR_MC_LINKLOCAL(addr)) return Qtrue;
+    return Qfalse;
+}
+            </pre> 
+            </div><!-- ipv6_mc_linklocal-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ipv6_mc_linklocal-3F-method -->
+      
+        <div id="ipv6_mc_nodelocal-3F-method" class="method-detail ">
+          <a name="method-i-ipv6_mc_nodelocal-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ipv6_mc_nodelocal?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns true for IPv6 multicast node-local scope address. It returns false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="ipv6_mc_nodelocal-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_ipv6_mc_nodelocal_p(VALUE self)
+{
+    struct in6_addr *addr = extract_in6_addr(self);
+    if (addr &amp;&amp; IN6_IS_ADDR_MC_NODELOCAL(addr)) return Qtrue;
+    return Qfalse;
+}
+            </pre> 
+            </div><!-- ipv6_mc_nodelocal-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ipv6_mc_nodelocal-3F-method -->
+      
+        <div id="ipv6_mc_orglocal-3F-method" class="method-detail ">
+          <a name="method-i-ipv6_mc_orglocal-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ipv6_mc_orglocal?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns true for IPv6 multicast organization-local scope address. It returns false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="ipv6_mc_orglocal-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_ipv6_mc_orglocal_p(VALUE self)
+{
+    struct in6_addr *addr = extract_in6_addr(self);
+    if (addr &amp;&amp; IN6_IS_ADDR_MC_ORGLOCAL(addr)) return Qtrue;
+    return Qfalse;
+}
+            </pre> 
+            </div><!-- ipv6_mc_orglocal-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ipv6_mc_orglocal-3F-method -->
+      
+        <div id="ipv6_mc_sitelocal-3F-method" class="method-detail ">
+          <a name="method-i-ipv6_mc_sitelocal-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ipv6_mc_sitelocal?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns true for IPv6 multicast site-local scope address. It returns false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="ipv6_mc_sitelocal-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_ipv6_mc_sitelocal_p(VALUE self)
+{
+    struct in6_addr *addr = extract_in6_addr(self);
+    if (addr &amp;&amp; IN6_IS_ADDR_MC_SITELOCAL(addr)) return Qtrue;
+    return Qfalse;
+}
+            </pre> 
+            </div><!-- ipv6_mc_sitelocal-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ipv6_mc_sitelocal-3F-method -->
+      
+        <div id="ipv6_multicast-3F-method" class="method-detail ">
+          <a name="method-i-ipv6_multicast-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ipv6_multicast?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns true for IPv6 multicast address (ff00::/8). It returns false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="ipv6_multicast-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_ipv6_multicast_p(VALUE self)
+{
+    struct in6_addr *addr = extract_in6_addr(self);
+    if (addr &amp;&amp; IN6_IS_ADDR_MULTICAST(addr)) return Qtrue;
+    return Qfalse;
+}
+            </pre> 
+            </div><!-- ipv6_multicast-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ipv6_multicast-3F-method -->
+      
+        <div id="ipv6_sitelocal-3F-method" class="method-detail ">
+          <a name="method-i-ipv6_sitelocal-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ipv6_sitelocal?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns true for IPv6 site local address (ffc0::/10). It returns false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="ipv6_sitelocal-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_ipv6_sitelocal_p(VALUE self)
+{
+    struct in6_addr *addr = extract_in6_addr(self);
+    if (addr &amp;&amp; IN6_IS_ADDR_SITELOCAL(addr)) return Qtrue;
+    return Qfalse;
+}
+            </pre> 
+            </div><!-- ipv6_sitelocal-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ipv6_sitelocal-3F-method -->
+      
+        <div id="ipv6_to_ipv4-method" class="method-detail ">
+          <a name="method-i-ipv6_to_ipv4"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ipv6_to_ipv4</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns IPv4 address of IPv4 mapped/compatible IPv6 address. It returns nil if <code>self</code> is not IPv4 mapped/compatible IPv6 address.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">ip</span>(<span class="ruby-string">&quot;::192.0.2.3&quot;</span>).<span class="ruby-identifier">ipv6_to_ipv4</span>      <span class="ruby-comment">#=&gt; #&lt;Addrinfo: 192.0.2.3&gt;</span>
+<span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">ip</span>(<span class="ruby-string">&quot;::ffff:192.0.2.3&quot;</span>).<span class="ruby-identifier">ipv6_to_ipv4</span> <span class="ruby-comment">#=&gt; #&lt;Addrinfo: 192.0.2.3&gt;</span>
+<span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">ip</span>(<span class="ruby-string">&quot;::1&quot;</span>).<span class="ruby-identifier">ipv6_to_ipv4</span>              <span class="ruby-comment">#=&gt; nil</span>
+<span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">ip</span>(<span class="ruby-string">&quot;192.0.2.3&quot;</span>).<span class="ruby-identifier">ipv6_to_ipv4</span>        <span class="ruby-comment">#=&gt; nil</span>
+<span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">unix</span>(<span class="ruby-string">&quot;/tmp/sock&quot;</span>).<span class="ruby-identifier">ipv6_to_ipv4</span>      <span class="ruby-comment">#=&gt; nil</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="ipv6_to_ipv4-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_ipv6_to_ipv4(VALUE self)
+{
+    rb_addrinfo_t *rai = get_addrinfo(self);
+    struct in6_addr *addr;
+    int family = ai_get_afamily(rai);
+    if (family != AF_INET6) return Qnil;
+    addr = &amp;rai-&gt;addr.in6.sin6_addr;
+    if (IN6_IS_ADDR_V4MAPPED(addr) || IN6_IS_ADDR_V4COMPAT(addr)) {
+        struct sockaddr_in sin4;
+        INIT_SOCKADDR_IN(&amp;sin4, sizeof(sin4));
+        memcpy(&amp;sin4.sin_addr, (char*)addr + sizeof(*addr) - sizeof(sin4.sin_addr), sizeof(sin4.sin_addr));
+        return rsock_addrinfo_new((struct sockaddr *)&amp;sin4, (socklen_t)sizeof(sin4),
+                                  PF_INET, rai-&gt;socktype, rai-&gt;protocol,
+                                  rai-&gt;canonname, rai-&gt;inspectname);
+    }
+    else {
+        return Qnil;
+    }
+}
+            </pre> 
+            </div><!-- ipv6_to_ipv4-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ipv6_to_ipv4-method -->
+      
+        <div id="ipv6_unique_local-3F-method" class="method-detail ">
+          <a name="method-i-ipv6_unique_local-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ipv6_unique_local?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns true for IPv6 unique local address (fc00::/7, RFC4193). It returns false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="ipv6_unique_local-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_ipv6_unique_local_p(VALUE self)
+{
+    struct in6_addr *addr = extract_in6_addr(self);
+    if (addr &amp;&amp; IN6_IS_ADDR_UNIQUE_LOCAL(addr)) return Qtrue;
+    return Qfalse;
+}
+            </pre> 
+            </div><!-- ipv6_unique_local-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ipv6_unique_local-3F-method -->
+      
+        <div id="ipv6_unspecified-3F-method" class="method-detail ">
+          <a name="method-i-ipv6_unspecified-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ipv6_unspecified?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns true for IPv6 unspecified address (::). It returns false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="ipv6_unspecified-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_ipv6_unspecified_p(VALUE self)
+{
+    struct in6_addr *addr = extract_in6_addr(self);
+    if (addr &amp;&amp; IN6_IS_ADDR_UNSPECIFIED(addr)) return Qtrue;
+    return Qfalse;
+}
+            </pre> 
+            </div><!-- ipv6_unspecified-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ipv6_unspecified-3F-method -->
+      
+        <div id="ipv6_v4compat-3F-method" class="method-detail ">
+          <a name="method-i-ipv6_v4compat-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ipv6_v4compat?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns true for IPv4-compatible IPv6 address (::/80). It returns false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="ipv6_v4compat-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_ipv6_v4compat_p(VALUE self)
+{
+    struct in6_addr *addr = extract_in6_addr(self);
+    if (addr &amp;&amp; IN6_IS_ADDR_V4COMPAT(addr)) return Qtrue;
+    return Qfalse;
+}
+            </pre> 
+            </div><!-- ipv6_v4compat-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ipv6_v4compat-3F-method -->
+      
+        <div id="ipv6_v4mapped-3F-method" class="method-detail ">
+          <a name="method-i-ipv6_v4mapped-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ipv6_v4mapped?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns true for IPv4-mapped IPv6 address (::ffff:0:0/80). It returns false otherwise.</p>
+            
+
+            
+            <div class="method-source-code" id="ipv6_v4mapped-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_ipv6_v4mapped_p(VALUE self)
+{
+    struct in6_addr *addr = extract_in6_addr(self);
+    if (addr &amp;&amp; IN6_IS_ADDR_V4MAPPED(addr)) return Qtrue;
+    return Qfalse;
+}
+            </pre> 
+            </div><!-- ipv6_v4mapped-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ipv6_v4mapped-3F-method -->
+      
+        <div id="listen-method" class="method-detail ">
+          <a name="method-i-listen"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">listen</span><span
+              class="method-args">(backlog=Socket::SOMAXCONN)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>creates a listening socket bound to self.</p>
+            
+
+            
+            <div class="method-source-code" id="listen-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File socket/lib/socket.rb, line 196</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">listen</span>(<span class="ruby-identifier">backlog</span>=<span class="ruby-constant">Socket</span><span class="ruby-operator">::</span><span class="ruby-constant">SOMAXCONN</span>)
+  <span class="ruby-identifier">sock</span> = <span class="ruby-constant">Socket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">pfamily</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">socktype</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">protocol</span>)
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">ipv6only!</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ipv6?</span>
+    <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">setsockopt</span>(<span class="ruby-value">:SOCKET</span>, <span class="ruby-value">:REUSEADDR</span>, <span class="ruby-value">1</span>)
+    <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">bind</span>(<span class="ruby-keyword">self</span>)
+    <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">listen</span>(<span class="ruby-identifier">backlog</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span>
+    <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">close</span>
+    <span class="ruby-identifier">raise</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-keyword">yield</span> <span class="ruby-identifier">sock</span>
+    <span class="ruby-keyword">ensure</span>
+      <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">close</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">sock</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- listen-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- listen-method -->
+      
+        <div id="pfamily-method" class="method-detail ">
+          <a name="method-i-pfamily"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">pfamily => integer</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>returns the protocol family as an integer.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;localhost&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">pfamily</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Socket</span><span class="ruby-operator">::</span><span class="ruby-constant">PF_INET</span> <span class="ruby-comment">#=&gt; true</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="pfamily-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_pfamily(VALUE self)
+{
+    rb_addrinfo_t *rai = get_addrinfo(self);
+    return INT2NUM(rai-&gt;pfamily);
+}
+            </pre> 
+            </div><!-- pfamily-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- pfamily-method -->
+      
+        <div id="protocol-method" class="method-detail ">
+          <a name="method-i-protocol"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">protocol => integer</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>returns the socket type as an integer.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;localhost&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">protocol</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Socket</span><span class="ruby-operator">::</span><span class="ruby-constant">IPPROTO_TCP</span> <span class="ruby-comment">#=&gt; true</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="protocol-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_protocol(VALUE self)
+{
+    rb_addrinfo_t *rai = get_addrinfo(self);
+    return INT2NUM(rai-&gt;protocol);
+}
+            </pre> 
+            </div><!-- protocol-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- protocol-method -->
+      
+        <div id="socktype-method" class="method-detail ">
+          <a name="method-i-socktype"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">socktype => integer</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>returns the socket type as an integer.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;localhost&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">socktype</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Socket</span><span class="ruby-operator">::</span><span class="ruby-constant">SOCK_STREAM</span> <span class="ruby-comment">#=&gt; true</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="socktype-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_socktype(VALUE self)
+{
+    rb_addrinfo_t *rai = get_addrinfo(self);
+    return INT2NUM(rai-&gt;socktype);
+}
+            </pre> 
+            </div><!-- socktype-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- socktype-method -->
+      
+        <div id="to_s-method" class="method-detail ">
+          <a name="method-i-to_s"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">to_sockaddr => string</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">to_s => string</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>returns the socket address as packed struct sockaddr string.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;localhost&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">to_sockaddr</span>
+<span class="ruby-comment">#=&gt; &quot;\x02\x00\x00P\x7F\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00&quot;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="to_s-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_to_sockaddr(VALUE self)
+{
+    rb_addrinfo_t *rai = get_addrinfo(self);
+    VALUE ret;
+    ret = rb_str_new((char*)&amp;rai-&gt;addr, rai-&gt;sockaddr_len);
+    return ret;
+}
+            </pre> 
+            </div><!-- to_s-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_s-method -->
+      
+        <div id="to_sockaddr-method" class="method-detail ">
+          <a name="method-i-to_sockaddr"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">to_sockaddr => string</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>returns the socket address as packed struct sockaddr string.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;localhost&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">to_sockaddr</span>
+<span class="ruby-comment">#=&gt; &quot;\x02\x00\x00P\x7F\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00&quot;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="to_sockaddr-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_to_sockaddr(VALUE self)
+{
+    rb_addrinfo_t *rai = get_addrinfo(self);
+    VALUE ret;
+    ret = rb_str_new((char*)&amp;rai-&gt;addr, rai-&gt;sockaddr_len);
+    return ret;
+}
+            </pre> 
+            </div><!-- to_sockaddr-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_sockaddr-method -->
+      
+        <div id="unix-3F-method" class="method-detail ">
+          <a name="method-i-unix-3F"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">unix? => true or false</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>returns true if addrinfo is UNIX address. returns false otherwise.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;127.0.0.1&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">unix?</span> <span class="ruby-comment">#=&gt; false</span>
+<span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">tcp</span>(<span class="ruby-string">&quot;::1&quot;</span>, <span class="ruby-value">80</span>).<span class="ruby-identifier">unix?</span>       <span class="ruby-comment">#=&gt; false</span>
+<span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">unix</span>(<span class="ruby-string">&quot;/tmp/sock&quot;</span>).<span class="ruby-identifier">unix?</span>    <span class="ruby-comment">#=&gt; true</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="unix-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_unix_p(VALUE self)
+{
+    rb_addrinfo_t *rai = get_addrinfo(self);
+#ifdef AF_UNIX
+    return ai_get_afamily(rai) == AF_UNIX ? Qtrue : Qfalse;
+#else
+    return Qfalse;
+#endif
+}
+            </pre> 
+            </div><!-- unix-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- unix-3F-method -->
+      
+        <div id="unix_path-method" class="method-detail ">
+          <a name="method-i-unix_path"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">unix_path => path</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns the socket path as a string.</p>
+
+<pre class="ruby"><span class="ruby-constant">Addrinfo</span>.<span class="ruby-identifier">unix</span>(<span class="ruby-string">&quot;/tmp/sock&quot;</span>).<span class="ruby-identifier">unix_path</span>       <span class="ruby-comment">#=&gt; &quot;/tmp/sock&quot;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="unix_path-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+addrinfo_unix_path(VALUE self)
+{
+    rb_addrinfo_t *rai = get_addrinfo(self);
+    int family = ai_get_afamily(rai);
+    struct sockaddr_un *addr;
+    long n;
+
+    if (family != AF_UNIX)
+        rb_raise(rb_eSocket, &quot;need AF_UNIX address&quot;);
+
+    addr = &amp;rai-&gt;addr.un;
+
+    n = rai_unixsocket_len(rai);
+    if (n &lt; 0)
+        rb_raise(rb_eSocket, &quot;too short AF_UNIX address: %&quot;PRIuSIZE&quot; bytes given for minimum %&quot;PRIuSIZE&quot; bytes.&quot;,
+                 (size_t)rai-&gt;sockaddr_len, offsetof(struct sockaddr_un, sun_path));
+    if ((long)sizeof(addr-&gt;sun_path) &lt; n)
+        rb_raise(rb_eSocket,
+            &quot;too long AF_UNIX path (%&quot;PRIuSIZE&quot; bytes given but %&quot;PRIuSIZE&quot; bytes max)&quot;,
+            (size_t)n, sizeof(addr-&gt;sun_path));
+    return rb_str_new(addr-&gt;sun_path, n);
+}
+            </pre> 
+            </div><!-- unix_path-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- unix_path-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+      <div id="protected-instance-method-details" class="method-section section">
+        <h3 class="section-header">Protected Instance Methods</h3>
+
+      
+        <div id="connect_internal-method" class="method-detail ">
+          <a name="method-i-connect_internal"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">connect_internal</span><span
+              class="method-args">(local_addrinfo, timeout=nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>creates a new <a href="Socket.html"><code>Socket</code></a> connected to the address of <code>local_addrinfo</code>.</p>
+
+<p>If <em>local_addrinfo</em> is nil, the address of the socket is not bound.</p>
+
+<p>The <em>timeout</em> specify the seconds for timeout. Errno::ETIMEDOUT is raised when timeout occur.</p>
+
+<p>If a block is given the created socket is yielded for each address.</p>
+            
+
+            
+            <div class="method-source-code" id="connect_internal-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File socket/lib/socket.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">connect_internal</span>(<span class="ruby-identifier">local_addrinfo</span>, <span class="ruby-identifier">timeout</span>=<span class="ruby-keyword">nil</span>) <span class="ruby-comment"># :yields: socket</span>
+  <span class="ruby-identifier">sock</span> = <span class="ruby-constant">Socket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">pfamily</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">socktype</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">protocol</span>)
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">ipv6only!</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ipv6?</span>
+    <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">bind</span> <span class="ruby-identifier">local_addrinfo</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">local_addrinfo</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">timeout</span>
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">connect_nonblock</span>(<span class="ruby-keyword">self</span>, <span class="ruby-value">exception:</span> <span class="ruby-keyword">false</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">0</span> <span class="ruby-comment"># success or EISCONN, other errors raise</span>
+        <span class="ruby-keyword">break</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:wait_writable</span>
+        <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">wait_writable</span>(<span class="ruby-identifier">timeout</span>) <span class="ruby-keyword">or</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ETIMEDOUT</span>, <span class="ruby-string">&#39;user specified timeout&#39;</span>
+      <span class="ruby-keyword">end</span> <span class="ruby-keyword">while</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">connect</span>(<span class="ruby-keyword">self</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span>
+    <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">close</span>
+    <span class="ruby-identifier">raise</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-keyword">yield</span> <span class="ruby-identifier">sock</span>
+    <span class="ruby-keyword">ensure</span>
+      <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">close</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">sock</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- connect_internal-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- connect_internal-method -->
+      
+      </div><!-- protected-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Addrinfo_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Addrinfo_versioned").load("/associated/2.7.4/Addrinfo.ihtml");</script> <div id='tx_Addrinfo' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Addrinfo").load("/associated/Addrinfo.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Hack your world.  Feed your head.  Live curious</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Addrinfo.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Addrinfo.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

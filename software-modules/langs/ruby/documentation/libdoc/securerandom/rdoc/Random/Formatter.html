@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Module : Random::Formatter  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:31:20 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '..'   asset_rel_prefix = '..'  --> 
+  <title>Module: Random::Formatter (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="..css/obf.css"  -->
+  <link rel="stylesheet" href="../css/inuit.css" >
+  <link rel="stylesheet" href="../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../css/carbon17.css" type="text/css" >
+
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="module rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>securerandom.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-alphanumeric">#alphanumeric</a></li>
+          
+          <li><a href="#method-i-base64">#base64</a></li>
+          
+          <li><a href="#method-i-hex">#hex</a></li>
+          
+          <li><a href="#method-i-random_bytes">#random_bytes</a></li>
+          
+          <li><a href="#method-i-urlsafe_base64">#urlsafe_base64</a></li>
+          
+          <li><a href="#method-i-uuid">#uuid</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../Random.html">Random</a></li>
+        
+          
+          
+          <li><a href="../Random/Formatter.html">Random::Formatter</a></li>
+        
+          
+          
+          <li><a href="../SecureRandom.html">SecureRandom</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="module">Random::Formatter</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="ALPHANUMERIC">ALPHANUMERIC</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="alphanumeric-method" class="method-detail ">
+          <a name="method-i-alphanumeric"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">alphanumeric</span><span
+              class="method-args">(n=nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>SecureRandom.alphanumeric generates a random alphanumeric string.</p>
+
+<p>The argument <em>n</em> specifies the length, in characters, of the alphanumeric string to be generated.</p>
+
+<p>If <em>n</em> is not specified or is nil, 16 is assumed. It may be larger in the future.</p>
+
+<p>The result may contain A-Z, a-z and 0-9.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;securerandom&#39;</span>
+
+<span class="ruby-constant">SecureRandom</span>.<span class="ruby-identifier">alphanumeric</span>     <span class="ruby-comment">#=&gt; &quot;2BuBuLf3WfSKyQbR&quot;</span>
+<span class="ruby-constant">SecureRandom</span>.<span class="ruby-identifier">alphanumeric</span>(<span class="ruby-value">10</span>) <span class="ruby-comment">#=&gt; &quot;i6K93NdqiH&quot;</span>
+</pre>
+
+<p>If a secure random number generator is not available, <code>NotImplementedError</code> is raised.</p>
+            
+
+            
+            <div class="method-source-code" id="alphanumeric-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File securerandom.rb, line 326</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">alphanumeric</span>(<span class="ruby-identifier">n</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">n</span> = <span class="ruby-value">16</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">choose</span>(<span class="ruby-constant">ALPHANUMERIC</span>, <span class="ruby-identifier">n</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- alphanumeric-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- alphanumeric-method -->
+      
+        <div id="base64-method" class="method-detail ">
+          <a name="method-i-base64"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">base64</span><span
+              class="method-args">(n=nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>SecureRandom.base64 generates a random base64 string.</p>
+
+<p>The argument <em>n</em> specifies the length, in bytes, of the random number to be generated. The length of the result string is about 4/3 of <em>n</em>.</p>
+
+<p>If <em>n</em> is not specified or is nil, 16 is assumed. It may be larger in the future.</p>
+
+<p>The result may contain A-Z, a-z, 0-9, “+”, “/” and “=”.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;securerandom&#39;</span>
+
+<span class="ruby-constant">SecureRandom</span>.<span class="ruby-identifier">base64</span> <span class="ruby-comment">#=&gt; &quot;/2BuBuLf3+WfSKyQbRcc/A==&quot;</span>
+<span class="ruby-constant">SecureRandom</span>.<span class="ruby-identifier">base64</span> <span class="ruby-comment">#=&gt; &quot;6BbW0pxO0YENxn38HMUbcQ==&quot;</span>
+</pre>
+
+<p>If a secure random number generator is not available, <code>NotImplementedError</code> is raised.</p>
+
+<p>See RFC 3548 for the definition of base64.</p>
+            
+
+            
+            <div class="method-source-code" id="base64-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File securerandom.rb, line 197</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">base64</span>(<span class="ruby-identifier">n</span>=<span class="ruby-keyword">nil</span>)
+  [<span class="ruby-identifier">random_bytes</span>(<span class="ruby-identifier">n</span>)].<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;m0&quot;</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- base64-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- base64-method -->
+      
+        <div id="hex-method" class="method-detail ">
+          <a name="method-i-hex"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">hex</span><span
+              class="method-args">(n=nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>SecureRandom.hex generates a random hexadecimal string.</p>
+
+<p>The argument <em>n</em> specifies the length, in bytes, of the random number to be generated. The length of the resulting hexadecimal string is twice of <em>n</em>.</p>
+
+<p>If <em>n</em> is not specified or is nil, 16 is assumed. It may be larger in the future.</p>
+
+<p>The result may contain 0-9 and a-f.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;securerandom&#39;</span>
+
+<span class="ruby-constant">SecureRandom</span>.<span class="ruby-identifier">hex</span> <span class="ruby-comment">#=&gt; &quot;eb693ec8252cd630102fd0d0fb7c3485&quot;</span>
+<span class="ruby-constant">SecureRandom</span>.<span class="ruby-identifier">hex</span> <span class="ruby-comment">#=&gt; &quot;91dc3bfb4de5b11d029d376634589b61&quot;</span>
+</pre>
+
+<p>If a secure random number generator is not available, <code>NotImplementedError</code> is raised.</p>
+            
+
+            
+            <div class="method-source-code" id="hex-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File securerandom.rb, line 174</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hex</span>(<span class="ruby-identifier">n</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">random_bytes</span>(<span class="ruby-identifier">n</span>).<span class="ruby-identifier">unpack</span>(<span class="ruby-string">&quot;H*&quot;</span>)[<span class="ruby-value">0</span>]
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- hex-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- hex-method -->
+      
+        <div id="random_bytes-method" class="method-detail ">
+          <a name="method-i-random_bytes"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">random_bytes</span><span
+              class="method-args">(n=nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>SecureRandom.random_bytes generates a random binary string.</p>
+
+<p>The argument <em>n</em> specifies the length of the result string.</p>
+
+<p>If <em>n</em> is not specified or is nil, 16 is assumed. It may be larger in future.</p>
+
+<p>The result may contain any byte: “x00” - “xff”.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;securerandom&#39;</span>
+
+<span class="ruby-constant">SecureRandom</span>.<span class="ruby-identifier">random_bytes</span> <span class="ruby-comment">#=&gt; &quot;\xD8\\\xE0\xF4\r\xB2\xFC*WM\xFF\x83\x18\xF45\xB6&quot;</span>
+<span class="ruby-constant">SecureRandom</span>.<span class="ruby-identifier">random_bytes</span> <span class="ruby-comment">#=&gt; &quot;m\xDC\xFC/\a\x00Uf\xB2\xB2P\xBD\xFF6S\x97&quot;</span>
+</pre>
+
+<p>If a secure random number generator is not available, <code>NotImplementedError</code> is raised.</p>
+            
+
+            
+            <div class="method-source-code" id="random_bytes-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File securerandom.rb, line 152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">random_bytes</span>(<span class="ruby-identifier">n</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">n</span> = <span class="ruby-identifier">n</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">n</span>.<span class="ruby-identifier">to_int</span> <span class="ruby-operator">:</span> <span class="ruby-value">16</span>
+  <span class="ruby-identifier">gen_random</span>(<span class="ruby-identifier">n</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- random_bytes-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- random_bytes-method -->
+      
+        <div id="urlsafe_base64-method" class="method-detail ">
+          <a name="method-i-urlsafe_base64"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">urlsafe_base64</span><span
+              class="method-args">(n=nil, padding=false)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>SecureRandom.urlsafe_base64 generates a random URL-safe base64 string.</p>
+
+<p>The argument <em>n</em> specifies the length, in bytes, of the random number to be generated. The length of the result string is about 4/3 of <em>n</em>.</p>
+
+<p>If <em>n</em> is not specified or is nil, 16 is assumed. It may be larger in the future.</p>
+
+<p>The boolean argument <em>padding</em> specifies the padding. If it is false or nil, padding is not generated. Otherwise padding is generated. By default, padding is not generated because “=” may be used as a URL delimiter.</p>
+
+<p>The result may contain A-Z, a-z, 0-9, “-” and “_”. “=” is also used if <em>padding</em> is true.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;securerandom&#39;</span>
+
+<span class="ruby-constant">SecureRandom</span>.<span class="ruby-identifier">urlsafe_base64</span> <span class="ruby-comment">#=&gt; &quot;b4GOKm4pOYU_-BOXcrUGDg&quot;</span>
+<span class="ruby-constant">SecureRandom</span>.<span class="ruby-identifier">urlsafe_base64</span> <span class="ruby-comment">#=&gt; &quot;UZLdOkzop70Ddx-IJR0ABg&quot;</span>
+
+<span class="ruby-constant">SecureRandom</span>.<span class="ruby-identifier">urlsafe_base64</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-keyword">true</span>) <span class="ruby-comment">#=&gt; &quot;i0XQ-7gglIsHGV2_BNPrdQ==&quot;</span>
+<span class="ruby-constant">SecureRandom</span>.<span class="ruby-identifier">urlsafe_base64</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-keyword">true</span>) <span class="ruby-comment">#=&gt; &quot;-M8rLhr7JEpJlqFGUMmOxg==&quot;</span>
+</pre>
+
+<p>If a secure random number generator is not available, <code>NotImplementedError</code> is raised.</p>
+
+<p>See RFC 3548 for the definition of URL-safe base64.</p>
+            
+
+            
+            <div class="method-source-code" id="urlsafe_base64-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File securerandom.rb, line 229</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">urlsafe_base64</span>(<span class="ruby-identifier">n</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">padding</span>=<span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">s</span> = [<span class="ruby-identifier">random_bytes</span>(<span class="ruby-identifier">n</span>)].<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;m0&quot;</span>)
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">tr!</span>(<span class="ruby-string">&quot;+/&quot;</span>, <span class="ruby-string">&quot;-_&quot;</span>)
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">delete!</span>(<span class="ruby-string">&quot;=&quot;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">padding</span>
+  <span class="ruby-identifier">s</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- urlsafe_base64-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- urlsafe_base64-method -->
+      
+        <div id="uuid-method" class="method-detail ">
+          <a name="method-i-uuid"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">uuid</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>SecureRandom.uuid generates a random v4 UUID (Universally Unique IDentifier).</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;securerandom&#39;</span>
+
+<span class="ruby-constant">SecureRandom</span>.<span class="ruby-identifier">uuid</span> <span class="ruby-comment">#=&gt; &quot;2d931510-d99f-494a-8c67-87feb05e1594&quot;</span>
+<span class="ruby-constant">SecureRandom</span>.<span class="ruby-identifier">uuid</span> <span class="ruby-comment">#=&gt; &quot;bad85eb9-0713-4da7-8d36-07a8e4b00eab&quot;</span>
+<span class="ruby-constant">SecureRandom</span>.<span class="ruby-identifier">uuid</span> <span class="ruby-comment">#=&gt; &quot;62936e70-1815-439b-bf89-8492855a7e6b&quot;</span>
+</pre>
+
+<p>The version 4 UUID is purely random (except the version). It doesn&#39;t contain meaningful information such as MAC addresses, timestamps, etc.</p>
+
+<p>The result contains 122 random bits (15.25 random bytes).</p>
+
+<p>See RFC 4122 for details of UUID.</p>
+            
+
+            
+            <div class="method-source-code" id="uuid-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File securerandom.rb, line 251</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">uuid</span>
+  <span class="ruby-identifier">ary</span> = <span class="ruby-identifier">random_bytes</span>(<span class="ruby-value">16</span>).<span class="ruby-identifier">unpack</span>(<span class="ruby-string">&quot;NnnnnN&quot;</span>)
+  <span class="ruby-identifier">ary</span>[<span class="ruby-value">2</span>] = (<span class="ruby-identifier">ary</span>[<span class="ruby-value">2</span>] <span class="ruby-operator">&amp;</span> <span class="ruby-value">0x0fff</span>) <span class="ruby-operator">|</span> <span class="ruby-value">0x4000</span>
+  <span class="ruby-identifier">ary</span>[<span class="ruby-value">3</span>] = (<span class="ruby-identifier">ary</span>[<span class="ruby-value">3</span>] <span class="ruby-operator">&amp;</span> <span class="ruby-value">0x3fff</span>) <span class="ruby-operator">|</span> <span class="ruby-value">0x8000</span>
+  <span class="ruby-string">&quot;%08x-%04x-%04x-%04x-%04x%08x&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">ary</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- uuid-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- uuid-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Formatter_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Formatter_versioned").load("/associated/2.7.4/Formatter.ihtml");</script> <div id='tx_Formatter' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Formatter").load("/associated/Formatter.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, purveyors of fine dance noise.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Formatter.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Formatter.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

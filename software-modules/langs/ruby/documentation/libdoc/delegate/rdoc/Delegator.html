@@ -1,0 +1,935 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : Delegator  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:18:36 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = ''  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = ''  --> 
+  <title>Class: Delegator (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href=".css/obf.css"  -->
+  <link rel="stylesheet" href="css/inuit.css" >
+  <link rel="stylesheet" href="css/grid.inuit.css" >
+  <link rel="stylesheet" href="css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="css/carbon17.css" type="text/css" >
+
+
+  <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="/js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>delegate.rb</li>      
+            
+          
+          <li class='in-file'>delegate/version.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">BasicObject</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-21">#!</a></li>
+          
+          <li><a href="#method-i-21-3D">#!=</a></li>
+          
+          <li><a href="#method-i-3D-3D">#==</a></li>
+          
+          <li><a href="#method-i-__getobj__">#__getobj__</a></li>
+          
+          <li><a href="#method-i-__raise__">#__raise__</a></li>
+          
+          <li><a href="#method-i-__setobj__">#__setobj__</a></li>
+          
+          <li><a href="#method-i-eql-3F">#eql?</a></li>
+          
+          <li><a href="#method-i-freeze">#freeze</a></li>
+          
+          <li><a href="#method-i-marshal_dump">#marshal_dump</a></li>
+          
+          <li><a href="#method-i-marshal_load">#marshal_load</a></li>
+          
+          <li><a href="#method-i-method_missing">#method_missing</a></li>
+          
+          <li><a href="#method-i-methods">#methods</a></li>
+          
+          <li><a href="#method-i-protected_methods">#protected_methods</a></li>
+          
+          <li><a href="#method-i-public_methods">#public_methods</a></li>
+          
+          <li><a href="#method-i-raise">#raise</a></li>
+          
+          <li><a href="#method-i-respond_to_missing-3F">#respond_to_missing?</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="./Delegator.html">Delegator</a></li>
+        
+          
+          
+          <li><a href="./Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="./SimpleDelegator.html">SimpleDelegator</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">Delegator</h1>
+
+    <div id="description" class="description">
+      
+<p>This library provides three different ways to delegate method calls to an object.  The easiest to use is <a href="SimpleDelegator.html"><code>SimpleDelegator</code></a>.  Pass an object to the constructor and all methods supported by the object will be delegated.  This object can be changed later.</p>
+
+<p>Going a step further, the top level DelegateClass method allows you to easily setup delegation through class inheritance.  This is considerably more flexible and thus probably the most common use for this library.</p>
+
+<p>Finally, if you need full control over the delegation scheme, you can inherit from the abstract class <a href="Delegator.html"><code>Delegator</code></a> and customize as needed.  (If you find yourself needing this control, have a look at Forwardable which is also in the standard library.  It may suit your needs better.)</p>
+
+<p>SimpleDelegator&#39;s implementation serves as a nice example of the use of Delegator:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">SimpleDelegator</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Delegator</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">__getobj__</span>
+    <span class="ruby-ivar">@delegate_sd_obj</span> <span class="ruby-comment"># return object we are delegating to, required</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">__setobj__</span>(<span class="ruby-identifier">obj</span>)
+    <span class="ruby-ivar">@delegate_sd_obj</span> = <span class="ruby-identifier">obj</span> <span class="ruby-comment"># change delegation object,</span>
+                           <span class="ruby-comment"># a feature we&#39;re providing</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h2 id="class-Delegator-label-Notes">Notes<span><a href="#class-Delegator-label-Notes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Be advised, RDoc will not detect delegated methods.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="VERSION">VERSION</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(obj)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Pass in the <em>obj</em> to delegate method calls to.  All methods supported by <em>obj</em> will be delegated to.</p>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File delegate.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-identifier">__setobj__</span>(<span class="ruby-identifier">obj</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="21-method" class="method-detail ">
+          <a name="method-i-21"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">!</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Delegates ! to the _<em>getobj</em>_</p>
+            
+
+            
+            <div class="method-source-code" id="21-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File delegate.rb, line 176</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">!</span>
+  <span class="ruby-operator">!</span><span class="ruby-identifier">__getobj__</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 21-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 21-method -->
+      
+        <div id="21-3D-method" class="method-detail ">
+          <a name="method-i-21-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">!=</span><span
+              class="method-args">(obj)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns true if two objects are not considered of equal value.</p>
+            
+
+            
+            <div class="method-source-code" id="21-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File delegate.rb, line 160</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">!=</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">equal?</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-identifier">__getobj__</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">obj</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 21-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 21-3D-method -->
+      
+        <div id="3D-3D-method" class="method-detail ">
+          <a name="method-i-3D-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">==</span><span
+              class="method-args">(obj)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns true if two objects are considered of equal value.</p>
+            
+
+            
+            <div class="method-source-code" id="3D-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File delegate.rb, line 152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">equal?</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">__getobj__</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">obj</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 3D-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 3D-3D-method -->
+      
+        <div id="__getobj__-method" class="method-detail ">
+          <a name="method-i-__getobj__"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">__getobj__</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>This method must be overridden by subclasses and should return the object method calls are being delegated to.</p>
+            
+
+            
+            <div class="method-source-code" id="__getobj__-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File delegate.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">__getobj__</span>
+  <span class="ruby-identifier">__raise__</span> <span class="ruby-operator">::</span><span class="ruby-constant">NotImplementedError</span>, <span class="ruby-string">&quot;need to define `__getobj__&#39;&quot;</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- __getobj__-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- __getobj__-method -->
+      
+        <div id="__raise__-method" class="method-detail method-alias">
+          <a name="method-i-__raise__"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">__raise__</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Delegator.html#method-i-raise">raise</a>
+          </div>
+          
+        </div><!-- __raise__-method -->
+      
+        <div id="__setobj__-method" class="method-detail ">
+          <a name="method-i-__setobj__"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">__setobj__</span><span
+              class="method-args">(obj)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>This method must be overridden by subclasses and change the object delegate to <em>obj</em>.</p>
+            
+
+            
+            <div class="method-source-code" id="__setobj__-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File delegate.rb, line 192</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">__setobj__</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-identifier">__raise__</span> <span class="ruby-operator">::</span><span class="ruby-constant">NotImplementedError</span>, <span class="ruby-string">&quot;need to define `__setobj__&#39;&quot;</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- __setobj__-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- __setobj__-method -->
+      
+        <div id="eql-3F-method" class="method-detail ">
+          <a name="method-i-eql-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">eql?</span><span
+              class="method-args">(obj)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns true if two objects are considered of equal value.</p>
+            
+
+            
+            <div class="method-source-code" id="eql-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File delegate.rb, line 168</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">equal?</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">__getobj__</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- eql-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- eql-3F-method -->
+      
+        <div id="freeze-method" class="method-detail ">
+          <a name="method-i-freeze"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">freeze</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>:method: freeze Freeze both the object returned by _<em>getobj</em>_ and self.</p>
+            
+
+            
+            <div class="method-source-code" id="freeze-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File delegate.rb, line 233</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">freeze</span>
+  <span class="ruby-identifier">__getobj__</span>.<span class="ruby-identifier">freeze</span>
+  <span class="ruby-keyword">super</span>()
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- freeze-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- freeze-method -->
+      
+        <div id="marshal_dump-method" class="method-detail ">
+          <a name="method-i-marshal_dump"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">marshal_dump</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Serialization support for the object returned by _<em>getobj</em>_.</p>
+            
+
+            
+            <div class="method-source-code" id="marshal_dump-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File delegate.rb, line 199</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">marshal_dump</span>
+  <span class="ruby-identifier">ivars</span> = <span class="ruby-identifier">instance_variables</span>.<span class="ruby-identifier">reject</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">var</span><span class="ruby-operator">|</span> <span class="ruby-regexp">/\A@delegate_/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">var</span>}
+  [
+    <span class="ruby-value">:__v2__</span>,
+    <span class="ruby-identifier">ivars</span>, <span class="ruby-identifier">ivars</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">var</span><span class="ruby-operator">|</span> <span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-identifier">var</span>)},
+    <span class="ruby-identifier">__getobj__</span>
+  ]
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- marshal_dump-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- marshal_dump-method -->
+      
+        <div id="marshal_load-method" class="method-detail ">
+          <a name="method-i-marshal_load"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">marshal_load</span><span
+              class="method-args">(data)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Reinitializes delegation from a serialized object.</p>
+            
+
+            
+            <div class="method-source-code" id="marshal_load-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File delegate.rb, line 211</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">marshal_load</span>(<span class="ruby-identifier">data</span>)
+  <span class="ruby-identifier">version</span>, <span class="ruby-identifier">vars</span>, <span class="ruby-identifier">values</span>, <span class="ruby-identifier">obj</span> = <span class="ruby-identifier">data</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">version</span> <span class="ruby-operator">==</span> <span class="ruby-value">:__v2__</span>
+    <span class="ruby-identifier">vars</span>.<span class="ruby-identifier">each_with_index</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">var</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-identifier">var</span>, <span class="ruby-identifier">values</span>[<span class="ruby-identifier">i</span>])}
+    <span class="ruby-identifier">__setobj__</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">__setobj__</span>(<span class="ruby-identifier">data</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- marshal_load-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- marshal_load-method -->
+      
+        <div id="method_missing-method" class="method-detail ">
+          <a name="method-i-method_missing"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">method_missing</span><span
+              class="method-args">(m, *args, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="method_missing-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File delegate.rb, line 78</span>
+               <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">method_missing</span>(<span class="ruby-identifier">m</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">r</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">target</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">__getobj__</span> {<span class="ruby-identifier">r</span> = <span class="ruby-keyword">false</span>}
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">r</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">target_respond_to?</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">m</span>, <span class="ruby-keyword">false</span>)
+    <span class="ruby-identifier">target</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">m</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-operator">::</span><span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">method_defined?</span>(<span class="ruby-identifier">m</span>) <span class="ruby-operator">||</span> <span class="ruby-operator">::</span><span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">private_method_defined?</span>(<span class="ruby-identifier">m</span>)
+    <span class="ruby-operator">::</span><span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">instance_method</span>(<span class="ruby-identifier">m</span>).<span class="ruby-identifier">bind_call</span>(<span class="ruby-keyword">self</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>(<span class="ruby-identifier">m</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- method_missing-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- method_missing-method -->
+      
+        <div id="methods-method" class="method-detail ">
+          <a name="method-i-methods"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">methods</span><span
+              class="method-args">(all=true)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns the methods available to this delegate object as the union of this object&#39;s and _<em>getobj</em>_ methods.</p>
+            
+
+            
+            <div class="method-source-code" id="methods-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File delegate.rb, line 127</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">methods</span>(<span class="ruby-identifier">all</span>=<span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">__getobj__</span>.<span class="ruby-identifier">methods</span>(<span class="ruby-identifier">all</span>) <span class="ruby-operator">|</span> <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- methods-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- methods-method -->
+      
+        <div id="protected_methods-method" class="method-detail ">
+          <a name="method-i-protected_methods"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">protected_methods</span><span
+              class="method-args">(all=true)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns the methods available to this delegate object as the union of this object&#39;s and _<em>getobj</em>_ protected methods.</p>
+            
+
+            
+            <div class="method-source-code" id="protected_methods-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File delegate.rb, line 143</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">protected_methods</span>(<span class="ruby-identifier">all</span>=<span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">__getobj__</span>.<span class="ruby-identifier">protected_methods</span>(<span class="ruby-identifier">all</span>) <span class="ruby-operator">|</span> <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- protected_methods-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- protected_methods-method -->
+      
+        <div id="public_methods-method" class="method-detail ">
+          <a name="method-i-public_methods"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">public_methods</span><span
+              class="method-args">(all=true)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns the methods available to this delegate object as the union of this object&#39;s and _<em>getobj</em>_ public methods.</p>
+            
+
+            
+            <div class="method-source-code" id="public_methods-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File delegate.rb, line 135</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">public_methods</span>(<span class="ruby-identifier">all</span>=<span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">__getobj__</span>.<span class="ruby-identifier">public_methods</span>(<span class="ruby-identifier">all</span>) <span class="ruby-operator">|</span> <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- public_methods-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- public_methods-method -->
+      
+        <div id="raise-method" class="method-detail ">
+          <a name="method-i-raise"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">raise</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Use #__raise__ if your <a href="Delegator.html"><code>Delegator</code></a> does not have a object to delegate the <a href="Delegator.html#method-i-raise"><code>raise</code></a> method call.</p>
+            
+
+            
+            <div class="method-source-code" id="raise-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File delegate.rb, line 62</span>
+  
+            </pre> 
+            </div><!-- raise-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Delegator.html#method-i-__raise__">__raise__</a>
+          </div>
+          
+
+          
+        </div><!-- raise-method -->
+      
+        <div id="respond_to_missing-3F-method" class="method-detail ">
+          <a name="method-i-respond_to_missing-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">respond_to_missing?</span><span
+              class="method-args">(m, include_private)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Checks for a method provided by this the delegate object by forwarding the call through _<em>getobj</em>_.</p>
+            
+
+            
+            <div class="method-source-code" id="respond_to_missing-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File delegate.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">respond_to_missing?</span>(<span class="ruby-identifier">m</span>, <span class="ruby-identifier">include_private</span>)
+  <span class="ruby-identifier">r</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">target</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">__getobj__</span> {<span class="ruby-identifier">r</span> = <span class="ruby-keyword">false</span>}
+  <span class="ruby-identifier">r</span> <span class="ruby-operator">&amp;&amp;=</span> <span class="ruby-identifier">target_respond_to?</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">m</span>, <span class="ruby-identifier">include_private</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">r</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">include_private</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">target_respond_to?</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">m</span>, <span class="ruby-keyword">false</span>)
+    <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;delegator does not forward private method \##{m}&quot;</span>, <span class="ruby-value">uplevel:</span> <span class="ruby-value">3</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">r</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- respond_to_missing-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- respond_to_missing-3F-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Delegator_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Delegator_versioned").load("/associated/2.7.4/Delegator.ihtml");</script> <div id='tx_Delegator' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Delegator").load("/associated/Delegator.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, purveyors of fine dance noise.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Delegator.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Delegator.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

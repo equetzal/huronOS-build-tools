@@ -1,0 +1,3368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Module : Bundler::Thor::Actions  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:17:03 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '../..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '../..'   asset_rel_prefix = '../..'  --> 
+  <title>Module: Bundler::Thor::Actions (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="../..css/obf.css"  -->
+  <link rel="stylesheet" href="../../css/inuit.css" >
+  <link rel="stylesheet" href="../../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../../css/carbon17.css" type="text/css" >
+
+
+  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="module rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>bundler/vendor/thor/lib/thor/actions.rb</li>      
+            
+          
+          <li class='in-file'>bundler/vendor/thor/lib/thor/actions/create_file.rb</li>      
+            
+          
+          <li class='in-file'>bundler/vendor/thor/lib/thor/actions/create_link.rb</li>      
+            
+          
+          <li class='in-file'>bundler/vendor/thor/lib/thor/actions/directory.rb</li>      
+            
+          
+          <li class='in-file'>bundler/vendor/thor/lib/thor/actions/empty_directory.rb</li>      
+            
+          
+          <li class='in-file'>bundler/vendor/thor/lib/thor/actions/file_manipulation.rb</li>      
+            
+          
+          <li class='in-file'>bundler/vendor/thor/lib/thor/actions/inject_into_file.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">MODULE</span> <a href="Actions/ClassMethods.html">Bundler::Thor::Actions::ClassMethods</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Actions/CapturableERB.html">Bundler::Thor::Actions::CapturableERB</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-add_file">#add_file</a></li>
+          
+          <li><a href="#method-i-add_link">#add_link</a></li>
+          
+          <li><a href="#method-i-append_file">#append_file</a></li>
+          
+          <li><a href="#method-i-append_to_file">#append_to_file</a></li>
+          
+          <li><a href="#method-i-apply">#apply</a></li>
+          
+          <li><a href="#method-i-chmod">#chmod</a></li>
+          
+          <li><a href="#method-i-comment_lines">#comment_lines</a></li>
+          
+          <li><a href="#method-i-copy_file">#copy_file</a></li>
+          
+          <li><a href="#method-i-create_file">#create_file</a></li>
+          
+          <li><a href="#method-i-create_link">#create_link</a></li>
+          
+          <li><a href="#method-i-destination_root">#destination_root</a></li>
+          
+          <li><a href="#method-i-destination_root-3D">#destination_root=</a></li>
+          
+          <li><a href="#method-i-directory">#directory</a></li>
+          
+          <li><a href="#method-i-empty_directory">#empty_directory</a></li>
+          
+          <li><a href="#method-i-find_in_source_paths">#find_in_source_paths</a></li>
+          
+          <li><a href="#method-i-get">#get</a></li>
+          
+          <li><a href="#method-i-gsub_file">#gsub_file</a></li>
+          
+          <li><a href="#method-i-in_root">#in_root</a></li>
+          
+          <li><a href="#method-i-inject_into_class">#inject_into_class</a></li>
+          
+          <li><a href="#method-i-inject_into_file">#inject_into_file</a></li>
+          
+          <li><a href="#method-i-inject_into_module">#inject_into_module</a></li>
+          
+          <li><a href="#method-i-insert_into_file">#insert_into_file</a></li>
+          
+          <li><a href="#method-i-inside">#inside</a></li>
+          
+          <li><a href="#method-i-link_file">#link_file</a></li>
+          
+          <li><a href="#method-i-prepend_file">#prepend_file</a></li>
+          
+          <li><a href="#method-i-prepend_to_file">#prepend_to_file</a></li>
+          
+          <li><a href="#method-i-relative_to_original_destination_root">#relative_to_original_destination_root</a></li>
+          
+          <li><a href="#method-i-remove_dir">#remove_dir</a></li>
+          
+          <li><a href="#method-i-remove_file">#remove_file</a></li>
+          
+          <li><a href="#method-i-run">#run</a></li>
+          
+          <li><a href="#method-i-run_ruby_script">#run_ruby_script</a></li>
+          
+          <li><a href="#method-i-source_paths">#source_paths</a></li>
+          
+          <li><a href="#method-i-template">#template</a></li>
+          
+          <li><a href="#method-i-thor">#thor</a></li>
+          
+          <li><a href="#method-i-uncomment_lines">#uncomment_lines</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../../AmbiguousCommandError.html">AmbiguousCommandError</a></li>
+        
+          
+          
+          <li><a href="../../AmbiguousTaskError.html">AmbiguousTaskError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler.html">Bundler</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/APIResponseMismatchError.html">Bundler::APIResponseMismatchError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/BuildMetadata.html">Bundler::BuildMetadata</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/BundlerError.html">Bundler::BundlerError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI.html">Bundler::CLI</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Add.html">Bundler::CLI::Add</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Binstubs.html">Bundler::CLI::Binstubs</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Cache.html">Bundler::CLI::Cache</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Check.html">Bundler::CLI::Check</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Clean.html">Bundler::CLI::Clean</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Common.html">Bundler::CLI::Common</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Config.html">Bundler::CLI::Config</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Config/Base.html">Bundler::CLI::Config::Base</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Console.html">Bundler::CLI::Console</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Doctor.html">Bundler::CLI::Doctor</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Exec.html">Bundler::CLI::Exec</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Gem.html">Bundler::CLI::Gem</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Info.html">Bundler::CLI::Info</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Init.html">Bundler::CLI::Init</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Inject.html">Bundler::CLI::Inject</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Install.html">Bundler::CLI::Install</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Issue.html">Bundler::CLI::Issue</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/List.html">Bundler::CLI::List</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Lock.html">Bundler::CLI::Lock</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Open.html">Bundler::CLI::Open</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Outdated.html">Bundler::CLI::Outdated</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Package.html">Bundler::CLI::Package</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Platform.html">Bundler::CLI::Platform</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Plugin.html">Bundler::CLI::Plugin</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Pristine.html">Bundler::CLI::Pristine</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Remove.html">Bundler::CLI::Remove</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Show.html">Bundler::CLI::Show</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Update.html">Bundler::CLI::Update</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CLI/Viz.html">Bundler::CLI::Viz</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CompactIndexClient.html">Bundler::CompactIndexClient</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CompactIndexClient/Cache.html">Bundler::CompactIndexClient::Cache</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CompactIndexClient/Error.html">Bundler::CompactIndexClient::Error</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CompactIndexClient/Updater.html">Bundler::CompactIndexClient::Updater</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CompactIndexClient/Updater/MisMatchedChecksumError.html">Bundler::CompactIndexClient::Updater::MisMatchedChecksumError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/ConnectionPool.html">Bundler::ConnectionPool</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/ConnectionPool/Error.html">Bundler::ConnectionPool::Error</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/ConnectionPool/PoolShuttingDownError.html">Bundler::ConnectionPool::PoolShuttingDownError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/ConnectionPool/TimedStack.html">Bundler::ConnectionPool::TimedStack</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/ConnectionPool/Wrapper.html">Bundler::ConnectionPool::Wrapper</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CurrentRuby.html">Bundler::CurrentRuby</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/CyclicDependencyError.html">Bundler::CyclicDependencyError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Definition.html">Bundler::Definition</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/DepProxy.html">Bundler::DepProxy</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Dependency.html">Bundler::Dependency</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Deployment.html">Bundler::Deployment</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Deprecate.html">Bundler::Deprecate</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/DeprecatedError.html">Bundler::DeprecatedError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Dsl.html">Bundler::Dsl</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Dsl/DSLError.html">Bundler::Dsl::DSLError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/EndpointSpecification.html">Bundler::EndpointSpecification</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Env.html">Bundler::Env</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/EnvironmentPreserver.html">Bundler::EnvironmentPreserver</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/FeatureFlag.html">Bundler::FeatureFlag</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher.html">Bundler::Fetcher</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher/AuthenticationRequiredError.html">Bundler::Fetcher::AuthenticationRequiredError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher/BadAuthenticationError.html">Bundler::Fetcher::BadAuthenticationError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher/Base.html">Bundler::Fetcher::Base</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher/CertificateFailureError.html">Bundler::Fetcher::CertificateFailureError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher/CompactIndex.html">Bundler::Fetcher::CompactIndex</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher/Dependency.html">Bundler::Fetcher::Dependency</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher/Downloader.html">Bundler::Fetcher::Downloader</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher/FallbackError.html">Bundler::Fetcher::FallbackError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher/Index.html">Bundler::Fetcher::Index</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher/NetworkDownError.html">Bundler::Fetcher::NetworkDownError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher/SSLError.html">Bundler::Fetcher::SSLError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Fetcher/TooManyRequestsError.html">Bundler::Fetcher::TooManyRequestsError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/FileUtils.html">Bundler::FileUtils</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/FileUtils/DryRun.html">Bundler::FileUtils::DryRun</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/FileUtils/NoWrite.html">Bundler::FileUtils::NoWrite</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/FileUtils/StreamUtils_.html">Bundler::FileUtils::StreamUtils_</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/FileUtils/Verbose.html">Bundler::FileUtils::Verbose</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/FriendlyErrors.html">Bundler::FriendlyErrors</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemHelper.html">Bundler::GemHelper</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemHelpers.html">Bundler::GemHelpers</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemHelpers/PlatformMatch.html">Bundler::GemHelpers::PlatformMatch</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemInstaller.html">Bundler::GemInstaller</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemNotFound.html">Bundler::GemNotFound</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemRemoteFetcher.html">Bundler::GemRemoteFetcher</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemRequireError.html">Bundler::GemRequireError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemVersionPromoter.html">Bundler::GemVersionPromoter</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Gemdeps.html">Bundler::Gemdeps</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemfileError.html">Bundler::GemfileError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemfileEvalError.html">Bundler::GemfileEvalError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemfileLockNotFound.html">Bundler::GemfileLockNotFound</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemfileNotFound.html">Bundler::GemfileNotFound</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GemspecError.html">Bundler::GemspecError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GenericSystemCallError.html">Bundler::GenericSystemCallError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/GitError.html">Bundler::GitError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Graph.html">Bundler::Graph</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Graph/GraphVizClient.html">Bundler::Graph::GraphVizClient</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/HTTPError.html">Bundler::HTTPError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Index.html">Bundler::Index</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Injector.html">Bundler::Injector</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/InstallError.html">Bundler::InstallError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/InstallHookError.html">Bundler::InstallHookError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Installer.html">Bundler::Installer</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/InvalidOption.html">Bundler::InvalidOption</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/LazySpecification.html">Bundler::LazySpecification</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/LazySpecification/Identifier.html">Bundler::LazySpecification::Identifier</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/LockfileError.html">Bundler::LockfileError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/LockfileGenerator.html">Bundler::LockfileGenerator</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/LockfileParser.html">Bundler::LockfileParser</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/MarshalError.html">Bundler::MarshalError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/MatchPlatform.html">Bundler::MatchPlatform</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/MirrorSockets.html">Bundler::MirrorSockets</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo.html">Bundler::Molinillo</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/CircularDependencyError.html">Bundler::Molinillo::CircularDependencyError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/Compatibility.html">Bundler::Molinillo::Compatibility</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/Delegates.html">Bundler::Molinillo::Delegates</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/Delegates/ResolutionState.html">Bundler::Molinillo::Delegates::ResolutionState</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/Delegates/SpecificationProvider.html">Bundler::Molinillo::Delegates::SpecificationProvider</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/DependencyGraph.html">Bundler::Molinillo::DependencyGraph</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/DependencyGraph/Action.html">Bundler::Molinillo::DependencyGraph::Action</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/DependencyGraph/AddEdgeNoCircular.html">Bundler::Molinillo::DependencyGraph::AddEdgeNoCircular</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/DependencyGraph/DeleteEdge.html">Bundler::Molinillo::DependencyGraph::DeleteEdge</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/DependencyGraph/DetachVertexNamed.html">Bundler::Molinillo::DependencyGraph::DetachVertexNamed</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/DependencyGraph/Log.html">Bundler::Molinillo::DependencyGraph::Log</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/DependencyGraph/Tag.html">Bundler::Molinillo::DependencyGraph::Tag</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/DependencyGraph/Vertex.html">Bundler::Molinillo::DependencyGraph::Vertex</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/DependencyState.html">Bundler::Molinillo::DependencyState</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/NoSuchDependencyError.html">Bundler::Molinillo::NoSuchDependencyError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/PossibilityState.html">Bundler::Molinillo::PossibilityState</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/ResolutionState.html">Bundler::Molinillo::ResolutionState</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/Resolver.html">Bundler::Molinillo::Resolver</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/Resolver/Resolution.html">Bundler::Molinillo::Resolver::Resolution</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/Resolver/Resolution/Conflict.html">Bundler::Molinillo::Resolver::Resolution::Conflict</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/Resolver/Resolution/PossibilitySet.html">Bundler::Molinillo::Resolver::Resolution::PossibilitySet</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/Resolver/Resolution/UnwindDetails.html">Bundler::Molinillo::Resolver::Resolution::UnwindDetails</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/ResolverError.html">Bundler::Molinillo::ResolverError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/SpecificationProvider.html">Bundler::Molinillo::SpecificationProvider</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/UI.html">Bundler::Molinillo::UI</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Molinillo/VersionConflict.html">Bundler::Molinillo::VersionConflict</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/NoSpaceOnDeviceError.html">Bundler::NoSpaceOnDeviceError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/OperationNotSupportedError.html">Bundler::OperationNotSupportedError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/ParallelInstaller.html">Bundler::ParallelInstaller</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/ParallelInstaller/SpecInstallation.html">Bundler::ParallelInstaller::SpecInstallation</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/PathError.html">Bundler::PathError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/PermissionError.html">Bundler::PermissionError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Persistent.html">Bundler::Persistent</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Persistent/Net.html">Bundler::Persistent::Net</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Persistent/Net/HTTP.html">Bundler::Persistent::Net::HTTP</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Persistent/Net/HTTP/Persistent.html">Bundler::Persistent::Net::HTTP::Persistent</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Persistent/Net/HTTP/Persistent/Error.html">Bundler::Persistent::Net::HTTP::Persistent::Error</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/PersistentHTTP.html">Bundler::PersistentHTTP</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin.html">Bundler::Plugin</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/API.html">Bundler::Plugin::API</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/API/Source.html">Bundler::Plugin::API::Source</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/DSL.html">Bundler::Plugin::DSL</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/DSL/PluginGemfileError.html">Bundler::Plugin::DSL::PluginGemfileError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/Events.html">Bundler::Plugin::Events</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/Index.html">Bundler::Plugin::Index</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/Index/CommandConflict.html">Bundler::Plugin::Index::CommandConflict</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/Index/SourceConflict.html">Bundler::Plugin::Index::SourceConflict</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/Installer.html">Bundler::Plugin::Installer</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/Installer/Git.html">Bundler::Plugin::Installer::Git</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/Installer/Rubygems.html">Bundler::Plugin::Installer::Rubygems</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/MalformattedPlugin.html">Bundler::Plugin::MalformattedPlugin</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/SourceList.html">Bundler::Plugin::SourceList</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/UndefinedCommandError.html">Bundler::Plugin::UndefinedCommandError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Plugin/UnknownSourceError.html">Bundler::Plugin::UnknownSourceError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/PluginError.html">Bundler::PluginError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/ProcessLock.html">Bundler::ProcessLock</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/ProductionError.html">Bundler::ProductionError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/RemoteSpecification.html">Bundler::RemoteSpecification</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Resolver.html">Bundler::Resolver</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Resolver/SpecGroup.html">Bundler::Resolver::SpecGroup</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Retry.html">Bundler::Retry</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/RubyDsl.html">Bundler::RubyDsl</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/RubyGemsGemInstaller.html">Bundler::RubyGemsGemInstaller</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/RubyVersion.html">Bundler::RubyVersion</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/RubyVersionMismatch.html">Bundler::RubyVersionMismatch</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/RubygemsIntegration.html">Bundler::RubygemsIntegration</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/RubygemsIntegration/Gem.html">Bundler::RubygemsIntegration::Gem</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Runtime.html">Bundler::Runtime</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/SecurityError.html">Bundler::SecurityError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Settings.html">Bundler::Settings</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Settings/Mirror.html">Bundler::Settings::Mirror</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Settings/MirrorConfig.html">Bundler::Settings::MirrorConfig</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Settings/Mirrors.html">Bundler::Settings::Mirrors</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Settings/TCPSocketProbe.html">Bundler::Settings::TCPSocketProbe</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Settings/Validator.html">Bundler::Settings::Validator</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Settings/Validator/Rule.html">Bundler::Settings::Validator::Rule</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/SharedHelpers.html">Bundler::SharedHelpers</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/SimilarityDetector.html">Bundler::SimilarityDetector</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/SocketAddress.html">Bundler::SocketAddress</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source.html">Bundler::Source</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source/Gemspec.html">Bundler::Source::Gemspec</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source/Git.html">Bundler::Source::Git</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source/Git/GitCommandError.html">Bundler::Source::Git::GitCommandError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source/Git/GitNotAllowedError.html">Bundler::Source::Git::GitNotAllowedError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source/Git/GitNotInstalledError.html">Bundler::Source::Git::GitNotInstalledError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source/Git/GitProxy.html">Bundler::Source::Git::GitProxy</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source/Git/MissingGitRevisionError.html">Bundler::Source::Git::MissingGitRevisionError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source/Metadata.html">Bundler::Source::Metadata</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source/Path.html">Bundler::Source::Path</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source/Path/Installer.html">Bundler::Source::Path::Installer</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source/Rubygems.html">Bundler::Source::Rubygems</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Source/Rubygems/Remote.html">Bundler::Source::Rubygems::Remote</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/SourceList.html">Bundler::SourceList</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/SpecSet.html">Bundler::SpecSet</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Standalone.html">Bundler::Standalone</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/StubSpecification.html">Bundler::StubSpecification</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/SudoNotPermittedError.html">Bundler::SudoNotPermittedError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/TemporaryResourceError.html">Bundler::TemporaryResourceError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Actions.html">Bundler::Thor::Actions</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Actions/CapturableERB.html">Bundler::Thor::Actions::CapturableERB</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Actions/ClassMethods.html">Bundler::Thor::Actions::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Base.html">Bundler::Thor::Base</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Base/ClassMethods.html">Bundler::Thor::Base::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Command.html">Bundler::Thor::Command</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/CoreExt.html">Bundler::Thor::CoreExt</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/CoreExt/OrderedHash.html">Bundler::Thor::CoreExt::OrderedHash</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/DynamicCommand.html">Bundler::Thor::DynamicCommand</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/DynamicCommand.html">Bundler::Thor::DynamicTask</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Group.html">Bundler::Thor::Group</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/HiddenCommand.html">Bundler::Thor::HiddenCommand</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/HiddenCommand.html">Bundler::Thor::HiddenTask</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Invocation.html">Bundler::Thor::Invocation</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Invocation/ClassMethods.html">Bundler::Thor::Invocation::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/LineEditor.html">Bundler::Thor::LineEditor</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/LineEditor/Basic.html">Bundler::Thor::LineEditor::Basic</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/LineEditor/Readline.html">Bundler::Thor::LineEditor::Readline</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/LineEditor/Readline/PathCompletion.html">Bundler::Thor::LineEditor::Readline::PathCompletion</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/NestedContext.html">Bundler::Thor::NestedContext</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/RakeCompat.html">Bundler::Thor::RakeCompat</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Shell.html">Bundler::Thor::Shell</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Shell/Basic.html">Bundler::Thor::Shell::Basic</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Shell/Color.html">Bundler::Thor::Shell::Color</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Shell/HTML.html">Bundler::Thor::Shell::HTML</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Command.html">Bundler::Thor::Task</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Thor/Util.html">Bundler::Thor::Util</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/ThreadCreationError.html">Bundler::ThreadCreationError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/UI.html">Bundler::UI</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/UI/RGProxy.html">Bundler::UI::RGProxy</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/UI/Shell.html">Bundler::UI::Shell</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/UI/Silent.html">Bundler::UI::Silent</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI.html">Bundler::URI</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/BadURIError.html">Bundler::URI::BadURIError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/Error.html">Bundler::URI::Error</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/Escape.html">Bundler::URI::Escape</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/FTP.html">Bundler::URI::FTP</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/File.html">Bundler::URI::File</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/Generic.html">Bundler::URI::Generic</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/HTTP.html">Bundler::URI::HTTP</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/HTTPS.html">Bundler::URI::HTTPS</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/InvalidComponentError.html">Bundler::URI::InvalidComponentError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/InvalidURIError.html">Bundler::URI::InvalidURIError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/LDAP.html">Bundler::URI::LDAP</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/LDAPS.html">Bundler::URI::LDAPS</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/MailTo.html">Bundler::URI::MailTo</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/RFC2396_Parser.html">Bundler::URI::Parser</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/RFC2396_REGEXP.html">Bundler::URI::REGEXP</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/RFC2396_Parser.html">Bundler::URI::RFC2396_Parser</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/RFC2396_REGEXP.html">Bundler::URI::RFC2396_REGEXP</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URI/RFC2396_REGEXP/PATTERN.html">Bundler::URI::RFC2396_REGEXP::PATTERN</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/URICredentialsFilter.html">Bundler::URICredentialsFilter</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/VersionConflict.html">Bundler::VersionConflict</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/VersionRanges.html">Bundler::VersionRanges</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/VersionRanges/ReqR.html">Bundler::VersionRanges::ReqR</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/VirtualProtocolError.html">Bundler::VirtualProtocolError</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Worker.html">Bundler::Worker</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/Worker/WrappedException.html">Bundler::Worker::WrappedException</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/YAMLSerializer.html">Bundler::YAMLSerializer</a></li>
+        
+          
+          
+          <li><a href="../../Bundler/YamlSyntaxError.html">Bundler::YamlSyntaxError</a></li>
+        
+          
+          
+          <li><a href="../../Error.html">Error</a></li>
+        
+          
+          
+          <li><a href="../../Gem.html">Gem</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Dependency.html">Gem::Dependency</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Platform.html">Gem::Platform</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Specification.html">Gem::Specification</a></li>
+        
+          
+          
+          <li><a href="../../InvocationError.html">InvocationError</a></li>
+        
+          
+          
+          <li><a href="../../Kernel.html">Kernel</a></li>
+        
+          
+          
+          <li><a href="../../MalformattedArgumentError.html">MalformattedArgumentError</a></li>
+        
+          
+          
+          <li><a href="../../Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="../../RequiredArgumentMissingError.html">RequiredArgumentMissingError</a></li>
+        
+          
+          
+          <li><a href="../../UndefinedCommandError.html">UndefinedCommandError</a></li>
+        
+          
+          
+          <li><a href="../../UndefinedCommandError/SpellChecker.html">UndefinedCommandError::SpellChecker</a></li>
+        
+          
+          
+          <li><a href="../../UndefinedTaskError.html">UndefinedTaskError</a></li>
+        
+          
+          
+          <li><a href="../../UnknownArgumentError.html">UnknownArgumentError</a></li>
+        
+          
+          
+          <li><a href="../../UnknownArgumentError/SpellChecker.html">UnknownArgumentError::SpellChecker</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="module">Bundler::Thor::Actions</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="WARNINGS">WARNINGS</a></dt>
+          
+          <dd class="description"><p>Injects the given content into a file. Different from <a href="Actions.html#method-i-gsub_file"><code>gsub_file</code></a>, this method is reversible.</p>
+
+<h4 id="label-Parameters">Parameters<span><a href="#label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>destination&lt;String&gt;
+<dd>
+<p>Relative path to the destination root</p>
+</dd><dt>data&lt;String&gt;
+<dd>
+<p>Data to add to the file. Can be given as a block.</p>
+</dd><dt>config&lt;Hash&gt;
+<dd>
+<p>give :verbose =&gt; false to not log the status and the flag for injection (:after or :before) or :force =&gt; true for insert two or more times the same content.</p>
+</dd></dl>
+
+<h4 id="label-Examples">Examples<span><a href="#label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">insert_into_file</span> <span class="ruby-string">&quot;config/environment.rb&quot;</span>, <span class="ruby-string">&quot;config.gem :thor&quot;</span>, <span class="ruby-value">:after</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Rails::Initializer.run do |config|\n&quot;</span>
+
+<span class="ruby-identifier">insert_into_file</span> <span class="ruby-string">&quot;config/environment.rb&quot;</span>, <span class="ruby-value">:after</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Rails::Initializer.run do |config|\n&quot;</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">gems</span> = <span class="ruby-identifier">ask</span> <span class="ruby-string">&quot;Which gems would you like to add?&quot;</span>
+  <span class="ruby-identifier">gems</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot; &quot;</span>).<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">gem</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;  config.gem :#{gem}&quot;</span> }.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+<span class="ruby-keyword">end</span>
+</pre></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+      <!-- Attributes -->
+      <div id="attribute-method-details" class="method-section section">
+        <h3 class="section-header">Attributes</h3>
+
+        
+        <div id="behavior-attribute-method" class="method-detail">
+          <a name="behavior"></a>
+          
+          <a name="behavior="></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">behavior</span><span
+              class="attribute-access-type">[RW]</span>
+          </div>
+
+          <div class="method-description 245">
+          
+          
+          
+          </div>
+        </div>
+        
+      </div><!-- attribute-method-details -->
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(args = [], options = {}, config = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Extends initializer to add more configuration options.</p>
+
+<h4 id="method-c-new-label-Configuration">Configuration<span><a href="#method-c-new-label-Configuration">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>behavior&lt;Symbol&gt;
+<dd>
+<p>The actions default behavior. Can be :invoke or :revoke. It also accepts :force, :skip and :pretend to set the behavior and the respective option.</p>
+</dd><dt><a href="Actions.html#method-i-destination_root"><code>destination_root</code></a>&lt;String&gt;
+<dd>
+<p>The root directory needed for some actions.</p>
+</dd></dl>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">args</span> = [], <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">config</span> = {})
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">behavior</span> = <span class="ruby-keyword">case</span> <span class="ruby-identifier">config</span>[<span class="ruby-value">:behavior</span>].<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;force&quot;</span>, <span class="ruby-string">&quot;skip&quot;</span>
+    <span class="ruby-identifier">_cleanup_options_and_set</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">config</span>[<span class="ruby-value">:behavior</span>])
+    <span class="ruby-value">:invoke</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;revoke&quot;</span>
+    <span class="ruby-value">:revoke</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-value">:invoke</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">destination_root</span> = <span class="ruby-identifier">config</span>[<span class="ruby-value">:destination_root</span>]
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="add_file-method" class="method-detail method-alias">
+          <a name="method-i-add_file"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">add_file</span><span
+              class="method-args">(destination, *args, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Actions.html#method-i-create_file">create_file</a>
+          </div>
+          
+        </div><!-- add_file-method -->
+      
+        <div id="add_link-method" class="method-detail method-alias">
+          <a name="method-i-add_link"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">add_link</span><span
+              class="method-args">(destination, *args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Actions.html#method-i-create_link">create_link</a>
+          </div>
+          
+        </div><!-- add_link-method -->
+      
+        <div id="append_file-method" class="method-detail method-alias">
+          <a name="method-i-append_file"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">append_file</span><span
+              class="method-args">(path, *args, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Actions.html#method-i-append_to_file">append_to_file</a>
+          </div>
+          
+        </div><!-- append_file-method -->
+      
+        <div id="append_to_file-method" class="method-detail ">
+          <a name="method-i-append_to_file"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">append_to_file</span><span
+              class="method-args">(path, *args, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Append text to a file. Since it depends on <a href="Actions.html#method-i-insert_into_file"><code>insert_into_file</code></a>, it&#39;s reversible.</p>
+
+<h4 id="method-i-append_to_file-label-Parameters">Parameters<span><a href="#method-i-append_to_file-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>path&lt;String&gt;
+<dd>
+<p>path of the file to be changed</p>
+</dd><dt>data&lt;String&gt;
+<dd>
+<p>the data to append to the file, can be also given as a block.</p>
+</dd><dt>config&lt;Hash&gt;
+<dd>
+<p>give :verbose =&gt; false to not log the status.</p>
+</dd></dl>
+
+<h4 id="method-i-append_to_file-label-Example">Example<span><a href="#method-i-append_to_file-label-Example">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">append_to_file</span> <span class="ruby-string">&#39;config/environments/test.rb&#39;</span>, <span class="ruby-string">&#39;config.gem &quot;rspec&quot;&#39;</span>
+
+<span class="ruby-identifier">append_to_file</span> <span class="ruby-string">&#39;config/environments/test.rb&#39;</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-string">&#39;config.gem &quot;rspec&quot;&#39;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="append_to_file-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions/file_manipulation.rb, line 195</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">append_to_file</span>(<span class="ruby-identifier">path</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">config</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
+  <span class="ruby-identifier">config</span>[<span class="ruby-value">:before</span>] = <span class="ruby-regexp">/\z/</span>
+  <span class="ruby-identifier">insert_into_file</span>(<span class="ruby-identifier">path</span>, <span class="ruby-operator">*</span>(<span class="ruby-identifier">args</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">config</span>), <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- append_to_file-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Actions.html#method-i-append_file">append_file</a>
+          </div>
+          
+
+          
+        </div><!-- append_to_file-method -->
+      
+        <div id="apply-method" class="method-detail ">
+          <a name="method-i-apply"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">apply</span><span
+              class="method-args">(path, config = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Loads an external file and execute it in the instance binding.</p>
+
+<h4 id="method-i-apply-label-Parameters">Parameters<span><a href="#method-i-apply-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>path&lt;String&gt;
+<dd>
+<p>The path to the file to execute. Can be a web address or a relative path from the source root.</p>
+</dd></dl>
+
+<h4 id="method-i-apply-label-Examples">Examples<span><a href="#method-i-apply-label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">apply</span> <span class="ruby-string">&quot;http://gist.github.com/103208&quot;</span>
+
+<span class="ruby-identifier">apply</span> <span class="ruby-string">&quot;recipes/jquery.rb&quot;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="apply-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions.rb, line 212</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">apply</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">config</span> = {})
+  <span class="ruby-identifier">verbose</span> = <span class="ruby-identifier">config</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:verbose</span>, <span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">is_uri</span>  = <span class="ruby-identifier">path</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r{^https?\://}</span>
+  <span class="ruby-identifier">path</span>    = <span class="ruby-identifier">find_in_source_paths</span>(<span class="ruby-identifier">path</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">is_uri</span>
+
+  <span class="ruby-identifier">say_status</span> <span class="ruby-value">:apply</span>, <span class="ruby-identifier">path</span>, <span class="ruby-identifier">verbose</span>
+  <span class="ruby-identifier">shell</span>.<span class="ruby-identifier">padding</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">verbose</span>
+
+  <span class="ruby-identifier">contents</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">is_uri</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">&quot;open-uri&quot;</span>
+    <span class="ruby-identifier">open</span>(<span class="ruby-identifier">path</span>, <span class="ruby-string">&quot;Accept&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;application/x-thor-template&quot;</span>, <span class="ruby-operator">&amp;</span><span class="ruby-value">:read</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">open</span>(<span class="ruby-identifier">path</span>, <span class="ruby-operator">&amp;</span><span class="ruby-value">:read</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">instance_eval</span>(<span class="ruby-identifier">contents</span>, <span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">shell</span>.<span class="ruby-identifier">padding</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">verbose</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- apply-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- apply-method -->
+      
+        <div id="chmod-method" class="method-detail ">
+          <a name="method-i-chmod"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">chmod</span><span
+              class="method-args">(path, mode, config = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Changes the mode of the given file or directory.</p>
+
+<h4 id="method-i-chmod-label-Parameters">Parameters<span><a href="#method-i-chmod-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>mode&lt;Integer&gt;
+<dd>
+<p>the file mode</p>
+</dd><dt>path&lt;String&gt;
+<dd>
+<p>the name of the file to change mode</p>
+</dd><dt>config&lt;Hash&gt;
+<dd>
+<p>give :verbose =&gt; false to not log the status.</p>
+</dd></dl>
+
+<h4 id="method-i-chmod-label-Example">Example<span><a href="#method-i-chmod-label-Example">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">chmod</span> <span class="ruby-string">&quot;script/server&quot;</span>, <span class="ruby-value">0755</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="chmod-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions/file_manipulation.rb, line 148</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">chmod</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">mode</span>, <span class="ruby-identifier">config</span> = {})
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">behavior</span> <span class="ruby-operator">==</span> <span class="ruby-value">:invoke</span>
+  <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">destination_root</span>)
+  <span class="ruby-identifier">say_status</span> <span class="ruby-value">:chmod</span>, <span class="ruby-identifier">relative_to_original_destination_root</span>(<span class="ruby-identifier">path</span>), <span class="ruby-identifier">config</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:verbose</span>, <span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:pretend</span>]
+    <span class="ruby-identifier">require</span> <span class="ruby-string">&quot;fileutils&quot;</span>
+    <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">chmod_R</span>(<span class="ruby-identifier">mode</span>, <span class="ruby-identifier">path</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- chmod-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- chmod-method -->
+      
+        <div id="comment_lines-method" class="method-detail ">
+          <a name="method-i-comment_lines"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">comment_lines</span><span
+              class="method-args">(path, flag, *args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Comment all lines matching a given regex.  It will leave the space which existed before the beginning of the line in tact and will insert a single space after the comment hash.</p>
+
+<h4 id="method-i-comment_lines-label-Parameters">Parameters<span><a href="#method-i-comment_lines-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>path&lt;String&gt;
+<dd>
+<p>path of the file to be changed</p>
+</dd><dt>flag&lt;Regexp|String&gt;
+<dd>
+<p>the regexp or string used to decide which lines to comment</p>
+</dd><dt>config&lt;Hash&gt;
+<dd>
+<p>give :verbose =&gt; false to not log the status.</p>
+</dd></dl>
+
+<h4 id="method-i-comment_lines-label-Example">Example<span><a href="#method-i-comment_lines-label-Example">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">comment_lines</span> <span class="ruby-string">&#39;config/initializers/session_store.rb&#39;</span>, <span class="ruby-regexp">/cookie_store/</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="comment_lines-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions/file_manipulation.rb, line 310</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">comment_lines</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">flag</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">flag</span> = <span class="ruby-identifier">flag</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:source</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">flag</span>.<span class="ruby-identifier">source</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">flag</span>
+
+  <span class="ruby-identifier">gsub_file</span>(<span class="ruby-identifier">path</span>, <span class="ruby-regexp">/^(\s*)([^#\n]*#{flag})/</span>, <span class="ruby-string">&#39;\1# \2&#39;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- comment_lines-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- comment_lines-method -->
+      
+        <div id="copy_file-method" class="method-detail ">
+          <a name="method-i-copy_file"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">copy_file</span><span
+              class="method-args">(source, *args, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <h4 id="method-i-copy_file-label-Examples">Examples<span><a href="#method-i-copy_file-label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">copy_file</span> <span class="ruby-string">&quot;README&quot;</span>, <span class="ruby-string">&quot;doc/README&quot;</span>
+
+<span class="ruby-identifier">copy_file</span> <span class="ruby-string">&quot;doc/README&quot;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="copy_file-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions/file_manipulation.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">copy_file</span>(<span class="ruby-identifier">source</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">config</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
+  <span class="ruby-identifier">destination</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">source</span>
+  <span class="ruby-identifier">source</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">find_in_source_paths</span>(<span class="ruby-identifier">source</span>.<span class="ruby-identifier">to_s</span>))
+
+  <span class="ruby-identifier">resulting_destination</span> = <span class="ruby-identifier">create_file</span> <span class="ruby-identifier">destination</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">config</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">content</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">binread</span>(<span class="ruby-identifier">source</span>)
+    <span class="ruby-identifier">content</span> = <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">content</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>
+    <span class="ruby-identifier">content</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">config</span>[<span class="ruby-value">:mode</span>] <span class="ruby-operator">==</span> <span class="ruby-value">:preserve</span>
+    <span class="ruby-identifier">mode</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-identifier">source</span>).<span class="ruby-identifier">mode</span>
+    <span class="ruby-identifier">chmod</span>(<span class="ruby-identifier">resulting_destination</span>, <span class="ruby-identifier">mode</span>, <span class="ruby-identifier">config</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- copy_file-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- copy_file-method -->
+      
+        <div id="create_file-method" class="method-detail ">
+          <a name="method-i-create_file"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">create_file</span><span
+              class="method-args">(destination, *args, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Create a new file relative to the destination root with the given data, which is the return value of a block or a data string.</p>
+
+<h4 id="method-i-create_file-label-Parameters">Parameters<span><a href="#method-i-create_file-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>destination&lt;String&gt;
+<dd>
+<p>the relative path to the destination root.</p>
+</dd><dt>data&lt;String|NilClass&gt;
+<dd>
+<p>the data to append to the file.</p>
+</dd><dt>config&lt;Hash&gt;
+<dd>
+<p>give :verbose =&gt; false to not log the status.</p>
+</dd></dl>
+
+<h4 id="method-i-create_file-label-Examples">Examples<span><a href="#method-i-create_file-label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">create_file</span> <span class="ruby-string">&quot;lib/fun_party.rb&quot;</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">hostname</span> = <span class="ruby-identifier">ask</span>(<span class="ruby-string">&quot;What is the virtual hostname I should use?&quot;</span>)
+  <span class="ruby-node">&quot;vhost.name = #{hostname}&quot;</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">create_file</span> <span class="ruby-string">&quot;config/apache.conf&quot;</span>, <span class="ruby-string">&quot;your apache config&quot;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="create_file-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions/create_file.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_file</span>(<span class="ruby-identifier">destination</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">config</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
+  <span class="ruby-identifier">data</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">action</span> <span class="ruby-constant">CreateFile</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">destination</span>, <span class="ruby-identifier">block</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">config</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- create_file-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Actions.html#method-i-add_file">add_file</a>
+          </div>
+          
+
+          
+        </div><!-- create_file-method -->
+      
+        <div id="create_link-method" class="method-detail ">
+          <a name="method-i-create_link"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">create_link</span><span
+              class="method-args">(destination, *args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Create a new file relative to the destination root from the given source.</p>
+
+<h4 id="method-i-create_link-label-Parameters">Parameters<span><a href="#method-i-create_link-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>destination&lt;String&gt;
+<dd>
+<p>the relative path to the destination root.</p>
+</dd><dt>source&lt;String|NilClass&gt;
+<dd>
+<p>the relative path to the source root.</p>
+</dd><dt>config&lt;Hash&gt;
+<dd>
+<p>give :verbose =&gt; false to not log the status.</p>
+</dd><dt>
+<dd>
+<p>give :symbolic =&gt; false for hard link.</p>
+</dd></dl>
+
+<h4 id="method-i-create_link-label-Examples">Examples<span><a href="#method-i-create_link-label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">create_link</span> <span class="ruby-string">&quot;config/apache.conf&quot;</span>, <span class="ruby-string">&quot;/etc/apache.conf&quot;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="create_link-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions/create_link.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_link</span>(<span class="ruby-identifier">destination</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">config</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
+  <span class="ruby-identifier">source</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">action</span> <span class="ruby-constant">CreateLink</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">destination</span>, <span class="ruby-identifier">source</span>, <span class="ruby-identifier">config</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- create_link-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Actions.html#method-i-add_link">add_link</a>
+          </div>
+          
+
+          
+        </div><!-- create_link-method -->
+      
+        <div id="destination_root-method" class="method-detail ">
+          <a name="method-i-destination_root"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">destination_root</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns the root for this thor class (also aliased as destination root).</p>
+            
+
+            
+            <div class="method-source-code" id="destination_root-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">destination_root</span>
+  <span class="ruby-ivar">@destination_stack</span>.<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- destination_root-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- destination_root-method -->
+      
+        <div id="destination_root-3D-method" class="method-detail ">
+          <a name="method-i-destination_root-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">destination_root=</span><span
+              class="method-args">(root)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Sets the root for this thor class. Relatives path are added to the directory where the script was invoked and expanded.</p>
+            
+
+            
+            <div class="method-source-code" id="destination_root-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">destination_root=</span>(<span class="ruby-identifier">root</span>)
+  <span class="ruby-ivar">@destination_stack</span> <span class="ruby-operator">||=</span> []
+  <span class="ruby-ivar">@destination_stack</span>[<span class="ruby-value">0</span>] = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">root</span> <span class="ruby-operator">||</span> <span class="ruby-string">&quot;&quot;</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- destination_root-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- destination_root-3D-method -->
+      
+        <div id="directory-method" class="method-detail ">
+          <a name="method-i-directory"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">directory</span><span
+              class="method-args">(source, *args, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Copies recursively the files from source directory to root directory. If any of the files finishes with .tt, it&#39;s considered to be a template and is placed in the destination without the extension .tt. If any empty directory is found, it&#39;s copied and all .empty_directory files are ignored. If any file name is wrapped within % signs, the text within the % signs will be executed as a method and replaced with the returned value. Let&#39;s suppose a doc directory with the following files:</p>
+
+<pre>doc/
+  components/.empty_directory
+  README
+  rdoc.rb.tt
+  %app_name%.rb</pre>
+
+<p>When invoked as:</p>
+
+<pre class="ruby"><span class="ruby-identifier">directory</span> <span class="ruby-string">&quot;doc&quot;</span>
+</pre>
+
+<p>It will create a doc directory in the destination with the following files (assuming that the `app_name` method returns the value “blog”):</p>
+
+<pre class="ruby"><span class="ruby-identifier">doc</span><span class="ruby-operator">/</span>
+  <span class="ruby-identifier">components</span><span class="ruby-operator">/</span>
+  <span class="ruby-constant">README</span>
+  <span class="ruby-identifier">rdoc</span>.<span class="ruby-identifier">rb</span>
+  <span class="ruby-identifier">blog</span>.<span class="ruby-identifier">rb</span>
+</pre>
+
+<p><strong>Encoded path note:</strong> Since Bundler::Thor internals use Object#respond_to? to check if it can expand %something%, this `something` should be a public method in the class calling <a href="Actions.html#method-i-directory"><code>directory</code></a>. If a method is private, Bundler::Thor stack raises PrivateMethodEncodedError.</p>
+
+<h4 id="method-i-directory-label-Parameters">Parameters<span><a href="#method-i-directory-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>source&lt;String&gt;
+<dd>
+<p>the relative path to the source root.</p>
+</dd><dt>destination&lt;String&gt;
+<dd>
+<p>the relative path to the destination root.</p>
+</dd><dt>config&lt;Hash&gt;
+<dd>
+<p>give :verbose =&gt; false to not log the status. If :recursive =&gt; false, does not look for paths recursively. If :mode =&gt; :preserve, preserve the file mode from the source. If :exclude_pattern =&gt; /regexp/, prevents copying files that match that regexp.</p>
+</dd></dl>
+
+<h4 id="method-i-directory-label-Examples">Examples<span><a href="#method-i-directory-label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">directory</span> <span class="ruby-string">&quot;doc&quot;</span>
+<span class="ruby-identifier">directory</span> <span class="ruby-string">&quot;doc&quot;</span>, <span class="ruby-string">&quot;docs&quot;</span>, <span class="ruby-value">:recursive</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">false</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="directory-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions/directory.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">directory</span>(<span class="ruby-identifier">source</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">config</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
+  <span class="ruby-identifier">destination</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">source</span>
+  <span class="ruby-identifier">action</span> <span class="ruby-constant">Directory</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">source</span>, <span class="ruby-identifier">destination</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">source</span>, <span class="ruby-identifier">config</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- directory-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- directory-method -->
+      
+        <div id="empty_directory-method" class="method-detail ">
+          <a name="method-i-empty_directory"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">empty_directory</span><span
+              class="method-args">(destination, config = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Creates an empty directory.</p>
+
+<h4 id="method-i-empty_directory-label-Parameters">Parameters<span><a href="#method-i-empty_directory-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>destination&lt;String&gt;
+<dd>
+<p>the relative path to the destination root.</p>
+</dd><dt>config&lt;Hash&gt;
+<dd>
+<p>give :verbose =&gt; false to not log the status.</p>
+</dd></dl>
+
+<h4 id="method-i-empty_directory-label-Examples">Examples<span><a href="#method-i-empty_directory-label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">empty_directory</span> <span class="ruby-string">&quot;doc&quot;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="empty_directory-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions/empty_directory.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">empty_directory</span>(<span class="ruby-identifier">destination</span>, <span class="ruby-identifier">config</span> = {})
+  <span class="ruby-identifier">action</span> <span class="ruby-constant">EmptyDirectory</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">destination</span>, <span class="ruby-identifier">config</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- empty_directory-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- empty_directory-method -->
+      
+        <div id="find_in_source_paths-method" class="method-detail ">
+          <a name="method-i-find_in_source_paths"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">find_in_source_paths</span><span
+              class="method-args">(file)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Receives a file or directory and search for it in the source paths.</p>
+            
+
+            
+            <div class="method-source-code" id="find_in_source_paths-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions.rb, line 133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">find_in_source_paths</span>(<span class="ruby-identifier">file</span>)
+  <span class="ruby-identifier">possible_files</span> = [<span class="ruby-identifier">file</span>, <span class="ruby-identifier">file</span> <span class="ruby-operator">+</span> <span class="ruby-constant">TEMPLATE_EXTNAME</span>]
+  <span class="ruby-identifier">relative_root</span> = <span class="ruby-identifier">relative_to_original_destination_root</span>(<span class="ruby-identifier">destination_root</span>, <span class="ruby-keyword">false</span>)
+
+  <span class="ruby-identifier">source_paths</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">source</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">possible_files</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">source_file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">f</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">relative_root</span>))
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">source_file</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">source_file</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">message</span> = <span class="ruby-node">&quot;Could not find #{file.inspect} in any of your source paths. &quot;</span>.<span class="ruby-identifier">dup</span>
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">source_root</span>
+    <span class="ruby-identifier">message</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;Please invoke #{self.class.name}.source_root(PATH) with the PATH containing your templates. &quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">message</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">source_paths</span>.<span class="ruby-identifier">empty?</span>
+               <span class="ruby-string">&quot;Currently you have no source paths.&quot;</span>
+             <span class="ruby-keyword">else</span>
+               <span class="ruby-node">&quot;Your current source paths are: \n#{source_paths.join(&quot;\n&quot;)}&quot;</span>
+             <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Error</span>, <span class="ruby-identifier">message</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- find_in_source_paths-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- find_in_source_paths-method -->
+      
+        <div id="get-method" class="method-detail ">
+          <a name="method-i-get"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">get</span><span
+              class="method-args">(source, *args, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Gets the content at the given address and places it at the given relative destination. If a block is given instead of destination, the content of the url is yielded and used as location.</p>
+
+<p><code>get</code> relies on open-uri, so passing application user input would provide a command injection attack vector.</p>
+
+<h4 id="method-i-get-label-Parameters">Parameters<span><a href="#method-i-get-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>source&lt;String&gt;
+<dd>
+<p>the address of the given content.</p>
+</dd><dt>destination&lt;String&gt;
+<dd>
+<p>the relative path to the destination root.</p>
+</dd><dt>config&lt;Hash&gt;
+<dd>
+<p>give :verbose =&gt; false to not log the status.</p>
+</dd></dl>
+
+<h4 id="method-i-get-label-Examples">Examples<span><a href="#method-i-get-label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">get</span> <span class="ruby-string">&quot;http://gist.github.com/103208&quot;</span>, <span class="ruby-string">&quot;doc/README&quot;</span>
+
+<span class="ruby-identifier">get</span> <span class="ruby-string">&quot;http://gist.github.com/103208&quot;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">content</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">content</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n&quot;</span>).<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="get-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions/file_manipulation.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get</span>(<span class="ruby-identifier">source</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">config</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
+  <span class="ruby-identifier">destination</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>
+
+  <span class="ruby-identifier">render</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">source</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r{^https?\://}</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">&quot;open-uri&quot;</span>
+    <span class="ruby-constant">URI</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:open</span>, <span class="ruby-identifier">source</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">input</span><span class="ruby-operator">|</span> <span class="ruby-identifier">input</span>.<span class="ruby-identifier">binmode</span>.<span class="ruby-identifier">read</span> }
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">source</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">find_in_source_paths</span>(<span class="ruby-identifier">source</span>.<span class="ruby-identifier">to_s</span>))
+    <span class="ruby-identifier">open</span>(<span class="ruby-identifier">source</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">input</span><span class="ruby-operator">|</span> <span class="ruby-identifier">input</span>.<span class="ruby-identifier">binmode</span>.<span class="ruby-identifier">read</span> }
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">destination</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-identifier">block</span>.<span class="ruby-identifier">arity</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">render</span>) <span class="ruby-operator">:</span> <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">source</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">create_file</span> <span class="ruby-identifier">destination</span>, <span class="ruby-identifier">render</span>, <span class="ruby-identifier">config</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- get-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- get-method -->
+      
+        <div id="gsub_file-method" class="method-detail ">
+          <a name="method-i-gsub_file"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">gsub_file</span><span
+              class="method-args">(path, flag, *args, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Run a regular expression replacement on a file.</p>
+
+<h4 id="method-i-gsub_file-label-Parameters">Parameters<span><a href="#method-i-gsub_file-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>path&lt;String&gt;
+<dd>
+<p>path of the file to be changed</p>
+</dd><dt>flag&lt;Regexp|String&gt;
+<dd>
+<p>the regexp or string to be replaced</p>
+</dd><dt>replacement&lt;String&gt;
+<dd>
+<p>the replacement, can be also given as a block</p>
+</dd><dt>config&lt;Hash&gt;
+<dd>
+<p>give :verbose =&gt; false to not log the status.</p>
+</dd></dl>
+
+<h4 id="method-i-gsub_file-label-Example">Example<span><a href="#method-i-gsub_file-label-Example">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">gsub_file</span> <span class="ruby-string">&#39;app/controllers/application_controller.rb&#39;</span>, <span class="ruby-regexp">/#\s*(filter_parameter_logging :password)/</span>, <span class="ruby-string">&#39;\1&#39;</span>
+
+<span class="ruby-identifier">gsub_file</span> <span class="ruby-string">&#39;README&#39;</span>, <span class="ruby-regexp">/rake/</span>, <span class="ruby-value">:green</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">match</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">match</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot; no more. Use thor!&quot;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="gsub_file-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions/file_manipulation.rb, line 264</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">gsub_file</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">flag</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">behavior</span> <span class="ruby-operator">==</span> <span class="ruby-value">:invoke</span>
+  <span class="ruby-identifier">config</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
+
+  <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">destination_root</span>)
+  <span class="ruby-identifier">say_status</span> <span class="ruby-value">:gsub</span>, <span class="ruby-identifier">relative_to_original_destination_root</span>(<span class="ruby-identifier">path</span>), <span class="ruby-identifier">config</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:verbose</span>, <span class="ruby-keyword">true</span>)
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:pretend</span>]
+    <span class="ruby-identifier">content</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">binread</span>(<span class="ruby-identifier">path</span>)
+    <span class="ruby-identifier">content</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-identifier">flag</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">path</span>, <span class="ruby-string">&quot;wb&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span> <span class="ruby-identifier">file</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">content</span>) }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- gsub_file-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- gsub_file-method -->
+      
+        <div id="in_root-method" class="method-detail ">
+          <a name="method-i-in_root"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">in_root</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Goes to the root and execute the given block.</p>
+            
+
+            
+            <div class="method-source-code" id="in_root-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions.rb, line 196</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">in_root</span>
+  <span class="ruby-identifier">inside</span>(<span class="ruby-ivar">@destination_stack</span>.<span class="ruby-identifier">first</span>) { <span class="ruby-keyword">yield</span> }
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- in_root-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- in_root-method -->
+      
+        <div id="inject_into_class-method" class="method-detail ">
+          <a name="method-i-inject_into_class"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">inject_into_class</span><span
+              class="method-args">(path, klass, *args, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Injects text right after the class definition. Since it depends on <a href="Actions.html#method-i-insert_into_file"><code>insert_into_file</code></a>, it&#39;s reversible.</p>
+
+<h4 id="method-i-inject_into_class-label-Parameters">Parameters<span><a href="#method-i-inject_into_class-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>path&lt;String&gt;
+<dd>
+<p>path of the file to be changed</p>
+</dd><dt>klass&lt;String|Class&gt;
+<dd>
+<p>the class to be manipulated</p>
+</dd><dt>data&lt;String&gt;
+<dd>
+<p>the data to append to the class, can be also given as a block.</p>
+</dd><dt>config&lt;Hash&gt;
+<dd>
+<p>give :verbose =&gt; false to not log the status.</p>
+</dd></dl>
+
+<h4 id="method-i-inject_into_class-label-Examples">Examples<span><a href="#method-i-inject_into_class-label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">inject_into_class</span> <span class="ruby-string">&quot;app/controllers/application_controller.rb&quot;</span>, <span class="ruby-constant">ApplicationController</span>, <span class="ruby-string">&quot;  filter_parameter :password\n&quot;</span>
+
+<span class="ruby-identifier">inject_into_class</span> <span class="ruby-string">&quot;app/controllers/application_controller.rb&quot;</span>, <span class="ruby-constant">ApplicationController</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-string">&quot;  filter_parameter :password\n&quot;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="inject_into_class-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions/file_manipulation.rb, line 219</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inject_into_class</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">klass</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">config</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
+  <span class="ruby-identifier">config</span>[<span class="ruby-value">:after</span>] = <span class="ruby-regexp">/class #{klass}\n|class #{klass} .*\n/</span>
+  <span class="ruby-identifier">insert_into_file</span>(<span class="ruby-identifier">path</span>, <span class="ruby-operator">*</span>(<span class="ruby-identifier">args</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">config</span>), <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- inject_into_class-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- inject_into_class-method -->
+      
+        <div id="inject_into_file-method" class="method-detail method-alias">
+          <a name="method-i-inject_into_file"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">inject_into_file</span><span
+              class="method-args">(destination, *args, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Actions.html#method-i-insert_into_file">insert_into_file</a>
+          </div>
+          
+        </div><!-- inject_into_file-method -->
+      
+        <div id="inject_into_module-method" class="method-detail ">
+          <a name="method-i-inject_into_module"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">inject_into_module</span><span
+              class="method-args">(path, module_name, *args, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Injects text right after the module definition. Since it depends on <a href="Actions.html#method-i-insert_into_file"><code>insert_into_file</code></a>, it&#39;s reversible.</p>
+
+<h4 id="method-i-inject_into_module-label-Parameters">Parameters<span><a href="#method-i-inject_into_module-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>path&lt;String&gt;
+<dd>
+<p>path of the file to be changed</p>
+</dd><dt>module_name&lt;String|Class&gt;
+<dd>
+<p>the module to be manipulated</p>
+</dd><dt>data&lt;String&gt;
+<dd>
+<p>the data to append to the class, can be also given as a block.</p>
+</dd><dt>config&lt;Hash&gt;
+<dd>
+<p>give :verbose =&gt; false to not log the status.</p>
+</dd></dl>
+
+<h4 id="method-i-inject_into_module-label-Examples">Examples<span><a href="#method-i-inject_into_module-label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">inject_into_module</span> <span class="ruby-string">&quot;app/helpers/application_helper.rb&quot;</span>, <span class="ruby-constant">ApplicationHelper</span>, <span class="ruby-string">&quot;  def help; &#39;help&#39;; end\n&quot;</span>
+
+<span class="ruby-identifier">inject_into_module</span> <span class="ruby-string">&quot;app/helpers/application_helper.rb&quot;</span>, <span class="ruby-constant">ApplicationHelper</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-string">&quot;  def help; &#39;help&#39;; end\n&quot;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="inject_into_module-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions/file_manipulation.rb, line 242</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inject_into_module</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">module_name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">config</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
+  <span class="ruby-identifier">config</span>[<span class="ruby-value">:after</span>] = <span class="ruby-regexp">/module #{module_name}\n|module #{module_name} .*\n/</span>
+  <span class="ruby-identifier">insert_into_file</span>(<span class="ruby-identifier">path</span>, <span class="ruby-operator">*</span>(<span class="ruby-identifier">args</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">config</span>), <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- inject_into_module-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- inject_into_module-method -->
+      
+        <div id="insert_into_file-method" class="method-detail ">
+          <a name="method-i-insert_into_file"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">insert_into_file</span><span
+              class="method-args">(destination, *args, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="insert_into_file-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions/inject_into_file.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">insert_into_file</span>(<span class="ruby-identifier">destination</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">data</span> = <span class="ruby-identifier">block_given?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">block</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span>
+
+  <span class="ruby-identifier">config</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">||</span> {}
+  <span class="ruby-identifier">config</span>[<span class="ruby-value">:after</span>] = <span class="ruby-regexp">/\z/</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">config</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:before</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">config</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:after</span>)
+
+  <span class="ruby-identifier">action</span> <span class="ruby-constant">InjectIntoFile</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">destination</span>, <span class="ruby-identifier">data</span>, <span class="ruby-identifier">config</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- insert_into_file-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Actions.html#method-i-inject_into_file">inject_into_file</a>
+          </div>
+          
+
+          
+        </div><!-- insert_into_file-method -->
+      
+        <div id="inside-method" class="method-detail ">
+          <a name="method-i-inside"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">inside</span><span
+              class="method-args">(dir = "", config = {}, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Do something in the root or on a provided subfolder. If a relative path is given it&#39;s referenced from the current root. The full path is yielded to the block you provide. The path is set back to the previous path when the method exits.</p>
+
+<h4 id="method-i-inside-label-Parameters">Parameters<span><a href="#method-i-inside-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>dir&lt;String&gt;
+<dd>
+<p>the directory to move to.</p>
+</dd><dt>config&lt;Hash&gt;
+<dd>
+<p>give :verbose =&gt; true to log and use padding.</p>
+</dd></dl>
+            
+
+            
+            <div class="method-source-code" id="inside-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions.rb, line 168</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inside</span>(<span class="ruby-identifier">dir</span> = <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">config</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">verbose</span> = <span class="ruby-identifier">config</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:verbose</span>, <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">pretend</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:pretend</span>]
+
+  <span class="ruby-identifier">say_status</span> <span class="ruby-value">:inside</span>, <span class="ruby-identifier">dir</span>, <span class="ruby-identifier">verbose</span>
+  <span class="ruby-identifier">shell</span>.<span class="ruby-identifier">padding</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">verbose</span>
+  <span class="ruby-ivar">@destination_stack</span>.<span class="ruby-identifier">push</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">dir</span>, <span class="ruby-identifier">destination_root</span>)
+
+  <span class="ruby-comment"># If the directory doesnt exist and we&#39;re not pretending</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">destination_root</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">pretend</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">&quot;fileutils&quot;</span>
+    <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span>(<span class="ruby-identifier">destination_root</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">pretend</span>
+    <span class="ruby-comment"># In pretend mode, just yield down to the block</span>
+    <span class="ruby-identifier">block</span>.<span class="ruby-identifier">arity</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">destination_root</span>) <span class="ruby-operator">:</span> <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">&quot;fileutils&quot;</span>
+    <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">cd</span>(<span class="ruby-identifier">destination_root</span>) { <span class="ruby-identifier">block</span>.<span class="ruby-identifier">arity</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">destination_root</span>) <span class="ruby-operator">:</span> <span class="ruby-keyword">yield</span> }
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@destination_stack</span>.<span class="ruby-identifier">pop</span>
+  <span class="ruby-identifier">shell</span>.<span class="ruby-identifier">padding</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">verbose</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- inside-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- inside-method -->
+      
+        <div id="link_file-method" class="method-detail ">
+          <a name="method-i-link_file"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">link_file</span><span
+              class="method-args">(source, *args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Links the file from the relative source to the relative destination. If the destination is not given it&#39;s assumed to be equal to the source.</p>
+
+<h4 id="method-i-link_file-label-Parameters">Parameters<span><a href="#method-i-link_file-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>source&lt;String&gt;
+<dd>
+<p>the relative path to the source root.</p>
+</dd><dt>destination&lt;String&gt;
+<dd>
+<p>the relative path to the destination root.</p>
+</dd><dt>config&lt;Hash&gt;
+<dd>
+<p>give :verbose =&gt; false to not log the status.</p>
+</dd></dl>
+
+<h4 id="method-i-link_file-label-Examples">Examples<span><a href="#method-i-link_file-label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">link_file</span> <span class="ruby-string">&quot;README&quot;</span>, <span class="ruby-string">&quot;doc/README&quot;</span>
+
+<span class="ruby-identifier">link_file</span> <span class="ruby-string">&quot;doc/README&quot;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="link_file-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions/file_manipulation.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">link_file</span>(<span class="ruby-identifier">source</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">config</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
+  <span class="ruby-identifier">destination</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">source</span>
+  <span class="ruby-identifier">source</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">find_in_source_paths</span>(<span class="ruby-identifier">source</span>.<span class="ruby-identifier">to_s</span>))
+
+  <span class="ruby-identifier">create_link</span> <span class="ruby-identifier">destination</span>, <span class="ruby-identifier">source</span>, <span class="ruby-identifier">config</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- link_file-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- link_file-method -->
+      
+        <div id="prepend_file-method" class="method-detail method-alias">
+          <a name="method-i-prepend_file"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">prepend_file</span><span
+              class="method-args">(path, *args, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Actions.html#method-i-prepend_to_file">prepend_to_file</a>
+          </div>
+          
+        </div><!-- prepend_file-method -->
+      
+        <div id="prepend_to_file-method" class="method-detail ">
+          <a name="method-i-prepend_to_file"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">prepend_to_file</span><span
+              class="method-args">(path, *args, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Prepend text to a file. Since it depends on <a href="Actions.html#method-i-insert_into_file"><code>insert_into_file</code></a>, it&#39;s reversible.</p>
+
+<h4 id="method-i-prepend_to_file-label-Parameters">Parameters<span><a href="#method-i-prepend_to_file-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>path&lt;String&gt;
+<dd>
+<p>path of the file to be changed</p>
+</dd><dt>data&lt;String&gt;
+<dd>
+<p>the data to prepend to the file, can be also given as a block.</p>
+</dd><dt>config&lt;Hash&gt;
+<dd>
+<p>give :verbose =&gt; false to not log the status.</p>
+</dd></dl>
+
+<h4 id="method-i-prepend_to_file-label-Example">Example<span><a href="#method-i-prepend_to_file-label-Example">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">prepend_to_file</span> <span class="ruby-string">&#39;config/environments/test.rb&#39;</span>, <span class="ruby-string">&#39;config.gem &quot;rspec&quot;&#39;</span>
+
+<span class="ruby-identifier">prepend_to_file</span> <span class="ruby-string">&#39;config/environments/test.rb&#39;</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-string">&#39;config.gem &quot;rspec&quot;&#39;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="prepend_to_file-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions/file_manipulation.rb, line 173</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">prepend_to_file</span>(<span class="ruby-identifier">path</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">config</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
+  <span class="ruby-identifier">config</span>[<span class="ruby-value">:after</span>] = <span class="ruby-regexp">/\A/</span>
+  <span class="ruby-identifier">insert_into_file</span>(<span class="ruby-identifier">path</span>, <span class="ruby-operator">*</span>(<span class="ruby-identifier">args</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">config</span>), <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- prepend_to_file-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Actions.html#method-i-prepend_file">prepend_file</a>
+          </div>
+          
+
+          
+        </div><!-- prepend_to_file-method -->
+      
+        <div id="relative_to_original_destination_root-method" class="method-detail ">
+          <a name="method-i-relative_to_original_destination_root"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">relative_to_original_destination_root</span><span
+              class="method-args">(path, remove_dot = true)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns the given path relative to the absolute root (ie, root where the script started).</p>
+            
+
+            
+            <div class="method-source-code" id="relative_to_original_destination_root-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">relative_to_original_destination_root</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">remove_dot</span> = <span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">root</span> = <span class="ruby-ivar">@destination_stack</span>[<span class="ruby-value">0</span>]
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">path</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-identifier">root</span>) <span class="ruby-operator">&amp;&amp;</span> [<span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEPARATOR</span>, <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">ALT_SEPARATOR</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-string">&#39;&#39;</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">path</span>[<span class="ruby-identifier">root</span>.<span class="ruby-identifier">size</span><span class="ruby-operator">..</span><span class="ruby-identifier">root</span>.<span class="ruby-identifier">size</span>])
+    <span class="ruby-identifier">path</span> = <span class="ruby-identifier">path</span>.<span class="ruby-identifier">dup</span>
+    <span class="ruby-identifier">path</span>[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">root</span>.<span class="ruby-identifier">size</span>] = <span class="ruby-string">&#39;.&#39;</span>
+    <span class="ruby-identifier">remove_dot</span> <span class="ruby-operator">?</span> (<span class="ruby-identifier">path</span>[<span class="ruby-value">2</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>] <span class="ruby-operator">||</span> <span class="ruby-string">&quot;&quot;</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">path</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">path</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- relative_to_original_destination_root-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- relative_to_original_destination_root-method -->
+      
+        <div id="remove_dir-method" class="method-detail method-alias">
+          <a name="method-i-remove_dir"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">remove_dir</span><span
+              class="method-args">(path, config = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Actions.html#method-i-remove_file">remove_file</a>
+          </div>
+          
+        </div><!-- remove_dir-method -->
+      
+        <div id="remove_file-method" class="method-detail ">
+          <a name="method-i-remove_file"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">remove_file</span><span
+              class="method-args">(path, config = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Removes a file at the given location.</p>
+
+<h4 id="method-i-remove_file-label-Parameters">Parameters<span><a href="#method-i-remove_file-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>path&lt;String&gt;
+<dd>
+<p>path of the file to be changed</p>
+</dd><dt>config&lt;Hash&gt;
+<dd>
+<p>give :verbose =&gt; false to not log the status.</p>
+</dd></dl>
+
+<h4 id="method-i-remove_file-label-Example">Example<span><a href="#method-i-remove_file-label-Example">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">remove_file</span> <span class="ruby-string">&#39;README&#39;</span>
+<span class="ruby-identifier">remove_file</span> <span class="ruby-string">&#39;app/controllers/application_controller.rb&#39;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="remove_file-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions/file_manipulation.rb, line 327</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">remove_file</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">config</span> = {})
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">behavior</span> <span class="ruby-operator">==</span> <span class="ruby-value">:invoke</span>
+  <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">destination_root</span>)
+
+  <span class="ruby-identifier">say_status</span> <span class="ruby-value">:remove</span>, <span class="ruby-identifier">relative_to_original_destination_root</span>(<span class="ruby-identifier">path</span>), <span class="ruby-identifier">config</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:verbose</span>, <span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">options</span>[<span class="ruby-value">:pretend</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">path</span>)
+    <span class="ruby-identifier">require</span> <span class="ruby-string">&quot;fileutils&quot;</span>
+    <span class="ruby-operator">::</span><span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- remove_file-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Actions.html#method-i-remove_dir">remove_dir</a>
+          </div>
+          
+
+          
+        </div><!-- remove_file-method -->
+      
+        <div id="run-method" class="method-detail ">
+          <a name="method-i-run"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">run</span><span
+              class="method-args">(command, config = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Executes a command returning the contents of the command.</p>
+
+<h4 id="method-i-run-label-Parameters">Parameters<span><a href="#method-i-run-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>command&lt;String&gt;
+<dd>
+<p>the command to be executed.</p>
+</dd><dt>config&lt;Hash&gt;
+<dd>
+<p>give :verbose =&gt; false to not log the status, :capture =&gt; true to hide to output. Specify :with to append an executable to command execution.</p>
+</dd></dl>
+
+<h4 id="method-i-run-label-Example">Example<span><a href="#method-i-run-label-Example">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">inside</span>(<span class="ruby-string">&#39;vendor&#39;</span>) <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">run</span>(<span class="ruby-string">&#39;ln -s ~/edge rails&#39;</span>)
+<span class="ruby-keyword">end</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="run-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions.rb, line 244</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run</span>(<span class="ruby-identifier">command</span>, <span class="ruby-identifier">config</span> = {})
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">behavior</span> <span class="ruby-operator">==</span> <span class="ruby-value">:invoke</span>
+
+  <span class="ruby-identifier">destination</span> = <span class="ruby-identifier">relative_to_original_destination_root</span>(<span class="ruby-identifier">destination_root</span>, <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">desc</span> = <span class="ruby-node">&quot;#{command} from #{destination.inspect}&quot;</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">config</span>[<span class="ruby-value">:with</span>]
+    <span class="ruby-identifier">desc</span> = <span class="ruby-node">&quot;#{File.basename(config[:with].to_s)} #{desc}&quot;</span>
+    <span class="ruby-identifier">command</span> = <span class="ruby-node">&quot;#{config[:with]} #{command}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">say_status</span> <span class="ruby-value">:run</span>, <span class="ruby-identifier">desc</span>, <span class="ruby-identifier">config</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:verbose</span>, <span class="ruby-keyword">true</span>)
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:pretend</span>]
+
+  <span class="ruby-identifier">env_splat</span> = [<span class="ruby-identifier">config</span>[<span class="ruby-value">:env</span>]] <span class="ruby-keyword">if</span> <span class="ruby-identifier">config</span>[<span class="ruby-value">:env</span>]
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">config</span>[<span class="ruby-value">:capture</span>]
+    <span class="ruby-identifier">require</span> <span class="ruby-string">&quot;open3&quot;</span>
+    <span class="ruby-identifier">result</span>, <span class="ruby-identifier">status</span> = <span class="ruby-constant">Open3</span>.<span class="ruby-identifier">capture2e</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">env_splat</span>, <span class="ruby-identifier">command</span>.<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-identifier">success</span> = <span class="ruby-identifier">status</span>.<span class="ruby-identifier">success?</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">system</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">env_splat</span>, <span class="ruby-identifier">command</span>.<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-identifier">success</span> = <span class="ruby-identifier">result</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">abort</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">success</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">config</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:abort_on_failure</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">exit_on_failure?</span>)
+
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- run-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- run-method -->
+      
+        <div id="run_ruby_script-method" class="method-detail ">
+          <a name="method-i-run_ruby_script"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">run_ruby_script</span><span
+              class="method-args">(command, config = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Executes a ruby script (taking into account WIN32 platform quirks).</p>
+
+<h4 id="method-i-run_ruby_script-label-Parameters">Parameters<span><a href="#method-i-run_ruby_script-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>command&lt;String&gt;
+<dd>
+<p>the command to be executed.</p>
+</dd><dt>config&lt;Hash&gt;
+<dd>
+<p>give :verbose =&gt; false to not log the status.</p>
+</dd></dl>
+            
+
+            
+            <div class="method-source-code" id="run_ruby_script-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions.rb, line 281</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">run_ruby_script</span>(<span class="ruby-identifier">command</span>, <span class="ruby-identifier">config</span> = {})
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">behavior</span> <span class="ruby-operator">==</span> <span class="ruby-value">:invoke</span>
+  <span class="ruby-identifier">run</span> <span class="ruby-identifier">command</span>, <span class="ruby-identifier">config</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:with</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-constant">Bundler</span><span class="ruby-operator">::</span><span class="ruby-constant">Thor</span><span class="ruby-operator">::</span><span class="ruby-constant">Util</span>.<span class="ruby-identifier">ruby_command</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- run_ruby_script-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- run_ruby_script-method -->
+      
+        <div id="source_paths-method" class="method-detail ">
+          <a name="method-i-source_paths"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">source_paths</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Holds source paths in instance so they can be manipulated.</p>
+            
+
+            
+            <div class="method-source-code" id="source_paths-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions.rb, line 127</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">source_paths</span>
+  <span class="ruby-ivar">@source_paths</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">source_paths_for_search</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- source_paths-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- source_paths-method -->
+      
+        <div id="template-method" class="method-detail ">
+          <a name="method-i-template"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">template</span><span
+              class="method-args">(source, *args, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Gets an ERB template at the relative source, executes it and makes a copy at the relative destination. If the destination is not given it&#39;s assumed to be equal to the source removing .tt from the filename.</p>
+
+<h4 id="method-i-template-label-Parameters">Parameters<span><a href="#method-i-template-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>source&lt;String&gt;
+<dd>
+<p>the relative path to the source root.</p>
+</dd><dt>destination&lt;String&gt;
+<dd>
+<p>the relative path to the destination root.</p>
+</dd><dt>config&lt;Hash&gt;
+<dd>
+<p>give :verbose =&gt; false to not log the status.</p>
+</dd></dl>
+
+<h4 id="method-i-template-label-Examples">Examples<span><a href="#method-i-template-label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">template</span> <span class="ruby-string">&quot;README&quot;</span>, <span class="ruby-string">&quot;doc/README&quot;</span>
+
+<span class="ruby-identifier">template</span> <span class="ruby-string">&quot;doc/README&quot;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="template-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions/file_manipulation.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">template</span>(<span class="ruby-identifier">source</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">config</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
+  <span class="ruby-identifier">destination</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">source</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/#{TEMPLATE_EXTNAME}$/</span>, <span class="ruby-string">&quot;&quot;</span>)
+
+  <span class="ruby-identifier">source</span>  = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">find_in_source_paths</span>(<span class="ruby-identifier">source</span>.<span class="ruby-identifier">to_s</span>))
+  <span class="ruby-identifier">context</span> = <span class="ruby-identifier">config</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:context</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">instance_eval</span>(<span class="ruby-string">&quot;binding&quot;</span>)
+
+  <span class="ruby-identifier">create_file</span> <span class="ruby-identifier">destination</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">config</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">match</span> = <span class="ruby-constant">ERB</span>.<span class="ruby-identifier">version</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp">/(\d+\.\d+\.\d+)/</span>)
+    <span class="ruby-identifier">capturable_erb</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">match</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">match</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">&gt;=</span> <span class="ruby-string">&quot;2.2.0&quot;</span> <span class="ruby-comment"># Ruby 2.6+</span>
+      <span class="ruby-constant">CapturableERB</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">::</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">binread</span>(<span class="ruby-identifier">source</span>), <span class="ruby-value">:trim_mode</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;-&quot;</span>, <span class="ruby-value">:eoutvar</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;@output_buffer&quot;</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-constant">CapturableERB</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">::</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">binread</span>(<span class="ruby-identifier">source</span>), <span class="ruby-keyword">nil</span>, <span class="ruby-string">&quot;-&quot;</span>, <span class="ruby-string">&quot;@output_buffer&quot;</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">content</span> = <span class="ruby-identifier">capturable_erb</span>.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">erb</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">erb</span>.<span class="ruby-identifier">filename</span> = <span class="ruby-identifier">source</span>
+    <span class="ruby-keyword">end</span>.<span class="ruby-identifier">result</span>(<span class="ruby-identifier">context</span>)
+    <span class="ruby-identifier">content</span> = <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">content</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>
+    <span class="ruby-identifier">content</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- template-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- template-method -->
+      
+        <div id="thor-method" class="method-detail ">
+          <a name="method-i-thor"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">thor</span><span
+              class="method-args">(command, *args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Run a thor command. A hash of options can be given and it&#39;s converted to switches.</p>
+
+<h4 id="method-i-thor-label-Parameters">Parameters<span><a href="#method-i-thor-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>command&lt;String&gt;
+<dd>
+<p>the command to be invoked</p>
+</dd><dt>args&lt;Array&gt;
+<dd>
+<p>arguments to the command</p>
+</dd><dt>config&lt;Hash&gt;
+<dd>
+<p>give :verbose =&gt; false to not log the status, :capture =&gt; true to hide to output. Other options are given as parameter to Bundler::Thor.</p>
+</dd></dl>
+
+<h4 id="method-i-thor-label-Examples">Examples<span><a href="#method-i-thor-label-Examples">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">thor</span> <span class="ruby-value">:install</span>, <span class="ruby-string">&quot;http://gist.github.com/103208&quot;</span>
+<span class="ruby-comment">#=&gt; thor install http://gist.github.com/103208</span>
+
+<span class="ruby-identifier">thor</span> <span class="ruby-value">:list</span>, <span class="ruby-value">:all</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">true</span>, <span class="ruby-value">:substring</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;rails&#39;</span>
+<span class="ruby-comment">#=&gt; thor list --all --substring=rails</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="thor-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions.rb, line 304</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">thor</span>(<span class="ruby-identifier">command</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">config</span>  = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
+  <span class="ruby-identifier">verbose</span> = <span class="ruby-identifier">config</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:verbose</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">config</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:verbose</span>) <span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">pretend</span> = <span class="ruby-identifier">config</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:pretend</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">config</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:pretend</span>) <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">capture</span> = <span class="ruby-identifier">config</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:capture</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">config</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:capture</span>) <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+
+  <span class="ruby-identifier">args</span>.<span class="ruby-identifier">unshift</span>(<span class="ruby-identifier">command</span>)
+  <span class="ruby-identifier">args</span>.<span class="ruby-identifier">push</span> <span class="ruby-constant">Bundler</span><span class="ruby-operator">::</span><span class="ruby-constant">Thor</span><span class="ruby-operator">::</span><span class="ruby-constant">Options</span>.<span class="ruby-identifier">to_switches</span>(<span class="ruby-identifier">config</span>)
+  <span class="ruby-identifier">command</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot; &quot;</span>).<span class="ruby-identifier">strip</span>
+
+  <span class="ruby-identifier">run</span> <span class="ruby-identifier">command</span>, <span class="ruby-value">:with</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:thor</span>, <span class="ruby-value">:verbose</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">verbose</span>, <span class="ruby-value">:pretend</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">pretend</span>, <span class="ruby-value">:capture</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">capture</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- thor-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- thor-method -->
+      
+        <div id="uncomment_lines-method" class="method-detail ">
+          <a name="method-i-uncomment_lines"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">uncomment_lines</span><span
+              class="method-args">(path, flag, *args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Uncomment all lines matching a given regex.  It will leave the space which existed before the comment hash in tact but will remove any spacing between the comment hash and the beginning of the line.</p>
+
+<h4 id="method-i-uncomment_lines-label-Parameters">Parameters<span><a href="#method-i-uncomment_lines-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>path&lt;String&gt;
+<dd>
+<p>path of the file to be changed</p>
+</dd><dt>flag&lt;Regexp|String&gt;
+<dd>
+<p>the regexp or string used to decide which lines to uncomment</p>
+</dd><dt>config&lt;Hash&gt;
+<dd>
+<p>give :verbose =&gt; false to not log the status.</p>
+</dd></dl>
+
+<h4 id="method-i-uncomment_lines-label-Example">Example<span><a href="#method-i-uncomment_lines-label-Example">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">uncomment_lines</span> <span class="ruby-string">&#39;config/initializers/session_store.rb&#39;</span>, <span class="ruby-regexp">/active_record/</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="uncomment_lines-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/actions/file_manipulation.rb, line 291</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">uncomment_lines</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">flag</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">flag</span> = <span class="ruby-identifier">flag</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:source</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">flag</span>.<span class="ruby-identifier">source</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">flag</span>
+
+  <span class="ruby-identifier">gsub_file</span>(<span class="ruby-identifier">path</span>, <span class="ruby-regexp">/^(\s*)#[[:blank:]]*(.*#{flag})/</span>, <span class="ruby-string">&#39;\1\2&#39;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- uncomment_lines-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- uncomment_lines-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Actions_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Actions_versioned").load("/associated/2.7.4/Actions.ihtml");</script> <div id='tx_Actions' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Actions").load("/associated/Actions.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, an erratic source of art, music, and technology.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Actions.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Actions.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : IRB::Notifier::AbstractNotifier  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:22:23 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '../..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '../..'   asset_rel_prefix = '../..'  --> 
+  <title>Class: IRB::Notifier::AbstractNotifier (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="../..css/obf.css"  -->
+  <link rel="stylesheet" href="../../css/inuit.css" >
+  <link rel="stylesheet" href="../../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../../css/carbon17.css" type="text/css" >
+
+
+  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>irb/notifier.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="../../Object.html">Object</a></p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-exec_if">#exec_if</a></li>
+          
+          <li><a href="#method-i-notify-3F">#notify?</a></li>
+          
+          <li><a href="#method-i-pp">#pp</a></li>
+          
+          <li><a href="#method-i-ppx">#ppx</a></li>
+          
+          <li><a href="#method-i-print">#print</a></li>
+          
+          <li><a href="#method-i-printf">#printf</a></li>
+          
+          <li><a href="#method-i-printn">#printn</a></li>
+          
+          <li><a href="#method-i-puts">#puts</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../../Binding.html">Binding</a></li>
+        
+          
+          
+          <li><a href="../../IRB/Abort.html">IRB::Abort</a></li>
+        
+          
+          
+          <li><a href="../../IRB/Canvas.html">IRB::Canvas</a></li>
+        
+          
+          
+          <li><a href="../../IRB/Color.html">IRB::Color</a></li>
+        
+          
+          
+          <li><a href="../../IRB/Color/SymbolState.html">IRB::Color::SymbolState</a></li>
+        
+          
+          
+          <li><a href="../../IRB/Context.html">IRB::Context</a></li>
+        
+          
+          
+          <li><a href="../../IRB/ContextExtender.html">IRB::ContextExtender</a></li>
+        
+          
+          
+          <li><a href="../../IRB/ExtendCommandBundle.html">IRB::ExtendCommandBundle</a></li>
+        
+          
+          
+          <li><a href="../../IRB/FileInputMethod.html">IRB::FileInputMethod</a></li>
+        
+          
+          
+          <li><a href="../../IRB/Frame.html">IRB::Frame</a></li>
+        
+          
+          
+          <li><a href="../../IRB/Frame/FrameOverflow.html">IRB::Frame::FrameOverflow</a></li>
+        
+          
+          
+          <li><a href="../../IRB/Frame/FrameUnderflow.html">IRB::Frame::FrameUnderflow</a></li>
+        
+          
+          
+          <li><a href="../../IRB/History.html">IRB::History</a></li>
+        
+          
+          
+          <li><a href="../../IRB/InputMethod.html">IRB::InputMethod</a></li>
+        
+          
+          
+          <li><a href="../../IRB/Inspector.html">IRB::Inspector</a></li>
+        
+          
+          
+          <li><a href="../../IRB/Irb.html">IRB::Irb</a></li>
+        
+          
+          
+          <li><a href="../../IRB/IrbLoader.html">IRB::IrbLoader</a></li>
+        
+          
+          
+          <li><a href="../../IRB/JobManager.html">IRB::JobManager</a></li>
+        
+          
+          
+          <li><a href="../../IRB/LoadAbort.html">IRB::LoadAbort</a></li>
+        
+          
+          
+          <li><a href="../../IRB/MethodExtender.html">IRB::MethodExtender</a></li>
+        
+          
+          
+          <li><a href="../../IRB/Notifier.html">IRB::Notifier</a></li>
+        
+          
+          
+          <li><a href="../../IRB/Notifier/AbstractNotifier.html">IRB::Notifier::AbstractNotifier</a></li>
+        
+          
+          
+          <li><a href="../../IRB/Notifier/CompositeNotifier.html">IRB::Notifier::CompositeNotifier</a></li>
+        
+          
+          
+          <li><a href="../../IRB/Notifier/ErrUndefinedNotifier.html">IRB::Notifier::ErrUndefinedNotifier</a></li>
+        
+          
+          
+          <li><a href="../../IRB/Notifier/ErrUnrecognizedLevel.html">IRB::Notifier::ErrUnrecognizedLevel</a></li>
+        
+          
+          
+          <li><a href="../../IRB/Notifier/LeveledNotifier.html">IRB::Notifier::LeveledNotifier</a></li>
+        
+          
+          
+          <li><a href="../../IRB/Notifier/NoMsgNotifier.html">IRB::Notifier::NoMsgNotifier</a></li>
+        
+          
+          
+          <li><a href="../../IRB/OutputMethod.html">IRB::OutputMethod</a></li>
+        
+          
+          
+          <li><a href="../../IRB/OutputMethod/NotImplementedError.html">IRB::OutputMethod::NotImplementedError</a></li>
+        
+          
+          
+          <li><a href="../../IRB/ReadlineInputMethod.html">IRB::ReadlineInputMethod</a></li>
+        
+          
+          
+          <li><a href="../../IRB/ReidlineInputMethod.html">IRB::ReidlineInputMethod</a></li>
+        
+          
+          
+          <li><a href="../../IRB/RubyModel.html">IRB::RubyModel</a></li>
+        
+          
+          
+          <li><a href="../../IRB/StdioInputMethod.html">IRB::StdioInputMethod</a></li>
+        
+          
+          
+          <li><a href="../../IRB/StdioOutputMethod.html">IRB::StdioOutputMethod</a></li>
+        
+          
+          
+          <li><a href="../../IRB/Vec.html">IRB::Vec</a></li>
+        
+          
+          
+          <li><a href="../../IRB/WorkSpace.html">IRB::WorkSpace</a></li>
+        
+          
+          
+          <li><a href="../../Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="../../XMP.html">XMP</a></li>
+        
+          
+          
+          <li><a href="../../XMP/StringInputMethod.html">XMP::StringInputMethod</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">IRB::Notifier::AbstractNotifier</h1>
+
+    <div id="description" class="description">
+      
+<p>An abstract class, or superclass, for <a href="CompositeNotifier.html"><code>CompositeNotifier</code></a> and <a href="LeveledNotifier.html"><code>LeveledNotifier</code></a> to inherit. It provides several wrapper methods for the <a href="../OutputMethod.html"><code>OutputMethod</code></a> object used by the <a href="../Notifier.html"><code>Notifier</code></a>.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+      <!-- Attributes -->
+      <div id="attribute-method-details" class="method-section section">
+        <h3 class="section-header">Attributes</h3>
+
+        
+        <div id="prefix-attribute-method" class="method-detail">
+          <a name="prefix"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">prefix</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description 245">
+          
+          <p>The <code>prefix</code> for this <a href="../Notifier.html"><code>Notifier</code></a>, which is appended to all objects being inspected during output.</p>
+          
+          </div>
+        </div>
+        
+      </div><!-- attribute-method-details -->
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(prefix, base_notifier)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Creates a new <a href="../Notifier.html"><code>Notifier</code></a> object</p>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb/notifier.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">prefix</span>, <span class="ruby-identifier">base_notifier</span>)
+  <span class="ruby-ivar">@prefix</span> = <span class="ruby-identifier">prefix</span>
+  <span class="ruby-ivar">@base_notifier</span> = <span class="ruby-identifier">base_notifier</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="exec_if-method" class="method-detail ">
+          <a name="method-i-exec_if"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">exec_if</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Execute the given block if notifications are enabled.</p>
+            
+
+            
+            <div class="method-source-code" id="exec_if-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb/notifier.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">exec_if</span>
+  <span class="ruby-keyword">yield</span>(<span class="ruby-ivar">@base_notifier</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">notify?</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- exec_if-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- exec_if-method -->
+      
+        <div id="notify-3F-method" class="method-detail ">
+          <a name="method-i-notify-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">notify?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>A wrapper method used to determine whether notifications are enabled.</p>
+
+<p>Defaults to <code>true</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="notify-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb/notifier.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">notify?</span>
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- notify-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- notify-3F-method -->
+      
+        <div id="pp-method" class="method-detail ">
+          <a name="method-i-pp"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">pp</span><span
+              class="method-args">(*objs)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Same as <a href="AbstractNotifier.html#method-i-ppx"><code>ppx</code></a>, except it uses the <a href="AbstractNotifier.html#attribute-i-prefix"><code>prefix</code></a> given during object initialization. See <a href="../OutputMethod.html#method-i-ppx"><code>OutputMethod#ppx</code></a> for more detail.</p>
+            
+
+            
+            <div class="method-source-code" id="pp-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb/notifier.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pp</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">objs</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">notify?</span>
+    <span class="ruby-ivar">@base_notifier</span>.<span class="ruby-identifier">ppx</span> <span class="ruby-ivar">@prefix</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">objs</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- pp-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- pp-method -->
+      
+        <div id="ppx-method" class="method-detail ">
+          <a name="method-i-ppx"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ppx</span><span
+              class="method-args">(prefix, *objs)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Same as <a href="AbstractNotifier.html#method-i-pp"><code>pp</code></a>, except it concatenates the given <code>prefix</code> with the <a href="AbstractNotifier.html#attribute-i-prefix"><code>prefix</code></a> given during object initialization.</p>
+
+<p>See <a href="../OutputMethod.html#method-i-ppx"><code>OutputMethod#ppx</code></a> for more detail.</p>
+            
+
+            
+            <div class="method-source-code" id="ppx-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb/notifier.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ppx</span>(<span class="ruby-identifier">prefix</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">objs</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">notify?</span>
+    <span class="ruby-ivar">@base_notifier</span>.<span class="ruby-identifier">ppx</span> <span class="ruby-ivar">@prefix</span><span class="ruby-operator">+</span><span class="ruby-identifier">prefix</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">objs</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- ppx-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ppx-method -->
+      
+        <div id="print-method" class="method-detail ">
+          <a name="method-i-print"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">print</span><span
+              class="method-args">(*opts)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>See <a href="../OutputMethod.html#method-i-print"><code>OutputMethod#print</code></a> for more detail.</p>
+            
+
+            
+            <div class="method-source-code" id="print-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb/notifier.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">print</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
+  <span class="ruby-ivar">@base_notifier</span>.<span class="ruby-identifier">print</span> <span class="ruby-identifier">prefix</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">opts</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">notify?</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- print-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- print-method -->
+      
+        <div id="printf-method" class="method-detail ">
+          <a name="method-i-printf"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">printf</span><span
+              class="method-args">(format, *opts)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>See <a href="../OutputMethod.html#method-i-printf"><code>OutputMethod#printf</code></a> for more detail.</p>
+            
+
+            
+            <div class="method-source-code" id="printf-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb/notifier.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">printf</span>(<span class="ruby-identifier">format</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
+  <span class="ruby-ivar">@base_notifier</span>.<span class="ruby-identifier">printf</span>(<span class="ruby-identifier">prefix</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">format</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">notify?</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- printf-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- printf-method -->
+      
+        <div id="printn-method" class="method-detail ">
+          <a name="method-i-printn"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">printn</span><span
+              class="method-args">(*opts)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>See <a href="../OutputMethod.html#method-i-printn"><code>OutputMethod#printn</code></a> for more detail.</p>
+            
+
+            
+            <div class="method-source-code" id="printn-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb/notifier.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">printn</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>)
+  <span class="ruby-ivar">@base_notifier</span>.<span class="ruby-identifier">printn</span> <span class="ruby-identifier">prefix</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">opts</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">notify?</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- printn-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- printn-method -->
+      
+        <div id="puts-method" class="method-detail ">
+          <a name="method-i-puts"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">puts</span><span
+              class="method-args">(*objs)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>See <a href="../OutputMethod.html#method-i-puts"><code>OutputMethod#puts</code></a> for more detail.</p>
+            
+
+            
+            <div class="method-source-code" id="puts-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb/notifier.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">puts</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">objs</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">notify?</span>
+    <span class="ruby-ivar">@base_notifier</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">objs</span>.<span class="ruby-identifier">collect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">obj</span><span class="ruby-operator">|</span> <span class="ruby-identifier">prefix</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">to_s</span>})
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- puts-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- puts-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_AbstractNotifier_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_AbstractNotifier_versioned").load("/associated/2.7.4/AbstractNotifier.ihtml");</script> <div id='tx_AbstractNotifier' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_AbstractNotifier").load("/associated/AbstractNotifier.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Maximum R+D</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_AbstractNotifier.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_AbstractNotifier.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

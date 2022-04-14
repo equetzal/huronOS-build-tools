@@ -1,0 +1,14 @@
+Wed, 08 Dec 2021 17:34:33 -0700
+uri.rb	Wed, 07 Jul 2021 03:48:22 -0700
+uri/common.rb	Wed, 07 Jul 2021 03:48:22 -0700
+uri/file.rb	Wed, 07 Jul 2021 03:48:22 -0700
+uri/ftp.rb	Wed, 07 Jul 2021 03:48:22 -0700
+uri/generic.rb	Wed, 07 Jul 2021 03:48:22 -0700
+uri/http.rb	Wed, 07 Jul 2021 03:48:22 -0700
+uri/https.rb	Wed, 07 Jul 2021 03:48:22 -0700
+uri/ldap.rb	Wed, 07 Jul 2021 03:48:22 -0700
+uri/ldaps.rb	Wed, 07 Jul 2021 03:48:22 -0700
+uri/mailto.rb	Wed, 07 Jul 2021 03:48:22 -0700
+uri/rfc2396_parser.rb	Wed, 07 Jul 2021 03:48:22 -0700
+uri/rfc3986_parser.rb	Wed, 07 Jul 2021 03:48:22 -0700
+uri/version.rb	Wed, 07 Jul 2021 03:48:22 -0700

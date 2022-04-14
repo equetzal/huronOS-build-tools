@@ -1,0 +1,1203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : Time  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:33:16 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = ''  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = ''  --> 
+  <title>Class: Time (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href=".css/obf.css"  -->
+  <link rel="stylesheet" href="css/inuit.css" >
+  <link rel="stylesheet" href="css/grid.inuit.css" >
+  <link rel="stylesheet" href="css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="css/carbon17.css" type="text/css" >
+
+
+  <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="/js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>time.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-httpdate">::httpdate</a></li>
+          
+          <li><a href="#method-c-iso8601">::iso8601</a></li>
+          
+          <li><a href="#method-c-parse">::parse</a></li>
+          
+          <li><a href="#method-c-rfc2822">::rfc2822</a></li>
+          
+          <li><a href="#method-c-rfc822">::rfc822</a></li>
+          
+          <li><a href="#method-c-strptime">::strptime</a></li>
+          
+          <li><a href="#method-c-xmlschema">::xmlschema</a></li>
+          
+          <li><a href="#method-c-zone_offset">::zone_offset</a></li>
+          
+          <li><a href="#method-i-httpdate">#httpdate</a></li>
+          
+          <li><a href="#method-i-iso8601">#iso8601</a></li>
+          
+          <li><a href="#method-i-rfc2822">#rfc2822</a></li>
+          
+          <li><a href="#method-i-rfc822">#rfc822</a></li>
+          
+          <li><a href="#method-i-xmlschema">#xmlschema</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="./Time.html">Time</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">Time</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="httpdate-method" class="method-detail ">
+          <a name="method-c-httpdate"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">httpdate</span><span
+              class="method-args">(date)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Parses <code>date</code> as an HTTP-date defined by RFC 2616 and converts it to a <a href="Time.html"><code>Time</code></a> object.</p>
+
+<p>ArgumentError is raised if <code>date</code> is not compliant with RFC 2616 or if the <a href="Time.html"><code>Time</code></a> class cannot represent specified date.</p>
+
+<p>See <a href="Time.html#method-i-httpdate"><code>httpdate</code></a> for more information on this format.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;time&#39;</span>
+
+<span class="ruby-constant">Time</span>.<span class="ruby-identifier">httpdate</span>(<span class="ruby-string">&quot;Thu, 06 Oct 2011 02:26:12 GMT&quot;</span>)
+<span class="ruby-comment">#=&gt; 2011-10-06 02:26:12 UTC</span>
+</pre>
+
+<p>You must require &#39;time&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="httpdate-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File time.rb, line 555</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">httpdate</span>(<span class="ruby-identifier">date</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">date</span>.<span class="ruby-identifier">match?</span>(<span class="ruby-regexp">/\A\s*
+      (?:Mon|Tue|Wed|Thu|Fri|Sat|Sun),\x20
+      (\d{2})\x20
+      (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\x20
+      (\d{4})\x20
+      (\d{2}):(\d{2}):(\d{2})\x20
+      GMT
+      \s*\z/ix</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">rfc2822</span>(<span class="ruby-identifier">date</span>).<span class="ruby-identifier">utc</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-regexp">/\A\s*
+         (?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday),\x20
+         (\d\d)-(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)-(\d\d)\x20
+         (\d\d):(\d\d):(\d\d)\x20
+         GMT
+         \s*\z/ix</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">date</span>
+    <span class="ruby-identifier">year</span> = <span class="ruby-node">$3</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">year</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">50</span>
+      <span class="ruby-identifier">year</span> <span class="ruby-operator">+=</span> <span class="ruby-value">2000</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">year</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1900</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">utc</span>(<span class="ruby-identifier">year</span>, <span class="ruby-node">$2</span>, <span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-node">$4</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-node">$5</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-node">$6</span>.<span class="ruby-identifier">to_i</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-regexp">/\A\s*
+         (?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\x20
+         (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\x20
+         (\d\d|\x20\d)\x20
+         (\d\d):(\d\d):(\d\d)\x20
+         (\d{4})
+         \s*\z/ix</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">date</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">utc</span>(<span class="ruby-node">$6</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-constant">MonthValue</span>[<span class="ruby-node">$1</span>.<span class="ruby-identifier">upcase</span>], <span class="ruby-node">$2</span>.<span class="ruby-identifier">to_i</span>,
+             <span class="ruby-node">$3</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-node">$4</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-node">$5</span>.<span class="ruby-identifier">to_i</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;not RFC 2616 compliant date: #{date.inspect}&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- httpdate-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- httpdate-method -->
+      
+        <div id="iso8601-method" class="method-detail method-alias">
+          <a name="method-c-iso8601"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">iso8601</span><span
+              class="method-args">(date)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Time.html#method-c-xmlschema">xmlschema</a>
+          </div>
+          
+        </div><!-- iso8601-method -->
+      
+        <div id="parse-method" class="method-detail ">
+          <a name="method-c-parse"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">parse</span><span
+              class="method-args">(date, now=self.now)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Takes a string representation of a <a href="Time.html"><code>Time</code></a> and attempts to parse it using a heuristic.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;time&#39;</span>
+
+<span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;2010-10-31&quot;</span>) <span class="ruby-comment">#=&gt; 2010-10-31 00:00:00 -0500</span>
+</pre>
+
+<p>Any missing pieces of the date are inferred based on the current date.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;time&#39;</span>
+
+<span class="ruby-comment"># assuming the current date is &quot;2011-10-31&quot;</span>
+<span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;12:00&quot;</span>) <span class="ruby-comment">#=&gt; 2011-10-31 12:00:00 -0500</span>
+</pre>
+
+<p>We can change the date used to infer our missing elements by passing a second object that responds to mon, day and year, such as Date, <a href="Time.html"><code>Time</code></a> or DateTime. We can also use our own object.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;time&#39;</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">MyDate</span>
+  <span class="ruby-identifier">attr_reader</span> <span class="ruby-value">:mon</span>, <span class="ruby-value">:day</span>, <span class="ruby-value">:year</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">mon</span>, <span class="ruby-identifier">day</span>, <span class="ruby-identifier">year</span>)
+    <span class="ruby-ivar">@mon</span>, <span class="ruby-ivar">@day</span>, <span class="ruby-ivar">@year</span> = <span class="ruby-identifier">mon</span>, <span class="ruby-identifier">day</span>, <span class="ruby-identifier">year</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">d</span>  = <span class="ruby-constant">Date</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;2010-10-28&quot;</span>)
+<span class="ruby-identifier">t</span>  = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;2010-10-29&quot;</span>)
+<span class="ruby-identifier">dt</span> = <span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;2010-10-30&quot;</span>)
+<span class="ruby-identifier">md</span> = <span class="ruby-constant">MyDate</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">10</span>,<span class="ruby-value">31</span>,<span class="ruby-value">2010</span>)
+
+<span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;12:00&quot;</span>, <span class="ruby-identifier">d</span>)  <span class="ruby-comment">#=&gt; 2010-10-28 12:00:00 -0500</span>
+<span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;12:00&quot;</span>, <span class="ruby-identifier">t</span>)  <span class="ruby-comment">#=&gt; 2010-10-29 12:00:00 -0500</span>
+<span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;12:00&quot;</span>, <span class="ruby-identifier">dt</span>) <span class="ruby-comment">#=&gt; 2010-10-30 12:00:00 -0500</span>
+<span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;12:00&quot;</span>, <span class="ruby-identifier">md</span>) <span class="ruby-comment">#=&gt; 2010-10-31 12:00:00 -0500</span>
+</pre>
+
+<p>If a block is given, the year described in <code>date</code> is converted by the block.  This is specifically designed for handling two digit years. For example, if you wanted to treat all two digit years prior to 70 as the year 2000+ you could write this:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;time&#39;</span>
+
+<span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;01-10-31&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">year</span><span class="ruby-operator">|</span> <span class="ruby-identifier">year</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">year</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">70</span> <span class="ruby-operator">?</span> <span class="ruby-value">2000</span> <span class="ruby-operator">:</span> <span class="ruby-value">1900</span>)}
+<span class="ruby-comment">#=&gt; 2001-10-31 00:00:00 -0500</span>
+<span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;70-10-31&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">year</span><span class="ruby-operator">|</span> <span class="ruby-identifier">year</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">year</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">70</span> <span class="ruby-operator">?</span> <span class="ruby-value">2000</span> <span class="ruby-operator">:</span> <span class="ruby-value">1900</span>)}
+<span class="ruby-comment">#=&gt; 1970-10-31 00:00:00 -0500</span>
+</pre>
+
+<p>If the upper components of the given time are broken or missing, they are supplied with those of <code>now</code>.  For the lower components, the minimum values (1 or 0) are assumed if broken or missing.  For example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;time&#39;</span>
+
+<span class="ruby-comment"># Suppose it is &quot;Thu Nov 29 14:33:20 2001&quot; now and</span>
+<span class="ruby-comment"># your time zone is EST which is GMT-5.</span>
+<span class="ruby-identifier">now</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;Thu Nov 29 14:33:20 2001&quot;</span>)
+<span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;16:30&quot;</span>, <span class="ruby-identifier">now</span>)     <span class="ruby-comment">#=&gt; 2001-11-29 16:30:00 -0500</span>
+<span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;7/23&quot;</span>, <span class="ruby-identifier">now</span>)      <span class="ruby-comment">#=&gt; 2001-07-23 00:00:00 -0500</span>
+<span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;Aug 31&quot;</span>, <span class="ruby-identifier">now</span>)    <span class="ruby-comment">#=&gt; 2001-08-31 00:00:00 -0500</span>
+<span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;Aug 2000&quot;</span>, <span class="ruby-identifier">now</span>)  <span class="ruby-comment">#=&gt; 2000-08-01 00:00:00 -0500</span>
+</pre>
+
+<p>Since there are numerous conflicts among locally defined time zone abbreviations all over the world, this method is not intended to understand all of them.  For example, the abbreviation “CST” is used variously as:</p>
+
+<pre>-06:00 in America/Chicago,
+-05:00 in America/Havana,
++08:00 in Asia/Harbin,
++09:30 in Australia/Darwin,
++10:30 in Australia/Adelaide,
+etc.</pre>
+
+<p>Based on this fact, this method only understands the time zone abbreviations described in RFC 822 and the system time zone, in the order named. (i.e. a definition in RFC 822 overrides the system time zone definition.)  The system time zone is taken from <code>Time.local(year, 1, 1).zone</code> and <code>Time.local(year, 7, 1).zone</code>. If the extracted time zone abbreviation does not match any of them, it is ignored and the given time is regarded as a local time.</p>
+
+<p>ArgumentError is raised if Date._parse cannot extract information from <code>date</code> or if the <a href="Time.html"><code>Time</code></a> class cannot represent specified date.</p>
+
+<p>This method can be used as a fail-safe for other parsing methods as:</p>
+
+<pre class="ruby"><span class="ruby-constant">Time</span>.<span class="ruby-identifier">rfc2822</span>(<span class="ruby-identifier">date</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">date</span>)
+<span class="ruby-constant">Time</span>.<span class="ruby-identifier">httpdate</span>(<span class="ruby-identifier">date</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">date</span>)
+<span class="ruby-constant">Time</span>.<span class="ruby-identifier">xmlschema</span>(<span class="ruby-identifier">date</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">date</span>)
+</pre>
+
+<p>A failure of <a href="Time.html#method-c-parse"><code>Time.parse</code></a> should be checked, though.</p>
+
+<p>You must require &#39;time&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="parse-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File time.rb, line 370</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-identifier">date</span>, <span class="ruby-identifier">now</span>=<span class="ruby-keyword">self</span>.<span class="ruby-identifier">now</span>)
+  <span class="ruby-identifier">comp</span> = <span class="ruby-operator">!</span><span class="ruby-identifier">block_given?</span>
+  <span class="ruby-identifier">d</span> = <span class="ruby-constant">Date</span>.<span class="ruby-identifier">_parse</span>(<span class="ruby-identifier">date</span>, <span class="ruby-identifier">comp</span>)
+  <span class="ruby-identifier">year</span> = <span class="ruby-identifier">d</span>[<span class="ruby-value">:year</span>]
+  <span class="ruby-identifier">year</span> = <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">year</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">year</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">comp</span>
+  <span class="ruby-identifier">make_time</span>(<span class="ruby-identifier">date</span>, <span class="ruby-identifier">year</span>, <span class="ruby-identifier">d</span>[<span class="ruby-value">:yday</span>], <span class="ruby-identifier">d</span>[<span class="ruby-value">:mon</span>], <span class="ruby-identifier">d</span>[<span class="ruby-value">:mday</span>], <span class="ruby-identifier">d</span>[<span class="ruby-value">:hour</span>], <span class="ruby-identifier">d</span>[<span class="ruby-value">:min</span>], <span class="ruby-identifier">d</span>[<span class="ruby-value">:sec</span>], <span class="ruby-identifier">d</span>[<span class="ruby-value">:sec_fraction</span>], <span class="ruby-identifier">d</span>[<span class="ruby-value">:zone</span>], <span class="ruby-identifier">now</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- parse-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- parse-method -->
+      
+        <div id="rfc2822-method" class="method-detail ">
+          <a name="method-c-rfc2822"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">rfc2822</span><span
+              class="method-args">(date)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Parses <code>date</code> as date-time defined by RFC 2822 and converts it to a <a href="Time.html"><code>Time</code></a> object.  The format is identical to the date format defined by RFC 822 and updated by RFC 1123.</p>
+
+<p>ArgumentError is raised if <code>date</code> is not compliant with RFC 2822 or if the <a href="Time.html"><code>Time</code></a> class cannot represent specified date.</p>
+
+<p>See <a href="Time.html#method-i-rfc2822"><code>rfc2822</code></a> for more information on this format.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;time&#39;</span>
+
+<span class="ruby-constant">Time</span>.<span class="ruby-identifier">rfc2822</span>(<span class="ruby-string">&quot;Wed, 05 Oct 2011 22:26:12 -0400&quot;</span>)
+<span class="ruby-comment">#=&gt; 2010-10-05 22:26:12 -0400</span>
+</pre>
+
+<p>You must require &#39;time&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="rfc2822-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File time.rb, line 497</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rfc2822</span>(<span class="ruby-identifier">date</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-regexp">/\A\s*
+      (?:(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\s*,\s*)?
+      (\d{1,2})\s+
+      (Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+
+      (\d{2,})\s+
+      (\d{2})\s*
+      :\s*(\d{2})\s*
+      (?::\s*(\d{2}))?\s+
+      ([+-]\d{4}|
+       UT|GMT|EST|EDT|CST|CDT|MST|MDT|PST|PDT|[A-IK-Z])/ix</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">date</span>
+    <span class="ruby-comment"># Since RFC 2822 permit comments, the regexp has no right anchor.</span>
+    <span class="ruby-identifier">day</span> = <span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-identifier">mon</span> = <span class="ruby-constant">MonthValue</span>[<span class="ruby-node">$2</span>.<span class="ruby-identifier">upcase</span>]
+    <span class="ruby-identifier">year</span> = <span class="ruby-node">$3</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-identifier">short_year_p</span> = <span class="ruby-node">$3</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">3</span>
+    <span class="ruby-identifier">hour</span> = <span class="ruby-node">$4</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-identifier">min</span> = <span class="ruby-node">$5</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-identifier">sec</span> = <span class="ruby-node">$6</span> <span class="ruby-operator">?</span> <span class="ruby-node">$6</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">:</span> <span class="ruby-value">0</span>
+    <span class="ruby-identifier">zone</span> = <span class="ruby-node">$7</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">short_year_p</span>
+      <span class="ruby-comment"># following year completion is compliant with RFC 2822.</span>
+      <span class="ruby-identifier">year</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">year</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">50</span>
+               <span class="ruby-value">2000</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">year</span>
+             <span class="ruby-keyword">else</span>
+               <span class="ruby-value">1900</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">year</span>
+             <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">off</span> = <span class="ruby-identifier">zone_offset</span>(<span class="ruby-identifier">zone</span>)
+    <span class="ruby-identifier">year</span>, <span class="ruby-identifier">mon</span>, <span class="ruby-identifier">day</span>, <span class="ruby-identifier">hour</span>, <span class="ruby-identifier">min</span>, <span class="ruby-identifier">sec</span> =
+      <span class="ruby-identifier">apply_offset</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">mon</span>, <span class="ruby-identifier">day</span>, <span class="ruby-identifier">hour</span>, <span class="ruby-identifier">min</span>, <span class="ruby-identifier">sec</span>, <span class="ruby-identifier">off</span>)
+    <span class="ruby-identifier">t</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">utc</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">mon</span>, <span class="ruby-identifier">day</span>, <span class="ruby-identifier">hour</span>, <span class="ruby-identifier">min</span>, <span class="ruby-identifier">sec</span>)
+    <span class="ruby-identifier">force_zone!</span>(<span class="ruby-identifier">t</span>, <span class="ruby-identifier">zone</span>, <span class="ruby-identifier">off</span>)
+    <span class="ruby-identifier">t</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;not RFC 2822 compliant date: #{date.inspect}&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- rfc2822-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Time.html#method-c-rfc822">rfc822</a>
+          </div>
+          
+
+          
+        </div><!-- rfc2822-method -->
+      
+        <div id="rfc822-method" class="method-detail method-alias">
+          <a name="method-c-rfc822"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">rfc822</span><span
+              class="method-args">(date)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Time.html#method-c-rfc2822">rfc2822</a>
+          </div>
+          
+        </div><!-- rfc822-method -->
+      
+        <div id="strptime-method" class="method-detail ">
+          <a name="method-c-strptime"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">strptime</span><span
+              class="method-args">(date, format, now=self.now)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Works similar to <code>parse</code> except that instead of using a heuristic to detect the format of the input string, you provide a second argument that describes the format of the string.</p>
+
+<p>If a block is given, the year described in <code>date</code> is converted by the block.  For example:</p>
+
+<pre>Time.strptime(...) {|y| y &lt; 100 ? (y &gt;= 69 ? y + 1900 : y + 2000) : y}</pre>
+
+<p>Below is a list of the formatting options:</p>
+<dl class="rdoc-list note-list"><dt>%a 
+<dd>
+<p>The abbreviated weekday name (“Sun”)</p>
+</dd><dt>%A 
+<dd>
+<p>The  full  weekday  name (“Sunday”)</p>
+</dd><dt>%b 
+<dd>
+<p>The abbreviated month name (“Jan”)</p>
+</dd><dt>%B 
+<dd>
+<p>The  full  month  name (“January”)</p>
+</dd><dt>%c 
+<dd>
+<p>The preferred local date and time representation</p>
+</dd><dt>%C 
+<dd>
+<p>Century (20 in 2009)</p>
+</dd><dt>%d 
+<dd>
+<p>Day of the month (01..31)</p>
+</dd><dt>%D 
+<dd>
+<p>Date (%m/%d/%y)</p>
+</dd><dt>%e 
+<dd>
+<p>Day of the month, blank-padded ( 1..31)</p>
+</dd><dt>%F 
+<dd>
+<p>Equivalent to %Y-%m-%d (the ISO 8601 date format)</p>
+</dd><dt>%g 
+<dd>
+<p>The last two digits of the commercial year</p>
+</dd><dt>%G 
+<dd>
+<p>The week-based year according to ISO-8601 (week 1 starts on Monday and includes January 4)</p>
+</dd><dt>%h 
+<dd>
+<p>Equivalent to %b</p>
+</dd><dt>%H 
+<dd>
+<p>Hour of the day, 24-hour clock (00..23)</p>
+</dd><dt>%I 
+<dd>
+<p>Hour of the day, 12-hour clock (01..12)</p>
+</dd><dt>%j 
+<dd>
+<p>Day of the year (001..366)</p>
+</dd><dt>%k 
+<dd>
+<p>hour, 24-hour clock, blank-padded ( 0..23)</p>
+</dd><dt>%l 
+<dd>
+<p>hour, 12-hour clock, blank-padded ( 0..12)</p>
+</dd><dt>%L 
+<dd>
+<p>Millisecond of the second (000..999)</p>
+</dd><dt>%m 
+<dd>
+<p>Month of the year (01..12)</p>
+</dd><dt>%M 
+<dd>
+<p>Minute of the hour (00..59)</p>
+</dd><dt>%n 
+<dd>
+<p>Newline (n)</p>
+</dd><dt>%N 
+<dd>
+<p>Fractional seconds digits</p>
+</dd><dt>%p 
+<dd>
+<p>Meridian indicator (“AM” or “PM”)</p>
+</dd><dt>%P 
+<dd>
+<p>Meridian indicator (“am” or “pm”)</p>
+</dd><dt>%r 
+<dd>
+<p>time, 12-hour (same as %I:%M:%S %p)</p>
+</dd><dt>%R 
+<dd>
+<p>time, 24-hour (%H:%M)</p>
+</dd><dt>%s 
+<dd>
+<p>Number of seconds since 1970-01-01 00:00:00 UTC.</p>
+</dd><dt>%S 
+<dd>
+<p>Second of the minute (00..60)</p>
+</dd><dt>%t 
+<dd>
+<p>Tab character (t)</p>
+</dd><dt>%T 
+<dd>
+<p>time, 24-hour (%H:%M:%S)</p>
+</dd><dt>%u 
+<dd>
+<p>Day of the week as a decimal, Monday being 1. (1..7)</p>
+</dd><dt>%U 
+<dd>
+<p>Week number of the current year, starting with the first Sunday as the first day of the first week (00..53)</p>
+</dd><dt>%v 
+<dd>
+<p>VMS date (%e-%b-%Y)</p>
+</dd><dt>%V 
+<dd>
+<p>Week number of year according to ISO 8601 (01..53)</p>
+</dd><dt>%W 
+<dd>
+<p>Week  number  of the current year, starting with the first Monday as the first day of the first week (00..53)</p>
+</dd><dt>%w 
+<dd>
+<p>Day of the week (Sunday is 0, 0..6)</p>
+</dd><dt>%x 
+<dd>
+<p>Preferred representation for the date alone, no time</p>
+</dd><dt>%X 
+<dd>
+<p>Preferred representation for the time alone, no date</p>
+</dd><dt>%y 
+<dd>
+<p>Year without a century (00..99)</p>
+</dd><dt>%Y 
+<dd>
+<p>Year which may include century, if provided</p>
+</dd><dt>%z 
+<dd>
+<p><a href="Time.html"><code>Time</code></a> zone as  hour offset from UTC (e.g. +0900)</p>
+</dd><dt>%Z 
+<dd>
+<p><a href="Time.html"><code>Time</code></a> zone name</p>
+</dd><dt>%% 
+<dd>
+<p>Literal “%” character</p>
+</dd><dt>%+ 
+<dd>
+<p>date(1) (%a %b %e %H:%M:%S %Z %Y)</p>
+</dd></dl>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;time&#39;</span>
+
+<span class="ruby-constant">Time</span>.<span class="ruby-identifier">strptime</span>(<span class="ruby-string">&quot;2000-10-31&quot;</span>, <span class="ruby-string">&quot;%Y-%m-%d&quot;</span>) <span class="ruby-comment">#=&gt; 2000-10-31 00:00:00 -0500</span>
+</pre>
+
+<p>You must require &#39;time&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="strptime-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File time.rb, line 445</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">strptime</span>(<span class="ruby-identifier">date</span>, <span class="ruby-identifier">format</span>, <span class="ruby-identifier">now</span>=<span class="ruby-keyword">self</span>.<span class="ruby-identifier">now</span>)
+  <span class="ruby-identifier">d</span> = <span class="ruby-constant">Date</span>.<span class="ruby-identifier">_strptime</span>(<span class="ruby-identifier">date</span>, <span class="ruby-identifier">format</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;invalid date or strptime format - `#{date}&#39; `#{format}&#39;&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">d</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">seconds</span> = <span class="ruby-identifier">d</span>[<span class="ruby-value">:seconds</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">sec_fraction</span> = <span class="ruby-identifier">d</span>[<span class="ruby-value">:sec_fraction</span>]
+      <span class="ruby-identifier">usec</span> = <span class="ruby-identifier">sec_fraction</span> <span class="ruby-operator">*</span> <span class="ruby-value">1000000</span>
+      <span class="ruby-identifier">usec</span> <span class="ruby-operator">*=</span> <span class="ruby-value">-1</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">seconds</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">usec</span> = <span class="ruby-value">0</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">t</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">at</span>(<span class="ruby-identifier">seconds</span>, <span class="ruby-identifier">usec</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">zone</span> = <span class="ruby-identifier">d</span>[<span class="ruby-value">:zone</span>]
+      <span class="ruby-identifier">force_zone!</span>(<span class="ruby-identifier">t</span>, <span class="ruby-identifier">zone</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">year</span> = <span class="ruby-identifier">d</span>[<span class="ruby-value">:year</span>]
+    <span class="ruby-identifier">year</span> = <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">year</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">year</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-identifier">yday</span> = <span class="ruby-identifier">d</span>[<span class="ruby-value">:yday</span>]
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">d</span>[<span class="ruby-value">:cwyear</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">year</span>) <span class="ruby-operator">||</span> ((<span class="ruby-identifier">d</span>[<span class="ruby-value">:cwday</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">d</span>[<span class="ruby-value">:cweek</span>]) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">d</span>[<span class="ruby-value">:mon</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">d</span>[<span class="ruby-value">:mday</span>]))
+      <span class="ruby-comment"># make_time doesn&#39;t deal with cwyear/cwday/cweek</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-constant">Date</span>.<span class="ruby-identifier">strptime</span>(<span class="ruby-identifier">date</span>, <span class="ruby-identifier">format</span>).<span class="ruby-identifier">to_time</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">d</span>[<span class="ruby-value">:wnum0</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">d</span>[<span class="ruby-value">:wnum1</span>]) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">yday</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span>(<span class="ruby-identifier">d</span>[<span class="ruby-value">:mon</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">d</span>[<span class="ruby-value">:mday</span>])
+      <span class="ruby-identifier">yday</span> = <span class="ruby-constant">Date</span>.<span class="ruby-identifier">strptime</span>(<span class="ruby-identifier">date</span>, <span class="ruby-identifier">format</span>).<span class="ruby-identifier">yday</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">t</span> = <span class="ruby-identifier">make_time</span>(<span class="ruby-identifier">date</span>, <span class="ruby-identifier">year</span>, <span class="ruby-identifier">yday</span>, <span class="ruby-identifier">d</span>[<span class="ruby-value">:mon</span>], <span class="ruby-identifier">d</span>[<span class="ruby-value">:mday</span>], <span class="ruby-identifier">d</span>[<span class="ruby-value">:hour</span>], <span class="ruby-identifier">d</span>[<span class="ruby-value">:min</span>], <span class="ruby-identifier">d</span>[<span class="ruby-value">:sec</span>], <span class="ruby-identifier">d</span>[<span class="ruby-value">:sec_fraction</span>], <span class="ruby-identifier">d</span>[<span class="ruby-value">:zone</span>], <span class="ruby-identifier">now</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">t</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- strptime-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- strptime-method -->
+      
+        <div id="xmlschema-method" class="method-detail ">
+          <a name="method-c-xmlschema"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">xmlschema</span><span
+              class="method-args">(date)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Parses <code>date</code> as a dateTime defined by the XML Schema and converts it to a <a href="Time.html"><code>Time</code></a> object.  The format is a restricted version of the format defined by ISO 8601.</p>
+
+<p>ArgumentError is raised if <code>date</code> is not compliant with the format or if the <a href="Time.html"><code>Time</code></a> class cannot represent specified date.</p>
+
+<p>See <a href="Time.html#method-i-xmlschema"><code>xmlschema</code></a> for more information on this format.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;time&#39;</span>
+
+<span class="ruby-constant">Time</span>.<span class="ruby-identifier">xmlschema</span>(<span class="ruby-string">&quot;2011-10-05T22:26:12-04:00&quot;</span>)
+<span class="ruby-comment">#=&gt; 2011-10-05 22:26:12-04:00</span>
+</pre>
+
+<p>You must require &#39;time&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="xmlschema-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File time.rb, line 609</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">xmlschema</span>(<span class="ruby-identifier">date</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-regexp">/\A\s*
+      (-?\d+)-(\d\d)-(\d\d)
+      T
+      (\d\d):(\d\d):(\d\d)
+      (\.\d+)?
+      (Z|[+-]\d\d(?::?\d\d)?)?
+      \s*\z/ix</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">date</span>
+    <span class="ruby-identifier">year</span> = <span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-identifier">mon</span> = <span class="ruby-node">$2</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-identifier">day</span> = <span class="ruby-node">$3</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-identifier">hour</span> = <span class="ruby-node">$4</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-identifier">min</span> = <span class="ruby-node">$5</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-identifier">sec</span> = <span class="ruby-node">$6</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-identifier">usec</span> = <span class="ruby-value">0</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-node">$7</span>
+      <span class="ruby-identifier">usec</span> = <span class="ruby-constant">Rational</span>(<span class="ruby-node">$7</span>) <span class="ruby-operator">*</span> <span class="ruby-value">1000000</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-node">$8</span>
+      <span class="ruby-identifier">zone</span> = <span class="ruby-node">$8</span>
+      <span class="ruby-identifier">off</span> = <span class="ruby-identifier">zone_offset</span>(<span class="ruby-identifier">zone</span>)
+      <span class="ruby-identifier">year</span>, <span class="ruby-identifier">mon</span>, <span class="ruby-identifier">day</span>, <span class="ruby-identifier">hour</span>, <span class="ruby-identifier">min</span>, <span class="ruby-identifier">sec</span> =
+        <span class="ruby-identifier">apply_offset</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">mon</span>, <span class="ruby-identifier">day</span>, <span class="ruby-identifier">hour</span>, <span class="ruby-identifier">min</span>, <span class="ruby-identifier">sec</span>, <span class="ruby-identifier">off</span>)
+      <span class="ruby-identifier">t</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">utc</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">mon</span>, <span class="ruby-identifier">day</span>, <span class="ruby-identifier">hour</span>, <span class="ruby-identifier">min</span>, <span class="ruby-identifier">sec</span>, <span class="ruby-identifier">usec</span>)
+      <span class="ruby-identifier">force_zone!</span>(<span class="ruby-identifier">t</span>, <span class="ruby-identifier">zone</span>, <span class="ruby-identifier">off</span>)
+      <span class="ruby-identifier">t</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">mon</span>, <span class="ruby-identifier">day</span>, <span class="ruby-identifier">hour</span>, <span class="ruby-identifier">min</span>, <span class="ruby-identifier">sec</span>, <span class="ruby-identifier">usec</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;invalid date: #{date.inspect}&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- xmlschema-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Time.html#method-c-iso8601">iso8601</a>
+          </div>
+          
+
+          
+        </div><!-- xmlschema-method -->
+      
+        <div id="zone_offset-method" class="method-detail ">
+          <a name="method-c-zone_offset"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">zone_offset</span><span
+              class="method-args">(zone, year=self.now.year)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Return the number of seconds the specified time zone differs from UTC.</p>
+
+<p>Numeric time zones that include minutes, such as <code>-10:00</code> or <code>+1330</code> will work, as will simpler hour-only time zones like <code>-10</code> or <code>+13</code>.</p>
+
+<p>Textual time zones listed in ZoneOffset are also supported.</p>
+
+<p>If the time zone does not match any of the above, <code>zone_offset</code> will check if the local time zone (both with and without potential Daylight Saving Time changes being in effect) matches <code>zone</code>. Specifying a value for <code>year</code> will change the year used to find the local time zone.</p>
+
+<p>If <code>zone_offset</code> is unable to determine the offset, nil will be returned.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;time&#39;</span>
+
+<span class="ruby-constant">Time</span>.<span class="ruby-identifier">zone_offset</span>(<span class="ruby-string">&quot;EST&quot;</span>) <span class="ruby-comment">#=&gt; -18000</span>
+</pre>
+
+<p>You must require &#39;time&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="zone_offset-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File time.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">zone_offset</span>(<span class="ruby-identifier">zone</span>, <span class="ruby-identifier">year</span>=<span class="ruby-keyword">self</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">year</span>)
+  <span class="ruby-identifier">off</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">zone</span> = <span class="ruby-identifier">zone</span>.<span class="ruby-identifier">upcase</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-regexp">/\A([+-])(\d\d)(:?)(\d\d)(?:\3(\d\d))?\z/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">zone</span>
+    <span class="ruby-identifier">off</span> = (<span class="ruby-node">$1</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;-&#39;</span> <span class="ruby-operator">?</span> <span class="ruby-value">-1</span> <span class="ruby-operator">:</span> <span class="ruby-value">1</span>) <span class="ruby-operator">*</span> ((<span class="ruby-node">$2</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">*</span> <span class="ruby-value">60</span> <span class="ruby-operator">+</span> <span class="ruby-node">$4</span>.<span class="ruby-identifier">to_i</span>) <span class="ruby-operator">*</span> <span class="ruby-value">60</span> <span class="ruby-operator">+</span> <span class="ruby-node">$5</span>.<span class="ruby-identifier">to_i</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">zone</span>.<span class="ruby-identifier">match?</span>(<span class="ruby-regexp">/\A[+-]\d\d\z/</span>)
+    <span class="ruby-identifier">off</span> = <span class="ruby-identifier">zone</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">*</span> <span class="ruby-value">3600</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-constant">ZoneOffset</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">zone</span>)
+    <span class="ruby-identifier">off</span> = <span class="ruby-constant">ZoneOffset</span>[<span class="ruby-identifier">zone</span>] <span class="ruby-operator">*</span> <span class="ruby-value">3600</span>
+  <span class="ruby-keyword">elsif</span> ((<span class="ruby-identifier">t</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">year</span>, <span class="ruby-value">1</span>, <span class="ruby-value">1</span>)).<span class="ruby-identifier">zone</span>.<span class="ruby-identifier">upcase</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">zone</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">false</span>)
+    <span class="ruby-identifier">off</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">utc_offset</span>
+  <span class="ruby-keyword">elsif</span> ((<span class="ruby-identifier">t</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">year</span>, <span class="ruby-value">7</span>, <span class="ruby-value">1</span>)).<span class="ruby-identifier">zone</span>.<span class="ruby-identifier">upcase</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">zone</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">false</span>)
+    <span class="ruby-identifier">off</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">utc_offset</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">off</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- zone_offset-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- zone_offset-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="httpdate-method" class="method-detail ">
+          <a name="method-i-httpdate"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">httpdate</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns a string which represents the time as RFC 1123 date of HTTP-date defined by RFC 2616:</p>
+
+<pre>day-of-week, DD month-name CCYY hh:mm:ss GMT</pre>
+
+<p>Note that the result is always UTC (GMT).</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;time&#39;</span>
+
+<span class="ruby-identifier">t</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+<span class="ruby-identifier">t</span>.<span class="ruby-identifier">httpdate</span> <span class="ruby-comment"># =&gt; &quot;Thu, 06 Oct 2011 02:26:12 GMT&quot;</span>
+</pre>
+
+<p>You must require &#39;time&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="httpdate-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File time.rb, line 701</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">httpdate</span>
+  <span class="ruby-identifier">t</span> = <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">utc</span>
+  <span class="ruby-identifier">sprintf</span>(<span class="ruby-string">&#39;%s, %02d %s %0*d %02d:%02d:%02d GMT&#39;</span>,
+    <span class="ruby-constant">RFC2822_DAY_NAME</span>[<span class="ruby-identifier">t</span>.<span class="ruby-identifier">wday</span>],
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">day</span>, <span class="ruby-constant">RFC2822_MONTH_NAME</span>[<span class="ruby-identifier">t</span>.<span class="ruby-identifier">mon</span><span class="ruby-value">-1</span>], <span class="ruby-identifier">t</span>.<span class="ruby-identifier">year</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-value">5</span> <span class="ruby-operator">:</span> <span class="ruby-value">4</span>, <span class="ruby-identifier">t</span>.<span class="ruby-identifier">year</span>,
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">hour</span>, <span class="ruby-identifier">t</span>.<span class="ruby-identifier">min</span>, <span class="ruby-identifier">t</span>.<span class="ruby-identifier">sec</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- httpdate-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- httpdate-method -->
+      
+        <div id="iso8601-method" class="method-detail method-alias">
+          <a name="method-i-iso8601"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">iso8601</span><span
+              class="method-args">(fraction_digits=0)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Time.html#method-i-xmlschema">xmlschema</a>
+          </div>
+          
+        </div><!-- iso8601-method -->
+      
+        <div id="rfc2822-method" class="method-detail ">
+          <a name="method-i-rfc2822"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">rfc2822</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns a string which represents the time as date-time defined by RFC 2822:</p>
+
+<pre>day-of-week, DD month-name CCYY hh:mm:ss zone</pre>
+
+<p>where zone is [+-]hhmm.</p>
+
+<p>If <code>self</code> is a UTC time, -0000 is used as zone.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;time&#39;</span>
+
+<span class="ruby-identifier">t</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+<span class="ruby-identifier">t</span>.<span class="ruby-identifier">rfc2822</span>  <span class="ruby-comment"># =&gt; &quot;Wed, 05 Oct 2011 22:26:12 -0400&quot;</span>
+</pre>
+
+<p>You must require &#39;time&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="rfc2822-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File time.rb, line 661</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rfc2822</span>
+  <span class="ruby-identifier">sprintf</span>(<span class="ruby-string">&#39;%s, %02d %s %0*d %02d:%02d:%02d &#39;</span>,
+    <span class="ruby-constant">RFC2822_DAY_NAME</span>[<span class="ruby-identifier">wday</span>],
+    <span class="ruby-identifier">day</span>, <span class="ruby-constant">RFC2822_MONTH_NAME</span>[<span class="ruby-identifier">mon</span><span class="ruby-value">-1</span>], <span class="ruby-identifier">year</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-value">5</span> <span class="ruby-operator">:</span> <span class="ruby-value">4</span>, <span class="ruby-identifier">year</span>,
+    <span class="ruby-identifier">hour</span>, <span class="ruby-identifier">min</span>, <span class="ruby-identifier">sec</span>) <span class="ruby-operator">&lt;&lt;</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">utc?</span>
+    <span class="ruby-string">&#39;-0000&#39;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">off</span> = <span class="ruby-identifier">utc_offset</span>
+    <span class="ruby-identifier">sign</span> = <span class="ruby-identifier">off</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-string">&#39;-&#39;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&#39;+&#39;</span>
+    <span class="ruby-identifier">sprintf</span>(<span class="ruby-string">&#39;%s%02d%02d&#39;</span>, <span class="ruby-identifier">sign</span>, <span class="ruby-operator">*</span>(<span class="ruby-identifier">off</span>.<span class="ruby-identifier">abs</span> <span class="ruby-operator">/</span> <span class="ruby-value">60</span>).<span class="ruby-identifier">divmod</span>(<span class="ruby-value">60</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- rfc2822-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Time.html#method-i-rfc822">rfc822</a>
+          </div>
+          
+
+          
+        </div><!-- rfc2822-method -->
+      
+        <div id="rfc822-method" class="method-detail method-alias">
+          <a name="method-i-rfc822"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">rfc822</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Time.html#method-i-rfc2822">rfc2822</a>
+          </div>
+          
+        </div><!-- rfc822-method -->
+      
+        <div id="xmlschema-method" class="method-detail ">
+          <a name="method-i-xmlschema"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">xmlschema</span><span
+              class="method-args">(fraction_digits=0)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns a string which represents the time as a dateTime defined by XML Schema:</p>
+
+<pre>CCYY-MM-DDThh:mm:ssTZD
+CCYY-MM-DDThh:mm:ss.sssTZD</pre>
+
+<p>where TZD is Z or [+-]hh:mm.</p>
+
+<p>If self is a UTC time, Z is used as TZD.  [+-]hh:mm is used otherwise.</p>
+
+<p><code>fractional_digits</code> specifies a number of digits to use for fractional seconds.  Its default value is 0.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;time&#39;</span>
+
+<span class="ruby-identifier">t</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+<span class="ruby-identifier">t</span>.<span class="ruby-identifier">iso8601</span>  <span class="ruby-comment"># =&gt; &quot;2011-10-05T22:26:12-04:00&quot;</span>
+</pre>
+
+<p>You must require &#39;time&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="xmlschema-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File time.rb, line 730</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">xmlschema</span>(<span class="ruby-identifier">fraction_digits</span>=<span class="ruby-value">0</span>)
+  <span class="ruby-identifier">fraction_digits</span> = <span class="ruby-identifier">fraction_digits</span>.<span class="ruby-identifier">to_i</span>
+  <span class="ruby-identifier">s</span> = <span class="ruby-identifier">strftime</span>(<span class="ruby-string">&quot;%FT%T&quot;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">fraction_digits</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+    <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">strftime</span>(<span class="ruby-node">&quot;.%#{fraction_digits}N&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">utc?</span> <span class="ruby-operator">?</span> <span class="ruby-string">&#39;Z&#39;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">strftime</span>(<span class="ruby-string">&quot;%:z&quot;</span>))
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- xmlschema-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Time.html#method-i-iso8601">iso8601</a>
+          </div>
+          
+
+          
+        </div><!-- xmlschema-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Time_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Time_versioned").load("/associated/2.7.4/Time.ihtml");</script> <div id='tx_Time' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Time").load("/associated/Time.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, an erratic source of art, music, and technology.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Time.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Time.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

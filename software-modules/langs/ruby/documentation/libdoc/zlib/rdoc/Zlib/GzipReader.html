@@ -1,0 +1,1572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : Zlib::GzipReader  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:35:49 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '..'   asset_rel_prefix = '..'  --> 
+  <title>Class: Zlib::GzipReader (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="..css/obf.css"  -->
+  <link rel="stylesheet" href="../css/inuit.css" >
+  <link rel="stylesheet" href="../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../css/carbon17.css" type="text/css" >
+
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>zlib/zlib.c</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="GzipFile.html">Zlib::GzipFile</a></p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-c-open">::open</a></li>
+          
+          <li><a href="#method-i-bytes">#bytes</a></li>
+          
+          <li><a href="#method-i-each">#each</a></li>
+          
+          <li><a href="#method-i-each_byte">#each_byte</a></li>
+          
+          <li><a href="#method-i-each_char">#each_char</a></li>
+          
+          <li><a href="#method-i-each_line">#each_line</a></li>
+          
+          <li><a href="#method-i-eof">#eof</a></li>
+          
+          <li><a href="#method-i-eof-3F">#eof?</a></li>
+          
+          <li><a href="#method-i-external_encoding">#external_encoding</a></li>
+          
+          <li><a href="#method-i-getbyte">#getbyte</a></li>
+          
+          <li><a href="#method-i-getc">#getc</a></li>
+          
+          <li><a href="#method-i-gets">#gets</a></li>
+          
+          <li><a href="#method-i-lineno">#lineno</a></li>
+          
+          <li><a href="#method-i-lineno-3D">#lineno=</a></li>
+          
+          <li><a href="#method-i-lines">#lines</a></li>
+          
+          <li><a href="#method-i-pos">#pos</a></li>
+          
+          <li><a href="#method-i-read">#read</a></li>
+          
+          <li><a href="#method-i-readbyte">#readbyte</a></li>
+          
+          <li><a href="#method-i-readchar">#readchar</a></li>
+          
+          <li><a href="#method-i-readline">#readline</a></li>
+          
+          <li><a href="#method-i-readlines">#readlines</a></li>
+          
+          <li><a href="#method-i-readpartial">#readpartial</a></li>
+          
+          <li><a href="#method-i-rewind">#rewind</a></li>
+          
+          <li><a href="#method-i-tell">#tell</a></li>
+          
+          <li><a href="#method-i-ungetbyte">#ungetbyte</a></li>
+          
+          <li><a href="#method-i-ungetc">#ungetc</a></li>
+          
+          <li><a href="#method-i-unused">#unused</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Included Modules -->
+      <div id="includes-section" class="section">
+        <h3 class="section-header">Included Modules</h3>
+        <ul class="link-list">
+        
+        
+          <li><span class="include">Enumerable</span></li>
+        
+        
+        </ul>
+      </div>
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../Zlib.html">Zlib</a></li>
+        
+          
+          
+          <li><a href="../Zlib/BufError.html">Zlib::BufError</a></li>
+        
+          
+          
+          <li><a href="../Zlib/DataError.html">Zlib::DataError</a></li>
+        
+          
+          
+          <li><a href="../Zlib/Deflate.html">Zlib::Deflate</a></li>
+        
+          
+          
+          <li><a href="../Zlib/Error.html">Zlib::Error</a></li>
+        
+          
+          
+          <li><a href="../Zlib/GzipFile.html">Zlib::GzipFile</a></li>
+        
+          
+          
+          <li><a href="../Zlib/GzipFile/CRCError.html">Zlib::GzipFile::CRCError</a></li>
+        
+          
+          
+          <li><a href="../Zlib/GzipFile/Error.html">Zlib::GzipFile::Error</a></li>
+        
+          
+          
+          <li><a href="../Zlib/GzipFile/LengthError.html">Zlib::GzipFile::LengthError</a></li>
+        
+          
+          
+          <li><a href="../Zlib/GzipFile/NoFooter.html">Zlib::GzipFile::NoFooter</a></li>
+        
+          
+          
+          <li><a href="../Zlib/GzipReader.html">Zlib::GzipReader</a></li>
+        
+          
+          
+          <li><a href="../Zlib/GzipWriter.html">Zlib::GzipWriter</a></li>
+        
+          
+          
+          <li><a href="../Zlib/Inflate.html">Zlib::Inflate</a></li>
+        
+          
+          
+          <li><a href="../Zlib/MemError.html">Zlib::MemError</a></li>
+        
+          
+          
+          <li><a href="../Zlib/NeedDict.html">Zlib::NeedDict</a></li>
+        
+          
+          
+          <li><a href="../Zlib/StreamEnd.html">Zlib::StreamEnd</a></li>
+        
+          
+          
+          <li><a href="../Zlib/StreamError.html">Zlib::StreamError</a></li>
+        
+          
+          
+          <li><a href="../Zlib/VersionError.html">Zlib::VersionError</a></li>
+        
+          
+          
+          <li><a href="../Zlib/ZStream.html">Zlib::ZStream</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">Zlib::GzipReader</h1>
+
+    <div id="description" class="description">
+      
+<p><a href="GzipReader.html"><code>Zlib::GzipReader</code></a> is the class for reading a gzipped file.  <a href="GzipReader.html"><code>GzipReader</code></a> should be used as an IO, or -IO-like, object.</p>
+
+<pre class="ruby"><span class="ruby-constant">Zlib</span><span class="ruby-operator">::</span><span class="ruby-constant">GzipReader</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&#39;hoge.gz&#39;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">gz</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">print</span> <span class="ruby-identifier">gz</span>.<span class="ruby-identifier">read</span>
+}
+
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&#39;hoge.gz&#39;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">gz</span> = <span class="ruby-constant">Zlib</span><span class="ruby-operator">::</span><span class="ruby-constant">GzipReader</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">f</span>)
+  <span class="ruby-identifier">print</span> <span class="ruby-identifier">gz</span>.<span class="ruby-identifier">read</span>
+  <span class="ruby-identifier">gz</span>.<span class="ruby-identifier">close</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h2 id="class-Zlib::GzipReader-label-Method+Catalogue">Method Catalogue<span><a href="#class-Zlib::GzipReader-label-Method+Catalogue">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>The following methods in <a href="GzipReader.html"><code>Zlib::GzipReader</code></a> are just like their counterparts in IO, but they raise <a href="Error.html"><code>Zlib::Error</code></a> or <a href="GzipFile/Error.html"><code>Zlib::GzipFile::Error</code></a> exception if an error was found in the gzip file.</p>
+<ul><li>
+<p><a href="GzipReader.html#method-i-each"><code>each</code></a></p>
+</li><li>
+<p><a href="GzipReader.html#method-i-each_line"><code>each_line</code></a></p>
+</li><li>
+<p><a href="GzipReader.html#method-i-each_byte"><code>each_byte</code></a></p>
+</li><li>
+<p><a href="GzipReader.html#method-i-gets"><code>gets</code></a></p>
+</li><li>
+<p><a href="GzipReader.html#method-i-getc"><code>getc</code></a></p>
+</li><li>
+<p><a href="GzipReader.html#method-i-lineno"><code>lineno</code></a></p>
+</li><li>
+<p><a href="GzipReader.html#method-i-lineno-3D"><code>lineno=</code></a></p>
+</li><li>
+<p><a href="GzipReader.html#method-i-read"><code>read</code></a></p>
+</li><li>
+<p><a href="GzipReader.html#method-i-readchar"><code>readchar</code></a></p>
+</li><li>
+<p><a href="GzipReader.html#method-i-readline"><code>readline</code></a></p>
+</li><li>
+<p><a href="GzipReader.html#method-i-readlines"><code>readlines</code></a></p>
+</li><li>
+<p><a href="GzipReader.html#method-i-ungetc"><code>ungetc</code></a></p>
+</li></ul>
+
+<p>Be careful of the footer of the gzip file. A gzip file has the checksum of pre-compressed data in its footer. <a href="GzipReader.html"><code>GzipReader</code></a> checks all uncompressed data against that checksum at the following cases, and if it fails, raises <code>Zlib::GzipFile::NoFooter</code>, <code>Zlib::GzipFile::CRCError</code>, or <code>Zlib::GzipFile::LengthError</code> exception.</p>
+<ul><li>
+<p>When an reading request is received beyond the end of file (the end of compressed data). That is, when <a href="GzipReader.html#method-i-read"><code>Zlib::GzipReader#read</code></a>, <a href="GzipReader.html#method-i-gets"><code>Zlib::GzipReader#gets</code></a>, or some other methods for reading returns nil.</p>
+</li><li>
+<p>When <a href="GzipFile.html#method-i-close"><code>Zlib::GzipFile#close</code></a> method is called after the object reaches the end of file.</p>
+</li><li>
+<p>When <a href="GzipReader.html#method-i-unused"><code>Zlib::GzipReader#unused</code></a> method is called after the object reaches the end of file.</p>
+</li></ul>
+
+<p>The rest of the methods are adequately described in their own documentation.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">Zlib::GzipReader.new(io, options = {})</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Creates a <a href="GzipReader.html"><code>GzipReader</code></a> object associated with <code>io</code>. The <a href="GzipReader.html"><code>GzipReader</code></a> object reads gzipped data from <code>io</code>, and parses/decompresses it.  The <code>io</code> must have a <code>read</code> method that behaves same as the IO#read.</p>
+
+<p>The <code>options</code> hash may be used to set the encoding of the data. <code>:external_encoding</code>, <code>:internal_encoding</code> and <code>:encoding</code> may be set as in IO::new.</p>
+
+<p>If the gzip file header is incorrect, raises an <a href="GzipFile/Error.html"><code>Zlib::GzipFile::Error</code></a> exception.</p>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzreader_initialize(int argc, VALUE *argv, VALUE obj)
+{
+    VALUE io, opt = Qnil;
+    struct gzfile *gz;
+    int err;
+
+    TypedData_Get_Struct(obj, struct gzfile, &amp;gzfile_data_type, gz);
+    rb_scan_args(argc, argv, &quot;1:&quot;, &amp;io, &amp;opt);
+
+    /* this is undocumented feature of zlib */
+    err = inflateInit2(&amp;gz-&gt;z.stream, -MAX_WBITS);
+    if (err != Z_OK) {
+        raise_zlib_error(err, gz-&gt;z.stream.msg);
+    }
+    gz-&gt;io = io;
+    ZSTREAM_READY(&amp;gz-&gt;z);
+    gzfile_read_header(gz, Qnil);
+    rb_gzfile_ecopts(gz, opt);
+
+    if (rb_respond_to(io, id_path)) {
+        gz-&gt;path = rb_funcall(gz-&gt;io, id_path, 0);
+        rb_define_singleton_method(obj, &quot;path&quot;, rb_gzfile_path, 0);
+    }
+
+    return obj;
+}
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+        <div id="open-method" class="method-detail ">
+          <a name="method-c-open"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">Zlib::GzipReader.open(filename) {|gz| ... }</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Opens a file specified by <code>filename</code> as a gzipped file, and returns a <a href="GzipReader.html"><code>GzipReader</code></a> object associated with that file.  Further details of this method are in <a href="GzipReader.html#method-c-new"><code>Zlib::GzipReader.new</code></a> and ZLib::GzipFile.wrap.</p>
+            
+
+            
+            <div class="method-source-code" id="open-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzreader_s_open(int argc, VALUE *argv, VALUE klass)
+{
+    return gzfile_s_open(argc, argv, klass, &quot;rb&quot;);
+}
+            </pre> 
+            </div><!-- open-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- open-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="bytes-method" class="method-detail ">
+          <a name="method-i-bytes"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">bytes</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>This is a deprecated alias for <code>each_byte</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="bytes-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzreader_bytes(VALUE obj)
+{
+    rb_warn(&quot;Zlib::GzipReader#bytes is deprecated; use #each_byte instead&quot;);
+    if (!rb_block_given_p())
+        return rb_enumeratorize(obj, ID2SYM(rb_intern(&quot;each_byte&quot;)), 0, 0);
+    return rb_gzreader_each_byte(obj);
+}
+            </pre> 
+            </div><!-- bytes-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- bytes-method -->
+      
+        <div id="each-method" class="method-detail ">
+          <a name="method-i-each"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">each</span><span
+              class="method-args">(*args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>See <a href="GzipReader.html"><code>Zlib::GzipReader</code></a> documentation for a description.</p>
+            
+
+            
+            <div class="method-source-code" id="each-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzreader_each(int argc, VALUE *argv, VALUE obj)
+{
+    VALUE str;
+
+    RETURN_ENUMERATOR(obj, 0, 0);
+
+    while (!NIL_P(str = gzreader_gets(argc, argv, obj))) {
+        rb_yield(str);
+    }
+    return obj;
+}
+            </pre> 
+            </div><!-- each-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- each-method -->
+      
+        <div id="each_byte-method" class="method-detail ">
+          <a name="method-i-each_byte"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">each_byte</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>See <a href="GzipReader.html"><code>Zlib::GzipReader</code></a> documentation for a description.</p>
+            
+
+            
+            <div class="method-source-code" id="each_byte-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzreader_each_byte(VALUE obj)
+{
+    VALUE c;
+
+    RETURN_ENUMERATOR(obj, 0, 0);
+
+    while (!NIL_P(c = rb_gzreader_getbyte(obj))) {
+        rb_yield(c);
+    }
+    return Qnil;
+}
+            </pre> 
+            </div><!-- each_byte-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- each_byte-method -->
+      
+        <div id="each_char-method" class="method-detail ">
+          <a name="method-i-each_char"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">each_char</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>See <a href="GzipReader.html"><code>Zlib::GzipReader</code></a> documentation for a description.</p>
+            
+
+            
+            <div class="method-source-code" id="each_char-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzreader_each_char(VALUE obj)
+{
+    VALUE c;
+
+    RETURN_ENUMERATOR(obj, 0, 0);
+
+    while (!NIL_P(c = rb_gzreader_getc(obj))) {
+        rb_yield(c);
+    }
+    return Qnil;
+}
+            </pre> 
+            </div><!-- each_char-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- each_char-method -->
+      
+        <div id="each_line-method" class="method-detail ">
+          <a name="method-i-each_line"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">each_line</span><span
+              class="method-args">(*args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>See <a href="GzipReader.html"><code>Zlib::GzipReader</code></a> documentation for a description.</p>
+            
+
+            
+            <div class="method-source-code" id="each_line-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzreader_each(int argc, VALUE *argv, VALUE obj)
+{
+    VALUE str;
+
+    RETURN_ENUMERATOR(obj, 0, 0);
+
+    while (!NIL_P(str = gzreader_gets(argc, argv, obj))) {
+        rb_yield(str);
+    }
+    return obj;
+}
+            </pre> 
+            </div><!-- each_line-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- each_line-method -->
+      
+        <div id="eof-method" class="method-detail ">
+          <a name="method-i-eof"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">eof</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns <code>true</code> or <code>false</code> whether the stream has reached the end.</p>
+            
+
+            
+            <div class="method-source-code" id="eof-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzfile_eof_p(VALUE obj)
+{
+    struct gzfile *gz = get_gzfile(obj);
+    return GZFILE_IS_FINISHED(gz) ? Qtrue : Qfalse;
+}
+            </pre> 
+            </div><!-- eof-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- eof-method -->
+      
+        <div id="eof-3F-method" class="method-detail ">
+          <a name="method-i-eof-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">eof?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns <code>true</code> or <code>false</code> whether the stream has reached the end.</p>
+            
+
+            
+            <div class="method-source-code" id="eof-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzfile_eof_p(VALUE obj)
+{
+    struct gzfile *gz = get_gzfile(obj);
+    return GZFILE_IS_FINISHED(gz) ? Qtrue : Qfalse;
+}
+            </pre> 
+            </div><!-- eof-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- eof-3F-method -->
+      
+        <div id="external_encoding-method" class="method-detail ">
+          <a name="method-i-external_encoding"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">external_encoding</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>See <a href="GzipReader.html"><code>Zlib::GzipReader</code></a> documentation for a description.</p>
+            
+
+            
+            <div class="method-source-code" id="external_encoding-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzreader_external_encoding(VALUE self)
+{
+    return rb_enc_from_encoding(get_gzfile(self)-&gt;enc);
+}
+            </pre> 
+            </div><!-- external_encoding-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- external_encoding-method -->
+      
+        <div id="getbyte-method" class="method-detail ">
+          <a name="method-i-getbyte"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">getbyte</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>See <a href="GzipReader.html"><code>Zlib::GzipReader</code></a> documentation for a description.</p>
+            
+
+            
+            <div class="method-source-code" id="getbyte-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzreader_getbyte(VALUE obj)
+{
+    struct gzfile *gz = get_gzfile(obj);
+    VALUE dst;
+
+    dst = gzfile_read(gz, 1);
+    if (!NIL_P(dst)) {
+        dst = INT2FIX((unsigned int)(RSTRING_PTR(dst)[0]) &amp; 0xff);
+    }
+    return dst;
+}
+            </pre> 
+            </div><!-- getbyte-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- getbyte-method -->
+      
+        <div id="getc-method" class="method-detail ">
+          <a name="method-i-getc"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">getc</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>See <a href="GzipReader.html"><code>Zlib::GzipReader</code></a> documentation for a description.</p>
+            
+
+            
+            <div class="method-source-code" id="getc-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzreader_getc(VALUE obj)
+{
+    struct gzfile *gz = get_gzfile(obj);
+
+    return gzfile_getc(gz);
+}
+            </pre> 
+            </div><!-- getc-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- getc-method -->
+      
+        <div id="gets-method" class="method-detail ">
+          <a name="method-i-gets"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">gets</span><span
+              class="method-args">(*args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>See <a href="GzipReader.html"><code>Zlib::GzipReader</code></a> documentation for a description.</p>
+            
+
+            
+            <div class="method-source-code" id="gets-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzreader_gets(int argc, VALUE *argv, VALUE obj)
+{
+    VALUE dst;
+    dst = gzreader_gets(argc, argv, obj);
+    if (!NIL_P(dst)) {
+        rb_lastline_set(dst);
+    }
+    return dst;
+}
+            </pre> 
+            </div><!-- gets-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- gets-method -->
+      
+        <div id="lineno-method" class="method-detail ">
+          <a name="method-i-lineno"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">lineno</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>The line number of the last row read from this file.</p>
+            
+
+            
+            <div class="method-source-code" id="lineno-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzfile_lineno(VALUE obj)
+{
+    return INT2NUM(get_gzfile(obj)-&gt;lineno);
+}
+            </pre> 
+            </div><!-- lineno-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- lineno-method -->
+      
+        <div id="lineno-3D-method" class="method-detail ">
+          <a name="method-i-lineno-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">lineno=</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Specify line number of the last row read from this file.</p>
+            
+
+            
+            <div class="method-source-code" id="lineno-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzfile_set_lineno(VALUE obj, VALUE lineno)
+{
+    struct gzfile *gz = get_gzfile(obj);
+    gz-&gt;lineno = NUM2INT(lineno);
+    return lineno;
+}
+            </pre> 
+            </div><!-- lineno-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- lineno-3D-method -->
+      
+        <div id="lines-method" class="method-detail ">
+          <a name="method-i-lines"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">lines</span><span
+              class="method-args">(*args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>This is a deprecated alias for <code>each_line</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="lines-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzreader_lines(int argc, VALUE *argv, VALUE obj)
+{
+    rb_warn(&quot;Zlib::GzipReader#lines is deprecated; use #each_line instead&quot;);
+    if (!rb_block_given_p())
+        return rb_enumeratorize(obj, ID2SYM(rb_intern(&quot;each_line&quot;)), argc, argv);
+    return rb_gzreader_each(argc, argv, obj);
+}
+            </pre> 
+            </div><!-- lines-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- lines-method -->
+      
+        <div id="pos-method" class="method-detail ">
+          <a name="method-i-pos"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">pos</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Total number of output bytes output so far.</p>
+            
+
+            
+            <div class="method-source-code" id="pos-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzfile_total_out(VALUE obj)
+{
+    struct gzfile *gz = get_gzfile(obj);
+    uLong total_out = gz-&gt;z.stream.total_out;
+    long buf_filled = ZSTREAM_BUF_FILLED(&amp;gz-&gt;z);
+
+    if (total_out &gt;= (uLong)buf_filled) {
+        return rb_uint2inum(total_out - buf_filled);
+    } else {
+        return LONG2FIX(-(buf_filled - (long)total_out));
+    }
+}
+            </pre> 
+            </div><!-- pos-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- pos-method -->
+      
+        <div id="read-method" class="method-detail ">
+          <a name="method-i-read"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">read</span><span
+              class="method-args">(p1 = v1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>See <a href="GzipReader.html"><code>Zlib::GzipReader</code></a> documentation for a description.</p>
+            
+
+            
+            <div class="method-source-code" id="read-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzreader_read(int argc, VALUE *argv, VALUE obj)
+{
+    struct gzfile *gz = get_gzfile(obj);
+    VALUE vlen;
+    long len;
+
+    rb_scan_args(argc, argv, &quot;01&quot;, &amp;vlen);
+    if (NIL_P(vlen)) {
+        return gzfile_read_all(gz);
+    }
+
+    len = NUM2INT(vlen);
+    if (len &lt; 0) {
+        rb_raise(rb_eArgError, &quot;negative length %ld given&quot;, len);
+    }
+    return gzfile_read(gz, len);
+}
+            </pre> 
+            </div><!-- read-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- read-method -->
+      
+        <div id="readbyte-method" class="method-detail ">
+          <a name="method-i-readbyte"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">readbyte</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>See <a href="GzipReader.html"><code>Zlib::GzipReader</code></a> documentation for a description.</p>
+            
+
+            
+            <div class="method-source-code" id="readbyte-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzreader_readbyte(VALUE obj)
+{
+    VALUE dst;
+    dst = rb_gzreader_getbyte(obj);
+    if (NIL_P(dst)) {
+        rb_raise(rb_eEOFError, &quot;end of file reached&quot;);
+    }
+    return dst;
+}
+            </pre> 
+            </div><!-- readbyte-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- readbyte-method -->
+      
+        <div id="readchar-method" class="method-detail ">
+          <a name="method-i-readchar"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">readchar</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>See <a href="GzipReader.html"><code>Zlib::GzipReader</code></a> documentation for a description.</p>
+            
+
+            
+            <div class="method-source-code" id="readchar-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzreader_readchar(VALUE obj)
+{
+    VALUE dst;
+    dst = rb_gzreader_getc(obj);
+    if (NIL_P(dst)) {
+        rb_raise(rb_eEOFError, &quot;end of file reached&quot;);
+    }
+    return dst;
+}
+            </pre> 
+            </div><!-- readchar-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- readchar-method -->
+      
+        <div id="readline-method" class="method-detail ">
+          <a name="method-i-readline"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">readline</span><span
+              class="method-args">(*args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>See <a href="GzipReader.html"><code>Zlib::GzipReader</code></a> documentation for a description.</p>
+            
+
+            
+            <div class="method-source-code" id="readline-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzreader_readline(int argc, VALUE *argv, VALUE obj)
+{
+    VALUE dst;
+    dst = rb_gzreader_gets(argc, argv, obj);
+    if (NIL_P(dst)) {
+        rb_raise(rb_eEOFError, &quot;end of file reached&quot;);
+    }
+    return dst;
+}
+            </pre> 
+            </div><!-- readline-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- readline-method -->
+      
+        <div id="readlines-method" class="method-detail ">
+          <a name="method-i-readlines"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">readlines</span><span
+              class="method-args">(*args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>See <a href="GzipReader.html"><code>Zlib::GzipReader</code></a> documentation for a description.</p>
+            
+
+            
+            <div class="method-source-code" id="readlines-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzreader_readlines(int argc, VALUE *argv, VALUE obj)
+{
+    VALUE str, dst;
+    dst = rb_ary_new();
+    while (!NIL_P(str = gzreader_gets(argc, argv, obj))) {
+        rb_ary_push(dst, str);
+    }
+    return dst;
+}
+            </pre> 
+            </div><!-- readlines-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- readlines-method -->
+      
+        <div id="readpartial-method" class="method-detail ">
+          <a name="method-i-readpartial"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">readpartial(maxlen [, outbuf]) => string, outbuf</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Reads at most <em>maxlen</em> bytes from the gziped stream but it blocks only if <em>gzipreader</em> has no data immediately available. If the optional <em>outbuf</em> argument is present, it must reference a String, which will receive the data. It raises <code>EOFError</code> on end of file.</p>
+            
+
+            
+            <div class="method-source-code" id="readpartial-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzreader_readpartial(int argc, VALUE *argv, VALUE obj)
+{
+    struct gzfile *gz = get_gzfile(obj);
+    VALUE vlen, outbuf;
+    long len;
+
+    rb_scan_args(argc, argv, &quot;11&quot;, &amp;vlen, &amp;outbuf);
+
+    len = NUM2INT(vlen);
+    if (len &lt; 0) {
+        rb_raise(rb_eArgError, &quot;negative length %ld given&quot;, len);
+    }
+    if (!NIL_P(outbuf))
+        Check_Type(outbuf, T_STRING);
+    return gzfile_readpartial(gz, len, outbuf);
+}
+            </pre> 
+            </div><!-- readpartial-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- readpartial-method -->
+      
+        <div id="rewind-method" class="method-detail ">
+          <a name="method-i-rewind"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">rewind</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Resets the position of the file pointer to the point created the <a href="GzipReader.html"><code>GzipReader</code></a> object.  The associated IO object needs to respond to the <code>seek</code> method.</p>
+            
+
+            
+            <div class="method-source-code" id="rewind-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzreader_rewind(VALUE obj)
+{
+    struct gzfile *gz = get_gzfile(obj);
+    gzfile_reader_rewind(gz);
+    return INT2FIX(0);
+}
+            </pre> 
+            </div><!-- rewind-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- rewind-method -->
+      
+        <div id="tell-method" class="method-detail ">
+          <a name="method-i-tell"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">tell</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Total number of output bytes output so far.</p>
+            
+
+            
+            <div class="method-source-code" id="tell-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzfile_total_out(VALUE obj)
+{
+    struct gzfile *gz = get_gzfile(obj);
+    uLong total_out = gz-&gt;z.stream.total_out;
+    long buf_filled = ZSTREAM_BUF_FILLED(&amp;gz-&gt;z);
+
+    if (total_out &gt;= (uLong)buf_filled) {
+        return rb_uint2inum(total_out - buf_filled);
+    } else {
+        return LONG2FIX(-(buf_filled - (long)total_out));
+    }
+}
+            </pre> 
+            </div><!-- tell-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- tell-method -->
+      
+        <div id="ungetbyte-method" class="method-detail ">
+          <a name="method-i-ungetbyte"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ungetbyte</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>See <a href="GzipReader.html"><code>Zlib::GzipReader</code></a> documentation for a description.</p>
+            
+
+            
+            <div class="method-source-code" id="ungetbyte-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzreader_ungetbyte(VALUE obj, VALUE ch)
+{
+    struct gzfile *gz = get_gzfile(obj);
+    gzfile_ungetbyte(gz, NUM2CHR(ch));
+    return Qnil;
+}
+            </pre> 
+            </div><!-- ungetbyte-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ungetbyte-method -->
+      
+        <div id="ungetc-method" class="method-detail ">
+          <a name="method-i-ungetc"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ungetc</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>See <a href="GzipReader.html"><code>Zlib::GzipReader</code></a> documentation for a description.</p>
+            
+
+            
+            <div class="method-source-code" id="ungetc-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzreader_ungetc(VALUE obj, VALUE s)
+{
+    struct gzfile *gz;
+
+    if (FIXNUM_P(s))
+        return rb_gzreader_ungetbyte(obj, s);
+    gz = get_gzfile(obj);
+    StringValue(s);
+    if (gz-&gt;enc2 &amp;&amp; gz-&gt;enc2 != rb_ascii8bit_encoding()) {
+        s = rb_str_conv_enc(s, rb_enc_get(s), gz-&gt;enc2);
+    }
+    gzfile_ungets(gz, (const Bytef*)RSTRING_PTR(s), RSTRING_LEN(s));
+    RB_GC_GUARD(s);
+    return Qnil;
+}
+            </pre> 
+            </div><!-- ungetc-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ungetc-method -->
+      
+        <div id="unused-method" class="method-detail ">
+          <a name="method-i-unused"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">unused</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns the rest of the data which had read for parsing gzip format, or <code>nil</code> if the whole gzip file is not parsed yet.</p>
+            
+
+            
+            <div class="method-source-code" id="unused-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+rb_gzreader_unused(VALUE obj)
+{
+    struct gzfile *gz;
+    TypedData_Get_Struct(obj, struct gzfile, &amp;gzfile_data_type, gz);
+    return gzfile_reader_get_unused(gz);
+}
+            </pre> 
+            </div><!-- unused-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- unused-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_GzipReader_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_GzipReader_versioned").load("/associated/2.7.4/GzipReader.ihtml");</script> <div id='tx_GzipReader' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_GzipReader").load("/associated/GzipReader.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, an erratic source of art, music, and technology.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_GzipReader.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_GzipReader.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

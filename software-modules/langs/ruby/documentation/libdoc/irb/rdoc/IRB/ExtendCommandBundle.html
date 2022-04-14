@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Module : IRB::ExtendCommandBundle  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:22:22 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '..'   asset_rel_prefix = '..'  --> 
+  <title>Module: IRB::ExtendCommandBundle (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="..css/obf.css"  -->
+  <link rel="stylesheet" href="../css/inuit.css" >
+  <link rel="stylesheet" href="../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../css/carbon17.css" type="text/css" >
+
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="module rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>irb/ext/use-loader.rb</li>      
+            
+          
+          <li class='in-file'>irb/extend-command.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-def_extend_command">::def_extend_command</a></li>
+          
+          <li><a href="#method-c-extend_object">::extend_object</a></li>
+          
+          <li><a href="#method-c-install_extend_commands">::install_extend_commands</a></li>
+          
+          <li><a href="#method-i-install_alias_method">#install_alias_method</a></li>
+          
+          <li><a href="#method-i-irb_context">#irb_context</a></li>
+          
+          <li><a href="#method-i-irb_exit">#irb_exit</a></li>
+          
+          <li><a href="#method-i-irb_load">#irb_load</a></li>
+          
+          <li><a href="#method-i-irb_require">#irb_require</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../Binding.html">Binding</a></li>
+        
+          
+          
+          <li><a href="../IRB/Abort.html">IRB::Abort</a></li>
+        
+          
+          
+          <li><a href="../IRB/Canvas.html">IRB::Canvas</a></li>
+        
+          
+          
+          <li><a href="../IRB/Color.html">IRB::Color</a></li>
+        
+          
+          
+          <li><a href="../IRB/Color/SymbolState.html">IRB::Color::SymbolState</a></li>
+        
+          
+          
+          <li><a href="../IRB/Context.html">IRB::Context</a></li>
+        
+          
+          
+          <li><a href="../IRB/ContextExtender.html">IRB::ContextExtender</a></li>
+        
+          
+          
+          <li><a href="../IRB/ExtendCommandBundle.html">IRB::ExtendCommandBundle</a></li>
+        
+          
+          
+          <li><a href="../IRB/FileInputMethod.html">IRB::FileInputMethod</a></li>
+        
+          
+          
+          <li><a href="../IRB/Frame.html">IRB::Frame</a></li>
+        
+          
+          
+          <li><a href="../IRB/Frame/FrameOverflow.html">IRB::Frame::FrameOverflow</a></li>
+        
+          
+          
+          <li><a href="../IRB/Frame/FrameUnderflow.html">IRB::Frame::FrameUnderflow</a></li>
+        
+          
+          
+          <li><a href="../IRB/History.html">IRB::History</a></li>
+        
+          
+          
+          <li><a href="../IRB/InputMethod.html">IRB::InputMethod</a></li>
+        
+          
+          
+          <li><a href="../IRB/Inspector.html">IRB::Inspector</a></li>
+        
+          
+          
+          <li><a href="../IRB/Irb.html">IRB::Irb</a></li>
+        
+          
+          
+          <li><a href="../IRB/IrbLoader.html">IRB::IrbLoader</a></li>
+        
+          
+          
+          <li><a href="../IRB/JobManager.html">IRB::JobManager</a></li>
+        
+          
+          
+          <li><a href="../IRB/LoadAbort.html">IRB::LoadAbort</a></li>
+        
+          
+          
+          <li><a href="../IRB/MethodExtender.html">IRB::MethodExtender</a></li>
+        
+          
+          
+          <li><a href="../IRB/Notifier.html">IRB::Notifier</a></li>
+        
+          
+          
+          <li><a href="../IRB/Notifier/AbstractNotifier.html">IRB::Notifier::AbstractNotifier</a></li>
+        
+          
+          
+          <li><a href="../IRB/Notifier/CompositeNotifier.html">IRB::Notifier::CompositeNotifier</a></li>
+        
+          
+          
+          <li><a href="../IRB/Notifier/ErrUndefinedNotifier.html">IRB::Notifier::ErrUndefinedNotifier</a></li>
+        
+          
+          
+          <li><a href="../IRB/Notifier/ErrUnrecognizedLevel.html">IRB::Notifier::ErrUnrecognizedLevel</a></li>
+        
+          
+          
+          <li><a href="../IRB/Notifier/LeveledNotifier.html">IRB::Notifier::LeveledNotifier</a></li>
+        
+          
+          
+          <li><a href="../IRB/Notifier/NoMsgNotifier.html">IRB::Notifier::NoMsgNotifier</a></li>
+        
+          
+          
+          <li><a href="../IRB/OutputMethod.html">IRB::OutputMethod</a></li>
+        
+          
+          
+          <li><a href="../IRB/OutputMethod/NotImplementedError.html">IRB::OutputMethod::NotImplementedError</a></li>
+        
+          
+          
+          <li><a href="../IRB/ReadlineInputMethod.html">IRB::ReadlineInputMethod</a></li>
+        
+          
+          
+          <li><a href="../IRB/ReidlineInputMethod.html">IRB::ReidlineInputMethod</a></li>
+        
+          
+          
+          <li><a href="../IRB/RubyModel.html">IRB::RubyModel</a></li>
+        
+          
+          
+          <li><a href="../IRB/StdioInputMethod.html">IRB::StdioInputMethod</a></li>
+        
+          
+          
+          <li><a href="../IRB/StdioOutputMethod.html">IRB::StdioOutputMethod</a></li>
+        
+          
+          
+          <li><a href="../IRB/Vec.html">IRB::Vec</a></li>
+        
+          
+          
+          <li><a href="../IRB/WorkSpace.html">IRB::WorkSpace</a></li>
+        
+          
+          
+          <li><a href="../Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="../XMP.html">XMP</a></li>
+        
+          
+          
+          <li><a href="../XMP/StringInputMethod.html">XMP::StringInputMethod</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="module">IRB::ExtendCommandBundle</h1>
+
+    <div id="description" class="description">
+      
+<p>Installs the default irb extensions command bundle.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="NO_OVERRIDE">NO_OVERRIDE</a></dt>
+          
+          <dd class="description"><p>See <a href="ExtendCommandBundle.html#method-i-install_alias_method"><code>install_alias_method</code></a>.</p></dd>
+          
+        
+          <dt><a name="OVERRIDE_ALL">OVERRIDE_ALL</a></dt>
+          
+          <dd class="description"><p>See <a href="ExtendCommandBundle.html#method-i-install_alias_method"><code>install_alias_method</code></a>.</p></dd>
+          
+        
+          <dt><a name="OVERRIDE_PRIVATE_ONLY">OVERRIDE_PRIVATE_ONLY</a></dt>
+          
+          <dd class="description"><p>See <a href="ExtendCommandBundle.html#method-i-install_alias_method"><code>install_alias_method</code></a>.</p></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="def_extend_command-method" class="method-detail ">
+          <a name="method-c-def_extend_command"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">def_extend_command</span><span
+              class="method-args">(cmd_name, cmd_class, load_file = nil, *aliases)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Evaluate the given <code>cmd_name</code> on the given <code>cmd_class</code> Class.</p>
+
+<p>Will also define any given <code>aliases</code> for the method.</p>
+
+<p>The optional <code>load_file</code> parameter will be required within the method definition.</p>
+            
+
+            
+            <div class="method-source-code" id="def_extend_command-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb/extend-command.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">def_extend_command</span>(<span class="ruby-identifier">cmd_name</span>, <span class="ruby-identifier">cmd_class</span>, <span class="ruby-identifier">load_file</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">aliases</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">cmd_class</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Symbol</span>
+    <span class="ruby-identifier">cmd_class</span> = <span class="ruby-identifier">cmd_class</span>.<span class="ruby-identifier">id2name</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">String</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Class</span>
+    <span class="ruby-identifier">cmd_class</span> = <span class="ruby-identifier">cmd_class</span>.<span class="ruby-identifier">name</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">load_file</span>
+    <span class="ruby-identifier">line</span> = <span class="ruby-keyword">__LINE__</span>; <span class="ruby-identifier">eval</span> <span class="ruby-node">%[
+      def #{cmd_name}(*opts, &amp;b)
+        require &quot;#{load_file}&quot;
+        arity = ExtendCommand::#{cmd_class}.instance_method(:execute).arity
+        args = (1..(arity &lt; 0 ? ~arity : arity)).map {|i| &quot;arg&quot; + i.to_s }
+        args &lt;&lt; &quot;*opts&quot; if arity &lt; 0
+        args &lt;&lt; &quot;&amp;block&quot;
+        args = args.join(&quot;, &quot;)
+        line = __LINE__; eval %[
+          unless self.class.class_variable_defined?(:@@#{cmd_name}_)
+          self.class.class_variable_set(:@@#{cmd_name}_, true)
+            def #{cmd_name}_(\#{args})
+              ExtendCommand::#{cmd_class}.execute(irb_context, \#{args})
+            end
+          end
+        ], nil, __FILE__, line
+        send :#{cmd_name}_, *opts, &amp;b
+      end
+    ]</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">__FILE__</span>, <span class="ruby-identifier">line</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">line</span> = <span class="ruby-keyword">__LINE__</span>; <span class="ruby-identifier">eval</span> <span class="ruby-node">%[
+      def #{cmd_name}(*opts, &amp;b)
+        ExtendCommand::#{cmd_class}.execute(irb_context, *opts, &amp;b)
+      end
+    ]</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">__FILE__</span>, <span class="ruby-identifier">line</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">ali</span>, <span class="ruby-identifier">flag</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">aliases</span>
+    <span class="ruby-ivar">@ALIASES</span>.<span class="ruby-identifier">push</span> [<span class="ruby-identifier">ali</span>, <span class="ruby-identifier">cmd_name</span>, <span class="ruby-identifier">flag</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- def_extend_command-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- def_extend_command-method -->
+      
+        <div id="extend_object-method" class="method-detail ">
+          <a name="method-c-extend_object"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">extend_object</span><span
+              class="method-args">(obj)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Installs alias methods for the default irb commands on the given object using <a href="ExtendCommandBundle.html#method-i-install_alias_method"><code>install_alias_method</code></a>.</p>
+            
+
+            
+            <div class="method-source-code" id="extend_object-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb/extend-command.rb, line 227</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">extend_object</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-keyword">unless</span> (<span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">obj</span>; <span class="ruby-identifier">ancestors</span>; <span class="ruby-keyword">end</span>).<span class="ruby-identifier">include?</span>(<span class="ruby-constant">EXCB</span>)
+    <span class="ruby-keyword">super</span>
+    <span class="ruby-keyword">for</span> <span class="ruby-identifier">ali</span>, <span class="ruby-identifier">com</span>, <span class="ruby-identifier">flg</span> <span class="ruby-keyword">in</span> <span class="ruby-ivar">@ALIASES</span>
+      <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">install_alias_method</span>(<span class="ruby-identifier">ali</span>, <span class="ruby-identifier">com</span>, <span class="ruby-identifier">flg</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- extend_object-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- extend_object-method -->
+      
+        <div id="install_extend_commands-method" class="method-detail ">
+          <a name="method-c-install_extend_commands"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">install_extend_commands</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Installs the default irb commands:</p>
+<dl class="rdoc-list note-list"><dt><code>irb_current_working_workspace</code>
+<dd>
+<p><a href="Context.html#method-i-main"><code>Context#main</code></a></p>
+</dd><dt><code>irb_change_workspace</code>
+<dd>
+<p><a href="Context.html#method-i-change_workspace"><code>Context#change_workspace</code></a></p>
+</dd><dt><code>irb_workspaces</code>
+<dd>
+<p><a href="Context.html#method-i-workspaces"><code>Context#workspaces</code></a></p>
+</dd><dt><code>irb_push_workspace</code>
+<dd>
+<p><a href="Context.html#method-i-push_workspace"><code>Context#push_workspace</code></a></p>
+</dd><dt><code>irb_pop_workspace</code>
+<dd>
+<p><a href="Context.html#method-i-pop_workspace"><code>Context#pop_workspace</code></a></p>
+</dd><dt><code>irb_load</code>
+<dd>
+<p><a href="ExtendCommandBundle.html#method-i-irb_load"><code>irb_load</code></a></p>
+</dd><dt><code>irb_require</code>
+<dd>
+<p><a href="ExtendCommandBundle.html#method-i-irb_require"><code>irb_require</code></a></p>
+</dd><dt><code>irb_source</code>
+<dd>
+<p><a href="IrbLoader.html#method-i-source_file"><code>IrbLoader#source_file</code></a></p>
+</dd><dt><code>irb</code>
+<dd>
+<p><a href="../IRB.html#method-c-irb"><code>IRB.irb</code></a></p>
+</dd><dt><code>irb_jobs</code>
+<dd>
+<p><a href="JobManager.html"><code>JobManager</code></a></p>
+</dd><dt><code>irb_fg</code>
+<dd>
+<p><a href="JobManager.html#method-i-switch"><code>JobManager#switch</code></a></p>
+</dd><dt><code>irb_kill</code>
+<dd>
+<p><a href="JobManager.html#method-i-kill"><code>JobManager#kill</code></a></p>
+</dd><dt><code>irb_help</code>
+<dd>
+<p>Command line options at <code>IRB</code></p>
+</dd></dl>
+            
+
+            
+            <div class="method-source-code" id="install_extend_commands-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb/extend-command.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">install_extend_commands</span>
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">args</span> <span class="ruby-keyword">in</span> <span class="ruby-ivar">@EXTEND_COMMANDS</span>
+    <span class="ruby-identifier">def_extend_command</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- install_extend_commands-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- install_extend_commands-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="install_alias_method-method" class="method-detail ">
+          <a name="method-i-install_alias_method"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">install_alias_method</span><span
+              class="method-args">(to, from, override = NO_OVERRIDE)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Installs alias methods for the default irb commands, see <a href="ExtendCommandBundle.html#method-c-install_extend_commands"><code>::install_extend_commands</code></a>.</p>
+            
+
+            
+            <div class="method-source-code" id="install_alias_method-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb/extend-command.rb, line 201</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">install_alias_method</span>(<span class="ruby-identifier">to</span>, <span class="ruby-identifier">from</span>, <span class="ruby-identifier">override</span> = <span class="ruby-constant">NO_OVERRIDE</span>)
+  <span class="ruby-identifier">to</span> = <span class="ruby-identifier">to</span>.<span class="ruby-identifier">id2name</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">to</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+  <span class="ruby-identifier">from</span> = <span class="ruby-identifier">from</span>.<span class="ruby-identifier">id2name</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">from</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">override</span> <span class="ruby-operator">==</span> <span class="ruby-constant">OVERRIDE_ALL</span> <span class="ruby-keyword">or</span>
+      (<span class="ruby-identifier">override</span> <span class="ruby-operator">==</span> <span class="ruby-constant">OVERRIDE_PRIVATE_ONLY</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">to</span>) <span class="ruby-keyword">or</span>
+      (<span class="ruby-identifier">override</span> <span class="ruby-operator">==</span> <span class="ruby-constant">NO_OVERRIDE</span>) <span class="ruby-operator">&amp;&amp;</span>  <span class="ruby-operator">!</span><span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">to</span>, <span class="ruby-keyword">true</span>)
+    <span class="ruby-identifier">target</span> = <span class="ruby-keyword">self</span>
+    (<span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>; <span class="ruby-keyword">self</span>; <span class="ruby-keyword">end</span>).<span class="ruby-identifier">instance_eval</span>{
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">target</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">to</span>, <span class="ruby-keyword">true</span>) <span class="ruby-operator">&amp;&amp;</span>
+        <span class="ruby-operator">!</span><span class="ruby-identifier">target</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-constant">EXCB</span>.<span class="ruby-identifier">irb_original_method_name</span>(<span class="ruby-identifier">to</span>), <span class="ruby-keyword">true</span>)
+        <span class="ruby-identifier">alias_method</span>(<span class="ruby-constant">EXCB</span>.<span class="ruby-identifier">irb_original_method_name</span>(<span class="ruby-identifier">to</span>), <span class="ruby-identifier">to</span>)
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">alias_method</span> <span class="ruby-identifier">to</span>, <span class="ruby-identifier">from</span>
+    }
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">print</span> <span class="ruby-node">&quot;irb: warn: can&#39;t alias #{to} from #{from}.\n&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- install_alias_method-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- install_alias_method-method -->
+      
+        <div id="irb_context-method" class="method-detail ">
+          <a name="method-i-irb_context"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">irb_context</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Displays current configuration.</p>
+
+<p>Modifying the configuration is achieved by sending a message to <a href="../IRB.html#method-c-conf"><code>IRB.conf</code></a>.</p>
+            
+
+            
+            <div class="method-source-code" id="irb_context-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb/extend-command.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">irb_context</span>
+  <span class="ruby-constant">IRB</span>.<span class="ruby-constant">CurrentContext</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- irb_context-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- irb_context-method -->
+      
+        <div id="irb_exit-method" class="method-detail ">
+          <a name="method-i-irb_exit"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">irb_exit</span><span
+              class="method-args">(ret = 0)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Quits the current irb context</p>
+
+<p><code>ret</code> is the optional signal or message to send to <a href="Context.html#method-i-exit"><code>Context#exit</code></a></p>
+
+<p>Same as <code>IRB.CurrentContext.exit</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="irb_exit-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb/extend-command.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">irb_exit</span>(<span class="ruby-identifier">ret</span> = <span class="ruby-value">0</span>)
+  <span class="ruby-identifier">irb_context</span>.<span class="ruby-identifier">exit</span>(<span class="ruby-identifier">ret</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- irb_exit-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- irb_exit-method -->
+      
+        <div id="irb_load-method" class="method-detail ">
+          <a name="method-i-irb_load"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">irb_load</span><span
+              class="method-args">(*opts, &b)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Loads the given file similarly to Kernel#load, see <a href="IrbLoader.html#method-i-irb_load"><code>IrbLoader#irb_load</code></a></p>
+            
+
+            
+            <div class="method-source-code" id="irb_load-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb/ext/use-loader.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">irb_load</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">b</span>)
+  <span class="ruby-constant">ExtendCommand</span><span class="ruby-operator">::</span><span class="ruby-constant">Load</span>.<span class="ruby-identifier">execute</span>(<span class="ruby-identifier">irb_context</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">b</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- irb_load-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- irb_load-method -->
+      
+        <div id="irb_require-method" class="method-detail ">
+          <a name="method-i-irb_require"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">irb_require</span><span
+              class="method-args">(*opts, &b)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Loads the given file similarly to Kernel#require</p>
+            
+
+            
+            <div class="method-source-code" id="irb_require-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb/ext/use-loader.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">irb_require</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">b</span>)
+  <span class="ruby-constant">ExtendCommand</span><span class="ruby-operator">::</span><span class="ruby-constant">Require</span>.<span class="ruby-identifier">execute</span>(<span class="ruby-identifier">irb_context</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">opts</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">b</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- irb_require-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- irb_require-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_ExtendCommandBundle_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_ExtendCommandBundle_versioned").load("/associated/2.7.4/ExtendCommandBundle.ihtml");</script> <div id='tx_ExtendCommandBundle' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_ExtendCommandBundle").load("/associated/ExtendCommandBundle.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Maximum R+D</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_ExtendCommandBundle.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_ExtendCommandBundle.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

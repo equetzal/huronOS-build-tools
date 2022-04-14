@@ -1,0 +1,1471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Module : IRB  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:22:21 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = ''  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = ''  --> 
+  <title>Module: IRB (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href=".css/obf.css"  -->
+  <link rel="stylesheet" href="css/inuit.css" >
+  <link rel="stylesheet" href="css/grid.inuit.css" >
+  <link rel="stylesheet" href="css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="css/carbon17.css" type="text/css" >
+
+
+  <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="/js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="module rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>irb.rb</li>      
+            
+          
+          <li class='in-file'>irb/cmd/chws.rb</li>      
+            
+          
+          <li class='in-file'>irb/cmd/fork.rb</li>      
+            
+          
+          <li class='in-file'>irb/cmd/help.rb</li>      
+            
+          
+          <li class='in-file'>irb/cmd/info.rb</li>      
+            
+          
+          <li class='in-file'>irb/cmd/load.rb</li>      
+            
+          
+          <li class='in-file'>irb/cmd/nop.rb</li>      
+            
+          
+          <li class='in-file'>irb/cmd/pushws.rb</li>      
+            
+          
+          <li class='in-file'>irb/cmd/subirb.rb</li>      
+            
+          
+          <li class='in-file'>irb/color.rb</li>      
+            
+          
+          <li class='in-file'>irb/completion.rb</li>      
+            
+          
+          <li class='in-file'>irb/context.rb</li>      
+            
+          
+          <li class='in-file'>irb/easter-egg.rb</li>      
+            
+          
+          <li class='in-file'>irb/ext/change-ws.rb</li>      
+            
+          
+          <li class='in-file'>irb/ext/history.rb</li>      
+            
+          
+          <li class='in-file'>irb/ext/loader.rb</li>      
+            
+          
+          <li class='in-file'>irb/ext/multi-irb.rb</li>      
+            
+          
+          <li class='in-file'>irb/ext/save-history.rb</li>      
+            
+          
+          <li class='in-file'>irb/ext/tracer.rb</li>      
+            
+          
+          <li class='in-file'>irb/ext/use-loader.rb</li>      
+            
+          
+          <li class='in-file'>irb/ext/workspaces.rb</li>      
+            
+          
+          <li class='in-file'>irb/extend-command.rb</li>      
+            
+          
+          <li class='in-file'>irb/frame.rb</li>      
+            
+          
+          <li class='in-file'>irb/help.rb</li>      
+            
+          
+          <li class='in-file'>irb/init.rb</li>      
+            
+          
+          <li class='in-file'>irb/input-method.rb</li>      
+            
+          
+          <li class='in-file'>irb/inspector.rb</li>      
+            
+          
+          <li class='in-file'>irb/lc/error.rb</li>      
+            
+          
+          <li class='in-file'>irb/lc/ja/encoding_aliases.rb</li>      
+            
+          
+          <li class='in-file'>irb/lc/ja/error.rb</li>      
+            
+          
+          <li class='in-file'>irb/locale.rb</li>      
+            
+          
+          <li class='in-file'>irb/magic-file.rb</li>      
+            
+          
+          <li class='in-file'>irb/notifier.rb</li>      
+            
+          
+          <li class='in-file'>irb/output-method.rb</li>      
+            
+          
+          <li class='in-file'>irb/src_encoding.rb</li>      
+            
+          
+          <li class='in-file'>irb/version.rb</li>      
+            
+          
+          <li class='in-file'>irb/workspace.rb</li>      
+            
+          
+          <li class='in-file'>irb/ws-for-case-2.rb</li>      
+            
+          
+          <li class='in-file'>irb/xmp.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">MODULE</span> <a href="IRB/Color.html">IRB::Color</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="IRB/ContextExtender.html">IRB::ContextExtender</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="IRB/ExtendCommand.html">IRB::ExtendCommand</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="IRB/ExtendCommandBundle.html">IRB::ExtendCommandBundle</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="IRB/IrbLoader.html">IRB::IrbLoader</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="IRB/MethodExtender.html">IRB::MethodExtender</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="IRB/Notifier.html">IRB::Notifier</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/Abort.html">IRB::Abort</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/CantChangeBinding.html">IRB::CantChangeBinding</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/CantReturnToNormalMode.html">IRB::CantReturnToNormalMode</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/CantShiftToMultiIrbMode.html">IRB::CantShiftToMultiIrbMode</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/Canvas.html">IRB::Canvas</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/Context.html">IRB::Context</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/FileInputMethod.html">IRB::FileInputMethod</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/Frame.html">IRB::Frame</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/History.html">IRB::History</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/IllegalParameter.html">IRB::IllegalParameter</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/IllegalRCGenerator.html">IRB::IllegalRCGenerator</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/InputMethod.html">IRB::InputMethod</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/Inspector.html">IRB::Inspector</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/Irb.html">IRB::Irb</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/IrbAlreadyDead.html">IRB::IrbAlreadyDead</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/IrbSwitchedToCurrentThread.html">IRB::IrbSwitchedToCurrentThread</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/JobManager.html">IRB::JobManager</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/LoadAbort.html">IRB::LoadAbort</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/Locale.html">IRB::Locale</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/NoSuchJob.html">IRB::NoSuchJob</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/NotImplementedError.html">IRB::NotImplementedError</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/OutputMethod.html">IRB::OutputMethod</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/ReadlineInputMethod.html">IRB::ReadlineInputMethod</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/ReidlineInputMethod.html">IRB::ReidlineInputMethod</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/RubyModel.html">IRB::RubyModel</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/StdioInputMethod.html">IRB::StdioInputMethod</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/StdioOutputMethod.html">IRB::StdioOutputMethod</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/UndefinedPromptMode.html">IRB::UndefinedPromptMode</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/UnrecognizedSwitch.html">IRB::UnrecognizedSwitch</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/Vec.html">IRB::Vec</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IRB/WorkSpace.html">IRB::WorkSpace</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-CurrentContext">::CurrentContext</a></li>
+          
+          <li><a href="#method-c-JobManager">::JobManager</a></li>
+          
+          <li><a href="#method-c-conf">::conf</a></li>
+          
+          <li><a href="#method-c-default_src_encoding">::default_src_encoding</a></li>
+          
+          <li><a href="#method-c-initialize_tracer">::initialize_tracer</a></li>
+          
+          <li><a href="#method-c-irb">::irb</a></li>
+          
+          <li><a href="#method-c-irb_abort">::irb_abort</a></li>
+          
+          <li><a href="#method-c-irb_at_exit">::irb_at_exit</a></li>
+          
+          <li><a href="#method-c-irb_exit">::irb_exit</a></li>
+          
+          <li><a href="#method-c-print_usage">::print_usage</a></li>
+          
+          <li><a href="#method-c-start">::start</a></li>
+          
+          <li><a href="#method-c-version">::version</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="./Binding.html">Binding</a></li>
+        
+          
+          
+          <li><a href="./IRB/Abort.html">IRB::Abort</a></li>
+        
+          
+          
+          <li><a href="./IRB/Canvas.html">IRB::Canvas</a></li>
+        
+          
+          
+          <li><a href="./IRB/Color.html">IRB::Color</a></li>
+        
+          
+          
+          <li><a href="./IRB/Color/SymbolState.html">IRB::Color::SymbolState</a></li>
+        
+          
+          
+          <li><a href="./IRB/Context.html">IRB::Context</a></li>
+        
+          
+          
+          <li><a href="./IRB/ContextExtender.html">IRB::ContextExtender</a></li>
+        
+          
+          
+          <li><a href="./IRB/ExtendCommandBundle.html">IRB::ExtendCommandBundle</a></li>
+        
+          
+          
+          <li><a href="./IRB/FileInputMethod.html">IRB::FileInputMethod</a></li>
+        
+          
+          
+          <li><a href="./IRB/Frame.html">IRB::Frame</a></li>
+        
+          
+          
+          <li><a href="./IRB/Frame/FrameOverflow.html">IRB::Frame::FrameOverflow</a></li>
+        
+          
+          
+          <li><a href="./IRB/Frame/FrameUnderflow.html">IRB::Frame::FrameUnderflow</a></li>
+        
+          
+          
+          <li><a href="./IRB/History.html">IRB::History</a></li>
+        
+          
+          
+          <li><a href="./IRB/InputMethod.html">IRB::InputMethod</a></li>
+        
+          
+          
+          <li><a href="./IRB/Inspector.html">IRB::Inspector</a></li>
+        
+          
+          
+          <li><a href="./IRB/Irb.html">IRB::Irb</a></li>
+        
+          
+          
+          <li><a href="./IRB/IrbLoader.html">IRB::IrbLoader</a></li>
+        
+          
+          
+          <li><a href="./IRB/JobManager.html">IRB::JobManager</a></li>
+        
+          
+          
+          <li><a href="./IRB/LoadAbort.html">IRB::LoadAbort</a></li>
+        
+          
+          
+          <li><a href="./IRB/MethodExtender.html">IRB::MethodExtender</a></li>
+        
+          
+          
+          <li><a href="./IRB/Notifier.html">IRB::Notifier</a></li>
+        
+          
+          
+          <li><a href="./IRB/Notifier/AbstractNotifier.html">IRB::Notifier::AbstractNotifier</a></li>
+        
+          
+          
+          <li><a href="./IRB/Notifier/CompositeNotifier.html">IRB::Notifier::CompositeNotifier</a></li>
+        
+          
+          
+          <li><a href="./IRB/Notifier/ErrUndefinedNotifier.html">IRB::Notifier::ErrUndefinedNotifier</a></li>
+        
+          
+          
+          <li><a href="./IRB/Notifier/ErrUnrecognizedLevel.html">IRB::Notifier::ErrUnrecognizedLevel</a></li>
+        
+          
+          
+          <li><a href="./IRB/Notifier/LeveledNotifier.html">IRB::Notifier::LeveledNotifier</a></li>
+        
+          
+          
+          <li><a href="./IRB/Notifier/NoMsgNotifier.html">IRB::Notifier::NoMsgNotifier</a></li>
+        
+          
+          
+          <li><a href="./IRB/OutputMethod.html">IRB::OutputMethod</a></li>
+        
+          
+          
+          <li><a href="./IRB/OutputMethod/NotImplementedError.html">IRB::OutputMethod::NotImplementedError</a></li>
+        
+          
+          
+          <li><a href="./IRB/ReadlineInputMethod.html">IRB::ReadlineInputMethod</a></li>
+        
+          
+          
+          <li><a href="./IRB/ReidlineInputMethod.html">IRB::ReidlineInputMethod</a></li>
+        
+          
+          
+          <li><a href="./IRB/RubyModel.html">IRB::RubyModel</a></li>
+        
+          
+          
+          <li><a href="./IRB/StdioInputMethod.html">IRB::StdioInputMethod</a></li>
+        
+          
+          
+          <li><a href="./IRB/StdioOutputMethod.html">IRB::StdioOutputMethod</a></li>
+        
+          
+          
+          <li><a href="./IRB/Vec.html">IRB::Vec</a></li>
+        
+          
+          
+          <li><a href="./IRB/WorkSpace.html">IRB::WorkSpace</a></li>
+        
+          
+          
+          <li><a href="./Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="./XMP.html">XMP</a></li>
+        
+          
+          
+          <li><a href="./XMP/StringInputMethod.html">XMP::StringInputMethod</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="module">IRB</h1>
+
+    <div id="description" class="description">
+      
+<p>IRB stands for “interactive Ruby” and is a tool to interactively execute Ruby expressions read from the standard input.</p>
+
+<p>The <code>irb</code> command from your shell will start the interpreter.</p>
+
+<h2 id="module-IRB-label-Usage">Usage<span><a href="#module-IRB-label-Usage">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Use of irb is easy if you know Ruby.</p>
+
+<p>When executing irb, prompts are displayed as follows. Then, enter the Ruby expression. An input is executed when it is syntactically complete.</p>
+
+<pre>$ irb
+irb(main):001:0&gt; 1+2
+#=&gt; 3
+irb(main):002:0&gt; class Foo
+irb(main):003:1&gt;  def foo
+irb(main):004:2&gt;    print 1
+irb(main):005:2&gt;  end
+irb(main):006:1&gt; end
+#=&gt; nil</pre>
+
+<p>The singleline editor module or multiline editor module can be used with irb. Use of multiline editor is default if it&#39;s installed.</p>
+
+<h2 id="module-IRB-label-Command+line+options">Command line options<span><a href="#module-IRB-label-Command+line+options">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<pre>Usage:  irb.rb [options] [programfile] [arguments]
+  -f                Suppress read of ~/.irbrc
+  -d                Set $DEBUG to true (same as `ruby -d&#39;)
+  -r load-module    Same as `ruby -r&#39;
+  -I path           Specify $LOAD_PATH directory
+  -U                Same as `ruby -U`
+  -E enc            Same as `ruby -E`
+  -w                Same as `ruby -w`
+  -W[level=2]       Same as `ruby -W`
+  --inspect         Use `inspect&#39; for output (default except for bc mode)
+  --noinspect       Don&#39;t use inspect for output
+  --multiline       Use multiline editor module
+  --nomultiline     Don&#39;t use multiline editor module
+  --singleline      Use singleline editor module
+  --nosingleline    Don&#39;t use singleline editor module
+  --colorize        Use colorization
+  --nocolorize      Don&#39;t use colorization
+  --prompt prompt-mode
+  --prompt-mode prompt-mode
+                    Switch prompt mode. Pre-defined prompt modes are
+                    `default&#39;, `simple&#39;, `xmp&#39; and `inf-ruby&#39;
+  --inf-ruby-mode   Use prompt appropriate for inf-ruby-mode on emacs.
+                    Suppresses --multiline and --singleline.
+  --simple-prompt   Simple prompt mode
+  --noprompt        No prompt mode
+  --tracer          Display trace for each execution of commands.
+  --back-trace-limit n
+                    Display backtrace top n and tail n. The default
+                    value is 16.
+  -v, --version     Print the version of irb</pre>
+
+<h2 id="module-IRB-label-Configuration">Configuration<span><a href="#module-IRB-label-Configuration">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>IRB reads from <code>~/.irbrc</code> when it&#39;s invoked.</p>
+
+<p>If <code>~/.irbrc</code> doesn&#39;t exist, <code>irb</code> will try to read in the following order:</p>
+<ul><li>
+<p><code>.irbrc</code></p>
+</li><li>
+<p><code>irb.rc</code></p>
+</li><li>
+<p><code>_irbrc</code></p>
+</li><li>
+<p><code>$irbrc</code></p>
+</li></ul>
+
+<p>The following are alternatives to the command line options. To use them type as follows in an <code>irb</code> session:</p>
+
+<pre>IRB.conf[:IRB_NAME]=&quot;irb&quot;
+IRB.conf[:INSPECT_MODE]=nil
+IRB.conf[:IRB_RC] = nil
+IRB.conf[:BACK_TRACE_LIMIT]=16
+IRB.conf[:USE_LOADER] = false
+IRB.conf[:USE_MULTILINE] = nil
+IRB.conf[:USE_SINGLELINE] = nil
+IRB.conf[:USE_COLORIZE] = true
+IRB.conf[:USE_TRACER] = false
+IRB.conf[:IGNORE_SIGINT] = true
+IRB.conf[:IGNORE_EOF] = false
+IRB.conf[:PROMPT_MODE] = :DEFAULT
+IRB.conf[:PROMPT] = {...}</pre>
+
+<h3 id="module-IRB-label-Auto+indentation">Auto indentation<span><a href="#module-IRB-label-Auto+indentation">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>To disable auto-indent mode in irb, add the following to your <code>.irbrc</code>:</p>
+
+<pre class="ruby"><span class="ruby-constant">IRB</span>.<span class="ruby-identifier">conf</span>[<span class="ruby-value">:AUTO_INDENT</span>] = <span class="ruby-keyword">false</span>
+</pre>
+
+<h3 id="module-IRB-label-Autocompletion">Autocompletion<span><a href="#module-IRB-label-Autocompletion">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>To enable autocompletion for irb, add the following to your <code>.irbrc</code>:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;irb/completion&#39;</span>
+</pre>
+
+<h3 id="module-IRB-label-History"><a href="IRB/History.html"><code>History</code></a><span><a href="#module-IRB-label-History">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>By default, irb will store the last 1000 commands you used in <code>IRB.conf[:HISTORY_FILE]</code> (<code>~/.irb_history</code> by default).</p>
+
+<p>If you want to disable history, add the following to your <code>.irbrc</code>:</p>
+
+<pre class="ruby"><span class="ruby-constant">IRB</span>.<span class="ruby-identifier">conf</span>[<span class="ruby-value">:SAVE_HISTORY</span>] = <span class="ruby-keyword">nil</span>
+</pre>
+
+<p>See <a href="IRB/Context.html#method-i-save_history-3D"><code>IRB::Context#save_history=</code></a> for more information.</p>
+
+<p>The history of <em>results</em> of commands evaluated is not stored by default, but can be turned on to be stored with this <code>.irbrc</code> setting:</p>
+
+<pre>IRB.conf[:EVAL_HISTORY] = &lt;number&gt;</pre>
+
+<p>See <a href="IRB/Context.html#method-i-eval_history-3D"><code>IRB::Context#eval_history=</code></a> and <a href="IRB/History.html"><code>History</code></a> class. The history of command results is not permanently saved in any file.</p>
+
+<h2 id="module-IRB-label-Customizing+the+IRB+Prompt">Customizing the IRB Prompt<span><a href="#module-IRB-label-Customizing+the+IRB+Prompt">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>In order to customize the prompt, you can change the following Hash:</p>
+
+<pre class="ruby"><span class="ruby-constant">IRB</span>.<span class="ruby-identifier">conf</span>[<span class="ruby-value">:PROMPT</span>]
+</pre>
+
+<p>This example can be used in your <code>.irbrc</code></p>
+
+<pre class="ruby"><span class="ruby-constant">IRB</span>.<span class="ruby-identifier">conf</span>[<span class="ruby-value">:PROMPT</span>][<span class="ruby-value">:MY_PROMPT</span>] = { <span class="ruby-comment"># name of prompt mode</span>
+  <span class="ruby-value">:AUTO_INDENT</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">false</span>,          <span class="ruby-comment"># disables auto-indent mode</span>
+  <span class="ruby-value">:PROMPT_I</span> <span class="ruby-operator">=&gt;</span>  <span class="ruby-string">&quot;&gt;&gt; &quot;</span>,            <span class="ruby-comment"># simple prompt</span>
+  <span class="ruby-value">:PROMPT_S</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">nil</span>,               <span class="ruby-comment"># prompt for continuated strings</span>
+  <span class="ruby-value">:PROMPT_C</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">nil</span>,               <span class="ruby-comment"># prompt for continuated statement</span>
+  <span class="ruby-value">:RETURN</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;    ==&gt;%s\n&quot;</span>        <span class="ruby-comment"># format to return value</span>
+}
+
+<span class="ruby-constant">IRB</span>.<span class="ruby-identifier">conf</span>[<span class="ruby-value">:PROMPT_MODE</span>] = <span class="ruby-value">:MY_PROMPT</span>
+</pre>
+
+<p>Or, invoke irb with the above prompt mode by:</p>
+
+<pre>irb --prompt my-prompt</pre>
+
+<p>Constants <code>PROMPT_I</code>, <code>PROMPT_S</code> and <code>PROMPT_C</code> specify the format. In the prompt specification, some special strings are available:</p>
+
+<pre>%N    # command name which is running
+%m    # to_s of main object (self)
+%M    # inspect of main object (self)
+%l    # type of string(&quot;, &#39;, /, ]), `]&#39; is inner %w[...]
+%NNi  # indent level. NN is digits and means as same as printf(&quot;%NNd&quot;).
+      # It can be omitted
+%NNn  # line number.
+%%    # %</pre>
+
+<p>For instance, the default prompt mode is defined as follows:</p>
+
+<pre class="ruby"><span class="ruby-constant">IRB</span>.<span class="ruby-identifier">conf</span>[<span class="ruby-value">:PROMPT_MODE</span>][<span class="ruby-value">:DEFAULT</span>] = {
+  <span class="ruby-value">:PROMPT_I</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;%N(%m):%03n:%i&gt; &quot;</span>,
+  <span class="ruby-value">:PROMPT_N</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;%N(%m):%03n:%i&gt; &quot;</span>,
+  <span class="ruby-value">:PROMPT_S</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;%N(%m):%03n:%i%l &quot;</span>,
+  <span class="ruby-value">:PROMPT_C</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;%N(%m):%03n:%i* &quot;</span>,
+  <span class="ruby-value">:RETURN</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;%s\n&quot;</span> <span class="ruby-comment"># used to printf</span>
+}
+</pre>
+
+<p>irb comes with a number of available modes:</p>
+
+<pre class="ruby"><span class="ruby-comment"># :NULL:</span>
+<span class="ruby-comment">#   :PROMPT_I:</span>
+<span class="ruby-comment">#   :PROMPT_N:</span>
+<span class="ruby-comment">#   :PROMPT_S:</span>
+<span class="ruby-comment">#   :PROMPT_C:</span>
+<span class="ruby-comment">#   :RETURN: |</span>
+<span class="ruby-comment">#     %s</span>
+<span class="ruby-comment"># :DEFAULT:</span>
+<span class="ruby-comment">#   :PROMPT_I: ! &#39;%N(%m):%03n:%i&gt; &#39;</span>
+<span class="ruby-comment">#   :PROMPT_N: ! &#39;%N(%m):%03n:%i&gt; &#39;</span>
+<span class="ruby-comment">#   :PROMPT_S: ! &#39;%N(%m):%03n:%i%l &#39;</span>
+<span class="ruby-comment">#   :PROMPT_C: ! &#39;%N(%m):%03n:%i* &#39;</span>
+<span class="ruby-comment">#   :RETURN: |</span>
+<span class="ruby-comment">#     =&gt; %s</span>
+<span class="ruby-comment"># :CLASSIC:</span>
+<span class="ruby-comment">#   :PROMPT_I: ! &#39;%N(%m):%03n:%i&gt; &#39;</span>
+<span class="ruby-comment">#   :PROMPT_N: ! &#39;%N(%m):%03n:%i&gt; &#39;</span>
+<span class="ruby-comment">#   :PROMPT_S: ! &#39;%N(%m):%03n:%i%l &#39;</span>
+<span class="ruby-comment">#   :PROMPT_C: ! &#39;%N(%m):%03n:%i* &#39;</span>
+<span class="ruby-comment">#   :RETURN: |</span>
+<span class="ruby-comment">#     %s</span>
+<span class="ruby-comment"># :SIMPLE:</span>
+<span class="ruby-comment">#   :PROMPT_I: ! &#39;&gt;&gt; &#39;</span>
+<span class="ruby-comment">#   :PROMPT_N: ! &#39;&gt;&gt; &#39;</span>
+<span class="ruby-comment">#   :PROMPT_S:</span>
+<span class="ruby-comment">#   :PROMPT_C: ! &#39;?&gt; &#39;</span>
+<span class="ruby-comment">#   :RETURN: |</span>
+<span class="ruby-comment">#     =&gt; %s</span>
+<span class="ruby-comment"># :INF_RUBY:</span>
+<span class="ruby-comment">#   :PROMPT_I: ! &#39;%N(%m):%03n:%i&gt; &#39;</span>
+<span class="ruby-comment">#   :PROMPT_N:</span>
+<span class="ruby-comment">#   :PROMPT_S:</span>
+<span class="ruby-comment">#   :PROMPT_C:</span>
+<span class="ruby-comment">#   :RETURN: |</span>
+<span class="ruby-comment">#     %s</span>
+<span class="ruby-comment">#   :AUTO_INDENT: true</span>
+<span class="ruby-comment"># :XMP:</span>
+<span class="ruby-comment">#   :PROMPT_I:</span>
+<span class="ruby-comment">#   :PROMPT_N:</span>
+<span class="ruby-comment">#   :PROMPT_S:</span>
+<span class="ruby-comment">#   :PROMPT_C:</span>
+<span class="ruby-comment">#   :RETURN: |2</span>
+<span class="ruby-comment">#         ==&gt;%s</span>
+</pre>
+
+<h2 id="module-IRB-label-Restrictions">Restrictions<span><a href="#module-IRB-label-Restrictions">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Because irb evaluates input immediately after it is syntactically complete, the results may be slightly different than directly using Ruby.</p>
+
+<h2 id="module-IRB-label-IRB+Sessions">IRB Sessions<span><a href="#module-IRB-label-IRB+Sessions">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>IRB has a special feature, that allows you to manage many sessions at once.</p>
+
+<p>You can create new sessions with Irb.irb, and get a list of current sessions with the <code>jobs</code> command in the prompt.</p>
+
+<h3 id="module-IRB-label-Commands">Commands<span><a href="#module-IRB-label-Commands">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p><a href="IRB/JobManager.html"><code>JobManager</code></a> provides commands to handle the current sessions:</p>
+
+<pre class="ruby"><span class="ruby-identifier">jobs</span>    <span class="ruby-comment"># List of current sessions</span>
+<span class="ruby-identifier">fg</span>      <span class="ruby-comment"># Switches to the session of the given number</span>
+<span class="ruby-identifier">kill</span>    <span class="ruby-comment"># Kills the session with the given number</span>
+</pre>
+
+<p>The <code>exit</code> command, or <a href="IRB.html#method-c-irb_exit"><code>::irb_exit</code></a>, will quit the current session and call any exit hooks with <a href="IRB.html#method-c-irb_at_exit"><code>IRB.irb_at_exit</code></a>.</p>
+
+<p>A few commands for loading files within the session are also available:</p>
+<dl class="rdoc-list note-list"><dt><code>source</code>
+<dd>
+<p>Loads a given file in the current session and displays the source lines, see <a href="IRB/IrbLoader.html#method-i-source_file"><code>IrbLoader#source_file</code></a></p>
+</dd><dt><code>irb_load</code>
+<dd>
+<p>Loads the given file similarly to Kernel#load, see <a href="IRB/IrbLoader.html#method-i-irb_load"><code>IrbLoader#irb_load</code></a></p>
+</dd><dt><code>irb_require</code>
+<dd>
+<p>Loads the given file similarly to Kernel#require</p>
+</dd></dl>
+
+<h3 id="module-IRB-label-Configuration">Configuration<span><a href="#module-IRB-label-Configuration">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The command line options, or <a href="IRB.html#method-c-conf"><code>IRB.conf</code></a>, specify the default behavior of Irb.irb.</p>
+
+<p>On the other hand, each conf in IRB is used to individually configure <a href="IRB.html#method-c-irb"><code>IRB.irb</code></a>.</p>
+
+<p>If a proc is set for <code>IRB.conf[:IRB_RC]</code>, its will be invoked after execution of that proc with the context of the current session as its argument. Each session can be configured using this mechanism.</p>
+
+<h3 id="module-IRB-label-Session+variables">Session variables<span><a href="#module-IRB-label-Session+variables">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>There are a few variables in every <a href="IRB/Irb.html"><code>Irb</code></a> session that can come in handy:</p>
+<dl class="rdoc-list note-list"><dt><code>_</code>
+<dd>
+<p>The value command executed, as a local variable</p>
+</dd><dt><code>__</code>
+<dd>
+<p>The history of evaluated commands. Available only if <code>IRB.conf[:EVAL_HISTORY]</code> is not <code>nil</code> (which is the default). See also <a href="IRB/Context.html#method-i-eval_history-3D"><code>IRB::Context#eval_history=</code></a> and <a href="IRB/History.html"><code>IRB::History</code></a>.</p>
+</dd><dt><code>__[line_no]</code>
+<dd>
+<p>Returns the evaluation value at the given line number, <code>line_no</code>. If <code>line_no</code> is a negative, the return value <code>line_no</code> many lines before the most recent return value.</p>
+</dd></dl>
+
+<h3 id="module-IRB-label-Example+using+IRB+Sessions">Example using IRB Sessions<span><a href="#module-IRB-label-Example+using+IRB+Sessions">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre># invoke a new session
+irb(main):001:0&gt; irb
+# list open sessions
+irb.1(main):001:0&gt; jobs
+  #0-&gt;irb on main (#&lt;Thread:0x400fb7e4&gt; : stop)
+  #1-&gt;irb#1 on main (#&lt;Thread:0x40125d64&gt; : running)
+
+# change the active session
+irb.1(main):002:0&gt; fg 0
+# define class Foo in top-level session
+irb(main):002:0&gt; class Foo;end
+# invoke a new session with the context of Foo
+irb(main):003:0&gt; irb Foo
+# define Foo#foo
+irb.2(Foo):001:0&gt; def foo
+irb.2(Foo):002:1&gt;   print 1
+irb.2(Foo):003:1&gt; end
+
+# change the active session
+irb.2(Foo):004:0&gt; fg 0
+# list open sessions
+irb(main):004:0&gt; jobs
+  #0-&gt;irb on main (#&lt;Thread:0x400fb7e4&gt; : running)
+  #1-&gt;irb#1 on main (#&lt;Thread:0x40125d64&gt; : stop)
+  #2-&gt;irb#2 on Foo (#&lt;Thread:0x4011d54c&gt; : stop)
+# check if Foo#foo is available
+irb(main):005:0&gt; Foo.instance_methods #=&gt; [:foo, ...]
+
+# change the active session
+irb(main):006:0&gt; fg 2
+# define Foo#bar in the context of Foo
+irb.2(Foo):005:0&gt; def bar
+irb.2(Foo):006:1&gt;  print &quot;bar&quot;
+irb.2(Foo):007:1&gt; end
+irb.2(Foo):010:0&gt;  Foo.instance_methods #=&gt; [:bar, :foo, ...]
+
+# change the active session
+irb.2(Foo):011:0&gt; fg 0
+irb(main):007:0&gt; f = Foo.new  #=&gt; #&lt;Foo:0x4010af3c&gt;
+# invoke a new session with the context of f (instance of Foo)
+irb(main):008:0&gt; irb f
+# list open sessions
+irb.3(&lt;Foo:0x4010af3c&gt;):001:0&gt; jobs
+  #0-&gt;irb on main (#&lt;Thread:0x400fb7e4&gt; : stop)
+  #1-&gt;irb#1 on main (#&lt;Thread:0x40125d64&gt; : stop)
+  #2-&gt;irb#2 on Foo (#&lt;Thread:0x4011d54c&gt; : stop)
+  #3-&gt;irb#3 on #&lt;Foo:0x4010af3c&gt; (#&lt;Thread:0x4010a1e0&gt; : running)
+# evaluate f.foo
+irb.3(&lt;Foo:0x4010af3c&gt;):002:0&gt; foo #=&gt; 1 =&gt; nil
+# evaluate f.bar
+irb.3(&lt;Foo:0x4010af3c&gt;):003:0&gt; bar #=&gt; bar =&gt; nil
+# kill jobs 1, 2, and 3
+irb.3(&lt;Foo:0x4010af3c&gt;):004:0&gt; kill 1, 2, 3
+# list open sessions, should only include main session
+irb(main):009:0&gt; jobs
+  #0-&gt;irb on main (#&lt;Thread:0x400fb7e4&gt; : running)
+# quit irb
+irb(main):010:0&gt; exit</pre>
+
+<pre>save-history.rb -
+    $Release Version: 0.9.6$
+    $Revision$
+    by Keiju ISHITSUKA(keiju@ruby-lang.org)</pre>
+
+<p>–</p>
+
+<pre>frame.rb -
+    $Release Version: 0.9$
+    $Revision$
+    by Keiju ISHITSUKA(Nihon Rational Software Co.,Ltd)</pre>
+
+<p>–</p>
+
+<pre>output-method.rb - output methods used by irb
+    $Release Version: 0.9.6$
+    $Revision$
+    by Keiju ISHITSUKA(keiju@ruby-lang.org)</pre>
+
+<p>–</p>
+
+<p>DO NOT WRITE ANY MAGIC COMMENT HERE.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="TracerLoadError">TracerLoadError</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="CurrentContext-method" class="method-detail ">
+          <a name="method-c-CurrentContext"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">CurrentContext</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>The current <a href="IRB/Context.html"><code>IRB::Context</code></a> of the session, see <a href="IRB.html#method-c-conf"><code>IRB.conf</code></a></p>
+
+<pre>irb
+irb(main):001:0&gt; IRB.CurrentContext.irb_name = &quot;foo&quot;
+foo(main):002:0&gt; IRB.conf[:MAIN_CONTEXT].irb_name #=&gt; &quot;foo&quot;</pre>
+            
+
+            
+            <div class="method-source-code" id="CurrentContext-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb.rb, line 384</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">IRB</span>.<span class="ruby-constant">CurrentContext</span>
+  <span class="ruby-constant">IRB</span>.<span class="ruby-identifier ruby-title">conf</span>[<span class="ruby-value">:MAIN_CONTEXT</span>]
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- CurrentContext-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- CurrentContext-method -->
+      
+        <div id="JobManager-method" class="method-detail ">
+          <a name="method-c-JobManager"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">JobManager</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>The current <a href="IRB/JobManager.html"><code>JobManager</code></a> in the session</p>
+            
+
+            
+            <div class="method-source-code" id="JobManager-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb/ext/multi-irb.rb, line 176</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">IRB</span>.<span class="ruby-constant">JobManager</span>
+  <span class="ruby-ivar">@JobManager</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- JobManager-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- JobManager-method -->
+      
+        <div id="conf-method" class="method-detail ">
+          <a name="method-c-conf"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">conf</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Displays current configuration.</p>
+
+<p>Modifying the configuration is achieved by sending a message to <a href="IRB.html#method-c-conf"><code>IRB.conf</code></a>.</p>
+
+<p>See Configuration at <code>IRB</code> for more information.</p>
+            
+
+            
+            <div class="method-source-code" id="conf-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb.rb, line 367</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">IRB</span>.<span class="ruby-identifier ruby-title">conf</span>
+  <span class="ruby-ivar">@CONF</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- conf-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- conf-method -->
+      
+        <div id="default_src_encoding-method" class="method-detail ">
+          <a name="method-c-default_src_encoding"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">default_src_encoding</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="default_src_encoding-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb/src_encoding.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">default_src_encoding</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">__ENCODING__</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- default_src_encoding-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- default_src_encoding-method -->
+      
+        <div id="initialize_tracer-method" class="method-detail ">
+          <a name="method-c-initialize_tracer"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">initialize_tracer</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>initialize tracing function</p>
+            
+
+            
+            <div class="method-source-code" id="initialize_tracer-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb/ext/tracer.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">IRB</span>.<span class="ruby-identifier ruby-title">initialize_tracer</span>
+  <span class="ruby-constant">Tracer</span>.<span class="ruby-identifier">verbose</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-constant">Tracer</span>.<span class="ruby-identifier">add_filter</span> {
+    <span class="ruby-operator">|</span><span class="ruby-identifier">event</span>, <span class="ruby-identifier">file</span>, <span class="ruby-identifier">line</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">binding</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">rests</span><span class="ruby-operator">|</span>
+    <span class="ruby-regexp">/^#{Regexp.quote(@CONF[:IRB_LIB_PATH])}/</span> <span class="ruby-operator">!~</span> <span class="ruby-identifier">file</span> <span class="ruby-keyword">and</span>
+      <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-identifier">basename</span>(<span class="ruby-identifier">file</span>) <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;irb.rb&quot;</span>
+  }
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- initialize_tracer-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- initialize_tracer-method -->
+      
+        <div id="irb-method" class="method-detail ">
+          <a name="method-c-irb"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">irb</span><span
+              class="method-args">(file = nil, *main)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Creates a new IRB session, see <a href="IRB/Irb.html#method-c-new"><code>Irb.new</code></a>.</p>
+
+<p>The optional <code>file</code> argument is given to <a href="IRB/Context.html#method-c-new"><code>Context.new</code></a>, along with the workspace created with the remaining arguments, see <a href="IRB/WorkSpace.html#method-c-new"><code>WorkSpace.new</code></a></p>
+            
+
+            
+            <div class="method-source-code" id="irb-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb/ext/multi-irb.rb, line 189</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">IRB</span>.<span class="ruby-identifier ruby-title">irb</span>(<span class="ruby-identifier">file</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">main</span>)
+  <span class="ruby-identifier">workspace</span> = <span class="ruby-constant">WorkSpace</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">main</span>)
+  <span class="ruby-identifier">parent_thread</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>
+  <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">start</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">irb</span> = <span class="ruby-constant">Irb</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">workspace</span>, <span class="ruby-identifier">file</span>)
+    <span class="ruby-keyword">rescue</span>
+      <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;Subirb can&#39;t start with context(self): &quot;</span>, <span class="ruby-identifier">workspace</span>.<span class="ruby-identifier">main</span>.<span class="ruby-identifier">inspect</span>, <span class="ruby-string">&quot;\n&quot;</span>
+      <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;return to main irb\n&quot;</span>
+      <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">pass</span>
+      <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">main</span>.<span class="ruby-identifier">wakeup</span>
+      <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">exit</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@CONF</span>[<span class="ruby-value">:IRB_RC</span>].<span class="ruby-identifier">call</span>(<span class="ruby-identifier">irb</span>.<span class="ruby-identifier">context</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@CONF</span>[<span class="ruby-value">:IRB_RC</span>]
+    <span class="ruby-ivar">@JobManager</span>.<span class="ruby-identifier">insert</span>(<span class="ruby-identifier">irb</span>)
+    <span class="ruby-ivar">@JobManager</span>.<span class="ruby-identifier">current_job</span> = <span class="ruby-identifier">irb</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">system_exit</span> = <span class="ruby-keyword">false</span>
+      <span class="ruby-identifier">catch</span>(<span class="ruby-value">:IRB_EXIT</span>) <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">irb</span>.<span class="ruby-identifier">eval_input</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">SystemExit</span>
+      <span class="ruby-identifier">system_exit</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-identifier">raise</span>
+      <span class="ruby-comment">#fail</span>
+    <span class="ruby-keyword">ensure</span>
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">system_exit</span>
+        <span class="ruby-ivar">@JobManager</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">irb</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@JobManager</span>.<span class="ruby-identifier">current_job</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">irb</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">parent_thread</span>.<span class="ruby-identifier">alive?</span>
+            <span class="ruby-ivar">@JobManager</span>.<span class="ruby-identifier">current_job</span> = <span class="ruby-ivar">@JobManager</span>.<span class="ruby-identifier">irb</span>(<span class="ruby-identifier">parent_thread</span>)
+            <span class="ruby-identifier">parent_thread</span>.<span class="ruby-identifier">run</span>
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-ivar">@JobManager</span>.<span class="ruby-identifier">current_job</span> = <span class="ruby-ivar">@JobManager</span>.<span class="ruby-identifier">main_irb</span>
+            <span class="ruby-ivar">@JobManager</span>.<span class="ruby-identifier">main_thread</span>.<span class="ruby-identifier">run</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">stop</span>
+  <span class="ruby-ivar">@JobManager</span>.<span class="ruby-identifier">current_job</span> = <span class="ruby-ivar">@JobManager</span>.<span class="ruby-identifier">irb</span>(<span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- irb-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- irb-method -->
+      
+        <div id="irb_abort-method" class="method-detail ">
+          <a name="method-c-irb_abort"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">irb_abort</span><span
+              class="method-args">(irb, exception = Abort)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Aborts then interrupts irb.</p>
+
+<p>Will raise an <a href="IRB/Abort.html"><code>Abort</code></a> exception, or the given <code>exception</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="irb_abort-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb.rb, line 416</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">IRB</span>.<span class="ruby-identifier ruby-title">irb_abort</span>(<span class="ruby-identifier">irb</span>, <span class="ruby-identifier">exception</span> = <span class="ruby-constant">Abort</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span> <span class="ruby-constant">Thread</span>
+    <span class="ruby-identifier">irb</span>.<span class="ruby-identifier">context</span>.<span class="ruby-identifier">thread</span>.<span class="ruby-identifier">raise</span> <span class="ruby-identifier">exception</span>, <span class="ruby-string">&quot;abort then interrupt!&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">exception</span>, <span class="ruby-string">&quot;abort then interrupt!&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- irb_abort-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- irb_abort-method -->
+      
+        <div id="irb_at_exit-method" class="method-detail ">
+          <a name="method-c-irb_at_exit"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">irb_at_exit</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Calls each event hook of <code>IRB.conf[:TA_EXIT]</code> when the current session quits.</p>
+            
+
+            
+            <div class="method-source-code" id="irb_at_exit-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb.rb, line 404</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">IRB</span>.<span class="ruby-identifier ruby-title">irb_at_exit</span>
+  <span class="ruby-ivar">@CONF</span>[<span class="ruby-value">:AT_EXIT</span>].<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">hook</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hook</span>.<span class="ruby-identifier">call</span>}
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- irb_at_exit-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- irb_at_exit-method -->
+      
+        <div id="irb_exit-method" class="method-detail ">
+          <a name="method-c-irb_exit"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">irb_exit</span><span
+              class="method-args">(irb, ret)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Quits irb</p>
+            
+
+            
+            <div class="method-source-code" id="irb_exit-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb.rb, line 409</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">IRB</span>.<span class="ruby-identifier ruby-title">irb_exit</span>(<span class="ruby-identifier">irb</span>, <span class="ruby-identifier">ret</span>)
+  <span class="ruby-identifier">throw</span> <span class="ruby-value">:IRB_EXIT</span>, <span class="ruby-identifier">ret</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- irb_exit-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- irb_exit-method -->
+      
+        <div id="print_usage-method" class="method-detail ">
+          <a name="method-c-print_usage"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">print_usage</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Outputs the irb help message, see Command line options at <code>IRB</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="print_usage-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb/help.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">IRB</span>.<span class="ruby-identifier ruby-title">print_usage</span>
+  <span class="ruby-identifier">lc</span> = <span class="ruby-constant">IRB</span>.<span class="ruby-identifier">conf</span>[<span class="ruby-value">:LC_MESSAGES</span>]
+  <span class="ruby-identifier">path</span> = <span class="ruby-identifier">lc</span>.<span class="ruby-identifier">find</span>(<span class="ruby-string">&quot;irb/help-message&quot;</span>)
+  <span class="ruby-identifier">space_line</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-constant">IRB</span><span class="ruby-operator">::</span><span class="ruby-constant">MagicFile</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">path</span>){<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">f</span>.<span class="ruby-identifier">each_line</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">l</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-regexp">/^\s*$/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">l</span>
+        <span class="ruby-identifier">lc</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">l</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">space_line</span>
+        <span class="ruby-identifier">space_line</span> = <span class="ruby-keyword">true</span>
+        <span class="ruby-keyword">next</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">space_line</span> = <span class="ruby-keyword">false</span>
+
+      <span class="ruby-identifier">l</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp">/#.*$/</span>, <span class="ruby-string">&quot;&quot;</span>)
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-regexp">/^\s*$/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">l</span>
+      <span class="ruby-identifier">lc</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">l</span>
+    <span class="ruby-keyword">end</span>
+  }
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- print_usage-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- print_usage-method -->
+      
+        <div id="start-method" class="method-detail ">
+          <a name="method-c-start"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">start</span><span
+              class="method-args">(ap_path = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Initializes IRB and creates a new Irb.irb object at the <code>TOPLEVEL_BINDING</code></p>
+            
+
+            
+            <div class="method-source-code" id="start-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb.rb, line 389</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">IRB</span>.<span class="ruby-identifier ruby-title">start</span>(<span class="ruby-identifier">ap_path</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">sync</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">$0</span> = <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-identifier">basename</span>(<span class="ruby-identifier">ap_path</span>, <span class="ruby-string">&quot;.rb&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">ap_path</span>
+
+  <span class="ruby-constant">IRB</span>.<span class="ruby-identifier">setup</span>(<span class="ruby-identifier">ap_path</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@CONF</span>[<span class="ruby-value">:SCRIPT</span>]
+    <span class="ruby-identifier">irb</span> = <span class="ruby-constant">Irb</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-ivar">@CONF</span>[<span class="ruby-value">:SCRIPT</span>])
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">irb</span> = <span class="ruby-constant">Irb</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">irb</span>.<span class="ruby-identifier">run</span>(<span class="ruby-ivar">@CONF</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- start-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- start-method -->
+      
+        <div id="version-method" class="method-detail ">
+          <a name="method-c-version"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">version</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns the current version of IRB, including release version and last updated date.</p>
+            
+
+            
+            <div class="method-source-code" id="version-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File irb.rb, line 373</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">IRB</span>.<span class="ruby-identifier ruby-title">version</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">v</span> = <span class="ruby-ivar">@CONF</span>[<span class="ruby-value">:VERSION</span>] <span class="ruby-keyword">then</span> <span class="ruby-keyword">return</span> <span class="ruby-identifier">v</span> <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@CONF</span>[<span class="ruby-value">:VERSION</span>] = <span class="ruby-identifier">format</span>(<span class="ruby-string">&quot;irb %s (%s)&quot;</span>, <span class="ruby-ivar">@RELEASE_VERSION</span>, <span class="ruby-ivar">@LAST_UPDATE_DATE</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- version-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- version-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_IRB_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_IRB_versioned").load("/associated/2.7.4/IRB.ihtml");</script> <div id='tx_IRB' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_IRB").load("/associated/IRB.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, an erratic source of art, music, and technology.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_IRB.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_IRB.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

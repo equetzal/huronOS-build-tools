@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Module : Timeout  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:33:27 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = ''  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = ''  --> 
+  <title>Module: Timeout (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href=".css/obf.css"  -->
+  <link rel="stylesheet" href="css/inuit.css" >
+  <link rel="stylesheet" href="css/grid.inuit.css" >
+  <link rel="stylesheet" href="css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="css/carbon17.css" type="text/css" >
+
+
+  <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="/js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="module rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>timeout.rb</li>      
+            
+          
+          <li class='in-file'>timeout/version.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">CLASS</span> <a href="Timeout/Error.html">Timeout::Error</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-timeout">::timeout</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="./Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="./Timeout/Error.html">Object::TimeoutError</a></li>
+        
+          
+          
+          <li><a href="./Timeout.html">Timeout</a></li>
+        
+          
+          
+          <li><a href="./Timeout/Error.html">Timeout::Error</a></li>
+        
+          
+          
+          <li><a href="./Timeout/TimeoutError.html">Timeout::TimeoutError</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="module">Timeout</h1>
+
+    <div id="description" class="description">
+      
+<p><a href="Timeout.html"><code>Timeout</code></a> long-running blocks</p>
+
+<h2 id="module-Timeout-label-Synopsis">Synopsis<span><a href="#module-Timeout-label-Synopsis">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;timeout&#39;</span>
+<span class="ruby-identifier">status</span> = <span class="ruby-constant">Timeout</span><span class="ruby-operator">::</span><span class="ruby-identifier">timeout</span>(<span class="ruby-value">5</span>) {
+  <span class="ruby-comment"># Something that should be interrupted if it takes more than 5 seconds...</span>
+}
+</pre>
+
+<h2 id="module-Timeout-label-Description">Description<span><a href="#module-Timeout-label-Description">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p><a href="Timeout.html"><code>Timeout</code></a> provides a way to auto-terminate a potentially long-running operation if it hasn&#39;t finished in a fixed amount of time.</p>
+
+<p>Previous versions didn&#39;t use a module for namespacing, however timeout is provided for backwards compatibility.  You should prefer <a href="Timeout.html#method-c-timeout"><code>Timeout.timeout</code></a> instead.</p>
+
+<h2 id="module-Timeout-label-Copyright">Copyright<span><a href="#module-Timeout-label-Copyright">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<dl class="rdoc-list note-list"><dt>Copyright
+<dd>
+<p>(C) 2000  Network Applied Communication Laboratory, Inc.</p>
+</dd><dt>Copyright
+<dd>
+<p>(C) 2000  Information-technology Promotion Agency, Japan</p>
+</dd></dl>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="VERSION">VERSION</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="timeout-method" class="method-detail ">
+          <a name="method-c-timeout"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">timeout</span><span
+              class="method-args">(sec, klass = nil, message = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Perform an operation in a block, raising an error if it takes longer than <code>sec</code> seconds to complete.</p>
+<dl class="rdoc-list note-list"><dt><code>sec</code>
+<dd>
+<p>Number of seconds to wait for the block to terminate. Any number may be used, including Floats to specify fractional seconds. A value of 0 or <code>nil</code> will execute the block without any timeout.</p>
+</dd><dt><code>klass</code>
+<dd>
+<p>Exception Class to raise if the block fails to terminate in <code>sec</code> seconds.  Omitting will use the default, <a href="Timeout/Error.html"><code>Timeout::Error</code></a></p>
+</dd><dt><code>message</code>
+<dd>
+<p><a href="Timeout/Error.html"><code>Error</code></a> message to raise with Exception Class. Omitting will use the default, “execution expired”</p>
+</dd></dl>
+
+<p>Returns the result of the block <strong>if</strong> the block completed before <code>sec</code> seconds, otherwise throws an exception, based on the value of <code>klass</code>.</p>
+
+<p>The exception thrown to terminate the given block cannot be rescued inside the block unless <code>klass</code> is given explicitly. However, the block can use ensure to prevent the handling of the exception.  For that reason, this method cannot be relied on to enforce timeouts for untrusted blocks.</p>
+
+<p>Note that this is both a method of module <a href="Timeout.html"><code>Timeout</code></a>, so you can <code>include Timeout</code> into your classes so they have a timeout method, as well as a module method, so you can call it directly as <a href="Timeout.html#method-c-timeout"><code>Timeout.timeout()</code></a>.</p>
+            
+
+            
+            <div class="method-source-code" id="timeout-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File timeout.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">timeout</span>(<span class="ruby-identifier">sec</span>, <span class="ruby-identifier">klass</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">message</span> = <span class="ruby-keyword">nil</span>)   <span class="ruby-comment">#:yield: +sec+</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">sec</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">sec</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">sec</span>.<span class="ruby-identifier">zero?</span>
+  <span class="ruby-identifier">message</span> <span class="ruby-operator">||=</span> <span class="ruby-string">&quot;execution expired&quot;</span>.<span class="ruby-identifier">freeze</span>
+  <span class="ruby-identifier">from</span> = <span class="ruby-node">&quot;from #{caller_locations(1, 1)[0]}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$DEBUG</span>
+  <span class="ruby-identifier">e</span> = <span class="ruby-constant">Error</span>
+  <span class="ruby-identifier">bl</span> = <span class="ruby-identifier">proc</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">exception</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">x</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>
+      <span class="ruby-identifier">y</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">start</span> {
+        <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>.<span class="ruby-identifier">name</span> = <span class="ruby-identifier">from</span>
+        <span class="ruby-keyword">begin</span>
+          <span class="ruby-identifier">sleep</span> <span class="ruby-identifier">sec</span>
+        <span class="ruby-keyword">rescue</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
+          <span class="ruby-identifier">x</span>.<span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">x</span>.<span class="ruby-identifier">raise</span> <span class="ruby-identifier">exception</span>, <span class="ruby-identifier">message</span>
+        <span class="ruby-keyword">end</span>
+      }
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">sec</span>)
+    <span class="ruby-keyword">ensure</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">y</span>
+        <span class="ruby-identifier">y</span>.<span class="ruby-identifier">kill</span>
+        <span class="ruby-identifier">y</span>.<span class="ruby-identifier">join</span> <span class="ruby-comment"># make sure y is dead.</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">bl</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">klass</span>)
+    <span class="ruby-keyword">rescue</span> <span class="ruby-identifier">klass</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-identifier">bt</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">bt</span> = <span class="ruby-constant">Error</span>.<span class="ruby-identifier">catch</span>(<span class="ruby-identifier">message</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">bl</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">level</span> = <span class="ruby-operator">-</span><span class="ruby-identifier">caller</span>(<span class="ruby-constant">CALLER_OFFSET</span>).<span class="ruby-identifier">size</span><span class="ruby-value">-2</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-constant">THIS_FILE</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">bt</span>[<span class="ruby-identifier">level</span>]
+    <span class="ruby-identifier">bt</span>.<span class="ruby-identifier">delete_at</span>(<span class="ruby-identifier">level</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">raise</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">message</span>, <span class="ruby-identifier">bt</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- timeout-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- timeout-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Timeout_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Timeout_versioned").load("/associated/2.7.4/Timeout.ihtml");</script> <div id='tx_Timeout' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Timeout").load("/associated/Timeout.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Hack your world.  Feed your head.  Live curious</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Timeout.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Timeout.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

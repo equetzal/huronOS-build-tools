@@ -1,0 +1,2717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : Bundler::Thor::Shell::Basic  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:17:04 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '../../..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '../../..'   asset_rel_prefix = '../../..'  --> 
+  <title>Class: Bundler::Thor::Shell::Basic (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../../../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="../../..css/obf.css"  -->
+  <link rel="stylesheet" href="../../../css/inuit.css" >
+  <link rel="stylesheet" href="../../../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../../../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../../../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../../../css/carbon17.css" type="text/css" >
+
+
+  <script src="../../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../../../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../../index.html">Home</a>
+          <a href="../../../index.html#classes">Classes</a>
+          <a href="../../../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>bundler/vendor/thor/lib/thor/shell/basic.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="../../../Object.html">Object</a></p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-answer_match">#answer_match</a></li>
+          
+          <li><a href="#method-i-as_unicode">#as_unicode</a></li>
+          
+          <li><a href="#method-i-ask">#ask</a></li>
+          
+          <li><a href="#method-i-ask_filtered">#ask_filtered</a></li>
+          
+          <li><a href="#method-i-ask_simply">#ask_simply</a></li>
+          
+          <li><a href="#method-i-can_display_colors-3F">#can_display_colors?</a></li>
+          
+          <li><a href="#method-i-dynamic_width">#dynamic_width</a></li>
+          
+          <li><a href="#method-i-dynamic_width_stty">#dynamic_width_stty</a></li>
+          
+          <li><a href="#method-i-dynamic_width_tput">#dynamic_width_tput</a></li>
+          
+          <li><a href="#method-i-error">#error</a></li>
+          
+          <li><a href="#method-i-file_collision">#file_collision</a></li>
+          
+          <li><a href="#method-i-indent">#indent</a></li>
+          
+          <li><a href="#method-i-lookup_color">#lookup_color</a></li>
+          
+          <li><a href="#method-i-mute">#mute</a></li>
+          
+          <li><a href="#method-i-mute-3F">#mute?</a></li>
+          
+          <li><a href="#method-i-no-3F">#no?</a></li>
+          
+          <li><a href="#method-i-padding-3D">#padding=</a></li>
+          
+          <li><a href="#method-i-prepare_message">#prepare_message</a></li>
+          
+          <li><a href="#method-i-print_in_columns">#print_in_columns</a></li>
+          
+          <li><a href="#method-i-print_table">#print_table</a></li>
+          
+          <li><a href="#method-i-print_wrapped">#print_wrapped</a></li>
+          
+          <li><a href="#method-i-say">#say</a></li>
+          
+          <li><a href="#method-i-say_status">#say_status</a></li>
+          
+          <li><a href="#method-i-stderr">#stderr</a></li>
+          
+          <li><a href="#method-i-stdout">#stdout</a></li>
+          
+          <li><a href="#method-i-terminal_width">#terminal_width</a></li>
+          
+          <li><a href="#method-i-truncate">#truncate</a></li>
+          
+          <li><a href="#method-i-unix-3F">#unix?</a></li>
+          
+          <li><a href="#method-i-yes-3F">#yes?</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../../../AmbiguousCommandError.html">AmbiguousCommandError</a></li>
+        
+          
+          
+          <li><a href="../../../AmbiguousTaskError.html">AmbiguousTaskError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler.html">Bundler</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/APIResponseMismatchError.html">Bundler::APIResponseMismatchError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/BuildMetadata.html">Bundler::BuildMetadata</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/BundlerError.html">Bundler::BundlerError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI.html">Bundler::CLI</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Add.html">Bundler::CLI::Add</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Binstubs.html">Bundler::CLI::Binstubs</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Cache.html">Bundler::CLI::Cache</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Check.html">Bundler::CLI::Check</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Clean.html">Bundler::CLI::Clean</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Common.html">Bundler::CLI::Common</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Config.html">Bundler::CLI::Config</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Config/Base.html">Bundler::CLI::Config::Base</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Console.html">Bundler::CLI::Console</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Doctor.html">Bundler::CLI::Doctor</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Exec.html">Bundler::CLI::Exec</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Gem.html">Bundler::CLI::Gem</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Info.html">Bundler::CLI::Info</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Init.html">Bundler::CLI::Init</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Inject.html">Bundler::CLI::Inject</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Install.html">Bundler::CLI::Install</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Issue.html">Bundler::CLI::Issue</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/List.html">Bundler::CLI::List</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Lock.html">Bundler::CLI::Lock</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Open.html">Bundler::CLI::Open</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Outdated.html">Bundler::CLI::Outdated</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Package.html">Bundler::CLI::Package</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Platform.html">Bundler::CLI::Platform</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Plugin.html">Bundler::CLI::Plugin</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Pristine.html">Bundler::CLI::Pristine</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Remove.html">Bundler::CLI::Remove</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Show.html">Bundler::CLI::Show</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Update.html">Bundler::CLI::Update</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CLI/Viz.html">Bundler::CLI::Viz</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CompactIndexClient.html">Bundler::CompactIndexClient</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CompactIndexClient/Cache.html">Bundler::CompactIndexClient::Cache</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CompactIndexClient/Error.html">Bundler::CompactIndexClient::Error</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CompactIndexClient/Updater.html">Bundler::CompactIndexClient::Updater</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CompactIndexClient/Updater/MisMatchedChecksumError.html">Bundler::CompactIndexClient::Updater::MisMatchedChecksumError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/ConnectionPool.html">Bundler::ConnectionPool</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/ConnectionPool/Error.html">Bundler::ConnectionPool::Error</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/ConnectionPool/PoolShuttingDownError.html">Bundler::ConnectionPool::PoolShuttingDownError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/ConnectionPool/TimedStack.html">Bundler::ConnectionPool::TimedStack</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/ConnectionPool/Wrapper.html">Bundler::ConnectionPool::Wrapper</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CurrentRuby.html">Bundler::CurrentRuby</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/CyclicDependencyError.html">Bundler::CyclicDependencyError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Definition.html">Bundler::Definition</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/DepProxy.html">Bundler::DepProxy</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Dependency.html">Bundler::Dependency</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Deployment.html">Bundler::Deployment</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Deprecate.html">Bundler::Deprecate</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/DeprecatedError.html">Bundler::DeprecatedError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Dsl.html">Bundler::Dsl</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Dsl/DSLError.html">Bundler::Dsl::DSLError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/EndpointSpecification.html">Bundler::EndpointSpecification</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Env.html">Bundler::Env</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/EnvironmentPreserver.html">Bundler::EnvironmentPreserver</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/FeatureFlag.html">Bundler::FeatureFlag</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Fetcher.html">Bundler::Fetcher</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Fetcher/AuthenticationRequiredError.html">Bundler::Fetcher::AuthenticationRequiredError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Fetcher/BadAuthenticationError.html">Bundler::Fetcher::BadAuthenticationError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Fetcher/Base.html">Bundler::Fetcher::Base</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Fetcher/CertificateFailureError.html">Bundler::Fetcher::CertificateFailureError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Fetcher/CompactIndex.html">Bundler::Fetcher::CompactIndex</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Fetcher/Dependency.html">Bundler::Fetcher::Dependency</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Fetcher/Downloader.html">Bundler::Fetcher::Downloader</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Fetcher/FallbackError.html">Bundler::Fetcher::FallbackError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Fetcher/Index.html">Bundler::Fetcher::Index</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Fetcher/NetworkDownError.html">Bundler::Fetcher::NetworkDownError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Fetcher/SSLError.html">Bundler::Fetcher::SSLError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Fetcher/TooManyRequestsError.html">Bundler::Fetcher::TooManyRequestsError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/FileUtils.html">Bundler::FileUtils</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/FileUtils/DryRun.html">Bundler::FileUtils::DryRun</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/FileUtils/NoWrite.html">Bundler::FileUtils::NoWrite</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/FileUtils/StreamUtils_.html">Bundler::FileUtils::StreamUtils_</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/FileUtils/Verbose.html">Bundler::FileUtils::Verbose</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/FriendlyErrors.html">Bundler::FriendlyErrors</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/GemHelper.html">Bundler::GemHelper</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/GemHelpers.html">Bundler::GemHelpers</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/GemHelpers/PlatformMatch.html">Bundler::GemHelpers::PlatformMatch</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/GemInstaller.html">Bundler::GemInstaller</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/GemNotFound.html">Bundler::GemNotFound</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/GemRemoteFetcher.html">Bundler::GemRemoteFetcher</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/GemRequireError.html">Bundler::GemRequireError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/GemVersionPromoter.html">Bundler::GemVersionPromoter</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Gemdeps.html">Bundler::Gemdeps</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/GemfileError.html">Bundler::GemfileError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/GemfileEvalError.html">Bundler::GemfileEvalError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/GemfileLockNotFound.html">Bundler::GemfileLockNotFound</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/GemfileNotFound.html">Bundler::GemfileNotFound</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/GemspecError.html">Bundler::GemspecError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/GenericSystemCallError.html">Bundler::GenericSystemCallError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/GitError.html">Bundler::GitError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Graph.html">Bundler::Graph</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Graph/GraphVizClient.html">Bundler::Graph::GraphVizClient</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/HTTPError.html">Bundler::HTTPError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Index.html">Bundler::Index</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Injector.html">Bundler::Injector</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/InstallError.html">Bundler::InstallError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/InstallHookError.html">Bundler::InstallHookError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Installer.html">Bundler::Installer</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/InvalidOption.html">Bundler::InvalidOption</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/LazySpecification.html">Bundler::LazySpecification</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/LazySpecification/Identifier.html">Bundler::LazySpecification::Identifier</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/LockfileError.html">Bundler::LockfileError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/LockfileGenerator.html">Bundler::LockfileGenerator</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/LockfileParser.html">Bundler::LockfileParser</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/MarshalError.html">Bundler::MarshalError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/MatchPlatform.html">Bundler::MatchPlatform</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/MirrorSockets.html">Bundler::MirrorSockets</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo.html">Bundler::Molinillo</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/CircularDependencyError.html">Bundler::Molinillo::CircularDependencyError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/Compatibility.html">Bundler::Molinillo::Compatibility</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/Delegates.html">Bundler::Molinillo::Delegates</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/Delegates/ResolutionState.html">Bundler::Molinillo::Delegates::ResolutionState</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/Delegates/SpecificationProvider.html">Bundler::Molinillo::Delegates::SpecificationProvider</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/DependencyGraph.html">Bundler::Molinillo::DependencyGraph</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/DependencyGraph/Action.html">Bundler::Molinillo::DependencyGraph::Action</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/DependencyGraph/AddEdgeNoCircular.html">Bundler::Molinillo::DependencyGraph::AddEdgeNoCircular</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/DependencyGraph/DeleteEdge.html">Bundler::Molinillo::DependencyGraph::DeleteEdge</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/DependencyGraph/DetachVertexNamed.html">Bundler::Molinillo::DependencyGraph::DetachVertexNamed</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/DependencyGraph/Log.html">Bundler::Molinillo::DependencyGraph::Log</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/DependencyGraph/Tag.html">Bundler::Molinillo::DependencyGraph::Tag</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/DependencyGraph/Vertex.html">Bundler::Molinillo::DependencyGraph::Vertex</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/DependencyState.html">Bundler::Molinillo::DependencyState</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/NoSuchDependencyError.html">Bundler::Molinillo::NoSuchDependencyError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/PossibilityState.html">Bundler::Molinillo::PossibilityState</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/ResolutionState.html">Bundler::Molinillo::ResolutionState</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/Resolver.html">Bundler::Molinillo::Resolver</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/Resolver/Resolution.html">Bundler::Molinillo::Resolver::Resolution</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/Resolver/Resolution/Conflict.html">Bundler::Molinillo::Resolver::Resolution::Conflict</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/Resolver/Resolution/PossibilitySet.html">Bundler::Molinillo::Resolver::Resolution::PossibilitySet</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/Resolver/Resolution/UnwindDetails.html">Bundler::Molinillo::Resolver::Resolution::UnwindDetails</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/ResolverError.html">Bundler::Molinillo::ResolverError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/SpecificationProvider.html">Bundler::Molinillo::SpecificationProvider</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/UI.html">Bundler::Molinillo::UI</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Molinillo/VersionConflict.html">Bundler::Molinillo::VersionConflict</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/NoSpaceOnDeviceError.html">Bundler::NoSpaceOnDeviceError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/OperationNotSupportedError.html">Bundler::OperationNotSupportedError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/ParallelInstaller.html">Bundler::ParallelInstaller</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/ParallelInstaller/SpecInstallation.html">Bundler::ParallelInstaller::SpecInstallation</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/PathError.html">Bundler::PathError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/PermissionError.html">Bundler::PermissionError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Persistent.html">Bundler::Persistent</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Persistent/Net.html">Bundler::Persistent::Net</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Persistent/Net/HTTP.html">Bundler::Persistent::Net::HTTP</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Persistent/Net/HTTP/Persistent.html">Bundler::Persistent::Net::HTTP::Persistent</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Persistent/Net/HTTP/Persistent/Error.html">Bundler::Persistent::Net::HTTP::Persistent::Error</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/PersistentHTTP.html">Bundler::PersistentHTTP</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Plugin.html">Bundler::Plugin</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Plugin/API.html">Bundler::Plugin::API</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Plugin/API/Source.html">Bundler::Plugin::API::Source</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Plugin/DSL.html">Bundler::Plugin::DSL</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Plugin/DSL/PluginGemfileError.html">Bundler::Plugin::DSL::PluginGemfileError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Plugin/Events.html">Bundler::Plugin::Events</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Plugin/Index.html">Bundler::Plugin::Index</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Plugin/Index/CommandConflict.html">Bundler::Plugin::Index::CommandConflict</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Plugin/Index/SourceConflict.html">Bundler::Plugin::Index::SourceConflict</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Plugin/Installer.html">Bundler::Plugin::Installer</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Plugin/Installer/Git.html">Bundler::Plugin::Installer::Git</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Plugin/Installer/Rubygems.html">Bundler::Plugin::Installer::Rubygems</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Plugin/MalformattedPlugin.html">Bundler::Plugin::MalformattedPlugin</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Plugin/SourceList.html">Bundler::Plugin::SourceList</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Plugin/UndefinedCommandError.html">Bundler::Plugin::UndefinedCommandError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Plugin/UnknownSourceError.html">Bundler::Plugin::UnknownSourceError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/PluginError.html">Bundler::PluginError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/ProcessLock.html">Bundler::ProcessLock</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/ProductionError.html">Bundler::ProductionError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/RemoteSpecification.html">Bundler::RemoteSpecification</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Resolver.html">Bundler::Resolver</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Resolver/SpecGroup.html">Bundler::Resolver::SpecGroup</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Retry.html">Bundler::Retry</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/RubyDsl.html">Bundler::RubyDsl</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/RubyGemsGemInstaller.html">Bundler::RubyGemsGemInstaller</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/RubyVersion.html">Bundler::RubyVersion</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/RubyVersionMismatch.html">Bundler::RubyVersionMismatch</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/RubygemsIntegration.html">Bundler::RubygemsIntegration</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/RubygemsIntegration/Gem.html">Bundler::RubygemsIntegration::Gem</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Runtime.html">Bundler::Runtime</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/SecurityError.html">Bundler::SecurityError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Settings.html">Bundler::Settings</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Settings/Mirror.html">Bundler::Settings::Mirror</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Settings/MirrorConfig.html">Bundler::Settings::MirrorConfig</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Settings/Mirrors.html">Bundler::Settings::Mirrors</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Settings/TCPSocketProbe.html">Bundler::Settings::TCPSocketProbe</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Settings/Validator.html">Bundler::Settings::Validator</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Settings/Validator/Rule.html">Bundler::Settings::Validator::Rule</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/SharedHelpers.html">Bundler::SharedHelpers</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/SimilarityDetector.html">Bundler::SimilarityDetector</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/SocketAddress.html">Bundler::SocketAddress</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Source.html">Bundler::Source</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Source/Gemspec.html">Bundler::Source::Gemspec</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Source/Git.html">Bundler::Source::Git</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Source/Git/GitCommandError.html">Bundler::Source::Git::GitCommandError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Source/Git/GitNotAllowedError.html">Bundler::Source::Git::GitNotAllowedError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Source/Git/GitNotInstalledError.html">Bundler::Source::Git::GitNotInstalledError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Source/Git/GitProxy.html">Bundler::Source::Git::GitProxy</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Source/Git/MissingGitRevisionError.html">Bundler::Source::Git::MissingGitRevisionError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Source/Metadata.html">Bundler::Source::Metadata</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Source/Path.html">Bundler::Source::Path</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Source/Path/Installer.html">Bundler::Source::Path::Installer</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Source/Rubygems.html">Bundler::Source::Rubygems</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Source/Rubygems/Remote.html">Bundler::Source::Rubygems::Remote</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/SourceList.html">Bundler::SourceList</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/SpecSet.html">Bundler::SpecSet</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Standalone.html">Bundler::Standalone</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/StubSpecification.html">Bundler::StubSpecification</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/SudoNotPermittedError.html">Bundler::SudoNotPermittedError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/TemporaryResourceError.html">Bundler::TemporaryResourceError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/Actions.html">Bundler::Thor::Actions</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/Actions/CapturableERB.html">Bundler::Thor::Actions::CapturableERB</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/Actions/ClassMethods.html">Bundler::Thor::Actions::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/Base.html">Bundler::Thor::Base</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/Base/ClassMethods.html">Bundler::Thor::Base::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/Command.html">Bundler::Thor::Command</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/CoreExt.html">Bundler::Thor::CoreExt</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/CoreExt/OrderedHash.html">Bundler::Thor::CoreExt::OrderedHash</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/DynamicCommand.html">Bundler::Thor::DynamicCommand</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/DynamicCommand.html">Bundler::Thor::DynamicTask</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/Group.html">Bundler::Thor::Group</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/HiddenCommand.html">Bundler::Thor::HiddenCommand</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/HiddenCommand.html">Bundler::Thor::HiddenTask</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/Invocation.html">Bundler::Thor::Invocation</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/Invocation/ClassMethods.html">Bundler::Thor::Invocation::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/LineEditor.html">Bundler::Thor::LineEditor</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/LineEditor/Basic.html">Bundler::Thor::LineEditor::Basic</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/LineEditor/Readline.html">Bundler::Thor::LineEditor::Readline</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/LineEditor/Readline/PathCompletion.html">Bundler::Thor::LineEditor::Readline::PathCompletion</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/NestedContext.html">Bundler::Thor::NestedContext</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/RakeCompat.html">Bundler::Thor::RakeCompat</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/Shell.html">Bundler::Thor::Shell</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/Shell/Basic.html">Bundler::Thor::Shell::Basic</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/Shell/Color.html">Bundler::Thor::Shell::Color</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/Shell/HTML.html">Bundler::Thor::Shell::HTML</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/Command.html">Bundler::Thor::Task</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Thor/Util.html">Bundler::Thor::Util</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/ThreadCreationError.html">Bundler::ThreadCreationError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/UI.html">Bundler::UI</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/UI/RGProxy.html">Bundler::UI::RGProxy</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/UI/Shell.html">Bundler::UI::Shell</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/UI/Silent.html">Bundler::UI::Silent</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/URI.html">Bundler::URI</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/URI/BadURIError.html">Bundler::URI::BadURIError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/URI/Error.html">Bundler::URI::Error</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/URI/Escape.html">Bundler::URI::Escape</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/URI/FTP.html">Bundler::URI::FTP</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/URI/File.html">Bundler::URI::File</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/URI/Generic.html">Bundler::URI::Generic</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/URI/HTTP.html">Bundler::URI::HTTP</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/URI/HTTPS.html">Bundler::URI::HTTPS</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/URI/InvalidComponentError.html">Bundler::URI::InvalidComponentError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/URI/InvalidURIError.html">Bundler::URI::InvalidURIError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/URI/LDAP.html">Bundler::URI::LDAP</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/URI/LDAPS.html">Bundler::URI::LDAPS</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/URI/MailTo.html">Bundler::URI::MailTo</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/URI/RFC2396_Parser.html">Bundler::URI::Parser</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/URI/RFC2396_REGEXP.html">Bundler::URI::REGEXP</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/URI/RFC2396_Parser.html">Bundler::URI::RFC2396_Parser</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/URI/RFC2396_REGEXP.html">Bundler::URI::RFC2396_REGEXP</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/URI/RFC2396_REGEXP/PATTERN.html">Bundler::URI::RFC2396_REGEXP::PATTERN</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/URICredentialsFilter.html">Bundler::URICredentialsFilter</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/VersionConflict.html">Bundler::VersionConflict</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/VersionRanges.html">Bundler::VersionRanges</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/VersionRanges/ReqR.html">Bundler::VersionRanges::ReqR</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/VirtualProtocolError.html">Bundler::VirtualProtocolError</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Worker.html">Bundler::Worker</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/Worker/WrappedException.html">Bundler::Worker::WrappedException</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/YAMLSerializer.html">Bundler::YAMLSerializer</a></li>
+        
+          
+          
+          <li><a href="../../../Bundler/YamlSyntaxError.html">Bundler::YamlSyntaxError</a></li>
+        
+          
+          
+          <li><a href="../../../Error.html">Error</a></li>
+        
+          
+          
+          <li><a href="../../../Gem.html">Gem</a></li>
+        
+          
+          
+          <li><a href="../../../Gem/Dependency.html">Gem::Dependency</a></li>
+        
+          
+          
+          <li><a href="../../../Gem/Platform.html">Gem::Platform</a></li>
+        
+          
+          
+          <li><a href="../../../Gem/Specification.html">Gem::Specification</a></li>
+        
+          
+          
+          <li><a href="../../../InvocationError.html">InvocationError</a></li>
+        
+          
+          
+          <li><a href="../../../Kernel.html">Kernel</a></li>
+        
+          
+          
+          <li><a href="../../../MalformattedArgumentError.html">MalformattedArgumentError</a></li>
+        
+          
+          
+          <li><a href="../../../Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="../../../RequiredArgumentMissingError.html">RequiredArgumentMissingError</a></li>
+        
+          
+          
+          <li><a href="../../../UndefinedCommandError.html">UndefinedCommandError</a></li>
+        
+          
+          
+          <li><a href="../../../UndefinedCommandError/SpellChecker.html">UndefinedCommandError::SpellChecker</a></li>
+        
+          
+          
+          <li><a href="../../../UndefinedTaskError.html">UndefinedTaskError</a></li>
+        
+          
+          
+          <li><a href="../../../UnknownArgumentError.html">UnknownArgumentError</a></li>
+        
+          
+          
+          <li><a href="../../../UnknownArgumentError/SpellChecker.html">UnknownArgumentError::SpellChecker</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">Bundler::Thor::Shell::Basic</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="DEFAULT_TERMINAL_WIDTH">DEFAULT_TERMINAL_WIDTH</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+      <!-- Attributes -->
+      <div id="attribute-method-details" class="method-section section">
+        <h3 class="section-header">Attributes</h3>
+
+        
+        <div id="base-attribute-method" class="method-detail">
+          <a name="base"></a>
+          
+          <a name="base="></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">base</span><span
+              class="attribute-access-type">[RW]</span>
+          </div>
+
+          <div class="method-description 245">
+          
+          
+          
+          </div>
+        </div>
+        
+        <div id="padding-attribute-method" class="method-detail">
+          <a name="padding"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">padding</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description 245">
+          
+          
+          
+          </div>
+        </div>
+        
+      </div><!-- attribute-method-details -->
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="ask-method" class="method-detail ">
+          <a name="method-i-ask"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ask</span><span
+              class="method-args">(statement, *args)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Asks something to the user and receives a response.</p>
+
+<p>If a default value is specified it will be presented to the user and allows them to select that value with an empty response. This option is ignored when limited answers are supplied.</p>
+
+<p>If asked to limit the correct responses, you can pass in an array of acceptable answers.  If one of those is not supplied, they will be shown a message stating that one of those answers must be given and re-asked the question.</p>
+
+<p>If asking for sensitive information, the :echo option can be set to false to mask user input from $stdin.</p>
+
+<p>If the required input is a path, then set the path option to true. This will enable tab completion for file paths relative to the current working directory on systems that support Readline.</p>
+
+<h4 id="method-i-ask-label-Example">Example<span><a href="#method-i-ask-label-Example">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>ask(“What is your name?”)</p>
+
+<p>ask(“What is the planet furthest from the sun?”, :default =&gt; “Pluto”)</p>
+
+<p>ask(“What is your favorite Neopolitan flavor?”, :limited_to =&gt; [“strawberry”, “chocolate”, “vanilla”])</p>
+
+<p>ask(“What is your password?”, :echo =&gt; false)</p>
+
+<p>ask(“Where should the file be saved?”, :path =&gt; true)</p>
+            
+
+            
+            <div class="method-source-code" id="ask-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ask</span>(<span class="ruby-identifier">statement</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
+  <span class="ruby-identifier">color</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:limited_to</span>]
+    <span class="ruby-identifier">ask_filtered</span>(<span class="ruby-identifier">statement</span>, <span class="ruby-identifier">color</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">ask_simply</span>(<span class="ruby-identifier">statement</span>, <span class="ruby-identifier">color</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- ask-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ask-method -->
+      
+        <div id="error-method" class="method-detail ">
+          <a name="method-i-error"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">error</span><span
+              class="method-args">(statement)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Called if something goes wrong during the execution. This is used by Bundler::Thor internally and should not be used inside your scripts. If something went wrong, you can always raise an exception. If you raise a Bundler::Thor::Error, it will be rescued and wrapped in the method below.</p>
+            
+
+            
+            <div class="method-source-code" id="error-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 321</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">error</span>(<span class="ruby-identifier">statement</span>)
+  <span class="ruby-identifier">stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">statement</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- error-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- error-method -->
+      
+        <div id="file_collision-method" class="method-detail ">
+          <a name="method-i-file_collision"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">file_collision</span><span
+              class="method-args">(destination)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Deals with file collision and returns true if the file should be overwritten and false otherwise. If a block is given, it uses the block response as the content for the diff.</p>
+
+<h4 id="method-i-file_collision-label-Parameters">Parameters<span><a href="#method-i-file_collision-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>destination&lt;String&gt;
+<dd>
+<p>the destination file to solve conflicts</p>
+</dd><dt>block&lt;Proc&gt;
+<dd>
+<p>an optional block that returns the value to be used in diff and merge</p>
+</dd></dl>
+            
+
+            
+            <div class="method-source-code" id="file_collision-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 264</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">file_collision</span>(<span class="ruby-identifier">destination</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@always_force</span>
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">block_given?</span> <span class="ruby-operator">?</span> <span class="ruby-string">&quot;[Ynaqdhm]&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;[Ynaqh]&quot;</span>
+
+  <span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">answer</span> = <span class="ruby-identifier">ask</span>(
+      <span class="ruby-node">%[Overwrite #{destination}? (enter &quot;h&quot; for help) #{options}]</span>,
+      <span class="ruby-value">:add_to_history</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">false</span>
+    )
+
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">answer</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span>
+      <span class="ruby-identifier">say</span> <span class="ruby-string">&quot;&quot;</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-identifier">is?</span>(<span class="ruby-value">:yes</span>), <span class="ruby-identifier">is?</span>(<span class="ruby-value">:force</span>), <span class="ruby-string">&quot;&quot;</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-identifier">is?</span>(<span class="ruby-value">:no</span>), <span class="ruby-identifier">is?</span>(<span class="ruby-value">:skip</span>)
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-identifier">is?</span>(<span class="ruby-value">:always</span>)
+      <span class="ruby-keyword">return</span> <span class="ruby-ivar">@always_force</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-identifier">is?</span>(<span class="ruby-value">:quit</span>)
+      <span class="ruby-identifier">say</span> <span class="ruby-string">&quot;Aborting...&quot;</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">SystemExit</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-identifier">is?</span>(<span class="ruby-value">:diff</span>)
+      <span class="ruby-identifier">show_diff</span>(<span class="ruby-identifier">destination</span>, <span class="ruby-keyword">yield</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+      <span class="ruby-identifier">say</span> <span class="ruby-string">&quot;Retrying...&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-identifier">is?</span>(<span class="ruby-value">:merge</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">merge_tool</span>.<span class="ruby-identifier">empty?</span>
+        <span class="ruby-identifier">merge</span>(<span class="ruby-identifier">destination</span>, <span class="ruby-keyword">yield</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">say</span> <span class="ruby-string">&quot;Please specify merge tool to `THOR_MERGE` env.&quot;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">say</span> <span class="ruby-identifier">file_collision_help</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- file_collision-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- file_collision-method -->
+      
+        <div id="indent-method" class="method-detail ">
+          <a name="method-i-indent"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">indent</span><span
+              class="method-args">(count = 1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Sets the output padding while executing a block and resets it.</p>
+            
+
+            
+            <div class="method-source-code" id="indent-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">indent</span>(<span class="ruby-identifier">count</span> = <span class="ruby-value">1</span>)
+  <span class="ruby-identifier">orig_padding</span> = <span class="ruby-identifier">padding</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">padding</span> = <span class="ruby-identifier">padding</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">count</span>
+  <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">padding</span> = <span class="ruby-identifier">orig_padding</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- indent-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- indent-method -->
+      
+        <div id="mute-method" class="method-detail ">
+          <a name="method-i-mute"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">mute</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Mute everything that&#39;s inside given block</p>
+            
+
+            
+            <div class="method-source-code" id="mute-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">mute</span>
+  <span class="ruby-ivar">@mute</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">yield</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-ivar">@mute</span> = <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- mute-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- mute-method -->
+      
+        <div id="mute-3F-method" class="method-detail ">
+          <a name="method-i-mute-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">mute?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Check if base is muted</p>
+            
+
+            
+            <div class="method-source-code" id="mute-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">mute?</span>
+  <span class="ruby-ivar">@mute</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- mute-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- mute-3F-method -->
+      
+        <div id="no-3F-method" class="method-detail ">
+          <a name="method-i-no-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">no?</span><span
+              class="method-args">(statement, color = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Make a question the to user and returns true if the user replies “n” or “no”.</p>
+            
+
+            
+            <div class="method-source-code" id="no-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">no?</span>(<span class="ruby-identifier">statement</span>, <span class="ruby-identifier">color</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-operator">!</span><span class="ruby-operator">!</span>(<span class="ruby-identifier">ask</span>(<span class="ruby-identifier">statement</span>, <span class="ruby-identifier">color</span>, <span class="ruby-value">:add_to_history</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">false</span>) <span class="ruby-operator">=~</span> <span class="ruby-identifier">is?</span>(<span class="ruby-value">:no</span>))
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- no-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- no-3F-method -->
+      
+        <div id="padding-3D-method" class="method-detail ">
+          <a name="method-i-padding-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">padding=</span><span
+              class="method-args">(value)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Sets the output padding, not allowing less than zero values.</p>
+            
+
+            
+            <div class="method-source-code" id="padding-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">padding=</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-ivar">@padding</span> = [<span class="ruby-value">0</span>, <span class="ruby-identifier">value</span>].<span class="ruby-identifier">max</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- padding-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- padding-3D-method -->
+      
+        <div id="print_in_columns-method" class="method-detail ">
+          <a name="method-i-print_in_columns"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">print_in_columns</span><span
+              class="method-args">(array)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Prints values in columns</p>
+
+<h4 id="method-i-print_in_columns-label-Parameters">Parameters<span><a href="#method-i-print_in_columns-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>Array[String, String, …]</p>
+            
+
+            
+            <div class="method-source-code" id="print_in_columns-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 143</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">print_in_columns</span>(<span class="ruby-identifier">array</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">array</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">colwidth</span> = (<span class="ruby-identifier">array</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">el</span><span class="ruby-operator">|</span> <span class="ruby-identifier">el</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">size</span> }.<span class="ruby-identifier">max</span> <span class="ruby-operator">||</span> <span class="ruby-value">0</span>) <span class="ruby-operator">+</span> <span class="ruby-value">2</span>
+  <span class="ruby-identifier">array</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment"># Don&#39;t output trailing spaces when printing the last column</span>
+    <span class="ruby-keyword">if</span> ((((<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>) <span class="ruby-operator">%</span> (<span class="ruby-identifier">terminal_width</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">colwidth</span>))).<span class="ruby-identifier">zero?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">index</span>.<span class="ruby-identifier">zero?</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">array</span>.<span class="ruby-identifier">length</span>
+      <span class="ruby-identifier">stdout</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">stdout</span>.<span class="ruby-identifier">printf</span>(<span class="ruby-node">&quot;%-#{colwidth}s&quot;</span>, <span class="ruby-identifier">value</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- print_in_columns-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- print_in_columns-method -->
+      
+        <div id="print_table-method" class="method-detail ">
+          <a name="method-i-print_table"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">print_table</span><span
+              class="method-args">(array, options = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Prints a table.</p>
+
+<h4 id="method-i-print_table-label-Parameters">Parameters<span><a href="#method-i-print_table-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>Array[Array[String, String, …]]</p>
+
+<h4 id="method-i-print_table-label-Options">Options<span><a href="#method-i-print_table-label-Options">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>indent&lt;Integer&gt;
+<dd>
+<p>Indent the first column by indent value.</p>
+</dd><dt>colwidth&lt;Integer&gt;
+<dd>
+<p>Force the first column to colwidth spaces wide.</p>
+</dd></dl>
+            
+
+            
+            <div class="method-source-code" id="print_table-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 165</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">print_table</span>(<span class="ruby-identifier">array</span>, <span class="ruby-identifier">options</span> = {}) <span class="ruby-comment"># rubocop:disable MethodLength</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">array</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">formats</span> = []
+  <span class="ruby-identifier">indent</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:indent</span>].<span class="ruby-identifier">to_i</span>
+  <span class="ruby-identifier">colwidth</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:colwidth</span>]
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:truncate</span>] = <span class="ruby-identifier">terminal_width</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:truncate</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+
+  <span class="ruby-identifier">formats</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;%-#{colwidth + 2}s&quot;</span>.<span class="ruby-identifier">dup</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">colwidth</span>
+  <span class="ruby-identifier">start</span> = <span class="ruby-identifier">colwidth</span> <span class="ruby-operator">?</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-value">0</span>
+
+  <span class="ruby-identifier">colcount</span> = <span class="ruby-identifier">array</span>.<span class="ruby-identifier">max</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">size</span> }.<span class="ruby-identifier">size</span>
+
+  <span class="ruby-identifier">maximas</span> = []
+
+  <span class="ruby-identifier">start</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-identifier">colcount</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">maxima</span> = <span class="ruby-identifier">array</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span> <span class="ruby-identifier">row</span>[<span class="ruby-identifier">index</span>] <span class="ruby-operator">?</span> <span class="ruby-identifier">row</span>[<span class="ruby-identifier">index</span>].<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">:</span> <span class="ruby-value">0</span> }.<span class="ruby-identifier">max</span>
+    <span class="ruby-identifier">maximas</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">maxima</span>
+    <span class="ruby-identifier">formats</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">index</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">colcount</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+                 <span class="ruby-comment"># Don&#39;t output 2 trailing spaces when printing the last column</span>
+                 <span class="ruby-string">&quot;%-s&quot;</span>.<span class="ruby-identifier">dup</span>
+               <span class="ruby-keyword">else</span>
+                 <span class="ruby-node">&quot;%-#{maxima + 2}s&quot;</span>.<span class="ruby-identifier">dup</span>
+               <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">formats</span>[<span class="ruby-value">0</span>] = <span class="ruby-identifier">formats</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">insert</span>(<span class="ruby-value">0</span>, <span class="ruby-string">&quot; &quot;</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">indent</span>)
+  <span class="ruby-identifier">formats</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;%s&quot;</span>
+
+  <span class="ruby-identifier">array</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">sentence</span> = <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">dup</span>
+
+    <span class="ruby-identifier">row</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">column</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">maxima</span> = <span class="ruby-identifier">maximas</span>[<span class="ruby-identifier">index</span>]
+
+      <span class="ruby-identifier">f</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">column</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Numeric</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">index</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">row</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+          <span class="ruby-comment"># Don&#39;t output 2 trailing spaces when printing the last column</span>
+          <span class="ruby-node">&quot;%#{maxima}s&quot;</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-node">&quot;%#{maxima}s  &quot;</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">formats</span>[<span class="ruby-identifier">index</span>]
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">sentence</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">f</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">column</span>.<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">sentence</span> = <span class="ruby-identifier">truncate</span>(<span class="ruby-identifier">sentence</span>, <span class="ruby-identifier">options</span>[<span class="ruby-value">:truncate</span>]) <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:truncate</span>]
+    <span class="ruby-identifier">stdout</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">sentence</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- print_table-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- print_table-method -->
+      
+        <div id="print_wrapped-method" class="method-detail ">
+          <a name="method-i-print_wrapped"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">print_wrapped</span><span
+              class="method-args">(message, options = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Prints a long string, word-wrapping the text to the current width of the terminal display. Ideal for printing heredocs.</p>
+
+<h4 id="method-i-print_wrapped-label-Parameters">Parameters<span><a href="#method-i-print_wrapped-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>String</p>
+
+<h4 id="method-i-print_wrapped-label-Options">Options<span><a href="#method-i-print_wrapped-label-Options">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>indent&lt;Integer&gt;
+<dd>
+<p>Indent each line of the printed paragraph by indent value.</p>
+</dd></dl>
+            
+
+            
+            <div class="method-source-code" id="print_wrapped-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 227</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">print_wrapped</span>(<span class="ruby-identifier">message</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">indent</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:indent</span>] <span class="ruby-operator">||</span> <span class="ruby-value">0</span>
+  <span class="ruby-identifier">width</span> = <span class="ruby-identifier">terminal_width</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">indent</span>
+  <span class="ruby-identifier">paras</span> = <span class="ruby-identifier">message</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n\n&quot;</span>)
+
+  <span class="ruby-identifier">paras</span>.<span class="ruby-identifier">map!</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">unwrapped</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">counter</span> = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">unwrapped</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot; &quot;</span>).<span class="ruby-identifier">inject</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">memo</span>, <span class="ruby-identifier">word</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">word</span> = <span class="ruby-identifier">word</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\n\005/</span>, <span class="ruby-string">&quot;\n&quot;</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\005/</span>, <span class="ruby-string">&quot;\n&quot;</span>)
+      <span class="ruby-identifier">counter</span> = <span class="ruby-value">0</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">word</span>.<span class="ruby-identifier">include?</span> <span class="ruby-string">&quot;\n&quot;</span>
+      <span class="ruby-keyword">if</span> (<span class="ruby-identifier">counter</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">word</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>) <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">width</span>
+        <span class="ruby-identifier">memo</span> = <span class="ruby-node">&quot;#{memo} #{word}&quot;</span>
+        <span class="ruby-identifier">counter</span> <span class="ruby-operator">+=</span> (<span class="ruby-identifier">word</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">memo</span> = <span class="ruby-node">&quot;#{memo}\n#{word}&quot;</span>
+        <span class="ruby-identifier">counter</span> = <span class="ruby-identifier">word</span>.<span class="ruby-identifier">length</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">memo</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">compact!</span>
+
+  <span class="ruby-identifier">paras</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">para</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">para</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n&quot;</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">stdout</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">insert</span>(<span class="ruby-value">0</span>, <span class="ruby-string">&quot; &quot;</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">indent</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">stdout</span>.<span class="ruby-identifier">puts</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">para</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">paras</span>.<span class="ruby-identifier">last</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- print_wrapped-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- print_wrapped-method -->
+      
+        <div id="say-method" class="method-detail ">
+          <a name="method-i-say"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">say</span><span
+              class="method-args">(message = "", color = nil, force_new_line = (message.to_s !~ /( |\t)\Z/))</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Say (print) something to the user. If the sentence ends with a whitespace or tab character, a new line is not appended (print + flush). Otherwise are passed straight to puts (behavior got from Highline).</p>
+
+<h4 id="method-i-say-label-Example">Example<span><a href="#method-i-say-label-Example">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>say(“I know you knew that.”)</p>
+            
+
+            
+            <div class="method-source-code" id="say-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">say</span>(<span class="ruby-identifier">message</span> = <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">color</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">force_new_line</span> = (<span class="ruby-identifier">message</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">/( |\t)\Z/</span>))
+  <span class="ruby-identifier">buffer</span> = <span class="ruby-identifier">prepare_message</span>(<span class="ruby-identifier">message</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">color</span>)
+  <span class="ruby-identifier">buffer</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">force_new_line</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">message</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">end_with?</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+
+  <span class="ruby-identifier">stdout</span>.<span class="ruby-identifier">print</span>(<span class="ruby-identifier">buffer</span>)
+  <span class="ruby-identifier">stdout</span>.<span class="ruby-identifier">flush</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- say-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- say-method -->
+      
+        <div id="say_status-method" class="method-detail ">
+          <a name="method-i-say_status"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">say_status</span><span
+              class="method-args">(status, message, log_status = true)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Say a status with the given color and appends the message. Since this method is used frequently by actions, it allows nil or false to be given in log_status, avoiding the message from being shown. If a Symbol is given in log_status, it&#39;s used as the color.</p>
+            
+
+            
+            <div class="method-source-code" id="say_status-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">say_status</span>(<span class="ruby-identifier">status</span>, <span class="ruby-identifier">message</span>, <span class="ruby-identifier">log_status</span> = <span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">quiet?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">log_status</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">spaces</span> = <span class="ruby-string">&quot;  &quot;</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">padding</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)
+  <span class="ruby-identifier">color</span>  = <span class="ruby-identifier">log_status</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Symbol</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">log_status</span> <span class="ruby-operator">:</span> <span class="ruby-value">:green</span>
+
+  <span class="ruby-identifier">status</span> = <span class="ruby-identifier">status</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">rjust</span>(<span class="ruby-value">12</span>)
+  <span class="ruby-identifier">status</span> = <span class="ruby-identifier">set_color</span> <span class="ruby-identifier">status</span>, <span class="ruby-identifier">color</span>, <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">color</span>
+
+  <span class="ruby-identifier">buffer</span> = <span class="ruby-node">&quot;#{status}#{spaces}#{message}&quot;</span>
+  <span class="ruby-identifier">buffer</span> = <span class="ruby-node">&quot;#{buffer}\n&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">buffer</span>.<span class="ruby-identifier">end_with?</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+
+  <span class="ruby-identifier">stdout</span>.<span class="ruby-identifier">print</span>(<span class="ruby-identifier">buffer</span>)
+  <span class="ruby-identifier">stdout</span>.<span class="ruby-identifier">flush</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- say_status-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- say_status-method -->
+      
+        <div id="terminal_width-method" class="method-detail ">
+          <a name="method-i-terminal_width"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">terminal_width</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>This code was copied from Rake, available under MIT-LICENSE Copyright © 2003, 2004 Jim Weirich</p>
+            
+
+            
+            <div class="method-source-code" id="terminal_width-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 305</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">terminal_width</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-keyword">if</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">&quot;THOR_COLUMNS&quot;</span>]
+    <span class="ruby-constant">ENV</span>[<span class="ruby-string">&quot;THOR_COLUMNS&quot;</span>].<span class="ruby-identifier">to_i</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">unix?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">dynamic_width</span> <span class="ruby-operator">:</span> <span class="ruby-constant">DEFAULT_TERMINAL_WIDTH</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">10</span> <span class="ruby-operator">?</span> <span class="ruby-constant">DEFAULT_TERMINAL_WIDTH</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">rescue</span>
+  <span class="ruby-constant">DEFAULT_TERMINAL_WIDTH</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- terminal_width-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- terminal_width-method -->
+      
+        <div id="yes-3F-method" class="method-detail ">
+          <a name="method-i-yes-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">yes?</span><span
+              class="method-args">(statement, color = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Make a question the to user and returns true if the user replies “y” or “yes”.</p>
+            
+
+            
+            <div class="method-source-code" id="yes-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 127</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">yes?</span>(<span class="ruby-identifier">statement</span>, <span class="ruby-identifier">color</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-operator">!</span><span class="ruby-operator">!</span>(<span class="ruby-identifier">ask</span>(<span class="ruby-identifier">statement</span>, <span class="ruby-identifier">color</span>, <span class="ruby-value">:add_to_history</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">false</span>) <span class="ruby-operator">=~</span> <span class="ruby-identifier">is?</span>(<span class="ruby-value">:yes</span>))
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- yes-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- yes-3F-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+      <div id="protected-instance-method-details" class="method-section section">
+        <h3 class="section-header">Protected Instance Methods</h3>
+
+      
+        <div id="answer_match-method" class="method-detail ">
+          <a name="method-i-answer_match"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">answer_match</span><span
+              class="method-args">(possibilities, answer, case_insensitive)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="answer_match-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 465</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">answer_match</span>(<span class="ruby-identifier">possibilities</span>, <span class="ruby-identifier">answer</span>, <span class="ruby-identifier">case_insensitive</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">case_insensitive</span>
+    <span class="ruby-identifier">possibilities</span>.<span class="ruby-identifier">detect</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">possibility</span><span class="ruby-operator">|</span> <span class="ruby-identifier">possibility</span>.<span class="ruby-identifier">downcase</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">answer</span>.<span class="ruby-identifier">downcase</span> }
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">possibilities</span>.<span class="ruby-identifier">detect</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">possibility</span><span class="ruby-operator">|</span> <span class="ruby-identifier">possibility</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">answer</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- answer_match-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- answer_match-method -->
+      
+        <div id="as_unicode-method" class="method-detail ">
+          <a name="method-i-as_unicode"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">as_unicode</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="as_unicode-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 422</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">as_unicode</span>
+  <span class="ruby-keyword">yield</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- as_unicode-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- as_unicode-method -->
+      
+        <div id="ask_filtered-method" class="method-detail ">
+          <a name="method-i-ask_filtered"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ask_filtered</span><span
+              class="method-args">(statement, color, options)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="ask_filtered-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 452</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ask_filtered</span>(<span class="ruby-identifier">statement</span>, <span class="ruby-identifier">color</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">answer_set</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:limited_to</span>]
+  <span class="ruby-identifier">case_insensitive</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:case_insensitive</span>, <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">correct_answer</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">until</span> <span class="ruby-identifier">correct_answer</span>
+    <span class="ruby-identifier">answers</span> = <span class="ruby-identifier">answer_set</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;, &quot;</span>)
+    <span class="ruby-identifier">answer</span> = <span class="ruby-identifier">ask_simply</span>(<span class="ruby-node">&quot;#{statement} [#{answers}]&quot;</span>, <span class="ruby-identifier">color</span>, <span class="ruby-identifier">options</span>)
+    <span class="ruby-identifier">correct_answer</span> = <span class="ruby-identifier">answer_match</span>(<span class="ruby-identifier">answer_set</span>, <span class="ruby-identifier">answer</span>, <span class="ruby-identifier">case_insensitive</span>)
+    <span class="ruby-identifier">say</span>(<span class="ruby-node">&quot;Your response must be one of: [#{answers}]. Please try again.&quot;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">correct_answer</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">correct_answer</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- ask_filtered-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ask_filtered-method -->
+      
+        <div id="ask_simply-method" class="method-detail ">
+          <a name="method-i-ask_simply"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ask_simply</span><span
+              class="method-args">(statement, color, options)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="ask_simply-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 435</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">ask_simply</span>(<span class="ruby-identifier">statement</span>, <span class="ruby-identifier">color</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">default</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:default</span>]
+  <span class="ruby-identifier">message</span> = [<span class="ruby-identifier">statement</span>, (<span class="ruby-node">&quot;(#{default})&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">default</span>), <span class="ruby-keyword">nil</span>].<span class="ruby-identifier">uniq</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot; &quot;</span>)
+  <span class="ruby-identifier">message</span> = <span class="ruby-identifier">prepare_message</span>(<span class="ruby-identifier">message</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">color</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-constant">Bundler</span><span class="ruby-operator">::</span><span class="ruby-constant">Thor</span><span class="ruby-operator">::</span><span class="ruby-constant">LineEditor</span>.<span class="ruby-identifier">readline</span>(<span class="ruby-identifier">message</span>, <span class="ruby-identifier">options</span>)
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">result</span>
+
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">strip</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">default</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">result</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">default</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">result</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- ask_simply-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ask_simply-method -->
+      
+        <div id="can_display_colors-3F-method" class="method-detail ">
+          <a name="method-i-can_display_colors-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">can_display_colors?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="can_display_colors-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 339</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">can_display_colors?</span>
+  <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- can_display_colors-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- can_display_colors-3F-method -->
+      
+        <div id="dynamic_width-method" class="method-detail ">
+          <a name="method-i-dynamic_width"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">dynamic_width</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Calculate the dynamic width of the terminal</p>
+            
+
+            
+            <div class="method-source-code" id="dynamic_width-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 394</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dynamic_width</span>
+  <span class="ruby-ivar">@dynamic_width</span> <span class="ruby-operator">||=</span> (<span class="ruby-identifier">dynamic_width_stty</span>.<span class="ruby-identifier">nonzero?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">dynamic_width_tput</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- dynamic_width-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- dynamic_width-method -->
+      
+        <div id="dynamic_width_stty-method" class="method-detail ">
+          <a name="method-i-dynamic_width_stty"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">dynamic_width_stty</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="dynamic_width_stty-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 398</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dynamic_width_stty</span>
+  <span class="ruby-string">`stty size 2&gt;/dev/null`</span>.<span class="ruby-identifier">split</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_i</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- dynamic_width_stty-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- dynamic_width_stty-method -->
+      
+        <div id="dynamic_width_tput-method" class="method-detail ">
+          <a name="method-i-dynamic_width_tput"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">dynamic_width_tput</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="dynamic_width_tput-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 402</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dynamic_width_tput</span>
+  <span class="ruby-string">`tput cols 2&gt;/dev/null`</span>.<span class="ruby-identifier">to_i</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- dynamic_width_tput-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- dynamic_width_tput-method -->
+      
+        <div id="lookup_color-method" class="method-detail ">
+          <a name="method-i-lookup_color"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">lookup_color</span><span
+              class="method-args">(color)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="lookup_color-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 343</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">lookup_color</span>(<span class="ruby-identifier">color</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">color</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">color</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Symbol</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">color</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">upcase</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- lookup_color-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- lookup_color-method -->
+      
+        <div id="prepare_message-method" class="method-detail ">
+          <a name="method-i-prepare_message"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">prepare_message</span><span
+              class="method-args">(message, *color)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="prepare_message-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 334</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">prepare_message</span>(<span class="ruby-identifier">message</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">color</span>)
+  <span class="ruby-identifier">spaces</span> = <span class="ruby-string">&quot;  &quot;</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">padding</span>
+  <span class="ruby-identifier">spaces</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">set_color</span>(<span class="ruby-identifier">message</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">color</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- prepare_message-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- prepare_message-method -->
+      
+        <div id="stderr-method" class="method-detail ">
+          <a name="method-i-stderr"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">stderr</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="stderr-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 352</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">stderr</span>
+  <span class="ruby-identifier">$stderr</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- stderr-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- stderr-method -->
+      
+        <div id="stdout-method" class="method-detail ">
+          <a name="method-i-stdout"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">stdout</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="stdout-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 348</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">stdout</span>
+  <span class="ruby-identifier">$stdout</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- stdout-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- stdout-method -->
+      
+        <div id="truncate-method" class="method-detail ">
+          <a name="method-i-truncate"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">truncate</span><span
+              class="method-args">(string, width)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="truncate-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 410</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">truncate</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">width</span>)
+  <span class="ruby-identifier">as_unicode</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">chars</span> = <span class="ruby-identifier">string</span>.<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">to_a</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">chars</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">width</span>
+      <span class="ruby-identifier">chars</span>.<span class="ruby-identifier">join</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">chars</span>[<span class="ruby-value">0</span>, <span class="ruby-identifier">width</span> <span class="ruby-operator">-</span> <span class="ruby-value">3</span>].<span class="ruby-identifier">join</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;...&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- truncate-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- truncate-method -->
+      
+        <div id="unix-3F-method" class="method-detail ">
+          <a name="method-i-unix-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">unix?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="unix-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File bundler/vendor/thor/lib/thor/shell/basic.rb, line 406</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">unix?</span>
+  <span class="ruby-constant">RUBY_PLATFORM</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/(aix|darwin|linux|(net|free|open)bsd|cygwin|solaris|irix|hpux)/i</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- unix-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- unix-3F-method -->
+      
+      </div><!-- protected-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Basic_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Basic_versioned").load("/associated/2.7.4/Basic.ihtml");</script> <div id='tx_Basic' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Basic").load("/associated/Basic.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, purveyors of fine dance noise.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Basic.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Basic.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

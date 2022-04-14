@@ -1,0 +1,194 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <!-- RD version: 0.42.0  -->
+    <!--  filepage  -->
+  <meta charset="utf-8">
+          
+  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/b/378 -->
+  <!-- meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" -->
+
+
+	<title>File: csv.rb [csv: Ruby Standard Library Documentation]</title>
+  <link rel="stylesheet" href="./css/associated.css" type="text/css" >
+  <link rel="stylesheet" href="./css/inuit.css" >
+  <link rel="stylesheet" href="./css/grid.inuit.css" >
+  <link rel="stylesheet" href="./css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="./css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="./css/carbon17.css" type="text/css" >
+
+  <!-- rel_prefix  = '' -->
+    
+    <!-- WHY? -->
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = '.'  --> 
+  <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body class="file file-popup">
+	<div id="metadata">
+		<dl>
+			<dt class="modified-date">Last Modified</dt>
+			<dd class="modified-date">2021-07-07 03:48:22 -0700</dd>
+
+			
+			<dt class="requires">Requires</dt>
+			<dd class="requires">
+				<ul>
+				
+					<li>forwardable</li>
+				
+					<li>English</li>
+				
+					<li>date</li>
+				
+					<li>stringio</li>
+				
+				</ul>
+			</dd>
+			
+
+			
+		</dl>
+	</div>
+
+	<div id="documentation">
+		
+		<div class="description">
+			<h2>Description</h2>
+			
+<h1 id="label-csv.rb+--+CSV+Reading+and+Writing">csv.rb – <a href="CSV.html"><code>CSV</code></a> Reading and Writing<span><a href="#label-csv.rb+--+CSV+Reading+and+Writing">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p>Created by James Edward Gray II on 2005-10-31.</p>
+
+<p>See <a href="CSV.html"><code>CSV</code></a> for documentation.</p>
+
+<h2 id="label-Description">Description<span><a href="#label-Description">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Welcome to the new and improved <a href="CSV.html"><code>CSV</code></a>.</p>
+
+<p>This version of the <a href="CSV.html"><code>CSV</code></a> library began its life as FasterCSV. FasterCSV was intended as a replacement to Ruby&#39;s then standard <a href="CSV.html"><code>CSV</code></a> library. It was designed to address concerns users of that library had and it had three primary goals:</p>
+<ol><li>
+<p>Be significantly faster than <a href="CSV.html"><code>CSV</code></a> while remaining a pure Ruby library.</p>
+</li><li>
+<p>Use a smaller and easier to maintain code base. (FasterCSV eventually grew larger, was also but considerably richer in features. The parsing core remains quite small.)</p>
+</li><li>
+<p>Improve on the <a href="CSV.html"><code>CSV</code></a> interface.</p>
+</li></ol>
+
+<p>Obviously, the last one is subjective. I did try to defer to the original interface whenever I didn&#39;t have a compelling reason to change it though, so hopefully this won&#39;t be too radically different.</p>
+
+<p>We must have met our goals because FasterCSV was renamed to <a href="CSV.html"><code>CSV</code></a> and replaced the original library as of Ruby 1.9. If you are migrating code from 1.8 or earlier, you may have to change your code to comply with the new interface.</p>
+
+<h2 id="label-What-27s+the+Different+From+the+Old+CSV-3F">What&#39;s the Different From the Old <a href="CSV.html"><code>CSV</code></a>?<span><a href="#label-What-27s+the+Different+From+the+Old+CSV-3F">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>I&#39;m sure I&#39;ll miss something, but I&#39;ll try to mention most of the major differences I am aware of, to help others quickly get up to speed:</p>
+
+<h3 id="label-CSV+Parsing"><a href="CSV.html"><code>CSV</code></a> Parsing<span><a href="#label-CSV+Parsing">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>This parser is m17n aware. See <a href="CSV.html"><code>CSV</code></a> for full details.</p>
+</li><li>
+<p>This library has a stricter parser and will throw MalformedCSVErrors on problematic data.</p>
+</li><li>
+<p>This library has a less liberal idea of a line ending than <a href="CSV.html"><code>CSV</code></a>. What you set as the <code>:row_sep</code> is law. It can auto-detect your line endings though.</p>
+</li><li>
+<p>The old library returned empty lines as <code>[nil]</code>. This library calls them <code>[]</code>.</p>
+</li><li>
+<p>This library has a much faster parser.</p>
+</li></ul>
+
+<h3 id="label-Interface">Interface<span><a href="#label-Interface">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><a href="CSV.html"><code>CSV</code></a> now uses Hash-style parameters to set options.</p>
+</li><li>
+<p><a href="CSV.html"><code>CSV</code></a> no longer has generate_row() or parse_row().</p>
+</li><li>
+<p>The old CSV&#39;s Reader and Writer classes have been dropped.</p>
+</li><li>
+<p><a href="CSV.html#method-c-open"><code>CSV::open()</code></a> is now more like Ruby&#39;s open().</p>
+</li><li>
+<p><a href="CSV.html"><code>CSV</code></a> objects now support most standard IO methods.</p>
+</li><li>
+<p><a href="CSV.html"><code>CSV</code></a> now has a new() method used to wrap objects like String and IO for reading and writing.</p>
+</li><li>
+<p><a href="CSV.html#method-c-generate"><code>CSV::generate()</code></a> is different from the old method.</p>
+</li><li>
+<p><a href="CSV.html"><code>CSV</code></a> no longer supports partial reads. It works line-by-line.</p>
+</li><li>
+<p><a href="CSV.html"><code>CSV</code></a> no longer allows the instance methods to override the separators for performance reasons. They must be set in the constructor.</p>
+</li></ul>
+
+<p>If you use this library and find yourself missing any functionality I have trimmed, please <a href="mailto:james@grayproductions.net">let me know</a>.</p>
+
+<h2 id="label-Documentation">Documentation<span><a href="#label-Documentation">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>See <a href="CSV.html"><code>CSV</code></a> for documentation.</p>
+
+<h2 id="label-What+is+CSV-2C+really-3F">What is <a href="CSV.html"><code>CSV</code></a>, really?<span><a href="#label-What+is+CSV-2C+really-3F">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p><a href="CSV.html"><code>CSV</code></a> maintains a pretty strict definition of <a href="CSV.html"><code>CSV</code></a> taken directly from <a href="http://www.ietf.org/rfc/rfc4180.txt">the RFC</a>. I relax the rules in only one place and that is to make using this library easier. <a href="CSV.html"><code>CSV</code></a> will parse all valid <a href="CSV.html"><code>CSV</code></a>.</p>
+
+<p>What you don&#39;t want to do is to feed <a href="CSV.html"><code>CSV</code></a> invalid data. Because of the way the <a href="CSV.html"><code>CSV</code></a> format works, it&#39;s common for a parser to need to read until the end of the file to be sure a field is invalid. This consumes a lot of time and memory.</p>
+
+<p>Luckily, when working with invalid <a href="CSV.html"><code>CSV</code></a>, Ruby&#39;s built-in methods will almost always be superior in every way. For example, parsing non-quoted fields is as easy as:</p>
+
+<pre class="ruby"><span class="ruby-identifier">data</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;,&quot;</span>)
+</pre>
+
+<h2 id="label-Questions+and-2For+Comments">Questions and/or Comments<span><a href="#label-Questions+and-2For+Comments">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Feel free to email <a href="mailto:james@grayproductions.net">James Edward Gray II</a> with any questions.</p>
+
+		</div>
+		
+  </div>
+
+
+ <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+            <script src="./js/libs/jquery-1.6.2.min.js"></script>
+            <!-- script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script -->
+            <!-- script>window.jQuery || document.write('<script src="./js/libs/jquery-1.6.2.min.js"><\/script>')</script -->
+
+	<script src="./js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+	<script src="./js/rubydoc.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/libs/modernizr-2.0.6.min.js"></script>
+
+
+  <script defer src="./js/plugins.js"></script>
+  <script defer src="./js/script.js"></script>
+  <!-- end scripts-->
+<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7 ]>
+    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+  <![endif]-->
+
+  <div id='tx_Object_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Object_versioned").load("/associated/2.7.4/Object.ihtml");</script> <div id='tx_Object' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Object").load("/associated/Object.ihtml");</script> 
+      
+<div id="dsqus_thread"></div>
+
+</div>
+<div id="footer">
+  
+  <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, purveyors of fine dance noise.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+
+    <p><small>Generated with Rubydoc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+    </body>
+
+
+</html>
+

@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : WIN32OLE_VARIANT  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:35:12 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = ''  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = ''  --> 
+  <title>Class: WIN32OLE_VARIANT (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href=".css/obf.css"  -->
+  <link rel="stylesheet" href="css/inuit.css" >
+  <link rel="stylesheet" href="css/grid.inuit.css" >
+  <link rel="stylesheet" href="css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="css/carbon17.css" type="text/css" >
+
+
+  <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="/js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>win32ole/win32ole_variant.c</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-array">::array</a></li>
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-5B-5D">#[]</a></li>
+          
+          <li><a href="#method-i-5B-5D-3D">#[]=</a></li>
+          
+          <li><a href="#method-i-value">#value</a></li>
+          
+          <li><a href="#method-i-value-3D">#value=</a></li>
+          
+          <li><a href="#method-i-vartype">#vartype</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="./OLEProperty.html">OLEProperty</a></li>
+        
+          
+          
+          <li><a href="./WIN32OLE.html">WIN32OLE</a></li>
+        
+          
+          
+          <li><a href="./WIN32OLE/VARIANT.html">WIN32OLE::VARIANT</a></li>
+        
+          
+          
+          <li><a href="./WIN32OLEQueryInterfaceError.html">WIN32OLEQueryInterfaceError</a></li>
+        
+          
+          
+          <li><a href="./WIN32OLERuntimeError.html">WIN32OLERuntimeError</a></li>
+        
+          
+          
+          <li><a href="./WIN32OLE_EVENT.html">WIN32OLE_EVENT</a></li>
+        
+          
+          
+          <li><a href="./WIN32OLE_METHOD.html">WIN32OLE_METHOD</a></li>
+        
+          
+          
+          <li><a href="./WIN32OLE_PARAM.html">WIN32OLE_PARAM</a></li>
+        
+          
+          
+          <li><a href="./WIN32OLE_RECORD.html">WIN32OLE_RECORD</a></li>
+        
+          
+          
+          <li><a href="./WIN32OLE_TYPE.html">WIN32OLE_TYPE</a></li>
+        
+          
+          
+          <li><a href="./WIN32OLE_TYPELIB.html">WIN32OLE_TYPELIB</a></li>
+        
+          
+          
+          <li><a href="./WIN32OLE_VARIABLE.html">WIN32OLE_VARIABLE</a></li>
+        
+          
+          
+          <li><a href="./WIN32OLE_VARIANT.html">WIN32OLE_VARIANT</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">WIN32OLE_VARIANT</h1>
+
+    <div id="description" class="description">
+      
+<p><code>WIN32OLE_VARIANT</code> objects represents OLE variant.</p>
+
+<p>Win32OLE converts Ruby object into OLE variant automatically when invoking OLE methods. If OLE method requires the argument which is different from the variant by automatic conversion of Win32OLE, you can convert the specfied variant type by using <a href="WIN32OLE_VARIANT.html"><code>WIN32OLE_VARIANT</code></a> class.</p>
+
+<pre class="ruby"><span class="ruby-identifier">param</span> = <span class="ruby-constant">WIN32OLE_VARIANT</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">10</span>, <span class="ruby-constant">WIN32OLE</span><span class="ruby-operator">::</span><span class="ruby-constant">VARIANT</span><span class="ruby-operator">::</span><span class="ruby-constant">VT_R4</span>)
+<span class="ruby-identifier">oleobj</span>.<span class="ruby-identifier">method</span>(<span class="ruby-identifier">param</span>)
+</pre>
+
+<p><a href="WIN32OLE_VARIANT.html"><code>WIN32OLE_VARIANT</code></a> does not support VT_RECORD variant. Use <a href="WIN32OLE_RECORD.html"><code>WIN32OLE_RECORD</code></a> class instead of <a href="WIN32OLE_VARIANT.html"><code>WIN32OLE_VARIANT</code></a> if the VT_RECORD variant is needed.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="Empty">Empty</a></dt>
+          
+          <dd class="description"><p>represents VT_EMPTY OLE object.</p></dd>
+          
+        
+          <dt><a name="NoParam">NoParam</a></dt>
+          
+          <dd class="description"><p>represents VT_ERROR variant with DISP_E_PARAMNOTFOUND. This constants is used for not specified parameter.</p>
+
+<pre class="ruby"><span class="ruby-identifier">fso</span> = <span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Scripting.FileSystemObject&quot;</span>)
+<span class="ruby-identifier">fso</span>.<span class="ruby-identifier">openTextFile</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-constant">WIN32OLE_VARIANT</span><span class="ruby-operator">::</span><span class="ruby-constant">NoParam</span>, <span class="ruby-keyword">false</span>)
+</pre></dd>
+          
+        
+          <dt><a name="Nothing">Nothing</a></dt>
+          
+          <dd class="description"><p>represents <a href="WIN32OLE_VARIANT.html#Nothing"><code>Nothing</code></a> of VB.NET or VB.</p></dd>
+          
+        
+          <dt><a name="Null">Null</a></dt>
+          
+          <dd class="description"><p>represents VT_NULL OLE object.</p></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="array-method" class="method-detail ">
+          <a name="method-c-array"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">array(ary, vt)</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns Ruby object wrapping OLE variant whose variant type is VT_ARRAY. The first argument should be Array object which specifies dimensions and each size of dimensions of OLE array. The second argument specifies variant type of the element of OLE array.</p>
+
+<p>The following create 2 dimensions OLE array. The first dimensions size is 3, and the second is 4.</p>
+
+<pre class="ruby"><span class="ruby-identifier">ole_ary</span> = <span class="ruby-constant">WIN32OLE_VARIANT</span>.<span class="ruby-identifier">array</span>([<span class="ruby-value">3</span>,<span class="ruby-value">4</span>], <span class="ruby-constant">VT_I4</span>)
+<span class="ruby-identifier">ruby_ary</span> = <span class="ruby-identifier">ole_ary</span>.<span class="ruby-identifier">value</span> <span class="ruby-comment"># =&gt; [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="array-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+folevariant_s_array(VALUE klass, VALUE elems, VALUE vvt)
+{
+    VALUE obj = Qnil;
+    VARTYPE vt;
+    struct olevariantdata *pvar;
+    SAFEARRAYBOUND *psab = NULL;
+    SAFEARRAY *psa = NULL;
+    UINT dim = 0;
+    UINT i = 0;
+
+    ole_initialize();
+
+    vt = RB_NUM2UINT(vvt);
+    vt = (vt | VT_ARRAY);
+    Check_Type(elems, T_ARRAY);
+    obj = folevariant_s_allocate(klass);
+
+    TypedData_Get_Struct(obj, struct olevariantdata, &amp;olevariant_datatype, pvar);
+    dim = RARRAY_LEN(elems);
+
+    psab = ALLOC_N(SAFEARRAYBOUND, dim);
+
+    if(!psab) {
+        rb_raise(rb_eRuntimeError, &quot;memory allocation error&quot;);
+    }
+
+    for (i = 0; i &lt; dim; i++) {
+        psab[i].cElements = RB_FIX2INT(rb_ary_entry(elems, i));
+        psab[i].lLbound = 0;
+    }
+
+    psa = SafeArrayCreate((VARTYPE)(vt &amp; VT_TYPEMASK), dim, psab);
+    if (psa == NULL) {
+        if (psab) free(psab);
+        rb_raise(rb_eRuntimeError, &quot;memory allocation error(SafeArrayCreate)&quot;);
+    }
+
+    V_VT(&amp;(pvar-&gt;var)) = vt;
+    if (vt &amp; VT_BYREF) {
+        V_VT(&amp;(pvar-&gt;realvar)) = (vt &amp; ~VT_BYREF);
+        V_ARRAY(&amp;(pvar-&gt;realvar)) = psa;
+        V_ARRAYREF(&amp;(pvar-&gt;var)) = &amp;(V_ARRAY(&amp;(pvar-&gt;realvar)));
+    } else {
+        V_ARRAY(&amp;(pvar-&gt;var)) = psa;
+    }
+    if (psab) free(psab);
+    return obj;
+}
+            </pre> 
+            </div><!-- array-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- array-method -->
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">new(val, vartype) #=> WIN32OLE_VARIANT object.</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns Ruby object wrapping OLE variant. The first argument specifies Ruby object to convert OLE variant variable. The second argument specifies VARIANT type. In some situation, you need the <a href="WIN32OLE_VARIANT.html"><code>WIN32OLE_VARIANT</code></a> object to pass OLE method</p>
+
+<pre class="ruby"><span class="ruby-identifier">shell</span> = <span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Shell.Application&quot;</span>)
+<span class="ruby-identifier">folder</span> = <span class="ruby-identifier">shell</span>.<span class="ruby-constant">NameSpace</span>(<span class="ruby-string">&quot;C:\\Windows&quot;</span>)
+<span class="ruby-identifier">item</span> = <span class="ruby-identifier">folder</span>.<span class="ruby-constant">ParseName</span>(<span class="ruby-string">&quot;tmp.txt&quot;</span>)
+<span class="ruby-comment"># You can&#39;t use Ruby String object to call FolderItem.InvokeVerb.</span>
+<span class="ruby-comment"># Instead, you have to use WIN32OLE_VARIANT object to call the method.</span>
+<span class="ruby-identifier">shortcut</span> = <span class="ruby-constant">WIN32OLE_VARIANT</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Create Shortcut(\&amp;S)&quot;</span>)
+<span class="ruby-identifier">item</span>.<span class="ruby-identifier">invokeVerb</span>(<span class="ruby-identifier">shortcut</span>)
+</pre>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+folevariant_initialize(VALUE self, VALUE args)
+{
+    int len = 0;
+    VARIANT var;
+    VALUE val;
+    VALUE vvt;
+    VARTYPE vt;
+    struct olevariantdata *pvar;
+
+    len = RARRAY_LEN(args);
+    rb_check_arity(len, 1, 3);
+    VariantInit(&amp;var);
+    val = rb_ary_entry(args, 0);
+
+    check_type_val2variant(val);
+
+    TypedData_Get_Struct(self, struct olevariantdata, &amp;olevariant_datatype, pvar);
+    if (len == 1) {
+        ole_val2variant(val, &amp;(pvar-&gt;var));
+    } else {
+        vvt = rb_ary_entry(args, 1);
+        vt = RB_NUM2INT(vvt);
+        if ((vt &amp; VT_TYPEMASK) == VT_RECORD) {
+            rb_raise(rb_eArgError, &quot;not supported VT_RECORD WIN32OLE_VARIANT object&quot;);
+        }
+        ole_val2olevariantdata(val, vt, pvar);
+    }
+    return self;
+}
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="5B-5D-method" class="method-detail ">
+          <a name="method-i-5B-5D"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">WIN32OLE_VARIANT[i,j,...] #=> element of OLE array.</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns the element of <a href="WIN32OLE_VARIANT.html"><code>WIN32OLE_VARIANT</code></a> object(OLE array). This method is available only when the variant type of <a href="WIN32OLE_VARIANT.html"><code>WIN32OLE_VARIANT</code></a> object is VT_ARRAY.</p>
+
+<p>REMARK:</p>
+
+<pre>The all indices should be 0 or natural number and
+lower than or equal to max indices.
+(This point is different with Ruby Array indices.)
+
+obj = WIN32OLE_VARIANT.new([[1,2,3],[4,5,6]])
+p obj[0,0] # =&gt; 1
+p obj[1,0] # =&gt; 4
+p obj[2,0] # =&gt; WIN32OLERuntimeError
+p obj[0, -1] # =&gt; WIN32OLERuntimeError</pre>
+            
+
+            
+            <div class="method-source-code" id="5B-5D-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+folevariant_ary_aref(int argc, VALUE *argv, VALUE self)
+{
+    struct olevariantdata *pvar;
+    SAFEARRAY *psa;
+    VALUE val = Qnil;
+    VARIANT variant;
+    LONG *pid;
+    HRESULT hr;
+
+    TypedData_Get_Struct(self, struct olevariantdata, &amp;olevariant_datatype, pvar);
+    if (!V_ISARRAY(&amp;(pvar-&gt;var))) {
+        rb_raise(eWIN32OLERuntimeError,
+                 &quot;`[]&#39; is not available for this variant type object&quot;);
+    }
+    psa = get_locked_safe_array(self);
+    if (psa == NULL) {
+        return val;
+    }
+
+    pid = ary2safe_array_index(argc, argv, psa);
+
+    VariantInit(&amp;variant);
+    V_VT(&amp;variant) = (V_VT(&amp;(pvar-&gt;var)) &amp; ~VT_ARRAY) | VT_BYREF;
+    hr = SafeArrayPtrOfIndex(psa, pid, &amp;V_BYREF(&amp;variant));
+    if (FAILED(hr)) {
+        ole_raise(hr, eWIN32OLERuntimeError, &quot;failed to SafeArrayPtrOfIndex&quot;);
+    }
+    val = ole_variant2val(&amp;variant);
+
+    unlock_safe_array(psa);
+    if (pid) free(pid);
+    return val;
+}
+            </pre> 
+            </div><!-- 5B-5D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 5B-5D-method -->
+      
+        <div id="5B-5D-3D-method" class="method-detail ">
+          <a name="method-i-5B-5D-3D"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">WIN32OLE_VARIANT[i,j,...] = val #=> set the element of OLE array</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Set the element of <a href="WIN32OLE_VARIANT.html"><code>WIN32OLE_VARIANT</code></a> object(OLE array) to val. This method is available only when the variant type of <a href="WIN32OLE_VARIANT.html"><code>WIN32OLE_VARIANT</code></a> object is VT_ARRAY.</p>
+
+<p>REMARK:</p>
+
+<pre>The all indices should be 0 or natural number and
+lower than or equal to max indices.
+(This point is different with Ruby Array indices.)
+
+obj = WIN32OLE_VARIANT.new([[1,2,3],[4,5,6]])
+obj[0,0] = 7
+obj[1,0] = 8
+p obj.value # =&gt; [[7,2,3], [8,5,6]]
+obj[2,0] = 9 # =&gt; WIN32OLERuntimeError
+obj[0, -1] = 9 # =&gt; WIN32OLERuntimeError</pre>
+            
+
+            
+            <div class="method-source-code" id="5B-5D-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+folevariant_ary_aset(int argc, VALUE *argv, VALUE self)
+{
+    struct olevariantdata *pvar;
+    SAFEARRAY *psa;
+    VARIANT var;
+    VARTYPE vt;
+    LONG *pid;
+    HRESULT hr;
+    VOID *p = NULL;
+
+    TypedData_Get_Struct(self, struct olevariantdata, &amp;olevariant_datatype, pvar);
+    if (!V_ISARRAY(&amp;(pvar-&gt;var))) {
+        rb_raise(eWIN32OLERuntimeError,
+                 &quot;`[]&#39; is not available for this variant type object&quot;);
+    }
+    psa = get_locked_safe_array(self);
+    if (psa == NULL) {
+        rb_raise(rb_eRuntimeError, &quot;failed to get SafeArray pointer&quot;);
+    }
+
+    pid = ary2safe_array_index(argc-1, argv, psa);
+
+    VariantInit(&amp;var);
+    vt = (V_VT(&amp;(pvar-&gt;var)) &amp; ~VT_ARRAY);
+    p = val2variant_ptr(argv[argc-1], &amp;var, vt);
+    if ((V_VT(&amp;var) == VT_DISPATCH &amp;&amp; V_DISPATCH(&amp;var) == NULL) ||
+        (V_VT(&amp;var) == VT_UNKNOWN &amp;&amp; V_UNKNOWN(&amp;var) == NULL)) {
+        rb_raise(eWIN32OLERuntimeError, &quot;argument does not have IDispatch or IUnknown Interface&quot;);
+    }
+    hr = SafeArrayPutElement(psa, pid, p);
+    if (FAILED(hr)) {
+        ole_raise(hr, eWIN32OLERuntimeError, &quot;failed to SafeArrayPutElement&quot;);
+    }
+
+    unlock_safe_array(psa);
+    if (pid) free(pid);
+    return argv[argc-1];
+}
+            </pre> 
+            </div><!-- 5B-5D-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 5B-5D-3D-method -->
+      
+        <div id="value-method" class="method-detail ">
+          <a name="method-i-value"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">value #=> Ruby object.</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns Ruby object value from OLE variant.</p>
+
+<pre class="ruby"><span class="ruby-identifier">obj</span> = <span class="ruby-constant">WIN32OLE_VARIANT</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>, <span class="ruby-constant">WIN32OLE</span><span class="ruby-operator">::</span><span class="ruby-constant">VARIANT</span><span class="ruby-operator">::</span><span class="ruby-constant">VT_BSTR</span>)
+<span class="ruby-identifier">obj</span>.<span class="ruby-identifier">value</span> <span class="ruby-comment"># =&gt; &quot;1&quot; (not Integer object, but String object &quot;1&quot;)</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="value-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+folevariant_value(VALUE self)
+{
+    struct olevariantdata *pvar;
+    VALUE val = Qnil;
+    VARTYPE vt;
+    int dim;
+    SAFEARRAY *psa;
+    TypedData_Get_Struct(self, struct olevariantdata, &amp;olevariant_datatype, pvar);
+
+    val = ole_variant2val(&amp;(pvar-&gt;var));
+    vt = V_VT(&amp;(pvar-&gt;var));
+
+    if ((vt &amp; ~VT_BYREF) == (VT_UI1|VT_ARRAY)) {
+        if (vt &amp; VT_BYREF) {
+            psa = *V_ARRAYREF(&amp;(pvar-&gt;var));
+        } else {
+            psa  = V_ARRAY(&amp;(pvar-&gt;var));
+        }
+        if (!psa) {
+            return val;
+        }
+        dim = SafeArrayGetDim(psa);
+        if (dim == 1) {
+            val = rb_funcall(val, rb_intern(&quot;pack&quot;), 1, rb_str_new2(&quot;C*&quot;));
+        }
+    }
+    return val;
+}
+            </pre> 
+            </div><!-- value-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- value-method -->
+      
+        <div id="value-3D-method" class="method-detail ">
+          <a name="method-i-value-3D"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">value = val #=> set WIN32OLE_VARIANT value to val.</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Sets variant value to val. If the val type does not match variant value type(vartype), then val is changed to match variant value type(vartype) before setting val. This method is not available when vartype is VT_ARRAY(except VT_UI1|VT_ARRAY). If the vartype is VT_UI1|VT_ARRAY, the val should be String object.</p>
+
+<pre class="ruby"><span class="ruby-identifier">obj</span> = <span class="ruby-constant">WIN32OLE_VARIANT</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>) <span class="ruby-comment"># obj.vartype is WIN32OLE::VARIANT::VT_I4</span>
+<span class="ruby-identifier">obj</span>.<span class="ruby-identifier">value</span> = <span class="ruby-value">3.2</span> <span class="ruby-comment"># 3.2 is changed to 3 when setting value.</span>
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">value</span> <span class="ruby-comment"># =&gt; 3</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="value-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+folevariant_set_value(VALUE self, VALUE val)
+{
+    struct olevariantdata *pvar;
+    VARTYPE vt;
+    TypedData_Get_Struct(self, struct olevariantdata, &amp;olevariant_datatype, pvar);
+    vt = V_VT(&amp;(pvar-&gt;var));
+    if (V_ISARRAY(&amp;(pvar-&gt;var)) &amp;&amp; ((vt &amp; ~VT_BYREF) != (VT_UI1|VT_ARRAY) || !RB_TYPE_P(val, T_STRING))) {
+        rb_raise(eWIN32OLERuntimeError,
+                 &quot;`value=&#39; is not available for this variant type object&quot;);
+    }
+    ole_val2olevariantdata(val, vt, pvar);
+    return Qnil;
+}
+            </pre> 
+            </div><!-- value-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- value-3D-method -->
+      
+        <div id="vartype-method" class="method-detail ">
+          <a name="method-i-vartype"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">vartype #=> OLE variant type.</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns OLE variant type.</p>
+
+<pre class="ruby"><span class="ruby-identifier">obj</span> = <span class="ruby-constant">WIN32OLE_VARIANT</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;string&quot;</span>)
+<span class="ruby-identifier">obj</span>.<span class="ruby-identifier">vartype</span> <span class="ruby-comment"># =&gt; WIN32OLE::VARIANT::VT_BSTR</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="vartype-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+folevariant_vartype(VALUE self)
+{
+    struct olevariantdata *pvar;
+    TypedData_Get_Struct(self, struct olevariantdata, &amp;olevariant_datatype, pvar);
+    return RB_INT2FIX(V_VT(&amp;pvar-&gt;var));
+}
+            </pre> 
+            </div><!-- vartype-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- vartype-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_WIN32OLE_VARIANT_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_WIN32OLE_VARIANT_versioned").load("/associated/2.7.4/WIN32OLE_VARIANT.ihtml");</script> <div id='tx_WIN32OLE_VARIANT' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_WIN32OLE_VARIANT").load("/associated/WIN32OLE_VARIANT.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, purveyors of fine dance noise.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_WIN32OLE_VARIANT.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_WIN32OLE_VARIANT.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

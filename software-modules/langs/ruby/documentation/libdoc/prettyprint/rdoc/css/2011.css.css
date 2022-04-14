@@ -1,0 +1,221 @@
+/* Pulled in from  2011.css */
+
+
+
+
+
+
+
+
+
+
+
+
+ /* '#919189' '#161616'  */
+ /* '#6A6A6A'  */
+
+
+#rd-search-input {
+  width: 180px;
+  background-color: white;
+  height: 1.3em;
+
+}
+
+#action-search {
+  font-size: 0.9em;
+  margin-top: 0;
+  margin:bottom: 3px;
+}
+
+ ul#gem-indices, ul#gem-indices li {
+   list-style: none;
+    display: inline ! important;
+    padding-right: 0.5em;
+    font-size: 110%;
+    
+  }
+
+  #gem-list {
+   margin-top:2em;
+  }
+  #gem-list ul, #gem-list ul li {
+  list-style: none;
+}
+
+body {
+  background: white ;
+  color: #000;
+}
+
+#header {
+  margin-top:1em;
+  text-align: right;
+  background:url(/images/logo-rubydoc.gif) 850px 0 no-repeat ; 
+  height: 110px ! important;
+}
+
+#header h1{
+ margin: 5px 120px 5px  0px;
+}
+
+
+#header p  {
+margin: 5px 120px 5px  0px;
+font-size: 1.5em;
+}
+/*
+#header {
+height: 200px;
+border: solid red 1px;
+}
+
+  */
+#actionbar {
+  background: #646462 ! important;
+  color: #fff ! important;
+  font-weight: bold;
+  width: 100%;
+  line-height: 2em;
+
+  font-family: Helvetica, Arial, sans-serif; /* Swap these two lines around to switch between serif and sans */
+}
+
+
+h1, h2, h3, h4, h5 {
+	font-family: Georgia, "Times New Roman", serif; 
+}
+
+#actionbar .right {
+  text-align: right;
+}
+
+#actionbar form, #actionbar input {
+display: inline;
+
+}
+
+#actionbar li a, #actionbar li  a:visited , #actionbar li  a:link {
+color: #fff ! important;
+text-decoration: none  ! important;
+opacity: 1.0;
+border-bottom: none;
+}
+
+
+#actionbar li  a:hover {
+ color:red!important;
+ text-decoration: none!important;
+  opacity: 1.0;
+  border-bottom: none;
+}
+
+
+h2 a, h2 a:visited , h2 a:link {
+color: #646462!important;
+text-decoration: none!important;
+border-bottom: none;
+}
+
+
+h1 a, h1 a:visited , h1 a:link {
+color: #646462!important;
+text-decoration: none!important;
+border-bottom: none;
+}
+
+
+
+h2 a:hover {
+ color:red!important;
+ text-decoration: none!important;
+}
+
+
+
+
+ a,  a:visited,   a:link {
+color: #333 ! important;
+text-decoration: none  ! important;
+opacity: 1.0;
+border-bottom: dotted #cdcdcd 1px
+}
+
+
+a:hover {
+ color:red!important;
+ text-decoration: none!important;
+  opacity: 1.0;
+}
+
+#actionbar li {
+display: inline;
+padding: 2px 5px;
+}
+
+#api,  #rubystuff {
+margin-top: 10px;
+}
+
+
+#whyruby, #core, #standardlib, #gettingstarted, #books, #stuff, #about  {
+
+  font-family: Helvetica, Arial, sans-serif; /* Swap these two lines around to switch between serif and sans */
+  margin: 2.5em 10px;
+  padding: 0 10px;
+     
+	color: #6c6c6c;
+/* 	background:  #fafafa;
+	
+  background:-moz-linear-gradient(-90deg,#fafafa,#fafafa);
+
+	background:-webkit-gradient(linear,left top,left bottom,from(#fafafa),to(#fafafa));
+*/
+  /*	text-shadow:1px 1px 1px rgba(0,0,0,0.5); */
+
+	
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+
+}
+
+#core, #gettingstarted {
+  border-right: solid black 0px;
+}
+
+#about {
+  border-left: solid black 0px;
+}
+
+
+#colophon {
+  border-top: dotted #6e6e6e 1px;
+color: #6e6e6e;
+font-size: 0.80em;
+
+}
+#colophon ul li {
+list-style: none;
+margin: 1em;
+}
+
+#colophon  .grid-16 {
+text-align: center;
+}
+
+div.entries p {
+  margin-bottom: 0.5em;
+}
+
+
+@media (max-width: 720px){
+
+  li h2, h3  {
+margin-top:2em;
+}
+
+}
+
+
+

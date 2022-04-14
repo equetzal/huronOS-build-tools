@@ -1,0 +1,1337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : CGI  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:17:26 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = ''  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = ''  --> 
+  <title>Class: CGI (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href=".css/obf.css"  -->
+  <link rel="stylesheet" href="css/inuit.css" >
+  <link rel="stylesheet" href="css/grid.inuit.css" >
+  <link rel="stylesheet" href="css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="css/carbon17.css" type="text/css" >
+
+
+  <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="/js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>cgi.rb</li>      
+            
+          
+          <li class='in-file'>cgi/cookie.rb</li>      
+            
+          
+          <li class='in-file'>cgi/core.rb</li>      
+            
+          
+          <li class='in-file'>cgi/html.rb</li>      
+            
+          
+          <li class='in-file'>cgi/session.rb</li>      
+            
+          
+          <li class='in-file'>cgi/session/pstore.rb</li>      
+            
+          
+          <li class='in-file'>cgi/util.rb</li>      
+            
+          
+          <li class='in-file'>cgi/version.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">MODULE</span> <a href="CGI/HtmlExtension.html">CGI::HtmlExtension</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="CGI/QueryExtension.html">CGI::QueryExtension</a></li>
+          
+          <li><span class="type">MODULE</span> <a href="CGI/Util.html">CGI::Util</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="CGI/Cookie.html">CGI::Cookie</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="CGI/HTML3.html">CGI::HTML3</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="CGI/HTML4.html">CGI::HTML4</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="CGI/HTML4Fr.html">CGI::HTML4Fr</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="CGI/HTML4Tr.html">CGI::HTML4Tr</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="CGI/HTML5.html">CGI::HTML5</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="CGI/InvalidEncoding.html">CGI::InvalidEncoding</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="CGI/Session.html">CGI::Session</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-accept_charset">::accept_charset</a></li>
+          
+          <li><a href="#method-c-accept_charset-3D">::accept_charset=</a></li>
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-c-parse">::parse</a></li>
+          
+          <li><a href="#method-i-header">#header</a></li>
+          
+          <li><a href="#method-i-http_header">#http_header</a></li>
+          
+          <li><a href="#method-i-out">#out</a></li>
+          
+          <li><a href="#method-i-print">#print</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Included Modules -->
+      <div id="includes-section" class="section">
+        <h3 class="section-header">Included Modules</h3>
+        <ul class="link-list">
+        
+        
+          <li><a class="include" href="CGI/Util.html">CGI::Util</a></li>
+        
+        
+        </ul>
+      </div>
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="./CGI.html">CGI</a></li>
+        
+          
+          
+          <li><a href="./CGI/Cookie.html">CGI::Cookie</a></li>
+        
+          
+          
+          <li><a href="./CGI/HTML3.html">CGI::HTML3</a></li>
+        
+          
+          
+          <li><a href="./CGI/HTML4.html">CGI::HTML4</a></li>
+        
+          
+          
+          <li><a href="./CGI/HTML4Fr.html">CGI::HTML4Fr</a></li>
+        
+          
+          
+          <li><a href="./CGI/HTML4Tr.html">CGI::HTML4Tr</a></li>
+        
+          
+          
+          <li><a href="./CGI/HTML5.html">CGI::HTML5</a></li>
+        
+          
+          
+          <li><a href="./CGI/HtmlExtension.html">CGI::HtmlExtension</a></li>
+        
+          
+          
+          <li><a href="./CGI/InvalidEncoding.html">CGI::InvalidEncoding</a></li>
+        
+          
+          
+          <li><a href="./CGI/QueryExtension.html">CGI::QueryExtension</a></li>
+        
+          
+          
+          <li><a href="./CGI/Session.html">CGI::Session</a></li>
+        
+          
+          
+          <li><a href="./CGI/Session/FileStore.html">CGI::Session::FileStore</a></li>
+        
+          
+          
+          <li><a href="./CGI/Session/MemoryStore.html">CGI::Session::MemoryStore</a></li>
+        
+          
+          
+          <li><a href="./CGI/Session/NullStore.html">CGI::Session::NullStore</a></li>
+        
+          
+          
+          <li><a href="./CGI/Session/PStore.html">CGI::Session::PStore</a></li>
+        
+          
+          
+          <li><a href="./CGI/Util.html">CGI::Util</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">CGI</h1>
+
+    <div id="description" class="description">
+      
+<h2 id="class-CGI-label-Overview">Overview<span><a href="#class-CGI-label-Overview">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>The Common Gateway Interface (<a href="CGI.html"><code>CGI</code></a>) is a simple protocol for passing an HTTP request from a web server to a standalone program, and returning the output to the web browser.  Basically, a <a href="CGI.html"><code>CGI</code></a> program is called with the parameters of the request passed in either in the environment (GET) or via $stdin (POST), and everything it prints to $stdout is returned to the client.</p>
+
+<p>This file holds the <a href="CGI.html"><code>CGI</code></a> class.  This class provides functionality for retrieving HTTP request parameters, managing cookies, and generating HTML output.</p>
+
+<p>The file <a href="CGI/Session.html"><code>CGI::Session</code></a> provides session management functionality; see that class for more details.</p>
+
+<p>See <a href="http://www.w3.org/CGI">www.w3.org/CGI</a>/ for more information on the <a href="CGI.html"><code>CGI</code></a> protocol.</p>
+
+<h2 id="class-CGI-label-Introduction">Introduction<span><a href="#class-CGI-label-Introduction">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p><a href="CGI.html"><code>CGI</code></a> is a large class, providing several categories of methods, many of which are mixed in from other modules.  Some of the documentation is in this class, some in the modules <a href="CGI/QueryExtension.html"><code>CGI::QueryExtension</code></a> and <a href="CGI/HtmlExtension.html"><code>CGI::HtmlExtension</code></a>.  See <a href="CGI/Cookie.html"><code>CGI::Cookie</code></a> for specific information on handling cookies, and cgi/session.rb (<a href="CGI/Session.html"><code>CGI::Session</code></a>) for information on sessions.</p>
+
+<p>For queries, <a href="CGI.html"><code>CGI</code></a> provides methods to get at environmental variables, parameters, cookies, and multipart request data.  For responses, <a href="CGI.html"><code>CGI</code></a> provides methods for writing output and generating HTML.</p>
+
+<p>Read on for more details.  Examples are provided at the bottom.</p>
+
+<h2 id="class-CGI-label-Queries">Queries<span><a href="#class-CGI-label-Queries">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>The <a href="CGI.html"><code>CGI</code></a> class dynamically mixes in parameter and cookie-parsing functionality,  environmental variable access, and support for parsing multipart requests (including uploaded files) from the <a href="CGI/QueryExtension.html"><code>CGI::QueryExtension</code></a> module.</p>
+
+<h3 id="class-CGI-label-Environmental+Variables">Environmental Variables<span><a href="#class-CGI-label-Environmental+Variables">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The standard <a href="CGI.html"><code>CGI</code></a> environmental variables are available as read-only attributes of a <a href="CGI.html"><code>CGI</code></a> object.  The following is a list of these variables:</p>
+
+<pre class="ruby"><span class="ruby-constant">AUTH_TYPE</span>               <span class="ruby-constant">HTTP_HOST</span>          <span class="ruby-constant">REMOTE_IDENT</span>
+<span class="ruby-constant">CONTENT_LENGTH</span>          <span class="ruby-constant">HTTP_NEGOTIATE</span>     <span class="ruby-constant">REMOTE_USER</span>
+<span class="ruby-constant">CONTENT_TYPE</span>            <span class="ruby-constant">HTTP_PRAGMA</span>        <span class="ruby-constant">REQUEST_METHOD</span>
+<span class="ruby-constant">GATEWAY_INTERFACE</span>       <span class="ruby-constant">HTTP_REFERER</span>       <span class="ruby-constant">SCRIPT_NAME</span>
+<span class="ruby-constant">HTTP_ACCEPT</span>             <span class="ruby-constant">HTTP_USER_AGENT</span>    <span class="ruby-constant">SERVER_NAME</span>
+<span class="ruby-constant">HTTP_ACCEPT_CHARSET</span>     <span class="ruby-constant">PATH_INFO</span>          <span class="ruby-constant">SERVER_PORT</span>
+<span class="ruby-constant">HTTP_ACCEPT_ENCODING</span>    <span class="ruby-constant">PATH_TRANSLATED</span>    <span class="ruby-constant">SERVER_PROTOCOL</span>
+<span class="ruby-constant">HTTP_ACCEPT_LANGUAGE</span>    <span class="ruby-constant">QUERY_STRING</span>       <span class="ruby-constant">SERVER_SOFTWARE</span>
+<span class="ruby-constant">HTTP_CACHE_CONTROL</span>      <span class="ruby-constant">REMOTE_ADDR</span>
+<span class="ruby-constant">HTTP_FROM</span>               <span class="ruby-constant">REMOTE_HOST</span>
+</pre>
+
+<p>For each of these variables, there is a corresponding attribute with the same name, except all lower case and without a preceding HTTP_. <code>content_length</code> and <code>server_port</code> are integers; the rest are strings.</p>
+
+<h3 id="class-CGI-label-Parameters">Parameters<span><a href="#class-CGI-label-Parameters">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The method params() returns a hash of all parameters in the request as name/value-list pairs, where the value-list is an Array of one or more values.  The <a href="CGI.html"><code>CGI</code></a> object itself also behaves as a hash of parameter names to values, but only returns a single value (as a String) for each parameter name.</p>
+
+<p>For instance, suppose the request contains the parameter “favourite_colours” with the multiple values “blue” and “green”.  The following behavior would occur:</p>
+
+<pre class="ruby"><span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">params</span>[<span class="ruby-string">&quot;favourite_colours&quot;</span>]  <span class="ruby-comment"># =&gt; [&quot;blue&quot;, &quot;green&quot;]</span>
+<span class="ruby-identifier">cgi</span>[<span class="ruby-string">&quot;favourite_colours&quot;</span>]         <span class="ruby-comment"># =&gt; &quot;blue&quot;</span>
+</pre>
+
+<p>If a parameter does not exist, the former method will return an empty array, the latter an empty string.  The simplest way to test for existence of a parameter is by the has_key? method.</p>
+
+<h3 id="class-CGI-label-Cookies">Cookies<span><a href="#class-CGI-label-Cookies">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>HTTP Cookies are automatically parsed from the request.  They are available from the cookies() accessor, which returns a hash from cookie name to <a href="CGI/Cookie.html"><code>CGI::Cookie</code></a> object.</p>
+
+<h3 id="class-CGI-label-Multipart+requests">Multipart requests<span><a href="#class-CGI-label-Multipart+requests">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>If a request&#39;s method is POST and its content type is multipart/form-data, then it may contain uploaded files.  These are stored by the <a href="CGI/QueryExtension.html"><code>QueryExtension</code></a> module in the parameters of the request.  The parameter name is the name attribute of the file input field, as usual.  However, the value is not a string, but an IO object, either an IOString for small files, or a Tempfile for larger ones.  This object also has the additional singleton methods:</p>
+<dl class="rdoc-list note-list"><dt>local_path()
+<dd>
+<p>the path of the uploaded file on the local filesystem</p>
+</dd><dt>original_filename()
+<dd>
+<p>the name of the file on the client computer</p>
+</dd><dt>content_type()
+<dd>
+<p>the content type of the file</p>
+</dd></dl>
+
+<h2 id="class-CGI-label-Responses">Responses<span><a href="#class-CGI-label-Responses">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>The <a href="CGI.html"><code>CGI</code></a> class provides methods for sending header and content output to the HTTP client, and mixes in methods for programmatic HTML generation from <a href="CGI/HtmlExtension.html"><code>CGI::HtmlExtension</code></a> and CGI::TagMaker modules.  The precise version of HTML to use for HTML generation is specified at object creation time.</p>
+
+<h3 id="class-CGI-label-Writing+output">Writing output<span><a href="#class-CGI-label-Writing+output">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The simplest way to send output to the HTTP client is using the <a href="CGI.html#method-i-out"><code>out()</code></a> method. This takes the HTTP headers as a hash parameter, and the body content via a block.  The headers can be generated as a string using the <a href="CGI.html#method-i-http_header"><code>http_header()</code></a> method.  The output stream can be written directly to using the <a href="CGI.html#method-i-print"><code>print()</code></a> method.</p>
+
+<h3 id="class-CGI-label-Generating+HTML">Generating HTML<span><a href="#class-CGI-label-Generating+HTML">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Each HTML element has a corresponding method for generating that element as a String.  The name of this method is the same as that of the element, all lowercase.  The attributes of the element are passed in as a hash, and the body as a no-argument block that evaluates to a String.  The HTML generation module knows which elements are always empty, and silently drops any passed-in body.  It also knows which elements require matching closing tags and which don&#39;t.  However, it does not know what attributes are legal for which elements.</p>
+
+<p>There are also some additional HTML generation methods mixed in from the <a href="CGI/HtmlExtension.html"><code>CGI::HtmlExtension</code></a> module.  These include individual methods for the different types of form inputs, and methods for elements that commonly take particular attributes where the attributes can be directly specified as arguments, rather than via a hash.</p>
+
+<h3 id="class-CGI-label-Utility+HTML+escape+and+other+methods+like+a+function.">Utility HTML escape and other methods like a function.<span><a href="#class-CGI-label-Utility+HTML+escape+and+other+methods+like+a+function.">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>There are some utility tool defined in cgi/util.rb . And when include, you can use utility methods like a function.</p>
+
+<h2 id="class-CGI-label-Examples+of+use">Examples of use<span><a href="#class-CGI-label-Examples+of+use">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="class-CGI-label-Get+form+values">Get form values<span><a href="#class-CGI-label-Get+form+values">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;cgi&quot;</span>
+<span class="ruby-identifier">cgi</span> = <span class="ruby-constant">CGI</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">value</span> = <span class="ruby-identifier">cgi</span>[<span class="ruby-string">&#39;field_name&#39;</span>]   <span class="ruby-comment"># &lt;== value string for &#39;field_name&#39;</span>
+  <span class="ruby-comment"># if not &#39;field_name&#39; included, then return &quot;&quot;.</span>
+<span class="ruby-identifier">fields</span> = <span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">keys</span>            <span class="ruby-comment"># &lt;== array of field names</span>
+
+<span class="ruby-comment"># returns true if form has &#39;field_name&#39;</span>
+<span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-string">&#39;field_name&#39;</span>)
+<span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-string">&#39;field_name&#39;</span>)
+<span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&#39;field_name&#39;</span>)
+</pre>
+
+<p>CAUTION! <a href="'field_name'">cgi</a> returned an Array with the old cgi.rb(included in Ruby 1.6)</p>
+
+<h3 id="class-CGI-label-Get+form+values+as+hash">Get form values as hash<span><a href="#class-CGI-label-Get+form+values+as+hash">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;cgi&quot;</span>
+<span class="ruby-identifier">cgi</span> = <span class="ruby-constant">CGI</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">params</span> = <span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">params</span>
+</pre>
+
+<p>cgi.params is a hash.</p>
+
+<pre class="ruby"><span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">params</span>[<span class="ruby-string">&#39;new_field_name&#39;</span>] = [<span class="ruby-string">&quot;value&quot;</span>]  <span class="ruby-comment"># add new param</span>
+<span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">params</span>[<span class="ruby-string">&#39;field_name&#39;</span>] = [<span class="ruby-string">&quot;new_value&quot;</span>]  <span class="ruby-comment"># change value</span>
+<span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">params</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&#39;field_name&#39;</span>)           <span class="ruby-comment"># delete param</span>
+<span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">params</span>.<span class="ruby-identifier">clear</span>                          <span class="ruby-comment"># delete all params</span>
+</pre>
+
+<h3 id="class-CGI-label-Save+form+values+to+file">Save form values to file<span><a href="#class-CGI-label-Save+form+values+to+file">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;pstore&quot;</span>
+<span class="ruby-identifier">db</span> = <span class="ruby-constant">PStore</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;query.db&quot;</span>)
+<span class="ruby-identifier">db</span>.<span class="ruby-identifier">transaction</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">db</span>[<span class="ruby-string">&quot;params&quot;</span>] = <span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">params</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h3 id="class-CGI-label-Restore+form+values+from+file">Restore form values from file<span><a href="#class-CGI-label-Restore+form+values+from+file">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;pstore&quot;</span>
+<span class="ruby-identifier">db</span> = <span class="ruby-constant">PStore</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;query.db&quot;</span>)
+<span class="ruby-identifier">db</span>.<span class="ruby-identifier">transaction</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">params</span> = <span class="ruby-identifier">db</span>[<span class="ruby-string">&quot;params&quot;</span>]
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h3 id="class-CGI-label-Get+multipart+form+values">Get multipart form values<span><a href="#class-CGI-label-Get+multipart+form+values">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;cgi&quot;</span>
+<span class="ruby-identifier">cgi</span> = <span class="ruby-constant">CGI</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">value</span> = <span class="ruby-identifier">cgi</span>[<span class="ruby-string">&#39;field_name&#39;</span>]   <span class="ruby-comment"># &lt;== value string for &#39;field_name&#39;</span>
+<span class="ruby-identifier">value</span>.<span class="ruby-identifier">read</span>                  <span class="ruby-comment"># &lt;== body of value</span>
+<span class="ruby-identifier">value</span>.<span class="ruby-identifier">local_path</span>            <span class="ruby-comment"># &lt;== path to local file of value</span>
+<span class="ruby-identifier">value</span>.<span class="ruby-identifier">original_filename</span>     <span class="ruby-comment"># &lt;== original filename of value</span>
+<span class="ruby-identifier">value</span>.<span class="ruby-identifier">content_type</span>          <span class="ruby-comment"># &lt;== content_type of value</span>
+</pre>
+
+<p>and value has StringIO or Tempfile class methods.</p>
+
+<h3 id="class-CGI-label-Get+cookie+values">Get cookie values<span><a href="#class-CGI-label-Get+cookie+values">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;cgi&quot;</span>
+<span class="ruby-identifier">cgi</span> = <span class="ruby-constant">CGI</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">values</span> = <span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">cookies</span>[<span class="ruby-string">&#39;name&#39;</span>]  <span class="ruby-comment"># &lt;== array of &#39;name&#39;</span>
+  <span class="ruby-comment"># if not &#39;name&#39; included, then return [].</span>
+<span class="ruby-identifier">names</span> = <span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">cookies</span>.<span class="ruby-identifier">keys</span>      <span class="ruby-comment"># &lt;== array of cookie names</span>
+</pre>
+
+<p>and cgi.cookies is a hash.</p>
+
+<h3 id="class-CGI-label-Get+cookie+objects">Get cookie objects<span><a href="#class-CGI-label-Get+cookie+objects">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;cgi&quot;</span>
+<span class="ruby-identifier">cgi</span> = <span class="ruby-constant">CGI</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">for</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">cookie</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">cookies</span>
+  <span class="ruby-identifier">cookie</span>.<span class="ruby-identifier">expires</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">+</span> <span class="ruby-value">30</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">out</span>(<span class="ruby-string">&quot;cookie&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">cookies</span>) {<span class="ruby-string">&quot;string&quot;</span>}
+
+<span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">cookies</span> <span class="ruby-comment"># { &quot;name1&quot; =&gt; cookie1, &quot;name2&quot; =&gt; cookie2, ... }</span>
+
+<span class="ruby-identifier">require</span> <span class="ruby-string">&quot;cgi&quot;</span>
+<span class="ruby-identifier">cgi</span> = <span class="ruby-constant">CGI</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">cookies</span>[<span class="ruby-string">&#39;name&#39;</span>].<span class="ruby-identifier">expires</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">+</span> <span class="ruby-value">30</span>
+<span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">out</span>(<span class="ruby-string">&quot;cookie&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">cookies</span>[<span class="ruby-string">&#39;name&#39;</span>]) {<span class="ruby-string">&quot;string&quot;</span>}
+</pre>
+
+<h3 id="class-CGI-label-Print+http+header+and+html+string+to+-24DEFAULT_OUTPUT+-28-24-3E-29">Print http header and html string to $DEFAULT_OUTPUT ($&gt;)<span><a href="#class-CGI-label-Print+http+header+and+html+string+to+-24DEFAULT_OUTPUT+-28-24-3E-29">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;cgi&quot;</span>
+<span class="ruby-identifier">cgi</span> = <span class="ruby-constant">CGI</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;html4&quot;</span>)  <span class="ruby-comment"># add HTML generation methods</span>
+<span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">out</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">html</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">head</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">title</span> { <span class="ruby-string">&quot;TITLE&quot;</span> }
+    <span class="ruby-keyword">end</span> <span class="ruby-operator">+</span>
+    <span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">body</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">form</span>(<span class="ruby-string">&quot;ACTION&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;uri&quot;</span>) <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">p</span> <span class="ruby-keyword">do</span>
+          <span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">textarea</span>(<span class="ruby-string">&quot;get_text&quot;</span>) <span class="ruby-operator">+</span>
+          <span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">br</span> <span class="ruby-operator">+</span>
+          <span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">submit</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span> <span class="ruby-operator">+</span>
+      <span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">pre</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-constant">CGI</span>.<span class="ruby-identifier">escapeHTML</span>(
+          <span class="ruby-node">&quot;params: #{cgi.params.inspect}\n&quot;</span> <span class="ruby-operator">+</span>
+          <span class="ruby-node">&quot;cookies: #{cgi.cookies.inspect}\n&quot;</span> <span class="ruby-operator">+</span>
+          <span class="ruby-constant">ENV</span>.<span class="ruby-identifier">collect</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+            <span class="ruby-node">&quot;#{key} --&gt; #{value}\n&quot;</span>
+          <span class="ruby-keyword">end</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;&quot;</span>)
+        )
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># add HTML generation methods</span>
+<span class="ruby-constant">CGI</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;html3&quot;</span>)    <span class="ruby-comment"># html3.2</span>
+<span class="ruby-constant">CGI</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;html4&quot;</span>)    <span class="ruby-comment"># html4.01 (Strict)</span>
+<span class="ruby-constant">CGI</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;html4Tr&quot;</span>)  <span class="ruby-comment"># html4.01 Transitional</span>
+<span class="ruby-constant">CGI</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;html4Fr&quot;</span>)  <span class="ruby-comment"># html4.01 Frameset</span>
+<span class="ruby-constant">CGI</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;html5&quot;</span>)    <span class="ruby-comment"># html5</span>
+</pre>
+
+<h3 id="class-CGI-label-Some+utility+methods">Some utility methods<span><a href="#class-CGI-label-Some+utility+methods">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;cgi/util&#39;</span>
+<span class="ruby-constant">CGI</span>.<span class="ruby-identifier">escapeHTML</span>(<span class="ruby-string">&#39;Usage: foo &quot;bar&quot; &lt;baz&gt;&#39;</span>)
+</pre>
+
+<h3 id="class-CGI-label-Some+utility+methods+like+a+function">Some utility methods like a function<span><a href="#class-CGI-label-Some+utility+methods+like+a+function">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;cgi/util&#39;</span>
+<span class="ruby-identifier">include</span> <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-constant">Util</span>
+<span class="ruby-identifier">escapeHTML</span>(<span class="ruby-string">&#39;Usage: foo &quot;bar&quot; &lt;baz&gt;&#39;</span>)
+<span class="ruby-identifier">h</span>(<span class="ruby-string">&#39;Usage: foo &quot;bar&quot; &lt;baz&gt;&#39;</span>) <span class="ruby-comment"># alias</span>
+</pre>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="CR">CR</a></dt>
+          
+          <dd class="description"><p>String for carriage return</p></dd>
+          
+        
+          <dt><a name="EOL">EOL</a></dt>
+          
+          <dd class="description"><p>Standard internet newline sequence</p></dd>
+          
+        
+          <dt><a name="HTTP_STATUS">HTTP_STATUS</a></dt>
+          
+          <dd class="description"><p>HTTP status codes.</p></dd>
+          
+        
+          <dt><a name="LF">LF</a></dt>
+          
+          <dd class="description"><p>String for linefeed</p></dd>
+          
+        
+          <dt><a name="MAX_MULTIPART_COUNT">MAX_MULTIPART_COUNT</a></dt>
+          
+          <dd class="description"><p>Maximum number of request parameters when multipart</p></dd>
+          
+        
+          <dt><a name="NEEDS_BINMODE">NEEDS_BINMODE</a></dt>
+          
+          <dd class="description"><p>Whether processing will be required in binary vs text</p></dd>
+          
+        
+          <dt><a name="PATH_SEPARATOR">PATH_SEPARATOR</a></dt>
+          
+          <dd class="description"><p>Path separators in different environments.</p></dd>
+          
+        
+          <dt><a name="VERSION">VERSION</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+      <!-- Attributes -->
+      <div id="attribute-method-details" class="method-section section">
+        <h3 class="section-header">Attributes</h3>
+
+        
+        <div id="accept_charset-attribute-method" class="method-detail">
+          <a name="accept_charset"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">accept_charset</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description 245">
+          
+          <p>Return the accept character set for this <a href="CGI.html"><code>CGI</code></a> instance.</p>
+          
+          </div>
+        </div>
+        
+      </div><!-- attribute-method-details -->
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="accept_charset-method" class="method-detail ">
+          <a name="method-c-accept_charset"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">accept_charset</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Return the accept character set for all new <a href="CGI.html"><code>CGI</code></a> instances.</p>
+            
+
+            
+            <div class="method-source-code" id="accept_charset-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/core.rb, line 748</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">accept_charset</span>
+  <span class="ruby-identifier">@@accept_charset</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- accept_charset-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- accept_charset-method -->
+      
+        <div id="accept_charset-3D-method" class="method-detail ">
+          <a name="method-c-accept_charset-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">accept_charset=</span><span
+              class="method-args">(accept_charset)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Set the accept character set for all new <a href="CGI.html"><code>CGI</code></a> instances.</p>
+            
+
+            
+            <div class="method-source-code" id="accept_charset-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/core.rb, line 753</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">accept_charset=</span>(<span class="ruby-identifier">accept_charset</span>)
+  <span class="ruby-identifier">@@accept_charset</span>=<span class="ruby-identifier">accept_charset</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- accept_charset-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- accept_charset-3D-method -->
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">new(tag_maker) { block }</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">new(options_hash = {}) { block }</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Create a new <a href="CGI.html"><code>CGI</code></a> instance.</p>
+<dl class="rdoc-list note-list"><dt><code>tag_maker</code>
+<dd>
+<p>This is the same as using the <code>options_hash</code> form with the value <code>{ :tag_maker =&gt; tag_maker }</code> Note that it is recommended to use the <code>options_hash</code> form, since it also allows you specify the charset you will accept.</p>
+</dd><dt><code>options_hash</code>
+<dd>
+<p>A Hash that recognizes three options:</p>
+<dl class="rdoc-list note-list"><dt><code>:accept_charset</code>
+<dd>
+<p>specifies encoding of received query string.  If omitted, <code>@@accept_charset</code> is used.  If the encoding is not valid, a <a href="CGI/InvalidEncoding.html"><code>CGI::InvalidEncoding</code></a> will be raised.</p>
+
+<p>Example. Suppose <code>@@accept_charset</code> is “UTF-8”</p>
+
+<p>when not specified:</p>
+
+<pre class="ruby"><span class="ruby-identifier">cgi</span>=<span class="ruby-constant">CGI</span>.<span class="ruby-identifier">new</span>      <span class="ruby-comment"># @accept_charset # =&gt; &quot;UTF-8&quot;</span>
+</pre>
+
+<p>when specified as “EUC-JP”:</p>
+
+<pre class="ruby"><span class="ruby-identifier">cgi</span>=<span class="ruby-constant">CGI</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:accept_charset</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;EUC-JP&quot;</span>) <span class="ruby-comment"># =&gt; &quot;EUC-JP&quot;</span>
+</pre>
+</dd><dt><code>:tag_maker</code>
+<dd>
+<p>String that specifies which version of the HTML generation methods to use.  If not specified, no HTML generation methods will be loaded.</p>
+
+<p>The following values are supported:</p>
+<dl class="rdoc-list note-list"><dt>“html3”
+<dd>
+<p>HTML 3.x</p>
+</dd><dt>“html4”
+<dd>
+<p>HTML 4.0</p>
+</dd><dt>“html4Tr”
+<dd>
+<p>HTML 4.0 Transitional</p>
+</dd><dt>“html4Fr”
+<dd>
+<p>HTML 4.0 with Framesets</p>
+</dd><dt>“html5”
+<dd>
+<p>HTML 5</p>
+</dd></dl>
+</dd><dt><code>:max_multipart_length</code>
+<dd>
+<p>Specifies maximum length of multipart data. Can be an Integer scalar or a lambda, that will be evaluated when the request is parsed. This allows more complex logic to be set when determining whether to accept multipart data (e.g. consult a registered users upload allowance)</p>
+
+<p>Default is 128 * 1024 * 1024 bytes</p>
+
+<pre class="ruby"><span class="ruby-identifier">cgi</span>=<span class="ruby-constant">CGI</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:max_multipart_length</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">268435456</span>) <span class="ruby-comment"># simple scalar</span>
+
+<span class="ruby-identifier">cgi</span>=<span class="ruby-constant">CGI</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:max_multipart_length</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-operator">-&gt;</span> {<span class="ruby-identifier">check_filesystem</span>}) <span class="ruby-comment"># lambda</span>
+</pre>
+</dd></dl>
+</dd><dt><code>block</code>
+<dd>
+<p>If provided, the block is called when an invalid encoding is encountered. For example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">encoding_errors</span>={}
+<span class="ruby-identifier">cgi</span>=<span class="ruby-constant">CGI</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:accept_charset</span><span class="ruby-operator">=&gt;</span><span class="ruby-string">&quot;EUC-JP&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>,<span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">encoding_errors</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span>
+</pre>
+</dd></dl>
+
+<p>Finally, if the <a href="CGI.html"><code>CGI</code></a> object is not created in a standard <a href="CGI.html"><code>CGI</code></a> call environment (that is, it can&#39;t locate REQUEST_METHOD in its environment), then it will run in “offline” mode.  In this mode, it reads its parameters from the command line or (failing that) from standard input.  Otherwise, cookies and other parameters are parsed automatically from the standard <a href="CGI.html"><code>CGI</code></a> locations, which varies according to the REQUEST_METHOD.</p>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/core.rb, line 839</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) <span class="ruby-comment"># :yields: name, value</span>
+  <span class="ruby-ivar">@accept_charset_error_block</span> = <span class="ruby-identifier">block_given?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">block</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@options</span>={
+    <span class="ruby-value">:accept_charset</span><span class="ruby-operator">=&gt;</span><span class="ruby-identifier">@@accept_charset</span>,
+    <span class="ruby-value">:max_multipart_length</span><span class="ruby-operator">=&gt;</span><span class="ruby-identifier">@@max_multipart_length</span>
+  }
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">options</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Hash</span>
+    <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">String</span>
+    <span class="ruby-ivar">@options</span>[<span class="ruby-value">:tag_maker</span>]=<span class="ruby-identifier">options</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@accept_charset</span>=<span class="ruby-ivar">@options</span>[<span class="ruby-value">:accept_charset</span>]
+  <span class="ruby-ivar">@max_multipart_length</span>=<span class="ruby-ivar">@options</span>[<span class="ruby-value">:max_multipart_length</span>]
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">MOD_RUBY</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-constant">ENV</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-string">&quot;GATEWAY_INTERFACE&quot;</span>)
+    <span class="ruby-constant">Apache</span>.<span class="ruby-identifier">request</span>.<span class="ruby-identifier">setup_cgi_env</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">extend</span> <span class="ruby-constant">QueryExtension</span>
+  <span class="ruby-ivar">@multipart</span> = <span class="ruby-keyword">false</span>
+
+  <span class="ruby-identifier">initialize_query</span>()  <span class="ruby-comment"># set @params, @cookies</span>
+  <span class="ruby-ivar">@output_cookies</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@output_hidden</span> = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-keyword">case</span> <span class="ruby-ivar">@options</span>[<span class="ruby-value">:tag_maker</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;html3&quot;</span>
+    <span class="ruby-identifier">require_relative</span> <span class="ruby-string">&#39;html&#39;</span>
+    <span class="ruby-identifier">extend</span> <span class="ruby-constant">Html3</span>
+    <span class="ruby-identifier">extend</span> <span class="ruby-constant">HtmlExtension</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;html4&quot;</span>
+    <span class="ruby-identifier">require_relative</span> <span class="ruby-string">&#39;html&#39;</span>
+    <span class="ruby-identifier">extend</span> <span class="ruby-constant">Html4</span>
+    <span class="ruby-identifier">extend</span> <span class="ruby-constant">HtmlExtension</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;html4Tr&quot;</span>
+    <span class="ruby-identifier">require_relative</span> <span class="ruby-string">&#39;html&#39;</span>
+    <span class="ruby-identifier">extend</span> <span class="ruby-constant">Html4Tr</span>
+    <span class="ruby-identifier">extend</span> <span class="ruby-constant">HtmlExtension</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;html4Fr&quot;</span>
+    <span class="ruby-identifier">require_relative</span> <span class="ruby-string">&#39;html&#39;</span>
+    <span class="ruby-identifier">extend</span> <span class="ruby-constant">Html4Tr</span>
+    <span class="ruby-identifier">extend</span> <span class="ruby-constant">Html4Fr</span>
+    <span class="ruby-identifier">extend</span> <span class="ruby-constant">HtmlExtension</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;html5&quot;</span>
+    <span class="ruby-identifier">require_relative</span> <span class="ruby-string">&#39;html&#39;</span>
+    <span class="ruby-identifier">extend</span> <span class="ruby-constant">Html5</span>
+    <span class="ruby-identifier">extend</span> <span class="ruby-constant">HtmlExtension</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+        <div id="parse-method" class="method-detail ">
+          <a name="method-c-parse"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">parse</span><span
+              class="method-args">(query)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Parse an HTTP query string into a hash of key=&gt;value pairs.</p>
+
+<pre class="ruby"><span class="ruby-identifier">params</span> = <span class="ruby-constant">CGI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;query_string&quot;</span>)
+  <span class="ruby-comment"># {&quot;name1&quot; =&gt; [&quot;value1&quot;, &quot;value2&quot;, ...],</span>
+  <span class="ruby-comment">#  &quot;name2&quot; =&gt; [&quot;value1&quot;, &quot;value2&quot;, ...], ... }</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="parse-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/core.rb, line 382</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">parse</span>(<span class="ruby-identifier">query</span>)
+  <span class="ruby-identifier">params</span> = {}
+  <span class="ruby-identifier">query</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/[&amp;;]/</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pairs</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span> = <span class="ruby-identifier">pairs</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&#39;=&#39;</span>,<span class="ruby-value">2</span>).<span class="ruby-identifier">collect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-constant">CGI</span>.<span class="ruby-identifier">unescape</span>(<span class="ruby-identifier">v</span>) }
+
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">key</span>
+
+    <span class="ruby-identifier">params</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">||=</span> []
+    <span class="ruby-identifier">params</span>[<span class="ruby-identifier">key</span>].<span class="ruby-identifier">push</span>(<span class="ruby-identifier">value</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">params</span>.<span class="ruby-identifier">default</span>=[].<span class="ruby-identifier">freeze</span>
+  <span class="ruby-identifier">params</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- parse-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- parse-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="header-method" class="method-detail method-alias">
+          <a name="method-i-header"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">header</span><span
+              class="method-args">(options='text/html')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>This method is an alias for <a href="CGI.html#method-i-http_header"><code>http_header</code></a>, when <a href="CGI/HTML5.html"><code>HTML5</code></a> tag maker is inactive.</p>
+
+<p>NOTE: use <a href="CGI.html#method-i-http_header"><code>http_header</code></a> to create HTTP header blocks, this alias is only provided for backwards compatibility.</p>
+
+<p>Using <a href="CGI.html#method-i-header"><code>header</code></a> with the <a href="CGI/HTML5.html"><code>HTML5</code></a> tag maker will create a &lt;header&gt; element.</p>
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="CGI.html#method-i-http_header">http_header</a>
+          </div>
+          
+        </div><!-- header-method -->
+      
+        <div id="http_header-method" class="method-detail ">
+          <a name="method-i-http_header"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">http_header(content_type_string="text/html")</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">http_header(headers_hash)</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Create an HTTP header block as a string.</p>
+
+<p>Includes the empty line that ends the header block.</p>
+<dl class="rdoc-list note-list"><dt><code>content_type_string</code>
+<dd>
+<p>If this form is used, this string is the <code>Content-Type</code></p>
+</dd><dt><code>headers_hash</code>
+<dd>
+<p>A Hash of header values. The following header keys are recognized:</p>
+<dl class="rdoc-list note-list"><dt>type
+<dd>
+<p>The Content-Type header.  Defaults to “text/html”</p>
+</dd><dt>charset
+<dd>
+<p>The charset of the body, appended to the Content-Type header.</p>
+</dd><dt>nph
+<dd>
+<p>A boolean value.  If true, prepend protocol string and status code, and date; and sets default values for “server” and “connection” if not explicitly set.</p>
+</dd><dt>status
+<dd>
+<p>The HTTP status code as a String, returned as the Status header.  The values are:</p>
+<dl class="rdoc-list note-list"><dt>OK
+<dd>
+<p>200 OK</p>
+</dd><dt>PARTIAL_CONTENT
+<dd>
+<p>206 Partial Content</p>
+</dd><dt>MULTIPLE_CHOICES
+<dd>
+<p>300 Multiple Choices</p>
+</dd><dt>MOVED
+<dd>
+<p>301 Moved Permanently</p>
+</dd><dt>REDIRECT
+<dd>
+<p>302 Found</p>
+</dd><dt>NOT_MODIFIED
+<dd>
+<p>304 Not Modified</p>
+</dd><dt>BAD_REQUEST
+<dd>
+<p>400 Bad Request</p>
+</dd><dt>AUTH_REQUIRED
+<dd>
+<p>401 Authorization Required</p>
+</dd><dt>FORBIDDEN
+<dd>
+<p>403 Forbidden</p>
+</dd><dt>NOT_FOUND
+<dd>
+<p>404 Not Found</p>
+</dd><dt>METHOD_NOT_ALLOWED
+<dd>
+<p>405 Method Not Allowed</p>
+</dd><dt>NOT_ACCEPTABLE
+<dd>
+<p>406 Not Acceptable</p>
+</dd><dt>LENGTH_REQUIRED
+<dd>
+<p>411 Length Required</p>
+</dd><dt>PRECONDITION_FAILED
+<dd>
+<p>412 Precondition Failed</p>
+</dd><dt>SERVER_ERROR
+<dd>
+<p>500 Internal Server Error</p>
+</dd><dt>NOT_IMPLEMENTED
+<dd>
+<p>501 Method Not Implemented</p>
+</dd><dt>BAD_GATEWAY
+<dd>
+<p>502 Bad Gateway</p>
+</dd><dt>VARIANT_ALSO_VARIES
+<dd>
+<p>506 Variant Also Negotiates</p>
+</dd></dl>
+</dd><dt>server
+<dd>
+<p>The server software, returned as the Server header.</p>
+</dd><dt>connection
+<dd>
+<p>The connection type, returned as the Connection header (for instance, “close”.</p>
+</dd><dt>length
+<dd>
+<p>The length of the content that will be sent, returned as the Content-Length header.</p>
+</dd><dt>language
+<dd>
+<p>The language of the content, returned as the Content-Language header.</p>
+</dd><dt>expires
+<dd>
+<p>The time on which the current content expires, as a <code>Time</code> object, returned as the Expires header.</p>
+</dd><dt>cookie
+<dd>
+<p>A cookie or cookies, returned as one or more Set-Cookie headers.  The value can be the literal string of the cookie; a <a href="CGI/Cookie.html"><code>CGI::Cookie</code></a> object; an Array of literal cookie strings or <a href="CGI/Cookie.html"><code>Cookie</code></a> objects; or a hash all of whose values are literal cookie strings or <a href="CGI/Cookie.html"><code>Cookie</code></a> objects.</p>
+
+<p>These cookies are in addition to the cookies held in the @output_cookies field.</p>
+</dd></dl>
+
+<p>Other headers can also be set; they are appended as key: value.</p>
+</dd></dl>
+
+<p>Examples:</p>
+
+<pre class="ruby"><span class="ruby-identifier">http_header</span>
+  <span class="ruby-comment"># Content-Type: text/html</span>
+
+<span class="ruby-identifier">http_header</span>(<span class="ruby-string">&quot;text/plain&quot;</span>)
+  <span class="ruby-comment"># Content-Type: text/plain</span>
+
+<span class="ruby-identifier">http_header</span>(<span class="ruby-string">&quot;nph&quot;</span>        <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">true</span>,
+            <span class="ruby-string">&quot;status&quot;</span>     <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;OK&quot;</span>,  <span class="ruby-comment"># == &quot;200 OK&quot;</span>
+              <span class="ruby-comment"># &quot;status&quot;     =&gt; &quot;200 GOOD&quot;,</span>
+            <span class="ruby-string">&quot;server&quot;</span>     <span class="ruby-operator">=&gt;</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">&#39;SERVER_SOFTWARE&#39;</span>],
+            <span class="ruby-string">&quot;connection&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;close&quot;</span>,
+            <span class="ruby-string">&quot;type&quot;</span>       <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;text/html&quot;</span>,
+            <span class="ruby-string">&quot;charset&quot;</span>    <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;iso-2022-jp&quot;</span>,
+              <span class="ruby-comment"># Content-Type: text/html; charset=iso-2022-jp</span>
+            <span class="ruby-string">&quot;length&quot;</span>     <span class="ruby-operator">=&gt;</span> <span class="ruby-value">103</span>,
+            <span class="ruby-string">&quot;language&quot;</span>   <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;ja&quot;</span>,
+            <span class="ruby-string">&quot;expires&quot;</span>    <span class="ruby-operator">=&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">+</span> <span class="ruby-value">30</span>,
+            <span class="ruby-string">&quot;cookie&quot;</span>     <span class="ruby-operator">=&gt;</span> [<span class="ruby-identifier">cookie1</span>, <span class="ruby-identifier">cookie2</span>],
+            <span class="ruby-string">&quot;my_header1&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;my_value&quot;</span>,
+            <span class="ruby-string">&quot;my_header2&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;my_value&quot;</span>)
+</pre>
+
+<p>This method does not perform charset conversion.</p>
+            
+
+            
+            <div class="method-source-code" id="http_header-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/core.rb, line 160</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">http_header</span>(<span class="ruby-identifier">options</span>=<span class="ruby-string">&#39;text/html&#39;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
+    <span class="ruby-identifier">content_type</span> = <span class="ruby-identifier">options</span>
+    <span class="ruby-identifier">buf</span> = <span class="ruby-identifier">_header_for_string</span>(<span class="ruby-identifier">content_type</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-string">&#39;type&#39;</span>)
+      <span class="ruby-identifier">content_type</span> = <span class="ruby-identifier">options</span>[<span class="ruby-string">&#39;type&#39;</span>]
+      <span class="ruby-identifier">buf</span> = <span class="ruby-identifier">_header_for_string</span>(<span class="ruby-identifier">content_type</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">buf</span> = <span class="ruby-identifier">_header_for_hash</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">dup</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;expected String or Hash but got #{options.class}&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">MOD_RUBY</span>)
+    <span class="ruby-identifier">_header_for_modruby</span>(<span class="ruby-identifier">buf</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-string">&#39;&#39;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">EOL</span>    <span class="ruby-comment"># empty line of separator</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">buf</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- http_header-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="CGI.html#method-i-header">header</a>
+          </div>
+          
+
+          
+        </div><!-- http_header-method -->
+      
+        <div id="out-method" class="method-detail ">
+          <a name="method-i-out"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">out(content_type_string='text/html')</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">out(headers_hash)</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Print an HTTP header and body to $DEFAULT_OUTPUT ($&gt;)</p>
+<dl class="rdoc-list note-list"><dt><code>content_type_string</code>
+<dd>
+<p>If a string is passed, it is assumed to be the content type.</p>
+</dd><dt><code>headers_hash</code>
+<dd>
+<p>This is a Hash of headers, similar to that used by <a href="CGI.html#method-i-http_header"><code>http_header</code></a>.</p>
+</dd><dt><code>block</code>
+<dd>
+<p>A block is required and should evaluate to the body of the response.</p>
+</dd></dl>
+
+<p><code>Content-Length</code> is automatically calculated from the size of the String returned by the content block.</p>
+
+<p>If <code>ENV['REQUEST_METHOD'] == &quot;HEAD&quot;</code>, then only the header is output (the content block is still required, but it is ignored).</p>
+
+<p>If the charset is “iso-2022-jp” or “euc-jp” or “shift_jis” then the content is converted to this charset, and the language is set to “ja”.</p>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">cgi</span> = <span class="ruby-constant">CGI</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">out</span>{ <span class="ruby-string">&quot;string&quot;</span> }
+  <span class="ruby-comment"># Content-Type: text/html</span>
+  <span class="ruby-comment"># Content-Length: 6</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># string</span>
+
+<span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">out</span>(<span class="ruby-string">&quot;text/plain&quot;</span>) { <span class="ruby-string">&quot;string&quot;</span> }
+  <span class="ruby-comment"># Content-Type: text/plain</span>
+  <span class="ruby-comment"># Content-Length: 6</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># string</span>
+
+<span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">out</span>(<span class="ruby-string">&quot;nph&quot;</span>        <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">true</span>,
+        <span class="ruby-string">&quot;status&quot;</span>     <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;OK&quot;</span>,  <span class="ruby-comment"># == &quot;200 OK&quot;</span>
+        <span class="ruby-string">&quot;server&quot;</span>     <span class="ruby-operator">=&gt;</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">&#39;SERVER_SOFTWARE&#39;</span>],
+        <span class="ruby-string">&quot;connection&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;close&quot;</span>,
+        <span class="ruby-string">&quot;type&quot;</span>       <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;text/html&quot;</span>,
+        <span class="ruby-string">&quot;charset&quot;</span>    <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;iso-2022-jp&quot;</span>,
+          <span class="ruby-comment"># Content-Type: text/html; charset=iso-2022-jp</span>
+        <span class="ruby-string">&quot;language&quot;</span>   <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;ja&quot;</span>,
+        <span class="ruby-string">&quot;expires&quot;</span>    <span class="ruby-operator">=&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">+</span> (<span class="ruby-value">3600</span> <span class="ruby-operator">*</span> <span class="ruby-value">24</span> <span class="ruby-operator">*</span> <span class="ruby-value">30</span>),
+        <span class="ruby-string">&quot;cookie&quot;</span>     <span class="ruby-operator">=&gt;</span> [<span class="ruby-identifier">cookie1</span>, <span class="ruby-identifier">cookie2</span>],
+        <span class="ruby-string">&quot;my_header1&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;my_value&quot;</span>,
+        <span class="ruby-string">&quot;my_header2&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;my_value&quot;</span>) { <span class="ruby-string">&quot;string&quot;</span> }
+   <span class="ruby-comment"># HTTP/1.1 200 OK</span>
+   <span class="ruby-comment"># Date: Sun, 15 May 2011 17:35:54 GMT</span>
+   <span class="ruby-comment"># Server: Apache 2.2.0</span>
+   <span class="ruby-comment"># Connection: close</span>
+   <span class="ruby-comment"># Content-Type: text/html; charset=iso-2022-jp</span>
+   <span class="ruby-comment"># Content-Length: 6</span>
+   <span class="ruby-comment"># Content-Language: ja</span>
+   <span class="ruby-comment"># Expires: Tue, 14 Jun 2011 17:35:54 GMT</span>
+   <span class="ruby-comment"># Set-Cookie: foo</span>
+   <span class="ruby-comment"># Set-Cookie: bar</span>
+   <span class="ruby-comment"># my_header1: my_value</span>
+   <span class="ruby-comment"># my_header2: my_value</span>
+   <span class="ruby-comment">#</span>
+   <span class="ruby-comment"># string</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="out-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/core.rb, line 356</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">out</span>(<span class="ruby-identifier">options</span> = <span class="ruby-string">&quot;text/html&quot;</span>) <span class="ruby-comment"># :yield:</span>
+
+  <span class="ruby-identifier">options</span> = { <span class="ruby-string">&quot;type&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">options</span> } <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+  <span class="ruby-identifier">content</span> = <span class="ruby-keyword">yield</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;length&quot;</span>] = <span class="ruby-identifier">content</span>.<span class="ruby-identifier">bytesize</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">output</span> = <span class="ruby-identifier">stdoutput</span>
+  <span class="ruby-identifier">output</span>.<span class="ruby-identifier">binmode</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span> <span class="ruby-identifier">output</span>.<span class="ruby-identifier">binmode</span>
+  <span class="ruby-identifier">output</span>.<span class="ruby-identifier">print</span> <span class="ruby-identifier">http_header</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">output</span>.<span class="ruby-identifier">print</span> <span class="ruby-identifier">content</span> <span class="ruby-keyword">unless</span> <span class="ruby-string">&quot;HEAD&quot;</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">env_table</span>[<span class="ruby-string">&#39;REQUEST_METHOD&#39;</span>]
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- out-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- out-method -->
+      
+        <div id="print-method" class="method-detail ">
+          <a name="method-i-print"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">print</span><span
+              class="method-args">(*options)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Print an argument or list of arguments to the default output stream</p>
+
+<pre class="ruby"><span class="ruby-identifier">cgi</span> = <span class="ruby-constant">CGI</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">print</span>    <span class="ruby-comment"># default:  cgi.print == $DEFAULT_OUTPUT.print</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="print-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/core.rb, line 372</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">print</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">stdoutput</span>.<span class="ruby-identifier">print</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- print-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- print-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_CGI_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_CGI_versioned").load("/associated/2.7.4/CGI.ihtml");</script> <div id='tx_CGI' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_CGI").load("/associated/CGI.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Hack your world.  Feed your head.  Live curious</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_CGI.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_CGI.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

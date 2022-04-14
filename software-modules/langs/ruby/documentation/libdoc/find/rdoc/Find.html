@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Module : Find  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:20:51 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = ''  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = ''  --> 
+  <title>Module: Find (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href=".css/obf.css"  -->
+  <link rel="stylesheet" href="css/inuit.css" >
+  <link rel="stylesheet" href="css/grid.inuit.css" >
+  <link rel="stylesheet" href="css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="css/carbon17.css" type="text/css" >
+
+
+  <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="/js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="module rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>find.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-find">::find</a></li>
+          
+          <li><a href="#method-c-prune">::prune</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="./Find.html">Find</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="module">Find</h1>
+
+    <div id="description" class="description">
+      
+<p>The <code>Find</code> module supports the top-down traversal of a set of file paths.</p>
+
+<p>For example, to total the size of all files under your home directory, ignoring anything in a “dot” directory (e.g. $HOME/.ssh):</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;find&#39;</span>
+
+<span class="ruby-identifier">total_size</span> = <span class="ruby-value">0</span>
+
+<span class="ruby-constant">Find</span>.<span class="ruby-identifier">find</span>(<span class="ruby-constant">ENV</span>[<span class="ruby-string">&quot;HOME&quot;</span>]) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">FileTest</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">path</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">path</span>).<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&#39;.&#39;</span>)
+      <span class="ruby-constant">Find</span>.<span class="ruby-identifier">prune</span>       <span class="ruby-comment"># Don&#39;t look any further into this directory.</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">next</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">total_size</span> <span class="ruby-operator">+=</span> <span class="ruby-constant">FileTest</span>.<span class="ruby-identifier">size</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="find-method" class="method-detail ">
+          <a name="method-c-find"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">find</span><span
+              class="method-args">(*paths, ignore_error: true)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Calls the associated block with the name of every file and directory listed as arguments, then recursively on their subdirectories, and so on.</p>
+
+<p>Returns an enumerator if no block is given.</p>
+
+<p>See the <code>Find</code> module documentation for an example.</p>
+            
+
+            
+            <div class="method-source-code" id="find-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File find.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">find</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">paths</span>, <span class="ruby-value">ignore_error:</span> <span class="ruby-keyword">true</span>) <span class="ruby-comment"># :yield: path</span>
+  <span class="ruby-identifier">block_given?</span> <span class="ruby-keyword">or</span> <span class="ruby-keyword">return</span> <span class="ruby-identifier">enum_for</span>(<span class="ruby-identifier">__method__</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">paths</span>, <span class="ruby-value">ignore_error:</span> <span class="ruby-identifier">ignore_error</span>)
+
+  <span class="ruby-identifier">fs_encoding</span> = <span class="ruby-constant">Encoding</span>.<span class="ruby-identifier">find</span>(<span class="ruby-string">&quot;filesystem&quot;</span>)
+
+  <span class="ruby-identifier">paths</span>.<span class="ruby-identifier">collect!</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span>, <span class="ruby-identifier">d</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">d</span>); <span class="ruby-identifier">d</span>.<span class="ruby-identifier">dup</span>}.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">path</span> = <span class="ruby-identifier">path</span>.<span class="ruby-identifier">to_path</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">path</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:to_path</span>
+    <span class="ruby-identifier">enc</span> = <span class="ruby-identifier">path</span>.<span class="ruby-identifier">encoding</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">US_ASCII</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">fs_encoding</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">path</span>.<span class="ruby-identifier">encoding</span>
+    <span class="ruby-identifier">ps</span> = [<span class="ruby-identifier">path</span>]
+    <span class="ruby-keyword">while</span> <span class="ruby-identifier">file</span> = <span class="ruby-identifier">ps</span>.<span class="ruby-identifier">shift</span>
+      <span class="ruby-identifier">catch</span>(<span class="ruby-value">:prune</span>) <span class="ruby-keyword">do</span>
+        <span class="ruby-keyword">yield</span> <span class="ruby-identifier">file</span>.<span class="ruby-identifier">dup</span>
+        <span class="ruby-keyword">begin</span>
+          <span class="ruby-identifier">s</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">lstat</span>(<span class="ruby-identifier">file</span>)
+        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span>, <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EACCES</span>, <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOTDIR</span>, <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ELOOP</span>, <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENAMETOOLONG</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ignore_error</span>
+          <span class="ruby-keyword">next</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-keyword">begin</span>
+            <span class="ruby-identifier">fs</span> = <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">children</span>(<span class="ruby-identifier">file</span>, <span class="ruby-value">encoding:</span> <span class="ruby-identifier">enc</span>)
+          <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span>, <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EACCES</span>, <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOTDIR</span>, <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ELOOP</span>, <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENAMETOOLONG</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ignore_error</span>
+            <span class="ruby-keyword">next</span>
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-identifier">fs</span>.<span class="ruby-identifier">sort!</span>
+          <span class="ruby-identifier">fs</span>.<span class="ruby-identifier">reverse_each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">f</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">file</span>, <span class="ruby-identifier">f</span>)
+            <span class="ruby-identifier">ps</span>.<span class="ruby-identifier">unshift</span> <span class="ruby-identifier">f</span>
+          }
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- find-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- find-method -->
+      
+        <div id="prune-method" class="method-detail ">
+          <a name="method-c-prune"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">prune</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Skips the current file or directory, restarting the loop with the next entry. If the current file is a directory, that directory will not be recursively entered. Meaningful only within the block associated with <a href="Find.html#method-c-find"><code>Find::find</code></a>.</p>
+
+<p>See the <code>Find</code> module documentation for an example.</p>
+            
+
+            
+            <div class="method-source-code" id="prune-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File find.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">prune</span>
+  <span class="ruby-identifier">throw</span> <span class="ruby-value">:prune</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- prune-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- prune-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Find_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Find_versioned").load("/associated/2.7.4/Find.ihtml");</script> <div id='tx_Find' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Find").load("/associated/Find.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, an erratic source of art, music, and technology.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Find.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Find.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

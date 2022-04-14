@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Module : Racc  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:28:10 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = ''  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = ''  --> 
+  <title>Module: Racc (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href=".css/obf.css"  -->
+  <link rel="stylesheet" href="css/inuit.css" >
+  <link rel="stylesheet" href="css/grid.inuit.css" >
+  <link rel="stylesheet" href="css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="css/carbon17.css" type="text/css" >
+
+
+  <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="/js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="module rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>racc/parser.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">CLASS</span> <a href="Racc/ParseError.html">Racc::ParseError</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Racc/Parser.html">Racc::Parser</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="./Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="./Racc/ParseError.html">Object::ParseError</a></li>
+        
+          
+          
+          <li><a href="./Racc.html">Racc</a></li>
+        
+          
+          
+          <li><a href="./Racc/ParseError.html">Racc::ParseError</a></li>
+        
+          
+          
+          <li><a href="./Racc/ParseError.html">Racc::ParseError</a></li>
+        
+          
+          
+          <li><a href="./Racc/Parser.html">Racc::Parser</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="module">Racc</h1>
+
+    <div id="description" class="description">
+      
+<p><a href="Racc.html"><code>Racc</code></a> is a LALR(1) parser generator. It is written in Ruby itself, and generates Ruby programs.</p>
+
+<h2 id="module-Racc-label-Command-line+Reference">Command-line Reference<span><a href="#module-Racc-label-Command-line+Reference">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<pre>racc [-o&lt;var&gt;filename&lt;/var&gt;] [--output-file=&lt;var&gt;filename&lt;/var&gt;]
+     [-e&lt;var&gt;rubypath&lt;/var&gt;] [--embedded=&lt;var&gt;rubypath&lt;/var&gt;]
+     [-v] [--verbose]
+     [-O&lt;var&gt;filename&lt;/var&gt;] [--log-file=&lt;var&gt;filename&lt;/var&gt;]
+     [-g] [--debug]
+     [-E] [--embedded]
+     [-l] [--no-line-convert]
+     [-c] [--line-convert-all]
+     [-a] [--no-omit-actions]
+     [-C] [--check-only]
+     [-S] [--output-status]
+     [--version] [--copyright] [--help] &lt;var&gt;grammarfile&lt;/var&gt;</pre>
+<dl class="rdoc-list label-list"><dt><code>filename</code>
+<dd>
+<p><a href="Racc.html"><code>Racc</code></a> grammar file. Any extension is permitted.</p>
+</dd><dt>-o+outfile+, –output-file=<code>outfile</code>
+<dd>
+<p>A filename for output. default is &lt;<code>filename</code>&gt;.tab.rb</p>
+</dd><dt>-O+filename+, –log-file=<code>filename</code>
+<dd>
+<p>Place logging output in file <code>filename</code>. Default log file name is &lt;<code>filename</code>&gt;.output.</p>
+</dd><dt>-e+rubypath+, –executable=<code>rubypath</code>
+<dd>
+<p>output executable file(mode 755). where <code>path</code> is the Ruby interpreter.</p>
+</dd><dt>-v, –verbose
+<dd>
+<p>verbose mode. create <code>filename</code>.output file, like yacc&#39;s y.output file.</p>
+</dd><dt>-g, –debug
+<dd>
+<p>add debug code to parser class. To display debuggin information, use this &#39;-g&#39; option and set @yydebug true in parser class.</p>
+</dd><dt>-E, –embedded
+<dd>
+<p>Output parser which doesn&#39;t need runtime files (racc/parser.rb).</p>
+</dd><dt>-C, –check-only
+<dd>
+<p>Check syntax of racc grammar file and quit.</p>
+</dd><dt>-S, –output-status
+<dd>
+<p>Print messages time to time while compiling.</p>
+</dd><dt>-l, –no-line-convert
+<dd>
+<p>turns off line number converting.</p>
+</dd><dt>-c, –line-convert-all
+<dd>
+<p>Convert line number of actions, inner, header and footer.</p>
+</dd><dt>-a, –no-omit-actions
+<dd>
+<p>Call all actions, even if an action is empty.</p>
+</dd><dt>–version
+<dd>
+<p>print <a href="Racc.html"><code>Racc</code></a> version and quit.</p>
+</dd><dt>–copyright
+<dd>
+<p>Print copyright and quit.</p>
+</dd><dt>–help
+<dd>
+<p>Print usage and quit.</p>
+</dd></dl>
+
+<h2 id="module-Racc-label-Generating+Parser+Using+Racc">Generating <a href="Racc/Parser.html"><code>Parser</code></a> Using <a href="Racc.html"><code>Racc</code></a><span><a href="#module-Racc-label-Generating+Parser+Using+Racc">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>To compile <a href="Racc.html"><code>Racc</code></a> grammar file, simply type:</p>
+
+<pre>$ racc parse.y</pre>
+
+<p>This creates Ruby script file “parse.tab.y”. The -o option can change the output filename.</p>
+
+<h2 id="module-Racc-label-Writing+A+Racc+Grammar+File">Writing A <a href="Racc.html"><code>Racc</code></a> Grammar File<span><a href="#module-Racc-label-Writing+A+Racc+Grammar+File">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>If you want your own parser, you have to write a grammar file. A grammar file contains the name of your parser class, grammar for the parser, user code, and anything else. When writing a grammar file, yacc&#39;s knowledge is helpful. If you have not used yacc before, <a href="Racc.html"><code>Racc</code></a> is not too difficult.</p>
+
+<p>Here&#39;s an example <a href="Racc.html"><code>Racc</code></a> grammar file.</p>
+
+<pre>class Calcparser
+rule
+  target: exp { print val[0] }
+
+  exp: exp &#39;+&#39; exp
+     | exp &#39;*&#39; exp
+     | &#39;(&#39; exp &#39;)&#39;
+     | NUMBER
+end</pre>
+
+<p><a href="Racc.html"><code>Racc</code></a> grammar files resemble yacc files. But (of course), this is Ruby code. yacc&#39;s $$ is the &#39;result&#39;, $0, $1… is an array called &#39;val&#39;, and $-1, $-2… is an array called &#39;_values&#39;.</p>
+
+<p>See the Grammar File Reference for more information on grammar files.</p>
+
+<h2 id="module-Racc-label-Parser"><a href="Racc/Parser.html"><code>Parser</code></a><span><a href="#module-Racc-label-Parser">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Then you must prepare the parse entry method. There are two types of parse methods in <a href="Racc.html"><code>Racc</code></a>, Racc::Parser#do_parse and Racc::Parser#yyparse</p>
+
+<p>Racc::Parser#do_parse is simple.</p>
+
+<p>It&#39;s yyparse() of yacc, and <a href="Racc/Parser.html#method-i-next_token"><code>Racc::Parser#next_token</code></a> is yylex(). This method must returns an array like [TOKENSYMBOL, ITS_VALUE]. EOF is [false, false]. (TOKENSYMBOL is a Ruby symbol (taken from String#intern) by default. If you want to change this, see the grammar reference.</p>
+
+<p>Racc::Parser#yyparse is little complicated, but useful. It does not use <a href="Racc/Parser.html#method-i-next_token"><code>Racc::Parser#next_token</code></a>, instead it gets tokens from any iterator.</p>
+
+<p>For example, <code>yyparse(obj, :scan)</code> causes calling +obj#scan+, and you can return tokens by yielding them from +obj#scan+.</p>
+
+<h2 id="module-Racc-label-Debugging">Debugging<span><a href="#module-Racc-label-Debugging">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>When debugging, “-v” or/and the “-g” option is helpful.</p>
+
+<p>“-v” creates verbose log file (.output). “-g” creates a “Verbose Parser”. Verbose <a href="Racc/Parser.html"><code>Parser</code></a> prints the internal status when parsing. But it&#39;s <em>not</em> automatic. You must use -g option and set +@yydebug+ to <code>true</code> in order to get output. -g option only creates the verbose parser.</p>
+
+<h3 id="module-Racc-label-Racc+reported+syntax+error."><a href="Racc.html"><code>Racc</code></a> reported syntax error.<span><a href="#module-Racc-label-Racc+reported+syntax+error.">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Isn&#39;t there too many “end”? grammar of racc file is changed in v0.10.</p>
+
+<p><a href="Racc.html"><code>Racc</code></a> does not use &#39;%&#39; mark, while yacc uses huge number of &#39;%&#39; marks..</p>
+
+<h3 id="module-Racc-label-Racc+reported+-22XXXX+conflicts-22."><a href="Racc.html"><code>Racc</code></a> reported “XXXX conflicts”.<span><a href="#module-Racc-label-Racc+reported+-22XXXX+conflicts-22.">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Try “racc -v xxxx.y”. It causes producing racc&#39;s internal log file, xxxx.output.</p>
+
+<h3 id="module-Racc-label-Generated+parsers+does+not+work+correctly">Generated parsers does not work correctly<span><a href="#module-Racc-label-Generated+parsers+does+not+work+correctly">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Try “racc -g xxxx.y”. This command let racc generate “debugging parser”. Then set @yydebug=true in your parser. It produces a working log of your parser.</p>
+
+<h2 id="module-Racc-label-Re-distributing+Racc+runtime">Re-distributing <a href="Racc.html"><code>Racc</code></a> runtime<span><a href="#module-Racc-label-Re-distributing+Racc+runtime">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>A parser, which is created by <a href="Racc.html"><code>Racc</code></a>, requires the <a href="Racc.html"><code>Racc</code></a> runtime module; racc/parser.rb.</p>
+
+<p>Ruby 1.8.x comes with <a href="Racc.html"><code>Racc</code></a> runtime module, you need NOT distribute <a href="Racc.html"><code>Racc</code></a> runtime files.</p>
+
+<p>If you want to include the <a href="Racc.html"><code>Racc</code></a> runtime module with your parser. This can be done by using &#39;-E&#39; option:</p>
+
+<pre>$ racc -E -omyparser.rb myparser.y</pre>
+
+<p>This command creates myparser.rb which `includes&#39; <a href="Racc.html"><code>Racc</code></a> runtime. Only you must do is to distribute your parser file (myparser.rb).</p>
+
+<p>Note: parser.rb is ruby license, but your parser is not. Your own parser is completely yours.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Racc_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Racc_versioned").load("/associated/2.7.4/Racc.ihtml");</script> <div id='tx_Racc' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Racc").load("/associated/Racc.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, an erratic source of art, music, and technology.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Racc.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Racc.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

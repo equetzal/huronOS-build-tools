@@ -1,0 +1,2382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : Vector  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:23:02 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = ''  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = ''  --> 
+  <title>Class: Vector (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href=".css/obf.css"  -->
+  <link rel="stylesheet" href="css/inuit.css" >
+  <link rel="stylesheet" href="css/grid.inuit.css" >
+  <link rel="stylesheet" href="css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="css/carbon17.css" type="text/css" >
+
+
+  <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="/js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>matrix.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">CLASS</span> <a href="Vector/ZeroVectorError.html">Vector::ZeroVectorError</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-5B-5D">::[]</a></li>
+          
+          <li><a href="#method-c-basis">::basis</a></li>
+          
+          <li><a href="#method-c-elements">::elements</a></li>
+          
+          <li><a href="#method-c-independent-3F">::independent?</a></li>
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-c-zero">::zero</a></li>
+          
+          <li><a href="#method-i-2A">#*</a></li>
+          
+          <li><a href="#method-i-2B">#+</a></li>
+          
+          <li><a href="#method-i-2B-40">#+@</a></li>
+          
+          <li><a href="#method-i-2D">#-</a></li>
+          
+          <li><a href="#method-i-2D-40">#-@</a></li>
+          
+          <li><a href="#method-i-2F">#/</a></li>
+          
+          <li><a href="#method-i-3D-3D">#==</a></li>
+          
+          <li><a href="#method-i-5B-5D">#[]</a></li>
+          
+          <li><a href="#method-i-5B-5D-3D">#[]=</a></li>
+          
+          <li><a href="#method-i-angle_with">#angle_with</a></li>
+          
+          <li><a href="#method-i-coerce">#coerce</a></li>
+          
+          <li><a href="#method-i-collect">#collect</a></li>
+          
+          <li><a href="#method-i-collect-21">#collect!</a></li>
+          
+          <li><a href="#method-i-collect2">#collect2</a></li>
+          
+          <li><a href="#method-i-component">#component</a></li>
+          
+          <li><a href="#method-i-covector">#covector</a></li>
+          
+          <li><a href="#method-i-cross">#cross</a></li>
+          
+          <li><a href="#method-i-cross_product">#cross_product</a></li>
+          
+          <li><a href="#method-i-dot">#dot</a></li>
+          
+          <li><a href="#method-i-each">#each</a></li>
+          
+          <li><a href="#method-i-each2">#each2</a></li>
+          
+          <li><a href="#method-i-element">#element</a></li>
+          
+          <li><a href="#method-i-elements_to_f">#elements_to_f</a></li>
+          
+          <li><a href="#method-i-elements_to_i">#elements_to_i</a></li>
+          
+          <li><a href="#method-i-elements_to_r">#elements_to_r</a></li>
+          
+          <li><a href="#method-i-eql-3F">#eql?</a></li>
+          
+          <li><a href="#method-i-freeze">#freeze</a></li>
+          
+          <li><a href="#method-i-hash">#hash</a></li>
+          
+          <li><a href="#method-i-independent-3F">#independent?</a></li>
+          
+          <li><a href="#method-i-inner_product">#inner_product</a></li>
+          
+          <li><a href="#method-i-inspect">#inspect</a></li>
+          
+          <li><a href="#method-i-magnitude">#magnitude</a></li>
+          
+          <li><a href="#method-i-map">#map</a></li>
+          
+          <li><a href="#method-i-map-21">#map!</a></li>
+          
+          <li><a href="#method-i-map2">#map2</a></li>
+          
+          <li><a href="#method-i-norm">#norm</a></li>
+          
+          <li><a href="#method-i-normalize">#normalize</a></li>
+          
+          <li><a href="#method-i-r">#r</a></li>
+          
+          <li><a href="#method-i-round">#round</a></li>
+          
+          <li><a href="#method-i-size">#size</a></li>
+          
+          <li><a href="#method-i-to_a">#to_a</a></li>
+          
+          <li><a href="#method-i-to_matrix">#to_matrix</a></li>
+          
+          <li><a href="#method-i-to_s">#to_s</a></li>
+          
+          <li><a href="#method-i-zero-3F">#zero?</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Included Modules -->
+      <div id="includes-section" class="section">
+        <h3 class="section-header">Included Modules</h3>
+        <ul class="link-list">
+        
+        
+          <li><a class="include" href="ExceptionForMatrix.html">ExceptionForMatrix</a></li>
+        
+        
+        
+          <li><span class="include">Enumerable</span></li>
+        
+        
+        </ul>
+      </div>
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="./ExceptionForMatrix.html">ExceptionForMatrix</a></li>
+        
+          
+          
+          <li><a href="./ExceptionForMatrix/ErrDimensionMismatch.html">ExceptionForMatrix::ErrDimensionMismatch</a></li>
+        
+          
+          
+          <li><a href="./ExceptionForMatrix/ErrNotRegular.html">ExceptionForMatrix::ErrNotRegular</a></li>
+        
+          
+          
+          <li><a href="./ExceptionForMatrix/ErrOperationNotDefined.html">ExceptionForMatrix::ErrOperationNotDefined</a></li>
+        
+          
+          
+          <li><a href="./ExceptionForMatrix/ErrOperationNotImplemented.html">ExceptionForMatrix::ErrOperationNotImplemented</a></li>
+        
+          
+          
+          <li><a href="./Matrix.html">Matrix</a></li>
+        
+          
+          
+          <li><a href="./Matrix/EigenvalueDecomposition.html">Matrix::EigenvalueDecomposition</a></li>
+        
+          
+          
+          <li><a href="./Matrix/LUPDecomposition.html">Matrix::LUPDecomposition</a></li>
+        
+          
+          
+          <li><a href="./Vector.html">Vector</a></li>
+        
+          
+          
+          <li><a href="./Vector/ZeroVectorError.html">Vector::ZeroVectorError</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">Vector</h1>
+
+    <div id="description" class="description">
+      
+<p>The <code>Vector</code> class represents a mathematical vector, which is useful in its own right, and also constitutes a row or column of a <a href="Matrix.html"><code>Matrix</code></a>.</p>
+
+<h2 id="class-Vector-label-Method+Catalogue">Method Catalogue<span><a href="#class-Vector-label-Method+Catalogue">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>To create a Vector:</p>
+<ul><li>
+<p><a href="Vector.html#method-c-5B-5D"><code>Vector.[](*array)</code></a></p>
+</li><li>
+<p><a href="Vector.html#method-c-elements"><code>Vector.elements</code></a>(array, copy = true)</p>
+</li><li>
+<p><a href="Vector.html#method-c-basis"><code>Vector.basis</code></a>(size: n, index: k)</p>
+</li><li>
+<p><a href="Vector.html#method-c-zero"><code>Vector.zero(n)</code></a></p>
+</li></ul>
+
+<p>To access elements:</p>
+<ul><li>
+<p><a href="Vector.html#method-i-5B-5D"><code>[](i)</code></a></p>
+</li></ul>
+
+<p>To set elements:</p>
+<ul><li>
+<p><a href="Vector.html#method-i-5B-5D-3D"><code>[]=</code></a>(i, v)</p>
+</li></ul>
+
+<p>To enumerate the elements:</p>
+<ul><li>
+<p><a href="Vector.html#method-i-each2"><code>each2(v)</code></a></p>
+</li><li>
+<p><a href="Vector.html#method-i-collect2"><code>collect2(v)</code></a></p>
+</li></ul>
+
+<p>Properties of vectors:</p>
+<ul><li>
+<p><a href="Vector.html#method-i-angle_with"><code>angle_with(v)</code></a></p>
+</li><li>
+<p><a href="Vector.html#method-c-independent-3F"><code>Vector.independent?(*vs)</code></a></p>
+</li><li>
+<p><a href="Vector.html#method-i-independent-3F"><code>independent?(*vs)</code></a></p>
+</li><li>
+<p><a href="Vector.html#method-i-zero-3F"><code>zero?</code></a></p>
+</li></ul>
+
+<p><a href="Vector.html"><code>Vector</code></a> arithmetic:</p>
+<ul><li>
+<p><a href="Vector.html#method-i-2A"><code>*(x)</code></a> “is matrix or number”</p>
+</li><li>
+<p><a href="Vector.html#method-i-2B"><code>+(v)</code></a></p>
+</li><li>
+<p><a href="Vector.html#method-i-2D"><code>-(v)</code></a></p>
+</li><li>
+<p>#/(v)</p>
+</li><li>
+<p><a href="Vector.html#method-i-2B"><code>+</code></a>@</p>
+</li><li>
+<p><a href="Vector.html#method-i-2D"><code>-</code></a>@</p>
+</li></ul>
+
+<p><a href="Vector.html"><code>Vector</code></a> functions:</p>
+<ul><li>
+<p><a href="Vector.html#method-i-inner_product"><code>inner_product(v)</code></a>, dot(v)</p>
+</li><li>
+<p><a href="Vector.html#method-i-cross_product"><code>cross_product(v)</code></a>, cross(v)</p>
+</li><li>
+<p><a href="Vector.html#method-i-collect"><code>collect</code></a></p>
+</li><li>
+<p><a href="Vector.html#method-i-collect-21"><code>collect!</code></a></p>
+</li><li>
+<p><a href="Vector.html#method-i-magnitude"><code>magnitude</code></a></p>
+</li><li>
+<p><a href="Vector.html#method-i-map"><code>map</code></a></p>
+</li><li>
+<p><a href="Vector.html#method-i-map-21"><code>map!</code></a></p>
+</li><li>
+<p><a href="Vector.html#method-i-map2"><code>map2(v)</code></a></p>
+</li><li>
+<p><a href="Vector.html#method-i-norm"><code>norm</code></a></p>
+</li><li>
+<p><a href="Vector.html#method-i-normalize"><code>normalize</code></a></p>
+</li><li>
+<p><a href="Vector.html#method-i-r"><code>r</code></a></p>
+</li><li>
+<p><a href="Vector.html#method-i-round"><code>round</code></a></p>
+</li><li>
+<p><a href="Vector.html#method-i-size"><code>size</code></a></p>
+</li></ul>
+
+<p>Conversion to other data types:</p>
+<ul><li>
+<p><a href="Vector.html#method-i-covector"><code>covector</code></a></p>
+</li><li>
+<p><a href="Vector.html#method-i-to_a"><code>to_a</code></a></p>
+</li><li>
+<p><a href="Vector.html#method-i-coerce"><code>coerce(other)</code></a></p>
+</li></ul>
+
+<p>String representations:</p>
+<ul><li>
+<p><a href="Vector.html#method-i-to_s"><code>to_s</code></a></p>
+</li><li>
+<p><a href="Vector.html#method-i-inspect"><code>inspect</code></a></p>
+</li></ul>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+      <!-- Attributes -->
+      <div id="attribute-method-details" class="method-section section">
+        <h3 class="section-header">Attributes</h3>
+
+        
+        <div id="elements-attribute-method" class="method-detail">
+          <a name="elements"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">elements</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description 245">
+          
+          <p>INSTANCE CREATION</p>
+          
+          </div>
+        </div>
+        
+      </div><!-- attribute-method-details -->
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="5B-5D-method" class="method-detail ">
+          <a name="method-c-5B-5D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">[]</span><span
+              class="method-args">(*array)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Creates a <a href="Vector.html"><code>Vector</code></a> from a list of elements.</p>
+
+<pre>Vector[7, 4, ...]</pre>
+            
+
+            
+            <div class="method-source-code" id="5B-5D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 1898</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Vector</span>.<span class="ruby-identifier ruby-title">[]</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">array</span>)
+  <span class="ruby-identifier">new</span> <span class="ruby-identifier">convert_to_array</span>(<span class="ruby-identifier">array</span>, <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 5B-5D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 5B-5D-method -->
+      
+        <div id="basis-method" class="method-detail ">
+          <a name="method-c-basis"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">basis</span><span
+              class="method-args">(size:, index:)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns a standard basis <code>n</code>-vector, where k is the index.</p>
+
+<pre>Vector.basis(size:, index:) # =&gt; Vector[0, 1, 0]</pre>
+            
+
+            
+            <div class="method-source-code" id="basis-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 1915</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Vector</span>.<span class="ruby-identifier ruby-title">basis</span>(<span class="ruby-value">size:</span>, <span class="ruby-value">index:</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;invalid size (#{size} for 1..)&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;invalid index (#{index} for 0...#{size})&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-value">0</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">index</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">index</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">array</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">size</span>, <span class="ruby-value">0</span>)
+  <span class="ruby-identifier">array</span>[<span class="ruby-identifier">index</span>] = <span class="ruby-value">1</span>
+  <span class="ruby-identifier">new</span> <span class="ruby-identifier">convert_to_array</span>(<span class="ruby-identifier">array</span>, <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- basis-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- basis-method -->
+      
+        <div id="elements-method" class="method-detail ">
+          <a name="method-c-elements"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">elements</span><span
+              class="method-args">(array, copy = true)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Creates a vector from an Array.  The optional second argument specifies whether the array itself or a copy is used internally.</p>
+            
+
+            
+            <div class="method-source-code" id="elements-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 1906</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Vector</span>.<span class="ruby-identifier ruby-title">elements</span>(<span class="ruby-identifier">array</span>, <span class="ruby-identifier">copy</span> = <span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">new</span> <span class="ruby-identifier">convert_to_array</span>(<span class="ruby-identifier">array</span>, <span class="ruby-identifier">copy</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- elements-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- elements-method -->
+      
+        <div id="independent-3F-method" class="method-detail ">
+          <a name="method-c-independent-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">independent?</span><span
+              class="method-args">(*vs)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns <code>true</code> iff all of vectors are linearly independent.</p>
+
+<pre>Vector.independent?(Vector[1,0], Vector[0,1])
+  =&gt; true
+
+Vector.independent?(Vector[1,2], Vector[2,4])
+  =&gt; false</pre>
+            
+
+            
+            <div class="method-source-code" id="independent-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2062</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Vector</span>.<span class="ruby-identifier ruby-title">independent?</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">vs</span>)
+  <span class="ruby-identifier">vs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-node">&quot;expected Vector, got #{v.class}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ErrDimensionMismatch</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">vs</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">vs</span>.<span class="ruby-identifier">count</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">vs</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-constant">Matrix</span>[<span class="ruby-operator">*</span><span class="ruby-identifier">vs</span>].<span class="ruby-identifier">rank</span>.<span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">vs</span>.<span class="ruby-identifier">count</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- independent-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- independent-3F-method -->
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(array)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p><a href="Vector.html#method-c-new"><code>Vector.new</code></a> is private; use Vector[] or <a href="Vector.html#method-c-elements"><code>Vector.elements</code></a> to create.</p>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 1937</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">array</span>)
+  <span class="ruby-comment"># No checking is done at this point.</span>
+  <span class="ruby-ivar">@elements</span> = <span class="ruby-identifier">array</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+        <div id="zero-method" class="method-detail ">
+          <a name="method-c-zero"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">zero</span><span
+              class="method-args">(size)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Return a zero vector.</p>
+
+<pre>Vector.zero(3) =&gt; Vector[0, 0, 0]</pre>
+            
+
+            
+            <div class="method-source-code" id="zero-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 1928</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Vector</span>.<span class="ruby-identifier ruby-title">zero</span>(<span class="ruby-identifier">size</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;invalid size (#{size} for 0..)&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+  <span class="ruby-identifier">array</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">size</span>, <span class="ruby-value">0</span>)
+  <span class="ruby-identifier">new</span> <span class="ruby-identifier">convert_to_array</span>(<span class="ruby-identifier">array</span>, <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- zero-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- zero-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="2A-method" class="method-detail ">
+          <a name="method-i-2A"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">*</span><span
+              class="method-args">(x)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Multiplies the vector by <code>x</code>, where <code>x</code> is a number or a matrix.</p>
+            
+
+            
+            <div class="method-source-code" id="2A-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">*</span>(<span class="ruby-identifier">x</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">x</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Numeric</span>
+    <span class="ruby-identifier">els</span> = <span class="ruby-ivar">@elements</span>.<span class="ruby-identifier">collect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">e</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">x</span>}
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">elements</span>(<span class="ruby-identifier">els</span>, <span class="ruby-keyword">false</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Matrix</span>
+    <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">column_vector</span>(<span class="ruby-keyword">self</span>) <span class="ruby-operator">*</span> <span class="ruby-identifier">x</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Vector</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ErrOperationNotDefined</span>, [<span class="ruby-string">&quot;*&quot;</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>, <span class="ruby-identifier">x</span>.<span class="ruby-identifier">class</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">apply_through_coercion</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">__method__</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 2A-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 2A-method -->
+      
+        <div id="2B-method" class="method-detail ">
+          <a name="method-i-2B"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">+</span><span
+              class="method-args">(v)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p><a href="Vector.html"><code>Vector</code></a> addition.</p>
+            
+
+            
+            <div class="method-source-code" id="2B-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">+</span>(<span class="ruby-identifier">v</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">v</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Vector</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ErrDimensionMismatch</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">els</span> = <span class="ruby-identifier">collect2</span>(<span class="ruby-identifier">v</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">v1</span>, <span class="ruby-identifier">v2</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">v1</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">v2</span>
+    }
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">elements</span>(<span class="ruby-identifier">els</span>, <span class="ruby-keyword">false</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Matrix</span>
+    <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">column_vector</span>(<span class="ruby-keyword">self</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">v</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">apply_through_coercion</span>(<span class="ruby-identifier">v</span>, <span class="ruby-identifier">__method__</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 2B-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 2B-method -->
+      
+        <div id="2B-40-method" class="method-detail ">
+          <a name="method-i-2B-40"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">+@</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="2B-40-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2201</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">+@</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 2B-40-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 2B-40-method -->
+      
+        <div id="2D-method" class="method-detail ">
+          <a name="method-i-2D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">-</span><span
+              class="method-args">(v)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p><a href="Vector.html"><code>Vector</code></a> subtraction.</p>
+            
+
+            
+            <div class="method-source-code" id="2D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2171</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-</span>(<span class="ruby-identifier">v</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">v</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Vector</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ErrDimensionMismatch</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">els</span> = <span class="ruby-identifier">collect2</span>(<span class="ruby-identifier">v</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">v1</span>, <span class="ruby-identifier">v2</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">v1</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">v2</span>
+    }
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">elements</span>(<span class="ruby-identifier">els</span>, <span class="ruby-keyword">false</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Matrix</span>
+    <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">column_vector</span>(<span class="ruby-keyword">self</span>) <span class="ruby-operator">-</span> <span class="ruby-identifier">v</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">apply_through_coercion</span>(<span class="ruby-identifier">v</span>, <span class="ruby-identifier">__method__</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 2D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 2D-method -->
+      
+        <div id="2D-40-method" class="method-detail ">
+          <a name="method-i-2D-40"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">-@</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="2D-40-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2205</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">-@</span>
+  <span class="ruby-identifier">collect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-operator">-</span><span class="ruby-identifier">e</span> }
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 2D-40-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 2D-40-method -->
+      
+        <div id="2F-method" class="method-detail ">
+          <a name="method-i-2F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">/</span><span
+              class="method-args">(x)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p><a href="Vector.html"><code>Vector</code></a> division.</p>
+            
+
+            
+            <div class="method-source-code" id="2F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2189</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">/</span>(<span class="ruby-identifier">x</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">x</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Numeric</span>
+    <span class="ruby-identifier">els</span> = <span class="ruby-ivar">@elements</span>.<span class="ruby-identifier">collect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">e</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">x</span>}
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">elements</span>(<span class="ruby-identifier">els</span>, <span class="ruby-keyword">false</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Matrix</span>, <span class="ruby-constant">Vector</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ErrOperationNotDefined</span>, [<span class="ruby-string">&quot;/&quot;</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>, <span class="ruby-identifier">x</span>.<span class="ruby-identifier">class</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">apply_through_coercion</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">__method__</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 2F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 2F-method -->
+      
+        <div id="3D-3D-method" class="method-detail ">
+          <a name="method-i-3D-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">==</span><span
+              class="method-args">(other)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns <code>true</code> iff the two vectors have the same elements in the same order.</p>
+            
+
+            
+            <div class="method-source-code" id="3D-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">Vector</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">other</span>
+  <span class="ruby-ivar">@elements</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">elements</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 3D-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- 3D-3D-method -->
+      
+        <div id="5B-5D-method" class="method-detail ">
+          <a name="method-i-5B-5D"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">vector[range]</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">vector[integer]</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns element or elements of the vector.</p>
+            
+
+            
+            <div class="method-source-code" id="5B-5D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 1951</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]</span>(<span class="ruby-identifier">i</span>)
+  <span class="ruby-ivar">@elements</span>[<span class="ruby-identifier">i</span>]
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 5B-5D-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Vector.html#method-i-element">element</a>, <a href="Vector.html#method-i-component">component</a>
+          </div>
+          
+
+          
+        </div><!-- 5B-5D-method -->
+      
+        <div id="5B-5D-3D-method" class="method-detail ">
+          <a name="method-i-5B-5D-3D"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">vector[range] = new_vector</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">vector[range] = row_matrix</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">vector[range] = new_element</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">vector[integer] = new_element</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Set element or elements of vector.</p>
+            
+
+            
+            <div class="method-source-code" id="5B-5D-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 1966</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]=</span>(<span class="ruby-identifier">i</span>, <span class="ruby-identifier">v</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">FrozenError</span>, <span class="ruby-string">&quot;can&#39;t modify frozen Vector&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">frozen?</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Range</span>)
+    <span class="ruby-identifier">range</span> = <span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">CoercionHelper</span>.<span class="ruby-identifier">check_range</span>(<span class="ruby-identifier">i</span>, <span class="ruby-identifier">size</span>, <span class="ruby-value">:vector</span>)
+    <span class="ruby-identifier">set_range</span>(<span class="ruby-identifier">range</span>, <span class="ruby-identifier">v</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">index</span> = <span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">CoercionHelper</span>.<span class="ruby-identifier">check_int</span>(<span class="ruby-identifier">i</span>, <span class="ruby-identifier">size</span>, <span class="ruby-value">:index</span>)
+    <span class="ruby-identifier">set_value</span>(<span class="ruby-identifier">index</span>, <span class="ruby-identifier">v</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- 5B-5D-3D-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Vector.html#method-i-set_element">set_element</a>, <a href="Vector.html#method-i-set_component">set_component</a>
+          </div>
+          
+
+          
+        </div><!-- 5B-5D-3D-method -->
+      
+        <div id="angle_with-method" class="method-detail ">
+          <a name="method-i-angle_with"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">angle_with</span><span
+              class="method-args">(v)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns an angle with another vector. Result is within the [0..Math::PI].</p>
+
+<pre class="ruby"><span class="ruby-constant">Vector</span>[<span class="ruby-value">1</span>,<span class="ruby-value">0</span>].<span class="ruby-identifier">angle_with</span>(<span class="ruby-constant">Vector</span>[<span class="ruby-value">0</span>,<span class="ruby-value">1</span>])
+<span class="ruby-comment"># =&gt; Math::PI / 2</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="angle_with-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2321</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">angle_with</span>(<span class="ruby-identifier">v</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-node">&quot;Expected a Vector, got a #{v.class}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Vector</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ErrDimensionMismatch</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">prod</span> = <span class="ruby-identifier">magnitude</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">magnitude</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ZeroVectorError</span>, <span class="ruby-string">&quot;Can&#39;t get angle of zero vector&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">prod</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+  <span class="ruby-identifier">dot</span> = <span class="ruby-identifier">inner_product</span>(<span class="ruby-identifier">v</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">dot</span>.<span class="ruby-identifier">abs</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">prod</span>
+    <span class="ruby-identifier">dot</span>.<span class="ruby-identifier">positive?</span> <span class="ruby-operator">?</span> <span class="ruby-value">0</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Math</span>.<span class="ruby-identifier">acos</span>(<span class="ruby-identifier">dot</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">prod</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- angle_with-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- angle_with-method -->
+      
+        <div id="coerce-method" class="method-detail ">
+          <a name="method-i-coerce"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">coerce</span><span
+              class="method-args">(other)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>The coerce method provides support for Ruby type coercion. This coercion mechanism is used by Ruby to handle mixed-type numeric operations: it is intended to find a compatible common type between the two operands of the operator. See also Numeric#coerce.</p>
+            
+
+            
+            <div class="method-source-code" id="coerce-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2381</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">coerce</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">other</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Numeric</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Matrix</span><span class="ruby-operator">::</span><span class="ruby-constant">Scalar</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">other</span>), <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-node">&quot;#{self.class} can&#39;t be coerced into #{other.class}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- coerce-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- coerce-method -->
+      
+        <div id="collect-method" class="method-detail ">
+          <a name="method-i-collect"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">collect</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Like Array#collect.</p>
+            
+
+            
+            <div class="method-source-code" id="collect-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2265</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">collect</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) <span class="ruby-comment"># :yield: e</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">to_enum</span>(<span class="ruby-value">:collect</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
+  <span class="ruby-identifier">els</span> = <span class="ruby-ivar">@elements</span>.<span class="ruby-identifier">collect</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">elements</span>(<span class="ruby-identifier">els</span>, <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- collect-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Vector.html#method-i-map">map</a>
+          </div>
+          
+
+          
+        </div><!-- collect-method -->
+      
+        <div id="collect-21-method" class="method-detail ">
+          <a name="method-i-collect-21"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">collect!</span><span
+              class="method-args">(&block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Like Array#collect!</p>
+            
+
+            
+            <div class="method-source-code" id="collect-21-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2275</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">collect!</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">to_enum</span>(<span class="ruby-value">:collect!</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">FrozenError</span>, <span class="ruby-string">&quot;can&#39;t modify frozen Vector&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">frozen?</span>
+  <span class="ruby-ivar">@elements</span>.<span class="ruby-identifier">collect!</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- collect-21-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Vector.html#method-i-map-21">map!</a>
+          </div>
+          
+
+          
+        </div><!-- collect-21-method -->
+      
+        <div id="collect2-method" class="method-detail ">
+          <a name="method-i-collect2"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">collect2</span><span
+              class="method-args">(v)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Collects (as in Enumerable#collect) over the elements of this vector and <code>v</code> in conjunction.</p>
+            
+
+            
+            <div class="method-source-code" id="collect2-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2040</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">collect2</span>(<span class="ruby-identifier">v</span>) <span class="ruby-comment"># :yield: e1, e2</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-string">&quot;Integer is not like Vector&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Integer</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ErrDimensionMismatch</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">to_enum</span>(<span class="ruby-value">:collect2</span>, <span class="ruby-identifier">v</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
+  <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">size</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-ivar">@elements</span>[<span class="ruby-identifier">i</span>], <span class="ruby-identifier">v</span>[<span class="ruby-identifier">i</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- collect2-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- collect2-method -->
+      
+        <div id="component-method" class="method-detail method-alias">
+          <a name="method-i-component"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">component</span><span
+              class="method-args">(i)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Vector.html#method-i-5B-5D">[]</a>
+          </div>
+          
+        </div><!-- component-method -->
+      
+        <div id="covector-method" class="method-detail ">
+          <a name="method-i-covector"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">covector</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Creates a single-row matrix from this vector.</p>
+            
+
+            
+            <div class="method-source-code" id="covector-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2341</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">covector</span>
+  <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">row_vector</span>(<span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- covector-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- covector-method -->
+      
+        <div id="cross-method" class="method-detail method-alias">
+          <a name="method-i-cross"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">cross</span><span
+              class="method-args">(*vs)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Vector.html#method-i-cross_product">cross_product</a>
+          </div>
+          
+        </div><!-- cross-method -->
+      
+        <div id="cross_product-method" class="method-detail ">
+          <a name="method-i-cross_product"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">cross_product</span><span
+              class="method-args">(*vs)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns the cross product of this vector with the others.</p>
+
+<pre class="ruby"><span class="ruby-constant">Vector</span>[<span class="ruby-value">1</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>].<span class="ruby-identifier">cross_product</span> <span class="ruby-constant">Vector</span>[<span class="ruby-value">0</span>, <span class="ruby-value">1</span>, <span class="ruby-value">0</span>]   <span class="ruby-operator">=&gt;</span> <span class="ruby-constant">Vector</span>[<span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">1</span>]
+</pre>
+
+<p>It is generalized to other dimensions to return a vector perpendicular to the arguments.</p>
+
+<pre class="ruby"><span class="ruby-constant">Vector</span>[<span class="ruby-value">1</span>, <span class="ruby-value">2</span>].<span class="ruby-identifier">cross_product</span> <span class="ruby-comment"># =&gt; Vector[-2, 1]</span>
+<span class="ruby-constant">Vector</span>[<span class="ruby-value">1</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>].<span class="ruby-identifier">cross_product</span>(
+   <span class="ruby-constant">Vector</span>[<span class="ruby-value">0</span>, <span class="ruby-value">1</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>],
+   <span class="ruby-constant">Vector</span>[<span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">1</span>, <span class="ruby-value">0</span>]
+)  <span class="ruby-comment">#=&gt; Vector[0, 0, 0, 1]</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="cross_product-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2240</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cross_product</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">vs</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ErrOperationNotDefined</span>, <span class="ruby-node">&quot;cross product is not defined on vectors of dimension #{size}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">2</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;wrong number of arguments (#{vs.size} for #{size - 2})&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">vs</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">2</span>
+  <span class="ruby-identifier">vs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-node">&quot;expected Vector, got #{v.class}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Vector</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ErrDimensionMismatch</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">size</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">size</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">2</span>
+    <span class="ruby-constant">Vector</span>[<span class="ruby-operator">-</span><span class="ruby-ivar">@elements</span>[<span class="ruby-value">1</span>], <span class="ruby-ivar">@elements</span>[<span class="ruby-value">0</span>]]
+  <span class="ruby-keyword">when</span> <span class="ruby-value">3</span>
+    <span class="ruby-identifier">v</span> = <span class="ruby-identifier">vs</span>[<span class="ruby-value">0</span>]
+    <span class="ruby-constant">Vector</span>[ <span class="ruby-identifier">v</span>[<span class="ruby-value">2</span>]<span class="ruby-operator">*</span><span class="ruby-ivar">@elements</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">v</span>[<span class="ruby-value">1</span>]<span class="ruby-operator">*</span><span class="ruby-ivar">@elements</span>[<span class="ruby-value">2</span>],
+      <span class="ruby-identifier">v</span>[<span class="ruby-value">0</span>]<span class="ruby-operator">*</span><span class="ruby-ivar">@elements</span>[<span class="ruby-value">2</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">v</span>[<span class="ruby-value">2</span>]<span class="ruby-operator">*</span><span class="ruby-ivar">@elements</span>[<span class="ruby-value">0</span>],
+      <span class="ruby-identifier">v</span>[<span class="ruby-value">1</span>]<span class="ruby-operator">*</span><span class="ruby-ivar">@elements</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">v</span>[<span class="ruby-value">0</span>]<span class="ruby-operator">*</span><span class="ruby-ivar">@elements</span>[<span class="ruby-value">1</span>] ]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">rows</span> = <span class="ruby-keyword">self</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">vs</span>, <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">size</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-constant">Vector</span>.<span class="ruby-identifier">basis</span>(<span class="ruby-value">size:</span> <span class="ruby-identifier">size</span>, <span class="ruby-value">index:</span> <span class="ruby-identifier">i</span>) }
+    <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">rows</span>(<span class="ruby-identifier">rows</span>).<span class="ruby-identifier">laplace_expansion</span>(<span class="ruby-value">row:</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- cross_product-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Vector.html#method-i-cross">cross</a>
+          </div>
+          
+
+          
+        </div><!-- cross_product-method -->
+      
+        <div id="dot-method" class="method-detail method-alias">
+          <a name="method-i-dot"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">dot</span><span
+              class="method-args">(v)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Vector.html#method-i-inner_product">inner_product</a>
+          </div>
+          
+        </div><!-- dot-method -->
+      
+        <div id="each-method" class="method-detail ">
+          <a name="method-i-each"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">each</span><span
+              class="method-args">(&block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Iterate over the elements of this vector</p>
+            
+
+            
+            <div class="method-source-code" id="each-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2017</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">to_enum</span>(<span class="ruby-value">:each</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
+  <span class="ruby-ivar">@elements</span>.<span class="ruby-identifier">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- each-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- each-method -->
+      
+        <div id="each2-method" class="method-detail ">
+          <a name="method-i-each2"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">each2</span><span
+              class="method-args">(v)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Iterate over the elements of this vector and <code>v</code> in conjunction.</p>
+            
+
+            
+            <div class="method-source-code" id="each2-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2026</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each2</span>(<span class="ruby-identifier">v</span>) <span class="ruby-comment"># :yield: e1, e2</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-string">&quot;Integer is not like Vector&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Integer</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ErrDimensionMismatch</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">to_enum</span>(<span class="ruby-value">:each2</span>, <span class="ruby-identifier">v</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
+  <span class="ruby-identifier">size</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-ivar">@elements</span>[<span class="ruby-identifier">i</span>], <span class="ruby-identifier">v</span>[<span class="ruby-identifier">i</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- each2-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- each2-method -->
+      
+        <div id="element-method" class="method-detail method-alias">
+          <a name="method-i-element"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">element</span><span
+              class="method-args">(i)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Vector.html#method-i-5B-5D">[]</a>
+          </div>
+          
+        </div><!-- element-method -->
+      
+        <div id="elements_to_f-method" class="method-detail ">
+          <a name="method-i-elements_to_f"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">elements_to_f</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="elements_to_f-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2359</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">elements_to_f</span>
+  <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;Vector#elements_to_f is deprecated&quot;</span>, <span class="ruby-value">uplevel:</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_f</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- elements_to_f-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- elements_to_f-method -->
+      
+        <div id="elements_to_i-method" class="method-detail ">
+          <a name="method-i-elements_to_i"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">elements_to_i</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="elements_to_i-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2364</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">elements_to_i</span>
+  <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;Vector#elements_to_i is deprecated&quot;</span>, <span class="ruby-value">uplevel:</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_i</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- elements_to_i-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- elements_to_i-method -->
+      
+        <div id="elements_to_r-method" class="method-detail ">
+          <a name="method-i-elements_to_r"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">elements_to_r</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="elements_to_r-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2369</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">elements_to_r</span>
+  <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;Vector#elements_to_r is deprecated&quot;</span>, <span class="ruby-value">uplevel:</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_r</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- elements_to_r-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- elements_to_r-method -->
+      
+        <div id="eql-3F-method" class="method-detail ">
+          <a name="method-i-eql-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">eql?</span><span
+              class="method-args">(other)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="eql-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">eql?</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">Vector</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">other</span>
+  <span class="ruby-ivar">@elements</span>.<span class="ruby-identifier">eql?</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">elements</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- eql-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- eql-3F-method -->
+      
+        <div id="freeze-method" class="method-detail ">
+          <a name="method-i-freeze"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">freeze</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="freeze-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2091</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">freeze</span>
+  <span class="ruby-ivar">@elements</span>.<span class="ruby-identifier">freeze</span>
+  <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- freeze-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- freeze-method -->
+      
+        <div id="hash-method" class="method-detail ">
+          <a name="method-i-hash"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">hash</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns a hash-code for the vector.</p>
+            
+
+            
+            <div class="method-source-code" id="hash-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span>
+  <span class="ruby-ivar">@elements</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- hash-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- hash-method -->
+      
+        <div id="independent-3F-method" class="method-detail ">
+          <a name="method-i-independent-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">independent?</span><span
+              class="method-args">(*vs)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns <code>true</code> iff all of vectors are linearly independent.</p>
+
+<pre>Vector[1,0].independent?(Vector[0,1])
+  =&gt; true
+
+Vector[1,2].independent?(Vector[2,4])
+  =&gt; false</pre>
+            
+
+            
+            <div class="method-source-code" id="independent-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2080</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">independent?</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">vs</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">independent?</span>(<span class="ruby-keyword">self</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">vs</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- independent-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- independent-3F-method -->
+      
+        <div id="inner_product-method" class="method-detail ">
+          <a name="method-i-inner_product"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">inner_product</span><span
+              class="method-args">(v)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns the inner product of this vector with the other.</p>
+
+<pre class="ruby"><span class="ruby-constant">Vector</span>[<span class="ruby-value">4</span>,<span class="ruby-value">7</span>].<span class="ruby-identifier">inner_product</span> <span class="ruby-constant">Vector</span>[<span class="ruby-value">10</span>,<span class="ruby-value">1</span>]  <span class="ruby-operator">=&gt;</span> <span class="ruby-value">47</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="inner_product-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2217</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inner_product</span>(<span class="ruby-identifier">v</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ErrDimensionMismatch</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">size</span>
+
+  <span class="ruby-identifier">p</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">each2</span>(<span class="ruby-identifier">v</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">v1</span>, <span class="ruby-identifier">v2</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">p</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">v1</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">v2</span>.<span class="ruby-identifier">conj</span>
+  }
+  <span class="ruby-identifier">p</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- inner_product-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Vector.html#method-i-dot">dot</a>
+          </div>
+          
+
+          
+        </div><!-- inner_product-method -->
+      
+        <div id="inspect-method" class="method-detail ">
+          <a name="method-i-inspect"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">inspect</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Overrides Object#inspect</p>
+            
+
+            
+            <div class="method-source-code" id="inspect-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2404</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inspect</span>
+  <span class="ruby-string">&quot;Vector&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@elements</span>.<span class="ruby-identifier">inspect</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- inspect-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- inspect-method -->
+      
+        <div id="magnitude-method" class="method-detail ">
+          <a name="method-i-magnitude"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">magnitude</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns the modulus (Pythagorean distance) of the vector.</p>
+
+<pre>Vector[5,8,2].r =&gt; 9.643650761</pre>
+            
+
+            
+            <div class="method-source-code" id="magnitude-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2287</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">magnitude</span>
+  <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-ivar">@elements</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-value">0</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">v</span>, <span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">abs2</span>})
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- magnitude-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Vector.html#method-i-r">r</a>, <a href="Vector.html#method-i-norm">norm</a>
+          </div>
+          
+
+          
+        </div><!-- magnitude-method -->
+      
+        <div id="map-method" class="method-detail method-alias">
+          <a name="method-i-map"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">map</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Vector.html#method-i-collect">collect</a>
+          </div>
+          
+        </div><!-- map-method -->
+      
+        <div id="map-21-method" class="method-detail method-alias">
+          <a name="method-i-map-21"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">map!</span><span
+              class="method-args">(&block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Vector.html#method-i-collect-21">collect!</a>
+          </div>
+          
+        </div><!-- map-21-method -->
+      
+        <div id="map2-method" class="method-detail ">
+          <a name="method-i-map2"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">map2</span><span
+              class="method-args">(v)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Like <a href="Vector.html#method-i-collect2"><code>Vector#collect2</code></a>, but returns a <a href="Vector.html"><code>Vector</code></a> instead of an Array.</p>
+            
+
+            
+            <div class="method-source-code" id="map2-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2296</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">map2</span>(<span class="ruby-identifier">v</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) <span class="ruby-comment"># :yield: e1, e2</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">to_enum</span>(<span class="ruby-value">:map2</span>, <span class="ruby-identifier">v</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
+  <span class="ruby-identifier">els</span> = <span class="ruby-identifier">collect2</span>(<span class="ruby-identifier">v</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">elements</span>(<span class="ruby-identifier">els</span>, <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- map2-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- map2-method -->
+      
+        <div id="norm-method" class="method-detail method-alias">
+          <a name="method-i-norm"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">norm</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Vector.html#method-i-magnitude">magnitude</a>
+          </div>
+          
+        </div><!-- norm-method -->
+      
+        <div id="normalize-method" class="method-detail ">
+          <a name="method-i-normalize"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">normalize</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns a new vector with the same direction but with norm 1.</p>
+
+<pre>v = Vector[5,8,2].normalize
+# =&gt; Vector[0.5184758473652127, 0.8295613557843402, 0.20739033894608505]
+v.norm =&gt; 1.0</pre>
+            
+
+            
+            <div class="method-source-code" id="normalize-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2310</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">normalize</span>
+  <span class="ruby-identifier">n</span> = <span class="ruby-identifier">magnitude</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ZeroVectorError</span>, <span class="ruby-string">&quot;Zero vectors can not be normalized&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">self</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">n</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- normalize-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- normalize-method -->
+      
+        <div id="r-method" class="method-detail method-alias">
+          <a name="method-i-r"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">r</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Vector.html#method-i-magnitude">magnitude</a>
+          </div>
+          
+        </div><!-- r-method -->
+      
+        <div id="round-method" class="method-detail ">
+          <a name="method-i-round"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">round</span><span
+              class="method-args">(ndigits=0)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns a vector with entries rounded to the given precision (see Float#round)</p>
+            
+
+            
+            <div class="method-source-code" id="round-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 1999</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">round</span>(<span class="ruby-identifier">ndigits</span>=<span class="ruby-value">0</span>)
+  <span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">round</span>(<span class="ruby-identifier">ndigits</span>)}
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- round-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- round-method -->
+      
+        <div id="size-method" class="method-detail ">
+          <a name="method-i-size"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">size</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns the number of elements in the vector.</p>
+            
+
+            
+            <div class="method-source-code" id="size-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2006</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">size</span>
+  <span class="ruby-ivar">@elements</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- size-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- size-method -->
+      
+        <div id="to_a-method" class="method-detail ">
+          <a name="method-i-to_a"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_a</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns the elements of the vector in an array.</p>
+            
+
+            
+            <div class="method-source-code" id="to_a-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2348</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_a</span>
+  <span class="ruby-ivar">@elements</span>.<span class="ruby-identifier">dup</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- to_a-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_a-method -->
+      
+        <div id="to_matrix-method" class="method-detail ">
+          <a name="method-i-to_matrix"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_matrix</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Return a single-column matrix from this vector</p>
+            
+
+            
+            <div class="method-source-code" id="to_matrix-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2355</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_matrix</span>
+  <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">column_vector</span>(<span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- to_matrix-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_matrix-method -->
+      
+        <div id="to_s-method" class="method-detail ">
+          <a name="method-i-to_s"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_s</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Overrides Object#to_s</p>
+            
+
+            
+            <div class="method-source-code" id="to_s-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2397</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
+  <span class="ruby-string">&quot;Vector[&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@elements</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;, &quot;</span>) <span class="ruby-operator">+</span> <span class="ruby-string">&quot;]&quot;</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- to_s-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_s-method -->
+      
+        <div id="zero-3F-method" class="method-detail ">
+          <a name="method-i-zero-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">zero?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns <code>true</code> iff all elements are zero.</p>
+            
+
+            
+            <div class="method-source-code" id="zero-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File matrix.rb, line 2087</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">zero?</span>
+  <span class="ruby-identifier">all?</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:zero?</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- zero-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- zero-3F-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Vector_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Vector_versioned").load("/associated/2.7.4/Vector.ihtml");</script> <div id='tx_Vector' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Vector").load("/associated/Vector.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Hack your world.  Feed your head.  Live curious</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Vector.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Vector.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

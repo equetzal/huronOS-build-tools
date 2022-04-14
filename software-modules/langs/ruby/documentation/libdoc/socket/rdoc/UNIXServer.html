@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : UNIXServer  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:32:05 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = ''  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = ''  --> 
+  <title>Class: UNIXServer (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href=".css/obf.css"  -->
+  <link rel="stylesheet" href="css/inuit.css" >
+  <link rel="stylesheet" href="css/grid.inuit.css" >
+  <link rel="stylesheet" href="css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="css/carbon17.css" type="text/css" >
+
+
+  <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="/js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>socket/lib/socket.rb</li>      
+            
+          
+          <li class='in-file'>socket/unixserver.c</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="UNIXSocket.html">UNIXSocket</a></p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-accept">#accept</a></li>
+          
+          <li><a href="#method-i-accept_nonblock">#accept_nonblock</a></li>
+          
+          <li><a href="#method-i-listen">#listen</a></li>
+          
+          <li><a href="#method-i-sysaccept">#sysaccept</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="./Addrinfo.html">Addrinfo</a></li>
+        
+          
+          
+          <li><a href="./BasicSocket.html">BasicSocket</a></li>
+        
+          
+          
+          <li><a href="./IPSocket.html">IPSocket</a></li>
+        
+          
+          
+          <li><a href="./Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="./SOCKSSocket.html">SOCKSSocket</a></li>
+        
+          
+          
+          <li><a href="./Socket.html">Socket</a></li>
+        
+          
+          
+          <li><a href="./Socket/AncillaryData.html">Socket::AncillaryData</a></li>
+        
+          
+          
+          <li><a href="./Socket/Constants.html">Socket::Constants</a></li>
+        
+          
+          
+          <li><a href="./Socket/Ifaddr.html">Socket::Ifaddr</a></li>
+        
+          
+          
+          <li><a href="./Socket/Option.html">Socket::Option</a></li>
+        
+          
+          
+          <li><a href="./Socket/UDPSource.html">Socket::UDPSource</a></li>
+        
+          
+          
+          <li><a href="./SocketError.html">SocketError</a></li>
+        
+          
+          
+          <li><a href="./TCPServer.html">TCPServer</a></li>
+        
+          
+          
+          <li><a href="./TCPSocket.html">TCPSocket</a></li>
+        
+          
+          
+          <li><a href="./UDPSocket.html">UDPSocket</a></li>
+        
+          
+          
+          <li><a href="./UNIXServer.html">UNIXServer</a></li>
+        
+          
+          
+          <li><a href="./UNIXSocket.html">UNIXSocket</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">UNIXServer</h1>
+
+    <div id="description" class="description">
+      
+<p><a href="UNIXServer.html"><code>UNIXServer</code></a> represents a UNIX domain stream server socket.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">new(path) => unixserver</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Creates a new UNIX server socket bound to <em>path</em>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;socket&#39;</span>
+
+<span class="ruby-identifier">serv</span> = <span class="ruby-constant">UNIXServer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;/tmp/sock&quot;</span>)
+<span class="ruby-identifier">s</span> = <span class="ruby-identifier">serv</span>.<span class="ruby-identifier">accept</span>
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">read</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+unix_svr_init(VALUE sock, VALUE path)
+{
+    return rsock_init_unixsock(sock, path, 1);
+}
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="accept-method" class="method-detail ">
+          <a name="method-i-accept"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">accept => unixsocket</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Accepts an incoming connection. It returns a new <a href="UNIXSocket.html"><code>UNIXSocket</code></a> object.</p>
+
+<pre class="ruby"><span class="ruby-constant">UNIXServer</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;/tmp/sock&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">serv</span><span class="ruby-operator">|</span>
+  <span class="ruby-constant">UNIXSocket</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;/tmp/sock&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">s</span> = <span class="ruby-identifier">serv</span>.<span class="ruby-identifier">accept</span>
+    <span class="ruby-identifier">s</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;hi&quot;</span>
+    <span class="ruby-identifier">s</span>.<span class="ruby-identifier">close</span>
+    <span class="ruby-identifier">p</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">read</span> <span class="ruby-comment">#=&gt; &quot;hi\n&quot;</span>
+  }
+}
+</pre>
+            
+
+            
+            <div class="method-source-code" id="accept-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+unix_accept(VALUE sock)
+{
+    rb_io_t *fptr;
+    struct sockaddr_un from;
+    socklen_t fromlen;
+
+    GetOpenFile(sock, fptr);
+    fromlen = (socklen_t)sizeof(struct sockaddr_un);
+    return rsock_s_accept(rb_cUNIXSocket, fptr-&gt;fd,
+                          (struct sockaddr*)&amp;from, &amp;fromlen);
+}
+            </pre> 
+            </div><!-- accept-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- accept-method -->
+      
+        <div id="accept_nonblock-method" class="method-detail ">
+          <a name="method-i-accept_nonblock"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">accept_nonblock([options]) => unixsocket</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Accepts an incoming connection using accept(2) after O_NONBLOCK is set for the underlying file descriptor. It returns an accepted <a href="UNIXSocket.html"><code>UNIXSocket</code></a> for the incoming connection.</p>
+
+<h3 id="method-i-accept_nonblock-label-Example">Example<span><a href="#method-i-accept_nonblock-label-Example">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;socket&#39;</span>
+<span class="ruby-identifier">serv</span> = <span class="ruby-constant">UNIXServer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;/tmp/sock&quot;</span>)
+<span class="ruby-keyword">begin</span> <span class="ruby-comment"># emulate blocking accept</span>
+  <span class="ruby-identifier">sock</span> = <span class="ruby-identifier">serv</span>.<span class="ruby-identifier">accept_nonblock</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">IO</span><span class="ruby-operator">::</span><span class="ruby-constant">WaitReadable</span>, <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EINTR</span>
+  <span class="ruby-constant">IO</span>.<span class="ruby-identifier">select</span>([<span class="ruby-identifier">serv</span>])
+  <span class="ruby-keyword">retry</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-comment"># sock is an accepted socket.</span>
+</pre>
+
+<p>Refer to <a href="Socket.html#method-i-accept"><code>Socket#accept</code></a> for the exceptions that may be thrown if the call to <a href="UNIXServer.html#method-i-accept_nonblock"><code>UNIXServer#accept_nonblock</code></a> fails.</p>
+
+<p><a href="UNIXServer.html#method-i-accept_nonblock"><code>UNIXServer#accept_nonblock</code></a> may raise any error corresponding to accept(2) failure, including Errno::EWOULDBLOCK.</p>
+
+<p>If the exception is Errno::EWOULDBLOCK, Errno::EAGAIN, Errno::ECONNABORTED or Errno::EPROTO, it is extended by IO::WaitReadable. So IO::WaitReadable can be used to rescue the exceptions for retrying accept_nonblock.</p>
+
+<p>By specifying a keyword argument <em>exception</em> to <code>false</code>, you can indicate that <a href="UNIXServer.html#method-i-accept_nonblock"><code>accept_nonblock</code></a> should not raise an IO::WaitReadable exception, but return the symbol <code>:wait_readable</code> instead.</p>
+
+<h3 id="method-i-accept_nonblock-label-See">See<span><a href="#method-i-accept_nonblock-label-See">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><a href="UNIXServer.html#method-i-accept"><code>UNIXServer#accept</code></a></p>
+</li><li>
+<p><a href="Socket.html#method-i-accept"><code>Socket#accept</code></a></p>
+</li></ul>
+            
+
+            
+            <div class="method-source-code" id="accept_nonblock-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File socket/lib/socket.rb, line 1354</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">accept_nonblock</span>(<span class="ruby-value">exception:</span> <span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">__accept_nonblock</span>(<span class="ruby-identifier">exception</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- accept_nonblock-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- accept_nonblock-method -->
+      
+        <div id="listen-method" class="method-detail ">
+          <a name="method-i-listen"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">listen( int ) => 0</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Listens for connections, using the specified <code>int</code> as the backlog. A call to <em>listen</em> only applies if the <code>socket</code> is of type SOCK_STREAM or SOCK_SEQPACKET.</p>
+
+<h3 id="method-i-listen-label-Parameter">Parameter<span><a href="#method-i-listen-label-Parameter">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p><code>backlog</code> - the maximum length of the queue for pending connections.</p>
+</li></ul>
+
+<h3 id="method-i-listen-label-Example+1">Example 1<span><a href="#method-i-listen-label-Example+1">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;socket&#39;</span>
+<span class="ruby-identifier">include</span> <span class="ruby-constant">Socket</span><span class="ruby-operator">::</span><span class="ruby-constant">Constants</span>
+<span class="ruby-identifier">socket</span> = <span class="ruby-constant">Socket</span>.<span class="ruby-identifier">new</span>( <span class="ruby-constant">AF_INET</span>, <span class="ruby-constant">SOCK_STREAM</span>, <span class="ruby-value">0</span> )
+<span class="ruby-identifier">sockaddr</span> = <span class="ruby-constant">Socket</span>.<span class="ruby-identifier">pack_sockaddr_in</span>( <span class="ruby-value">2200</span>, <span class="ruby-string">&#39;localhost&#39;</span> )
+<span class="ruby-identifier">socket</span>.<span class="ruby-identifier">bind</span>( <span class="ruby-identifier">sockaddr</span> )
+<span class="ruby-identifier">socket</span>.<span class="ruby-identifier">listen</span>( <span class="ruby-value">5</span> )
+</pre>
+
+<h3 id="method-i-listen-label-Example+2+-28listening+on+an+arbitrary+port-2C+unix-based+systems+only-29-3A">Example 2 (listening on an arbitrary port, unix-based systems only):<span><a href="#method-i-listen-label-Example+2+-28listening+on+an+arbitrary+port-2C+unix-based+systems+only-29-3A">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;socket&#39;</span>
+<span class="ruby-identifier">include</span> <span class="ruby-constant">Socket</span><span class="ruby-operator">::</span><span class="ruby-constant">Constants</span>
+<span class="ruby-identifier">socket</span> = <span class="ruby-constant">Socket</span>.<span class="ruby-identifier">new</span>( <span class="ruby-constant">AF_INET</span>, <span class="ruby-constant">SOCK_STREAM</span>, <span class="ruby-value">0</span> )
+<span class="ruby-identifier">socket</span>.<span class="ruby-identifier">listen</span>( <span class="ruby-value">1</span> )
+</pre>
+
+<h3 id="method-i-listen-label-Unix-based+Exceptions">Unix-based Exceptions<span><a href="#method-i-listen-label-Unix-based+Exceptions">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>On unix based systems the above will work because a new <code>sockaddr</code> struct is created on the address ADDR_ANY, for an arbitrary port number as handed off by the kernel. It will not work on Windows, because Windows requires that the <code>socket</code> is bound by calling <em>bind</em> before it can <em>listen</em>.</p>
+
+<p>If the <em>backlog</em> amount exceeds the implementation-dependent maximum queue length, the implementation&#39;s maximum queue length will be used.</p>
+
+<p>On unix-based based systems the following system exceptions may be raised if the call to <em>listen</em> fails:</p>
+<ul><li>
+<p>Errno::EBADF - the <em>socket</em> argument is not a valid file descriptor</p>
+</li><li>
+<p>Errno::EDESTADDRREQ - the <em>socket</em> is not bound to a local address, and the protocol does not support listening on an unbound socket</p>
+</li><li>
+<p>Errno::EINVAL - the <em>socket</em> is already connected</p>
+</li><li>
+<p>Errno::ENOTSOCK - the <em>socket</em> argument does not refer to a socket</p>
+</li><li>
+<p>Errno::EOPNOTSUPP - the <em>socket</em> protocol does not support listen</p>
+</li><li>
+<p>Errno::EACCES - the calling process does not have appropriate privileges</p>
+</li><li>
+<p>Errno::EINVAL - the <em>socket</em> has been shut down</p>
+</li><li>
+<p>Errno::ENOBUFS - insufficient resources are available in the system to complete the call</p>
+</li></ul>
+
+<h3 id="method-i-listen-label-Windows+Exceptions">Windows Exceptions<span><a href="#method-i-listen-label-Windows+Exceptions">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>On Windows systems the following system exceptions may be raised if the call to <em>listen</em> fails:</p>
+<ul><li>
+<p>Errno::ENETDOWN - the network is down</p>
+</li><li>
+<p>Errno::EADDRINUSE - the socket&#39;s local address is already in use. This usually occurs during the execution of <em>bind</em> but could be delayed if the call to <em>bind</em> was to a partially wildcard address (involving ADDR_ANY) and if a specific address needs to be committed at the time of the call to <em>listen</em></p>
+</li><li>
+<p>Errno::EINPROGRESS - a Windows Sockets 1.1 call is in progress or the service provider is still processing a callback function</p>
+</li><li>
+<p>Errno::EINVAL - the <code>socket</code> has not been bound with a call to <em>bind</em>.</p>
+</li><li>
+<p>Errno::EISCONN - the <code>socket</code> is already connected</p>
+</li><li>
+<p>Errno::EMFILE - no more socket descriptors are available</p>
+</li><li>
+<p>Errno::ENOBUFS - no buffer space is available</p>
+</li><li>
+<p>Errno::ENOTSOC - <code>socket</code> is not a socket</p>
+</li><li>
+<p>Errno::EOPNOTSUPP - the referenced <code>socket</code> is not a type that supports the <em>listen</em> method</p>
+</li></ul>
+
+<h3 id="method-i-listen-label-See">See<span><a href="#method-i-listen-label-See">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>listen manual pages on unix-based systems</p>
+</li><li>
+<p>listen function in Microsoft&#39;s Winsock functions reference</p>
+</li></ul>
+            
+
+            
+            <div class="method-source-code" id="listen-source">
+              <pre> <!-- method.markup_code 290 -->
+               VALUE
+rsock_sock_listen(VALUE sock, VALUE log)
+{
+    rb_io_t *fptr;
+    int backlog;
+
+    backlog = NUM2INT(log);
+    GetOpenFile(sock, fptr);
+    if (listen(fptr-&gt;fd, backlog) &lt; 0)
+	rb_sys_fail(&quot;listen(2)&quot;);
+
+    return INT2FIX(0);
+}
+            </pre> 
+            </div><!-- listen-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- listen-method -->
+      
+        <div id="sysaccept-method" class="method-detail ">
+          <a name="method-i-sysaccept"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">sysaccept => file_descriptor</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Accepts a new connection. It returns the new file descriptor which is an integer.</p>
+
+<pre class="ruby"><span class="ruby-constant">UNIXServer</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;/tmp/sock&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">serv</span><span class="ruby-operator">|</span>
+  <span class="ruby-constant">UNIXSocket</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;/tmp/sock&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">fd</span> = <span class="ruby-identifier">serv</span>.<span class="ruby-identifier">sysaccept</span>
+    <span class="ruby-identifier">s</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">fd</span>)
+    <span class="ruby-identifier">s</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;hi&quot;</span>
+    <span class="ruby-identifier">s</span>.<span class="ruby-identifier">close</span>
+    <span class="ruby-identifier">p</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">read</span> <span class="ruby-comment">#=&gt; &quot;hi\n&quot;</span>
+  }
+}
+</pre>
+            
+
+            
+            <div class="method-source-code" id="sysaccept-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+unix_sysaccept(VALUE sock)
+{
+    rb_io_t *fptr;
+    struct sockaddr_un from;
+    socklen_t fromlen;
+
+    GetOpenFile(sock, fptr);
+    fromlen = (socklen_t)sizeof(struct sockaddr_un);
+    return rsock_s_accept(0, fptr-&gt;fd, (struct sockaddr*)&amp;from, &amp;fromlen);
+}
+            </pre> 
+            </div><!-- sysaccept-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- sysaccept-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_UNIXServer_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_UNIXServer_versioned").load("/associated/2.7.4/UNIXServer.ihtml");</script> <div id='tx_UNIXServer' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_UNIXServer").load("/associated/UNIXServer.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, an erratic source of art, music, and technology.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_UNIXServer.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_UNIXServer.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

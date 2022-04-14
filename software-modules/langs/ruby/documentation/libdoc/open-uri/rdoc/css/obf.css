@@ -1,0 +1,2464 @@
+﻿@charset "UTF-8";
+/*------------------------------------*\
+	INUIT.CSS
+\*------------------------------------*/
+/*
+Author:             Harry Roberts
+Twitter:            @inuitcss
+Author URL:         csswizardry.com
+Project URL:        inuitcss.com
+Version:            3.0.a
+Date:               30 June 2011
+
+Copyright 2011 Harry Roberts
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+*/
+
+
+
+
+
+/*------------------------------------*\
+	RESET
+\*------------------------------------*/
+html,body,div,span,applet,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,abbr,acronym,address,big,cite,code,
+del,dfn,em,img,ins,kbd,q,s,samp,
+small,strike,strong,sub,sup,tt,var,
+b,u,i,center,
+ol,ul,li,
+fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td,
+article,aside,canvas,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section,summary,
+time,mark,audio,video{
+	margin:0;
+	padding:0;
+}
+article,aside,details,figcaption,figure,footer,
+header,hgroup,menu,nav,section{
+	display: block;
+}
+
+table{
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset,img{ 
+	border:0;
+}
+address,caption,cite,dfn,th,var{
+	font-style:normal;
+	font-weight:normal;
+}
+caption,th{
+	text-align:left;
+}
+h1,h2,h3,h4,h5,h6{
+	font-size:100%;
+	font-weight:normal;
+}
+q:before,q:after{
+	content:'';
+}
+abbr,acronym{
+	border:0;
+}
+
+
+
+
+
+/*------------------------------------*\
+	MAIN
+\*------------------------------------*/
+html{
+	overflow-y:scroll; /* Force scrollbars 100% of the time */
+	font-size:100%; /* Use 16px as per http://www.informationarchitects.jp/en/100e2r/ and http://www.wilsonminer.com/posts/2008/oct/20/relative-readability/ */
+	font-family:Cambria, Georgia, "Times New Roman", serif; /* Swap these two lines around to switch between serif and sans */
+	font-family:Calibri, "Helvetica Neue", Arial, sans-serif; /* Swap these two lines around to switch between serif and sans */
+	font-family:Calibri, Helvetica, Arial, sans-serif; /* Swap these two lines around to switch between serif and sans */
+	font-family: Helvetica, Arial, sans-serif; /* Swap these two lines around to switch between serif and sans */
+	font-family: Georgia, "Times New Roman", serif; /* Swap these two lines around to switch between serif and sans */
+
+	line-height:1.5;
+	/* background:url(../images/css/baseline.gif) 0 18px #fff; */
+	color:#333;
+}
+body{
+	min-height:100%;
+}
+
+
+
+
+
+/*------------------------------------*\
+	GRIDS
+\*------------------------------------*/
+/*
+Build a custom grid-system igloo at inuitcss.com
+*/
+
+
+
+
+
+/*------------------------------------*\
+	CLEARFIX
+\*------------------------------------*/
+/*
+Fix clearing issues as per: http://nicolasgallagher.com/micro-clearfix-hack/
+*/
+.cf,
+.grids{
+	zoom:1;
+}
+.cf:before,
+.grids:before,
+.cf:after,
+.grids:after{
+	content:"";
+	display:table;
+}
+.cf:after,
+.grids:after{
+	clear:both;
+}
+
+
+
+
+
+/*------------------------------------*\
+	LOGO
+\*------------------------------------*/
+/*
+Your logo is an image, not a h1: http://csswizardry.com/2010/10/your-logo-is-an-image-not-a-h1/
+*/
+#logo,
+#logo img{
+	display:block;
+	width:auto; /* Width of your logo in pixels (ideally a round grid-number) */
+	height:auto; /* Height of your logo in pixels */
+}
+/* Based on the fact that we need to use an <img /> in our markup, let’s hide the actual image and use a background on the <a>--this gives us semantically sound markup and the ability to use sprites for hover effects! */
+#logo{
+	background:url(/path/to/logo);
+}
+#logo:hover{
+	/* Hover states */
+	background-position:0 -00px;
+}
+#logo img{
+	position:absolute;
+	left:-99999px;
+}
+
+
+
+
+
+/*------------------------------------*\
+	NAV
+\*------------------------------------*/
+.nav{
+	list-style:none;
+	margin:0 0 1.5em 0;
+}
+.nav li{
+	display:inline;
+}
+.nav a{
+	display:inline-block;
+}
+
+
+
+
+
+/*------------------------------------*\
+	TYPE
+\*------------------------------------*/
+/*--- HEADINGS ---*/
+h1{
+	font-size:2em;			/* 32px */
+	margin-bottom:0.75em;	/* 24px */
+	line-height:1.5;		/* 48px */
+}
+h2{
+	font-size:1.5em;		/* 24px */
+	margin-bottom:1em;		/* 24px */
+	line-height:1;			/* 24px */
+}
+h3{
+	font-size:1.25em;		/* 20px */
+	margin-bottom:1.2em;	/* 24px */
+	line-height:1.2;		/* 24px */
+}
+h4{
+	font-size:1.125em;		/* 18px */
+	margin-bottom:1.333em;	/* 24px */
+	line-height:1.333;		/* 24px */
+}
+h5{
+	font-weight:bold;
+}
+h5,
+h6{
+	font-size:1em;			/* 16px */
+	margin-bottom:1.5em;	/* 24px */
+	line-height:1.5;		/* 24px */
+}
+
+/*--- PARAGRAPHS ---*/
+p,
+address{
+	margin-bottom:1.5em;
+}
+/*
+Mo’ robust paragraph indenting: http://csswizardry.com/2010/12/mo-robust-paragraph-indenting/
+Uncomment to activate
+p+p{
+	text-indent:2em;
+	margin-top:-1.5em;
+}
+*/
+
+/*--- FIGURES ---*/
+figure{
+	margin-bottom:1.5em;
+}
+figure img{
+	display:block;
+	margin-bottom:0;
+}
+figcaption{
+	font-size:0.75em;
+}
+
+/*--- LINKS ---*/
+/*
+Say no to negative hovers: http://csswizardry.com/2011/05/on-negative-hovers/
+A negative hover is one whose appearance is subtracted from on hover rather than added to.
+*/
+a{
+	text-decoration:none;
+}
+a:visited{
+	opacity:0.8; /* A bit basic, but it’s a bare minumum... */
+}
+a:hover{
+	text-decoration:underline;
+}
+a:active,
+a:focus{
+	/* Give clicked links a depressed effect. */
+	position:relative;
+	top:1px;
+}
+
+/*--- LISTS ---*/
+ul,
+ol{
+	margin:0 0 1.5em 60px;
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul{
+	/* Let’s take care of lists in lists */
+	margin:0 0 0 60px;
+}
+
+/*
+A numbered list is NOT the same as an ordered one.
+Use this class when you want a list to be numbered but it has no order.
+See http://jsfiddle.net/csswizardry/sdrth/
+*/
+ul.numbered{
+	list-style:decimal outside;
+}
+/*
+dl{
+	margin-bottom:1.5em;
+}
+dt{
+	font-weight:bold;
+}
+dt:after{
+	content:":";
+}
+dt::after{
+	content:":";
+}
+dd{
+	margin-left:60px;
+}
+*/
+
+
+/*--- QUOTES ---*/
+blockquote{
+	text-indent:-0.4em; /* Hang that punctuation */
+}
+blockquote b,
+blockquote .source{
+	/* Mark the source up with either a <b> or another element of your choice with a class of source. */
+	display:block;
+	text-indent:0;
+}
+
+/*--- GENERAL ---*/
+q,
+i,
+em,
+cite{
+	font-style:italic;
+	font-weight:inherit;
+}
+b,
+strong{
+	font-weight:bold;
+	font-style:inherit;
+}
+mark{
+	background:#ffc;
+}
+s,
+del{
+	text-decoration:line-through;
+}
+small{
+	font-size:0.75em;
+	line-height:1;
+}
+
+/*--- CODE ---*/
+pre,
+code{
+	font-family:monospace;
+	font-size:1em;
+}
+pre{
+	overflow:auto;
+	margin-bottom:1.5em;
+	line-height:24px; /* Having to define explicit pixel values :( */
+}
+code{
+	line-height:1;
+}
+
+
+
+
+
+/*------------------------------------*\
+	IMAGES
+\*------------------------------------*/
+img{
+	max-width:100%;
+	height:auto;
+	/* Give it some text styles to offset alt text */
+	font-style:italic;
+	color:#c00;
+}
+img.left	{ margin:0 20px 0 0; }
+img.right	{ margin:0 0 0 20px; }
+
+/*--- FLASH/VIDEO ---*/
+object,
+embed,
+video{
+	max-width:100%;
+	height:auto;
+}
+
+
+
+
+
+/*------------------------------------*\
+	FORMS
+\*------------------------------------*/
+/*
+Unfortunately, and somewhat obviously, forms don’t fit the baseline all too well. Perhaps in a later version...
+*/
+fieldset{
+	padding:10px;
+	border:1px solid #ccc;
+	margin-bottom:1.5em;
+}
+label{
+	display:block;
+	cursor:pointer;
+}
+label:after{
+	content:":";
+}
+label::after{
+	content:":";
+}
+input,
+textarea{
+	font-family:inherit;
+	font-size:1em;
+	line-height:1.5;
+}
+
+/*
+Nice UI touch for placeholders. To get placeholders working cross-browser see @dan_bentley’s jQuery plugin: https://github.com/danbentley/placeholder
+*/
+[placeholder]{
+	cursor:pointer;
+}
+[placeholder]:active,
+[placeholder]:focus{
+	cursor:text;
+}
+.check-list{
+	width:100%;
+	overflow:hidden;
+	list-style:none;
+	margin:0 0 1.5em 0;
+}
+.check-list li{
+	width:25%;
+	float:left;
+}
+.check-label{
+	display:inline;
+}
+.check-label:after{
+	content:normal;
+}
+.check-label::after{
+	content:normal;
+}
+.button{
+	cursor:pointer;
+}
+fieldset > :last-child{
+	/* Remove the margin from the last element in the fieldset--this makes our padding more consistent. */
+	margin:0;
+}
+
+
+
+
+
+/*------------------------------------*\
+	TABLES
+\*------------------------------------*/
+/*
+Unfortunately, and somewhat obviously, tables don’t fit the baseline all too well. Perhaps in a later version...
+*/
+table{
+	margin-bottom:1.5em;
+	width:100%;
+	max-width:100%;
+}
+thead tr:last-of-type th{
+	/* Thicker border on the table-headers of the last row in the table head */
+	border-bottom-width:2px;
+}
+tbody th{
+	/* Thicker right border on table-headers in the table body */
+	border-right-width:2px;
+}
+th:empty{
+	/* Hide the borders on any empty table-headers */
+	border:none;
+}
+th,td{
+	vertical-align:top;
+	padding:0.75em;
+	border:1px solid #ccc;
+}
+th{
+	font-weight:bold;
+	text-align:center
+}
+table [colspan]{
+	/* This looks lovely, trust me... */
+	text-align:center;
+}
+table [rowspan]{
+	/* ...as does this. */
+	vertical-align:middle;
+}
+/*
+Assuming IE has an 'implied' colspan of one on cells without an explicit colspan attribute, fix/undo it.
+See http://jsfiddle.net/csswizardry/UJJay/
+*/
+[colspan="1"]{
+    text-align:left;
+}
+[rowspan="1"]{
+    vertical-align:top;
+}
+tbody tr:nth-of-type(odd){
+	background:rgba(0,0,0,0.05);
+}
+tfoot{
+	text-align:center;
+}
+tfoot td{
+	border-top-width:2px;
+}
+
+
+
+
+
+/*------------------------------------*\
+	MESSAGES
+\*------------------------------------*/
+/*
+Unfortunately feedback messages don’t fit the baseline all too well. Perhaps in a later version...
+*/
+.message{
+	font-weight:normal;
+	display:block;
+	padding:10px 10px 10px 36px;
+	border:1px solid #ccc;
+	margin:0 0 1.5em 0;
+	
+	-moz-border-radius:2px;
+	-webkit-border-radius:2px;
+	border-radius:2px;
+	-moz-box-shadow:0 1px 0 rgba(255,255,255,0.5) inset;
+	-webkit-box-shadow:0 1px 0 rgba(255,255,255,0.5) inset;
+	box-shadow:0 1px 0 rgba(255,255,255,0.5) inset;
+}
+/* With multiple errors it’s nice to group them. */
+ul.message{
+	list-style:decimal outside; /* It’s also handy to number them. However, they might not necessarily be in a particular order, so we spoof it by putting numbers on an unordered list */
+	padding:10px 10px 10px 56px;
+}
+.error{
+	border-color:#fb5766;
+	background:url(../images/css/icons/error.png) 10px center no-repeat #fab;
+}
+.success{
+	border-color:#83ba77;
+	background:url(../images/css/icons/success.png) 10px center no-repeat #d1feba;
+}
+.info{
+
+	border-color:#768067;
+	background:url(../images/css/icons/info.png) 10px center no-repeat #eaffcd;
+   padding: 10px;
+   margin: 15px;
+  -moz-border-radius:2px;
+	border-radius:2px;
+
+}
+
+.info a {
+  font-weight:bold ! important;
+  border-bottom: 1px solid #000 ! important;
+}
+.warning{
+	border-color:#d8d566;
+	background:url(../images/css/icons/warning.png) 10px center no-repeat #fef8c4;
+}
+
+
+
+
+
+/*------------------------------------*\
+	MISC
+\*------------------------------------*/
+hr{
+	margin:0 0 1.5em 0;
+}
+.accessibility{
+	/* Hide content off-screen without hiding from screen-readers. N.B. This is not suited to RTL languages */
+	position:absolute;
+	left:-99999px;
+}
+.more-link:after{
+	/* Too many people use &raquo; in their markup to signify progression/movement, that ain’t cool. Let’s insert that using content:""; */
+	content:" »";
+}
+.more-link::after{
+	content:" »";
+}
+
+
+
+
+
+/*------------------------------------*\
+	CLASSES
+\*------------------------------------*/
+/*
+Some not-too-pretty and insemantic classes to do odd jobs.
+*/
+.left	{ float:left!important; }
+.right	{ float:right!important; }
+.clear	{ clear:both; float:none; }
+
+.text-left		{ text-align:left; }
+.text-right		{ text-align:right; }
+.text-center,
+.text-centre	{ text-align:center; }
+
+
+
+
+
+/*------------------------------------*\
+	DIAGNOSTICS
+\*------------------------------------*/
+/*
+APPLY A CLASS OF .debug TO THE HTML ELEMENT ONLY WHEN YOUR SITE IS ON DEV
+
+Turn the grids back on. Idea given by @VictorPimentel
+*/
+
+.debug		{ background:url(../images/css/baseline.gif) 0 18px #fff!important; }
+
+/*
+Red border == something is wrong
+Yellow border == something may be wrong, you should double check.
+Green border == perfect, nice one!
+*/
+
+/* Styles */
+.debug [style]{
+	/* Inline styles aren’t great, can this be avoided? */
+	outline:5px solid yellow;
+}
+
+/* Images */
+.debug img{
+	/* Images without alt attributes are bad! */
+	outline:5px solid red;
+}
+.debug img[alt]{
+	/* Images with alt attributes are good! */
+	outline-color:green;
+}
+.debug img[alt=""]{
+	/* Images with empty alt attributes are okay in the right circumstances. */
+	outline-color:yellow;
+}
+
+/* Links */
+.debug a{
+	/* Links without titles are yellow, does your link need one? */
+	outline:5px solid yellow;
+}
+.debug a[title]{
+	/* Links with titles are green, title attributes can be very useful! */
+	outline-color:green;
+}
+.debug a[href="#"]{
+	/* Were you meant to leave that hash in there? */
+	outline-color:yellow;
+}
+.debug a[target]/*,
+.debug a[onclick],
+.debug a[href*=javascript]*/{
+	/* What were you thinking?! */
+	outline-color:red;
+}
+
+/* Classes/IDs */
+.debug [class=""],
+.debug [id=""]{
+	/* Is this element meant to have an empty class/ID? */
+	outline:5px solid yellow;
+}
+
+
+
+
+
+/*------------------------------------*\
+	NARROW
+\*------------------------------------*/
+/*
+CSS for tablets and narrower devices
+*/
+
+
+
+
+
+@media (min-width: 721px) and (max-width: 960px){
+}
+/*--- END NARROW ---*/
+
+
+
+
+
+/*------------------------------------*\
+	MOBILE
+\*------------------------------------*/
+/*
+CSS for mobile devices.
+Linearise it!
+*/
+
+
+
+
+
+@media (max-width: 720px){
+/*------------------------------------*\
+	MAIN
+\*------------------------------------*/
+.debug,
+.debug body{
+	background:none!important;
+}
+html{
+	font-size:1.125em;
+}
+body{
+	-webkit-text-size-adjust:none;
+}
+.wrapper{
+	width:auto!important;
+	padding:10px!important;
+	width:auto!important;
+}
+.grids{
+	margin:0!important;
+	width:auto!important;
+}
+[class^="grid-"],
+.grids [class^="grid-"]{
+	width:auto!important;
+	float:none!important;
+	margin:0!important;
+}
+
+
+
+
+
+/*------------------------------------*\
+	LOGO
+\*------------------------------------*/
+#logo{
+	margin:0 auto 1.5em;
+}
+
+
+
+
+
+/*------------------------------------*\
+	TYPE
+\*------------------------------------*/
+/*--- LISTS ---*/
+ul,
+ol{
+	margin:0 0 1.5em 25px;
+}
+ul ul,
+ol ol,
+ul ol,
+ol ul{
+	/* Let’s take care of lists in lists */
+	margin:0 0 0 25px;
+}
+dd{
+	margin-left:25px;
+}
+
+
+
+
+/*------------------------------------*\
+	IMAGES
+\*------------------------------------*/
+img.left,
+img.right	{ max-width:50%; height:auto; }
+}
+/*--- END MOBILE ---*/
+
+
+
+
+
+/*------------------------------------*\
+	PRINT
+\*------------------------------------*/
+/*
+Good ol’ fashioned paper...
+*/
+
+
+
+
+
+@media print{
+/*------------------------------------*\
+	MAIN
+\*------------------------------------*/
+/*
+Give everything some decent contrast.
+*/
+*{
+	background:#fff;
+	color:#000;
+	text-shadow:none!important;
+}
+/*
+Set a nice measure and take the font down to print-acceptable sizes.
+*/
+body{
+	font-size:0.75em; /* 12px (if base font-size was 16px) */
+}
+.wrapper{
+	width:75%;
+	margin:0 auto;
+}
+/*
+A list of things you don’t want printing. Add to/subtract from as necessary. 
+*/
+.nav,
+#footer{
+	display:none;
+}
+#logo img{
+	position:static;
+}
+/*
+Linearise
+*/
+.grids{
+	width:auto;
+}
+[class^="grid-"]{
+	width:auto;
+	float:none;
+	clear:both;
+}
+/*
+Don’t let images break anything.
+*/
+img{
+	max-width:100%;
+	height:auto;
+}
+/*
+Messages look odd with just borders.
+*/
+.message{
+	border:none;
+	font-weight:bold;
+}
+/*
+Try to avoid tables spanning multiple pages. Not failsafe, but a good start.
+*/
+table{
+	page-break-before:always;
+}
+/*
+Show the accessibility class.
+*/
+.accessibility{
+	position:static;
+}
+/*
+Display the href of any links.
+*/
+a:link:after,a:visited:after{
+	content:" (" attr(href) ")";
+	font-size:smaller;
+}
+a:link::after,a:visited::after{
+	content:" (" attr(href) ")";
+	font-size:smaller;
+}
+/*
+Any links that are root relative to your site need prepending with your URL.
+*/
+a[href^="/"]:after{
+	content:" (http://yoururlhere.com" attr(href) ")";
+	font-size:smaller;
+}
+a[href^="/"]::after{
+	content:" (http://yoururlhere.com" attr(href) ")";
+	font-size:smaller;
+}
+/*
+Any Flash/video content can’t be printed so leave a message.
+*/
+object:after{
+	content:"Flash/video content. Head to http://yoururlhere.com/ to view this content.";
+	display:block;
+	font-weight:bold;
+	margin-bottom:1.5em;
+}
+object::after{
+	content:"Flash/video content. Head to http://yoururlhere.com/ to view this content.";
+	display:block;
+	font-weight:bold;
+	margin-bottom:1.5em;
+}
+}
+/*--- END PRINT ---*/
+/* ***************************************************************** */
+/*------------------------------------*\
+	GRID.INUIT.CSS
+\*------------------------------------*/
+
+
+
+
+
+/*
+grid.inuit.css is an inuit.css igloo
+igloos are CSS plugins which extend the inuit.css framework
+They are released under the Apache License, Version 2.0 -- http://www.apache.org/licenses/LICENSE-2.0
+
+@inuitcss
+inuitcss.com
+*/
+
+
+
+
+
+/*------------------------------------*\
+	GRIDS
+\*------------------------------------*/
+/*
+Page wrapper. Apply to the body where possible, as per: http://csswizardry.com/2011/01/using-the-body-element-as-a-wrapper/
+*/
+.wrapper{
+	width:940px;
+	margin:0 auto;
+	padding:0 10px;
+}
+
+/*
+Most frameworks rely on class="end" or similar to remove the margin from the last column in a row of grids. We don't want to do that so we use a combination of margin- and negative margin-left. It's clever...
+We also allow you to use grid items as stand alone columns or in a series of columns. 
+To use a series just wrap them all in <div class="grids">...</div>
+*/
+.grids{
+	clear:both;
+	max-width:960px;
+	margin:0 0 0 -20px;
+	list-style:none; /* So we can make grids out of lists */
+}
+
+/*
+Here we are using an attribute selector to detect the string 'grid-' in an element's class.
+This works by assuming that anything we call grid-<n> we also want to be a grid item. It means less code and less for you to remember!
+
+Ensure any grid item's FIRST class is a grid-<n> class. e.g.
+VALID: class="grid-4 text-centre"
+INVALID: class="left grid-4"
+*/
+[class^="grid-"]{
+	float:left;
+	margin:0 20px 0 0;
+}
+.grids [class^="grid-"]{
+	margin:0 0 0 20px;
+}
+
+.grid-1{ width:40px }
+.grid-2{ width:100px }
+.grid-3{ width:160px }
+.grid-4{ width:220px }
+.grid-5{ width:280px }
+.grid-6{ width:340px }
+.grid-7{ width:400px }
+.grid-8{ width:460px }
+.grid-9{ width:520px }
+.grid-10{ width:580px }
+.grid-11{ width:640px }
+.grid-12{ width:700px }
+.grid-13{ width:760px }
+.grid-14{ width:820px }
+.grid-15{ width:880px }
+.grid-16{ width:940px; margin:0 }
+/* ***************************************************************** */
+/*
+ * "Rubydoc" Rdoc CSS
+ *
+ * Author: James Britt <james@neurogami.com>
+
+ 
+ Tue Sep 20 23:22:01 MST 2011
+ 
+ */
+
+
+
+
+
+/* New stuff to change layout */
+
+/* Inuit has rather harsh ol and ul style. FIx this */
+
+ol, ul {
+ margin: 0 0 1.5em 8px;
+
+}
+
+#about {
+/* float: left;  */
+/*  border: 3px solid red; */
+/*  margin: 5px; */
+
+}
+
+
+.section-body {
+padding: 2px;
+}
+
+#file-index {
+ 
+ margin: 5px 5px 20px 5px;
+ padding: 5px 5px 20px 5px;
+ 
+}
+
+
+#class-index {
+ float: left;
+  margin: 5px;
+  
+}
+
+#method-index {
+ float: left; 
+/*  border: 3px solid red; */
+  margin: 5px;
+
+}
+
+#file-index .title, #class-index  .title, #method-index  .title {
+ font-size: 110%;
+}
+
+
+.ng-cm-type {
+color: #ddd;
+padding: 0 10px;
+}
+
+/* Base Green is: #6C8C22 */
+
+*{ padding: 0; margin: 0; }
+/*
+body {
+  background: #fff;
+	font: 14px "Helvetica Neue", Helvetica, Tahoma, sans-serif;
+  
+}
+  */
+body.class, body.module, body.file {
+    /* margin-left: 40px; */
+}
+body.file-popup {
+	font-size: 90%;
+	margin-left: 0;
+}
+
+/*
+h1 {
+	font-size: 2em%;
+	color: #07c;
+}
+h2,h3,h4 { margin-top: 1.5em; }
+
+*/
+
+
+:link,
+:visited {
+	color: #07c;
+	text-decoration: none;
+}
+:link:hover,
+:visited:hover {
+ 	border-bottom: 1px dotted #933;
+}
+
+pre {
+	background: #ddd;
+	margin: 0.5em 0;
+	padding: 0.5em;
+  color: #000;
+}
+
+pre.ruby {
+  background: #303030;
+  color: #fff;
+}
+
+
+/* @group Generic Classes */
+
+.initially-hidden {
+	display: none;
+}
+
+.quicksearch-field {
+	width: 98%;
+	background: #ddd;
+	border: 1px solid #aaa;
+	height: 1.5em;
+	-webkit-border-radius: 4px;
+}
+.quicksearch-field:focus {
+	background: #f1edba;
+}
+
+.missing-docs {
+	font-size: 120%;
+	background: white url(../images/wrench_orange.png) no-repeat 4px center;
+	color: #ccc;
+	line-height: 2em;
+	border: 1px solid #d00;
+	opacity: 1;
+	padding-left: 20px;
+	text-indent: 24px;
+	letter-spacing: 3px;
+	font-weight: bold;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
+
+.target-section {
+	border: 2px solid #dcce90;
+	border-left-width: 8px;
+	padding: 0 1em;
+	background: #fff3c2;
+}
+
+/* @end */
+
+
+/* @group Index Page, Standalone file pages */
+body.indexpage {
+	margin: 1em 3em;
+}
+body.indexpage p,
+body.indexpage div,
+body.file p {
+	margin: 1em 0;
+}
+
+.indexpage ul,
+.file #documentation ul {
+	line-height: 160%;
+	list-style: none;
+}
+.indexpage ul :link,
+.indexpage ul :visited {
+	font-size: 16px;
+}
+
+.indexpage li,
+.file #documentation li {
+	padding-left: 20px;
+	background: url(../images/bullet_black.png) no-repeat left 4px;
+}
+.indexpage li.module {
+	background: url(../images/package.png) no-repeat left 4px;
+}
+.indexpage li.class {
+	background: url(../images/ruby.png) no-repeat left 4px;
+}
+.indexpage li.file {
+	background: url(../images/page_white_text.png) no-repeat left 4px;
+}
+.file li p,
+.indexpage li p {
+  margin: 0 0;
+}
+
+/* @end */
+
+/* @group Top-Level Structure */
+
+.class #metadata,
+.file #metadata,
+.module #metadata {
+	float: left;
+	width: 260px;
+}
+
+.class #documentation,
+.file #documentation,
+.module #documentation {
+	margin: 2em 1em 5em 300px;
+	min-width: 340px;
+}
+
+.file #metadata {
+	margin: 0.8em;
+}
+
+#validator-badges {
+	clear: both;
+	margin: 1em 1em 2em;
+}
+
+/* @end */
+
+/* @group Metadata Section */
+#metadata .section {
+	background-color: #eee;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid #aaa;
+	margin: 0 8px 16px;
+	font-size: 90%;
+	overflow: hidden;
+}
+#metadata h3.section-header {
+	margin: 0;
+	padding: 2px 8px;
+	background: #ccc;
+	color: #068;
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-topright: 4px;
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-top-right-radius: 4px;
+	border-bottom: 1px solid #aaa;
+}
+#metadata #home-section h3.section-header {
+  border-bottom: 0;
+}
+
+#metadata ul,
+#metadata dl,
+#metadata p {
+	padding:  8px;
+	list-style: none;
+}
+
+ #files ul ,  #file-metadata ul {
+  margin-left:18px;
+	list-style-image: url(../images/page_green.png);
+}
+
+dl.svninfo {
+	color: #068;
+	margin: 0;
+}
+dl.svninfo dt {
+	font-weight: bold;
+}
+
+/* rdoc.css */
+ul.link-list li {
+	white-space: nowrap;
+}
+
+/* RD */
+ul.link-list {
+  padding: 2px;
+  margin-left: 5px;
+}
+
+ul.link-list .type {
+	font-size: 8px;
+	text-transform: uppercase;
+	color: white;
+	background: #efefef;
+	padding: 2px 4px;
+	-webkit-border-radius: 5px;
+}
+
+/* @end */
+
+
+/* @group Project Metadata Section */
+#project-metadata {
+	margin-top: 3em;
+}
+
+.file #project-metadata {
+  margin-top: 0em;
+}
+
+#project-metadata .section {
+	border: 1px solid #aaa;
+}
+#project-metadata h3.section-header {
+	border-bottom: 1px solid #aaa;
+	position: relative;
+}
+#project-metadata h3.section-header .search-toggle {
+	position: absolute;
+	right: 5px;
+}
+
+
+#project-metadata form {
+	color: #777;
+	background: #ccc;
+	padding: 8px 8px 16px;
+	border-bottom: 1px solid #bbb;
+}
+#project-metadata fieldset {
+	border: 0;
+}
+
+#no-class-search-results {
+	margin: 0 auto 1em;
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	color: #aaa;
+}
+
+/* @end */
+
+
+/* @group Documentation Section */
+#description {
+	font-size: 100%;
+	color: #333;
+}
+
+#description p {
+	margin: 1em 0.4em;
+}
+
+#description li p {
+  margin: 0;
+}
+
+#description ul {
+	margin-left: 1.5em;
+}
+#description ul li {
+	line-height: 1.4em;
+}
+
+#description dl,
+#documentation dl {
+	margin: 8px 1.5em;
+	border: 1px solid #ccc;
+}
+#description dl {
+	font-size: 14px;
+}
+
+#description dt,
+#documentation dt {
+	padding: 2px 4px;
+	font-weight: bold;
+	background: #ddd;
+}
+#description dd,
+#documentation dd  {
+	padding: 2px 12px;
+}
+#description dd + dt,
+#documentation dd + dt {
+	margin-top: 0.7em;
+}
+
+#documentation .section {
+	font-size: 90%;
+}
+#documentation h3.section-header {
+	margin-top: 2em;
+	padding: 0.75em 0.5em;
+	background-color: #dedede;
+	color: #333;
+	font-size: 150%;
+	border: 1px solid #bbb;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+#constants-list > dl,
+#attributes-list > dl {
+	margin: 1em 0 2em;
+	border: 0;
+}
+#constants-list > dl dt,
+#attributes-list > dl dt {
+	padding-left: 0;
+	font-weight: bold;
+	font-family: Monaco, "Andale Mono";
+	background: inherit;
+}
+#constants-list > dl dt a,
+#attributes-list > dl dt a {
+	color: inherit;
+}
+#constants-list > dl dd,
+#attributes-list > dl dd {
+	margin: 0 0 1em 0;
+	padding: 0;
+	color: #068;
+}
+
+/* @group Method Details */
+
+#documentation .method-source-code {
+	 display: none; 
+}
+
+#documentation .method-detail {
+	margin: 0.5em 0;
+	padding: 0.5em 0;
+	cursor: pointer;
+}
+
+#documentation .method-detail:hover {
+	background-color: #eee;
+  color: #000;
+}
+#documentation .method-heading {
+	position: relative;
+	padding: 2px 4px 0 20px;
+	font-size: 125%;
+	font-weight: bold;
+	color: #333;
+	background: url(../images/brick.png) no-repeat left bottom;
+}
+#documentation .method-heading :link,
+#documentation .method-heading :visited {
+	color: inherit;
+}
+#documentation .method-click-advice {
+	position: absolute;
+	top: 2px;
+	right: 5px;
+	font-size: 10px;
+	color: #9b9877;
+	visibility: hidden;
+	padding-right: 20px;
+	line-height: 20px;
+	background: url(../images/zoom.png) no-repeat right top;
+}
+#documentation .method-detail:hover .method-click-advice {
+	visibility: visible;
+}
+
+#documentation .method-alias .method-heading {
+	color: #068;
+	background: url(../images/brick_link.png) no-repeat left bottom;
+}
+
+#documentation .method-description,
+#documentation .aliases {
+	margin: 5px 20px;
+  /*
+  
+	line-height: 1.2em;
+	color: #068;
+  */
+}
+#documentation .aliases {
+	padding-top: 4px;
+	font-style: italic;
+	cursor: default;
+}
+#documentation .method-description p {
+	padding: 0;
+}
+#documentation .method-description p + p {
+	margin-bottom: 0.5em;
+}
+#documentation .method-description ul {
+  margin-left: 1.5em;
+}
+
+#documentation .attribute-method-heading {
+	background: url(../images/tag_green.png) no-repeat left bottom;
+}
+#documentation #attribute-method-details .method-detail:hover {
+	background-color: transparent;
+	cursor: default;
+}
+#documentation .attribute-access-type {
+	font-size: 60%;
+	text-transform: uppercase;
+	vertical-align: super;
+	padding: 0 2px;
+}
+/* @end */
+
+/* @end */
+
+
+
+/* @group Source Code */
+
+div.method-source-code {
+     background: #262626; 
+    color: #efefef; 
+    margin: 1em;
+    padding: 0.5em;
+    border: 1px dashed #999;
+    overflow: hidden;
+}
+
+div.method-source-code pre {
+	background: inherit;
+	padding: 0;
+ 	color: white; 
+	overflow: auto;
+}
+
+/* @group Ruby keyword styles */
+.ruby-constant   { color: #7fffd4; background: transparent; }
+.ruby-keyword    { color: #00ffff; background: transparent; }
+.ruby-ivar       { color: #eedd82; background: transparent; }
+.ruby-operator   { color: #00ffee; background: transparent; }
+.ruby-identifier { color: #ffdead; background: transparent; }
+.ruby-node       { color: #ffa07a; background: transparent; }
+._ruby-comment    { color: #b22222; font-weight: bold; background: transparent; }
+.ruby-regexp     { color: #ffa07a; background: transparent; }
+.ruby-value      { color: #7fffd4; background: transparent; }
+
+/*  JGB 2012-10-17 */
+.ruby-comment    { color: #5eff1f; font-weight: bold; background: transparent; }
+/* @end */
+/* @end */
+
+
+/* @group File Popup Contents */
+
+.file #metadata,
+.file-popup #metadata {
+}
+
+.file-popup dl {
+	font-size: 80%;
+	padding: 0.75em;
+	background-color: #dedede;
+	color: #333;
+	border: 1px solid #bbb;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+.file dt {
+	font-weight: bold;
+	padding-left: 22px;
+	line-height: 20px;
+	background: url(../images/page_white_width.png) no-repeat left top;
+}
+.file dt.modified-date {
+	background: url(../images/date.png) no-repeat left top;
+}
+.file dt.requires {
+	background: url(../images/plugin.png) no-repeat left top;
+}
+.file dt.scs-url {
+	background: url(../images/wrench.png) no-repeat left top;
+}
+
+.file dl dd {
+	margin: 0 0 1em 0;
+}
+.file #metadata dl dd ul {
+	list-style: circle;
+	margin-left: 20px;
+	padding-top: 0;
+}
+.file #metadata dl dd ul li {
+}
+
+
+.file h2 {
+	margin-top: 2em;
+	padding: 0.75em 0.5em;
+	background-color: #dedede;
+	color: #333;
+	font-size: 120%;
+	border: 1px solid #bbb;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+/* @end */
+
+
+
+
+/* @group ThickBox Styles */
+#TB_window {
+	font: 12px Arial, Helvetica, sans-serif;
+	color: #333333;
+}
+
+#TB_secondLine {
+	font: 10px Arial, Helvetica, sans-serif;
+	color:#068;
+}
+
+#TB_window :link,
+#TB_window :visited        { color: #068; }
+#TB_window :link:hover,
+#TB_window :visited:hover  { color: #000;    }
+#TB_window :link:active,
+#TB_window :visited:active { color: #068; }
+#TB_window :link:focus,
+#TB_window :visited:focus  { color: #068; }
+
+#TB_overlay {
+	position: fixed;
+	z-index:100;
+	top: 0px;
+	left: 0px;
+	height:100%;
+	width:100%;
+}
+
+.TB_overlayMacFFBGHack {background: url(../images/macFFBgHack.png) repeat;}
+.TB_overlayBG {
+	background-color:#000;
+	filter:alpha(opacity=75);
+	-moz-opacity: 0.75;
+	opacity: 0.75;
+}
+
+* html #TB_overlay { /* ie6 hack */
+     position: absolute;
+     height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+}
+
+#TB_window {
+	position: fixed;
+	background: #ffffff;
+	z-index: 102;
+	color:#000000;
+	display:none;
+	border: 4px solid #525252;
+	text-align:left;
+	top:50%;
+	left:50%;
+}
+
+* html #TB_window { /* ie6 hack */
+position: absolute;
+margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');
+}
+
+#TB_window img#TB_Image {
+	display:block;
+	margin: 15px 0 0 15px;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #068;
+	border-left: 1px solid #068;
+}
+
+#TB_caption{
+	height:25px;
+	padding:7px 30px 10px 25px;
+	float:left;
+}
+
+#TB_closeWindow{
+	height:25px;
+	padding:11px 25px 10px 0;
+	float:right;
+}
+
+#TB_closeAjaxWindow{
+	padding:7px 10px 5px 0;
+	margin-bottom:1px;
+	text-align:right;
+	float:right;
+}
+
+#TB_ajaxWindowTitle{
+	float:left;
+	padding:7px 0 5px 10px;
+	margin-bottom:1px;
+	font-size: 22px;
+}
+
+#TB_title{
+	background-color: #07c;
+	color: #dedede;
+	height:40px;
+}
+#TB_title :link,
+#TB_title :visited {
+	color: white !important;
+	border-bottom: 1px dotted #dedede;
+}
+
+#TB_ajaxContent{
+	clear:both;
+	padding:2px 15px 15px 15px;
+	overflow:auto;
+	text-align:left;
+	line-height:1.4em;
+}
+
+#TB_ajaxContent.TB_modal{
+	padding:15px;
+}
+
+#TB_ajaxContent p{
+	padding:5px 0px 5px 0px;
+}
+
+#TB_load{
+	position: fixed;
+	display:none;
+	height:13px;
+	width:208px;
+	z-index:103;
+	top: 50%;
+	left: 50%;
+	margin: -6px 0 0 -104px; /* -height/2 0 0 -width/2 */
+}
+
+* html #TB_load { /* ie6 hack */
+position: absolute;
+margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');
+}
+
+#TB_HideSelect{
+	z-index:99;
+	position:fixed;
+	top: 0;
+	left: 0;
+	background-color:#fff;
+	border:none;
+	filter:alpha(opacity=0);
+	-moz-opacity: 0;
+	opacity: 0;
+	height:100%;
+	width:100%;
+}
+
+* html #TB_HideSelect { /* ie6 hack */
+     position: absolute;
+     height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+}
+
+#TB_iframeContent{
+	clear:both;
+	border:none;
+	margin-bottom:-1px;
+	margin-top:1px;
+	_margin-bottom:1px;
+}
+
+/* @end */
+
+/* @group Debugging Section */
+
+#debugging-toggle {
+	text-align: center;
+}
+#debugging-toggle img {
+	cursor: pointer;
+}
+
+#rdoc-debugging-section-dump {
+	display: none;
+	margin: 0 2em 2em;
+	background: #ccc;
+	border: 1px solid #999;
+}
+
+
+/* Glommed from Babel */
+
+.search-field {
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+ /* position: absolute; */
+  left: 203px;
+  padding: 0 1px 2px 2px; /* TRBL */
+  background: #f5f5f5;
+  border: 1px solid silver;
+  color: silver;
+  width: 8em; /* search... */
+  margin-bottom: 10px;
+}
+
+.search-field.active {
+  background: #fffffa;  /* very pale yellow */
+  color: black;
+}
+
+.indexpage .entries {
+  padding: 0.2em 0;
+  font-size: 80%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+
+
+#class-index .entries , #method-index .entries {
+  /* Sort of hacky but a fix */
+  width: 460px;
+  text-overflow: ellipsis;
+
+}
+
+.indexpage p {
+  white-space: nowrap;
+}
+.indexpage .type {
+  color:#444;
+  font-size:75%;
+  padding-left:0.67ex;
+  display:inline-block;
+  width:0.85em;
+}
+.indexpage a, .indexpage a:hover {
+  padding: 0 0.5ex;
+}
+
+
+#footer {
+  margin-top: 50px;
+  font-size:0.75em;
+  text-align: center;
+/* bottom: 3px;
+right: 10px;
+*/
+}
+
+
+body.index  #footer {
+
+color: #999;
+margin-top:30px;
+position:absolute;
+position:fixed;
+
+bottom:0;
+width: 90%;
+height:30px;			/* Height of the footer */
+text-align: right;
+font-size: 0.75em;
+
+
+
+}
+
+/* @end */
+
+
+
+/* Make it more like new ruby-doc.org */
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Georgia, "Times New Roman", serif; 
+   color: #6C6C6C;
+}
+
+
+.index-g1 h2 a, .index-g1 h2 a:visited , .index-g1  h2 a:link,
+.index-g0 h2 a, .index-g0 h2 a:visited , .index-g0  h2 a:link {
+/* color: #6C6C6C !important; */
+color: #c7211b !important;
+text-decoration: none!important;
+border-bottom: none;
+}
+
+
+h2 a, h2 a:visited , h2 a:link {
+/*color: #fff!important; */
+color: #fff;
+text-decoration: none!important;
+border-bottom: none;
+}
+
+#description h2 a, #description  h2 a:visited , #description  h2 a:link {
+color: #CC3333;
+text-decoration: none!important;
+border-bottom: none;
+}
+
+
+h1 a, h1 a:visited , h1 a:link {
+color: #fff!important;
+text-decoration: none!important;
+border-bottom: none;
+}
+
+#documentation h1 a, #documentation  h1 a:visited , #documentation  h1 a:link {
+color: ##333 !important;
+}
+
+
+h2 a:hover {
+ color:red!important;
+ text-decoration: none!important;
+}
+
+
+html {
+ color: #6C6C6C;
+}
+
+
+ a,  a:visited,   a:link {
+color: #333 ! important;
+text-decoration: none  ! important;
+opacity: 1.0;
+border-bottom: dotted #cdcdcd 1px
+}
+
+
+a:hover {
+ color:red!important;
+ text-decoration: none!important;
+  opacity: 1.0;
+}
+
+#header {
+  margin-top:1em;
+  text-align: right;
+  background:url(../images/logo-rubydoc.gif) 850px 0 no-repeat ; 
+  height: 120px;
+}
+
+#header h1{
+ margin: 5px 120px 5px  0px;
+}
+
+
+
+#header p  {
+margin: 5px 120px 5px  0px;
+font-size: 1.5em;
+}
+
+
+
+#OLD_actionbar {
+  background: #646462 ! important;
+  color: #fff ! important;
+  font-weight: bold;
+  width: 100% ! important;
+  line-height: 2em;
+  height: 2em;
+  font-family: Helvetica, Arial, sans-serif; 
+  border: solid #646462 1px;
+}
+
+#OLD_actionbar .right {
+  text-align: right;
+}
+
+#OLD_actionbar li a, #OLD_actionbar li  a:visited , #OLD_actionbar li  a:link {
+color: #fff ! important;
+text-decoration: none  ! important;
+opacity: 1.0;
+border-bottom: none;
+}
+
+
+#OLD_actionbar li  a:hover {
+ color:red!important;
+ text-decoration: none!important;
+  opacity: 1.0;
+  border-bottom: none;
+}
+
+#OLD_actionbar li {
+display: inline;
+padding: 2px 5px;
+}
+
+
+
+.wrapper{
+	width:960px; 
+	margin:0 auto;
+	padding:0 10px;
+}
+
+
+
+/* associated content */
+.associated a, .associated  a:visited,.associated  a:link {
+  color: #a80101 ! important;
+  font-weight:bold;
+
+}
+.associated {
+  margin: 10px;
+  margin-top: 30px;
+
+  padding: 10px;
+  padding-bottom: 30px;
+
+ background-color: #feffb6;
+ margin-bottom: 20px;
+
+}
+
+
+#documentation  .associated h3.section-header {
+  margin-top: 0px;
+   background-color: #d4d598;
+
+}
+
+
+
+#alternateFormatLink {
+
+position:fixed; background: none;
+border:1px solid #fefefe;
+width:150px;
+z-index:100;
+ margin: 0;
+ right: 0px;
+ top: 140px;
+ font-size:60%;
+ background-color:rgba(255,255,255,0.5);
+}
+
+
+.rdocstar #alternateFormatLink {
+  right : -50px ! important;
+}
+
+#alternateFormatLink  {
+ display:block;
+ margin:0 0.5em;
+
+}
+
+.rotate {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+
+  /* also accepts left, right, top, bottom coordinates; not required, but a good idea for styling */
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+
+  /* Should be unset in IE9+ I think. */
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+
+@media (max-width: 720px){
+
+    #alternateFormatLink {
+display: none;
+
+}
+
+
+.wrapper{
+	width:auto!important;
+	padding:10px!important;
+	width:auto!important;
+}
+
+
+header p {
+font-size: 1em;
+}
+/* We need to force the div with the method list to fall
+   below the clas list div
+ */
+
+#method-index, #class-index{
+  clear: both;
+}
+
+/* 
+Sat Sep 24 23:21:56 MST 2011
+Need a better way to do this; 
+  using a fixed em size is hacky because:
+  - Different browser handle it differently
+  - Different ruby versions have a different number of classes listed.
+
+  But: This makes it usable for now.
+*/
+#class-index {
+  height: 140em;
+}
+
+#OLD_actionbar {
+  height: 5em;
+ 
+}
+
+  div.adzbox  {
+   /* display:none; */
+  float: left ! important;
+  margin-left: 10px;
+  clear: both;
+  }
+}
+
+@media print{
+
+.wrapper{
+	width:75%;
+	margin:0 auto;
+}
+
+
+}
+
+
+
+  .wrapper {
+/* adjust spacing to allow more room on the right */
+/*    margin-right:10%; */
+	width:1010px; 
+	margin:0 auto;
+	padding:0 10px;
+}
+
+
+.class #documentation,
+.file #documentation,
+.module #documentation {
+	min-width: 340px;
+  max-width: 560px;
+}
+
+
+  div.adzbox , div.adzbox-index, div.adzbox-adjecent-files, div.adzbox-no-files-index {
+
+    height: 250px;
+    width:  130px;
+    width:  160px;
+    float: right;
+
+    margin-right: -40px;    
+    
+/*    border: solid 1px #333; 
+    background-color: #33f; 
+*/
+ }
+
+
+  div.adzbox-no-files-index {
+  
+   margin-top: -220px;
+   margin-right: -40px;    
+   
+  }
+
+  
+  div.adzbox-index {
+  
+   margin-top: 1px;
+   margin-right: 1px;    
+   margin-right: 60px;    
+   
+  }
+  
+  div.adzbox-adjecent-files {
+    margin-top: -10px;
+    margin-right: -30px;   
+  }
+  
+  div.adzbox  {
+  
+    margin-top: 200px;
+
+  }
+
+
+#extraz {
+  float: right;
+  width: 170px;
+  height: 260px;
+
+  margin-right: -100px;
+  /* background-color: #f30;  */
+
+}
+
+
+.rd-ab-msg {
+font-family: Helvetica, Arial, sans-serif; 
+  border: 1px solid #AB5454; 
+  padding: 5px;
+   margin-right: 20px; 
+  color: #999;
+  background: #FDFDFD;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* ***************************************************************** */
+/* Pulled in from  2011.css */
+
+
+
+
+
+
+
+
+
+
+
+
+ /* '#919189' '#161616'  */
+ /* '#6A6A6A'  */
+
+
+#rd-search-input {
+  width: 180px;
+  background-color: white;
+  height: 1.3em;
+
+}
+
+#action-search, #searchbox_011815814100681837392:wnccv6st5qk {
+  font-size: 0.9em;
+  margin-top: 0;
+  margin:bottom: 3px;
+}
+
+ ul#gem-indices, ul#gem-indices li {
+   list-style: none;
+    display: inline ! important;
+    padding-right: 0.5em;
+    font-size: 110%;
+    
+  }
+
+  #gem-list {
+   margin-top:2em;
+  }
+  #gem-list ul, #gem-list ul li {
+  list-style: none;
+}
+
+body {
+  background: white ;
+  color: #000;
+}
+
+#header {
+  margin-top:1em;
+  text-align: right;
+  background:url(/images/logo-rubydoc.gif) 850px 0 no-repeat ; 
+  height: 110px ! important;
+}
+
+#header h1{
+ margin: 5px 120px 5px  0px;
+}
+
+
+#header p  {
+margin: 5px 120px 5px  0px;
+font-size: 1.5em;
+}
+/*
+#header {
+height: 200px;
+border: solid red 1px;
+}
+
+  */
+#actionbar {
+  background: #646462 ! important;
+  color: #fff ! important;
+  font-weight: bold;
+  width: 100%;
+  line-height: 2em;
+
+  font-family: Helvetica, Arial, sans-serif; /* Swap these two lines around to switch between serif and sans */
+}
+
+    #versionheader {
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+
+   #versionheader a {
+    color: #F99 ! important;
+   }
+
+
+
+h1, h2, h3, h4, h5 {
+	font-family: Georgia, "Times New Roman", serif; 
+}
+
+#actionbar .right {
+  text-align: right;
+}
+
+#actionbar form, #actionbar input {
+display: inline;
+
+}
+
+#actionbar li a, #actionbar li  a:visited , #actionbar li  a:link {
+color: #fff ! important;
+text-decoration: none  ! important;
+opacity: 1.0;
+border-bottom: none;
+}
+
+
+#actionbar li  a:hover {
+ color:red!important;
+ text-decoration: none!important;
+  opacity: 1.0;
+  border-bottom: none;
+}
+
+
+h2 a, h2 a:visited , h2 a:link {
+color: #646462!important;
+text-decoration: none!important;
+border-bottom: none;
+}
+
+
+h1 a, h1 a:visited , h1 a:link {
+color: #646462!important;
+text-decoration: none!important;
+border-bottom: none;
+}
+
+
+
+h2 a:hover {
+ color:red!important;
+ text-decoration: none!important;
+}
+
+
+
+
+ a,  a:visited,   a:link {
+color: #333 ! important;
+text-decoration: none  ! important;
+opacity: 1.0;
+border-bottom: dotted #cdcdcd 1px
+}
+
+
+a:hover {
+ color:red!important;
+ text-decoration: none!important;
+  opacity: 1.0;
+}
+
+#actionbar li {
+display: inline;
+padding: 2px 5px;
+}
+
+#api,  #rubystuff {
+margin-top: 10px;
+}
+
+
+#whyruby, #core, #standardlib, #gettingstarted, #books, #stuff, #about  {
+
+  font-family: Helvetica, Arial, sans-serif; /* Swap these two lines around to switch between serif and sans */
+  margin: 2.5em 10px;
+  padding: 0 10px;
+     
+	color: #6c6c6c;
+/* 	background:  #fafafa;
+	
+  background:-moz-linear-gradient(-90deg,#fafafa,#fafafa);
+
+	background:-webkit-gradient(linear,left top,left bottom,from(#fafafa),to(#fafafa));
+*/
+  /*	text-shadow:1px 1px 1px rgba(0,0,0,0.5); */
+
+	
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+
+}
+
+#core, #gettingstarted {
+  border-right: solid black 0px;
+}
+
+#about {
+  border-left: solid black 0px;
+}
+
+
+#colophon {
+  border-top: dotted #6e6e6e 1px;
+color: #6e6e6e;
+font-size: 0.80em;
+
+}
+#colophon ul li {
+list-style: none;
+margin: 1em;
+}
+
+#colophon  .grid-16 {
+text-align: center;
+}
+
+div.entries p {
+  margin-bottom: 0.5em;
+}
+
+
+@media (max-width: 720px){
+
+  li h2, h3  {
+margin-top:2em;
+}
+
+header p {
+ font-size:1.1em ! important;
+ font-weight: bold  ! important;
+  margin: 2px ! important;
+}
+
+header h1 {
+font-size: 1.2em ! important;
+margin: 1px ! important; 
+}
+
+
+}
+
+
+
+/* ***************************************************************** */

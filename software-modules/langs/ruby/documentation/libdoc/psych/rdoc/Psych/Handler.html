@@ -1,0 +1,1025 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : Psych::Handler  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:27:35 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '..'   asset_rel_prefix = '..'  --> 
+  <title>Class: Psych::Handler (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="..css/obf.css"  -->
+  <link rel="stylesheet" href="../css/inuit.css" >
+  <link rel="stylesheet" href="../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../css/carbon17.css" type="text/css" >
+
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>psych/lib/psych/handler.rb</li>      
+            
+          
+          <li class='in-file'>psych/lib/psych/visitors/emitter.rb</li>      
+            
+          
+          <li class='in-file'>psych/psych_emitter.c</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="../Object.html">Object</a></p>
+        
+      </div>
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">CLASS</span> <a href="Handler/DumperOptions.html">Psych::Handler::DumperOptions</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-alias">#alias</a></li>
+          
+          <li><a href="#method-i-empty">#empty</a></li>
+          
+          <li><a href="#method-i-end_document">#end_document</a></li>
+          
+          <li><a href="#method-i-end_mapping">#end_mapping</a></li>
+          
+          <li><a href="#method-i-end_sequence">#end_sequence</a></li>
+          
+          <li><a href="#method-i-end_stream">#end_stream</a></li>
+          
+          <li><a href="#method-i-event_location">#event_location</a></li>
+          
+          <li><a href="#method-i-scalar">#scalar</a></li>
+          
+          <li><a href="#method-i-start_document">#start_document</a></li>
+          
+          <li><a href="#method-i-start_mapping">#start_mapping</a></li>
+          
+          <li><a href="#method-i-start_sequence">#start_sequence</a></li>
+          
+          <li><a href="#method-i-start_stream">#start_stream</a></li>
+          
+          <li><a href="#method-i-streaming-3F">#streaming?</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../Kernel.html">Kernel</a></li>
+        
+          
+          
+          <li><a href="../Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="../Psych.html">Psych</a></li>
+        
+          
+          
+          <li><a href="../Psych/BadAlias.html">Psych::BadAlias</a></li>
+        
+          
+          
+          <li><a href="../Psych/ClassLoader.html">Psych::ClassLoader</a></li>
+        
+          
+          
+          <li><a href="../Psych/ClassLoader/Restricted.html">Psych::ClassLoader::Restricted</a></li>
+        
+          
+          
+          <li><a href="../Psych/Coder.html">Psych::Coder</a></li>
+        
+          
+          
+          <li><a href="../Psych/DisallowedClass.html">Psych::DisallowedClass</a></li>
+        
+          
+          
+          <li><a href="../Psych/Emitter.html">Psych::Emitter</a></li>
+        
+          
+          
+          <li><a href="../Psych/Exception.html">Psych::Exception</a></li>
+        
+          
+          
+          <li><a href="../Psych/Handler.html">Psych::Handler</a></li>
+        
+          
+          
+          <li><a href="../Psych/Handler/DumperOptions.html">Psych::Handler::DumperOptions</a></li>
+        
+          
+          
+          <li><a href="../Psych/Handlers.html">Psych::Handlers</a></li>
+        
+          
+          
+          <li><a href="../Psych/Handlers/Recorder.html">Psych::Handlers::Recorder</a></li>
+        
+          
+          
+          <li><a href="../Psych/JSON.html">Psych::JSON</a></li>
+        
+          
+          
+          <li><a href="../Psych/JSON/Stream.html">Psych::JSON::Stream</a></li>
+        
+          
+          
+          <li><a href="../Psych/JSON/TreeBuilder.html">Psych::JSON::TreeBuilder</a></li>
+        
+          
+          
+          <li><a href="../Psych/Nodes.html">Psych::Nodes</a></li>
+        
+          
+          
+          <li><a href="../Psych/Nodes/Alias.html">Psych::Nodes::Alias</a></li>
+        
+          
+          
+          <li><a href="../Psych/Nodes/Document.html">Psych::Nodes::Document</a></li>
+        
+          
+          
+          <li><a href="../Psych/Nodes/Mapping.html">Psych::Nodes::Mapping</a></li>
+        
+          
+          
+          <li><a href="../Psych/Nodes/Node.html">Psych::Nodes::Node</a></li>
+        
+          
+          
+          <li><a href="../Psych/Nodes/Scalar.html">Psych::Nodes::Scalar</a></li>
+        
+          
+          
+          <li><a href="../Psych/Nodes/Sequence.html">Psych::Nodes::Sequence</a></li>
+        
+          
+          
+          <li><a href="../Psych/Nodes/Stream.html">Psych::Nodes::Stream</a></li>
+        
+          
+          
+          <li><a href="../Psych/Omap.html">Psych::Omap</a></li>
+        
+          
+          
+          <li><a href="../Psych/Parser.html">Psych::Parser</a></li>
+        
+          
+          
+          <li><a href="../Psych/Parser/Mark.html">Psych::Parser::Mark</a></li>
+        
+          
+          
+          <li><a href="../Psych/ScalarScanner.html">Psych::ScalarScanner</a></li>
+        
+          
+          
+          <li><a href="../Psych/Set.html">Psych::Set</a></li>
+        
+          
+          
+          <li><a href="../Psych/Stream.html">Psych::Stream</a></li>
+        
+          
+          
+          <li><a href="../Psych/Streaming.html">Psych::Streaming</a></li>
+        
+          
+          
+          <li><a href="../Psych/Streaming/ClassMethods.html">Psych::Streaming::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../Psych/SyntaxError.html">Psych::SyntaxError</a></li>
+        
+          
+          
+          <li><a href="../Psych/TreeBuilder.html">Psych::TreeBuilder</a></li>
+        
+          
+          
+          <li><a href="../Psych/Visitors.html">Psych::Visitors</a></li>
+        
+          
+          
+          <li><a href="../Psych/Visitors/DepthFirst.html">Psych::Visitors::DepthFirst</a></li>
+        
+          
+          
+          <li><a href="../Psych/Visitors/Emitter.html">Psych::Visitors::Emitter</a></li>
+        
+          
+          
+          <li><a href="../Psych/Visitors/JSONTree.html">Psych::Visitors::JSONTree</a></li>
+        
+          
+          
+          <li><a href="../Psych/Visitors/NoAliasRuby.html">Psych::Visitors::NoAliasRuby</a></li>
+        
+          
+          
+          <li><a href="../Psych/Visitors/ToRuby.html">Psych::Visitors::ToRuby</a></li>
+        
+          
+          
+          <li><a href="../Psych/Visitors/Visitor.html">Psych::Visitors::Visitor</a></li>
+        
+          
+          
+          <li><a href="../Psych/Visitors/YAMLTree.html">Psych::Visitors::YAMLTree</a></li>
+        
+          
+          
+          <li><a href="../Regexp.html">Regexp</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">Psych::Handler</h1>
+
+    <div id="description" class="description">
+      
+<p><a href="Handler.html"><code>Psych::Handler</code></a> is an abstract base class that defines the events used when dealing with <a href="Parser.html"><code>Psych::Parser</code></a>.  Clients who want to use <a href="Parser.html"><code>Psych::Parser</code></a> should implement a class that inherits from <a href="Handler.html"><code>Psych::Handler</code></a> and define events that they can handle.</p>
+
+<p><a href="Handler.html"><code>Psych::Handler</code></a> defines all events that <a href="Parser.html"><code>Psych::Parser</code></a> can possibly send to event handlers.</p>
+
+<p>See <a href="Parser.html"><code>Psych::Parser</code></a> for more details</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="EVENTS">EVENTS</a></dt>
+          
+          <dd class="description"><p>Events that a <a href="Handler.html"><code>Handler</code></a> should respond to.</p></dd>
+          
+        
+          <dt><a name="OPTIONS">OPTIONS</a></dt>
+          
+          <dd class="description"><p>Default dumping options</p></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="alias-method" class="method-detail ">
+          <a name="method-i-alias"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">alias</span><span
+              class="method-args">(anchor)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Called when an alias is found to <code>anchor</code>.  <code>anchor</code> will be the name of the anchor found.</p>
+
+<h3 id="method-i-alias-label-Example">Example<span><a href="#method-i-alias-label-Example">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Here we have an example of an array that references itself in YAML:</p>
+
+<pre>--- &amp;ponies
+- first element
+- *ponies</pre>
+
+<p>&amp;ponies is the anchor, *ponies is the alias.  In this case, alias is called with “ponies”.</p>
+            
+
+            
+            <div class="method-source-code" id="alias-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File psych/lib/psych/handler.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">alias</span> <span class="ruby-identifier ruby-title">anchor</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- alias-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- alias-method -->
+      
+        <div id="empty-method" class="method-detail ">
+          <a name="method-i-empty"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">empty</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Called when an empty event happens. (Which, as far as I can tell, is never).</p>
+            
+
+            
+            <div class="method-source-code" id="empty-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File psych/lib/psych/handler.rb, line 236</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">empty</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- empty-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- empty-method -->
+      
+        <div id="end_document-method" class="method-detail ">
+          <a name="method-i-end_document"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">end_document</span><span
+              class="method-args">(implicit)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Called with the document ends.  <code>implicit</code> is a boolean value indicating whether or not the document has an implicit ending.</p>
+
+<h3 id="method-i-end_document-label-Example">Example<span><a href="#method-i-end_document-label-Example">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Given the following YAML:</p>
+
+<pre>---
+  hello world</pre>
+
+<p><code>implicit</code> will be true.  Given this YAML:</p>
+
+<pre>---
+  hello world
+...</pre>
+
+<p><code>implicit</code> will be false.</p>
+            
+
+            
+            <div class="method-source-code" id="end_document-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File psych/lib/psych/handler.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">end_document</span> <span class="ruby-identifier">implicit</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- end_document-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- end_document-method -->
+      
+        <div id="end_mapping-method" class="method-detail ">
+          <a name="method-i-end_mapping"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">end_mapping</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Called when a map ends</p>
+            
+
+            
+            <div class="method-source-code" id="end_mapping-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File psych/lib/psych/handler.rb, line 230</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">end_mapping</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- end_mapping-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- end_mapping-method -->
+      
+        <div id="end_sequence-method" class="method-detail ">
+          <a name="method-i-end_sequence"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">end_sequence</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Called when a sequence ends.</p>
+            
+
+            
+            <div class="method-source-code" id="end_sequence-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File psych/lib/psych/handler.rb, line 191</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">end_sequence</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- end_sequence-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- end_sequence-method -->
+      
+        <div id="end_stream-method" class="method-detail ">
+          <a name="method-i-end_stream"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">end_stream</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Called when the YAML stream ends</p>
+            
+
+            
+            <div class="method-source-code" id="end_stream-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File psych/lib/psych/handler.rb, line 241</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">end_stream</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- end_stream-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- end_stream-method -->
+      
+        <div id="event_location-method" class="method-detail ">
+          <a name="method-i-event_location"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">event_location</span><span
+              class="method-args">(start_line, start_column, end_line, end_column)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Called before each event with line/column information.</p>
+            
+
+            
+            <div class="method-source-code" id="event_location-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File psych/lib/psych/handler.rb, line 246</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">event_location</span>(<span class="ruby-identifier">start_line</span>, <span class="ruby-identifier">start_column</span>, <span class="ruby-identifier">end_line</span>, <span class="ruby-identifier">end_column</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- event_location-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- event_location-method -->
+      
+        <div id="scalar-method" class="method-detail ">
+          <a name="method-i-scalar"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">scalar</span><span
+              class="method-args">(value, anchor, tag, plain, quoted, style)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Called when a scalar <code>value</code> is found.  The scalar may have an <code>anchor</code>, a <code>tag</code>, be implicitly <code>plain</code> or implicitly <code>quoted</code></p>
+
+<p><code>value</code> is the string value of the scalar <code>anchor</code> is an associated anchor or nil <code>tag</code> is an associated tag or nil <code>plain</code> is a boolean value <code>quoted</code> is a boolean value <code>style</code> is an integer idicating the string style</p>
+
+<p>See the constants in <a href="Nodes/Scalar.html"><code>Psych::Nodes::Scalar</code></a> for the possible values of <code>style</code></p>
+
+<h3 id="method-i-scalar-label-Example">Example<span><a href="#method-i-scalar-label-Example">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Here is a YAML document that exercises most of the possible ways this method can be called:</p>
+
+<pre>---
+- !str &quot;foo&quot;
+- &amp;anchor fun
+- many
+  lines
+- |
+  many
+  newlines</pre>
+
+<p>The above YAML document contains a list with four strings.  Here are the parameters sent to this method in the same order:</p>
+
+<pre class="ruby"><span class="ruby-comment"># value               anchor    tag     plain   quoted  style</span>
+[<span class="ruby-string">&quot;foo&quot;</span>,               <span class="ruby-keyword">nil</span>,      <span class="ruby-string">&quot;!str&quot;</span>, <span class="ruby-keyword">false</span>,  <span class="ruby-keyword">false</span>,  <span class="ruby-value">3</span>    ]
+[<span class="ruby-string">&quot;fun&quot;</span>,               <span class="ruby-string">&quot;anchor&quot;</span>, <span class="ruby-keyword">nil</span>,    <span class="ruby-keyword">true</span>,   <span class="ruby-keyword">false</span>,  <span class="ruby-value">1</span>    ]
+[<span class="ruby-string">&quot;many lines&quot;</span>,        <span class="ruby-keyword">nil</span>,      <span class="ruby-keyword">nil</span>,    <span class="ruby-keyword">true</span>,   <span class="ruby-keyword">false</span>,  <span class="ruby-value">1</span>    ]
+[<span class="ruby-string">&quot;many\nnewlines\n&quot;</span>,  <span class="ruby-keyword">nil</span>,      <span class="ruby-keyword">nil</span>,    <span class="ruby-keyword">false</span>,  <span class="ruby-keyword">true</span>,   <span class="ruby-value">4</span>    ]
+</pre>
+            
+
+            
+            <div class="method-source-code" id="scalar-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File psych/lib/psych/handler.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">scalar</span> <span class="ruby-identifier">value</span>, <span class="ruby-identifier">anchor</span>, <span class="ruby-identifier">tag</span>, <span class="ruby-identifier">plain</span>, <span class="ruby-identifier">quoted</span>, <span class="ruby-identifier">style</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- scalar-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- scalar-method -->
+      
+        <div id="start_document-method" class="method-detail ">
+          <a name="method-i-start_document"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">start_document</span><span
+              class="method-args">(version, tag_directives, implicit)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Called when the document starts with the declared <code>version</code>, <code>tag_directives</code>, if the document is <code>implicit</code>.</p>
+
+<p><code>version</code> will be an array of integers indicating the YAML version being dealt with, <code>tag_directives</code> is a list of tuples indicating the prefix and suffix of each tag, and <code>implicit</code> is a boolean indicating whether the document is started implicitly.</p>
+
+<h3 id="method-i-start_document-label-Example">Example<span><a href="#method-i-start_document-label-Example">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Given the following YAML:</p>
+
+<pre>%YAML 1.1
+%TAG ! tag:tenderlovemaking.com,2009:
+--- !squee</pre>
+
+<p>The parameters for <a href="Handler.html#method-i-start_document"><code>start_document</code></a> must be this:</p>
+
+<pre class="ruby"><span class="ruby-identifier">version</span>         <span class="ruby-comment"># =&gt; [1, 1]</span>
+<span class="ruby-identifier">tag_directives</span>  <span class="ruby-comment"># =&gt; [[&quot;!&quot;, &quot;tag:tenderlovemaking.com,2009:&quot;]]</span>
+<span class="ruby-identifier">implicit</span>        <span class="ruby-comment"># =&gt; false</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="start_document-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File psych/lib/psych/handler.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">start_document</span> <span class="ruby-identifier">version</span>, <span class="ruby-identifier">tag_directives</span>, <span class="ruby-identifier">implicit</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- start_document-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- start_document-method -->
+      
+        <div id="start_mapping-method" class="method-detail ">
+          <a name="method-i-start_mapping"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">start_mapping</span><span
+              class="method-args">(anchor, tag, implicit, style)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Called when a map starts.</p>
+
+<p><code>anchor</code> is the anchor associated with the map or <code>nil</code>. <code>tag</code> is the tag associated with the map or <code>nil</code>. <code>implicit</code> is a boolean indicating whether or not the map was implicitly started. <code>style</code> is an integer indicating the mapping style.</p>
+
+<p>See the constants in <a href="Nodes/Mapping.html"><code>Psych::Nodes::Mapping</code></a> for the possible values of <code>style</code>.</p>
+
+<h3 id="method-i-start_mapping-label-Example">Example<span><a href="#method-i-start_mapping-label-Example">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Here is a YAML document that exercises most of the possible ways this method can be called:</p>
+
+<pre>---
+k: !!map { hello: world }
+v: &amp;pewpew
+  hello: world</pre>
+
+<p>The above YAML document consists of three maps, an outer map that contains two inner maps.  Below is a matrix of the parameters sent in order to represent these three maps:</p>
+
+<pre class="ruby"><span class="ruby-comment"># anchor    tag                       implicit  style</span>
+[<span class="ruby-keyword">nil</span>,       <span class="ruby-keyword">nil</span>,                      <span class="ruby-keyword">true</span>,     <span class="ruby-value">1</span>     ]
+[<span class="ruby-keyword">nil</span>,       <span class="ruby-string">&quot;tag:yaml.org,2002:map&quot;</span>,  <span class="ruby-keyword">false</span>,    <span class="ruby-value">2</span>     ]
+[<span class="ruby-string">&quot;pewpew&quot;</span>,  <span class="ruby-keyword">nil</span>,                      <span class="ruby-keyword">true</span>,     <span class="ruby-value">1</span>     ]
+</pre>
+            
+
+            
+            <div class="method-source-code" id="start_mapping-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File psych/lib/psych/handler.rb, line 225</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">start_mapping</span> <span class="ruby-identifier">anchor</span>, <span class="ruby-identifier">tag</span>, <span class="ruby-identifier">implicit</span>, <span class="ruby-identifier">style</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- start_mapping-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- start_mapping-method -->
+      
+        <div id="start_sequence-method" class="method-detail ">
+          <a name="method-i-start_sequence"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">start_sequence</span><span
+              class="method-args">(anchor, tag, implicit, style)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Called when a sequence is started.</p>
+
+<p><code>anchor</code> is the anchor associated with the sequence or nil. <code>tag</code> is the tag associated with the sequence or nil. <code>implicit</code> a boolean indicating whether or not the sequence was implicitly started. <code>style</code> is an integer indicating the list style.</p>
+
+<p>See the constants in <a href="Nodes/Sequence.html"><code>Psych::Nodes::Sequence</code></a> for the possible values of <code>style</code>.</p>
+
+<h3 id="method-i-start_sequence-label-Example">Example<span><a href="#method-i-start_sequence-label-Example">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Here is a YAML document that exercises most of the possible ways this method can be called:</p>
+
+<pre>---
+- !!seq [
+  a
+]
+- &amp;pewpew
+  - b</pre>
+
+<p>The above YAML document consists of three lists, an outer list that contains two inner lists.  Here is a matrix of the parameters sent to represent these lists:</p>
+
+<pre class="ruby"><span class="ruby-comment"># anchor    tag                       implicit  style</span>
+[<span class="ruby-keyword">nil</span>,       <span class="ruby-keyword">nil</span>,                      <span class="ruby-keyword">true</span>,     <span class="ruby-value">1</span>     ]
+[<span class="ruby-keyword">nil</span>,       <span class="ruby-string">&quot;tag:yaml.org,2002:seq&quot;</span>,  <span class="ruby-keyword">false</span>,    <span class="ruby-value">2</span>     ]
+[<span class="ruby-string">&quot;pewpew&quot;</span>,  <span class="ruby-keyword">nil</span>,                      <span class="ruby-keyword">true</span>,     <span class="ruby-value">1</span>     ]
+</pre>
+            
+
+            
+            <div class="method-source-code" id="start_sequence-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File psych/lib/psych/handler.rb, line 186</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">start_sequence</span> <span class="ruby-identifier">anchor</span>, <span class="ruby-identifier">tag</span>, <span class="ruby-identifier">implicit</span>, <span class="ruby-identifier">style</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- start_sequence-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- start_sequence-method -->
+      
+        <div id="start_stream-method" class="method-detail ">
+          <a name="method-i-start_stream"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">start_stream</span><span
+              class="method-args">(encoding)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Called with <code>encoding</code> when the YAML stream starts.  This method is called once per stream.  A stream may contain multiple documents.</p>
+
+<p>See the constants in <a href="Parser.html"><code>Psych::Parser</code></a> for the possible values of <code>encoding</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="start_stream-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File psych/lib/psych/handler.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">start_stream</span> <span class="ruby-identifier">encoding</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- start_stream-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- start_stream-method -->
+      
+        <div id="streaming-3F-method" class="method-detail ">
+          <a name="method-i-streaming-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">streaming?</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Is this handler a streaming handler?</p>
+            
+
+            
+            <div class="method-source-code" id="streaming-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File psych/lib/psych/handler.rb, line 251</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">streaming?</span>
+  <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- streaming-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- streaming-3F-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Handler_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Handler_versioned").load("/associated/2.7.4/Handler.ihtml");</script> <div id='tx_Handler' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Handler").load("/associated/Handler.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, an erratic source of art, music, and technology.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Handler.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Handler.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

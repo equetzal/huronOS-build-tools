@@ -1,0 +1,1675 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Module : CGI::HtmlExtension  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:17:26 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '..'   asset_rel_prefix = '..'  --> 
+  <title>Module: CGI::HtmlExtension (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="..css/obf.css"  -->
+  <link rel="stylesheet" href="../css/inuit.css" >
+  <link rel="stylesheet" href="../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../css/carbon17.css" type="text/css" >
+
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="module rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>cgi/html.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-a">#a</a></li>
+          
+          <li><a href="#method-i-base">#base</a></li>
+          
+          <li><a href="#method-i-blockquote">#blockquote</a></li>
+          
+          <li><a href="#method-i-caption">#caption</a></li>
+          
+          <li><a href="#method-i-checkbox">#checkbox</a></li>
+          
+          <li><a href="#method-i-checkbox_group">#checkbox_group</a></li>
+          
+          <li><a href="#method-i-file_field">#file_field</a></li>
+          
+          <li><a href="#method-i-form">#form</a></li>
+          
+          <li><a href="#method-i-hidden">#hidden</a></li>
+          
+          <li><a href="#method-i-html">#html</a></li>
+          
+          <li><a href="#method-i-image_button">#image_button</a></li>
+          
+          <li><a href="#method-i-img">#img</a></li>
+          
+          <li><a href="#method-i-multipart_form">#multipart_form</a></li>
+          
+          <li><a href="#method-i-password_field">#password_field</a></li>
+          
+          <li><a href="#method-i-popup_menu">#popup_menu</a></li>
+          
+          <li><a href="#method-i-radio_button">#radio_button</a></li>
+          
+          <li><a href="#method-i-radio_group">#radio_group</a></li>
+          
+          <li><a href="#method-i-reset">#reset</a></li>
+          
+          <li><a href="#method-i-scrolling_list">#scrolling_list</a></li>
+          
+          <li><a href="#method-i-submit">#submit</a></li>
+          
+          <li><a href="#method-i-text_field">#text_field</a></li>
+          
+          <li><a href="#method-i-textarea">#textarea</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../CGI.html">CGI</a></li>
+        
+          
+          
+          <li><a href="../CGI/Cookie.html">CGI::Cookie</a></li>
+        
+          
+          
+          <li><a href="../CGI/HTML3.html">CGI::HTML3</a></li>
+        
+          
+          
+          <li><a href="../CGI/HTML4.html">CGI::HTML4</a></li>
+        
+          
+          
+          <li><a href="../CGI/HTML4Fr.html">CGI::HTML4Fr</a></li>
+        
+          
+          
+          <li><a href="../CGI/HTML4Tr.html">CGI::HTML4Tr</a></li>
+        
+          
+          
+          <li><a href="../CGI/HTML5.html">CGI::HTML5</a></li>
+        
+          
+          
+          <li><a href="../CGI/HtmlExtension.html">CGI::HtmlExtension</a></li>
+        
+          
+          
+          <li><a href="../CGI/InvalidEncoding.html">CGI::InvalidEncoding</a></li>
+        
+          
+          
+          <li><a href="../CGI/QueryExtension.html">CGI::QueryExtension</a></li>
+        
+          
+          
+          <li><a href="../CGI/Session.html">CGI::Session</a></li>
+        
+          
+          
+          <li><a href="../CGI/Session/FileStore.html">CGI::Session::FileStore</a></li>
+        
+          
+          
+          <li><a href="../CGI/Session/MemoryStore.html">CGI::Session::MemoryStore</a></li>
+        
+          
+          
+          <li><a href="../CGI/Session/NullStore.html">CGI::Session::NullStore</a></li>
+        
+          
+          
+          <li><a href="../CGI/Session/PStore.html">CGI::Session::PStore</a></li>
+        
+          
+          
+          <li><a href="../CGI/Util.html">CGI::Util</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="module">CGI::HtmlExtension</h1>
+
+    <div id="description" class="description">
+      
+<p>Mixin module providing HTML generation methods.</p>
+
+<p>For example,</p>
+
+<pre class="ruby"><span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">a</span>(<span class="ruby-string">&quot;http://www.example.com&quot;</span>) { <span class="ruby-string">&quot;Example&quot;</span> }
+  <span class="ruby-comment"># =&gt; &quot;&lt;A HREF=\&quot;http://www.example.com\&quot;&gt;Example&lt;/A&gt;&quot;</span>
+</pre>
+
+<p>Modules Html3, Html4, etc., contain more basic HTML-generation methods (<code>#title</code>, <code>#h1</code>, etc.).</p>
+
+<p>See class <a href="../CGI.html"><code>CGI</code></a> for a detailed example.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="a-method" class="method-detail ">
+          <a name="method-i-a"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">a</span><span
+              class="method-args">(href = "")</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Generate an Anchor element as a string.</p>
+
+<p><code>href</code> can either be a string, giving the URL for the HREF attribute, or it can be a hash of the element&#39;s attributes.</p>
+
+<p>The body of the element is the string returned by the no-argument block passed in.</p>
+
+<pre class="ruby"><span class="ruby-identifier">a</span>(<span class="ruby-string">&quot;http://www.example.com&quot;</span>) { <span class="ruby-string">&quot;Example&quot;</span> }
+  <span class="ruby-comment"># =&gt; &quot;&lt;A HREF=\&quot;http://www.example.com\&quot;&gt;Example&lt;/A&gt;&quot;</span>
+
+<span class="ruby-identifier">a</span>(<span class="ruby-string">&quot;HREF&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;http://www.example.com&quot;</span>, <span class="ruby-string">&quot;TARGET&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;_top&quot;</span>) { <span class="ruby-string">&quot;Example&quot;</span> }
+  <span class="ruby-comment"># =&gt; &quot;&lt;A HREF=\&quot;http://www.example.com\&quot; TARGET=\&quot;_top\&quot;&gt;Example&lt;/A&gt;&quot;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="a-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/html.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">a</span>(<span class="ruby-identifier">href</span> = <span class="ruby-string">&quot;&quot;</span>) <span class="ruby-comment"># :yield:</span>
+  <span class="ruby-identifier">attributes</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">href</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+                 { <span class="ruby-string">&quot;HREF&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">href</span> }
+               <span class="ruby-keyword">else</span>
+                 <span class="ruby-identifier">href</span>
+               <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">attributes</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- a-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- a-method -->
+      
+        <div id="base-method" class="method-detail ">
+          <a name="method-i-base"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">base</span><span
+              class="method-args">(href = "")</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Generate a Document Base URI element as a String.</p>
+
+<p><code>href</code> can either by a string, giving the base URL for the HREF attribute, or it can be a has of the element&#39;s attributes.</p>
+
+<p>The passed-in no-argument block is ignored.</p>
+
+<pre class="ruby"><span class="ruby-identifier">base</span>(<span class="ruby-string">&quot;http://www.example.com/cgi&quot;</span>)
+  <span class="ruby-comment"># =&gt; &quot;&lt;BASE HREF=\&quot;http://www.example.com/cgi\&quot;&gt;&quot;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="base-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/html.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">base</span>(<span class="ruby-identifier">href</span> = <span class="ruby-string">&quot;&quot;</span>) <span class="ruby-comment"># :yield:</span>
+  <span class="ruby-identifier">attributes</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">href</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+                 { <span class="ruby-string">&quot;HREF&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">href</span> }
+               <span class="ruby-keyword">else</span>
+                 <span class="ruby-identifier">href</span>
+               <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">attributes</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- base-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- base-method -->
+      
+        <div id="blockquote-method" class="method-detail ">
+          <a name="method-i-blockquote"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">blockquote</span><span
+              class="method-args">(cite = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Generate a BlockQuote element as a string.</p>
+
+<p><code>cite</code> can either be a string, give the URI for the source of the quoted text, or a hash, giving all attributes of the element, or it can be omitted, in which case the element has no attributes.</p>
+
+<p>The body is provided by the passed-in no-argument block</p>
+
+<pre class="ruby"><span class="ruby-identifier">blockquote</span>(<span class="ruby-string">&quot;http://www.example.com/quotes/foo.html&quot;</span>) { <span class="ruby-string">&quot;Foo!&quot;</span> }
+  <span class="ruby-comment">#=&gt; &quot;&lt;BLOCKQUOTE CITE=\&quot;http://www.example.com/quotes/foo.html\&quot;&gt;Foo!&lt;/BLOCKQUOTE&gt;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="blockquote-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/html.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">blockquote</span>(<span class="ruby-identifier">cite</span> = {})  <span class="ruby-comment"># :yield:</span>
+  <span class="ruby-identifier">attributes</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">cite</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+                 { <span class="ruby-string">&quot;CITE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">cite</span> }
+               <span class="ruby-keyword">else</span>
+                 <span class="ruby-identifier">cite</span>
+               <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">attributes</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- blockquote-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- blockquote-method -->
+      
+        <div id="caption-method" class="method-detail ">
+          <a name="method-i-caption"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">caption</span><span
+              class="method-args">(align = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Generate a Table Caption element as a string.</p>
+
+<p><code>align</code> can be a string, giving the alignment of the caption (one of top, bottom, left, or right).  It can be a hash of all the attributes of the element.  Or it can be omitted.</p>
+
+<p>The body of the element is provided by the passed-in no-argument block.</p>
+
+<pre class="ruby"><span class="ruby-identifier">caption</span>(<span class="ruby-string">&quot;left&quot;</span>) { <span class="ruby-string">&quot;Capital Cities&quot;</span> }
+  <span class="ruby-comment"># =&gt; &lt;CAPTION ALIGN=\&quot;left\&quot;&gt;Capital Cities&lt;/CAPTION&gt;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="caption-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/html.rb, line 154</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">caption</span>(<span class="ruby-identifier">align</span> = {}) <span class="ruby-comment"># :yield:</span>
+  <span class="ruby-identifier">attributes</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">align</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+                 { <span class="ruby-string">&quot;ALIGN&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">align</span> }
+               <span class="ruby-keyword">else</span>
+                 <span class="ruby-identifier">align</span>
+               <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">attributes</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- caption-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- caption-method -->
+      
+        <div id="checkbox-method" class="method-detail ">
+          <a name="method-i-checkbox"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">checkbox</span><span
+              class="method-args">(name = "", value = nil, checked = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Generate a Checkbox Input element as a string.</p>
+
+<p>The attributes of the element can be specified as three arguments, <code>name</code>, <code>value</code>, and <code>checked</code>.  <code>checked</code> is a boolean value; if true, the CHECKED attribute will be included in the element.</p>
+
+<p>Alternatively, the attributes can be specified as a hash.</p>
+
+<pre class="ruby"><span class="ruby-identifier">checkbox</span>(<span class="ruby-string">&quot;name&quot;</span>)
+  <span class="ruby-comment"># = checkbox(&quot;NAME&quot; =&gt; &quot;name&quot;)</span>
+
+<span class="ruby-identifier">checkbox</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-string">&quot;value&quot;</span>)
+  <span class="ruby-comment"># = checkbox(&quot;NAME&quot; =&gt; &quot;name&quot;, &quot;VALUE&quot; =&gt; &quot;value&quot;)</span>
+
+<span class="ruby-identifier">checkbox</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-string">&quot;value&quot;</span>, <span class="ruby-keyword">true</span>)
+  <span class="ruby-comment"># = checkbox(&quot;NAME&quot; =&gt; &quot;name&quot;, &quot;VALUE&quot; =&gt; &quot;value&quot;, &quot;CHECKED&quot; =&gt; true)</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="checkbox-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/html.rb, line 180</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">checkbox</span>(<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">checked</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">attributes</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+                 { <span class="ruby-string">&quot;TYPE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;checkbox&quot;</span>, <span class="ruby-string">&quot;NAME&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">name</span>,
+                   <span class="ruby-string">&quot;VALUE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">value</span>, <span class="ruby-string">&quot;CHECKED&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">checked</span> }
+               <span class="ruby-keyword">else</span>
+                 <span class="ruby-identifier">name</span>[<span class="ruby-string">&quot;TYPE&quot;</span>] = <span class="ruby-string">&quot;checkbox&quot;</span>
+                 <span class="ruby-identifier">name</span>
+               <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">input</span>(<span class="ruby-identifier">attributes</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- checkbox-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- checkbox-method -->
+      
+        <div id="checkbox_group-method" class="method-detail ">
+          <a name="method-i-checkbox_group"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">checkbox_group</span><span
+              class="method-args">(name = "", *values)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Generate a sequence of checkbox elements, as a String.</p>
+
+<p>The checkboxes will all have the same <code>name</code> attribute. Each checkbox is followed by a label. There will be one checkbox for each value.  Each value can be specified as a String, which will be used both as the value of the VALUE attribute and as the label for that checkbox.  A single-element array has the same effect.</p>
+
+<p>Each value can also be specified as a three-element array. The first element is the VALUE attribute; the second is the label; and the third is a boolean specifying whether this checkbox is CHECKED.</p>
+
+<p>Each value can also be specified as a two-element array, by omitting either the value element (defaults to the same as the label), or the boolean checked element (defaults to false).</p>
+
+<pre class="ruby"><span class="ruby-identifier">checkbox_group</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-string">&quot;foo&quot;</span>, <span class="ruby-string">&quot;bar&quot;</span>, <span class="ruby-string">&quot;baz&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;checkbox&quot; NAME=&quot;name&quot; VALUE=&quot;foo&quot;&gt;foo</span>
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;checkbox&quot; NAME=&quot;name&quot; VALUE=&quot;bar&quot;&gt;bar</span>
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;checkbox&quot; NAME=&quot;name&quot; VALUE=&quot;baz&quot;&gt;baz</span>
+
+<span class="ruby-identifier">checkbox_group</span>(<span class="ruby-string">&quot;name&quot;</span>, [<span class="ruby-string">&quot;foo&quot;</span>], [<span class="ruby-string">&quot;bar&quot;</span>, <span class="ruby-keyword">true</span>], <span class="ruby-string">&quot;baz&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;checkbox&quot; NAME=&quot;name&quot; VALUE=&quot;foo&quot;&gt;foo</span>
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;checkbox&quot; CHECKED NAME=&quot;name&quot; VALUE=&quot;bar&quot;&gt;bar</span>
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;checkbox&quot; NAME=&quot;name&quot; VALUE=&quot;baz&quot;&gt;baz</span>
+
+<span class="ruby-identifier">checkbox_group</span>(<span class="ruby-string">&quot;name&quot;</span>, [<span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-string">&quot;Foo&quot;</span>], [<span class="ruby-string">&quot;2&quot;</span>, <span class="ruby-string">&quot;Bar&quot;</span>, <span class="ruby-keyword">true</span>], <span class="ruby-string">&quot;Baz&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;checkbox&quot; NAME=&quot;name&quot; VALUE=&quot;1&quot;&gt;Foo</span>
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;checkbox&quot; CHECKED NAME=&quot;name&quot; VALUE=&quot;2&quot;&gt;Bar</span>
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;checkbox&quot; NAME=&quot;name&quot; VALUE=&quot;Baz&quot;&gt;Baz</span>
+
+<span class="ruby-identifier">checkbox_group</span>(<span class="ruby-string">&quot;NAME&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;name&quot;</span>,
+                 <span class="ruby-string">&quot;VALUES&quot;</span> <span class="ruby-operator">=&gt;</span> [<span class="ruby-string">&quot;foo&quot;</span>, <span class="ruby-string">&quot;bar&quot;</span>, <span class="ruby-string">&quot;baz&quot;</span>])
+
+<span class="ruby-identifier">checkbox_group</span>(<span class="ruby-string">&quot;NAME&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;name&quot;</span>,
+                 <span class="ruby-string">&quot;VALUES&quot;</span> <span class="ruby-operator">=&gt;</span> [[<span class="ruby-string">&quot;foo&quot;</span>], [<span class="ruby-string">&quot;bar&quot;</span>, <span class="ruby-keyword">true</span>], <span class="ruby-string">&quot;baz&quot;</span>])
+
+<span class="ruby-identifier">checkbox_group</span>(<span class="ruby-string">&quot;NAME&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;name&quot;</span>,
+                 <span class="ruby-string">&quot;VALUES&quot;</span> <span class="ruby-operator">=&gt;</span> [[<span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-string">&quot;Foo&quot;</span>], [<span class="ruby-string">&quot;2&quot;</span>, <span class="ruby-string">&quot;Bar&quot;</span>, <span class="ruby-keyword">true</span>], <span class="ruby-string">&quot;Baz&quot;</span>])
+</pre>
+            
+
+            
+            <div class="method-source-code" id="checkbox_group-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/html.rb, line 234</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">checkbox_group</span>(<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">values</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Hash</span>)
+    <span class="ruby-identifier">values</span> = <span class="ruby-identifier">name</span>[<span class="ruby-string">&quot;VALUES&quot;</span>]
+    <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>[<span class="ruby-string">&quot;NAME&quot;</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">values</span>.<span class="ruby-identifier">collect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+      <span class="ruby-identifier">checkbox</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">value</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>
+        <span class="ruby-identifier">checkbox</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>[<span class="ruby-value">0</span>],  <span class="ruby-identifier">value</span>[<span class="ruby-value">-1</span>]) <span class="ruby-operator">+</span>
+        <span class="ruby-identifier">value</span>[<span class="ruby-value">-2</span>]
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">checkbox</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>[<span class="ruby-value">0</span>]) <span class="ruby-operator">+</span>
+        <span class="ruby-identifier">value</span>[<span class="ruby-value">-1</span>]
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  }.<span class="ruby-identifier">join</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- checkbox_group-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- checkbox_group-method -->
+      
+        <div id="file_field-method" class="method-detail ">
+          <a name="method-i-file_field"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">file_field</span><span
+              class="method-args">(name = "", size = 20, maxlength = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Generate an File Upload Input element as a string.</p>
+
+<p>The attributes of the element can be specified as three arguments, <code>name</code>, <code>size</code>, and <code>maxlength</code>.  <code>maxlength</code> is the maximum length of the file&#39;s <em>name</em>, not of the file&#39;s <em>contents</em>.</p>
+
+<p>Alternatively, the attributes can be specified as a hash.</p>
+
+<p>See <a href="HtmlExtension.html#method-i-multipart_form"><code>multipart_form()</code></a> for forms that include file uploads.</p>
+
+<pre class="ruby"><span class="ruby-identifier">file_field</span>(<span class="ruby-string">&quot;name&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;file&quot; NAME=&quot;name&quot; SIZE=&quot;20&quot;&gt;</span>
+
+<span class="ruby-identifier">file_field</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-value">40</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;file&quot; NAME=&quot;name&quot; SIZE=&quot;40&quot;&gt;</span>
+
+<span class="ruby-identifier">file_field</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-value">40</span>, <span class="ruby-value">100</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;file&quot; NAME=&quot;name&quot; SIZE=&quot;40&quot; MAXLENGTH=&quot;100&quot;&gt;</span>
+
+<span class="ruby-identifier">file_field</span>(<span class="ruby-string">&quot;NAME&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-string">&quot;SIZE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">40</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;file&quot; NAME=&quot;name&quot; SIZE=&quot;40&quot;&gt;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="file_field-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/html.rb, line 276</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">file_field</span>(<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">size</span> = <span class="ruby-value">20</span>, <span class="ruby-identifier">maxlength</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">attributes</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+                 { <span class="ruby-string">&quot;TYPE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;file&quot;</span>, <span class="ruby-string">&quot;NAME&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">name</span>,
+                   <span class="ruby-string">&quot;SIZE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">size</span>.<span class="ruby-identifier">to_s</span> }
+               <span class="ruby-keyword">else</span>
+                 <span class="ruby-identifier">name</span>[<span class="ruby-string">&quot;TYPE&quot;</span>] = <span class="ruby-string">&quot;file&quot;</span>
+                 <span class="ruby-identifier">name</span>
+               <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">attributes</span>[<span class="ruby-string">&quot;MAXLENGTH&quot;</span>] = <span class="ruby-identifier">maxlength</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">maxlength</span>
+  <span class="ruby-identifier">input</span>(<span class="ruby-identifier">attributes</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- file_field-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- file_field-method -->
+      
+        <div id="form-method" class="method-detail ">
+          <a name="method-i-form"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">form</span><span
+              class="method-args">(method = "post", action = script_name, enctype = "application/x-www-form-urlencoded")</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Generate a Form element as a string.</p>
+
+<p><code>method</code> should be either “get” or “post”, and defaults to the latter. <code>action</code> defaults to the current <a href="../CGI.html"><code>CGI</code></a> script name.  <code>enctype</code> defaults to “application/x-www-form-urlencoded”.</p>
+
+<p>Alternatively, the attributes can be specified as a hash.</p>
+
+<p>See also <a href="HtmlExtension.html#method-i-multipart_form"><code>multipart_form()</code></a> for forms that include file uploads.</p>
+
+<pre class="ruby"><span class="ruby-identifier">form</span>{ <span class="ruby-string">&quot;string&quot;</span> }
+  <span class="ruby-comment"># &lt;FORM METHOD=&quot;post&quot; ENCTYPE=&quot;application/x-www-form-urlencoded&quot;&gt;string&lt;/FORM&gt;</span>
+
+<span class="ruby-identifier">form</span>(<span class="ruby-string">&quot;get&quot;</span>) { <span class="ruby-string">&quot;string&quot;</span> }
+  <span class="ruby-comment"># &lt;FORM METHOD=&quot;get&quot; ENCTYPE=&quot;application/x-www-form-urlencoded&quot;&gt;string&lt;/FORM&gt;</span>
+
+<span class="ruby-identifier">form</span>(<span class="ruby-string">&quot;get&quot;</span>, <span class="ruby-string">&quot;url&quot;</span>) { <span class="ruby-string">&quot;string&quot;</span> }
+  <span class="ruby-comment"># &lt;FORM METHOD=&quot;get&quot; ACTION=&quot;url&quot; ENCTYPE=&quot;application/x-www-form-urlencoded&quot;&gt;string&lt;/FORM&gt;</span>
+
+<span class="ruby-identifier">form</span>(<span class="ruby-string">&quot;METHOD&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;post&quot;</span>, <span class="ruby-string">&quot;ENCTYPE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;enctype&quot;</span>) { <span class="ruby-string">&quot;string&quot;</span> }
+  <span class="ruby-comment"># &lt;FORM METHOD=&quot;post&quot; ENCTYPE=&quot;enctype&quot;&gt;string&lt;/FORM&gt;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="form-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/html.rb, line 310</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">form</span>(<span class="ruby-identifier">method</span> = <span class="ruby-string">&quot;post&quot;</span>, <span class="ruby-identifier">action</span> = <span class="ruby-identifier">script_name</span>, <span class="ruby-identifier">enctype</span> = <span class="ruby-string">&quot;application/x-www-form-urlencoded&quot;</span>)
+  <span class="ruby-identifier">attributes</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">method</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+                 { <span class="ruby-string">&quot;METHOD&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">method</span>, <span class="ruby-string">&quot;ACTION&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">action</span>,
+                   <span class="ruby-string">&quot;ENCTYPE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">enctype</span> }
+               <span class="ruby-keyword">else</span>
+                 <span class="ruby-keyword">unless</span> <span class="ruby-identifier">method</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-string">&quot;METHOD&quot;</span>)
+                   <span class="ruby-identifier">method</span>[<span class="ruby-string">&quot;METHOD&quot;</span>] = <span class="ruby-string">&quot;post&quot;</span>
+                 <span class="ruby-keyword">end</span>
+                 <span class="ruby-keyword">unless</span> <span class="ruby-identifier">method</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-string">&quot;ENCTYPE&quot;</span>)
+                   <span class="ruby-identifier">method</span>[<span class="ruby-string">&quot;ENCTYPE&quot;</span>] = <span class="ruby-identifier">enctype</span>
+                 <span class="ruby-keyword">end</span>
+                 <span class="ruby-identifier">method</span>
+               <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-identifier">body</span> = <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">body</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@output_hidden</span>
+    <span class="ruby-identifier">body</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@output_hidden</span>.<span class="ruby-identifier">collect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+      <span class="ruby-node">&quot;&lt;INPUT TYPE=\&quot;HIDDEN\&quot; NAME=\&quot;#{k}\&quot; VALUE=\&quot;#{v}\&quot;&gt;&quot;</span>
+    }.<span class="ruby-identifier">join</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">attributes</span>){<span class="ruby-identifier">body</span>}
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- form-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- form-method -->
+      
+        <div id="hidden-method" class="method-detail ">
+          <a name="method-i-hidden"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">hidden</span><span
+              class="method-args">(name = "", value = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Generate a Hidden Input element as a string.</p>
+
+<p>The attributes of the element can be specified as two arguments, <code>name</code> and <code>value</code>.</p>
+
+<p>Alternatively, the attributes can be specified as a hash.</p>
+
+<pre class="ruby"><span class="ruby-identifier">hidden</span>(<span class="ruby-string">&quot;name&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;hidden&quot; NAME=&quot;name&quot;&gt;</span>
+
+<span class="ruby-identifier">hidden</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-string">&quot;value&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;hidden&quot; NAME=&quot;name&quot; VALUE=&quot;value&quot;&gt;</span>
+
+<span class="ruby-identifier">hidden</span>(<span class="ruby-string">&quot;NAME&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-string">&quot;VALUE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;reset&quot;</span>, <span class="ruby-string">&quot;ID&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;foo&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;hidden&quot; NAME=&quot;name&quot; VALUE=&quot;value&quot; ID=&quot;foo&quot;&gt;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="hidden-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/html.rb, line 351</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hidden</span>(<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">attributes</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+                 { <span class="ruby-string">&quot;TYPE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;hidden&quot;</span>, <span class="ruby-string">&quot;NAME&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;VALUE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">value</span> }
+               <span class="ruby-keyword">else</span>
+                 <span class="ruby-identifier">name</span>[<span class="ruby-string">&quot;TYPE&quot;</span>] = <span class="ruby-string">&quot;hidden&quot;</span>
+                 <span class="ruby-identifier">name</span>
+               <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">input</span>(<span class="ruby-identifier">attributes</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- hidden-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- hidden-method -->
+      
+        <div id="html-method" class="method-detail ">
+          <a name="method-i-html"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">html</span><span
+              class="method-args">(attributes = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Generate a top-level HTML element as a string.</p>
+
+<p>The attributes of the element are specified as a hash.  The pseudo-attribute “PRETTY” can be used to specify that the generated HTML string should be indented.  “PRETTY” can also be specified as a string as the sole argument to this method.  The pseudo-attribute “DOCTYPE”, if given, is used as the leading DOCTYPE SGML tag; it should include the entire text of this tag, including angle brackets.</p>
+
+<p>The body of the html element is supplied as a block.</p>
+
+<pre class="ruby"><span class="ruby-identifier">html</span>{ <span class="ruby-string">&quot;string&quot;</span> }
+  <span class="ruby-comment"># &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 3.2 Final//EN&quot;&gt;&lt;HTML&gt;string&lt;/HTML&gt;</span>
+
+<span class="ruby-identifier">html</span>(<span class="ruby-string">&quot;LANG&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;ja&quot;</span>) { <span class="ruby-string">&quot;string&quot;</span> }
+  <span class="ruby-comment"># &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 3.2 Final//EN&quot;&gt;&lt;HTML LANG=&quot;ja&quot;&gt;string&lt;/HTML&gt;</span>
+
+<span class="ruby-identifier">html</span>(<span class="ruby-string">&quot;DOCTYPE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">false</span>) { <span class="ruby-string">&quot;string&quot;</span> }
+  <span class="ruby-comment"># &lt;HTML&gt;string&lt;/HTML&gt;</span>
+
+<span class="ruby-identifier">html</span>(<span class="ruby-string">&quot;DOCTYPE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;&lt;!DOCTYPE HTML PUBLIC &quot;-//IETF//DTD HTML//EN&quot;&gt;&#39;</span>) { <span class="ruby-string">&quot;string&quot;</span> }
+  <span class="ruby-comment"># &lt;!DOCTYPE HTML PUBLIC &quot;-//IETF//DTD HTML//EN&quot;&gt;&lt;HTML&gt;string&lt;/HTML&gt;</span>
+
+<span class="ruby-identifier">html</span>(<span class="ruby-string">&quot;PRETTY&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;  &quot;</span>) { <span class="ruby-string">&quot;&lt;BODY&gt;&lt;/BODY&gt;&quot;</span> }
+  <span class="ruby-comment"># &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 3.2 Final//EN&quot;&gt;</span>
+  <span class="ruby-comment"># &lt;HTML&gt;</span>
+  <span class="ruby-comment">#   &lt;BODY&gt;</span>
+  <span class="ruby-comment">#   &lt;/BODY&gt;</span>
+  <span class="ruby-comment"># &lt;/HTML&gt;</span>
+
+<span class="ruby-identifier">html</span>(<span class="ruby-string">&quot;PRETTY&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;\t&quot;</span>) { <span class="ruby-string">&quot;&lt;BODY&gt;&lt;/BODY&gt;&quot;</span> }
+  <span class="ruby-comment"># &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 3.2 Final//EN&quot;&gt;</span>
+  <span class="ruby-comment"># &lt;HTML&gt;</span>
+  <span class="ruby-comment">#         &lt;BODY&gt;</span>
+  <span class="ruby-comment">#         &lt;/BODY&gt;</span>
+  <span class="ruby-comment"># &lt;/HTML&gt;</span>
+
+<span class="ruby-identifier">html</span>(<span class="ruby-string">&quot;PRETTY&quot;</span>) { <span class="ruby-string">&quot;&lt;BODY&gt;&lt;/BODY&gt;&quot;</span> }
+  <span class="ruby-comment"># = html(&quot;PRETTY&quot; =&gt; &quot;  &quot;) { &quot;&lt;BODY&gt;&lt;/BODY&gt;&quot; }</span>
+
+<span class="ruby-identifier">html</span>(<span class="ruby-keyword">if</span> <span class="ruby-identifier">$VERBOSE</span> <span class="ruby-keyword">then</span> <span class="ruby-string">&quot;PRETTY&quot;</span> <span class="ruby-keyword">end</span>) { <span class="ruby-string">&quot;HTML string&quot;</span> }
+</pre>
+            
+
+            
+            <div class="method-source-code" id="html-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/html.rb, line 403</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">html</span>(<span class="ruby-identifier">attributes</span> = {}) <span class="ruby-comment"># :yield:</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">attributes</span>
+    <span class="ruby-identifier">attributes</span> = {}
+  <span class="ruby-keyword">elsif</span> <span class="ruby-string">&quot;PRETTY&quot;</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">attributes</span>
+    <span class="ruby-identifier">attributes</span> = { <span class="ruby-string">&quot;PRETTY&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">true</span> }
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">pretty</span> = <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&quot;PRETTY&quot;</span>)
+  <span class="ruby-identifier">pretty</span> = <span class="ruby-string">&quot;  &quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">pretty</span>
+  <span class="ruby-identifier">buf</span> = <span class="ruby-string">&quot;&quot;</span>.<span class="ruby-identifier">dup</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-string">&quot;DOCTYPE&quot;</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">attributes</span>[<span class="ruby-string">&quot;DOCTYPE&quot;</span>]
+      <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&quot;DOCTYPE&quot;</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&quot;DOCTYPE&quot;</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">doctype</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">super</span>(<span class="ruby-identifier">attributes</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">pretty</span>
+    <span class="ruby-constant">CGI</span>.<span class="ruby-identifier">pretty</span>(<span class="ruby-identifier">buf</span>, <span class="ruby-identifier">pretty</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">buf</span>
+  <span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- html-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- html-method -->
+      
+        <div id="image_button-method" class="method-detail ">
+          <a name="method-i-image_button"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">image_button</span><span
+              class="method-args">(src = "", name = nil, alt = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Generate an Image Button Input element as a string.</p>
+
+<p><code>src</code> is the URL of the image to use for the button.  <code>name</code> is the input name.  <code>alt</code> is the alternative text for the image.</p>
+
+<p>Alternatively, the attributes can be specified as a hash.</p>
+
+<pre class="ruby"><span class="ruby-identifier">image_button</span>(<span class="ruby-string">&quot;url&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;image&quot; SRC=&quot;url&quot;&gt;</span>
+
+<span class="ruby-identifier">image_button</span>(<span class="ruby-string">&quot;url&quot;</span>, <span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-string">&quot;string&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;image&quot; SRC=&quot;url&quot; NAME=&quot;name&quot; ALT=&quot;string&quot;&gt;</span>
+
+<span class="ruby-identifier">image_button</span>(<span class="ruby-string">&quot;SRC&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;url&quot;</span>, <span class="ruby-string">&quot;ALT&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;string&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;image&quot; SRC=&quot;url&quot; ALT=&quot;string&quot;&gt;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="image_button-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/html.rb, line 448</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">image_button</span>(<span class="ruby-identifier">src</span> = <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">name</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">alt</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">attributes</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">src</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+                 { <span class="ruby-string">&quot;TYPE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;image&quot;</span>, <span class="ruby-string">&quot;SRC&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">src</span>, <span class="ruby-string">&quot;NAME&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">name</span>,
+                   <span class="ruby-string">&quot;ALT&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">alt</span> }
+               <span class="ruby-keyword">else</span>
+                 <span class="ruby-identifier">src</span>[<span class="ruby-string">&quot;TYPE&quot;</span>] = <span class="ruby-string">&quot;image&quot;</span>
+                 <span class="ruby-identifier">src</span>[<span class="ruby-string">&quot;SRC&quot;</span>] <span class="ruby-operator">||=</span> <span class="ruby-string">&quot;&quot;</span>
+                 <span class="ruby-identifier">src</span>
+               <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">input</span>(<span class="ruby-identifier">attributes</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- image_button-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- image_button-method -->
+      
+        <div id="img-method" class="method-detail ">
+          <a name="method-i-img"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">img</span><span
+              class="method-args">(src = "", alt = "", width = nil, height = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Generate an Image element as a string.</p>
+
+<p><code>src</code> is the URL of the image.  <code>alt</code> is the alternative text for the image.  <code>width</code> is the width of the image, and <code>height</code> is its height.</p>
+
+<p>Alternatively, the attributes can be specified as a hash.</p>
+
+<pre class="ruby"><span class="ruby-identifier">img</span>(<span class="ruby-string">&quot;src&quot;</span>, <span class="ruby-string">&quot;alt&quot;</span>, <span class="ruby-value">100</span>, <span class="ruby-value">50</span>)
+  <span class="ruby-comment"># &lt;IMG SRC=&quot;src&quot; ALT=&quot;alt&quot; WIDTH=&quot;100&quot; HEIGHT=&quot;50&quot;&gt;</span>
+
+<span class="ruby-identifier">img</span>(<span class="ruby-string">&quot;SRC&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;src&quot;</span>, <span class="ruby-string">&quot;ALT&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;alt&quot;</span>, <span class="ruby-string">&quot;WIDTH&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">100</span>, <span class="ruby-string">&quot;HEIGHT&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">50</span>)
+  <span class="ruby-comment"># &lt;IMG SRC=&quot;src&quot; ALT=&quot;alt&quot; WIDTH=&quot;100&quot; HEIGHT=&quot;50&quot;&gt;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="img-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/html.rb, line 474</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">img</span>(<span class="ruby-identifier">src</span> = <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">alt</span> = <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">width</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">height</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">attributes</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">src</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+                 { <span class="ruby-string">&quot;SRC&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">src</span>, <span class="ruby-string">&quot;ALT&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">alt</span> }
+               <span class="ruby-keyword">else</span>
+                 <span class="ruby-identifier">src</span>
+               <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">attributes</span>[<span class="ruby-string">&quot;WIDTH&quot;</span>] = <span class="ruby-identifier">width</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">width</span>
+  <span class="ruby-identifier">attributes</span>[<span class="ruby-string">&quot;HEIGHT&quot;</span>] = <span class="ruby-identifier">height</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">height</span>
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">attributes</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- img-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- img-method -->
+      
+        <div id="multipart_form-method" class="method-detail ">
+          <a name="method-i-multipart_form"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">multipart_form</span><span
+              class="method-args">(action = nil, enctype = "multipart/form-data")</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Generate a Form element with multipart encoding as a String.</p>
+
+<p>Multipart encoding is used for forms that include file uploads.</p>
+
+<p><code>action</code> is the action to perform.  <code>enctype</code> is the encoding type, which defaults to “multipart/form-data”.</p>
+
+<p>Alternatively, the attributes can be specified as a hash.</p>
+
+<pre class="ruby"><span class="ruby-identifier">multipart_form</span>{ <span class="ruby-string">&quot;string&quot;</span> }
+  <span class="ruby-comment"># &lt;FORM METHOD=&quot;post&quot; ENCTYPE=&quot;multipart/form-data&quot;&gt;string&lt;/FORM&gt;</span>
+
+<span class="ruby-identifier">multipart_form</span>(<span class="ruby-string">&quot;url&quot;</span>) { <span class="ruby-string">&quot;string&quot;</span> }
+  <span class="ruby-comment"># &lt;FORM METHOD=&quot;post&quot; ACTION=&quot;url&quot; ENCTYPE=&quot;multipart/form-data&quot;&gt;string&lt;/FORM&gt;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="multipart_form-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/html.rb, line 500</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">multipart_form</span>(<span class="ruby-identifier">action</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">enctype</span> = <span class="ruby-string">&quot;multipart/form-data&quot;</span>)
+  <span class="ruby-identifier">attributes</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">action</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+                 { <span class="ruby-string">&quot;METHOD&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;post&quot;</span>, <span class="ruby-string">&quot;ENCTYPE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">enctype</span> }
+               <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">action</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+                 { <span class="ruby-string">&quot;METHOD&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;post&quot;</span>, <span class="ruby-string">&quot;ACTION&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">action</span>,
+                   <span class="ruby-string">&quot;ENCTYPE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">enctype</span> }
+               <span class="ruby-keyword">else</span>
+                 <span class="ruby-keyword">unless</span> <span class="ruby-identifier">action</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-string">&quot;METHOD&quot;</span>)
+                   <span class="ruby-identifier">action</span>[<span class="ruby-string">&quot;METHOD&quot;</span>] = <span class="ruby-string">&quot;post&quot;</span>
+                 <span class="ruby-keyword">end</span>
+                 <span class="ruby-keyword">unless</span> <span class="ruby-identifier">action</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-string">&quot;ENCTYPE&quot;</span>)
+                   <span class="ruby-identifier">action</span>[<span class="ruby-string">&quot;ENCTYPE&quot;</span>] = <span class="ruby-identifier">enctype</span>
+                 <span class="ruby-keyword">end</span>
+                 <span class="ruby-identifier">action</span>
+               <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-identifier">form</span>(<span class="ruby-identifier">attributes</span>){ <span class="ruby-keyword">yield</span> }
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">form</span>(<span class="ruby-identifier">attributes</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- multipart_form-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- multipart_form-method -->
+      
+        <div id="password_field-method" class="method-detail ">
+          <a name="method-i-password_field"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">password_field</span><span
+              class="method-args">(name = "", value = nil, size = 40, maxlength = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Generate a Password Input element as a string.</p>
+
+<p><code>name</code> is the name of the input field.  <code>value</code> is its default value.  <code>size</code> is the size of the input field display.  <code>maxlength</code> is the maximum length of the inputted password.</p>
+
+<p>Alternatively, attributes can be specified as a hash.</p>
+
+<pre class="ruby"><span class="ruby-identifier">password_field</span>(<span class="ruby-string">&quot;name&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;password&quot; NAME=&quot;name&quot; SIZE=&quot;40&quot;&gt;</span>
+
+<span class="ruby-identifier">password_field</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-string">&quot;value&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;password&quot; NAME=&quot;name&quot; VALUE=&quot;value&quot; SIZE=&quot;40&quot;&gt;</span>
+
+<span class="ruby-identifier">password_field</span>(<span class="ruby-string">&quot;password&quot;</span>, <span class="ruby-string">&quot;value&quot;</span>, <span class="ruby-value">80</span>, <span class="ruby-value">200</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;password&quot; NAME=&quot;name&quot; VALUE=&quot;value&quot; SIZE=&quot;80&quot; MAXLENGTH=&quot;200&quot;&gt;</span>
+
+<span class="ruby-identifier">password_field</span>(<span class="ruby-string">&quot;NAME&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-string">&quot;VALUE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;value&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;password&quot; NAME=&quot;name&quot; VALUE=&quot;value&quot;&gt;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="password_field-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/html.rb, line 542</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">password_field</span>(<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">size</span> = <span class="ruby-value">40</span>, <span class="ruby-identifier">maxlength</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">attributes</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+                 { <span class="ruby-string">&quot;TYPE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;password&quot;</span>, <span class="ruby-string">&quot;NAME&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">name</span>,
+                   <span class="ruby-string">&quot;VALUE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">value</span>, <span class="ruby-string">&quot;SIZE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">size</span>.<span class="ruby-identifier">to_s</span> }
+               <span class="ruby-keyword">else</span>
+                 <span class="ruby-identifier">name</span>[<span class="ruby-string">&quot;TYPE&quot;</span>] = <span class="ruby-string">&quot;password&quot;</span>
+                 <span class="ruby-identifier">name</span>
+               <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">attributes</span>[<span class="ruby-string">&quot;MAXLENGTH&quot;</span>] = <span class="ruby-identifier">maxlength</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">maxlength</span>
+  <span class="ruby-identifier">input</span>(<span class="ruby-identifier">attributes</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- password_field-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- password_field-method -->
+      
+        <div id="popup_menu-method" class="method-detail ">
+          <a name="method-i-popup_menu"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">popup_menu</span><span
+              class="method-args">(name = "", *values)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Generate a Select element as a string.</p>
+
+<p><code>name</code> is the name of the element.  The <code>values</code> are the options that can be selected from the Select menu.  Each value can be a String or a one, two, or three-element Array.  If a String or a one-element Array, this is both the value of that option and the text displayed for it.  If a three-element Array, the elements are the option value, displayed text, and a boolean value specifying whether this option starts as selected. The two-element version omits either the option value (defaults to the same as the display text) or the boolean selected specifier (defaults to false).</p>
+
+<p>The attributes and options can also be specified as a hash.  In this case, options are specified as an array of values as described above, with the hash key of “VALUES”.</p>
+
+<pre class="ruby"><span class="ruby-identifier">popup_menu</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-string">&quot;foo&quot;</span>, <span class="ruby-string">&quot;bar&quot;</span>, <span class="ruby-string">&quot;baz&quot;</span>)
+  <span class="ruby-comment"># &lt;SELECT NAME=&quot;name&quot;&gt;</span>
+  <span class="ruby-comment">#   &lt;OPTION VALUE=&quot;foo&quot;&gt;foo&lt;/OPTION&gt;</span>
+  <span class="ruby-comment">#   &lt;OPTION VALUE=&quot;bar&quot;&gt;bar&lt;/OPTION&gt;</span>
+  <span class="ruby-comment">#   &lt;OPTION VALUE=&quot;baz&quot;&gt;baz&lt;/OPTION&gt;</span>
+  <span class="ruby-comment"># &lt;/SELECT&gt;</span>
+
+<span class="ruby-identifier">popup_menu</span>(<span class="ruby-string">&quot;name&quot;</span>, [<span class="ruby-string">&quot;foo&quot;</span>], [<span class="ruby-string">&quot;bar&quot;</span>, <span class="ruby-keyword">true</span>], <span class="ruby-string">&quot;baz&quot;</span>)
+  <span class="ruby-comment"># &lt;SELECT NAME=&quot;name&quot;&gt;</span>
+  <span class="ruby-comment">#   &lt;OPTION VALUE=&quot;foo&quot;&gt;foo&lt;/OPTION&gt;</span>
+  <span class="ruby-comment">#   &lt;OPTION VALUE=&quot;bar&quot; SELECTED&gt;bar&lt;/OPTION&gt;</span>
+  <span class="ruby-comment">#   &lt;OPTION VALUE=&quot;baz&quot;&gt;baz&lt;/OPTION&gt;</span>
+  <span class="ruby-comment"># &lt;/SELECT&gt;</span>
+
+<span class="ruby-identifier">popup_menu</span>(<span class="ruby-string">&quot;name&quot;</span>, [<span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-string">&quot;Foo&quot;</span>], [<span class="ruby-string">&quot;2&quot;</span>, <span class="ruby-string">&quot;Bar&quot;</span>, <span class="ruby-keyword">true</span>], <span class="ruby-string">&quot;Baz&quot;</span>)
+  <span class="ruby-comment"># &lt;SELECT NAME=&quot;name&quot;&gt;</span>
+  <span class="ruby-comment">#   &lt;OPTION VALUE=&quot;1&quot;&gt;Foo&lt;/OPTION&gt;</span>
+  <span class="ruby-comment">#   &lt;OPTION SELECTED VALUE=&quot;2&quot;&gt;Bar&lt;/OPTION&gt;</span>
+  <span class="ruby-comment">#   &lt;OPTION VALUE=&quot;Baz&quot;&gt;Baz&lt;/OPTION&gt;</span>
+  <span class="ruby-comment"># &lt;/SELECT&gt;</span>
+
+<span class="ruby-identifier">popup_menu</span>(<span class="ruby-string">&quot;NAME&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-string">&quot;SIZE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">2</span>, <span class="ruby-string">&quot;MULTIPLE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">true</span>,
+            <span class="ruby-string">&quot;VALUES&quot;</span> <span class="ruby-operator">=&gt;</span> [[<span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-string">&quot;Foo&quot;</span>], [<span class="ruby-string">&quot;2&quot;</span>, <span class="ruby-string">&quot;Bar&quot;</span>, <span class="ruby-keyword">true</span>], <span class="ruby-string">&quot;Baz&quot;</span>])
+  <span class="ruby-comment"># &lt;SELECT NAME=&quot;name&quot; MULTIPLE SIZE=&quot;2&quot;&gt;</span>
+  <span class="ruby-comment">#   &lt;OPTION VALUE=&quot;1&quot;&gt;Foo&lt;/OPTION&gt;</span>
+  <span class="ruby-comment">#   &lt;OPTION SELECTED VALUE=&quot;2&quot;&gt;Bar&lt;/OPTION&gt;</span>
+  <span class="ruby-comment">#   &lt;OPTION VALUE=&quot;Baz&quot;&gt;Baz&lt;/OPTION&gt;</span>
+  <span class="ruby-comment"># &lt;/SELECT&gt;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="popup_menu-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/html.rb, line 597</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">popup_menu</span>(<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">values</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Hash</span>)
+    <span class="ruby-identifier">values</span>   = <span class="ruby-identifier">name</span>[<span class="ruby-string">&quot;VALUES&quot;</span>]
+    <span class="ruby-identifier">size</span>     = <span class="ruby-identifier">name</span>[<span class="ruby-string">&quot;SIZE&quot;</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span>[<span class="ruby-string">&quot;SIZE&quot;</span>]
+    <span class="ruby-identifier">multiple</span> = <span class="ruby-identifier">name</span>[<span class="ruby-string">&quot;MULTIPLE&quot;</span>]
+    <span class="ruby-identifier">name</span>     = <span class="ruby-identifier">name</span>[<span class="ruby-string">&quot;NAME&quot;</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">size</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-identifier">multiple</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">select</span>({ <span class="ruby-string">&quot;NAME&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;SIZE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">size</span>,
+           <span class="ruby-string">&quot;MULTIPLE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">multiple</span> }){
+    <span class="ruby-identifier">values</span>.<span class="ruby-identifier">collect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+        <span class="ruby-identifier">option</span>({ <span class="ruby-string">&quot;VALUE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">value</span> }){ <span class="ruby-identifier">value</span> }
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>[<span class="ruby-identifier">value</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+          <span class="ruby-identifier">option</span>({ <span class="ruby-string">&quot;VALUE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">value</span>[<span class="ruby-value">0</span>], <span class="ruby-string">&quot;SELECTED&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">true</span> }){
+            <span class="ruby-identifier">value</span>[<span class="ruby-identifier">value</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">2</span>]
+          }
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">option</span>({ <span class="ruby-string">&quot;VALUE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">value</span>[<span class="ruby-value">0</span>] }){
+            <span class="ruby-identifier">value</span>[<span class="ruby-identifier">value</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>]
+          }
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    }.<span class="ruby-identifier">join</span>
+  }
+
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- popup_menu-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="HtmlExtension.html#method-i-scrolling_list">scrolling_list</a>
+          </div>
+          
+
+          
+        </div><!-- popup_menu-method -->
+      
+        <div id="radio_button-method" class="method-detail ">
+          <a name="method-i-radio_button"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">radio_button</span><span
+              class="method-args">(name = "", value = nil, checked = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Generates a radio-button Input element.</p>
+
+<p><code>name</code> is the name of the input field.  <code>value</code> is the value of the field if checked.  <code>checked</code> specifies whether the field starts off checked.</p>
+
+<p>Alternatively, the attributes can be specified as a hash.</p>
+
+<pre class="ruby"><span class="ruby-identifier">radio_button</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-string">&quot;value&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;radio&quot; NAME=&quot;name&quot; VALUE=&quot;value&quot;&gt;</span>
+
+<span class="ruby-identifier">radio_button</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-string">&quot;value&quot;</span>, <span class="ruby-keyword">true</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;radio&quot; NAME=&quot;name&quot; VALUE=&quot;value&quot; CHECKED&gt;</span>
+
+<span class="ruby-identifier">radio_button</span>(<span class="ruby-string">&quot;NAME&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-string">&quot;VALUE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;value&quot;</span>, <span class="ruby-string">&quot;ID&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;foo&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;radio&quot; NAME=&quot;name&quot; VALUE=&quot;value&quot; ID=&quot;foo&quot;&gt;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="radio_button-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/html.rb, line 646</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">radio_button</span>(<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">checked</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">attributes</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+                 { <span class="ruby-string">&quot;TYPE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;radio&quot;</span>, <span class="ruby-string">&quot;NAME&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">name</span>,
+                   <span class="ruby-string">&quot;VALUE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">value</span>, <span class="ruby-string">&quot;CHECKED&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">checked</span> }
+               <span class="ruby-keyword">else</span>
+                 <span class="ruby-identifier">name</span>[<span class="ruby-string">&quot;TYPE&quot;</span>] = <span class="ruby-string">&quot;radio&quot;</span>
+                 <span class="ruby-identifier">name</span>
+               <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">input</span>(<span class="ruby-identifier">attributes</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- radio_button-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- radio_button-method -->
+      
+        <div id="radio_group-method" class="method-detail ">
+          <a name="method-i-radio_group"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">radio_group</span><span
+              class="method-args">(name = "", *values)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Generate a sequence of radio button Input elements, as a String.</p>
+
+<p>This works the same as <a href="HtmlExtension.html#method-i-checkbox_group"><code>checkbox_group()</code></a>.  However, it is not valid to have more than one radiobutton in a group checked.</p>
+
+<pre class="ruby"><span class="ruby-identifier">radio_group</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-string">&quot;foo&quot;</span>, <span class="ruby-string">&quot;bar&quot;</span>, <span class="ruby-string">&quot;baz&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;radio&quot; NAME=&quot;name&quot; VALUE=&quot;foo&quot;&gt;foo</span>
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;radio&quot; NAME=&quot;name&quot; VALUE=&quot;bar&quot;&gt;bar</span>
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;radio&quot; NAME=&quot;name&quot; VALUE=&quot;baz&quot;&gt;baz</span>
+
+<span class="ruby-identifier">radio_group</span>(<span class="ruby-string">&quot;name&quot;</span>, [<span class="ruby-string">&quot;foo&quot;</span>], [<span class="ruby-string">&quot;bar&quot;</span>, <span class="ruby-keyword">true</span>], <span class="ruby-string">&quot;baz&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;radio&quot; NAME=&quot;name&quot; VALUE=&quot;foo&quot;&gt;foo</span>
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;radio&quot; CHECKED NAME=&quot;name&quot; VALUE=&quot;bar&quot;&gt;bar</span>
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;radio&quot; NAME=&quot;name&quot; VALUE=&quot;baz&quot;&gt;baz</span>
+
+<span class="ruby-identifier">radio_group</span>(<span class="ruby-string">&quot;name&quot;</span>, [<span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-string">&quot;Foo&quot;</span>], [<span class="ruby-string">&quot;2&quot;</span>, <span class="ruby-string">&quot;Bar&quot;</span>, <span class="ruby-keyword">true</span>], <span class="ruby-string">&quot;Baz&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;radio&quot; NAME=&quot;name&quot; VALUE=&quot;1&quot;&gt;Foo</span>
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;radio&quot; CHECKED NAME=&quot;name&quot; VALUE=&quot;2&quot;&gt;Bar</span>
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;radio&quot; NAME=&quot;name&quot; VALUE=&quot;Baz&quot;&gt;Baz</span>
+
+<span class="ruby-identifier">radio_group</span>(<span class="ruby-string">&quot;NAME&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;name&quot;</span>,
+              <span class="ruby-string">&quot;VALUES&quot;</span> <span class="ruby-operator">=&gt;</span> [<span class="ruby-string">&quot;foo&quot;</span>, <span class="ruby-string">&quot;bar&quot;</span>, <span class="ruby-string">&quot;baz&quot;</span>])
+
+<span class="ruby-identifier">radio_group</span>(<span class="ruby-string">&quot;NAME&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;name&quot;</span>,
+              <span class="ruby-string">&quot;VALUES&quot;</span> <span class="ruby-operator">=&gt;</span> [[<span class="ruby-string">&quot;foo&quot;</span>], [<span class="ruby-string">&quot;bar&quot;</span>, <span class="ruby-keyword">true</span>], <span class="ruby-string">&quot;baz&quot;</span>])
+
+<span class="ruby-identifier">radio_group</span>(<span class="ruby-string">&quot;NAME&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;name&quot;</span>,
+              <span class="ruby-string">&quot;VALUES&quot;</span> <span class="ruby-operator">=&gt;</span> [[<span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-string">&quot;Foo&quot;</span>], [<span class="ruby-string">&quot;2&quot;</span>, <span class="ruby-string">&quot;Bar&quot;</span>, <span class="ruby-keyword">true</span>], <span class="ruby-string">&quot;Baz&quot;</span>])
+</pre>
+            
+
+            
+            <div class="method-source-code" id="radio_group-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/html.rb, line 685</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">radio_group</span>(<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">values</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Hash</span>)
+    <span class="ruby-identifier">values</span> = <span class="ruby-identifier">name</span>[<span class="ruby-string">&quot;VALUES&quot;</span>]
+    <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>[<span class="ruby-string">&quot;NAME&quot;</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">values</span>.<span class="ruby-identifier">collect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+      <span class="ruby-identifier">radio_button</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">value</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>
+        <span class="ruby-identifier">radio_button</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>[<span class="ruby-value">0</span>],  <span class="ruby-identifier">value</span>[<span class="ruby-value">-1</span>]) <span class="ruby-operator">+</span>
+        <span class="ruby-identifier">value</span>[<span class="ruby-value">-2</span>]
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">radio_button</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>[<span class="ruby-value">0</span>]) <span class="ruby-operator">+</span>
+        <span class="ruby-identifier">value</span>[<span class="ruby-value">-1</span>]
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  }.<span class="ruby-identifier">join</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- radio_group-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- radio_group-method -->
+      
+        <div id="reset-method" class="method-detail ">
+          <a name="method-i-reset"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">reset</span><span
+              class="method-args">(value = nil, name = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Generate a reset button Input element, as a String.</p>
+
+<p>This resets the values on a form to their initial values.  <code>value</code> is the text displayed on the button. <code>name</code> is the name of this button.</p>
+
+<p>Alternatively, the attributes can be specified as a hash.</p>
+
+<pre class="ruby"><span class="ruby-identifier">reset</span>
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;reset&quot;&gt;</span>
+
+<span class="ruby-identifier">reset</span>(<span class="ruby-string">&quot;reset&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;reset&quot; VALUE=&quot;reset&quot;&gt;</span>
+
+<span class="ruby-identifier">reset</span>(<span class="ruby-string">&quot;VALUE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;reset&quot;</span>, <span class="ruby-string">&quot;ID&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;foo&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;reset&quot; VALUE=&quot;reset&quot; ID=&quot;foo&quot;&gt;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="reset-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/html.rb, line 720</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">reset</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">name</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">attributes</span> = <span class="ruby-keyword">if</span> (<span class="ruby-keyword">not</span> <span class="ruby-identifier">value</span>) <span class="ruby-keyword">or</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+                 { <span class="ruby-string">&quot;TYPE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;reset&quot;</span>, <span class="ruby-string">&quot;VALUE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">value</span>, <span class="ruby-string">&quot;NAME&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">name</span> }
+               <span class="ruby-keyword">else</span>
+                 <span class="ruby-identifier">value</span>[<span class="ruby-string">&quot;TYPE&quot;</span>] = <span class="ruby-string">&quot;reset&quot;</span>
+                 <span class="ruby-identifier">value</span>
+               <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">input</span>(<span class="ruby-identifier">attributes</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- reset-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- reset-method -->
+      
+        <div id="scrolling_list-method" class="method-detail method-alias">
+          <a name="method-i-scrolling_list"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">scrolling_list</span><span
+              class="method-args">(name = "", *values)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="HtmlExtension.html#method-i-popup_menu">popup_menu</a>
+          </div>
+          
+        </div><!-- scrolling_list-method -->
+      
+        <div id="submit-method" class="method-detail ">
+          <a name="method-i-submit"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">submit</span><span
+              class="method-args">(value = nil, name = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Generate a submit button Input element, as a String.</p>
+
+<p><code>value</code> is the text to display on the button.  <code>name</code> is the name of the input.</p>
+
+<p>Alternatively, the attributes can be specified as a hash.</p>
+
+<pre class="ruby"><span class="ruby-identifier">submit</span>
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;submit&quot;&gt;</span>
+
+<span class="ruby-identifier">submit</span>(<span class="ruby-string">&quot;ok&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;submit&quot; VALUE=&quot;ok&quot;&gt;</span>
+
+<span class="ruby-identifier">submit</span>(<span class="ruby-string">&quot;ok&quot;</span>, <span class="ruby-string">&quot;button1&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;submit&quot; VALUE=&quot;ok&quot; NAME=&quot;button1&quot;&gt;</span>
+
+<span class="ruby-identifier">submit</span>(<span class="ruby-string">&quot;VALUE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;ok&quot;</span>, <span class="ruby-string">&quot;NAME&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;button1&quot;</span>, <span class="ruby-string">&quot;ID&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;foo&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;submit&quot; VALUE=&quot;ok&quot; NAME=&quot;button1&quot; ID=&quot;foo&quot;&gt;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="submit-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/html.rb, line 750</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">submit</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">name</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">attributes</span> = <span class="ruby-keyword">if</span> (<span class="ruby-keyword">not</span> <span class="ruby-identifier">value</span>) <span class="ruby-keyword">or</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+                 { <span class="ruby-string">&quot;TYPE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;submit&quot;</span>, <span class="ruby-string">&quot;VALUE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">value</span>, <span class="ruby-string">&quot;NAME&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">name</span> }
+               <span class="ruby-keyword">else</span>
+                 <span class="ruby-identifier">value</span>[<span class="ruby-string">&quot;TYPE&quot;</span>] = <span class="ruby-string">&quot;submit&quot;</span>
+                 <span class="ruby-identifier">value</span>
+               <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">input</span>(<span class="ruby-identifier">attributes</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- submit-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- submit-method -->
+      
+        <div id="text_field-method" class="method-detail ">
+          <a name="method-i-text_field"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">text_field</span><span
+              class="method-args">(name = "", value = nil, size = 40, maxlength = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Generate a text field Input element, as a String.</p>
+
+<p><code>name</code> is the name of the input field.  <code>value</code> is its initial value.  <code>size</code> is the size of the input area.  <code>maxlength</code> is the maximum length of input accepted.</p>
+
+<p>Alternatively, the attributes can be specified as a hash.</p>
+
+<pre class="ruby"><span class="ruby-identifier">text_field</span>(<span class="ruby-string">&quot;name&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;text&quot; NAME=&quot;name&quot; SIZE=&quot;40&quot;&gt;</span>
+
+<span class="ruby-identifier">text_field</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-string">&quot;value&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;text&quot; NAME=&quot;name&quot; VALUE=&quot;value&quot; SIZE=&quot;40&quot;&gt;</span>
+
+<span class="ruby-identifier">text_field</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-string">&quot;value&quot;</span>, <span class="ruby-value">80</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;text&quot; NAME=&quot;name&quot; VALUE=&quot;value&quot; SIZE=&quot;80&quot;&gt;</span>
+
+<span class="ruby-identifier">text_field</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-string">&quot;value&quot;</span>, <span class="ruby-value">80</span>, <span class="ruby-value">200</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;text&quot; NAME=&quot;name&quot; VALUE=&quot;value&quot; SIZE=&quot;80&quot; MAXLENGTH=&quot;200&quot;&gt;</span>
+
+<span class="ruby-identifier">text_field</span>(<span class="ruby-string">&quot;NAME&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-string">&quot;VALUE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;value&quot;</span>)
+  <span class="ruby-comment"># &lt;INPUT TYPE=&quot;text&quot; NAME=&quot;name&quot; VALUE=&quot;value&quot;&gt;</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="text_field-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/html.rb, line 782</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">text_field</span>(<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">size</span> = <span class="ruby-value">40</span>, <span class="ruby-identifier">maxlength</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">attributes</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+                 { <span class="ruby-string">&quot;TYPE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;text&quot;</span>, <span class="ruby-string">&quot;NAME&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;VALUE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">value</span>,
+                   <span class="ruby-string">&quot;SIZE&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">size</span>.<span class="ruby-identifier">to_s</span> }
+               <span class="ruby-keyword">else</span>
+                 <span class="ruby-identifier">name</span>[<span class="ruby-string">&quot;TYPE&quot;</span>] = <span class="ruby-string">&quot;text&quot;</span>
+                 <span class="ruby-identifier">name</span>
+               <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">attributes</span>[<span class="ruby-string">&quot;MAXLENGTH&quot;</span>] = <span class="ruby-identifier">maxlength</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">maxlength</span>
+  <span class="ruby-identifier">input</span>(<span class="ruby-identifier">attributes</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- text_field-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- text_field-method -->
+      
+        <div id="textarea-method" class="method-detail ">
+          <a name="method-i-textarea"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">textarea</span><span
+              class="method-args">(name = "", cols = 70, rows = 10)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Generate a TextArea element, as a String.</p>
+
+<p><code>name</code> is the name of the textarea.  <code>cols</code> is the number of columns and <code>rows</code> is the number of rows in the display.</p>
+
+<p>Alternatively, the attributes can be specified as a hash.</p>
+
+<p>The body is provided by the passed-in no-argument block</p>
+
+<pre class="ruby"><span class="ruby-identifier">textarea</span>(<span class="ruby-string">&quot;name&quot;</span>)
+   <span class="ruby-comment"># = textarea(&quot;NAME&quot; =&gt; &quot;name&quot;, &quot;COLS&quot; =&gt; 70, &quot;ROWS&quot; =&gt; 10)</span>
+
+<span class="ruby-identifier">textarea</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-value">40</span>, <span class="ruby-value">5</span>)
+   <span class="ruby-comment"># = textarea(&quot;NAME&quot; =&gt; &quot;name&quot;, &quot;COLS&quot; =&gt; 40, &quot;ROWS&quot; =&gt; 5)</span>
+</pre>
+            
+
+            
+            <div class="method-source-code" id="textarea-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File cgi/html.rb, line 808</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">textarea</span>(<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">cols</span> = <span class="ruby-value">70</span>, <span class="ruby-identifier">rows</span> = <span class="ruby-value">10</span>)  <span class="ruby-comment"># :yield:</span>
+  <span class="ruby-identifier">attributes</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+                 { <span class="ruby-string">&quot;NAME&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;COLS&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">cols</span>.<span class="ruby-identifier">to_s</span>,
+                   <span class="ruby-string">&quot;ROWS&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">rows</span>.<span class="ruby-identifier">to_s</span> }
+               <span class="ruby-keyword">else</span>
+                 <span class="ruby-identifier">name</span>
+               <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">attributes</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- textarea-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- textarea-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_HtmlExtension_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_HtmlExtension_versioned").load("/associated/2.7.4/HtmlExtension.ihtml");</script> <div id='tx_HtmlExtension' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_HtmlExtension").load("/associated/HtmlExtension.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Hack your world.  Feed your head.  Live curious</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_HtmlExtension.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_HtmlExtension.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

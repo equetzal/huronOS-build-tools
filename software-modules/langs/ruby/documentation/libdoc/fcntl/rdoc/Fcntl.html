@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Module : Fcntl  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:20:08 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = ''  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = ''  --> 
+  <title>Module: Fcntl (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href=".css/obf.css"  -->
+  <link rel="stylesheet" href="css/inuit.css" >
+  <link rel="stylesheet" href="css/grid.inuit.css" >
+  <link rel="stylesheet" href="css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="css/carbon17.css" type="text/css" >
+
+
+  <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="/js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="module rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>fcntl/fcntl.c</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="./Fcntl.html">Fcntl</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="module">Fcntl</h1>
+
+    <div id="description" class="description">
+      
+<p><a href="Fcntl.html"><code>Fcntl</code></a> loads the constants defined in the system&#39;s &lt;fcntl.h&gt; C header file, and used with both the fcntl(2) and open(2) POSIX system calls.</p>
+
+<p>To perform a fcntl(2) operation, use IO::fcntl.</p>
+
+<p>To perform an open(2) operation, use IO::sysopen.</p>
+
+<p>The set of operations and constants available depends upon specific operating system.  Some values listed below may not be supported on your system.</p>
+
+<p>See your fcntl(2) man page for complete details.</p>
+
+<p>Open /tmp/tempfile as a write-only file that is created if it doesn&#39;t exist:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;fcntl&#39;</span>
+
+<span class="ruby-identifier">fd</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">sysopen</span>(<span class="ruby-string">&#39;/tmp/tempfile&#39;</span>,
+                <span class="ruby-constant">Fcntl</span><span class="ruby-operator">::</span><span class="ruby-constant">O_WRONLY</span> <span class="ruby-operator">|</span> <span class="ruby-constant">Fcntl</span><span class="ruby-operator">::</span><span class="ruby-constant">O_EXCL</span> <span class="ruby-operator">|</span> <span class="ruby-constant">Fcntl</span><span class="ruby-operator">::</span><span class="ruby-constant">O_CREAT</span>)
+<span class="ruby-identifier">f</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">fd</span>)
+<span class="ruby-identifier">f</span>.<span class="ruby-identifier">syswrite</span>(<span class="ruby-string">&quot;TEMP DATA&quot;</span>)
+<span class="ruby-identifier">f</span>.<span class="ruby-identifier">close</span>
+</pre>
+
+<p>Get the flags on file <code>s</code>:</p>
+
+<pre class="ruby"><span class="ruby-identifier">m</span> = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">fcntl</span>(<span class="ruby-constant">Fcntl</span><span class="ruby-operator">::</span><span class="ruby-constant">F_GETFL</span>, <span class="ruby-value">0</span>)
+</pre>
+
+<p>Set the non-blocking flag on <code>f</code> in addition to the existing flags in <code>m</code>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">f</span>.<span class="ruby-identifier">fcntl</span>(<span class="ruby-constant">Fcntl</span><span class="ruby-operator">::</span><span class="ruby-constant">F_SETFL</span>, <span class="ruby-constant">Fcntl</span><span class="ruby-operator">::</span><span class="ruby-constant">O_NONBLOCK</span><span class="ruby-operator">|</span><span class="ruby-identifier">m</span>)
+</pre>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="FD_CLOEXEC">FD_CLOEXEC</a></dt>
+          
+          <dd class="description"><p><a href="Fcntl.html#FD_CLOEXEC"><code>FD_CLOEXEC</code></a></p>
+
+<p>the value of the close-on-exec flag.</p></dd>
+          
+        
+          <dt><a name="F_DUPFD">F_DUPFD</a></dt>
+          
+          <dd class="description"><p><a href="Fcntl.html#F_DUPFD"><code>F_DUPFD</code></a></p>
+
+<p>Duplicate a file descriptor to the minimum unused file descriptor greater than or equal to the argument.</p>
+
+<p>The close-on-exec flag of the duplicated file descriptor is set. (Ruby uses F_DUPFD_CLOEXEC internally if available to avoid race condition.  <a href="Fcntl.html#F_SETFD"><code>F_SETFD</code></a> is used if F_DUPFD_CLOEXEC is not available.)</p></dd>
+          
+        
+          <dt><a name="F_GETFD">F_GETFD</a></dt>
+          
+          <dd class="description"><p><a href="Fcntl.html#F_GETFD"><code>F_GETFD</code></a></p>
+
+<p>Read the close-on-exec flag of a file descriptor.</p></dd>
+          
+        
+          <dt><a name="F_GETFL">F_GETFL</a></dt>
+          
+          <dd class="description"><p><a href="Fcntl.html#F_GETFL"><code>F_GETFL</code></a></p>
+
+<p>Get the file descriptor flags.  This will be one or more of the O_* flags.</p></dd>
+          
+        
+          <dt><a name="F_GETLK">F_GETLK</a></dt>
+          
+          <dd class="description"><p><a href="Fcntl.html#F_GETLK"><code>F_GETLK</code></a></p>
+
+<p>Determine whether a given region of a file is locked.  This uses one of the F_*LK flags.</p></dd>
+          
+        
+          <dt><a name="F_RDLCK">F_RDLCK</a></dt>
+          
+          <dd class="description"><p><a href="Fcntl.html#F_RDLCK"><code>F_RDLCK</code></a></p>
+
+<p>Read lock for a region of a file</p></dd>
+          
+        
+          <dt><a name="F_SETFD">F_SETFD</a></dt>
+          
+          <dd class="description"><p><a href="Fcntl.html#F_SETFD"><code>F_SETFD</code></a></p>
+
+<p>Set the close-on-exec flag of a file descriptor.</p></dd>
+          
+        
+          <dt><a name="F_SETFL">F_SETFL</a></dt>
+          
+          <dd class="description"><p><a href="Fcntl.html#F_SETFL"><code>F_SETFL</code></a></p>
+
+<p>Set the file descriptor flags.  This will be one or more of the O_* flags.</p></dd>
+          
+        
+          <dt><a name="F_SETLK">F_SETLK</a></dt>
+          
+          <dd class="description"><p><a href="Fcntl.html#F_SETLK"><code>F_SETLK</code></a></p>
+
+<p>Acquire a lock on a region of a file.  This uses one of the F_*LCK flags.</p></dd>
+          
+        
+          <dt><a name="F_SETLKW">F_SETLKW</a></dt>
+          
+          <dd class="description"><p><a href="Fcntl.html#F_SETLKW"><code>F_SETLKW</code></a></p>
+
+<p>Acquire a lock on a region of a file, waiting if necessary.  This uses one of the F_*LCK flags</p></dd>
+          
+        
+          <dt><a name="F_UNLCK">F_UNLCK</a></dt>
+          
+          <dd class="description"><p><a href="Fcntl.html#F_UNLCK"><code>F_UNLCK</code></a></p>
+
+<p>Remove lock for a region of a file</p></dd>
+          
+        
+          <dt><a name="F_WRLCK">F_WRLCK</a></dt>
+          
+          <dd class="description"><p><a href="Fcntl.html#F_WRLCK"><code>F_WRLCK</code></a></p>
+
+<p>Write lock for a region of a file</p></dd>
+          
+        
+          <dt><a name="O_ACCMODE">O_ACCMODE</a></dt>
+          
+          <dd class="description"><p><a href="Fcntl.html#O_ACCMODE"><code>O_ACCMODE</code></a></p>
+
+<p>Mask to extract the read/write flags</p></dd>
+          
+        
+          <dt><a name="O_APPEND">O_APPEND</a></dt>
+          
+          <dd class="description"><p><a href="Fcntl.html#O_APPEND"><code>O_APPEND</code></a></p>
+
+<p>Open the file in append mode</p></dd>
+          
+        
+          <dt><a name="O_CREAT">O_CREAT</a></dt>
+          
+          <dd class="description"><p><a href="Fcntl.html#O_CREAT"><code>O_CREAT</code></a></p>
+
+<p>Create the file if it doesn&#39;t exist</p></dd>
+          
+        
+          <dt><a name="O_EXCL">O_EXCL</a></dt>
+          
+          <dd class="description"><p><a href="Fcntl.html#O_EXCL"><code>O_EXCL</code></a></p>
+
+<p>Used with <a href="Fcntl.html#O_CREAT"><code>O_CREAT</code></a>, fail if the file exists</p></dd>
+          
+        
+          <dt><a name="O_NDELAY">O_NDELAY</a></dt>
+          
+          <dd class="description"><p><a href="Fcntl.html#O_NDELAY"><code>O_NDELAY</code></a></p>
+
+<p>Open the file in non-blocking mode</p></dd>
+          
+        
+          <dt><a name="O_NOCTTY">O_NOCTTY</a></dt>
+          
+          <dd class="description"><p><a href="Fcntl.html#O_NOCTTY"><code>O_NOCTTY</code></a></p>
+
+<p>Open TTY without it becoming the controlling TTY</p></dd>
+          
+        
+          <dt><a name="O_NONBLOCK">O_NONBLOCK</a></dt>
+          
+          <dd class="description"><p><a href="Fcntl.html#O_NONBLOCK"><code>O_NONBLOCK</code></a></p>
+
+<p>Open the file in non-blocking mode</p></dd>
+          
+        
+          <dt><a name="O_RDONLY">O_RDONLY</a></dt>
+          
+          <dd class="description"><p><a href="Fcntl.html#O_RDONLY"><code>O_RDONLY</code></a></p>
+
+<p>Open the file in read-only mode</p></dd>
+          
+        
+          <dt><a name="O_RDWR">O_RDWR</a></dt>
+          
+          <dd class="description"><p><a href="Fcntl.html#O_RDWR"><code>O_RDWR</code></a></p>
+
+<p>Open the file in read-write mode</p></dd>
+          
+        
+          <dt><a name="O_TRUNC">O_TRUNC</a></dt>
+          
+          <dd class="description"><p><a href="Fcntl.html#O_TRUNC"><code>O_TRUNC</code></a></p>
+
+<p>Truncate the file on open</p></dd>
+          
+        
+          <dt><a name="O_WRONLY">O_WRONLY</a></dt>
+          
+          <dd class="description"><p><a href="Fcntl.html#O_WRONLY"><code>O_WRONLY</code></a></p>
+
+<p>Open the file in write-only mode.</p></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Fcntl_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Fcntl_versioned").load("/associated/2.7.4/Fcntl.ihtml");</script> <div id='tx_Fcntl' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Fcntl").load("/associated/Fcntl.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Maximum R+D</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Fcntl.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Fcntl.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

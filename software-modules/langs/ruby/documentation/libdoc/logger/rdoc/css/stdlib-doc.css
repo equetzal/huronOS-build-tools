@@ -1,0 +1,263 @@
+
+/* ---------------------------- General --------------------------- */
+
+/* Overall background colour */
+
+body {
+  background-color: #f4f4f4;
+  font-family: "Palatino Linotype", Times, serif;
+}
+
+/* Appearance of links */
+
+a {
+  color: blue;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+h1,h2,h3,h4,p,li {
+  width: 40em;
+  width: 100%;
+}
+
+/* Headings */
+
+h1,h2,h3,h4 {
+  border: 0;
+  border-bottom: black 1px solid;
+  font-family: Verdana, sans-serif;
+  padding: 3px;
+  padding-left: 0px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+h3 {
+  font-style: italic;
+  border-style: dashed;
+  margin-right: 15%;
+}
+
+/* Code */
+
+tt {
+  font-family: "Courier New", monospace;
+  font-size: smaller;
+}
+
+/* Indented paragraphs in block text (any way to rationalise this?) */
+
+.intro p,li {
+  margin-left: 1.5em;
+}
+
+.status p,li {
+  margin-left: 1.5em;
+}
+
+.history p,li {
+  margin: 0;
+  margin-top: .25ex;
+  margin-left: 1.5em;
+}
+
+
+/* 'mature' and 'immature' are common to TOC and Overview */
+
+.mature {
+  font-weight: 700;
+}
+
+.immature {
+  font-style: italic;
+}
+
+
+/* ------------------------- Table of Contents ------------------------- */
+
+div.toc {
+  font-family: "Arial", "Helvetica", monospace;
+}
+
+/* ToC's heading shouldn't change size */
+
+.toc .heading {
+  font-size: 11pt;
+  padding-top: 1ex;
+  margin-bottom: 0.5ex;
+}
+
+/* Version number and date */
+
+.toc .version {
+  padding-bottom: 1ex;
+}
+
+.toc .version p {
+  font-family: Verdana;
+  font-size: xx-small;
+  font-style: italic;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+/* Web links up the top of the TOC */
+
+.toc .weblinks {
+  width: auto; height: auto;
+  padding: 2px;
+  font-family: Verdana;
+  font-size: xx-small;
+  border-color: blue;
+  border-width: 1px;
+  border-style: dashed;
+  background-color: #d8d8d8;
+}
+
+.toc .weblinks p {
+  margin: 0.25em 0.25em 0.25em 0.25em;
+  padding-left: 2em;
+  color: black;
+  text-align: left;
+}
+
+/* Entries in the TOC */
+
+.toc .entry {
+  font-family: "Arial", sans-serif;  /* Mozilla doesn't take any notice of this */
+  font-size: medium;
+  margin-top: 2ex;
+  margin-bottom: 1ex;
+}
+
+.toc .entry.sub {
+  font-size: small;
+  padding-left: 2em;
+  margin-top: 0ex;
+  margin-bottom: 0ex;
+}
+
+/* Subentries (targets) */
+
+.toc .target {
+  font-size: smaller;
+  text-align: left;
+}
+
+/* The letters shown alongside the package lists. */
+
+.toc .target .letter {
+  width: 40px;
+  text-align: center;
+}
+
+/* ------------------------- Introduction -------------------------- */
+
+/* ----------------------- Packages Overview ----------------------- */
+
+    /* Works in IE and Opera, not Mozilla.
+       Mozilla picks up the element (text-transform works), but ignores the font */
+.packages .target {
+  font-family: Verdana;
+  font-size: 1em;
+}
+
+    /* Works in Mozilla, and even inherits Verdana.  Go figure. */
+.packages .target .description {
+  color: green;
+  font-size: 0.9em;
+}
+
+/* ------------------------- Status Report ------------------------- */
+
+.status p {
+  font-family: "Palatino Linotype", serif;
+}
+
+/* The table */
+
+.status table {
+  width: 40em;
+}
+
+/* Alternating background colours */
+
+.status .bg0 {
+  background-color: papayawhip;
+}
+
+.status .bg1 {
+  background-color: khaki;
+}
+
+/* Labels */
+
+.status .label {
+  font-family: Arial, sans-serif;
+  font-size: x-small;
+  font-style: ;
+  padding-right: 10px;
+}
+
+/* Properties base style */
+
+.status .prop {
+  font-family: "Arial";
+  font-weight: bold;
+  font-size: small;
+}
+
+/* Path */
+
+.status .prop.path {
+  padding-left: 1em;
+}
+
+/* Priority */
+
+.status .prop.priority.high {
+  color: crimson;
+}
+.status .prop.priority.medium {
+  color: tomato;
+}
+.status .prop.priority.low {
+  color: goldenrod;
+}
+
+/* Status */
+
+.status .prop.status.open {
+  color: crimson;
+}
+.status .prop.status.inprogress {
+  color: tomato;
+}
+.status .prop.status.done {
+  color: goldenrod;
+}
+
+/* Score */
+
+.status .prop.score.low {
+  color: purple;
+  font-weight: bold;
+}
+
+/* Comment */
+
+.status .prop.comment {
+  font-family: Verdana;
+  font-weight: normal;
+  font-size: x-small;
+  padding-left: 5em;
+  padding-right: 40px;
+}
+
+

@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Module : Kernel  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:16:35 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = ''  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = ''  --> 
+  <title>Module: Kernel (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href=".css/obf.css"  -->
+  <link rel="stylesheet" href="css/inuit.css" >
+  <link rel="stylesheet" href="css/grid.inuit.css" >
+  <link rel="stylesheet" href="css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="css/carbon17.css" type="text/css" >
+
+
+  <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="/js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="module rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>bigdecimal/bigdecimal.c</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-BigDecimal">#BigDecimal</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="./BigDecimal.html">BigDecimal</a></li>
+        
+          
+          
+          <li><a href="./BigMath.html">BigMath</a></li>
+        
+          
+          
+          <li><a href="./Float.html">Float</a></li>
+        
+          
+          
+          <li><a href="./Integer.html">Integer</a></li>
+        
+          
+          
+          <li><a href="./Jacobian.html">Jacobian</a></li>
+        
+          
+          
+          <li><a href="./Kernel.html">Kernel</a></li>
+        
+          
+          
+          <li><a href="./LUSolve.html">LUSolve</a></li>
+        
+          
+          
+          <li><a href="./Newton.html">Newton</a></li>
+        
+          
+          
+          <li><a href="./NilClass.html">NilClass</a></li>
+        
+          
+          
+          <li><a href="./Rational.html">Rational</a></li>
+        
+          
+          
+          <li><a href="./String.html">String</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="module">Kernel</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="BigDecimal-method" class="method-detail ">
+          <a name="method-i-BigDecimal"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">BigDecimal(initial, digits, exception: true)</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Create a new <a href="BigDecimal.html"><code>BigDecimal</code></a> object.</p>
+<dl class="rdoc-list note-list"><dt>initial
+<dd>
+<p>The initial value, as an <a href="Integer.html"><code>Integer</code></a>, a <a href="Float.html"><code>Float</code></a>, a <a href="Rational.html"><code>Rational</code></a>, a <a href="BigDecimal.html"><code>BigDecimal</code></a>, or a <a href="String.html"><code>String</code></a>.</p>
+
+<p>If it is a <a href="String.html"><code>String</code></a>, spaces are ignored and unrecognized characters terminate the value.</p>
+</dd><dt>digits
+<dd>
+<p>The number of significant digits, as an <a href="Integer.html"><code>Integer</code></a>. If omitted or 0, the number of significant digits is determined from the initial value.</p>
+
+<p>The actual number of significant digits used in computation is usually larger than the specified number.</p>
+</dd><dt>exception
+<dd>
+<p>Whether an exception should be raised on invalid arguments. <code>true</code> by default, if passed <code>false</code>, just returns <code>nil</code> for invalid.</p>
+</dd></dl>
+
+<h4 id="method-i-BigDecimal-label-Exceptions">Exceptions<span><a href="#method-i-BigDecimal-label-Exceptions">&para;</a> <a href="#top">&uarr;</a></span></h4>
+<dl class="rdoc-list note-list"><dt>TypeError
+<dd>
+<p>If the <code>initial</code> type is neither <a href="Integer.html"><code>Integer</code></a>, <a href="Float.html"><code>Float</code></a>, <a href="Rational.html"><code>Rational</code></a>, nor <a href="BigDecimal.html"><code>BigDecimal</code></a>, this exception is raised.</p>
+</dd><dt>TypeError
+<dd>
+<p>If the <code>digits</code> is not an <a href="Integer.html"><code>Integer</code></a>, this exception is raised.</p>
+</dd><dt>ArgumentError
+<dd>
+<p>If <code>initial</code> is a <a href="Float.html"><code>Float</code></a>, and the <code>digits</code> is larger than Float::DIG + 1, this exception is raised.</p>
+</dd><dt>ArgumentError
+<dd>
+<p>If the <code>initial</code> is a <a href="Float.html"><code>Float</code></a> or <a href="Rational.html"><code>Rational</code></a>, and the <code>digits</code> value is omitted, this exception is raised.</p>
+</dd></dl>
+            
+
+            
+            <div class="method-source-code" id="BigDecimal-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+f_BigDecimal(int argc, VALUE *argv, VALUE self)
+{
+    ENTER(1);
+    Real *pv;
+    VALUE obj;
+
+    if (argc &gt; 0 &amp;&amp; CLASS_OF(argv[0]) == rb_cBigDecimal) {
+        if (argc == 1 || (argc == 2 &amp;&amp; RB_TYPE_P(argv[1], T_HASH))) return argv[0];
+    }
+    obj = TypedData_Wrap_Struct(rb_cBigDecimal, &amp;BigDecimal_data_type, 0);
+    pv = VpNewVarArg(argc, argv);
+    if (pv == NULL) return Qnil;
+    SAVE(pv);
+    if (ToValue(pv)) pv = VpCopy(NULL, pv);
+    RTYPEDDATA_DATA(obj) = pv;
+    RB_OBJ_FREEZE(obj);
+    return pv-&gt;obj = obj;
+}
+            </pre> 
+            </div><!-- BigDecimal-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- BigDecimal-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Kernel_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Kernel_versioned").load("/associated/2.7.4/Kernel.ihtml");</script> <div id='tx_Kernel' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Kernel").load("/associated/Kernel.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Maximum R+D</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Kernel.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Kernel.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

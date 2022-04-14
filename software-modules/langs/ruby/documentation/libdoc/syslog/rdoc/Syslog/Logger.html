@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : Syslog::Logger  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:32:38 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '..'   asset_rel_prefix = '..'  --> 
+  <title>Class: Syslog::Logger (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="..css/obf.css"  -->
+  <link rel="stylesheet" href="../css/inuit.css" >
+  <link rel="stylesheet" href="../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../css/carbon17.css" type="text/css" >
+
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>syslog/lib/syslog/logger.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">CLASS</span> <a href="Logger/Formatter.html">Syslog::Logger::Formatter</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-make_methods">::make_methods</a></li>
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-c-syslog">::syslog</a></li>
+          
+          <li><a href="#method-c-syslog-3D">::syslog=</a></li>
+          
+          <li><a href="#method-i-add">#add</a></li>
+          
+          <li><a href="#method-i-debug">#debug</a></li>
+          
+          <li><a href="#method-i-error">#error</a></li>
+          
+          <li><a href="#method-i-fatal">#fatal</a></li>
+          
+          <li><a href="#method-i-info">#info</a></li>
+          
+          <li><a href="#method-i-unknown">#unknown</a></li>
+          
+          <li><a href="#method-i-warn">#warn</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../Syslog.html">Syslog</a></li>
+        
+          
+          
+          <li><a href="../Syslog/Constants.html">Syslog::Constants</a></li>
+        
+          
+          
+          <li><a href="../Syslog/Facility.html">Syslog::Facility</a></li>
+        
+          
+          
+          <li><a href="../Syslog/Level.html">Syslog::Level</a></li>
+        
+          
+          
+          <li><a href="../Syslog/Logger.html">Syslog::Logger</a></li>
+        
+          
+          
+          <li><a href="../Syslog/Logger/Formatter.html">Syslog::Logger::Formatter</a></li>
+        
+          
+          
+          <li><a href="../Syslog/Macros.html">Syslog::Macros</a></li>
+        
+          
+          
+          <li><a href="../Syslog/Option.html">Syslog::Option</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">Syslog::Logger</h1>
+
+    <div id="description" class="description">
+      
+<p><a href="Logger.html"><code>Syslog::Logger</code></a> is a <a href="Logger.html"><code>Logger</code></a> work-alike that logs via syslog instead of to a file.  You can use <a href="Logger.html"><code>Syslog::Logger</code></a> to aggregate logs between multiple machines.</p>
+
+<p>By default, <a href="Logger.html"><code>Syslog::Logger</code></a> uses the program name &#39;ruby&#39;, but this can be changed via the first argument to <a href="Logger.html#method-c-new"><code>Syslog::Logger.new</code></a>.</p>
+
+<p>NOTE! You can only set the <a href="Logger.html"><code>Syslog::Logger</code></a> program name when you initialize <a href="Logger.html"><code>Syslog::Logger</code></a> for the first time.  This is a limitation of the way <a href="Logger.html"><code>Syslog::Logger</code></a> uses syslog (and in some ways, a limitation of the way syslog(3) works).  Attempts to change Syslog::Logger&#39;s program name after the first initialization will be ignored.</p>
+
+<h3 id="class-Syslog::Logger-label-Example">Example<span><a href="#class-Syslog::Logger-label-Example">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>The following will log to syslogd on your local machine:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;syslog/logger&#39;</span>
+
+<span class="ruby-identifier">log</span> = <span class="ruby-constant">Syslog</span><span class="ruby-operator">::</span><span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span> <span class="ruby-string">&#39;my_program&#39;</span>
+<span class="ruby-identifier">log</span>.<span class="ruby-identifier">info</span> <span class="ruby-string">&#39;this line will be logged via syslog(3)&#39;</span>
+</pre>
+
+<p>Also the facility may be set to specify the facility level which will be used:</p>
+
+<pre class="ruby"><span class="ruby-identifier">log</span>.<span class="ruby-identifier">info</span> <span class="ruby-string">&#39;this line will be logged using Syslog default facility level&#39;</span>
+
+<span class="ruby-identifier">log_local1</span> = <span class="ruby-constant">Syslog</span><span class="ruby-operator">::</span><span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span> <span class="ruby-string">&#39;my_program&#39;</span>, <span class="ruby-constant">Syslog</span><span class="ruby-operator">::</span><span class="ruby-constant">LOG_LOCAL1</span>
+<span class="ruby-identifier">log_local1</span>.<span class="ruby-identifier">info</span> <span class="ruby-string">&#39;this line will be logged using local1 facility level&#39;</span>
+</pre>
+
+<p>You may need to perform some syslog.conf setup first.  For a BSD machine add the following lines to /etc/syslog.conf:</p>
+
+<pre>!my_program
+*.*                                             /var/log/my_program.log</pre>
+
+<p>Then touch /var/log/my_program.log and signal syslogd with a HUP (killall -HUP syslogd, on FreeBSD).</p>
+
+<p>If you wish to have logs automatically roll over and archive, see the newsyslog.conf(5) and newsyslog(8) man pages.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="LEVEL_MAP">LEVEL_MAP</a></dt>
+          
+          <dd class="description"><p>Maps <a href="Logger.html"><code>Logger</code></a> warning types to syslog(3) warning types.</p>
+
+<p>Messages from Ruby applications are not considered as critical as messages from other system daemons using syslog(3), so most messages are reduced by one level.  For example, a fatal message for Ruby&#39;s <a href="Logger.html"><code>Logger</code></a> is considered an error for syslog(3).</p></dd>
+          
+        
+          <dt><a name="VERSION">VERSION</a></dt>
+          
+          <dd class="description"><p>The version of <a href="Logger.html"><code>Syslog::Logger</code></a> you are using.</p></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+      <!-- Attributes -->
+      <div id="attribute-method-details" class="method-section section">
+        <h3 class="section-header">Attributes</h3>
+
+        
+        <div id="facility-attribute-method" class="method-detail">
+          <a name="facility"></a>
+          
+          <a name="facility="></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">facility</span><span
+              class="attribute-access-type">[RW]</span>
+          </div>
+
+          <div class="method-description 245">
+          
+          <p>The facility argument is used to specify what type of program is logging the message.</p>
+          
+          </div>
+        </div>
+        
+        <div id="formatter-attribute-method" class="method-detail">
+          <a name="formatter"></a>
+          
+          <a name="formatter="></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">formatter</span><span
+              class="attribute-access-type">[RW]</span>
+          </div>
+
+          <div class="method-description 245">
+          
+          <p>Logging formatter, as a <code>Proc</code> that will take four arguments and return the formatted message. The arguments are:</p>
+<dl class="rdoc-list note-list"><dt><code>severity</code>
+<dd>
+<p>The Severity of the log message.</p>
+</dd><dt><code>time</code>
+<dd>
+<p>A Time instance representing when the message was logged.</p>
+</dd><dt><code>progname</code>
+<dd>
+<p>The progname configured, or passed to the logger method.</p>
+</dd><dt><code>msg</code>
+<dd>
+<p>The <em>Object</em> the user passed to the log message; not necessarily a String.</p>
+</dd></dl>
+
+<p>The block should return an Object that can be written to the logging device via <code>write</code>.  The default formatter is used when no formatter is set.</p>
+          
+          </div>
+        </div>
+        
+        <div id="level-attribute-method" class="method-detail">
+          <a name="level"></a>
+          
+          <a name="level="></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">level</span><span
+              class="attribute-access-type">[RW]</span>
+          </div>
+
+          <div class="method-description 245">
+          
+          <p>Log level for <a href="Logger.html"><code>Logger</code></a> compatibility.</p>
+          
+          </div>
+        </div>
+        
+      </div><!-- attribute-method-details -->
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="make_methods-method" class="method-detail ">
+          <a name="method-c-make_methods"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">make_methods</span><span
+              class="method-args">(meth)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Builds a methods for level <code>meth</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="make_methods-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File syslog/lib/syslog/logger.rb, line 107</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">make_methods</span> <span class="ruby-identifier">meth</span>
+    <span class="ruby-identifier">level</span> = <span class="ruby-operator">::</span><span class="ruby-constant">Logger</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">meth</span>.<span class="ruby-identifier">upcase</span>)
+    <span class="ruby-identifier">eval</span> <span class="ruby-identifier">&lt;&lt;-EOM</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">__FILE__</span>, <span class="ruby-keyword">__LINE__</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+<span class="ruby-value">      def #{meth}(message = nil, &amp;block)
+        add(#{level}, message, &amp;block)
+      end
+
+      def #{meth}?
+        level &lt;= #{level}
+      end
+</span><span class="ruby-identifier">    EOM</span>
+  <span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- make_methods-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- make_methods-method -->
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new</span><span
+              class="method-args">(program_name = 'ruby', facility = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Fills in variables for <a href="Logger.html"><code>Logger</code></a> compatibility.  If this is the first instance of <a href="Logger.html"><code>Syslog::Logger</code></a>, <code>program_name</code> may be set to change the logged program name. The <code>facility</code> may be set to specify the facility level which will be used.</p>
+
+<p>Due to the way syslog works, only one program name may be chosen.</p>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File syslog/lib/syslog/logger.rb, line 191</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span> <span class="ruby-identifier">program_name</span> = <span class="ruby-string">&#39;ruby&#39;</span>, <span class="ruby-identifier">facility</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@level</span> = <span class="ruby-operator">::</span><span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">DEBUG</span>
+  <span class="ruby-ivar">@formatter</span> = <span class="ruby-constant">Formatter</span>.<span class="ruby-identifier">new</span>
+
+  <span class="ruby-identifier">@@syslog</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Syslog</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">program_name</span>)
+
+  <span class="ruby-ivar">@facility</span> = (<span class="ruby-identifier">facility</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">@@syslog</span>.<span class="ruby-identifier">facility</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+        <div id="syslog-method" class="method-detail ">
+          <a name="method-c-syslog"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">syslog</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns the internal <a href="../Syslog.html"><code>Syslog</code></a> object that is initialized when the first instance is created.</p>
+            
+
+            
+            <div class="method-source-code" id="syslog-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File syslog/lib/syslog/logger.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">syslog</span>
+  <span class="ruby-identifier">@@syslog</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- syslog-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- syslog-method -->
+      
+        <div id="syslog-3D-method" class="method-detail ">
+          <a name="method-c-syslog-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">syslog=</span><span
+              class="method-args">(syslog)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Specifies the internal <a href="../Syslog.html"><code>Syslog</code></a> object to be used.</p>
+            
+
+            
+            <div class="method-source-code" id="syslog-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File syslog/lib/syslog/logger.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">syslog=</span> <span class="ruby-identifier">syslog</span>
+  <span class="ruby-identifier">@@syslog</span> = <span class="ruby-identifier">syslog</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- syslog-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- syslog-3D-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="add-method" class="method-detail ">
+          <a name="method-i-add"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">add</span><span
+              class="method-args">(severity, message = nil, progname = nil, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Almost duplicates <a href="Logger.html#method-i-add"><code>Logger#add</code></a>.  <code>progname</code> is ignored.</p>
+            
+
+            
+            <div class="method-source-code" id="add-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File syslog/lib/syslog/logger.rb, line 203</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add</span> <span class="ruby-identifier">severity</span>, <span class="ruby-identifier">message</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">progname</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+  <span class="ruby-identifier">severity</span> <span class="ruby-operator">||=</span> <span class="ruby-operator">::</span><span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">UNKNOWN</span>
+  <span class="ruby-identifier">level</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">severity</span> <span class="ruby-keyword">and</span>
+    <span class="ruby-identifier">@@syslog</span>.<span class="ruby-identifier">log</span>( (<span class="ruby-constant">LEVEL_MAP</span>[<span class="ruby-identifier">severity</span>] <span class="ruby-operator">|</span> <span class="ruby-ivar">@facility</span>), <span class="ruby-string">&#39;%s&#39;</span>, <span class="ruby-identifier">formatter</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">severity</span>, <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>, <span class="ruby-identifier">progname</span>, (<span class="ruby-identifier">message</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>)) )
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- add-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- add-method -->
+      
+        <div id="debug-method" class="method-detail ">
+          <a name="method-i-debug"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">debug</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Logs a <code>message</code> at the debug (syslog debug) log level, or logs the message returned from the block.</p>
+            
+
+            
+            <div class="method-source-code" id="debug-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File syslog/lib/syslog/logger.rb, line 151</span>
+  
+            </pre> 
+            </div><!-- debug-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- debug-method -->
+      
+        <div id="error-method" class="method-detail ">
+          <a name="method-i-error"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">error</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Logs a <code>message</code> at the error (syslog warning) log level, or logs the message returned from the block.</p>
+            
+
+            
+            <div class="method-source-code" id="error-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File syslog/lib/syslog/logger.rb, line 133</span>
+  
+            </pre> 
+            </div><!-- error-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- error-method -->
+      
+        <div id="fatal-method" class="method-detail ">
+          <a name="method-i-fatal"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">fatal</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Logs a <code>message</code> at the fatal (syslog err) log level, or logs the message returned from the block.</p>
+            
+
+            
+            <div class="method-source-code" id="fatal-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File syslog/lib/syslog/logger.rb, line 127</span>
+  
+            </pre> 
+            </div><!-- fatal-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- fatal-method -->
+      
+        <div id="info-method" class="method-detail ">
+          <a name="method-i-info"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">info</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Logs a <code>message</code> at the info (syslog info) log level, or logs the message returned from the block.</p>
+            
+
+            
+            <div class="method-source-code" id="info-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File syslog/lib/syslog/logger.rb, line 145</span>
+  
+            </pre> 
+            </div><!-- info-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- info-method -->
+      
+        <div id="unknown-method" class="method-detail ">
+          <a name="method-i-unknown"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">unknown</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Logs a <code>message</code> at the unknown (syslog alert) log level, or logs the message returned from the block.</p>
+            
+
+            
+            <div class="method-source-code" id="unknown-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File syslog/lib/syslog/logger.rb, line 121</span>
+  
+            </pre> 
+            </div><!-- unknown-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- unknown-method -->
+      
+        <div id="warn-method" class="method-detail ">
+          <a name="method-i-warn"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">warn</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Logs a <code>message</code> at the warn (syslog notice) log level, or logs the message returned from the block.</p>
+            
+
+            
+            <div class="method-source-code" id="warn-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File syslog/lib/syslog/logger.rb, line 139</span>
+  
+            </pre> 
+            </div><!-- warn-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- warn-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Logger_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Logger_versioned").load("/associated/2.7.4/Logger.ihtml");</script> <div id='tx_Logger' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Logger").load("/associated/Logger.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Maximum R+D</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Logger.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Logger.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

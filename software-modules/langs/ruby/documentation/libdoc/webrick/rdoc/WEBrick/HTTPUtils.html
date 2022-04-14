@@ -1,0 +1,1220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Module : WEBrick::HTTPUtils  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:34:59 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '..'   asset_rel_prefix = '..'  --> 
+  <title>Module: WEBrick::HTTPUtils (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="..css/obf.css"  -->
+  <link rel="stylesheet" href="../css/inuit.css" >
+  <link rel="stylesheet" href="../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../css/carbon17.css" type="text/css" >
+
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="module rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>webrick/httputils.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">CLASS</span> <a href="HTTPUtils/FormData.html">WEBrick::HTTPUtils::FormData</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-dequote">::dequote</a></li>
+          
+          <li><a href="#method-c-load_mime_types">::load_mime_types</a></li>
+          
+          <li><a href="#method-c-mime_type">::mime_type</a></li>
+          
+          <li><a href="#method-c-normalize_path">::normalize_path</a></li>
+          
+          <li><a href="#method-c-parse_form_data">::parse_form_data</a></li>
+          
+          <li><a href="#method-c-parse_header">::parse_header</a></li>
+          
+          <li><a href="#method-c-parse_query">::parse_query</a></li>
+          
+          <li><a href="#method-c-parse_qvalues">::parse_qvalues</a></li>
+          
+          <li><a href="#method-c-parse_range_header">::parse_range_header</a></li>
+          
+          <li><a href="#method-c-quote">::quote</a></li>
+          
+          <li><a href="#method-c-split_header_value">::split_header_value</a></li>
+          
+          <li><a href="#method-i-escape">#escape</a></li>
+          
+          <li><a href="#method-i-escape8bit">#escape8bit</a></li>
+          
+          <li><a href="#method-i-escape_form">#escape_form</a></li>
+          
+          <li><a href="#method-i-escape_path">#escape_path</a></li>
+          
+          <li><a href="#method-i-unescape">#unescape</a></li>
+          
+          <li><a href="#method-i-unescape_form">#unescape_form</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../Errno.html">Errno</a></li>
+        
+          
+          
+          <li><a href="../Errno/ECONNABORTED.html">Errno::ECONNABORTED</a></li>
+        
+          
+          
+          <li><a href="../Errno/ECONNRESET.html">Errno::ECONNRESET</a></li>
+        
+          
+          
+          <li><a href="../Errno/EPROTO.html">Errno::EPROTO</a></li>
+        
+          
+          
+          <li><a href="../Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="../WEBrick.html">WEBrick</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/AccessLog.html">WEBrick::AccessLog</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/AccessLog/AccessLogError.html">WEBrick::AccessLog::AccessLogError</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/BasicLog.html">WEBrick::BasicLog</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/CGI.html">WEBrick::CGI</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/Config.html">WEBrick::Config</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/Cookie.html">WEBrick::Cookie</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/Daemon.html">WEBrick::Daemon</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/GenericServer.html">WEBrick::GenericServer</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTMLUtils.html">WEBrick::HTMLUtils</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPAuth.html">WEBrick::HTTPAuth</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPAuth/Authenticator.html">WEBrick::HTTPAuth::Authenticator</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPAuth/BasicAuth.html">WEBrick::HTTPAuth::BasicAuth</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPAuth/DigestAuth.html">WEBrick::HTTPAuth::DigestAuth</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPAuth/Htdigest.html">WEBrick::HTTPAuth::Htdigest</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPAuth/Htgroup.html">WEBrick::HTTPAuth::Htgroup</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPAuth/Htpasswd.html">WEBrick::HTTPAuth::Htpasswd</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPAuth/ProxyAuthenticator.html">WEBrick::HTTPAuth::ProxyAuthenticator</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPAuth/ProxyBasicAuth.html">WEBrick::HTTPAuth::ProxyBasicAuth</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPAuth/ProxyDigestAuth.html">WEBrick::HTTPAuth::ProxyDigestAuth</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPAuth/UserDB.html">WEBrick::HTTPAuth::UserDB</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPProxyServer.html">WEBrick::HTTPProxyServer</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPRequest.html">WEBrick::HTTPRequest</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPResponse.html">WEBrick::HTTPResponse</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPResponse/InvalidHeader.html">WEBrick::HTTPResponse::InvalidHeader</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPServer.html">WEBrick::HTTPServer</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPServerError.html">WEBrick::HTTPServerError</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPServlet.html">WEBrick::HTTPServlet</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPServlet/AbstractServlet.html">WEBrick::HTTPServlet::AbstractServlet</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPServlet/CGIHandler.html">WEBrick::HTTPServlet::CGIHandler</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPServlet/DefaultFileHandler.html">WEBrick::HTTPServlet::DefaultFileHandler</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPServlet/ERBHandler.html">WEBrick::HTTPServlet::ERBHandler</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPServlet/FileHandler.html">WEBrick::HTTPServlet::FileHandler</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPServlet/HTTPServletError.html">WEBrick::HTTPServlet::HTTPServletError</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPServlet/ProcHandler.html">WEBrick::HTTPServlet::ProcHandler</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPStatus.html">WEBrick::HTTPStatus</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPStatus/ClientError.html">WEBrick::HTTPStatus::ClientError</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPStatus/EOFError.html">WEBrick::HTTPStatus::EOFError</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPStatus/Error.html">WEBrick::HTTPStatus::Error</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPStatus/Info.html">WEBrick::HTTPStatus::Info</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPStatus/Redirect.html">WEBrick::HTTPStatus::Redirect</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPStatus/ServerError.html">WEBrick::HTTPStatus::ServerError</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPStatus/Status.html">WEBrick::HTTPStatus::Status</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPStatus/Success.html">WEBrick::HTTPStatus::Success</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPUtils.html">WEBrick::HTTPUtils</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPUtils/FormData.html">WEBrick::HTTPUtils::FormData</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/HTTPVersion.html">WEBrick::HTTPVersion</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/Log.html">WEBrick::Log</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/SNIRequest.html">WEBrick::SNIRequest</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/ServerError.html">WEBrick::ServerError</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/SimpleServer.html">WEBrick::SimpleServer</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/Utils.html">WEBrick::Utils</a></li>
+        
+          
+          
+          <li><a href="../WEBrick/Utils/TimeoutHandler.html">WEBrick::Utils::TimeoutHandler</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="module">WEBrick::HTTPUtils</h1>
+
+    <div id="description" class="description">
+      
+<p><a href="HTTPUtils.html"><code>HTTPUtils</code></a> provides utility methods for working with the HTTP protocol.</p>
+
+<p>This module is generally used internally by <a href="../WEBrick.html"><code>WEBrick</code></a></p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="DefaultMimeTypes">DefaultMimeTypes</a></dt>
+          
+          <dd class="description"><p>Default mime types</p></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="dequote-method" class="method-detail ">
+          <a name="method-c-dequote"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">dequote</span><span
+              class="method-args">(str)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Removes quotes and escapes from <code>str</code></p>
+            
+
+            
+            <div class="method-source-code" id="dequote-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File webrick/httputils.rb, line 222</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dequote</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-identifier">ret</span> = (<span class="ruby-regexp">/\A&quot;(.*)&quot;\Z/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">str</span>) <span class="ruby-operator">?</span> <span class="ruby-node">$1</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-identifier">ret</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\\(.)/</span>, <span class="ruby-string">&quot;\\1&quot;</span>)
+  <span class="ruby-identifier">ret</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- dequote-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- dequote-method -->
+      
+        <div id="load_mime_types-method" class="method-detail ">
+          <a name="method-c-load_mime_types"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">load_mime_types</span><span
+              class="method-args">(file)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Loads Apache-compatible mime.types in <code>file</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="load_mime_types-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File webrick/httputils.rb, line 111</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">load_mime_types</span>(<span class="ruby-identifier">file</span>)
+  <span class="ruby-comment"># note: +file+ may be a &quot;| command&quot; for now; some people may</span>
+  <span class="ruby-comment"># rely on this, but currently we do not use this method by default.</span>
+  <span class="ruby-identifier">open</span>(<span class="ruby-identifier">file</span>){ <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">hash</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">io</span>.<span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-regexp">/^#/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">line</span>
+      <span class="ruby-identifier">line</span>.<span class="ruby-identifier">chomp!</span>
+      <span class="ruby-identifier">mimetype</span>, <span class="ruby-identifier">ext0</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/\s+/</span>, <span class="ruby-value">2</span>)
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ext0</span>
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ext0</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">ext0</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/\s+/</span>).<span class="ruby-identifier">each</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">ext</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">ext</span>] = <span class="ruby-identifier">mimetype</span> }
+    }
+    <span class="ruby-identifier">hash</span>
+  }
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- load_mime_types-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- load_mime_types-method -->
+      
+        <div id="mime_type-method" class="method-detail ">
+          <a name="method-c-mime_type"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">mime_type</span><span
+              class="method-args">(filename, mime_tab)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns the mime type of <code>filename</code> from the list in <code>mime_tab</code>.  If no mime type was found application/octet-stream is returned.</p>
+            
+
+            
+            <div class="method-source-code" id="mime_type-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File webrick/httputils.rb, line 133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">mime_type</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">mime_tab</span>)
+  <span class="ruby-identifier">suffix1</span> = (<span class="ruby-regexp">/\.(\w+)$/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">filename</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-node">$1</span>.<span class="ruby-identifier">downcase</span>)
+  <span class="ruby-identifier">suffix2</span> = (<span class="ruby-regexp">/\.(\w+)\.[\w\-]+$/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">filename</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-node">$1</span>.<span class="ruby-identifier">downcase</span>)
+  <span class="ruby-identifier">mime_tab</span>[<span class="ruby-identifier">suffix1</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">mime_tab</span>[<span class="ruby-identifier">suffix2</span>] <span class="ruby-operator">||</span> <span class="ruby-string">&quot;application/octet-stream&quot;</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- mime_type-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- mime_type-method -->
+      
+        <div id="normalize_path-method" class="method-detail ">
+          <a name="method-c-normalize_path"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">normalize_path</span><span
+              class="method-args">(path)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Normalizes a request path.  Raises an exception if the path cannot be normalized.</p>
+            
+
+            
+            <div class="method-source-code" id="normalize_path-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File webrick/httputils.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">normalize_path</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;abnormal path `#{path}&#39;&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">path</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">!=</span> <span class="ruby-value">?/</span>
+  <span class="ruby-identifier">ret</span> = <span class="ruby-identifier">path</span>.<span class="ruby-identifier">dup</span>
+
+  <span class="ruby-identifier">ret</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">%r{/+}o</span>, <span class="ruby-string">&#39;/&#39;</span>)                    <span class="ruby-comment"># //      =&gt; /</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">ret</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp">%r&#39;/\.(?:/|\Z)&#39;</span>, <span class="ruby-string">&#39;/&#39;</span>); <span class="ruby-keyword">end</span>  <span class="ruby-comment"># /.      =&gt; /</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">ret</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp">%r&#39;/(?!\.\./)[^/]+/\.\.(?:/|\Z)&#39;</span>, <span class="ruby-string">&#39;/&#39;</span>); <span class="ruby-keyword">end</span> <span class="ruby-comment"># /foo/.. =&gt; /foo</span>
+
+  <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;abnormal path `#{path}&#39;&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-regexp">%r{/\.\.(/|\Z)}</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">ret</span>
+  <span class="ruby-identifier">ret</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- normalize_path-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- normalize_path-method -->
+      
+        <div id="parse_form_data-method" class="method-detail ">
+          <a name="method-c-parse_form_data"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">parse_form_data</span><span
+              class="method-args">(io, boundary)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Parses form data in <code>io</code> with the given <code>boundary</code></p>
+            
+
+            
+            <div class="method-source-code" id="parse_form_data-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File webrick/httputils.rb, line 394</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_form_data</span>(<span class="ruby-identifier">io</span>, <span class="ruby-identifier">boundary</span>)
+  <span class="ruby-identifier">boundary_regexp</span> = <span class="ruby-regexp">/\A--#{Regexp.quote(boundary)}(--)?#{CRLF}\z/</span>
+  <span class="ruby-identifier">form_data</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">form_data</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">io</span>
+  <span class="ruby-identifier">data</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">io</span>.<span class="ruby-identifier">each_line</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">boundary_regexp</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">line</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">data</span>
+        <span class="ruby-identifier">data</span>.<span class="ruby-identifier">chop!</span>
+        <span class="ruby-identifier">key</span> = <span class="ruby-identifier">data</span>.<span class="ruby-identifier">name</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">form_data</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">key</span>)
+          <span class="ruby-identifier">form_data</span>[<span class="ruby-identifier">key</span>].<span class="ruby-identifier">append_data</span>(<span class="ruby-identifier">data</span>)
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">form_data</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">data</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">data</span> = <span class="ruby-constant">FormData</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-keyword">next</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">data</span>
+        <span class="ruby-identifier">data</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">line</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  }
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">form_data</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- parse_form_data-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- parse_form_data-method -->
+      
+        <div id="parse_header-method" class="method-detail ">
+          <a name="method-c-parse_header"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">parse_header</span><span
+              class="method-args">(raw)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Parses an HTTP header <code>raw</code> into a hash of header fields with an Array of values.</p>
+            
+
+            
+            <div class="method-source-code" id="parse_header-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File webrick/httputils.rb, line 144</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_header</span>(<span class="ruby-identifier">raw</span>)
+  <span class="ruby-identifier">header</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>([].<span class="ruby-identifier">freeze</span>)
+  <span class="ruby-identifier">field</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">raw</span>.<span class="ruby-identifier">each_line</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">line</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">/^([A-Za-z0-9!\#$%&amp;&#39;*+\-.^_`|~]+):\s*(.*?)\s*\z/om</span>
+      <span class="ruby-identifier">field</span>, <span class="ruby-identifier">value</span> = <span class="ruby-node">$1</span>, <span class="ruby-node">$2</span>
+      <span class="ruby-identifier">field</span>.<span class="ruby-identifier">downcase!</span>
+      <span class="ruby-identifier">header</span>[<span class="ruby-identifier">field</span>] = [] <span class="ruby-keyword">unless</span> <span class="ruby-identifier">header</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">field</span>)
+      <span class="ruby-identifier">header</span>[<span class="ruby-identifier">field</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">/^\s+(.*?)\s*\z/om</span>
+      <span class="ruby-identifier">value</span> = <span class="ruby-node">$1</span>
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">field</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">HTTPStatus</span><span class="ruby-operator">::</span><span class="ruby-constant">BadRequest</span>, <span class="ruby-node">&quot;bad header &#39;#{line}&#39;.&quot;</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">header</span>[<span class="ruby-identifier">field</span>][<span class="ruby-value">-1</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot; &quot;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">HTTPStatus</span><span class="ruby-operator">::</span><span class="ruby-constant">BadRequest</span>, <span class="ruby-node">&quot;bad header &#39;#{line}&#39;.&quot;</span>
+    <span class="ruby-keyword">end</span>
+  }
+  <span class="ruby-identifier">header</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">values</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">values</span>.<span class="ruby-identifier">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:strip!</span>)
+  }
+  <span class="ruby-identifier">header</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- parse_header-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- parse_header-method -->
+      
+        <div id="parse_query-method" class="method-detail ">
+          <a name="method-c-parse_query"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">parse_query</span><span
+              class="method-args">(str)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Parses the query component of a URI in <code>str</code></p>
+            
+
+            
+            <div class="method-source-code" id="parse_query-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File webrick/httputils.rb, line 370</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_query</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-identifier">query</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>
+    <span class="ruby-identifier">str</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/[&amp;;]/</span>).<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">key</span>, <span class="ruby-identifier">val</span> = <span class="ruby-identifier">x</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/=/</span>,<span class="ruby-value">2</span>)
+      <span class="ruby-identifier">key</span> = <span class="ruby-identifier">unescape_form</span>(<span class="ruby-identifier">key</span>)
+      <span class="ruby-identifier">val</span> = <span class="ruby-identifier">unescape_form</span>(<span class="ruby-identifier">val</span>.<span class="ruby-identifier">to_s</span>)
+      <span class="ruby-identifier">val</span> = <span class="ruby-constant">FormData</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">val</span>)
+      <span class="ruby-identifier">val</span>.<span class="ruby-identifier">name</span> = <span class="ruby-identifier">key</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">query</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">key</span>)
+        <span class="ruby-identifier">query</span>[<span class="ruby-identifier">key</span>].<span class="ruby-identifier">append_data</span>(<span class="ruby-identifier">val</span>)
+        <span class="ruby-keyword">next</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">query</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">val</span>
+    }
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">query</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- parse_query-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- parse_query-method -->
+      
+        <div id="parse_qvalues-method" class="method-detail ">
+          <a name="method-c-parse_qvalues"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">parse_qvalues</span><span
+              class="method-args">(value)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Parses q values in <code>value</code> as used in Accept headers.</p>
+            
+
+            
+            <div class="method-source-code" id="parse_qvalues-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File webrick/httputils.rb, line 201</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_qvalues</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">tmp</span> = []
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-identifier">parts</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/,\s*/</span>)
+    <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">part</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">m</span> = <span class="ruby-regexp">%r{^([^\s,]+?)(?:;\s*q=(\d+(?:\.\d+)?))?$}</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">part</span>)
+        <span class="ruby-identifier">val</span> = <span class="ruby-identifier">m</span>[<span class="ruby-value">1</span>]
+        <span class="ruby-identifier">q</span> = (<span class="ruby-identifier">m</span>[<span class="ruby-value">2</span>] <span class="ruby-keyword">or</span> <span class="ruby-value">1</span>).<span class="ruby-identifier">to_f</span>
+        <span class="ruby-identifier">tmp</span>.<span class="ruby-identifier">push</span>([<span class="ruby-identifier">val</span>, <span class="ruby-identifier">q</span>])
+      <span class="ruby-keyword">end</span>
+    }
+    <span class="ruby-identifier">tmp</span> = <span class="ruby-identifier">tmp</span>.<span class="ruby-identifier">sort_by</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">val</span>, <span class="ruby-identifier">q</span><span class="ruby-operator">|</span> <span class="ruby-operator">-</span><span class="ruby-identifier">q</span>}
+    <span class="ruby-identifier">tmp</span>.<span class="ruby-identifier">collect!</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">val</span>, <span class="ruby-identifier">q</span><span class="ruby-operator">|</span> <span class="ruby-identifier">val</span>}
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">tmp</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- parse_qvalues-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- parse_qvalues-method -->
+      
+        <div id="parse_range_header-method" class="method-detail ">
+          <a name="method-c-parse_range_header"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">parse_range_header</span><span
+              class="method-args">(ranges_specifier)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Parses a Range header value <code>ranges_specifier</code></p>
+            
+
+            
+            <div class="method-source-code" id="parse_range_header-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File webrick/httputils.rb, line 183</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parse_range_header</span>(<span class="ruby-identifier">ranges_specifier</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-regexp">/^bytes=(.*)/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">ranges_specifier</span>
+    <span class="ruby-identifier">byte_range_set</span> = <span class="ruby-identifier">split_header_value</span>(<span class="ruby-node">$1</span>)
+    <span class="ruby-identifier">byte_range_set</span>.<span class="ruby-identifier">collect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">range_spec</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">range_spec</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-regexp">/^(\d+)-(\d+)/</span> <span class="ruby-keyword">then</span> <span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">..</span> <span class="ruby-node">$2</span>.<span class="ruby-identifier">to_i</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-regexp">/^(\d+)-/</span>      <span class="ruby-keyword">then</span> <span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">..</span> <span class="ruby-value">-1</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-regexp">/^-(\d+)/</span>      <span class="ruby-keyword">then</span> <span class="ruby-operator">-</span>(<span class="ruby-node">$1</span>.<span class="ruby-identifier">to_i</span>) <span class="ruby-operator">..</span> <span class="ruby-value">-1</span>
+      <span class="ruby-keyword">else</span> <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+      <span class="ruby-keyword">end</span>
+    }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- parse_range_header-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- parse_range_header-method -->
+      
+        <div id="quote-method" class="method-detail ">
+          <a name="method-c-quote"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">quote</span><span
+              class="method-args">(str)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Quotes and escapes quotes in <code>str</code></p>
+            
+
+            
+            <div class="method-source-code" id="quote-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File webrick/httputils.rb, line 232</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">quote</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-string">&#39;&quot;&#39;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/[\\\&quot;]/o</span>, <span class="ruby-string">&quot;\\\1&quot;</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&#39;&quot;&#39;</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- quote-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- quote-method -->
+      
+        <div id="split_header_value-method" class="method-detail ">
+          <a name="method-c-split_header_value"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">split_header_value</span><span
+              class="method-args">(str)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Splits a header value <code>str</code> according to HTTP specification.</p>
+            
+
+            
+            <div class="method-source-code" id="split_header_value-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File webrick/httputils.rb, line 174</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">split_header_value</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r&#39;\G((?:&quot;(?:\\.|[^&quot;])+?&quot;|[^&quot;,]+)+)
+                (?:,\s*|\Z)&#39;xn</span>).<span class="ruby-identifier">flatten</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- split_header_value-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- split_header_value-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="escape-method" class="method-detail ">
+          <a name="method-i-escape"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">escape</span><span
+              class="method-args">(str)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Escapes HTTP reserved and unwise characters in <code>str</code></p>
+            
+
+            
+            <div class="method-source-code" id="escape-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File webrick/httputils.rb, line 466</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">escape</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-identifier">_escape</span>(<span class="ruby-identifier">str</span>, <span class="ruby-constant">UNESCAPED</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- escape-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- escape-method -->
+      
+        <div id="escape8bit-method" class="method-detail ">
+          <a name="method-i-escape8bit"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">escape8bit</span><span
+              class="method-args">(str)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Escapes 8 bit characters in <code>str</code></p>
+            
+
+            
+            <div class="method-source-code" id="escape8bit-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File webrick/httputils.rb, line 507</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">escape8bit</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-identifier">_escape</span>(<span class="ruby-identifier">str</span>, <span class="ruby-constant">NONASCII</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- escape8bit-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- escape8bit-method -->
+      
+        <div id="escape_form-method" class="method-detail ">
+          <a name="method-i-escape_form"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">escape_form</span><span
+              class="method-args">(str)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Escapes form reserved characters in <code>str</code></p>
+            
+
+            
+            <div class="method-source-code" id="escape_form-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File webrick/httputils.rb, line 480</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">escape_form</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-identifier">ret</span> = <span class="ruby-identifier">_escape</span>(<span class="ruby-identifier">str</span>, <span class="ruby-constant">UNESCAPED_FORM</span>)
+  <span class="ruby-identifier">ret</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/ /</span>, <span class="ruby-string">&quot;+&quot;</span>)
+  <span class="ruby-identifier">ret</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- escape_form-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- escape_form-method -->
+      
+        <div id="escape_path-method" class="method-detail ">
+          <a name="method-i-escape_path"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">escape_path</span><span
+              class="method-args">(str)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Escapes path <code>str</code></p>
+            
+
+            
+            <div class="method-source-code" id="escape_path-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File webrick/httputils.rb, line 496</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">escape_path</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r{/([^/]*)}</span>).<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;/&quot;</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">_escape</span>(<span class="ruby-identifier">i</span>[<span class="ruby-value">0</span>], <span class="ruby-constant">UNESCAPED_PCHAR</span>)
+  }
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- escape_path-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- escape_path-method -->
+      
+        <div id="unescape-method" class="method-detail ">
+          <a name="method-i-unescape"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">unescape</span><span
+              class="method-args">(str)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Unescapes HTTP reserved and unwise characters in <code>str</code></p>
+            
+
+            
+            <div class="method-source-code" id="unescape-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File webrick/httputils.rb, line 473</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">unescape</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-identifier">_unescape</span>(<span class="ruby-identifier">str</span>, <span class="ruby-constant">ESCAPED</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- unescape-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- unescape-method -->
+      
+        <div id="unescape_form-method" class="method-detail ">
+          <a name="method-i-unescape_form"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">unescape_form</span><span
+              class="method-args">(str)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Unescapes form reserved characters in <code>str</code></p>
+            
+
+            
+            <div class="method-source-code" id="unescape_form-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File webrick/httputils.rb, line 489</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">unescape_form</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-identifier">_unescape</span>(<span class="ruby-identifier">str</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\+/</span>, <span class="ruby-string">&quot; &quot;</span>), <span class="ruby-constant">ESCAPED</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- unescape_form-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- unescape_form-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_HTTPUtils_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_HTTPUtils_versioned").load("/associated/2.7.4/HTTPUtils.ihtml");</script> <div id='tx_HTTPUtils' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_HTTPUtils").load("/associated/HTTPUtils.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, an erratic source of art, music, and technology.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_HTTPUtils.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_HTTPUtils.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

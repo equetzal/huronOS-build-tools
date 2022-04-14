@@ -1,0 +1,1814 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : RSS::Maker::ChannelBase::CopyrightBase  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:30:16 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '../../..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '../../..'   asset_rel_prefix = '../../..'  --> 
+  <title>Class: RSS::Maker::ChannelBase::CopyrightBase (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../../../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="../../..css/obf.css"  -->
+  <link rel="stylesheet" href="../../../css/inuit.css" >
+  <link rel="stylesheet" href="../../../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../../../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../../../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../../../css/carbon17.css" type="text/css" >
+
+
+  <script src="../../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../../../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../../index.html">Home</a>
+          <a href="../../../index.html#classes">Classes</a>
+          <a href="../../../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>rss/maker/base.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="../Base.html">RSS::Maker::Base</a></p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+
+      
+      <!-- Included Modules -->
+      <div id="includes-section" class="section">
+        <h3 class="section-header">Included Modules</h3>
+        <ul class="link-list">
+        
+        
+          <li><a class="include" href="../AtomTextConstructBase.html">RSS::Maker::AtomTextConstructBase</a></li>
+        
+        
+        </ul>
+      </div>
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../../../RSS.html">RSS</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom.html">RSS::Atom</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/CommonModel.html">RSS::Atom::CommonModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/ContentModel.html">RSS::Atom::ContentModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/ContentModel/ClassMethods.html">RSS::Atom::ContentModel::ClassMethods</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/DateConstruct.html">RSS::Atom::DateConstruct</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/DuplicateLinkChecker.html">RSS::Atom::DuplicateLinkChecker</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/Entry.html">RSS::Atom::Entry</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/Feed.html">RSS::Atom::Feed</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/Feed/Author.html">RSS::Atom::Feed::Author</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/Feed/Category.html">RSS::Atom::Feed::Category</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/Feed/Contributor.html">RSS::Atom::Feed::Contributor</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/Feed/Entry.html">RSS::Atom::Feed::Entry</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/Feed/Entry/Content.html">RSS::Atom::Feed::Entry::Content</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/Feed/Entry/Published.html">RSS::Atom::Feed::Entry::Published</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/Feed/Entry/Source.html">RSS::Atom::Feed::Entry::Source</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/Feed/Entry/Summary.html">RSS::Atom::Feed::Entry::Summary</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/Feed/Generator.html">RSS::Atom::Feed::Generator</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/Feed/Icon.html">RSS::Atom::Feed::Icon</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/Feed/Id.html">RSS::Atom::Feed::Id</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/Feed/Link.html">RSS::Atom::Feed::Link</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/Feed/Logo.html">RSS::Atom::Feed::Logo</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/Feed/Rights.html">RSS::Atom::Feed::Rights</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/Feed/Subtitle.html">RSS::Atom::Feed::Subtitle</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/Feed/Title.html">RSS::Atom::Feed::Title</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/Feed/Updated.html">RSS::Atom::Feed::Updated</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/PersonConstruct.html">RSS::Atom::PersonConstruct</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/PersonConstruct/Email.html">RSS::Atom::PersonConstruct::Email</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/PersonConstruct/Name.html">RSS::Atom::PersonConstruct::Name</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/PersonConstruct/Uri.html">RSS::Atom::PersonConstruct::Uri</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/TextConstruct.html">RSS::Atom::TextConstruct</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Atom/URIContentModel.html">RSS::Atom::URIContentModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/BaseDublinCoreModel.html">RSS::BaseDublinCoreModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/BaseListener.html">RSS::BaseListener</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/BaseModel.html">RSS::BaseModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/BaseParser.html">RSS::BaseParser</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/ContentModel.html">RSS::ContentModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/ConversionError.html">RSS::ConversionError</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Converter.html">RSS::Converter</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/DublinCoreModel.html">RSS::DublinCoreModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/DublinCoreModel.html">RSS::DublincoreModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Element.html">RSS::Element</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Error.html">RSS::Error</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/ITunesBaseModel.html">RSS::ITunesBaseModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/ITunesChannelModel.html">RSS::ITunesChannelModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/ITunesChannelModel/ITunesCategory.html">RSS::ITunesChannelModel::ITunesCategory</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/ITunesChannelModel/ITunesImage.html">RSS::ITunesChannelModel::ITunesImage</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/ITunesChannelModel/ITunesOwner.html">RSS::ITunesChannelModel::ITunesOwner</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/ITunesItemModel.html">RSS::ITunesItemModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/ITunesItemModel/ITunesDuration.html">RSS::ITunesItemModel::ITunesDuration</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/ITunesModelUtils.html">RSS::ITunesModelUtils</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/ImageFaviconModel.html">RSS::ImageFaviconModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/ImageFaviconModel/ImageFavicon.html">RSS::ImageFaviconModel::ImageFavicon</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/ImageItemModel.html">RSS::ImageItemModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/ImageItemModel/ImageItem.html">RSS::ImageItemModel::ImageItem</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/ImageModelUtils.html">RSS::ImageModelUtils</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/InvalidRSSError.html">RSS::InvalidRSSError</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/ListenerMixin.html">RSS::ListenerMixin</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker.html">RSS::Maker</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom.html">RSS::Maker::Atom</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Entry.html">RSS::Maker::Atom::Entry</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Entry/Channel.html">RSS::Maker::Atom::Entry::Channel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Entry/Channel/Cloud.html">RSS::Maker::Atom::Entry::Channel::Cloud</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Entry/Channel/Description.html">RSS::Maker::Atom::Entry::Channel::Description</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Entry/Channel/Generator.html">RSS::Maker::Atom::Entry::Channel::Generator</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Entry/Channel/SkipDays.html">RSS::Maker::Atom::Entry::Channel::SkipDays</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Entry/Channel/SkipDays/Day.html">RSS::Maker::Atom::Entry::Channel::SkipDays::Day</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Entry/Channel/SkipHours.html">RSS::Maker::Atom::Entry::Channel::SkipHours</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Entry/Channel/SkipHours/Hour.html">RSS::Maker::Atom::Entry::Channel::SkipHours::Hour</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Entry/Image.html">RSS::Maker::Atom::Entry::Image</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Entry/Items.html">RSS::Maker::Atom::Entry::Items</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Entry/Items/Item.html">RSS::Maker::Atom::Entry::Items::Item</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Entry/Textinput.html">RSS::Maker::Atom::Entry::Textinput</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed.html">RSS::Maker::Atom::Feed</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Channel.html">RSS::Maker::Atom::Feed::Channel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Channel/Categories.html">RSS::Maker::Atom::Feed::Channel::Categories</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Channel/Categories/Category.html">RSS::Maker::Atom::Feed::Channel::Categories::Category</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Channel/Cloud.html">RSS::Maker::Atom::Feed::Channel::Cloud</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Channel/Generator.html">RSS::Maker::Atom::Feed::Channel::Generator</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Channel/Links.html">RSS::Maker::Atom::Feed::Channel::Links</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Channel/Links/Link.html">RSS::Maker::Atom::Feed::Channel::Links::Link</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Channel/SkipDays.html">RSS::Maker::Atom::Feed::Channel::SkipDays</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Channel/SkipDays/Day.html">RSS::Maker::Atom::Feed::Channel::SkipDays::Day</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Channel/SkipHours.html">RSS::Maker::Atom::Feed::Channel::SkipHours</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Channel/SkipHours/Hour.html">RSS::Maker::Atom::Feed::Channel::SkipHours::Hour</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Image.html">RSS::Maker::Atom::Feed::Image</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Items.html">RSS::Maker::Atom::Feed::Items</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Items/Item.html">RSS::Maker::Atom::Feed::Items::Item</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Items/Item/Categories.html">RSS::Maker::Atom::Feed::Items::Item::Categories</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Items/Item/Categories/Category.html">RSS::Maker::Atom::Feed::Items::Item::Categories::Category</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Items/Item/Content.html">RSS::Maker::Atom::Feed::Items::Item::Content</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Items/Item/Enclosure.html">RSS::Maker::Atom::Feed::Items::Item::Enclosure</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Items/Item/Guid.html">RSS::Maker::Atom::Feed::Items::Item::Guid</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Items/Item/Links.html">RSS::Maker::Atom::Feed::Items::Item::Links</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Items/Item/Links/Link.html">RSS::Maker::Atom::Feed::Items::Item::Links::Link</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Items/Item/Source.html">RSS::Maker::Atom::Feed::Items::Item::Source</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Items/Item/Source/Categories.html">RSS::Maker::Atom::Feed::Items::Item::Source::Categories</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Items/Item/Source/Categories/Category.html">RSS::Maker::Atom::Feed::Items::Item::Source::Categories::Category</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Items/Item/Source/Generator.html">RSS::Maker::Atom::Feed::Items::Item::Source::Generator</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Items/Item/Source/Icon.html">RSS::Maker::Atom::Feed::Items::Item::Source::Icon</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Items/Item/Source/Links.html">RSS::Maker::Atom::Feed::Items::Item::Source::Links</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Items/Item/Source/Links/Link.html">RSS::Maker::Atom::Feed::Items::Item::Source::Links::Link</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Items/Item/Source/Logo.html">RSS::Maker::Atom::Feed::Items::Item::Source::Logo</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Atom/Feed/Textinput.html">RSS::Maker::Atom::Feed::Textinput</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/AtomCategory.html">RSS::Maker::AtomCategory</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/AtomGenerator.html">RSS::Maker::AtomGenerator</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/AtomLink.html">RSS::Maker::AtomLink</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/AtomLogo.html">RSS::Maker::AtomLogo</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/AtomPersonConstructBase.html">RSS::Maker::AtomPersonConstructBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/AtomPersons.html">RSS::Maker::AtomPersons</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/AtomTextConstruct.html">RSS::Maker::AtomTextConstruct</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/AtomTextConstructBase.html">RSS::Maker::AtomTextConstructBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/AtomTextConstructBase/EnsureXMLContent.html">RSS::Maker::AtomTextConstructBase::EnsureXMLContent</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/Base.html">RSS::Maker::Base</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ChannelBase.html">RSS::Maker::ChannelBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ChannelBase/AuthorsBase.html">RSS::Maker::ChannelBase::AuthorsBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ChannelBase/AuthorsBase/AuthorBase.html">RSS::Maker::ChannelBase::AuthorsBase::AuthorBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ChannelBase/CategoriesBase.html">RSS::Maker::ChannelBase::CategoriesBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ChannelBase/CategoriesBase/CategoryBase.html">RSS::Maker::ChannelBase::CategoriesBase::CategoryBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ChannelBase/CloudBase.html">RSS::Maker::ChannelBase::CloudBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ChannelBase/ContributorsBase.html">RSS::Maker::ChannelBase::ContributorsBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ChannelBase/ContributorsBase/ContributorBase.html">RSS::Maker::ChannelBase::ContributorsBase::ContributorBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ChannelBase/CopyrightBase.html">RSS::Maker::ChannelBase::CopyrightBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ChannelBase/DescriptionBase.html">RSS::Maker::ChannelBase::DescriptionBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ChannelBase/GeneratorBase.html">RSS::Maker::ChannelBase::GeneratorBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ChannelBase/ITunesCategories.html">RSS::Maker::ChannelBase::ITunesCategories</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ChannelBase/ITunesCategories/ITunesCategory.html">RSS::Maker::ChannelBase::ITunesCategories::ITunesCategory</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ChannelBase/ITunesImage.html">RSS::Maker::ChannelBase::ITunesImage</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ChannelBase/ITunesOwner.html">RSS::Maker::ChannelBase::ITunesOwner</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ChannelBase/LinksBase.html">RSS::Maker::ChannelBase::LinksBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ChannelBase/LinksBase/LinkBase.html">RSS::Maker::ChannelBase::LinksBase::LinkBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ChannelBase/SkipDaysBase.html">RSS::Maker::ChannelBase::SkipDaysBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ChannelBase/SkipDaysBase/DayBase.html">RSS::Maker::ChannelBase::SkipDaysBase::DayBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ChannelBase/SkipHoursBase.html">RSS::Maker::ChannelBase::SkipHoursBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ChannelBase/SkipHoursBase/HourBase.html">RSS::Maker::ChannelBase::SkipHoursBase::HourBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ChannelBase/TitleBase.html">RSS::Maker::ChannelBase::TitleBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ContentModel.html">RSS::Maker::ContentModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/DublinCoreModel.html">RSS::Maker::DublinCoreModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ITunesBaseModel.html">RSS::Maker::ITunesBaseModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ITunesChannelModel.html">RSS::Maker::ITunesChannelModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ITunesChannelModel/ITunesCategoriesBase.html">RSS::Maker::ITunesChannelModel::ITunesCategoriesBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ITunesChannelModel/ITunesCategoriesBase/ITunesCategoryBase.html">RSS::Maker::ITunesChannelModel::ITunesCategoriesBase::ITunesCategoryBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ITunesChannelModel/ITunesImageBase.html">RSS::Maker::ITunesChannelModel::ITunesImageBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ITunesChannelModel/ITunesOwnerBase.html">RSS::Maker::ITunesChannelModel::ITunesOwnerBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ITunesItemModel.html">RSS::Maker::ITunesItemModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ITunesItemModel/ITunesDurationBase.html">RSS::Maker::ITunesItemModel::ITunesDurationBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ImageBase.html">RSS::Maker::ImageBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ImageFaviconModel.html">RSS::Maker::ImageFaviconModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ImageFaviconModel/ImageFaviconBase.html">RSS::Maker::ImageFaviconModel::ImageFaviconBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ImageItemModel.html">RSS::Maker::ImageItemModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ImageItemModel/ImageItemBase.html">RSS::Maker::ImageItemModel::ImageItemBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ItemsBase.html">RSS::Maker::ItemsBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ItemsBase/ItemBase.html">RSS::Maker::ItemsBase::ItemBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ItemsBase/ItemBase/ContentBase.html">RSS::Maker::ItemsBase::ItemBase::ContentBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ItemsBase/ItemBase/DescriptionBase.html">RSS::Maker::ItemsBase::ItemBase::DescriptionBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ItemsBase/ItemBase/EnclosureBase.html">RSS::Maker::ItemsBase::ItemBase::EnclosureBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ItemsBase/ItemBase/GuidBase.html">RSS::Maker::ItemsBase::ItemBase::GuidBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ItemsBase/ItemBase/ITunesDuration.html">RSS::Maker::ItemsBase::ItemBase::ITunesDuration</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ItemsBase/ItemBase/RightsBase.html">RSS::Maker::ItemsBase::ItemBase::RightsBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ItemsBase/ItemBase/SourceBase.html">RSS::Maker::ItemsBase::ItemBase::SourceBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ItemsBase/ItemBase/SourceBase/IconBase.html">RSS::Maker::ItemsBase::ItemBase::SourceBase::IconBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ItemsBase/ItemBase/SourceBase/LogoBase.html">RSS::Maker::ItemsBase::ItemBase::SourceBase::LogoBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ItemsBase/ItemBase/SourceBase/RightsBase.html">RSS::Maker::ItemsBase::ItemBase::SourceBase::RightsBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ItemsBase/ItemBase/SourceBase/SubtitleBase.html">RSS::Maker::ItemsBase::ItemBase::SourceBase::SubtitleBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ItemsBase/ItemBase/SourceBase/TitleBase.html">RSS::Maker::ItemsBase::ItemBase::SourceBase::TitleBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/ItemsBase/ItemBase/TitleBase.html">RSS::Maker::ItemsBase::ItemBase::TitleBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09.html">RSS::Maker::RSS09</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS091.html">RSS::Maker::RSS091</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS091/Channel.html">RSS::Maker::RSS091::Channel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS091/Image.html">RSS::Maker::RSS091::Image</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS091/Items.html">RSS::Maker::RSS091::Items</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS091/Items/Item.html">RSS::Maker::RSS091::Items::Item</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS091/Textinput.html">RSS::Maker::RSS091::Textinput</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS092.html">RSS::Maker::RSS092</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS092/Channel.html">RSS::Maker::RSS092::Channel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS092/Image.html">RSS::Maker::RSS092::Image</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS092/Items.html">RSS::Maker::RSS092::Items</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS092/Items/Item.html">RSS::Maker::RSS092::Items::Item</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS092/Textinput.html">RSS::Maker::RSS092::Textinput</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Channel.html">RSS::Maker::RSS09::Channel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Channel/Authors.html">RSS::Maker::RSS09::Channel::Authors</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Channel/Authors/Author.html">RSS::Maker::RSS09::Channel::Authors::Author</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Channel/Categories.html">RSS::Maker::RSS09::Channel::Categories</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Channel/Categories/Category.html">RSS::Maker::RSS09::Channel::Categories::Category</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Channel/Cloud.html">RSS::Maker::RSS09::Channel::Cloud</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Channel/Contributors.html">RSS::Maker::RSS09::Channel::Contributors</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Channel/Contributors/Contributor.html">RSS::Maker::RSS09::Channel::Contributors::Contributor</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Channel/Copyright.html">RSS::Maker::RSS09::Channel::Copyright</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Channel/Description.html">RSS::Maker::RSS09::Channel::Description</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Channel/Generator.html">RSS::Maker::RSS09::Channel::Generator</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Channel/Links.html">RSS::Maker::RSS09::Channel::Links</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Channel/Links/Link.html">RSS::Maker::RSS09::Channel::Links::Link</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Channel/SkipDays.html">RSS::Maker::RSS09::Channel::SkipDays</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Channel/SkipDays/Day.html">RSS::Maker::RSS09::Channel::SkipDays::Day</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Channel/SkipHours.html">RSS::Maker::RSS09::Channel::SkipHours</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Channel/SkipHours/Hour.html">RSS::Maker::RSS09::Channel::SkipHours::Hour</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Channel/Title.html">RSS::Maker::RSS09::Channel::Title</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Image.html">RSS::Maker::RSS09::Image</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items.html">RSS::Maker::RSS09::Items</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item.html">RSS::Maker::RSS09::Items::Item</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Authors.html">RSS::Maker::RSS09::Items::Item::Authors</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Authors/Author.html">RSS::Maker::RSS09::Items::Item::Authors::Author</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Categories.html">RSS::Maker::RSS09::Items::Item::Categories</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Categories/Category.html">RSS::Maker::RSS09::Items::Item::Categories::Category</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Content.html">RSS::Maker::RSS09::Items::Item::Content</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Contributors.html">RSS::Maker::RSS09::Items::Item::Contributors</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Contributors/Contributor.html">RSS::Maker::RSS09::Items::Item::Contributors::Contributor</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Description.html">RSS::Maker::RSS09::Items::Item::Description</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Enclosure.html">RSS::Maker::RSS09::Items::Item::Enclosure</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Guid.html">RSS::Maker::RSS09::Items::Item::Guid</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Links.html">RSS::Maker::RSS09::Items::Item::Links</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Links/Link.html">RSS::Maker::RSS09::Items::Item::Links::Link</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Rights.html">RSS::Maker::RSS09::Items::Item::Rights</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Source.html">RSS::Maker::RSS09::Items::Item::Source</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Source/Authors.html">RSS::Maker::RSS09::Items::Item::Source::Authors</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Source/Authors/Author.html">RSS::Maker::RSS09::Items::Item::Source::Authors::Author</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Source/Categories.html">RSS::Maker::RSS09::Items::Item::Source::Categories</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Source/Categories/Category.html">RSS::Maker::RSS09::Items::Item::Source::Categories::Category</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Source/Contributors.html">RSS::Maker::RSS09::Items::Item::Source::Contributors</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Source/Contributors/Contributor.html">RSS::Maker::RSS09::Items::Item::Source::Contributors::Contributor</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Source/Generator.html">RSS::Maker::RSS09::Items::Item::Source::Generator</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Source/Icon.html">RSS::Maker::RSS09::Items::Item::Source::Icon</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Source/Links.html">RSS::Maker::RSS09::Items::Item::Source::Links</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Source/Links/Link.html">RSS::Maker::RSS09::Items::Item::Source::Links::Link</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Source/Logo.html">RSS::Maker::RSS09::Items::Item::Source::Logo</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Source/Rights.html">RSS::Maker::RSS09::Items::Item::Source::Rights</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Source/Subtitle.html">RSS::Maker::RSS09::Items::Item::Source::Subtitle</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Source/Title.html">RSS::Maker::RSS09::Items::Item::Source::Title</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Items/Item/Title.html">RSS::Maker::RSS09::Items::Item::Title</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS09/Textinput.html">RSS::Maker::RSS09::Textinput</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10.html">RSS::Maker::RSS10</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Channel.html">RSS::Maker::RSS10::Channel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Channel/Authors.html">RSS::Maker::RSS10::Channel::Authors</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Channel/Authors/Author.html">RSS::Maker::RSS10::Channel::Authors::Author</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Channel/Categories.html">RSS::Maker::RSS10::Channel::Categories</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Channel/Categories/Category.html">RSS::Maker::RSS10::Channel::Categories::Category</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Channel/Cloud.html">RSS::Maker::RSS10::Channel::Cloud</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Channel/Contributors.html">RSS::Maker::RSS10::Channel::Contributors</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Channel/Contributors/Contributor.html">RSS::Maker::RSS10::Channel::Contributors::Contributor</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Channel/Copyright.html">RSS::Maker::RSS10::Channel::Copyright</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Channel/Description.html">RSS::Maker::RSS10::Channel::Description</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Channel/Generator.html">RSS::Maker::RSS10::Channel::Generator</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Channel/Links.html">RSS::Maker::RSS10::Channel::Links</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Channel/Links/Link.html">RSS::Maker::RSS10::Channel::Links::Link</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Channel/SkipDays.html">RSS::Maker::RSS10::Channel::SkipDays</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Channel/SkipDays/Day.html">RSS::Maker::RSS10::Channel::SkipDays::Day</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Channel/SkipHours.html">RSS::Maker::RSS10::Channel::SkipHours</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Channel/SkipHours/Hour.html">RSS::Maker::RSS10::Channel::SkipHours::Hour</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Channel/Title.html">RSS::Maker::RSS10::Channel::Title</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Image.html">RSS::Maker::RSS10::Image</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items.html">RSS::Maker::RSS10::Items</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item.html">RSS::Maker::RSS10::Items::Item</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Authors.html">RSS::Maker::RSS10::Items::Item::Authors</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Authors/Author.html">RSS::Maker::RSS10::Items::Item::Authors::Author</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Categories.html">RSS::Maker::RSS10::Items::Item::Categories</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Categories/Category.html">RSS::Maker::RSS10::Items::Item::Categories::Category</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Content.html">RSS::Maker::RSS10::Items::Item::Content</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Contributors.html">RSS::Maker::RSS10::Items::Item::Contributors</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Contributors/Contributor.html">RSS::Maker::RSS10::Items::Item::Contributors::Contributor</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Description.html">RSS::Maker::RSS10::Items::Item::Description</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Enclosure.html">RSS::Maker::RSS10::Items::Item::Enclosure</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Guid.html">RSS::Maker::RSS10::Items::Item::Guid</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Links.html">RSS::Maker::RSS10::Items::Item::Links</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Links/Link.html">RSS::Maker::RSS10::Items::Item::Links::Link</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Rights.html">RSS::Maker::RSS10::Items::Item::Rights</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Source.html">RSS::Maker::RSS10::Items::Item::Source</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Source/Authors.html">RSS::Maker::RSS10::Items::Item::Source::Authors</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Source/Authors/Author.html">RSS::Maker::RSS10::Items::Item::Source::Authors::Author</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Source/Categories.html">RSS::Maker::RSS10::Items::Item::Source::Categories</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Source/Categories/Category.html">RSS::Maker::RSS10::Items::Item::Source::Categories::Category</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Source/Contributors.html">RSS::Maker::RSS10::Items::Item::Source::Contributors</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Source/Contributors/Contributor.html">RSS::Maker::RSS10::Items::Item::Source::Contributors::Contributor</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Source/Generator.html">RSS::Maker::RSS10::Items::Item::Source::Generator</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Source/Icon.html">RSS::Maker::RSS10::Items::Item::Source::Icon</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Source/Links.html">RSS::Maker::RSS10::Items::Item::Source::Links</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Source/Links/Link.html">RSS::Maker::RSS10::Items::Item::Source::Links::Link</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Source/Logo.html">RSS::Maker::RSS10::Items::Item::Source::Logo</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Source/Rights.html">RSS::Maker::RSS10::Items::Item::Source::Rights</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Source/Subtitle.html">RSS::Maker::RSS10::Items::Item::Source::Subtitle</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Source/Title.html">RSS::Maker::RSS10::Items::Item::Source::Title</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Items/Item/Title.html">RSS::Maker::RSS10::Items::Item::Title</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS10/Textinput.html">RSS::Maker::RSS10::Textinput</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS20.html">RSS::Maker::RSS20</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS20/Channel.html">RSS::Maker::RSS20::Channel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS20/Channel/Categories.html">RSS::Maker::RSS20::Channel::Categories</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS20/Channel/Categories/Category.html">RSS::Maker::RSS20::Channel::Categories::Category</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS20/Channel/Cloud.html">RSS::Maker::RSS20::Channel::Cloud</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS20/Channel/Generator.html">RSS::Maker::RSS20::Channel::Generator</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS20/Channel/SkipDays.html">RSS::Maker::RSS20::Channel::SkipDays</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS20/Channel/SkipDays/Day.html">RSS::Maker::RSS20::Channel::SkipDays::Day</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS20/Channel/SkipHours.html">RSS::Maker::RSS20::Channel::SkipHours</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS20/Channel/SkipHours/Hour.html">RSS::Maker::RSS20::Channel::SkipHours::Hour</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS20/Image.html">RSS::Maker::RSS20::Image</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS20/Items.html">RSS::Maker::RSS20::Items</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS20/Items/Item.html">RSS::Maker::RSS20::Items::Item</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS20/Items/Item/Authors.html">RSS::Maker::RSS20::Items::Item::Authors</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS20/Items/Item/Authors/Author.html">RSS::Maker::RSS20::Items::Item::Authors::Author</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS20/Items/Item/Categories.html">RSS::Maker::RSS20::Items::Item::Categories</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS20/Items/Item/Categories/Category.html">RSS::Maker::RSS20::Items::Item::Categories::Category</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS20/Items/Item/Enclosure.html">RSS::Maker::RSS20::Items::Item::Enclosure</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS20/Items/Item/Guid.html">RSS::Maker::RSS20::Items::Item::Guid</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS20/Items/Item/Source.html">RSS::Maker::RSS20::Items::Item::Source</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS20/Items/Item/Source/Links.html">RSS::Maker::RSS20::Items::Item::Source::Links</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS20/Items/Item/Source/Links/Link.html">RSS::Maker::RSS20::Items::Item::Source::Links::Link</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSS20/Textinput.html">RSS::Maker::RSS20::Textinput</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/RSSBase.html">RSS::Maker::RSSBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/SetupDefaultDate.html">RSS::Maker::SetupDefaultDate</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/SetupDefaultLanguage.html">RSS::Maker::SetupDefaultLanguage</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/SlashModel.html">RSS::Maker::SlashModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/SyndicationModel.html">RSS::Maker::SyndicationModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/TaxonomyTopicModel.html">RSS::Maker::TaxonomyTopicModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/TaxonomyTopicModel/TaxonomyTopicsBase.html">RSS::Maker::TaxonomyTopicModel::TaxonomyTopicsBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/TaxonomyTopicModel/TaxonomyTopicsBase/TaxonomyTopicBase.html">RSS::Maker::TaxonomyTopicModel::TaxonomyTopicsBase::TaxonomyTopicBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/TaxonomyTopicsModel.html">RSS::Maker::TaxonomyTopicsModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/TaxonomyTopicsModel/TaxonomyTopicsBase.html">RSS::Maker::TaxonomyTopicsModel::TaxonomyTopicsBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/TextinputBase.html">RSS::Maker::TextinputBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/TrackBackModel.html">RSS::Maker::TrackBackModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/TrackBackModel/TrackBackAboutsBase.html">RSS::Maker::TrackBackModel::TrackBackAboutsBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/TrackBackModel/TrackBackAboutsBase/TrackBackAboutBase.html">RSS::Maker::TrackBackModel::TrackBackAboutsBase::TrackBackAboutBase</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/XMLStyleSheets.html">RSS::Maker::XMLStyleSheets</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Maker/XMLStyleSheets/XMLStyleSheet.html">RSS::Maker::XMLStyleSheets::XMLStyleSheet</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/MissingAttributeError.html">RSS::MissingAttributeError</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/MissingTagError.html">RSS::MissingTagError</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/NSError.html">RSS::NSError</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/NotAvailableValueError.html">RSS::NotAvailableValueError</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/NotExpectedTagError.html">RSS::NotExpectedTagError</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/NotSetError.html">RSS::NotSetError</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/NotValidXMLParser.html">RSS::NotValidXMLParser</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/NotWellFormedError.html">RSS::NotWellFormedError</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/OverlappedPrefixError.html">RSS::OverlappedPrefixError</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Parser.html">RSS::Parser</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/RDF/Bag.html">RSS::RDF::Bag</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/RDF/Li.html">RSS::RDF::Bag::Li</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/RDF/Channel.html">RSS::RDF::Channel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/RDF/Channel/Image.html">RSS::RDF::Channel::Image</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/RDF/Channel/Items.html">RSS::RDF::Channel::Items</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/RDF/Seq.html">RSS::RDF::Channel::Items::Seq</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/RDF/Channel/Textinput.html">RSS::RDF::Channel::Textinput</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/RDF/Image.html">RSS::RDF::Image</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/RDF/Li.html">RSS::RDF::Li</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/RDF/Seq.html">RSS::RDF::Seq</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/RDF/Li.html">RSS::RDF::Seq::Li</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/RDF/Textinput.html">RSS::RDF::Textinput</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/REXMLLikeXMLParser.html">RSS::REXMLLikeXMLParser</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/REXMLListener.html">RSS::REXMLListener</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/REXMLParser.html">RSS::REXMLParser</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/RSS09.html">RSS::RSS09</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/RSS10.html">RSS::RSS10</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/RootElementMixin.html">RSS::RootElementMixin</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Rss/Channel/Cloud.html">RSS::Rss::Channel::Cloud</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Rss/Channel/Image.html">RSS::Rss::Channel::Image</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Rss/Channel/Item/Category.html">RSS::Rss::Channel::Item::Category</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Rss/Channel/Item/Enclosure.html">RSS::Rss::Channel::Item::Enclosure</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Rss/Channel/Item/Guid.html">RSS::Rss::Channel::Item::Guid</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Rss/Channel/Item/Source.html">RSS::Rss::Channel::Item::Source</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Rss/Channel/SkipDays.html">RSS::Rss::Channel::SkipDays</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Rss/Channel/SkipDays/Day.html">RSS::Rss::Channel::SkipDays::Day</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Rss/Channel/SkipHours.html">RSS::Rss::Channel::SkipHours</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Rss/Channel/SkipHours/Hour.html">RSS::Rss::Channel::SkipHours::Hour</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Rss/Channel/TextInput.html">RSS::Rss::Channel::TextInput</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/SetupMaker.html">RSS::SetupMaker</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/SlashModel.html">RSS::SlashModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/SyndicationModel.html">RSS::SyndicationModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/TaxonomyTopicModel.html">RSS::TaxonomyTopicModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/TaxonomyTopicModel/TaxonomyTopic.html">RSS::TaxonomyTopicModel::TaxonomyTopic</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/TaxonomyTopicsModel.html">RSS::TaxonomyTopicsModel</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/TaxonomyTopicsModel/TaxonomyTopics.html">RSS::TaxonomyTopicsModel::TaxonomyTopics</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/RDF/Bag.html">RSS::TaxonomyTopicsModel::TaxonomyTopics::Bag</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/TooMuchTagError.html">RSS::TooMuchTagError</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/UnknownConversionMethodError.html">RSS::UnknownConversionMethodError</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/UnknownTagError.html">RSS::UnknownTagError</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/UnsupportedMakerVersionError.html">RSS::UnsupportedMakerVersionError</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Utils.html">RSS::Utils</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Utils/CSV.html">RSS::Utils::CSV</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Utils/ExplicitCleanOther.html">RSS::Utils::ExplicitCleanOther</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Utils/InheritedReader.html">RSS::Utils::InheritedReader</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/Utils/YesOther.html">RSS::Utils::YesOther</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/XML.html">RSS::XML</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/XML/Element.html">RSS::XML::Element</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/XMLParserListener.html">RSS::XMLParserListener</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/XMLParserNotFound.html">RSS::XMLParserNotFound</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/XMLParserParser.html">RSS::XMLParserParser</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/XMLScanListener.html">RSS::XMLScanListener</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/XMLScanParser.html">RSS::XMLScanParser</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/XMLStyleSheet.html">RSS::XMLStyleSheet</a></li>
+        
+          
+          
+          <li><a href="../../../RSS/XMLStyleSheetMixin.html">RSS::XMLStyleSheetMixin</a></li>
+        
+          
+          
+          <li><a href="../../../Time.html">Time</a></li>
+        
+          
+          
+          <li><a href="../../../XML.html">XML</a></li>
+        
+          
+          
+          <li><a href="../../../XML/Parser.html">XML::Parser</a></li>
+        
+          
+          
+          <li><a href="../../../XMLEncoding_ja.html">XMLEncoding_ja</a></li>
+        
+          
+          
+          <li><a href="../../../XMLEncoding_ja/SJISHandler.html">XMLEncoding_ja::SJISHandler</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">RSS::Maker::ChannelBase::CopyrightBase</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_CopyrightBase_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_CopyrightBase_versioned").load("/associated/2.7.4/CopyrightBase.ihtml");</script> <div id='tx_CopyrightBase' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_CopyrightBase").load("/associated/CopyrightBase.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, an erratic source of art, music, and technology.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_CopyrightBase.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_CopyrightBase.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

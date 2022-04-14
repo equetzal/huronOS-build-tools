@@ -1,0 +1,1077 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Module : RDoc::RI::Paths  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:28:43 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '../..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '../..'   asset_rel_prefix = '../..'  --> 
+  <title>Module: RDoc::RI::Paths (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="../..css/obf.css"  -->
+  <link rel="stylesheet" href="../../css/inuit.css" >
+  <link rel="stylesheet" href="../../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../../css/carbon17.css" type="text/css" >
+
+
+  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="module rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>rdoc/ri/paths.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-each">::each</a></li>
+          
+          <li><a href="#method-c-gem_dir">::gem_dir</a></li>
+          
+          <li><a href="#method-c-gemdirs">::gemdirs</a></li>
+          
+          <li><a href="#method-c-home_dir">::home_dir</a></li>
+          
+          <li><a href="#method-c-path">::path</a></li>
+          
+          <li><a href="#method-c-raw_path">::raw_path</a></li>
+          
+          <li><a href="#method-c-site_dir">::site_dir</a></li>
+          
+          <li><a href="#method-c-system_dir">::system_dir</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../../RDoc.html">RDoc</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Alias.html">RDoc::Alias</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/AnonClass.html">RDoc::AnonClass</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/AnyMethod.html">RDoc::AnyMethod</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Attr.html">RDoc::Attr</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/ClassModule.html">RDoc::ClassModule</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/CodeObject.html">RDoc::CodeObject</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Comment.html">RDoc::Comment</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Constant.html">RDoc::Constant</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Context.html">RDoc::Context</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Context/Section.html">RDoc::Context::Section</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/CrossReference.html">RDoc::CrossReference</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/ERBIO.html">RDoc::ERBIO</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/ERBPartial.html">RDoc::ERBPartial</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Encoding.html">RDoc::Encoding</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Error.html">RDoc::Error</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Extend.html">RDoc::Extend</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Generator.html">RDoc::Generator</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Generator/Darkfish.html">RDoc::Generator::Darkfish</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Generator/JsonIndex.html">RDoc::Generator::JsonIndex</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Generator/Markup.html">RDoc::Generator::Markup</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Generator/POT.html">RDoc::Generator::POT</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Generator/POT/MessageExtractor.html">RDoc::Generator::POT::MessageExtractor</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Generator/POT/PO.html">RDoc::Generator::POT::PO</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Generator/POT/POEntry.html">RDoc::Generator::POT::POEntry</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Generator/RI.html">RDoc::Generator::RI</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/GhostMethod.html">RDoc::GhostMethod</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/I18n.html">RDoc::I18n</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/I18n/Locale.html">RDoc::I18n::Locale</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/I18n/Text.html">RDoc::I18n::Text</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Include.html">RDoc::Include</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markdown.html">RDoc::Markdown</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markdown/Literals.html">RDoc::Markdown::Literals</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup.html">RDoc::Markup</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/AttrChanger.html">RDoc::Markup::AttrChanger</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/AttrSpan.html">RDoc::Markup::AttrSpan</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/AttributeManager.html">RDoc::Markup::AttributeManager</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/Attributes.html">RDoc::Markup::Attributes</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/BlankLine.html">RDoc::Markup::BlankLine</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/BlockQuote.html">RDoc::Markup::BlockQuote</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/Document.html">RDoc::Markup::Document</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/Formatter.html">RDoc::Markup::Formatter</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/HardBreak.html">RDoc::Markup::HardBreak</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/Include.html">RDoc::Markup::Include</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/IndentedParagraph.html">RDoc::Markup::IndentedParagraph</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/List.html">RDoc::Markup::List</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/ListItem.html">RDoc::Markup::ListItem</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/Paragraph.html">RDoc::Markup::Paragraph</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/Parser.html">RDoc::Markup::Parser</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/Parser/Error.html">RDoc::Markup::Parser::Error</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/Parser/MyStringScanner.html">RDoc::Markup::Parser::MyStringScanner</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/Parser/ParseError.html">RDoc::Markup::Parser::ParseError</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/PreProcess.html">RDoc::Markup::PreProcess</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/Raw.html">RDoc::Markup::Raw</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/RegexpHandling.html">RDoc::Markup::RegexpHandling</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/Rule.html">RDoc::Markup::Rule</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/ToAnsi.html">RDoc::Markup::ToAnsi</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/ToBs.html">RDoc::Markup::ToBs</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/ToHtml.html">RDoc::Markup::ToHtml</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/ToHtmlCrossref.html">RDoc::Markup::ToHtmlCrossref</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/ToHtmlSnippet.html">RDoc::Markup::ToHtmlSnippet</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/ToJoinedParagraph.html">RDoc::Markup::ToJoinedParagraph</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/ToLabel.html">RDoc::Markup::ToLabel</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/ToMarkdown.html">RDoc::Markup::ToMarkdown</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/ToRdoc.html">RDoc::Markup::ToRdoc</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/ToTableOfContents.html">RDoc::Markup::ToTableOfContents</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/ToTest.html">RDoc::Markup::ToTest</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/ToTtOnly.html">RDoc::Markup::ToTtOnly</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Markup/Verbatim.html">RDoc::Markup::Verbatim</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/MetaMethod.html">RDoc::MetaMethod</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/MethodAttr.html">RDoc::MethodAttr</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Mixin.html">RDoc::Mixin</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/NormalClass.html">RDoc::NormalClass</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/NormalModule.html">RDoc::NormalModule</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Options.html">RDoc::Options</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Parser.html">RDoc::Parser</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Parser/C.html">RDoc::Parser::C</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Parser/ChangeLog.html">RDoc::Parser::ChangeLog</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Parser/Markdown.html">RDoc::Parser::Markdown</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Parser/RD.html">RDoc::Parser::RD</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Parser/RipperStateLex.html">RDoc::Parser::RipperStateLex</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Parser/RipperStateLex/InnerStateLex.html">RDoc::Parser::RipperStateLex::InnerStateLex</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Parser/Ruby.html">RDoc::Parser::Ruby</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Parser/RubyTools.html">RDoc::Parser::RubyTools</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Parser/Simple.html">RDoc::Parser::Simple</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Parser/Text.html">RDoc::Parser::Text</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/RD.html">RDoc::RD</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/RD/BlockParser.html">RDoc::RD::BlockParser</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/RD/Inline.html">RDoc::RD::Inline</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/RD/InlineParser.html">RDoc::RD::InlineParser</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/RDoc.html">RDoc::RDoc</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/RI.html">RDoc::RI</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/RI/Driver.html">RDoc::RI::Driver</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/RI/Driver/Error.html">RDoc::RI::Driver::Error</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/RI/Driver/NotFoundError.html">RDoc::RI::Driver::NotFoundError</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/RI/Error.html">RDoc::RI::Error</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/RI/Paths.html">RDoc::RI::Paths</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/RI/Task.html">RDoc::RI::Task</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Require.html">RDoc::Require</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/RubygemsHook.html">RDoc::RubygemsHook</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Servlet.html">RDoc::Servlet</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/SingleClass.html">RDoc::SingleClass</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Stats.html">RDoc::Stats</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Stats/Normal.html">RDoc::Stats::Normal</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Stats/Quiet.html">RDoc::Stats::Quiet</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Stats/Verbose.html">RDoc::Stats::Verbose</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Store.html">RDoc::Store</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Store/Error.html">RDoc::Store::Error</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Store/MissingFileError.html">RDoc::Store::MissingFileError</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Task.html">RDoc::Task</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/Text.html">RDoc::Text</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/TokenStream.html">RDoc::TokenStream</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/TomDoc.html">RDoc::TomDoc</a></li>
+        
+          
+          
+          <li><a href="../../RDoc/TopLevel.html">RDoc::TopLevel</a></li>
+        
+          
+          
+          <li><a href="../../RDocTask.html">RDocTask</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="module">RDoc::RI::Paths</h1>
+
+    <div id="description" class="description">
+      
+<p>The directories where ri data lives.  <a href="Paths.html"><code>Paths</code></a> can be enumerated via <a href="Paths.html#method-c-each"><code>::each</code></a>, or queried individually via <a href="Paths.html#method-c-system_dir"><code>::system_dir</code></a>, <a href="Paths.html#method-c-site_dir"><code>::site_dir</code></a>, <a href="Paths.html#method-c-home_dir"><code>::home_dir</code></a> and <a href="Paths.html#method-c-gem_dir"><code>::gem_dir</code></a>.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="each-method" class="method-detail ">
+          <a name="method-c-each"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">each</span><span
+              class="method-args">(system = true, site = true, home = true, gems = :latest, *extra_dirs)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Iterates over each selected path yielding the directory and type.</p>
+
+<p>Yielded types:</p>
+<dl class="rdoc-list note-list"><dt>:system
+<dd>
+<p>Where Ruby&#39;s ri data is stored.  Yielded when <code>system</code> is true</p>
+</dd><dt>:site
+<dd>
+<p>Where ri for installed libraries are stored.  Yielded when <code>site</code> is true.  Normally no ri data is stored here.</p>
+</dd><dt>:home
+<dd>
+<p>~/.rdoc.  Yielded when <code>home</code> is true.</p>
+</dd><dt>:gem
+<dd>
+<p>ri data for an installed gem.  Yielded when <code>gems</code> is true.</p>
+</dd><dt>:extra
+<dd>
+<p>ri data directory from the command line.  Yielded for each entry in <code>extra_dirs</code></p>
+</dd></dl>
+            
+
+            
+            <div class="method-source-code" id="each-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rdoc/ri/paths.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">each</span> <span class="ruby-identifier">system</span> = <span class="ruby-keyword">true</span>, <span class="ruby-identifier">site</span> = <span class="ruby-keyword">true</span>, <span class="ruby-identifier">home</span> = <span class="ruby-keyword">true</span>, <span class="ruby-identifier">gems</span> = <span class="ruby-value">:latest</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">extra_dirs</span> <span class="ruby-comment"># :yields: directory, type</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">enum_for</span> <span class="ruby-identifier">__method__</span>, <span class="ruby-identifier">system</span>, <span class="ruby-identifier">site</span>, <span class="ruby-identifier">home</span>, <span class="ruby-identifier">gems</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">extra_dirs</span> <span class="ruby-keyword">unless</span>
+    <span class="ruby-identifier">block_given?</span>
+
+  <span class="ruby-identifier">extra_dirs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">dir</span>, <span class="ruby-value">:extra</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">yield</span> <span class="ruby-identifier">system_dir</span>,  <span class="ruby-value">:system</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">system</span>
+  <span class="ruby-keyword">yield</span> <span class="ruby-identifier">site_dir</span>,    <span class="ruby-value">:site</span>   <span class="ruby-keyword">if</span> <span class="ruby-identifier">site</span>
+  <span class="ruby-keyword">yield</span> <span class="ruby-identifier">home_dir</span>,    <span class="ruby-value">:home</span>   <span class="ruby-keyword">if</span> <span class="ruby-identifier">home</span> <span class="ruby-keyword">and</span> <span class="ruby-constant">HOMEDIR</span>
+
+  <span class="ruby-identifier">gemdirs</span>(<span class="ruby-identifier">gems</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">dir</span>, <span class="ruby-value">:gem</span>
+  <span class="ruby-keyword">end</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">gems</span>
+
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- each-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- each-method -->
+      
+        <div id="gem_dir-method" class="method-detail ">
+          <a name="method-c-gem_dir"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">gem_dir</span><span
+              class="method-args">(name, version)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>The ri directory for the gem with <code>gem_name</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="gem_dir-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rdoc/ri/paths.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">gem_dir</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">version</span>
+  <span class="ruby-identifier">req</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Requirement</span>.<span class="ruby-identifier">new</span> <span class="ruby-node">&quot;= #{version}&quot;</span>
+
+  <span class="ruby-identifier">spec</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Specification</span>.<span class="ruby-identifier">find_by_name</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">req</span>
+
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">doc_dir</span>, <span class="ruby-string">&#39;ri&#39;</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- gem_dir-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- gem_dir-method -->
+      
+        <div id="gemdirs-method" class="method-detail ">
+          <a name="method-c-gemdirs"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">gemdirs</span><span
+              class="method-args">(filter = :latest)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>The latest installed gems&#39; ri directories.  <code>filter</code> can be :all or :latest.</p>
+
+<p>A <code>filter</code> :all includes all versions of gems and includes gems without ri documentation.</p>
+            
+
+            
+            <div class="method-source-code" id="gemdirs-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rdoc/ri/paths.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">gemdirs</span> <span class="ruby-identifier">filter</span> = <span class="ruby-value">:latest</span>
+  <span class="ruby-identifier">ri_paths</span> = {}
+
+  <span class="ruby-identifier">all</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Specification</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">spec</span><span class="ruby-operator">|</span>
+    [<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">doc_dir</span>, <span class="ruby-string">&#39;ri&#39;</span>), <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">version</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">filter</span> <span class="ruby-operator">==</span> <span class="ruby-value">:all</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">gemdirs</span> = []
+
+    <span class="ruby-identifier">all</span>.<span class="ruby-identifier">group_by</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">_</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">name</span>
+    <span class="ruby-keyword">end</span>.<span class="ruby-identifier">sort_by</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">group</span>, <span class="ruby-identifier">_</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">group</span>
+    <span class="ruby-keyword">end</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">group</span>, <span class="ruby-identifier">items</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">items</span>.<span class="ruby-identifier">sort_by</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">_</span>, <span class="ruby-identifier">version</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">version</span>
+      <span class="ruby-keyword">end</span>.<span class="ruby-identifier">reverse_each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span>,<span class="ruby-operator">|</span>
+        <span class="ruby-identifier">gemdirs</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">dir</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">gemdirs</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">all</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">ver</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span> <span class="ruby-identifier">dir</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">ri_paths</span>[<span class="ruby-identifier">name</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">ver</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">ri_paths</span>[<span class="ruby-identifier">name</span>].<span class="ruby-identifier">first</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">ri_paths</span>[<span class="ruby-identifier">name</span>] = [<span class="ruby-identifier">ver</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">dir</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">ri_paths</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, (<span class="ruby-identifier">_</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">_</span>)<span class="ruby-operator">|</span> <span class="ruby-identifier">name</span> }.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">last</span> }
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">LoadError</span>
+  []
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- gemdirs-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- gemdirs-method -->
+      
+        <div id="home_dir-method" class="method-detail ">
+          <a name="method-c-home_dir"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">home_dir</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>The location of the rdoc data in the user&#39;s home directory.</p>
+
+<p>Like ::system, ri data in the user&#39;s home directory is rare and predates libraries distributed via RubyGems.  ri data is rarely generated into this directory.</p>
+            
+
+            
+            <div class="method-source-code" id="home_dir-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rdoc/ri/paths.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">home_dir</span>
+  <span class="ruby-constant">HOMEDIR</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- home_dir-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- home_dir-method -->
+      
+        <div id="path-method" class="method-detail ">
+          <a name="method-c-path"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">path</span><span
+              class="method-args">(system = true, site = true, home = true, gems = :latest, *extra_dirs)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns existing directories from the selected documentation directories as an Array.</p>
+
+<p>See also <a href="Paths.html#method-c-each"><code>::each</code></a></p>
+            
+
+            
+            <div class="method-source-code" id="path-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rdoc/ri/paths.rb, line 139</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">path</span>(<span class="ruby-identifier">system</span> = <span class="ruby-keyword">true</span>, <span class="ruby-identifier">site</span> = <span class="ruby-keyword">true</span>, <span class="ruby-identifier">home</span> = <span class="ruby-keyword">true</span>, <span class="ruby-identifier">gems</span> = <span class="ruby-value">:latest</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">extra_dirs</span>)
+  <span class="ruby-identifier">path</span> = <span class="ruby-identifier">raw_path</span> <span class="ruby-identifier">system</span>, <span class="ruby-identifier">site</span>, <span class="ruby-identifier">home</span>, <span class="ruby-identifier">gems</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">extra_dirs</span>
+
+  <span class="ruby-identifier">path</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">directory</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-identifier">directory</span> }
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- path-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- path-method -->
+      
+        <div id="raw_path-method" class="method-detail ">
+          <a name="method-c-raw_path"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">raw_path</span><span
+              class="method-args">(system, site, home, gems, *extra_dirs)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Returns selected documentation directories including nonexistent directories.</p>
+
+<p>See also <a href="Paths.html#method-c-each"><code>::each</code></a></p>
+            
+
+            
+            <div class="method-source-code" id="raw_path-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rdoc/ri/paths.rb, line 151</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">raw_path</span>(<span class="ruby-identifier">system</span>, <span class="ruby-identifier">site</span>, <span class="ruby-identifier">home</span>, <span class="ruby-identifier">gems</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">extra_dirs</span>)
+  <span class="ruby-identifier">path</span> = []
+
+  <span class="ruby-identifier">each</span>(<span class="ruby-identifier">system</span>, <span class="ruby-identifier">site</span>, <span class="ruby-identifier">home</span>, <span class="ruby-identifier">gems</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">extra_dirs</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span>, <span class="ruby-identifier">type</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">path</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">dir</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">path</span>.<span class="ruby-identifier">compact</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- raw_path-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- raw_path-method -->
+      
+        <div id="site_dir-method" class="method-detail ">
+          <a name="method-c-site_dir"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">site_dir</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>The location of ri data installed into the site dir.</p>
+
+<p>Historically this was available for documentation installed by Ruby libraries predating RubyGems.  It is unlikely to contain any content for modern Ruby installations.</p>
+            
+
+            
+            <div class="method-source-code" id="site_dir-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rdoc/ri/paths.rb, line 168</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">site_dir</span>
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-constant">BASE</span>, <span class="ruby-string">&#39;site&#39;</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- site_dir-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- site_dir-method -->
+      
+        <div id="system_dir-method" class="method-detail ">
+          <a name="method-c-system_dir"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">system_dir</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>The location of the built-in ri data.</p>
+
+<p>This data is built automatically when `make` is run when Ruby is installed.  If you did not install Ruby by hand you may need to install the documentation yourself.  Please consult the documentation for your package manager or Ruby installer for details.  You can also use the rdoc-data gem to install system ri data for common versions of Ruby.</p>
+            
+
+            
+            <div class="method-source-code" id="system_dir-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rdoc/ri/paths.rb, line 181</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">system_dir</span>
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-constant">BASE</span>, <span class="ruby-string">&#39;system&#39;</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- system_dir-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- system_dir-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Paths_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Paths_versioned").load("/associated/2.7.4/Paths.ihtml");</script> <div id='tx_Paths' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Paths").load("/associated/Paths.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Maximum R+D</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Paths.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Paths.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

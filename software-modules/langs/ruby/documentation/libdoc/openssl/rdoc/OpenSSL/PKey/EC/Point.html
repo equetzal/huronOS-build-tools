@@ -1,0 +1,1359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : OpenSSL::PKey::EC::Point  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:26:02 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '../../..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '../../..'   asset_rel_prefix = '../../..'  --> 
+  <title>Class: OpenSSL::PKey::EC::Point (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../../../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="../../..css/obf.css"  -->
+  <link rel="stylesheet" href="../../../css/inuit.css" >
+  <link rel="stylesheet" href="../../../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../../../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../../../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../../../css/carbon17.css" type="text/css" >
+
+
+  <script src="../../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../../../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../../index.html">Home</a>
+          <a href="../../../index.html#classes">Classes</a>
+          <a href="../../../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>openssl/lib/openssl/pkey.rb</li>      
+            
+          
+          <li class='in-file'>openssl/ossl_pkey.c</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">CLASS</span> <a href="Point/Error.html">OpenSSL::PKey::EC::Point::Error</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-3D-3D">#==</a></li>
+          
+          <li><a href="#method-i-eql-3F">#eql?</a></li>
+          
+          <li><a href="#method-i-infinity-3F">#infinity?</a></li>
+          
+          <li><a href="#method-i-initialize_copy">#initialize_copy</a></li>
+          
+          <li><a href="#method-i-invert-21">#invert!</a></li>
+          
+          <li><a href="#method-i-make_affine-21">#make_affine!</a></li>
+          
+          <li><a href="#method-i-mul">#mul</a></li>
+          
+          <li><a href="#method-i-on_curve-3F">#on_curve?</a></li>
+          
+          <li><a href="#method-i-set_to_infinity-21">#set_to_infinity!</a></li>
+          
+          <li><a href="#method-i-to_bn">#to_bn</a></li>
+          
+          <li><a href="#method-i-to_octet_string">#to_octet_string</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../../../IO.html">IO</a></li>
+        
+          
+          
+          <li><a href="../../../IO/WaitReadable.html">IO::WaitReadable</a></li>
+        
+          
+          
+          <li><a href="../../../IO/WaitWritable.html">IO::WaitWritable</a></li>
+        
+          
+          
+          <li><a href="../../../Integer.html">Integer</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL.html">OpenSSL</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/ASN1.html">OpenSSL::ASN1</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/ASN1/ASN1Data.html">OpenSSL::ASN1::ASN1Data</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/ASN1/ASN1Error.html">OpenSSL::ASN1::ASN1Error</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/ASN1/Constructive.html">OpenSSL::ASN1::Constructive</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/ASN1/ObjectId.html">OpenSSL::ASN1::ObjectId</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/ASN1/Primitive.html">OpenSSL::ASN1::Primitive</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/BN.html">OpenSSL::BN</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/BNError.html">OpenSSL::BNError</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/Buffering.html">OpenSSL::Buffering</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/Cipher.html">OpenSSL::Cipher</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/Cipher/Cipher.html">OpenSSL::Cipher::Cipher</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/Cipher/CipherError.html">OpenSSL::Cipher::CipherError</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/Config.html">OpenSSL::Config</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/ConfigError.html">OpenSSL::ConfigError</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/Digest.html">OpenSSL::Digest</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/Digest/DigestError.html">OpenSSL::Digest::DigestError</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/Engine.html">OpenSSL::Engine</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/Engine/EngineError.html">OpenSSL::Engine::EngineError</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/ExtConfig.html">OpenSSL::ExtConfig</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/HMAC.html">OpenSSL::HMAC</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/HMACError.html">OpenSSL::HMACError</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/KDF.html">OpenSSL::KDF</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/KDF/KDFError.html">OpenSSL::KDF::KDFError</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/Netscape.html">OpenSSL::Netscape</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/Netscape/SPKI.html">OpenSSL::Netscape::SPKI</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/Netscape/SPKIError.html">OpenSSL::Netscape::SPKIError</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/OCSP.html">OpenSSL::OCSP</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/OCSP/BasicResponse.html">OpenSSL::OCSP::BasicResponse</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/OCSP/CertificateId.html">OpenSSL::OCSP::CertificateId</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/OCSP/OCSPError.html">OpenSSL::OCSP::OCSPError</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/OCSP/Request.html">OpenSSL::OCSP::Request</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/OCSP/Response.html">OpenSSL::OCSP::Response</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/OCSP/SingleResponse.html">OpenSSL::OCSP::SingleResponse</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/OpenSSLError.html">OpenSSL::OpenSSLError</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/PKCS12.html">OpenSSL::PKCS12</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/PKCS12/PKCS12Error.html">OpenSSL::PKCS12::PKCS12Error</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/PKCS5.html">OpenSSL::PKCS5</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/PKCS7.html">OpenSSL::PKCS7</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/PKCS7/PKCS7Error.html">OpenSSL::PKCS7::PKCS7Error</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/PKCS7/RecipientInfo.html">OpenSSL::PKCS7::RecipientInfo</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/PKCS7/SignerInfo.html">OpenSSL::PKCS7::SignerInfo</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/PKey.html">OpenSSL::PKey</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/PKey/DH.html">OpenSSL::PKey::DH</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/PKey/DHError.html">OpenSSL::PKey::DHError</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/PKey/DSA.html">OpenSSL::PKey::DSA</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/PKey/DSAError.html">OpenSSL::PKey::DSAError</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/PKey/EC.html">OpenSSL::PKey::EC</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/PKey/EC/Group.html">OpenSSL::PKey::EC::Group</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/PKey/EC/Group/Error.html">OpenSSL::PKey::EC::Group::Error</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/PKey/EC/Point.html">OpenSSL::PKey::EC::Point</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/PKey/EC/Point/Error.html">OpenSSL::PKey::EC::Point::Error</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/PKey/ECError.html">OpenSSL::PKey::ECError</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/PKey/PKey.html">OpenSSL::PKey::PKey</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/PKey/PKeyError.html">OpenSSL::PKey::PKeyError</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/PKey/RSA.html">OpenSSL::PKey::RSA</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/PKey/RSAError.html">OpenSSL::PKey::RSAError</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/Random.html">OpenSSL::Random</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/Random/RandomError.html">OpenSSL::Random::RandomError</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/SSL.html">OpenSSL::SSL</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/SSL/SSLContext.html">OpenSSL::SSL::SSLContext</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/SSL/SSLError.html">OpenSSL::SSL::SSLError</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/SSL/SSLErrorWaitReadable.html">OpenSSL::SSL::SSLErrorWaitReadable</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/SSL/SSLErrorWaitWritable.html">OpenSSL::SSL::SSLErrorWaitWritable</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/SSL/SSLServer.html">OpenSSL::SSL::SSLServer</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/SSL/SSLSocket.html">OpenSSL::SSL::SSLSocket</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/SSL/Session.html">OpenSSL::SSL::Session</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/SSL/Session/SessionError.html">OpenSSL::SSL::Session::SessionError</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/SSL/SocketForwarder.html">OpenSSL::SSL::SocketForwarder</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/X509.html">OpenSSL::X509</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/X509/Attribute.html">OpenSSL::X509::Attribute</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/X509/AttributeError.html">OpenSSL::X509::AttributeError</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/X509/CRL.html">OpenSSL::X509::CRL</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/X509/CRLError.html">OpenSSL::X509::CRLError</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/X509/Certificate.html">OpenSSL::X509::Certificate</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/X509/CertificateError.html">OpenSSL::X509::CertificateError</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/X509/Extension.html">OpenSSL::X509::Extension</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/X509/ExtensionError.html">OpenSSL::X509::ExtensionError</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/X509/ExtensionFactory.html">OpenSSL::X509::ExtensionFactory</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/X509/Name.html">OpenSSL::X509::Name</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/X509/Name/RFC2253DN.html">OpenSSL::X509::Name::RFC2253DN</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/X509/NameError.html">OpenSSL::X509::NameError</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/X509/Request.html">OpenSSL::X509::Request</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/X509/RequestError.html">OpenSSL::X509::RequestError</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/X509/Revoked.html">OpenSSL::X509::Revoked</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/X509/RevokedError.html">OpenSSL::X509::RevokedError</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/X509/Store.html">OpenSSL::X509::Store</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/X509/StoreContext.html">OpenSSL::X509::StoreContext</a></li>
+        
+          
+          
+          <li><a href="../../../OpenSSL/X509/StoreError.html">OpenSSL::X509::StoreError</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">OpenSSL::PKey::EC::Point</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+      <!-- Attributes -->
+      <div id="attribute-method-details" class="method-section section">
+        <h3 class="section-header">Attributes</h3>
+
+        
+        <div id="group-attribute-method" class="method-detail">
+          <a name="group"></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">group</span><span
+              class="attribute-access-type">[R]</span>
+          </div>
+
+          <div class="method-description 245">
+          
+          
+          
+          </div>
+        </div>
+        
+      </div><!-- attribute-method-details -->
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">OpenSSL::PKey::EC::Point.new(point)</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">OpenSSL::PKey::EC::Point.new(group [, encoded_point])</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Creates a new instance of <a href="Point.html"><code>OpenSSL::PKey::EC::Point</code></a>. If the only argument is an instance of <a href="Point.html"><code>EC::Point</code></a>, a copy is returned. Otherwise, creates a point that belongs to <em>group</em>.</p>
+
+<p><em>encoded_point</em> is the octet string representation of the point. This must be either a String or an <a href="../../BN.html"><code>OpenSSL::BN</code></a>.</p>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE ossl_ec_point_initialize(int argc, VALUE *argv, VALUE self)
+{
+    EC_POINT *point;
+    VALUE group_v, arg2;
+    const EC_GROUP *group;
+
+    TypedData_Get_Struct(self, EC_POINT, &amp;ossl_ec_point_type, point);
+    if (point)
+        rb_raise(eEC_POINT, &quot;EC_POINT already initialized&quot;);
+
+    rb_scan_args(argc, argv, &quot;11&quot;, &amp;group_v, &amp;arg2);
+    if (rb_obj_is_kind_of(group_v, cEC_POINT)) {
+        if (argc != 1)
+            rb_raise(rb_eArgError, &quot;invalid second argument&quot;);
+        return ossl_ec_point_initialize_copy(self, group_v);
+    }
+
+    GetECGroup(group_v, group);
+    if (argc == 1) {
+        point = EC_POINT_new(group);
+        if (!point)
+            ossl_raise(eEC_POINT, &quot;EC_POINT_new&quot;);
+    }
+    else {
+        if (rb_obj_is_kind_of(arg2, cBN)) {
+            point = EC_POINT_bn2point(group, GetBNPtr(arg2), NULL, ossl_bn_ctx);
+            if (!point)
+                ossl_raise(eEC_POINT, &quot;EC_POINT_bn2point&quot;);
+        }
+        else {
+            StringValue(arg2);
+            point = EC_POINT_new(group);
+            if (!point)
+                ossl_raise(eEC_POINT, &quot;EC_POINT_new&quot;);
+            if (!EC_POINT_oct2point(group, point,
+                                    (unsigned char *)RSTRING_PTR(arg2),
+                                    RSTRING_LEN(arg2), ossl_bn_ctx)) {
+                EC_POINT_free(point);
+                ossl_raise(eEC_POINT, &quot;EC_POINT_oct2point&quot;);
+            }
+        }
+    }
+
+    RTYPEDDATA_DATA(self) = point;
+    rb_ivar_set(self, id_i_group, group_v);
+
+    return self;
+}
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="3D-3D-method" class="method-detail method-alias">
+          <a name="method-i-3D-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">==</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="Point.html#method-i-eql-3F">eql?</a>
+          </div>
+          
+        </div><!-- 3D-3D-method -->
+      
+        <div id="eql-3F-method" class="method-detail ">
+          <a name="method-i-eql-3F"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">eql?(point2) => true | false</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">point1 == point2 => true | false</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="eql-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE ossl_ec_point_eql(VALUE a, VALUE b)
+{
+    EC_POINT *point1, *point2;
+    VALUE group_v1 = rb_attr_get(a, id_i_group);
+    VALUE group_v2 = rb_attr_get(b, id_i_group);
+    const EC_GROUP *group;
+
+    if (ossl_ec_group_eql(group_v1, group_v2) == Qfalse)
+        return Qfalse;
+
+    GetECPoint(a, point1);
+    GetECPoint(b, point2);
+    GetECGroup(group_v1, group);
+
+    if (EC_POINT_cmp(group, point1, point2, ossl_bn_ctx) == 1)
+        return Qfalse;
+
+    return Qtrue;
+}
+            </pre> 
+            </div><!-- eql-3F-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="Point.html#method-i-3D-3D">==</a>
+          </div>
+          
+
+          
+        </div><!-- eql-3F-method -->
+      
+        <div id="infinity-3F-method" class="method-detail ">
+          <a name="method-i-infinity-3F"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">infinity? => true | false</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="infinity-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE ossl_ec_point_is_at_infinity(VALUE self)
+{
+    EC_POINT *point;
+    const EC_GROUP *group;
+
+    GetECPoint(self, point);
+    GetECPointGroup(self, group);
+
+    switch (EC_POINT_is_at_infinity(group, point)) {
+    case 1: return Qtrue;
+    case 0: return Qfalse;
+    default: ossl_raise(cEC_POINT, &quot;EC_POINT_is_at_infinity&quot;);
+    }
+
+    UNREACHABLE;
+}
+            </pre> 
+            </div><!-- infinity-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- infinity-3F-method -->
+      
+        <div id="initialize_copy-method" class="method-detail ">
+          <a name="method-i-initialize_copy"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">initialize_copy</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="initialize_copy-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_ec_point_initialize_copy(VALUE self, VALUE other)
+{
+    EC_POINT *point, *point_new;
+    EC_GROUP *group;
+    VALUE group_v;
+
+    TypedData_Get_Struct(self, EC_POINT, &amp;ossl_ec_point_type, point_new);
+    if (point_new)
+        ossl_raise(eEC_POINT, &quot;EC::Point already initialized&quot;);
+    GetECPoint(other, point);
+
+    group_v = rb_obj_dup(rb_attr_get(other, id_i_group));
+    GetECGroup(group_v, group);
+
+    point_new = EC_POINT_dup(point, group);
+    if (!point_new)
+        ossl_raise(eEC_POINT, &quot;EC_POINT_dup&quot;);
+    RTYPEDDATA_DATA(self) = point_new;
+    rb_ivar_set(self, id_i_group, group_v);
+
+    return self;
+}
+            </pre> 
+            </div><!-- initialize_copy-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- initialize_copy-method -->
+      
+        <div id="invert-21-method" class="method-detail ">
+          <a name="method-i-invert-21"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">invert! => self</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="invert-21-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE ossl_ec_point_invert(VALUE self)
+{
+    EC_POINT *point;
+    const EC_GROUP *group;
+
+    GetECPoint(self, point);
+    GetECPointGroup(self, group);
+
+    if (EC_POINT_invert(group, point, ossl_bn_ctx) != 1)
+        ossl_raise(cEC_POINT, &quot;EC_POINT_invert&quot;);
+
+    return self;
+}
+            </pre> 
+            </div><!-- invert-21-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- invert-21-method -->
+      
+        <div id="make_affine-21-method" class="method-detail ">
+          <a name="method-i-make_affine-21"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">make_affine! => self</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="make_affine-21-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE ossl_ec_point_make_affine(VALUE self)
+{
+    EC_POINT *point;
+    const EC_GROUP *group;
+
+    GetECPoint(self, point);
+    GetECPointGroup(self, group);
+
+    if (EC_POINT_make_affine(group, point, ossl_bn_ctx) != 1)
+        ossl_raise(cEC_POINT, &quot;EC_POINT_make_affine&quot;);
+
+    return self;
+}
+            </pre> 
+            </div><!-- make_affine-21-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- make_affine-21-method -->
+      
+        <div id="mul-method" class="method-detail ">
+          <a name="method-i-mul"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">mul(bn1 [, bn2]) => point</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">mul(bns, points [, bn2]) => point</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Performs elliptic curve point multiplication.</p>
+
+<p>The first form calculates <code>bn1 * point + bn2 * G</code>, where <code>G</code> is the generator of the group of <em>point</em>. <em>bn2</em> may be omitted, and in that case, the result is just <code>bn1 * point</code>.</p>
+
+<p>The second form calculates <code>bns[0] * point + bns[1] * points[0] + ... + bns[-1] * points[-1] + bn2 * G</code>. <em>bn2</em> may be omitted. <em>bns</em> must be an array of <a href="../../BN.html"><code>OpenSSL::BN</code></a>. <em>points</em> must be an array of <a href="Point.html"><code>OpenSSL::PKey::EC::Point</code></a>. Please note that <code>points[0]</code> is not multiplied by <code>bns[0]</code>, but <code>bns[1]</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="mul-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE ossl_ec_point_mul(int argc, VALUE *argv, VALUE self)
+{
+    EC_POINT *point_self, *point_result;
+    const EC_GROUP *group;
+    VALUE group_v = rb_attr_get(self, id_i_group);
+    VALUE arg1, arg2, arg3, result;
+    const BIGNUM *bn_g = NULL;
+
+    GetECPoint(self, point_self);
+    GetECGroup(group_v, group);
+
+    result = rb_obj_alloc(cEC_POINT);
+    ossl_ec_point_initialize(1, &amp;group_v, result);
+    GetECPoint(result, point_result);
+
+    rb_scan_args(argc, argv, &quot;12&quot;, &amp;arg1, &amp;arg2, &amp;arg3);
+    if (!RB_TYPE_P(arg1, T_ARRAY)) {
+        BIGNUM *bn = GetBNPtr(arg1);
+
+        if (!NIL_P(arg2))
+            bn_g = GetBNPtr(arg2);
+        if (EC_POINT_mul(group, point_result, bn_g, point_self, bn, ossl_bn_ctx) != 1)
+            ossl_raise(eEC_POINT, NULL);
+    } else {
+        /*
+         * bignums | arg1[0] | arg1[1] | arg1[2] | ...
+         * points  | self    | arg2[0] | arg2[1] | ...
+         */
+        long i, num;
+        VALUE bns_tmp, tmp_p, tmp_b;
+        const EC_POINT **points;
+        const BIGNUM **bignums;
+
+        Check_Type(arg1, T_ARRAY);
+        Check_Type(arg2, T_ARRAY);
+        if (RARRAY_LEN(arg1) != RARRAY_LEN(arg2) + 1) /* arg2 must be 1 larger */
+            ossl_raise(rb_eArgError, &quot;bns must be 1 longer than points; see the documentation&quot;);
+
+        num = RARRAY_LEN(arg1);
+        bns_tmp = rb_ary_tmp_new(num);
+        bignums = ALLOCV_N(const BIGNUM *, tmp_b, num);
+        for (i = 0; i &lt; num; i++) {
+            VALUE item = RARRAY_AREF(arg1, i);
+            bignums[i] = GetBNPtr(item);
+            rb_ary_push(bns_tmp, item);
+        }
+
+        points = ALLOCV_N(const EC_POINT *, tmp_p, num);
+        points[0] = point_self; /* self */
+        for (i = 0; i &lt; num - 1; i++)
+            GetECPoint(RARRAY_AREF(arg2, i), points[i + 1]);
+
+        if (!NIL_P(arg3))
+            bn_g = GetBNPtr(arg3);
+
+        if (EC_POINTs_mul(group, point_result, bn_g, num, points, bignums, ossl_bn_ctx) != 1) {
+            ALLOCV_END(tmp_b);
+            ALLOCV_END(tmp_p);
+            ossl_raise(eEC_POINT, NULL);
+        }
+
+        ALLOCV_END(tmp_b);
+        ALLOCV_END(tmp_p);
+    }
+
+    return result;
+}
+            </pre> 
+            </div><!-- mul-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- mul-method -->
+      
+        <div id="on_curve-3F-method" class="method-detail ">
+          <a name="method-i-on_curve-3F"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">on_curve? => true | false</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="on_curve-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE ossl_ec_point_is_on_curve(VALUE self)
+{
+    EC_POINT *point;
+    const EC_GROUP *group;
+
+    GetECPoint(self, point);
+    GetECPointGroup(self, group);
+
+    switch (EC_POINT_is_on_curve(group, point, ossl_bn_ctx)) {
+    case 1: return Qtrue;
+    case 0: return Qfalse;
+    default: ossl_raise(cEC_POINT, &quot;EC_POINT_is_on_curve&quot;);
+    }
+
+    UNREACHABLE;
+}
+            </pre> 
+            </div><!-- on_curve-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- on_curve-3F-method -->
+      
+        <div id="set_to_infinity-21-method" class="method-detail ">
+          <a name="method-i-set_to_infinity-21"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">set_to_infinity! => self</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="set_to_infinity-21-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE ossl_ec_point_set_to_infinity(VALUE self)
+{
+    EC_POINT *point;
+    const EC_GROUP *group;
+
+    GetECPoint(self, point);
+    GetECPointGroup(self, group);
+
+    if (EC_POINT_set_to_infinity(group, point) != 1)
+        ossl_raise(cEC_POINT, &quot;EC_POINT_set_to_infinity&quot;);
+
+    return self;
+}
+            </pre> 
+            </div><!-- set_to_infinity-21-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- set_to_infinity-21-method -->
+      
+        <div id="to_bn-method" class="method-detail ">
+          <a name="method-i-to_bn"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">to_bn([conversion_form]) &rarr; OpenSSL::BN</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns the octet string representation of the <a href="../EC.html"><code>EC</code></a> point as an instance of <a href="../../BN.html"><code>OpenSSL::BN</code></a>.</p>
+
+<p>If <em>conversion_form</em> is not given, the <em>point_conversion_form</em> attribute set to the group is used.</p>
+
+<p>See <a href="Point.html#method-i-to_octet_string"><code>to_octet_string</code></a> for more information.</p>
+            
+
+            
+            <div class="method-source-code" id="to_bn-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File openssl/lib/openssl/pkey.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_bn</span>(<span class="ruby-identifier">conversion_form</span> = <span class="ruby-identifier">group</span>.<span class="ruby-identifier">point_conversion_form</span>)
+  <span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">BN</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">to_octet_string</span>(<span class="ruby-identifier">conversion_form</span>), <span class="ruby-value">2</span>)
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- to_bn-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_bn-method -->
+      
+        <div id="to_octet_string-method" class="method-detail ">
+          <a name="method-i-to_octet_string"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">to_octet_string(conversion_form) &rarr; String</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns the octet string representation of the elliptic curve point.</p>
+
+<p><em>conversion_form</em> specifies how the point is converted. Possible values are:</p>
+<ul><li>
+<p><code>:compressed</code></p>
+</li><li>
+<p><code>:uncompressed</code></p>
+</li><li>
+<p><code>:hybrid</code></p>
+</li></ul>
+            
+
+            
+            <div class="method-source-code" id="to_octet_string-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+ossl_ec_point_to_octet_string(VALUE self, VALUE conversion_form)
+{
+    EC_POINT *point;
+    const EC_GROUP *group;
+    point_conversion_form_t form;
+    VALUE str;
+    size_t len;
+
+    GetECPoint(self, point);
+    GetECPointGroup(self, group);
+    form = parse_point_conversion_form_symbol(conversion_form);
+
+    len = EC_POINT_point2oct(group, point, form, NULL, 0, ossl_bn_ctx);
+    if (!len)
+        ossl_raise(eEC_POINT, &quot;EC_POINT_point2oct&quot;);
+    str = rb_str_new(NULL, (long)len);
+    if (!EC_POINT_point2oct(group, point, form,
+                            (unsigned char *)RSTRING_PTR(str), len,
+                            ossl_bn_ctx))
+        ossl_raise(eEC_POINT, &quot;EC_POINT_point2oct&quot;);
+    return str;
+}
+            </pre> 
+            </div><!-- to_octet_string-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_octet_string-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Point_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Point_versioned").load("/associated/2.7.4/Point.ihtml");</script> <div id='tx_Point' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Point").load("/associated/Point.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, an erratic source of art, music, and technology.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Point.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Point.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

@@ -1,0 +1,1246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : Gem::Resolver::IndexSet  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:30:48 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '../..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '../..'   asset_rel_prefix = '../..'  --> 
+  <title>Class: Gem::Resolver::IndexSet (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="../..css/obf.css"  -->
+  <link rel="stylesheet" href="../../css/inuit.css" >
+  <link rel="stylesheet" href="../../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../../css/carbon17.css" type="text/css" >
+
+
+  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>rubygems/resolver/index_set.rb</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="Set.html">Gem::Resolver::Set</a></p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-find_all">#find_all</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../../Gem/AvailableSet.html">Gem::AvailableSet</a></li>
+        
+          
+          
+          <li><a href="../../Gem/BasicSpecification.html">Gem::BasicSpecification</a></li>
+        
+          
+          
+          <li><a href="../../Gem/BundlerVersionFinder.html">Gem::BundlerVersionFinder</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Command.html">Gem::Command</a></li>
+        
+          
+          
+          <li><a href="../../Gem/CommandLineError.html">Gem::CommandLineError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/CommandManager.html">Gem::CommandManager</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands.html">Gem::Commands</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/BuildCommand.html">Gem::Commands::BuildCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/CertCommand.html">Gem::Commands::CertCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/CheckCommand.html">Gem::Commands::CheckCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/CleanupCommand.html">Gem::Commands::CleanupCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/ContentsCommand.html">Gem::Commands::ContentsCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/DependencyCommand.html">Gem::Commands::DependencyCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/EnvironmentCommand.html">Gem::Commands::EnvironmentCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/FetchCommand.html">Gem::Commands::FetchCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/GenerateIndexCommand.html">Gem::Commands::GenerateIndexCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/HelpCommand.html">Gem::Commands::HelpCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/InfoCommand.html">Gem::Commands::InfoCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/InstallCommand.html">Gem::Commands::InstallCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/ListCommand.html">Gem::Commands::ListCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/LockCommand.html">Gem::Commands::LockCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/MirrorCommand.html">Gem::Commands::MirrorCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/OpenCommand.html">Gem::Commands::OpenCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/OutdatedCommand.html">Gem::Commands::OutdatedCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/OwnerCommand.html">Gem::Commands::OwnerCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/PristineCommand.html">Gem::Commands::PristineCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/PushCommand.html">Gem::Commands::PushCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/QueryCommand.html">Gem::Commands::QueryCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/RdocCommand.html">Gem::Commands::RdocCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/SearchCommand.html">Gem::Commands::SearchCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/ServerCommand.html">Gem::Commands::ServerCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/SetupCommand.html">Gem::Commands::SetupCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/SetupCommand/MakeDirs.html">Gem::Commands::SetupCommand::MakeDirs</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/SigninCommand.html">Gem::Commands::SigninCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/SignoutCommand.html">Gem::Commands::SignoutCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/SourcesCommand.html">Gem::Commands::SourcesCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/SpecificationCommand.html">Gem::Commands::SpecificationCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/StaleCommand.html">Gem::Commands::StaleCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/UninstallCommand.html">Gem::Commands::UninstallCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/UnpackCommand.html">Gem::Commands::UnpackCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/UpdateCommand.html">Gem::Commands::UpdateCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/WhichCommand.html">Gem::Commands::WhichCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Commands/YankCommand.html">Gem::Commands::YankCommand</a></li>
+        
+          
+          
+          <li><a href="../../Gem/ConfigFile.html">Gem::ConfigFile</a></li>
+        
+          
+          
+          <li><a href="../../Gem/ConflictError.html">Gem::ConflictError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/ConsoleUI.html">Gem::ConsoleUI</a></li>
+        
+          
+          
+          <li><a href="../../Gem/DefaultUserInteraction.html">Gem::DefaultUserInteraction</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Dependency.html">Gem::Dependency</a></li>
+        
+          
+          
+          <li><a href="../../Gem/DependencyError.html">Gem::DependencyError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/DependencyInstaller.html">Gem::DependencyInstaller</a></li>
+        
+          
+          
+          <li><a href="../../Gem/DependencyList.html">Gem::DependencyList</a></li>
+        
+          
+          
+          <li><a href="../../Gem/DependencyRemovalException.html">Gem::DependencyRemovalException</a></li>
+        
+          
+          
+          <li><a href="../../Gem/DependencyResolutionError.html">Gem::DependencyResolutionError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Deprecate.html">Gem::Deprecate</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Doctor.html">Gem::Doctor</a></li>
+        
+          
+          
+          <li><a href="../../Gem/DocumentError.html">Gem::DocumentError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/EndOfYAMLException.html">Gem::EndOfYAMLException</a></li>
+        
+          
+          
+          <li><a href="../../Gem/ErrorReason.html">Gem::ErrorReason</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Exception.html">Gem::Exception</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Ext.html">Gem::Ext</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Ext/BuildError.html">Gem::Ext::BuildError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Ext/Builder.html">Gem::Ext::Builder</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Ext/CmakeBuilder.html">Gem::Ext::CmakeBuilder</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Ext/ConfigureBuilder.html">Gem::Ext::ConfigureBuilder</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Ext/ExtConfBuilder.html">Gem::Ext::ExtConfBuilder</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Ext/RakeBuilder.html">Gem::Ext::RakeBuilder</a></li>
+        
+          
+          
+          <li><a href="../../Gem/FakeFetcher.html">Gem::FakeFetcher</a></li>
+        
+          
+          
+          <li><a href="../../Gem/FilePermissionError.html">Gem::FilePermissionError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/FormatException.html">Gem::FormatException</a></li>
+        
+          
+          
+          <li><a href="../../Gem/GemNotFoundException.html">Gem::GemNotFoundException</a></li>
+        
+          
+          
+          <li><a href="../../Gem/GemNotInHomeException.html">Gem::GemNotInHomeException</a></li>
+        
+          
+          
+          <li><a href="../../Gem/GemRunner.html">Gem::GemRunner</a></li>
+        
+          
+          
+          <li><a href="../../Gem/GemcutterUtilities.html">Gem::GemcutterUtilities</a></li>
+        
+          
+          
+          <li><a href="../../Gem/ImpossibleDependenciesError.html">Gem::ImpossibleDependenciesError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Indexer.html">Gem::Indexer</a></li>
+        
+          
+          
+          <li><a href="../../Gem/InstallError.html">Gem::InstallError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/InstallUpdateOptions.html">Gem::InstallUpdateOptions</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Installer.html">Gem::Installer</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Installer/FakePackage.html">Gem::Installer::FakePackage</a></li>
+        
+          
+          
+          <li><a href="../../Gem/InstallerTestCase.html">Gem::InstallerTestCase</a></li>
+        
+          
+          
+          <li><a href="../../Gem/InvalidSpecificationException.html">Gem::InvalidSpecificationException</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Licenses.html">Gem::Licenses</a></li>
+        
+          
+          
+          <li><a href="../../Gem/List.html">Gem::List</a></li>
+        
+          
+          
+          <li><a href="../../Gem/LoadError.html">Gem::LoadError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/LocalRemoteOptions.html">Gem::LocalRemoteOptions</a></li>
+        
+          
+          
+          <li><a href="../../Gem/MissingSpecError.html">Gem::MissingSpecError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/MissingSpecVersionError.html">Gem::MissingSpecVersionError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/MockGemUi.html">Gem::MockGemUi</a></li>
+        
+          
+          
+          <li><a href="../../Gem/MockGemUi/InputEOFError.html">Gem::MockGemUi::InputEOFError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/MockGemUi/SystemExitException.html">Gem::MockGemUi::SystemExitException</a></li>
+        
+          
+          
+          <li><a href="../../Gem/MockGemUi/TTY.html">Gem::MockGemUi::TTY</a></li>
+        
+          
+          
+          <li><a href="../../Gem/MockGemUi/TermError.html">Gem::MockGemUi::TermError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/NameTuple.html">Gem::NameTuple</a></li>
+        
+          
+          
+          <li><a href="../../Gem/NoAliasYAMLTree.html">Gem::NoAliasYAMLTree</a></li>
+        
+          
+          
+          <li><a href="../../Gem/OperationNotSupportedError.html">Gem::OperationNotSupportedError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Package/DigestIO.html">Gem::Package::DigestIO</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Package/Error.html">Gem::Package::Error</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Package/FormatError.html">Gem::Package::FormatError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Package/NonSeekableIO.html">Gem::Package::NonSeekableIO</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Package/Old.html">Gem::Package::Old</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Package/PathError.html">Gem::Package::PathError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Package/TarHeader.html">Gem::Package::TarHeader</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Package/TarInvalidError.html">Gem::Package::TarInvalidError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Package/TarReader.html">Gem::Package::TarReader</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Package/TarReader/Entry.html">Gem::Package::TarReader::Entry</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Package/TarReader/UnexpectedEOF.html">Gem::Package::TarReader::UnexpectedEOF</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Package/TarTestCase.html">Gem::Package::TarTestCase</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Package/TarWriter.html">Gem::Package::TarWriter</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Package/TarWriter/BoundedStream.html">Gem::Package::TarWriter::BoundedStream</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Package/TarWriter/FileOverflow.html">Gem::Package::TarWriter::FileOverflow</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Package/TarWriter/RestrictedStream.html">Gem::Package::TarWriter::RestrictedStream</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Package/TooLongFileName.html">Gem::Package::TooLongFileName</a></li>
+        
+          
+          
+          <li><a href="../../Gem/PackageTask.html">Gem::PackageTask</a></li>
+        
+          
+          
+          <li><a href="../../Gem/PathSupport.html">Gem::PathSupport</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Platform.html">Gem::Platform</a></li>
+        
+          
+          
+          <li><a href="../../Gem/PlatformMismatch.html">Gem::PlatformMismatch</a></li>
+        
+          
+          
+          <li><a href="../../Gem/RemoteError.html">Gem::RemoteError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/RemoteFetcher.html">Gem::RemoteFetcher</a></li>
+        
+          
+          
+          <li><a href="../../Gem/RemoteFetcher/FetchError.html">Gem::RemoteFetcher::FetchError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/RemoteFetcher/UnknownHostError.html">Gem::RemoteFetcher::UnknownHostError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/RemoteInstallationCancelled.html">Gem::RemoteInstallationCancelled</a></li>
+        
+          
+          
+          <li><a href="../../Gem/RemoteInstallationSkipped.html">Gem::RemoteInstallationSkipped</a></li>
+        
+          
+          
+          <li><a href="../../Gem/RemoteSourceException.html">Gem::RemoteSourceException</a></li>
+        
+          
+          
+          <li><a href="../../Gem/RequestSet.html">Gem::RequestSet</a></li>
+        
+          
+          
+          <li><a href="../../Gem/RequestSet/GemDependencyAPI.html">Gem::RequestSet::GemDependencyAPI</a></li>
+        
+          
+          
+          <li><a href="../../Gem/RequestSet/Lockfile.html">Gem::RequestSet::Lockfile</a></li>
+        
+          
+          
+          <li><a href="../../Gem/RequestSet/Lockfile/ParseError.html">Gem::RequestSet::Lockfile::ParseError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/RequestSet/Lockfile/Parser.html">Gem::RequestSet::Lockfile::Parser</a></li>
+        
+          
+          
+          <li><a href="../../Gem/RequestSet/Lockfile/Tokenizer.html">Gem::RequestSet::Lockfile::Tokenizer</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Requirement.html">Gem::Requirement</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Requirement/BadRequirementError.html">Gem::Requirement::BadRequirementError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver.html">Gem::Resolver</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/APISet.html">Gem::Resolver::APISet</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/APISpecification.html">Gem::Resolver::APISpecification</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/ActivationRequest.html">Gem::Resolver::ActivationRequest</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/BestSet.html">Gem::Resolver::BestSet</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/ComposedSet.html">Gem::Resolver::ComposedSet</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Conflict.html">Gem::Resolver::Conflict</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/CurrentSet.html">Gem::Resolver::CurrentSet</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/DependencyRequest.html">Gem::Resolver::DependencyRequest</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/GitSet.html">Gem::Resolver::GitSet</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/GitSpecification.html">Gem::Resolver::GitSpecification</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/IndexSet.html">Gem::Resolver::IndexSet</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/IndexSpecification.html">Gem::Resolver::IndexSpecification</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/InstalledSpecification.html">Gem::Resolver::InstalledSpecification</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/InstallerSet.html">Gem::Resolver::InstallerSet</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/LocalSpecification.html">Gem::Resolver::LocalSpecification</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/LockSet.html">Gem::Resolver::LockSet</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/LockSpecification.html">Gem::Resolver::LockSpecification</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Molinillo.html">Gem::Resolver::Molinillo</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Molinillo/CircularDependencyError.html">Gem::Resolver::Molinillo::CircularDependencyError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Molinillo/Delegates.html">Gem::Resolver::Molinillo::Delegates</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Molinillo/Delegates/ResolutionState.html">Gem::Resolver::Molinillo::Delegates::ResolutionState</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Molinillo/Delegates/SpecificationProvider.html">Gem::Resolver::Molinillo::Delegates::SpecificationProvider</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Molinillo/DependencyGraph.html">Gem::Resolver::Molinillo::DependencyGraph</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Molinillo/DependencyGraph/Action.html">Gem::Resolver::Molinillo::DependencyGraph::Action</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Molinillo/DependencyGraph/AddEdgeNoCircular.html">Gem::Resolver::Molinillo::DependencyGraph::AddEdgeNoCircular</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Molinillo/DependencyGraph/DeleteEdge.html">Gem::Resolver::Molinillo::DependencyGraph::DeleteEdge</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Molinillo/DependencyGraph/DetachVertexNamed.html">Gem::Resolver::Molinillo::DependencyGraph::DetachVertexNamed</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Molinillo/DependencyGraph/Log.html">Gem::Resolver::Molinillo::DependencyGraph::Log</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Molinillo/DependencyGraph/Tag.html">Gem::Resolver::Molinillo::DependencyGraph::Tag</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Molinillo/DependencyGraph/Vertex.html">Gem::Resolver::Molinillo::DependencyGraph::Vertex</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Molinillo/DependencyState.html">Gem::Resolver::Molinillo::DependencyState</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Molinillo/NoSuchDependencyError.html">Gem::Resolver::Molinillo::NoSuchDependencyError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Molinillo/PossibilityState.html">Gem::Resolver::Molinillo::PossibilityState</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Molinillo/ResolutionState.html">Gem::Resolver::Molinillo::ResolutionState</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Molinillo/Resolver.html">Gem::Resolver::Molinillo::Resolver</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Molinillo/Resolver/Resolution.html">Gem::Resolver::Molinillo::Resolver::Resolution</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Molinillo/ResolverError.html">Gem::Resolver::Molinillo::ResolverError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Molinillo/SpecificationProvider.html">Gem::Resolver::Molinillo::SpecificationProvider</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Molinillo/UI.html">Gem::Resolver::Molinillo::UI</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Molinillo/VersionConflict.html">Gem::Resolver::Molinillo::VersionConflict</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/RequirementList.html">Gem::Resolver::RequirementList</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Set.html">Gem::Resolver::Set</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/SourceSet.html">Gem::Resolver::SourceSet</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/SpecSpecification.html">Gem::Resolver::SpecSpecification</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Specification.html">Gem::Resolver::Specification</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/Stats.html">Gem::Resolver::Stats</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/VendorSet.html">Gem::Resolver::VendorSet</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Resolver/VendorSpecification.html">Gem::Resolver::VendorSpecification</a></li>
+        
+          
+          
+          <li><a href="../../Gem/RubyVersionMismatch.html">Gem::RubyVersionMismatch</a></li>
+        
+          
+          
+          <li><a href="../../Gem/RuntimeRequirementNotMetError.html">Gem::RuntimeRequirementNotMetError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/S3URISigner.html">Gem::S3URISigner</a></li>
+        
+          
+          
+          <li><a href="../../Gem/S3URISigner/ConfigurationError.html">Gem::S3URISigner::ConfigurationError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/S3URISigner/InstanceProfileError.html">Gem::S3URISigner::InstanceProfileError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/SafeYAML.html">Gem::SafeYAML</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Security.html">Gem::Security</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Security/Exception.html">Gem::Security::Exception</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Security/Policy.html">Gem::Security::Policy</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Security/Signer.html">Gem::Security::Signer</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Security/TrustDir.html">Gem::Security::TrustDir</a></li>
+        
+          
+          
+          <li><a href="../../Gem/SecurityOption.html">Gem::SecurityOption</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Server.html">Gem::Server</a></li>
+        
+          
+          
+          <li><a href="../../Gem/SilentUI.html">Gem::SilentUI</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Source.html">Gem::Source</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Source/Git.html">Gem::Source::Git</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Source/Installed.html">Gem::Source::Installed</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Source/Local.html">Gem::Source::Local</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Source/Lock.html">Gem::Source::Lock</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Source/SpecificFile.html">Gem::Source::SpecificFile</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Source/Vendor.html">Gem::Source::Vendor</a></li>
+        
+          
+          
+          <li><a href="../../Gem/SourceFetchProblem.html">Gem::SourceFetchProblem</a></li>
+        
+          
+          
+          <li><a href="../../Gem/SourceList.html">Gem::SourceList</a></li>
+        
+          
+          
+          <li><a href="../../Gem/SpecFetcher.html">Gem::SpecFetcher</a></li>
+        
+          
+          
+          <li><a href="../../Gem/SpecificGemNotFoundException.html">Gem::SpecificGemNotFoundException</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Specification.html">Gem::Specification</a></li>
+        
+          
+          
+          <li><a href="../../Gem/SpecificationPolicy.html">Gem::SpecificationPolicy</a></li>
+        
+          
+          
+          <li><a href="../../Gem/StreamUI.html">Gem::StreamUI</a></li>
+        
+          
+          
+          <li><a href="../../Gem/StreamUI/SilentDownloadReporter.html">Gem::StreamUI::SilentDownloadReporter</a></li>
+        
+          
+          
+          <li><a href="../../Gem/StreamUI/SilentProgressReporter.html">Gem::StreamUI::SilentProgressReporter</a></li>
+        
+          
+          
+          <li><a href="../../Gem/StreamUI/SimpleProgressReporter.html">Gem::StreamUI::SimpleProgressReporter</a></li>
+        
+          
+          
+          <li><a href="../../Gem/StreamUI/ThreadedDownloadReporter.html">Gem::StreamUI::ThreadedDownloadReporter</a></li>
+        
+          
+          
+          <li><a href="../../Gem/StreamUI/VerboseProgressReporter.html">Gem::StreamUI::VerboseProgressReporter</a></li>
+        
+          
+          
+          <li><a href="../../Gem/StubSpecification.html">Gem::StubSpecification</a></li>
+        
+          
+          
+          <li><a href="../../Gem/SystemExitException.html">Gem::SystemExitException</a></li>
+        
+          
+          
+          <li><a href="../../Gem/TestCase.html">Gem::TestCase</a></li>
+        
+          
+          
+          <li><a href="../../Gem/TestCase/SpecFetcherSetup.html">Gem::TestCase::SpecFetcherSetup</a></li>
+        
+          
+          
+          <li><a href="../../Gem/TestCase/StaticSet.html">Gem::TestCase::StaticSet</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Text.html">Gem::Text</a></li>
+        
+          
+          
+          <li><a href="../../Gem/UninstallError.html">Gem::UninstallError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Uninstaller.html">Gem::Uninstaller</a></li>
+        
+          
+          
+          <li><a href="../../Gem/UnsatisfiableDependencyError.html">Gem::UnsatisfiableDependencyError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/UriFormatter.html">Gem::UriFormatter</a></li>
+        
+          
+          
+          <li><a href="../../Gem/UriParser.html">Gem::UriParser</a></li>
+        
+          
+          
+          <li><a href="../../Gem/UriParsing.html">Gem::UriParsing</a></li>
+        
+          
+          
+          <li><a href="../../Gem/UserInteraction.html">Gem::UserInteraction</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Util.html">Gem::Util</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Validator.html">Gem::Validator</a></li>
+        
+          
+          
+          <li><a href="../../Gem/VerificationError.html">Gem::VerificationError</a></li>
+        
+          
+          
+          <li><a href="../../Gem/Version.html">Gem::Version</a></li>
+        
+          
+          
+          <li><a href="../../Gem/VersionOption.html">Gem::VersionOption</a></li>
+        
+          
+          
+          <li><a href="../../Kernel.html">Kernel</a></li>
+        
+          
+          
+          <li><a href="../../Object.html">Object</a></li>
+        
+          
+          
+          <li><a href="../../TempIO.html">TempIO</a></li>
+        
+          
+          
+          <li><a href="../../YAML/Syck.html">YAML::Syck</a></li>
+        
+          
+          
+          <li><a href="../../YAML/Syck.html">YAML::Syck</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">Gem::Resolver::IndexSet</h1>
+
+    <div id="description" class="description">
+      
+<p>The global rubygems pool represented via the traditional source index.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="find_all-method" class="method-detail ">
+          <a name="method-i-find_all"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">find_all</span><span
+              class="method-args">(req)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>Return an array of IndexSpecification objects matching DependencyRequest <code>req</code>.</p>
+            
+
+            
+            <div class="method-source-code" id="find_all-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File rubygems/resolver/index_set.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">find_all</span>(<span class="ruby-identifier">req</span>)
+  <span class="ruby-identifier">res</span> = []
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">res</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@remote</span>
+
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">req</span>.<span class="ruby-identifier">dependency</span>.<span class="ruby-identifier">name</span>
+
+  <span class="ruby-ivar">@all</span>[<span class="ruby-identifier">name</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">uri</span>, <span class="ruby-identifier">n</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">req</span>.<span class="ruby-identifier">match?</span> <span class="ruby-identifier">n</span>, <span class="ruby-ivar">@prerelease</span>
+      <span class="ruby-identifier">res</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Resolver</span><span class="ruby-operator">::</span><span class="ruby-constant">IndexSpecification</span>.<span class="ruby-identifier">new</span>(
+        <span class="ruby-keyword">self</span>, <span class="ruby-identifier">n</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">n</span>.<span class="ruby-identifier">version</span>, <span class="ruby-identifier">uri</span>, <span class="ruby-identifier">n</span>.<span class="ruby-identifier">platform</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">res</span>
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- find_all-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- find_all-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_IndexSet_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_IndexSet_versioned").load("/associated/2.7.4/IndexSet.ihtml");</script> <div id='tx_IndexSet' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_IndexSet").load("/associated/IndexSet.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is provided by <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>. <a href="http://neurogami.com">Hack your world.  Feed your head.  Live curious</a>.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_IndexSet.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_IndexSet.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

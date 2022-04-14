@@ -1,0 +1,2101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : IO  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:21:35 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = ''  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+    
+    
+  <!-- rel_prefix = '.'   asset_rel_prefix = ''  --> 
+  <title>Class: IO (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href=".css/obf.css"  -->
+  <link rel="stylesheet" href="css/inuit.css" >
+  <link rel="stylesheet" href="css/grid.inuit.css" >
+  <link rel="stylesheet" href="css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="css/carbon17.css" type="text/css" >
+
+
+  <script src="/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="/js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>io/console/console.c</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"></p>
+        
+      </div>
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">MODULE</span> <a href="IO/generic_readable.html">IO::generic_readable</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="IO/ConsoleMode.html">IO::ConsoleMode</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-console">::console</a></li>
+          
+          <li><a href="#method-c-console_size">::console_size</a></li>
+          
+          <li><a href="#method-c-default_console_size">::default_console_size</a></li>
+          
+          <li><a href="#method-i-beep">#beep</a></li>
+          
+          <li><a href="#method-i-check_winsize_changed">#check_winsize_changed</a></li>
+          
+          <li><a href="#method-i-clear_screen">#clear_screen</a></li>
+          
+          <li><a href="#method-i-console_mode">#console_mode</a></li>
+          
+          <li><a href="#method-i-console_mode-3D">#console_mode=</a></li>
+          
+          <li><a href="#method-i-cooked">#cooked</a></li>
+          
+          <li><a href="#method-i-cooked-21">#cooked!</a></li>
+          
+          <li><a href="#method-i-cursor">#cursor</a></li>
+          
+          <li><a href="#method-i-cursor-3D">#cursor=</a></li>
+          
+          <li><a href="#method-i-cursor_down">#cursor_down</a></li>
+          
+          <li><a href="#method-i-cursor_left">#cursor_left</a></li>
+          
+          <li><a href="#method-i-cursor_right">#cursor_right</a></li>
+          
+          <li><a href="#method-i-cursor_up">#cursor_up</a></li>
+          
+          <li><a href="#method-i-echo-3D">#echo=</a></li>
+          
+          <li><a href="#method-i-echo-3F">#echo?</a></li>
+          
+          <li><a href="#method-i-erase_line">#erase_line</a></li>
+          
+          <li><a href="#method-i-erase_screen">#erase_screen</a></li>
+          
+          <li><a href="#method-i-getch">#getch</a></li>
+          
+          <li><a href="#method-i-getpass">#getpass</a></li>
+          
+          <li><a href="#method-i-goto">#goto</a></li>
+          
+          <li><a href="#method-i-goto_column">#goto_column</a></li>
+          
+          <li><a href="#method-i-iflush">#iflush</a></li>
+          
+          <li><a href="#method-i-ioflush">#ioflush</a></li>
+          
+          <li><a href="#method-i-noecho">#noecho</a></li>
+          
+          <li><a href="#method-i-oflush">#oflush</a></li>
+          
+          <li><a href="#method-i-pressed-3F">#pressed?</a></li>
+          
+          <li><a href="#method-i-raw">#raw</a></li>
+          
+          <li><a href="#method-i-raw-21">#raw!</a></li>
+          
+          <li><a href="#method-i-scroll_backward">#scroll_backward</a></li>
+          
+          <li><a href="#method-i-scroll_forward">#scroll_forward</a></li>
+          
+          <li><a href="#method-i-winsize">#winsize</a></li>
+          
+          <li><a href="#method-i-winsize-3D">#winsize=</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="./IO.html">IO</a></li>
+        
+          
+          
+          <li><a href="./IO/generic_readable.html">IO::generic_readable</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">IO</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="console-method" class="method-detail ">
+          <a name="method-c-console"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">console      &rarr; #<File:/dev/tty></span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          <div class="method-heading">
+            <span class="method-callseq">console(sym, *args)</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns an File instance opened console.</p>
+
+<p>If <code>sym</code> is given, it will be sent to the opened console with <code>args</code> and the result will be returned instead of the console <a href="IO.html"><code>IO</code></a> itself.</p>
+
+<p>You must require &#39;io/console&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="console-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_dev(int argc, VALUE *argv, VALUE klass)
+{
+    VALUE con = 0;
+    rb_io_t *fptr;
+    VALUE sym = 0;
+
+    rb_check_arity(argc, 0, UNLIMITED_ARGUMENTS);
+    if (argc) {
+        Check_Type(sym = argv[0], T_SYMBOL);
+    }
+    if (klass == rb_cIO) klass = rb_cFile;
+    if (rb_const_defined(klass, id_console)) {
+        con = rb_const_get(klass, id_console);
+        if (!RB_TYPE_P(con, T_FILE) ||
+            (!(fptr = RFILE(con)-&gt;fptr) || GetReadFD(fptr) == -1)) {
+            rb_const_remove(klass, id_console);
+            con = 0;
+        }
+    }
+    if (sym) {
+        if (sym == ID2SYM(id_close) &amp;&amp; argc == 1) {
+            if (con) {
+                rb_io_close(con);
+                rb_const_remove(klass, id_console);
+                con = 0;
+            }
+            return Qnil;
+        }
+    }
+    if (!con) {
+        VALUE args[2];
+#if defined HAVE_TERMIOS_H || defined HAVE_TERMIO_H || defined HAVE_SGTTY_H
+# define CONSOLE_DEVICE &quot;/dev/tty&quot;
+#elif defined _WIN32
+# define CONSOLE_DEVICE &quot;con$&quot;
+# define CONSOLE_DEVICE_FOR_READING &quot;conin$&quot;
+# define CONSOLE_DEVICE_FOR_WRITING &quot;conout$&quot;
+#endif
+#ifndef CONSOLE_DEVICE_FOR_READING
+# define CONSOLE_DEVICE_FOR_READING CONSOLE_DEVICE
+#endif
+#ifdef CONSOLE_DEVICE_FOR_WRITING
+        VALUE out;
+        rb_io_t *ofptr;
+#endif
+        int fd;
+
+#ifdef CONSOLE_DEVICE_FOR_WRITING
+        fd = rb_cloexec_open(CONSOLE_DEVICE_FOR_WRITING, O_RDWR, 0);
+        if (fd &lt; 0) return Qnil;
+        rb_update_max_fd(fd);
+        args[1] = INT2FIX(O_WRONLY);
+        args[0] = INT2NUM(fd);
+        out = rb_class_new_instance(2, args, klass);
+#endif
+        fd = rb_cloexec_open(CONSOLE_DEVICE_FOR_READING, O_RDWR, 0);
+        if (fd &lt; 0) {
+#ifdef CONSOLE_DEVICE_FOR_WRITING
+            rb_io_close(out);
+#endif
+            return Qnil;
+        }
+        rb_update_max_fd(fd);
+        args[1] = INT2FIX(O_RDWR);
+        args[0] = INT2NUM(fd);
+        con = rb_class_new_instance(2, args, klass);
+        GetOpenFile(con, fptr);
+        fptr-&gt;pathv = rb_obj_freeze(rb_str_new2(CONSOLE_DEVICE));
+#ifdef CONSOLE_DEVICE_FOR_WRITING
+        GetOpenFile(out, ofptr);
+        ofptr-&gt;pathv = fptr-&gt;pathv;
+        fptr-&gt;tied_io_for_writing = out;
+        ofptr-&gt;mode |= FMODE_SYNC;
+#endif
+        fptr-&gt;mode |= FMODE_SYNC;
+        rb_const_set(klass, id_console, con);
+    }
+    if (sym) {
+        return rb_f_send(argc, argv, con);
+    }
+    return con;
+}
+            </pre> 
+            </div><!-- console-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- console-method -->
+      
+        <div id="console_size-method" class="method-detail method-alias">
+          <a name="method-c-console_size"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">console_size</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+          </div>
+
+          
+
+          
+          <div class="aliases">
+            Alias for: <a href="IO.html#method-c-default_console_size">default_console_size</a>
+          </div>
+          
+        </div><!-- console_size-method -->
+      
+        <div id="default_console_size-method" class="method-detail ">
+          <a name="method-c-default_console_size"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">default_console_size</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            <p>fallback to console window size</p>
+            
+
+            
+            <div class="method-source-code" id="default_console_size-source">
+              <pre> <!-- method.markup_code 290 -->
+               <span class="ruby-comment"># File io/console/lib/console/size.rb, line 3</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">IO</span>.<span class="ruby-identifier ruby-title">default_console_size</span>
+  [
+    <span class="ruby-constant">ENV</span>[<span class="ruby-string">&quot;LINES&quot;</span>].<span class="ruby-identifier">to_i</span>.<span class="ruby-identifier">nonzero?</span> <span class="ruby-operator">||</span> <span class="ruby-value">25</span>,
+    <span class="ruby-constant">ENV</span>[<span class="ruby-string">&quot;COLUMNS&quot;</span>].<span class="ruby-identifier">to_i</span>.<span class="ruby-identifier">nonzero?</span> <span class="ruby-operator">||</span> <span class="ruby-value">80</span>,
+  ]
+<span class="ruby-keyword">end</span>
+            </pre> 
+            </div><!-- default_console_size-source -->
+            
+          </div>
+
+          
+          <div class="aliases">
+            Also aliased as: <a href="IO.html#method-c-console_size">console_size</a>
+          </div>
+          
+
+          
+        </div><!-- default_console_size-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="beep-method" class="method-detail ">
+          <a name="method-i-beep"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">beep</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="beep-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_beep(VALUE io)
+{
+    rb_io_t *fptr;
+    int fd;
+
+    GetOpenFile(io, fptr);
+    fd = GetWriteFD(fptr);
+#ifdef _WIN32
+    (void)fd;
+    MessageBeep(0);
+#else
+    if (write(fd, &quot;\a&quot;, 1) &lt; 0)
+        rb_sys_fail(0);
+#endif
+    return io;
+}
+            </pre> 
+            </div><!-- beep-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- beep-method -->
+      
+        <div id="check_winsize_changed-method" class="method-detail ">
+          <a name="method-i-check_winsize_changed"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">check_winsize_changed</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="check_winsize_changed-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_check_winsize_changed(VALUE io)
+{
+    rb_io_t *fptr;
+    HANDLE h;
+    DWORD num;
+
+    GetOpenFile(io, fptr);
+    h = (HANDLE)rb_w32_get_osfhandle(GetReadFD(fptr));
+    while (GetNumberOfConsoleInputEvents(h, &amp;num) &amp;&amp; num &gt; 0) {
+        INPUT_RECORD rec;
+        if (ReadConsoleInput(h, &amp;rec, 1, &amp;num)) {
+            if (rec.EventType == WINDOW_BUFFER_SIZE_EVENT) {
+                rb_yield(Qnil);
+            }
+        }
+    }
+    return io;
+}
+            </pre> 
+            </div><!-- check_winsize_changed-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- check_winsize_changed-method -->
+      
+        <div id="clear_screen-method" class="method-detail ">
+          <a name="method-i-clear_screen"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">clear_screen</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="clear_screen-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_clear_screen(VALUE io)
+{
+    console_erase_screen(io, INT2FIX(2));
+    console_goto(io, INT2FIX(0), INT2FIX(0));
+    return io;
+}
+            </pre> 
+            </div><!-- clear_screen-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- clear_screen-method -->
+      
+        <div id="console_mode-method" class="method-detail ">
+          <a name="method-i-console_mode"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">console_mode       &rarr; mode</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns a data represents the current console mode.</p>
+
+<p>You must require &#39;io/console&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="console_mode-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_conmode_get(VALUE io)
+{
+    conmode t;
+    rb_io_t *fptr;
+    int fd;
+
+    GetOpenFile(io, fptr);
+    fd = GetReadFD(fptr);
+    if (!getattr(fd, &amp;t)) rb_sys_fail(0);
+
+    return conmode_new(cConmode, &amp;t);
+}
+            </pre> 
+            </div><!-- console_mode-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- console_mode-method -->
+      
+        <div id="console_mode-3D-method" class="method-detail ">
+          <a name="method-i-console_mode-3D"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">console_mode = mode</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Sets the console mode to <code>mode</code>.</p>
+
+<p>You must require &#39;io/console&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="console_mode-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_conmode_set(VALUE io, VALUE mode)
+{
+    conmode *t, r;
+    rb_io_t *fptr;
+    int fd;
+
+    TypedData_Get_Struct(mode, conmode, &amp;conmode_type, t);
+    r = *t;
+    GetOpenFile(io, fptr);
+    fd = GetReadFD(fptr);
+    if (!setattr(fd, &amp;r)) rb_sys_fail(0);
+
+    return mode;
+}
+            </pre> 
+            </div><!-- console_mode-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- console_mode-3D-method -->
+      
+        <div id="cooked-method" class="method-detail ">
+          <a name="method-i-cooked"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">cooked {|io| }</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Yields <code>self</code> within cooked mode.</p>
+
+<pre class="ruby"><span class="ruby-constant">STDIN</span>.<span class="ruby-identifier">cooked</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:gets</span>)
+</pre>
+
+<p>will read and return a line with echo back and line editing.</p>
+
+<p>You must require &#39;io/console&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="cooked-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_cooked(VALUE io)
+{
+    return ttymode(io, rb_yield, io, set_cookedmode, NULL);
+}
+            </pre> 
+            </div><!-- cooked-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- cooked-method -->
+      
+        <div id="cooked-21-method" class="method-detail ">
+          <a name="method-i-cooked-21"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">cooked!</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Enables cooked mode.</p>
+
+<p>If the terminal mode needs to be back, use io.cooked { … }.</p>
+
+<p>You must require &#39;io/console&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="cooked-21-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_set_cooked(VALUE io)
+{
+    conmode t;
+    rb_io_t *fptr;
+    int fd;
+
+    GetOpenFile(io, fptr);
+    fd = GetReadFD(fptr);
+    if (!getattr(fd, &amp;t)) rb_sys_fail(0);
+    set_cookedmode(&amp;t, NULL);
+    if (!setattr(fd, &amp;t)) rb_sys_fail(0);
+    return io;
+}
+            </pre> 
+            </div><!-- cooked-21-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- cooked-21-method -->
+      
+        <div id="cursor-method" class="method-detail ">
+          <a name="method-i-cursor"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">cursor</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="cursor-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_cursor_pos(VALUE io)
+{
+    rb_io_t *fptr;
+    int fd;
+    rb_console_size_t ws;
+
+    GetOpenFile(io, fptr);
+    fd = GetWriteFD(fptr);
+    if (!GetConsoleScreenBufferInfo((HANDLE)rb_w32_get_osfhandle(fd), &amp;ws)) {
+        rb_syserr_fail(LAST_ERROR, 0);
+    }
+    return rb_assoc_new(UINT2NUM(ws.dwCursorPosition.Y), UINT2NUM(ws.dwCursorPosition.X));
+}
+            </pre> 
+            </div><!-- cursor-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- cursor-method -->
+      
+        <div id="cursor-3D-method" class="method-detail ">
+          <a name="method-i-cursor-3D"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">cursor=</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="cursor-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_cursor_set(VALUE io, VALUE cpos)
+{
+    cpos = rb_convert_type(cpos, T_ARRAY, &quot;Array&quot;, &quot;to_ary&quot;);
+    if (RARRAY_LEN(cpos) != 2) rb_raise(rb_eArgError, &quot;expected 2D coordinate&quot;);
+    return console_goto(io, RARRAY_AREF(cpos, 0), RARRAY_AREF(cpos, 1));
+}
+            </pre> 
+            </div><!-- cursor-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- cursor-3D-method -->
+      
+        <div id="cursor_down-method" class="method-detail ">
+          <a name="method-i-cursor_down"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">cursor_down</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="cursor_down-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_cursor_down(VALUE io, VALUE val)
+{
+    return console_move(io, +NUM2INT(val), 0);
+}
+            </pre> 
+            </div><!-- cursor_down-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- cursor_down-method -->
+      
+        <div id="cursor_left-method" class="method-detail ">
+          <a name="method-i-cursor_left"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">cursor_left</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="cursor_left-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_cursor_left(VALUE io, VALUE val)
+{
+    return console_move(io, 0, -NUM2INT(val));
+}
+            </pre> 
+            </div><!-- cursor_left-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- cursor_left-method -->
+      
+        <div id="cursor_right-method" class="method-detail ">
+          <a name="method-i-cursor_right"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">cursor_right</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="cursor_right-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_cursor_right(VALUE io, VALUE val)
+{
+    return console_move(io, 0, +NUM2INT(val));
+}
+            </pre> 
+            </div><!-- cursor_right-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- cursor_right-method -->
+      
+        <div id="cursor_up-method" class="method-detail ">
+          <a name="method-i-cursor_up"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">cursor_up</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="cursor_up-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_cursor_up(VALUE io, VALUE val)
+{
+    return console_move(io, -NUM2INT(val), 0);
+}
+            </pre> 
+            </div><!-- cursor_up-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- cursor_up-method -->
+      
+        <div id="echo-3D-method" class="method-detail ">
+          <a name="method-i-echo-3D"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">echo = flag</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Enables/disables echo back. On some platforms, all combinations of this flags and raw/cooked mode may not be valid.</p>
+
+<p>You must require &#39;io/console&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="echo-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_set_echo(VALUE io, VALUE f)
+{
+    conmode t;
+    rb_io_t *fptr;
+    int fd;
+
+    GetOpenFile(io, fptr);
+    fd = GetReadFD(fptr);
+    if (!getattr(fd, &amp;t)) rb_sys_fail(0);
+    if (RTEST(f))
+        set_echo(&amp;t, NULL);
+    else
+        set_noecho(&amp;t, NULL);
+    if (!setattr(fd, &amp;t)) rb_sys_fail(0);
+    return io;
+}
+            </pre> 
+            </div><!-- echo-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- echo-3D-method -->
+      
+        <div id="echo-3F-method" class="method-detail ">
+          <a name="method-i-echo-3F"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">echo?       &rarr; true or false</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns <code>true</code> if echo back is enabled.</p>
+
+<p>You must require &#39;io/console&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="echo-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_echo_p(VALUE io)
+{
+    conmode t;
+    rb_io_t *fptr;
+    int fd;
+
+    GetOpenFile(io, fptr);
+    fd = GetReadFD(fptr);
+    if (!getattr(fd, &amp;t)) rb_sys_fail(0);
+    return echo_p(&amp;t) ? Qtrue : Qfalse;
+}
+            </pre> 
+            </div><!-- echo-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- echo-3F-method -->
+      
+        <div id="erase_line-method" class="method-detail ">
+          <a name="method-i-erase_line"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">erase_line</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="erase_line-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_erase_line(VALUE io, VALUE val)
+{
+    rb_io_t *fptr;
+    HANDLE h;
+    rb_console_size_t ws;
+    COORD *pos = &amp;ws.dwCursorPosition;
+    DWORD w;
+    int mode = mode_in_range(val, 2, &quot;line erase&quot;);
+
+    GetOpenFile(io, fptr);
+    h = (HANDLE)rb_w32_get_osfhandle(GetWriteFD(fptr));
+    if (!GetConsoleScreenBufferInfo(h, &amp;ws)) {
+        rb_syserr_fail(LAST_ERROR, 0);
+    }
+    w = winsize_col(&amp;ws);
+    switch (mode) {
+      case 0:                   /* after cursor */
+        w -= pos-&gt;X;
+        break;
+      case 1:                   /* before *and* cursor */
+        w = pos-&gt;X + 1;
+        pos-&gt;X = 0;
+        break;
+      case 2:                   /* entire line */
+        pos-&gt;X = 0;
+        break;
+    }
+    constat_clear(h, ws.wAttributes, w, *pos);
+    return io;
+}
+            </pre> 
+            </div><!-- erase_line-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- erase_line-method -->
+      
+        <div id="erase_screen-method" class="method-detail ">
+          <a name="method-i-erase_screen"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">erase_screen</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="erase_screen-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_erase_screen(VALUE io, VALUE val)
+{
+    rb_io_t *fptr;
+    HANDLE h;
+    rb_console_size_t ws;
+    COORD *pos = &amp;ws.dwCursorPosition;
+    DWORD w;
+    int mode = mode_in_range(val, 3, &quot;screen erase&quot;);
+
+    GetOpenFile(io, fptr);
+    h = (HANDLE)rb_w32_get_osfhandle(GetWriteFD(fptr));
+    if (!GetConsoleScreenBufferInfo(h, &amp;ws)) {
+        rb_syserr_fail(LAST_ERROR, 0);
+    }
+    w = winsize_col(&amp;ws);
+    switch (mode) {
+      case 0:   /* erase after cursor */
+        w = (w * (ws.srWindow.Bottom - pos-&gt;Y + 1) - pos-&gt;X);
+        break;
+      case 1:   /* erase before *and* cursor */
+        w = (w * (pos-&gt;Y - ws.srWindow.Top) + pos-&gt;X + 1);
+        pos-&gt;X = 0;
+        pos-&gt;Y = ws.srWindow.Top;
+        break;
+      case 2:   /* erase entire screen */
+        w = (w * winsize_row(&amp;ws));
+        pos-&gt;X = 0;
+        pos-&gt;Y = ws.srWindow.Top;
+        break;
+      case 3:   /* erase entire screen */
+        w = (w * ws.dwSize.Y);
+        pos-&gt;X = 0;
+        pos-&gt;Y = 0;
+        break;
+    }
+    constat_clear(h, ws.wAttributes, w, *pos);
+    return io;
+}
+            </pre> 
+            </div><!-- erase_screen-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- erase_screen-method -->
+      
+        <div id="getch-method" class="method-detail ">
+          <a name="method-i-getch"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">getch(min: nil, time: nil, intr: nil) &rarr; char</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Reads and returns a character in raw mode.</p>
+
+<p>See <a href="IO.html#method-i-raw"><code>IO#raw</code></a> for details on the parameters.</p>
+
+<p>You must require &#39;io/console&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="getch-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_getch(int argc, VALUE *argv, VALUE io)
+{
+    rawmode_arg_t opts, *optp = rawmode_opt(&amp;argc, argv, 0, 0, &amp;opts);
+#ifndef _WIN32
+    return ttymode(io, getc_call, io, set_rawmode, optp);
+#else
+    rb_io_t *fptr;
+    VALUE str;
+    wint_t c;
+    int w, len;
+    char buf[8];
+    wint_t wbuf[2];
+    struct timeval *to = NULL, tv;
+
+    GetOpenFile(io, fptr);
+    if (optp) {
+        if (optp-&gt;vtime) {
+            to = &amp;tv;
+            tv.tv_sec = optp-&gt;vtime / 10;
+            tv.tv_usec = (optp-&gt;vtime % 10) * 100000;
+        }
+        if (optp-&gt;vmin != 1) {
+            rb_warning(&quot;min option ignored&quot;);
+        }
+        if (optp-&gt;intr) {
+            w = rb_wait_for_single_fd(fptr-&gt;fd, RB_WAITFD_IN, to);
+            if (w &lt; 0) rb_eof_error();
+            if (!(w &amp; RB_WAITFD_IN)) return Qnil;
+        }
+        else {
+            rb_warning(&quot;vtime option ignored if intr flag is unset&quot;);
+        }
+    }
+    len = (int)(VALUE)rb_thread_call_without_gvl(nogvl_getch, wbuf, RUBY_UBF_IO, 0);
+    switch (len) {
+      case 0:
+        return Qnil;
+      case 2:
+        buf[0] = (char)wbuf[0];
+        c = wbuf[1];
+        len = 1;
+        do {
+            buf[len++] = (unsigned char)c;
+        } while ((c &gt;&gt;= CHAR_BIT) &amp;&amp; len &lt; (int)sizeof(buf));
+        return rb_str_new(buf, len);
+      default:
+        c = wbuf[0];
+        len = rb_uv_to_utf8(buf, c);
+        str = rb_utf8_str_new(buf, len);
+        return rb_str_conv_enc(str, NULL, rb_default_external_encoding());
+    }
+#endif
+}
+            </pre> 
+            </div><!-- getch-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- getch-method -->
+      
+        <div id="getpass-method" class="method-detail ">
+          <a name="method-i-getpass"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">getpass(prompt=nil)       &rarr; string</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Reads and returns a line without echo back. Prints <code>prompt</code> unless it is <code>nil</code>.</p>
+
+<p>You must require &#39;io/console&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="getpass-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_getpass(int argc, VALUE *argv, VALUE io)
+{
+    VALUE str, wio;
+
+    rb_check_arity(argc, 0, 1);
+    wio = rb_io_get_write_io(io);
+    if (wio == io &amp;&amp; io == rb_stdin) wio = rb_stderr;
+    prompt(argc, argv, wio);
+    str = rb_ensure(getpass_call, io, puts_call, wio);
+    return str_chomp(str);
+}
+            </pre> 
+            </div><!-- getpass-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- getpass-method -->
+      
+        <div id="goto-method" class="method-detail ">
+          <a name="method-i-goto"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">goto</span><span
+              class="method-args">(p1, p2)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="goto-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_goto(VALUE io, VALUE y, VALUE x)
+{
+    rb_io_t *fptr;
+    int fd;
+    COORD pos;
+
+    GetOpenFile(io, fptr);
+    fd = GetWriteFD(fptr);
+    pos.X = NUM2UINT(x);
+    pos.Y = NUM2UINT(y);
+    if (!SetConsoleCursorPosition((HANDLE)rb_w32_get_osfhandle(fd), pos)) {
+        rb_syserr_fail(LAST_ERROR, 0);
+    }
+    return io;
+}
+            </pre> 
+            </div><!-- goto-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- goto-method -->
+      
+        <div id="goto_column-method" class="method-detail ">
+          <a name="method-i-goto_column"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">goto_column</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="goto_column-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_goto_column(VALUE io, VALUE val)
+{
+    rb_io_t *fptr;
+    HANDLE h;
+    rb_console_size_t ws;
+    COORD *pos = &amp;ws.dwCursorPosition;
+
+    GetOpenFile(io, fptr);
+    h = (HANDLE)rb_w32_get_osfhandle(GetWriteFD(fptr));
+    if (!GetConsoleScreenBufferInfo(h, &amp;ws)) {
+        rb_syserr_fail(LAST_ERROR, 0);
+    }
+    pos-&gt;X = NUM2INT(val);
+    if (!SetConsoleCursorPosition(h, *pos)) {
+        rb_syserr_fail(LAST_ERROR, 0);
+    }
+    return io;
+}
+            </pre> 
+            </div><!-- goto_column-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- goto_column-method -->
+      
+        <div id="iflush-method" class="method-detail ">
+          <a name="method-i-iflush"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">iflush</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Flushes input buffer in kernel.</p>
+
+<p>You must require &#39;io/console&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="iflush-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_iflush(VALUE io)
+{
+    rb_io_t *fptr;
+    int fd;
+
+    GetOpenFile(io, fptr);
+    fd = GetReadFD(fptr);
+#if defined HAVE_TERMIOS_H || defined HAVE_TERMIO_H
+    if (tcflush(fd, TCIFLUSH)) rb_sys_fail(0);
+#endif
+    (void)fd;
+    return io;
+}
+            </pre> 
+            </div><!-- iflush-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- iflush-method -->
+      
+        <div id="ioflush-method" class="method-detail ">
+          <a name="method-i-ioflush"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">ioflush</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Flushes input and output buffers in kernel.</p>
+
+<p>You must require &#39;io/console&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="ioflush-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_ioflush(VALUE io)
+{
+    rb_io_t *fptr;
+#if defined HAVE_TERMIOS_H || defined HAVE_TERMIO_H
+    int fd1, fd2;
+#endif
+
+    GetOpenFile(io, fptr);
+#if defined HAVE_TERMIOS_H || defined HAVE_TERMIO_H
+    fd1 = GetReadFD(fptr);
+    fd2 = GetWriteFD(fptr);
+    if (fd2 != -1 &amp;&amp; fd1 != fd2) {
+        if (tcflush(fd1, TCIFLUSH)) rb_sys_fail(0);
+        if (tcflush(fd2, TCOFLUSH)) rb_sys_fail(0);
+    }
+    else {
+        if (tcflush(fd1, TCIOFLUSH)) rb_sys_fail(0);
+    }
+#endif
+    return io;
+}
+            </pre> 
+            </div><!-- ioflush-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ioflush-method -->
+      
+        <div id="noecho-method" class="method-detail ">
+          <a name="method-i-noecho"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">noecho {|io| }</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Yields <code>self</code> with disabling echo back.</p>
+
+<pre class="ruby"><span class="ruby-constant">STDIN</span>.<span class="ruby-identifier">noecho</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:gets</span>)
+</pre>
+
+<p>will read and return a line without echo back.</p>
+
+<p>You must require &#39;io/console&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="noecho-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_noecho(VALUE io)
+{
+    return ttymode(io, rb_yield, io, set_noecho, NULL);
+}
+            </pre> 
+            </div><!-- noecho-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- noecho-method -->
+      
+        <div id="oflush-method" class="method-detail ">
+          <a name="method-i-oflush"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">oflush</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Flushes output buffer in kernel.</p>
+
+<p>You must require &#39;io/console&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="oflush-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_oflush(VALUE io)
+{
+    rb_io_t *fptr;
+    int fd;
+
+    GetOpenFile(io, fptr);
+    fd = GetWriteFD(fptr);
+#if defined HAVE_TERMIOS_H || defined HAVE_TERMIO_H
+    if (tcflush(fd, TCOFLUSH)) rb_sys_fail(0);
+#endif
+    (void)fd;
+    return io;
+}
+            </pre> 
+            </div><!-- oflush-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- oflush-method -->
+      
+        <div id="pressed-3F-method" class="method-detail ">
+          <a name="method-i-pressed-3F"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">pressed?</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="pressed-3F-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_key_pressed_p(VALUE io, VALUE k)
+{
+    int vk = -1;
+
+    if (FIXNUM_P(k)) {
+        vk = NUM2UINT(k);
+    }
+    else {
+        const struct vktable *t;
+        const char *kn;
+        if (SYMBOL_P(k)) {
+            k = rb_sym2str(k);
+            kn = RSTRING_PTR(k);
+        }
+        else {
+            kn = StringValuePtr(k);
+        }
+        t = console_win32_vk(kn, RSTRING_LEN(k));
+        if (!t || (vk = (short)t-&gt;vk) == -1) {
+            rb_raise(rb_eArgError, &quot;unknown virtual key code: % &quot;PRIsVALUE, k);
+        }
+    }
+    return GetKeyState(vk) &amp; 0x80 ? Qtrue : Qfalse;
+}
+            </pre> 
+            </div><!-- pressed-3F-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- pressed-3F-method -->
+      
+        <div id="raw-method" class="method-detail ">
+          <a name="method-i-raw"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">raw(min: nil, time: nil, intr: nil) {|io| }</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Yields <code>self</code> within raw mode, and returns the result of the block.</p>
+
+<pre class="ruby"><span class="ruby-constant">STDIN</span>.<span class="ruby-identifier">raw</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:gets</span>)
+</pre>
+
+<p>will read and return a line without echo back and line editing.</p>
+
+<p>The parameter <code>min</code> specifies the minimum number of bytes that should be received when a read operation is performed. (default: 1)</p>
+
+<p>The parameter <code>time</code> specifies the timeout in <em>seconds</em> with a precision of 1/10 of a second. (default: 0)</p>
+
+<p>If the parameter <code>intr</code> is <code>true</code>, enables break, interrupt, quit, and suspend special characters.</p>
+
+<p>Refer to the manual page of termios for further details.</p>
+
+<p>You must require &#39;io/console&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="raw-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_raw(int argc, VALUE *argv, VALUE io)
+{
+    rawmode_arg_t opts, *optp = rawmode_opt(&amp;argc, argv, 0, 0, &amp;opts);
+    return ttymode(io, rb_yield, io, set_rawmode, optp);
+}
+            </pre> 
+            </div><!-- raw-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- raw-method -->
+      
+        <div id="raw-21-method" class="method-detail ">
+          <a name="method-i-raw-21"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">raw!(min: nil, time: nil, intr: nil) &rarr; io</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Enables raw mode, and returns <code>io</code>.</p>
+
+<p>If the terminal mode needs to be back, use <code>io.raw { ... }</code>.</p>
+
+<p>See <a href="IO.html#method-i-raw"><code>IO#raw</code></a> for details on the parameters.</p>
+
+<p>You must require &#39;io/console&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="raw-21-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_set_raw(int argc, VALUE *argv, VALUE io)
+{
+    conmode t;
+    rb_io_t *fptr;
+    int fd;
+    rawmode_arg_t opts, *optp = rawmode_opt(&amp;argc, argv, 0, 0, &amp;opts);
+
+    GetOpenFile(io, fptr);
+    fd = GetReadFD(fptr);
+    if (!getattr(fd, &amp;t)) rb_sys_fail(0);
+    set_rawmode(&amp;t, optp);
+    if (!setattr(fd, &amp;t)) rb_sys_fail(0);
+    return io;
+}
+            </pre> 
+            </div><!-- raw-21-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- raw-21-method -->
+      
+        <div id="scroll_backward-method" class="method-detail ">
+          <a name="method-i-scroll_backward"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">scroll_backward</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="scroll_backward-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_scroll_backward(VALUE io, VALUE val)
+{
+    return console_scroll(io, -NUM2INT(val));
+}
+            </pre> 
+            </div><!-- scroll_backward-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- scroll_backward-method -->
+      
+        <div id="scroll_forward-method" class="method-detail ">
+          <a name="method-i-scroll_forward"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">scroll_forward</span><span
+              class="method-args">(p1)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+          <div>
+  
+            
+            
+            
+
+            
+            <div class="method-source-code" id="scroll_forward-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_scroll_forward(VALUE io, VALUE val)
+{
+    return console_scroll(io, +NUM2INT(val));
+}
+            </pre> 
+            </div><!-- scroll_forward-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- scroll_forward-method -->
+      
+        <div id="winsize-method" class="method-detail ">
+          <a name="method-i-winsize"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">winsize     &rarr; [rows, columns]</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns console size.</p>
+
+<p>You must require &#39;io/console&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="winsize-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_winsize(VALUE io)
+{
+    rb_io_t *fptr;
+    int fd;
+    rb_console_size_t ws;
+
+    GetOpenFile(io, fptr);
+    fd = GetWriteFD(fptr);
+    if (!getwinsize(fd, &amp;ws)) rb_sys_fail(0);
+    return rb_assoc_new(INT2NUM(winsize_row(&amp;ws)), INT2NUM(winsize_col(&amp;ws)));
+}
+            </pre> 
+            </div><!-- winsize-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- winsize-method -->
+      
+        <div id="winsize-3D-method" class="method-detail ">
+          <a name="method-i-winsize-3D"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">winsize = [rows, columns]</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Tries to set console size.  The effect depends on the platform and the running environment.</p>
+
+<p>You must require &#39;io/console&#39; to use this method.</p>
+            
+
+            
+            <div class="method-source-code" id="winsize-3D-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE
+console_set_winsize(VALUE io, VALUE size)
+{
+    rb_io_t *fptr;
+    rb_console_size_t ws;
+#if defined _WIN32
+    HANDLE wh;
+    int newrow, newcol;
+    BOOL ret;
+#endif
+    VALUE row, col, xpixel, ypixel;
+    const VALUE *sz;
+    int fd;
+    long sizelen;
+
+    GetOpenFile(io, fptr);
+    size = rb_Array(size);
+    if ((sizelen = RARRAY_LEN(size)) != 2 &amp;&amp; sizelen != 4) {
+        rb_raise(rb_eArgError,
+                 &quot;wrong number of arguments (given %ld, expected 2 or 4)&quot;,
+                 sizelen);
+    }
+    sz = RARRAY_CONST_PTR(size);
+    row = sz[0], col = sz[1], xpixel = ypixel = Qnil;
+    if (sizelen == 4) xpixel = sz[2], ypixel = sz[3];
+    fd = GetWriteFD(fptr);
+#if defined TIOCSWINSZ
+    ws.ws_row = ws.ws_col = ws.ws_xpixel = ws.ws_ypixel = 0;
+#define SET(m) ws.ws_##m = NIL_P(m) ? 0 : (unsigned short)NUM2UINT(m)
+    SET(row);
+    SET(col);
+    SET(xpixel);
+    SET(ypixel);
+#undef SET
+    if (!setwinsize(fd, &amp;ws)) rb_sys_fail(0);
+#elif defined _WIN32
+    wh = (HANDLE)rb_w32_get_osfhandle(fd);
+#define SET(m) new##m = NIL_P(m) ? 0 : (unsigned short)NUM2UINT(m)
+    SET(row);
+    SET(col);
+#undef SET
+    if (!NIL_P(xpixel)) (void)NUM2UINT(xpixel);
+    if (!NIL_P(ypixel)) (void)NUM2UINT(ypixel);
+    if (!GetConsoleScreenBufferInfo(wh, &amp;ws)) {
+        rb_syserr_fail(LAST_ERROR, &quot;GetConsoleScreenBufferInfo&quot;);
+    }
+    ws.dwSize.X = newcol;
+    ret = SetConsoleScreenBufferSize(wh, ws.dwSize);
+    ws.srWindow.Left = 0;
+    ws.srWindow.Top = 0;
+    ws.srWindow.Right = newcol-1;
+    ws.srWindow.Bottom = newrow-1;
+    if (!SetConsoleWindowInfo(wh, TRUE, &amp;ws.srWindow)) {
+        rb_syserr_fail(LAST_ERROR, &quot;SetConsoleWindowInfo&quot;);
+    }
+    /* retry when shrinking buffer after shrunk window */
+    if (!ret &amp;&amp; !SetConsoleScreenBufferSize(wh, ws.dwSize)) {
+        rb_syserr_fail(LAST_ERROR, &quot;SetConsoleScreenBufferInfo&quot;);
+    }
+    /* remove scrollbar if possible */
+    if (!SetConsoleWindowInfo(wh, TRUE, &amp;ws.srWindow)) {
+        rb_syserr_fail(LAST_ERROR, &quot;SetConsoleWindowInfo&quot;);
+    }
+#endif
+    return io;
+}
+            </pre> 
+            </div><!-- winsize-3D-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- winsize-3D-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_IO_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_IO_versioned").load("/associated/2.7.4/IO.ihtml");</script> <div id='tx_IO' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_IO").load("/associated/IO.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, purveyors of fine dance noise.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_IO.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_IO.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+

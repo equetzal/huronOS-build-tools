@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <!-- classpage -- >
+    <!-- RD version: 0.42.0  -->
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  <meta name='description' content='  Class : JSON::Ext::Parser  -   Ruby 2.7.4 ' />
+  <meta content="2021-12-08 17:22:37 -0700" http-equiv="change-date" />
+  <!-- rel_prefix  = '../..'  ENV['RDOC_FOR_WEBSITE']   = false-->
+    
+  <!-- rel_prefix = '../..'   asset_rel_prefix = '../..'  --> 
+  <title>Class: JSON::Ext::Parser (Ruby 2.7.4) </title>
+  <link rel="stylesheet" href="../../css/associated.css" type="text/css" >
+  <!-- link rel="stylesheet" href="../..css/obf.css"  -->
+  <link rel="stylesheet" href="../../css/inuit.css" >
+  <link rel="stylesheet" href="../../css/grid.inuit.css" >
+  <link rel="stylesheet" href="../../css/2011.css" type="text/css" >
+  <link rel="stylesheet" href="../../css/rdoc.css" type="text/css" >
+    <link rel="stylesheet" href="../../css/carbon17.css" type="text/css" >
+
+
+  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/rubydoc.js" type="text/javascript" charset="utf-8"></script> 
+
+
+   
+<script src="../../js/highlight.min.js"></script>
+<script> 
+  hljs.tabReplace = '  ';
+  hljs.initHighlightingOnLoad();
+  </script> 
+
+  <style type='text/css'>
+
+    #vulns-alert #vulns{
+      background-color: #c33 ! important;
+      width: 100%;
+      text-align: center;
+   }
+   
+   #vulns-alert #vulns a {
+    color: #F99 ! important;
+   }
+ </style>
+
+   <link rel="stylesheet" href="css/extra.css" type="text/css" >
+  <script  src="/js/extra.js"  ></script>
+
+
+</head>
+
+<body id="top" class="class rdocstar">
+
+<div id='actionbar' >
+<div class='wrapper'>
+  <ul class='grids g0'></ul>
+</div>
+<span id='vulns-alert'></span>
+<!-- VERSION HEADER for 2.7.4 NOT FOUND -->
+</div> <!-- end action bar -->
+ <div class='wrapper'>
+  
+   <!-- carbon17 added here 2017-09-09 -->
+ 
+
+   <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+          
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul id='file-metadata'>
+
+          
+          
+          
+          <li class='in-file'>json/generator/generator.c</li>      
+            
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">Object</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-new">::new</a></li>
+          
+          <li><a href="#method-i-parse">#parse</a></li>
+          
+          <li><a href="#method-i-source">#source</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+          
+          
+          
+          <li><a href="../../BigDecimal.html">BigDecimal</a></li>
+        
+          
+          
+          <li><a href="../../Class.html">Class</a></li>
+        
+          
+          
+          <li><a href="../../Complex.html">Complex</a></li>
+        
+          
+          
+          <li><a href="../../Date.html">Date</a></li>
+        
+          
+          
+          <li><a href="../../DateTime.html">DateTime</a></li>
+        
+          
+          
+          <li><a href="../../Exception.html">Exception</a></li>
+        
+          
+          
+          <li><a href="../../JSON.html">JSON</a></li>
+        
+          
+          
+          <li><a href="../../JSON/Ext.html">JSON::Ext</a></li>
+        
+          
+          
+          <li><a href="../../JSON/Ext/Generator.html">JSON::Ext::Generator</a></li>
+        
+          
+          
+          <li><a href="../../JSON/Ext/Generator/GeneratorMethods.html">JSON::Ext::Generator::GeneratorMethods</a></li>
+        
+          
+          
+          <li><a href="../../JSON/Ext/Generator/GeneratorMethods/Array.html">JSON::Ext::Generator::GeneratorMethods::Array</a></li>
+        
+          
+          
+          <li><a href="../../JSON/Ext/Generator/GeneratorMethods/Bignum.html">JSON::Ext::Generator::GeneratorMethods::Bignum</a></li>
+        
+          
+          
+          <li><a href="../../JSON/Ext/Generator/GeneratorMethods/FalseClass.html">JSON::Ext::Generator::GeneratorMethods::FalseClass</a></li>
+        
+          
+          
+          <li><a href="../../JSON/Ext/Generator/GeneratorMethods/Fixnum.html">JSON::Ext::Generator::GeneratorMethods::Fixnum</a></li>
+        
+          
+          
+          <li><a href="../../JSON/Ext/Generator/GeneratorMethods/Float.html">JSON::Ext::Generator::GeneratorMethods::Float</a></li>
+        
+          
+          
+          <li><a href="../../JSON/Ext/Generator/GeneratorMethods/Hash.html">JSON::Ext::Generator::GeneratorMethods::Hash</a></li>
+        
+          
+          
+          <li><a href="../../JSON/Ext/Generator/GeneratorMethods/Integer.html">JSON::Ext::Generator::GeneratorMethods::Integer</a></li>
+        
+          
+          
+          <li><a href="../../JSON/Ext/Generator/GeneratorMethods/NilClass.html">JSON::Ext::Generator::GeneratorMethods::NilClass</a></li>
+        
+          
+          
+          <li><a href="../../JSON/Ext/Generator/GeneratorMethods/Object.html">JSON::Ext::Generator::GeneratorMethods::Object</a></li>
+        
+          
+          
+          <li><a href="../../JSON/Ext/Generator/GeneratorMethods/String.html">JSON::Ext::Generator::GeneratorMethods::String</a></li>
+        
+          
+          
+          <li><a href="../../JSON/Ext/Generator/GeneratorMethods/String/Extend.html">JSON::Ext::Generator::GeneratorMethods::String::Extend</a></li>
+        
+          
+          
+          <li><a href="../../JSON/Ext/Generator/GeneratorMethods/TrueClass.html">JSON::Ext::Generator::GeneratorMethods::TrueClass</a></li>
+        
+          
+          
+          <li><a href="../../JSON/Ext/Generator/State.html">JSON::Ext::Generator::State</a></li>
+        
+          
+          
+          <li><a href="../../JSON/Ext/Parser.html">JSON::Ext::Parser</a></li>
+        
+          
+          
+          <li><a href="../../JSON/GeneratorError.html">JSON::GeneratorError</a></li>
+        
+          
+          
+          <li><a href="../../JSON/GenericObject.html">JSON::GenericObject</a></li>
+        
+          
+          
+          <li><a href="../../JSON/JSONError.html">JSON::JSONError</a></li>
+        
+          
+          
+          <li><a href="../../JSON/MissingUnicodeSupport.html">JSON::MissingUnicodeSupport</a></li>
+        
+          
+          
+          <li><a href="../../JSON/NestingError.html">JSON::NestingError</a></li>
+        
+          
+          
+          <li><a href="../../JSON/ParserError.html">JSON::ParserError</a></li>
+        
+          
+          
+          <li><a href="../../JSON/GeneratorError.html">JSON::UnparserError</a></li>
+        
+          
+          
+          <li><a href="../../Kernel.html">Kernel</a></li>
+        
+          
+          
+          <li><a href="../../OpenStruct.html">OpenStruct</a></li>
+        
+          
+          
+          <li><a href="../../Range.html">Range</a></li>
+        
+          
+          
+          <li><a href="../../Rational.html">Rational</a></li>
+        
+          
+          
+          <li><a href="../../Regexp.html">Regexp</a></li>
+        
+          
+          
+          <li><a href="../../Set.html">Set</a></li>
+        
+          
+          
+          <li><a href="../../Struct.html">Struct</a></li>
+        
+          
+          
+          <li><a href="../../Symbol.html">Symbol</a></li>
+        
+          
+          
+          <li><a href="../../Time.html">Time</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div> <!-- metadata -->
+  <div class='adzbox'  id="azk83167">
+    
+  </div> 
+  <div id="documentation">
+    <h1 class="class">JSON::Ext::Parser</h1>
+
+    <div id="description" class="description">
+      
+<p>This is the <a href="../../JSON.html"><code>JSON</code></a> parser implemented as a C extension. It can be configured to be used by setting</p>
+
+<pre class="ruby"><span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parser</span> = <span class="ruby-constant">JSON</span><span class="ruby-operator">::</span><span class="ruby-constant">Ext</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>
+</pre>
+
+<p>with the method parser= in <a href="../../JSON.html"><code>JSON</code></a>.</p>
+
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="new-method" class="method-detail ">
+          <a name="method-c-new"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">new(source, opts => {})</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Creates a new <a href="Parser.html"><code>JSON::Ext::Parser</code></a> instance for the string <em>source</em>.</p>
+
+<p>Creates a new <a href="Parser.html"><code>JSON::Ext::Parser</code></a> instance for the string <em>source</em>.</p>
+
+<p>It will be configured by the <em>opts</em> hash. <em>opts</em> can have the following keys:</p>
+
+<p><em>opts</em> can have the following keys:</p>
+<ul><li>
+<p><strong>max_nesting</strong>: The maximum depth of nesting allowed in the parsed data structures. Disable depth checking with :max_nesting =&gt; false|nil|0, it defaults to 100.</p>
+</li><li>
+<p><strong>allow_nan</strong>: If set to true, allow NaN, Infinity and -Infinity in defiance of RFC 4627 to be parsed by the <a href="Parser.html"><code>Parser</code></a>. This option defaults to false.</p>
+</li><li>
+<p><strong>symbolize_names</strong>: If set to true, returns symbols for the names (keys) in a <a href="../../JSON.html"><code>JSON</code></a> object. Otherwise strings are returned, which is also the default. It&#39;s not possible to use this option in conjunction with the <strong>create_additions</strong> option.</p>
+</li><li>
+<p><strong>create_additions</strong>: If set to false, the <a href="Parser.html"><code>Parser</code></a> doesn&#39;t create additions even if a matching class and create_id was found. This option defaults to false.</p>
+</li><li>
+<p><strong>object_class</strong>: Defaults to Hash</p>
+</li><li>
+<p><strong>array_class</strong>: Defaults to Array</p>
+</li></ul>
+            
+
+            
+            <div class="method-source-code" id="new-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE cParser_initialize(int argc, VALUE *argv, VALUE self)
+{
+    VALUE source, opts;
+    GET_PARSER_INIT;
+
+    if (json-&gt;Vsource) {
+        rb_raise(rb_eTypeError, &quot;already initialized instance&quot;);
+    }
+#ifdef HAVE_RB_SCAN_ARGS_OPTIONAL_HASH
+    rb_scan_args(argc, argv, &quot;1:&quot;, &amp;source, &amp;opts);
+#else
+    rb_scan_args(argc, argv, &quot;11&quot;, &amp;source, &amp;opts);
+#endif
+    if (!NIL_P(opts)) {
+#ifndef HAVE_RB_SCAN_ARGS_OPTIONAL_HASH
+        opts = rb_convert_type(opts, T_HASH, &quot;Hash&quot;, &quot;to_hash&quot;);
+        if (NIL_P(opts)) {
+            rb_raise(rb_eArgError, &quot;opts needs to be like a hash&quot;);
+        } else {
+#endif
+            VALUE tmp = ID2SYM(i_max_nesting);
+            if (option_given_p(opts, tmp)) {
+                VALUE max_nesting = rb_hash_aref(opts, tmp);
+                if (RTEST(max_nesting)) {
+                    Check_Type(max_nesting, T_FIXNUM);
+                    json-&gt;max_nesting = FIX2INT(max_nesting);
+                } else {
+                    json-&gt;max_nesting = 0;
+                }
+            } else {
+                json-&gt;max_nesting = 100;
+            }
+            tmp = ID2SYM(i_allow_nan);
+            if (option_given_p(opts, tmp)) {
+                json-&gt;allow_nan = RTEST(rb_hash_aref(opts, tmp)) ? 1 : 0;
+            } else {
+                json-&gt;allow_nan = 0;
+            }
+            tmp = ID2SYM(i_symbolize_names);
+            if (option_given_p(opts, tmp)) {
+                json-&gt;symbolize_names = RTEST(rb_hash_aref(opts, tmp)) ? 1 : 0;
+            } else {
+                json-&gt;symbolize_names = 0;
+            }
+            tmp = ID2SYM(i_create_additions);
+            if (option_given_p(opts, tmp)) {
+                json-&gt;create_additions = RTEST(rb_hash_aref(opts, tmp));
+            } else {
+                json-&gt;create_additions = 0;
+            }
+            if (json-&gt;symbolize_names &amp;&amp; json-&gt;create_additions) {
+              rb_raise(rb_eArgError,
+                &quot;options :symbolize_names and :create_additions cannot be &quot;
+                &quot; used in conjunction&quot;);
+            }
+            tmp = ID2SYM(i_create_id);
+            if (option_given_p(opts, tmp)) {
+                json-&gt;create_id = rb_hash_aref(opts, tmp);
+            } else {
+                json-&gt;create_id = rb_funcall(mJSON, i_create_id, 0);
+            }
+            tmp = ID2SYM(i_object_class);
+            if (option_given_p(opts, tmp)) {
+                json-&gt;object_class = rb_hash_aref(opts, tmp);
+            } else {
+                json-&gt;object_class = Qnil;
+            }
+            tmp = ID2SYM(i_array_class);
+            if (option_given_p(opts, tmp)) {
+                json-&gt;array_class = rb_hash_aref(opts, tmp);
+            } else {
+                json-&gt;array_class = Qnil;
+            }
+            tmp = ID2SYM(i_decimal_class);
+            if (option_given_p(opts, tmp)) {
+                json-&gt;decimal_class = rb_hash_aref(opts, tmp);
+            } else {
+                json-&gt;decimal_class = Qnil;
+            }
+            tmp = ID2SYM(i_match_string);
+            if (option_given_p(opts, tmp)) {
+                VALUE match_string = rb_hash_aref(opts, tmp);
+                json-&gt;match_string = RTEST(match_string) ? match_string : Qnil;
+            } else {
+                json-&gt;match_string = Qnil;
+            }
+#ifndef HAVE_RB_SCAN_ARGS_OPTIONAL_HASH
+        }
+#endif
+    } else {
+        json-&gt;max_nesting = 100;
+        json-&gt;allow_nan = 0;
+        json-&gt;create_additions = 0;
+        json-&gt;create_id = rb_funcall(mJSON, i_create_id, 0);
+        json-&gt;object_class = Qnil;
+        json-&gt;array_class = Qnil;
+        json-&gt;decimal_class = Qnil;
+    }
+    source = convert_encoding(StringValue(source));
+    StringValue(source);
+    json-&gt;len = RSTRING_LEN(source);
+    json-&gt;source = RSTRING_PTR(source);;
+    json-&gt;Vsource = source;
+    return self;
+}
+            </pre> 
+            </div><!-- new-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new-method -->
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="parse-method" class="method-detail ">
+          <a name="method-i-parse"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">parse()</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Parses the current <a href="../../JSON.html"><code>JSON</code></a> text <em>source</em> and returns the complete data structure as a result.</p>
+            
+
+            
+            <div class="method-source-code" id="parse-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE cParser_parse(VALUE self)
+{
+  char *p, *pe;
+  int cs = EVIL;
+  VALUE result = Qnil;
+  GET_PARSER;
+
+
+#line 1877 &quot;parser.c&quot;
+        {
+        cs = JSON_start;
+        }
+
+#line 776 &quot;parser.rl&quot;
+  p = json-&gt;source;
+  pe = p + json-&gt;len;
+
+#line 1886 &quot;parser.c&quot;
+        {
+        if ( p == pe )
+                goto _test_eof;
+        switch ( cs )
+        {
+st1:
+        if ( ++p == pe )
+                goto _test_eof1;
+case 1:
+        switch( (*p) ) {
+                case 13: goto st1;
+                case 32: goto st1;
+                case 34: goto tr2;
+                case 45: goto tr2;
+                case 47: goto st6;
+                case 73: goto tr2;
+                case 78: goto tr2;
+                case 91: goto tr2;
+                case 102: goto tr2;
+                case 110: goto tr2;
+                case 116: goto tr2;
+                case 123: goto tr2;
+        }
+        if ( (*p) &gt; 10 ) {
+                if ( 48 &lt;= (*p) &amp;&amp; (*p) &lt;= 57 )
+                        goto tr2;
+        } else if ( (*p) &gt;= 9 )
+                goto st1;
+        goto st0;
+st0:
+cs = 0;
+        goto _out;
+tr2:
+#line 752 &quot;parser.rl&quot;
+        {
+        char *np = JSON_parse_value(json, p, pe, &amp;result, 0);
+        if (np == NULL) { p--; {p++; cs = 10; goto _out;} } else {p = (( np))-1;}
+    }
+        goto st10;
+st10:
+        if ( ++p == pe )
+                goto _test_eof10;
+case 10:
+#line 1930 &quot;parser.c&quot;
+        switch( (*p) ) {
+                case 13: goto st10;
+                case 32: goto st10;
+                case 47: goto st2;
+        }
+        if ( 9 &lt;= (*p) &amp;&amp; (*p) &lt;= 10 )
+                goto st10;
+        goto st0;
+st2:
+        if ( ++p == pe )
+                goto _test_eof2;
+case 2:
+        switch( (*p) ) {
+                case 42: goto st3;
+                case 47: goto st5;
+        }
+        goto st0;
+st3:
+        if ( ++p == pe )
+                goto _test_eof3;
+case 3:
+        if ( (*p) == 42 )
+                goto st4;
+        goto st3;
+st4:
+        if ( ++p == pe )
+                goto _test_eof4;
+case 4:
+        switch( (*p) ) {
+                case 42: goto st4;
+                case 47: goto st10;
+        }
+        goto st3;
+st5:
+        if ( ++p == pe )
+                goto _test_eof5;
+case 5:
+        if ( (*p) == 10 )
+                goto st10;
+        goto st5;
+st6:
+        if ( ++p == pe )
+                goto _test_eof6;
+case 6:
+        switch( (*p) ) {
+                case 42: goto st7;
+                case 47: goto st9;
+        }
+        goto st0;
+st7:
+        if ( ++p == pe )
+                goto _test_eof7;
+case 7:
+        if ( (*p) == 42 )
+                goto st8;
+        goto st7;
+st8:
+        if ( ++p == pe )
+                goto _test_eof8;
+case 8:
+        switch( (*p) ) {
+                case 42: goto st8;
+                case 47: goto st1;
+        }
+        goto st7;
+st9:
+        if ( ++p == pe )
+                goto _test_eof9;
+case 9:
+        if ( (*p) == 10 )
+                goto st1;
+        goto st9;
+        }
+        _test_eof1: cs = 1; goto _test_eof;
+        _test_eof10: cs = 10; goto _test_eof;
+        _test_eof2: cs = 2; goto _test_eof;
+        _test_eof3: cs = 3; goto _test_eof;
+        _test_eof4: cs = 4; goto _test_eof;
+        _test_eof5: cs = 5; goto _test_eof;
+        _test_eof6: cs = 6; goto _test_eof;
+        _test_eof7: cs = 7; goto _test_eof;
+        _test_eof8: cs = 8; goto _test_eof;
+        _test_eof9: cs = 9; goto _test_eof;
+
+        _test_eof: {}
+        _out: {}
+        }
+
+#line 779 &quot;parser.rl&quot;
+
+  if (cs &gt;= JSON_first_final &amp;&amp; p == pe) {
+    return result;
+  } else {
+    rb_enc_raise(EXC_ENCODING eParserError, &quot;%u: unexpected token at &#39;%s&#39;&quot;, __LINE__, p);
+    return Qnil;
+  }
+}
+            </pre> 
+            </div><!-- parse-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- parse-method -->
+      
+        <div id="source-method" class="method-detail ">
+          <a name="method-i-source"></a>
+
+          
+          
+          <div class="method-heading">
+            <span class="method-callseq">source()</span>
+            
+            <span class="method-click-advice">click to toggle source</span>
+            
+          </div>
+          
+          
+          <div>
+  
+            
+            <p>Returns a copy of the current <em>source</em> string, that was used to construct this <a href="Parser.html"><code>Parser</code></a>.</p>
+            
+
+            
+            <div class="method-source-code" id="source-source">
+              <pre> <!-- method.markup_code 290 -->
+               static VALUE cParser_source(VALUE self)
+{
+    GET_PARSER;
+    return rb_str_dup(json-&gt;Vsource);
+}
+            </pre> 
+            </div><!-- source-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- source-method -->
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+  <div id='tx_Parser_versioned' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Parser_versioned").load("/associated/2.7.4/Parser.ihtml");</script> <div id='tx_Parser' class='associated_wrapper'></div><script type='text/javascript'>$("#tx_Parser").load("/associated/Parser.ihtml");</script> 
+      
+  </div><!-- documentation -->
+  <div id='dynamic'>
+  </div>
+      
+<div class='grids wrapper' id="footer">
+  <p><small>This page was generated for Ruby 2.7.4</small></p> 
+  
+   <p><a href="http://ruby-doc.org">Ruby-doc.org</a> is a service of <a href="http://jamesbritt.com">James Britt</a> and <a href="http://neurogami.com">Neurogami</a>, an erratic source of art, music, and technology.  <div class='oio-inline'><ins data-revive-zoneid="1" data-revive-id="58924a5717c091dfee6dda3f7d38c4d7"></ins><script async src="//ras.ruby-doc.org/vvv/delivery/thesinkjs.php"></script></div></p>
+ 
+       <p><small>Generated with Ruby-doc Rdoc Generator 0.42.0</small>.</p>
+  </div>
+</div>
+  
+ <script type='text/javascript'>
+$(document).ready(function() {
+      $.ajaxSetup({ cache: false });
+      $("#vulns-alert").load("/associated/vulns.ihtml");
+    });
+
+    </script>
+
+
+ 
+		<script type='text/javascript'>
+
+	function loadPlus(plusdocs){
+			$(plusdocs).find("div[class='associated_wrapper']").each (function() {
+					$("#" + this.id).append($(plusdocs).find("#" + this.id ));
+					});
+	} 
+
+   //function loadInline(json){
+   // for (var lookFor in json) {
+    //  $(lookFor).after(json[lookFor]);
+    // }
+  // } // end loadInline
+
+
+$(document).ready(function() {
+		$.ajaxSetup({ cache: false });
+			$.get('/associated/2.7.4/plus_Parser.ihtml', 
+			function(plusdocs) {
+			setTimeout(function() {
+				loadPlus(plusdocs);
+				}, 2000);
+			}
+			);
+
+
+//     $.ajax({
+//     dataType: "json",
+//      url: '/associated/2.7.4/inline_Parser.js',
+//      success: function(json) {
+// 			setTimeout(function() {
+// 				loadInline(json);
+// 				}, 2000);
+// 			}
+//    });
+
+		});
+</script>
+		
+</body>
+</html>
+
+
