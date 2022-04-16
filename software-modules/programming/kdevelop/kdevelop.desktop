@@ -1,0 +1,17 @@
+[Desktop Entry]
+Type=Application
+Exec=kdevelop
+MimeType=
+Icon=kdevelop
+X-DocPath=kdevelop/index.html
+Actions=OpenSession;
+Terminal=false
+StartupWMClass=kdevelop
+Name=KDevelop
+GenericName=Integrated Development Environment
+Categories=Programming;
+NoDisplay=false
+
+[Desktop Action OpenSession]
+Name=Open a Session
+Exec=kdevelop --ps
