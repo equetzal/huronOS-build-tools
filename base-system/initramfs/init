@@ -10,7 +10,9 @@ export PATH=.:/:/usr/sbin:/usr/bin:/sbin:/bin
 . /lib/config
 . /lib/livekitlib
 
-echo "Starting huronOS"
+if [ ! -r /lib/initramfs_escaped ]; then
+	echo "Starting huronOS"
+fi
 
 transfer_initramfs
 

@@ -1,0 +1,61 @@
+#!/bin/bash
+
+# Taken from Slax, Originally authored by: Tomas M <http://www.slax.org/>
+# Modified by the huronOS team:
+#	Enya Quetzalli <equetzal@huronos.org>
+
+usage()
+{
+   echo ""
+   echo "Convert directory to .hsm compressed module"
+   echo "Usage: $0 [source_directory.hsm] [[target_file.hsm]]"
+   echo "  If source_directory does not have .hsm suffix and it is not 'squashfs-root',"
+   echo "  then the source_directory itself is included in the module and"
+   echo "  then the target_file.hsm parameter is required."
+   echo "  If target_file.hsm is not specified, the source_directory is erased"
+   echo "  and replaced by the newly generated module file."
+}
+
+P1="$(readlink -f "$1")"
+P2="$(readlink -f "$2")"
+
+if [ "$P1" = "$P2" ]; then
+   P2=""
+fi
+
+HSM=$(echo "$P1" | grep -o "[.]hsm/*\$")
+if [ "$(echo "$P1" | grep -o "/squashfs-root/*\$")" != "" ]; then
+   HSM="true"
+fi
+
+if [ "$HSM" = "" ]; then
+   KEEP="-keep-as-directory"
+   if [ "$P2" = "" ]; then
+      usage
+      exit 1
+   fi
+else
+   KEEP=""
+fi
+
+if [ ! -d "$P1" ]; then
+   echo "Not a directory: $P1" >&2
+   exit 2
+fi
+
+
+if [ "$P2" = "" ]; then
+   TARGET="$P1".hsm
+   while [ -e "$TARGET" ]; do TARGET="$TARGET"x; done
+   mksquashfs "$P1" "$TARGET" -comp xz -b 1024K -always-use-fragments $KEEP >/dev/null || exit 3
+   umount "$P1" 2>/dev/null
+   rm -Rf "$P1"
+   mv "$TARGET" "$P1"
+else
+   if [ -e "$P2" ]; then
+      echo "Target exists: $P2" >&2
+      exit 4
+   fi
+
+   mksquashfs "$P1" "$P2" -comp xz -b 1024K -always-use-fragments $KEEP >/dev/null
+fi

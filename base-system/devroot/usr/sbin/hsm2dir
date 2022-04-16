@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Taken from Slax, Originally authored by: Tomas M <http://www.slax.org/>
+# Modified by the huronOS team:
+#	Enya Quetzalli <equetzal@huronos.org>
+
+if [ ! -e "$1" ]; then
+   echo 
+   echo "Convert .hsm compressed module into directory with the same name"
+   echo "Usage: $0 [source_file.hsm] [[optional output_directory]]"
+   echo "  If the output_directory is specified, it must exist"
+   echo "  If the output_directory is not specified, the name source_file.hsm"
+   echo "  is used and the directory is overmounted with tmpfs"
+   exit 1
+fi
+
+if [ ! -r "$1" ]; then
+   echo "File does not exist: $1" >&2
+   exit
+fi
+
+if [ "$2" = "" ]; then
+   SOURCE="$1".x
+   while [ -e "$SOURCE" ]; do SOURCE="$SOURCE"x; done
+   mv "$1" "$SOURCE" || exit
+   mkdir "$1"
+   mount -t tmpfs tmpfs "$1"
+   unsquashfs -f -dest "$1" "$SOURCE" >/dev/null || exit
+   rm "$SOURCE"
+else
+   if [ ! -d "$2" ]; then
+      echo "Directory does not exist: $2" >&2
+      exit
+   fi
+   unsquashfs -f -dest "$2" "$1" >/dev/null
+fi

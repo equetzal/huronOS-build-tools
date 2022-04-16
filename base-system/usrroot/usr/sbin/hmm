@@ -34,7 +34,7 @@ print_branches(){
    CWD="$(pwd)"
    cd "$SI"
    ls -v1 | grep -v xi_path | egrep 'br[0-9]+' | xargs cat | grep memory/bundles | rev | cut -b 4- | rev | while read MODULE; do
-      if mountpoint -q "$BUNDLE"; then
+      if mountpoint -q "$MODULE"; then
          LOOP=$(cat /proc/mounts | fgrep " $MODULE squashfs" | cut -d " " -f 1)
          echo -n "$MODULE"
          echo -ne "\t"
@@ -52,7 +52,7 @@ activate(){
    local MODULE TGT BAS
 
    MODULE="$(readlink -f "$1")"
-   BAS="$(basename "$SB")"
+   BAS="$(basename "$MODULE")"
 
    # check if file exists
    if [ ! -r "$MODULE" ]; then
@@ -71,7 +71,7 @@ activate(){
    fi
 
    # check if this particular file is already activated
-   if print_branches | cut -f 2 | fgrep -q "$SB"; then
+   if print_branches | cut -f 2 | fgrep -q "$MODULE"; then
       exit
    fi
 
@@ -89,7 +89,7 @@ activate(){
    if [ $? -ne 0 ]; then
       umount "$TGT"
       rmdir "$TGT"
-      die "Error attaching bundle filesystem to Slax"
+      die "Error attaching bundle filesystem to huronOS"
    fi
 
    echo "huronOS module activated: $BAS"
@@ -113,9 +113,9 @@ deactivate(){
       # we don't have real filename match, lets try to add .sb extension
       if [ ! -d "$BUNDLES/$MODULE.hsm" ]; then
          # no, still no match. Lets use some guesswork
-         SB=$(print_branches | cut -f 2 | egrep -o "/[0-9]+-$MODULE.hsm\$" | tail -n 1 | xargs -r basename)
+         MODULE=$(print_branches | cut -f 2 | egrep -o "/[0-9]+-$MODULE.hsm\$" | tail -n 1 | xargs -r basename)
       else
-         SB="$MODULE.hsm"
+         MODULE="$MODULE.hsm"
       fi
    fi
 
@@ -161,11 +161,13 @@ usage()
 
 if [ "$1" = "activate" ]; then
    activate "$2"
+   su contestant -c '(nohup budgie-panel --replace > /dev/null 2>&1 &)'
    exit
 fi
 
 if [ "$1" = "deactivate" ]; then
    deactivate "$2"
+   su contestant -c '(nohup budgie-panel --replace > /dev/null 2>&1 &)'
    exit
 fi
 

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -xe
+
 # Install destiny build packages
 INST_PACKAGES="acpi-support-base acpid alsa-utils bzip2 connman dosfstools file hdparm less lsof lzma man ntfs-3g ntpdate pm-utils powermgmt-base psmisc rfkill sdparm squashfs-tools usb-modeswitch wget wireless-tools wpasupplicant xz-utils"
 DEV_PACKAGES="dnsmasq gddrescue genisoimage gpart htop net-tools netcat smartmontools unzip zip"

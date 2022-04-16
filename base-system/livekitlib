@@ -129,7 +129,7 @@ create_bundle()
 transfer_initramfs()
 {
    if [ ! -r /lib/initramfs_escaped ]; then
-      echo "switch root from initramfs to ramfs"
+      echo "Switching root from initramfs to ramfs"
       SWITCH=/m # one letter directory
       mkdir -p $SWITCH
       mount -t tmpfs -o size="100%" tmpfs $SWITCH

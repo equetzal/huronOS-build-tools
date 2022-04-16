@@ -6,7 +6,7 @@
 #	Abraham Omar   <aomm@huronos.org>
 
 export PATH=.:./tools:../tools:/usr/sbin:/usr/bin:/sbin:/bin:/
-set -x
+set -xe
 
 CHANGEDIR=$(dirname $(readlink -f $0))
 echo "Changing current directory to $CHANGEDIR"
@@ -15,6 +15,7 @@ CWD="$(pwd)"
 
 . ./config || exit 1
 . ./livekitlib || exit 1
+. ./prepare.sh || exit 1
 
 # only root can continue, because only root can read all files from your system
 allow_only_root
@@ -34,9 +35,6 @@ if [ "$MKISOFS" = "" ]; then
    echo "Cannot find mkisofs or genisoimage, stop"
    exit 3
 fi
-
-# Prepare huronOS base packages
-source prepare.sh
 
 # build initramfs image
 if [ "$SKIPINITRFS" = "" ]; then
@@ -79,7 +77,6 @@ for i in $MKMOD; do
    fi
 done
 mksquashfs $COREFS $LIVEKITDATA/$LIVEKITNAME/base/01-core.$BEXT -comp xz -b 1024K -always-use-fragments -keep-as-directory || exit
-cp -r modules/* $LIVEKITDATA/$LIVEKITNAME/
 
 cd "$LIVEKITDATA"
 ARCH=$(uname -m)
@@ -97,7 +94,7 @@ echo cd $LIVEKITDATA '&&' zip -0 -r "$TARGET/$LIVEKITNAME-$ARCH.zip" '*' \
 > $TARGET/gen_"$LIVEKITNAME"_zip.sh
 chmod o+x $TARGET/gen_"$LIVEKITNAME"_zip.sh
 
-source restore.sh
+. ./restore.sh
 
 echo "-----------------------------"
 echo "Finished. Find your result in $LIVEKITDATA"
