@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Python 3 Documentation
+Comment=Python 3 Programming Language Documentation
+Icon=accessories-dictionary-symbolic
+Exec=open /usr/share/doc/reference/python3/index.html
+Categories=Reference;
+NoDisplay=false
