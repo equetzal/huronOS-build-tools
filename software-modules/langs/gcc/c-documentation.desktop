@@ -4,6 +4,6 @@ Type=Application
 Name=C Documentation
 Comment=C Programming Language Documentation
 Icon=accessories-dictionary-symbolic
-Exec=open /usr/share/doc/reference/en/c.html
+Exec=open /usr/share/doc/reference/c/en/c.html
 Categories=Reference;
 NoDisplay=false
