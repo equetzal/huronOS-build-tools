@@ -1,1 +1,1 @@
-libruby2.7 libyaml-0-2 rake ruby-minitest ruby-net-telnet ruby-power-assert ruby-rubygems ruby-test-unit ruby-xmlrpc ruby2.7 rubygems-integration 
+libyaml-0-2 ruby-minitest ruby-net-telnet ruby-power-assert ruby-test-unit ruby-xmlrpc rubygems-integration 
