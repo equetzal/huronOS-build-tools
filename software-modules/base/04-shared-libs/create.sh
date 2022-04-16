@@ -4,4 +4,7 @@ LIBS="binutils binutils-common binutils-x86-64-linux-gnu ca-certificates-java cp
 apt update
 apt install --yes --no-install-recommends $LIBS
 
-savechanges /tmp/04-shared-libs.hsm
+mkdir -p /usr/share/glib-2.0/schemas/
+cp gschemas.compiled /usr/share/glib-2.0/schemas/
+
+savechanges /run/initramfs/memory/data/huronOS/base/04-shared-libs.hsm

@@ -1,0 +1,22 @@
+[Desktop Entry]
+Name=Text Editor
+Comment=Edit text files
+Exec=gedit %U
+Terminal=false
+Type=Application
+StartupNotify=true
+MimeType=text/plain;
+Icon=org.gnome.gedit
+Categories=Programming;
+Actions=new-window;new-document;
+Keywords=Text;Editor;Plaintext;Write;gedit;
+DBusActivatable=true
+NoDisplay=false
+
+[Desktop Action new-window]
+Name=New Window
+Exec=gedit --new-window
+
+[Desktop Action new-document]
+Name=New Document
+Exec=gedit --new-document
