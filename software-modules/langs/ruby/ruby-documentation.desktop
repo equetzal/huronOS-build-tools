@@ -3,6 +3,6 @@ Type=Application
 Name=Ruby Documentation
 Comment=Ruby Programming Language Documentation
 Icon=accessories-dictionary-symbolic
-Exec=open /usr/share/doc/ruby-documentation/index.html
+Exec=open /usr/share/doc/reference/ruby/index.html
 Categories=Reference;
 NoDisplay=false
