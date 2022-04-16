@@ -1,1 +1,0 @@
-var search_data = {"index":{"searchIndex":["racc","cparseparams","parser"],"longSearchIndex":["racc","racc::cparseparams","racc::parser"],"info":[["Racc","","Racc.html","",""],["Racc::CparseParams","","Racc/CparseParams.html","",""],["Racc::Parser","","Racc/Parser.html","",""]]}}
