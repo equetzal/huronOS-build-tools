@@ -1,0 +1,28 @@
+[Desktop Entry]
+Actions=TranslateSelectedText;Open;CopyTranslatedSelection;
+Name=Crow Translate
+GenericName=Translator
+Comment=A simple and lightweight translator that allows to translate the selected text.
+Keywords=google;yandex;
+Exec=crow
+Icon=crow-translate
+Terminal=false
+StartupNotify=false
+Type=Application
+Categories=Network;
+X-KDE-DBUS-Restricted-Interfaces=org.kde.kwin.Screenshot
+NoDisplay=false
+
+[Desktop Action TranslateSelectedText]
+Exec=qdbus io.crow_translate.CrowTranslate /io/crow_translate/CrowTranslate/MainWindow translateSelection
+Name=Translate selected text
+X-KDE-Shortcuts=Ctrl+Alt+E
+
+[Desktop Action Open]
+Exec=qdbus io.crow_translate.CrowTranslate /io/crow_translate/CrowTranslate/MainWindow open
+Name=Show main window
+X-KDE-Shortcuts=Ctrl+Alt+C
+
+[Desktop Action CopyTranslatedSelection]
+Exec=qdbus io.crow_translate.CrowTranslate /io/crow_translate/CrowTranslate/MainWindow copyTranslatedSelection
+Name=Translate selected text and copy to clipboard
