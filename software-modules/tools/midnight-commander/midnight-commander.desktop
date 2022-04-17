@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Midnight Commander
+Comment=File manager
+Exec=mc
+Icon=MidnightCommander
+Terminal=true
+Type=Application
+Categories=Tools;
+Keywords=file manager;console;
+NoDisplay=false
