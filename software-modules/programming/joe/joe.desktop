@@ -9,5 +9,5 @@ TryExec=joe
 Icon=accessories-text-editor
 Type=Application
 Terminal=true
-Categories=Tools;
+Categories=Programming;
 NoDisplay=false
