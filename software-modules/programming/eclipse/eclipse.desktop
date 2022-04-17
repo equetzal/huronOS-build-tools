@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Eclipse IDE
+Comment=Eclipse IDE
+Exec=/home/contestant/.local/usr/share/eclipse/java-2022-03/eclipse/eclipse
+Icon=eclipse
+Type=Application
+Categories=Programming;
+Keywords=eclipse;
+NoDisplay=false
