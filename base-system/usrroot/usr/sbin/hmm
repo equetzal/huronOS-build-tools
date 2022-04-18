@@ -10,11 +10,6 @@
 #	Enya Quetzalli <equetzal@huronos.org>
 #	Abraham Omar   <aomm@huronos.org>
 
-# Params:
-#	activate
-#	deactivate
-#	list
-
 LIVE=/run/initramfs/memory
 RAMSTORE=$LIVE/modules
 
@@ -22,26 +17,27 @@ RAMSTORE=$LIVE/modules
 # $1 = error message
 #
 die(){
-   echo "$1" >&2
-   exit 1
+	echo "$1" >&2
+	exit 1
 }
 
 
 print_branches(){
-   local SI MODULE LOOP CWD
+	local SI MODULE LOOP CWD
 
-   SI="/sys/fs/aufs/$(cat /proc/mounts | grep 'aufs / aufs' | egrep -o 'si=([^,) ]+)' | tr = _)"
-   CWD="$(pwd)"
-   cd "$SI"
-   ls -v1 | grep -v xi_path | egrep 'br[0-9]+' | xargs cat | grep memory/bundles | rev | cut -b 4- | rev | while read MODULE; do
-      if mountpoint -q "$MODULE"; then
-         LOOP=$(cat /proc/mounts | fgrep " $MODULE squashfs" | cut -d " " -f 1)
-         echo -n "$MODULE"
-         echo -ne "\t"
-         losetup $LOOP | sed -r "s:.*[(]|[)].*::g"
-      fi
-   done | tac
-   cd "$CWD"
+	SI="/sys/fs/aufs/$(cat /proc/mounts | grep 'aufs / aufs' | egrep -o 'si=([^,) ]+)' | tr = _)"
+	CWD="$(pwd)"
+	cd "$SI"
+	ls -v1 | grep -v xi_path | egrep 'br[0-9]+' | xargs cat | grep memory/bundles | rev | cut -b 4- | rev | while read MODULE; do
+
+	if mountpoint -q "$MODULE"; then
+		LOOP=$(cat /proc/mounts | fgrep " $MODULE squashfs" | cut -d " " -f 1)
+		echo -n "$MODULE"
+		echo -ne "\t"
+		losetup $LOOP | sed -r "s:.*[(]|[)].*::g"
+	fi
+	done | tac
+	cd "$CWD"
 }
 
 
@@ -49,50 +45,60 @@ print_branches(){
 # $1 = file to activate
 #
 activate(){
-   local MODULE TGT BAS
+	local MODULE TGT BAS
 
-   MODULE="$(readlink -f "$1")"
-   BAS="$(basename "$MODULE")"
+	MODULE="$(readlink -f "$1")"
+	BAS="$(basename "$MODULE")"
 
-   # check if file exists
-   if [ ! -r "$MODULE" ]; then
-      usage
-      die "file not found $MODULE"
-   fi
+	# If file does not exists
+	if [ ! -r "$MODULE" ]; then
+		echo "$(tput setaf 1)!huronOS module not found: $MODULE$(tput sgr0)"
+		return 1
+	fi
 
-   # check if the file is part of aufs union, if yes we need to copy it outside
-   if df "$MODULE" | cut -d " " -f 1 | grep -q aufs; then
-      TGT="$RAMSTORE"
-      mkdir -p "$TGT"
-      if [ -r $TGT/$BAS ]; then die "File exists: $TGT/$BAS"; fi
-      cp -n "$MODULE" "$TGT/$BAS"
-      if [ $? -ne 0 ]; then die "Error copying file to $TGT/$BAS. Not enough free RAM or disk space?"; fi
-      MODULE="$TGT/$BAS"
-   fi
+	# check if the file is part of aufs union, if yes we need to copy it outside
+	if df "$MODULE" | cut -d " " -f 1 | grep -q aufs; then
+		TGT="$RAMSTORE"
+		mkdir -p "$TGT"
+		if [ -r $TGT/$BAS ]; then
+			echo "$(tput setaf 1)!huronOS module failed to load: File exists $TGT/$BAS, Staff member needed!!$(tput sgr0)"
+			return 1
+		fi
+		cp -n "$MODULE" "$TGT/$BAS"
+		if [ $? -ne 0 ]; then
+			echo "$(tput setaf 1)!huronOS module failed to load: Error copying module $TGT/$BAS: Low RAM/Disk, Staff member needed!!$(tput sgr0)"
+			return 1
+		fi
+		MODULE="$TGT/$BAS"
+	fi
 
-   # check if this particular file is already activated
-   if print_branches | cut -f 2 | fgrep -q "$MODULE"; then
-      exit
-   fi
+	# If this particular file is already activated
+	if print_branches | cut -f 2 | fgrep -q "$MODULE"; then
+		echo "$(tput setaf 2)+huronOS module activated: $BAS$(tput sgr0)"
+		return 0
+	fi
 
-   # mount remount,add
-   TGT="$LIVE/bundles/$BAS"
-   mkdir -p "$TGT"
+	# mount remount,add
+	TGT="$LIVE/bundles/$BAS"
+	mkdir -p "$TGT"
 
-   mount -n -o loop,ro "$MODULE" "$TGT"
-   if [ $? -ne 0 ]; then
-      die "Error mounting $MODULE to $TGT, perhaps corrupted download"
-   fi
+	mount -n -o loop,ro "$MODULE" "$TGT"
+	if [ $? -ne 0 ]; then
+		echo "$(tput setaf 1)!huronOS module failed to load: $MODULE -> $TGT, Staff member needed!!$(tput sgr0)"
+		return 1
+	fi
 
-   # add current branch to aufs union
-   mount -t aufs -o remount,add:1:"$TGT" aufs /
-   if [ $? -ne 0 ]; then
-      umount "$TGT"
-      rmdir "$TGT"
-      die "Error attaching bundle filesystem to huronOS"
-   fi
+	# Add current branch to aufs union
+	mount -t aufs -o remount,add:1:"$TGT" aufs /
+	if [ $? -ne 0 ]; then
+		umount "$TGT"
+		rmdir "$TGT"
+		echo "$(tput setaf 1)!huronOS module faied to attach on AUFS, Staff member needed!!$(tput sgr0)"
+		return 1
+	fi
 
-   echo "huronOS module activated: $BAS"
+	echo "$(tput setaf 2)+huronOS module activated: $BAS$(tput sgr0)"
+	return 0
 }
 
 
@@ -100,59 +106,84 @@ activate(){
 # $1 = path to module file, or its name
 #
 deactivate(){
-   local BUNDLES MODULE MATCH LOOP LOOPFILE
+	local BUNDLES MODULE MATCH LOOP LOOPFILE
 
-   BUNDLES=$LIVE/bundles
-   MODULES=$LIVE/modules
-   MODULE="$(basename "$1")"
+	BUNDLES=$LIVE/bundles
+	MODULES=$LIVE/modules
+	MODULE="$(basename "$1")"
 
-   rmdir "$BUNDLES/$MODULE" 2>/dev/null    # this fails unless the dir is
-   rmdir "$BUNDLES/$MODULE.hsm" 2>/dev/null # forgotten there empty. It's safe this way
+	rmdir "$BUNDLES/$MODULE" 2>/dev/null    # this fails unless the dir is
+	rmdir "$BUNDLES/$MODULE.hsm" 2>/dev/null # forgotten there empty. It's safe this way
 
-   if [ ! -d "$BUNDLES/$MODULE" ]; then
-      # we don't have real filename match, lets try to add .sb extension
-      if [ ! -d "$BUNDLES/$MODULE.hsm" ]; then
-         # no, still no match. Lets use some guesswork
-         MODULE=$(print_branches | cut -f 2 | egrep -o "/[0-9]+-$MODULE.hsm\$" | tail -n 1 | xargs -r basename)
-      else
-         MODULE="$MODULE.hsm"
-      fi
-   fi
+	if [ ! -d "$BUNDLES/$MODULE" ]; then
+		# we don't have real filename match, lets try to add .hsm extension
+		if [ ! -d "$BUNDLES/$MODULE.hsm" ]; then
+			# no, still no match. Lets use some guesswork
+			MODULE=$(print_branches | cut -f 2 | egrep -o "/[0-9]+-$MODULE.hsm\$" | tail -n 1 | xargs -r basename)
+		else
+			MODULE="$MODULE.hsm"
+		fi
+	fi
 
-   if [ "$MODULE" = "" -o ! -d "$BUNDLES/$MODULE" ]; then
-      die "can't find active module $1"
-   fi
+	if [ "$MODULE" = "" -o ! -d "$BUNDLES/$MODULE" ]; then
+		echo "$(tput setaf 3)-huronOS module deactivated: $(basename "$1")$(tput sgr0)"
+		return 0
+	fi
 
-   echo "Attempting to deactivate module $MODULE..."
-   mount -t aufs -o remount,verbose,del:"$BUNDLES/$MODULE" aufs / 2>/dev/null
-   if [ $? -ne 0 ]; then
-      die "Unable to deactivate huronOS module - still in use. See dmesg for more."
-   fi
+	mount -t aufs -o remount,verbose,del:"$BUNDLES/$MODULE" aufs / 2>/dev/null
+   	if [ $? -ne 0 ]; then
+		echo "$(tput setaf 4)>huronOS module busy: Cannot deactivate module. See dmesg for more.$(tput sgr0)"
+		return 1
+	fi
 
-   # remember what loop device was the bundle mounted to, it may be needed later
-   LOOP="$(cat /proc/mounts | fgrep " $BUNDLES/$MODULE " | cut -d " " -f 1)"
-   LOOPFILE="$(losetup "$LOOP" | cut -d " " -f 3 | sed -r 's:^.|.$::g')"
+	# remember what loop device was the bundle mounted to, it may be needed later
+	LOOP="$(cat /proc/mounts | fgrep " $BUNDLES/$MODULE " | cut -d " " -f 1)"
+	LOOPFILE="$(losetup "$LOOP" | cut -d " " -f 3 | sed -r 's:^.|.$::g')"
 
-   umount "$BUNDLES/$MODULE" 2>/dev/null
-   if [ $? -ne 0 ]; then
-      die "Unable to umount huronOS module loop-mount $BUNDLES/$MODULE"
-   fi
-   rmdir "$BUNDLES/$MODULE"
+	umount "$BUNDLES/$MODULE" 2>/dev/null
+	if [ $? -ne 0 ]; then
+		echo "$(tput setaf 1)>huronOS module cannot be unmounted: Manual umount will be required. $BUNDLES/$MODULE$(tput sgr0)"
+		return 1
+	fi
+	rmdir "$BUNDLES/$MODULE"
 
-   # free the loop device manually since umount fails to do that if the bundle was activated on boot
-   losetup -d "$LOOP" 2>/dev/null
+	# free the loop device manually since umount fails to do that if the bundle was activated on boot
+	losetup -d "$LOOP" 2>/dev/null
 
-   if echo "$LOOPFILE" | grep -q $RAMSTORE; then
-      rm -f $LOOPFILE
-   fi
+	if echo "$LOOPFILE" | grep -q $RAMSTORE; then
+		rm -f $LOOPFILE
+	fi
 
-   echo "huronOS module deactivated: $MODULE"
+	echo "$(tput setaf 3)-huronOS module deactivated: $(basename "$MODULE")$(tput sgr0)"
+	return 0
+}
+
+# $1 = Configuration file
+block_update(){
+	echo "Activating/Deactivating huronOS modules:"
+	declare "$(head -n 1 $1)"
+	PACKAGES="$(tail -n+2 $1)"
+	while read BASE OPTION; do
+		HSM="${HURONDIR}${BASE}.hsm"
+		if [ "$OPTION" = "true" ]; then
+			activate $HSM
+		else
+			deactivate $(basename $HSM)
+		fi
+	done < <(echo $PACKAGES | xargs -n 2)
+}
+
+update_cache()
+{
+	update-mime-database /usr/share/mime
+	update-desktop-database /usr/share/applications
+	su contestant -c '(nohup budgie-panel --replace > /dev/null 2>&1 &)'
 }
 
 
 usage()
 {
-   echo "Usage: $0 [ activate | deactivate | list ] [ file.hsm ]" >&2
+   echo "Usage: $0 [ activate | deactivate | active-modules | block-update ] [ file.hsm ]" >&2
    if [ "$1" != "" ]; then
       echo "$1" >&2
    fi
@@ -160,20 +191,26 @@ usage()
 
 
 if [ "$1" = "activate" ]; then
-   activate "$2"
-   su contestant -c '(nohup budgie-panel --replace > /dev/null 2>&1 &)'
-   exit
+	activate "$2"
+	update_cache
+	exit
 fi
 
 if [ "$1" = "deactivate" ]; then
-   deactivate "$2"
-   su contestant -c '(nohup budgie-panel --replace > /dev/null 2>&1 &)'
-   exit
+	deactivate "$2"
+	update_cache
+	exit
 fi
 
-if [ "$1" = "list" ]; then
-   print_branches
-   exit
+if [ "$1" = "active-modules" ]; then
+	print_branches
+	exit
+fi
+
+if [ "$1" = "block-update" ]; then
+	block_update "$2"
+	update_cache
+	exit
 fi
 
 if [ "$1" = "savechanges" ]; then
