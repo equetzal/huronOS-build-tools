@@ -43,3 +43,4 @@ Internet
 	Chrome, chrome
 	Chromium, chromium
 	Firefox, firefox
+	Crow Translate, crow

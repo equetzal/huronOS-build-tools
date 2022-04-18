@@ -93,6 +93,7 @@
       </And>
       <Filename>chrome.desktop</Filename>
       <Filename>chromium.desktop</Filename>
+      <Filename>crow.desktop</Filename>
       <Filename>firefox.desktop</Filename>
     </Include>
 
