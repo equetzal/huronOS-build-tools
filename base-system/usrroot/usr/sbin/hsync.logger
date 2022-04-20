@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# $1 string to log
+log(){
+	echo -e "[$(date)] $1" | tee -a /var/log/hsync.log
+}

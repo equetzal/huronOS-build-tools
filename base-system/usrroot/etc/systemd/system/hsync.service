@@ -1,0 +1,11 @@
+[Unit]
+Description=huronOS sync service
+
+[Service]
+User=root
+Group=root
+ExecStart=/usr/sbin/hsync.downloader
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

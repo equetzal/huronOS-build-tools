@@ -177,7 +177,8 @@ update_cache()
 {
 	update-mime-database /usr/share/mime
 	update-desktop-database /usr/share/applications
-	su contestant -c '(nohup budgie-panel --replace > /dev/null 2>&1 &)'
+	su contestant -c 'export DISPLAY=:0; (nohup budgie-panel --replace > /dev/null 2>&1 &)'
+	echo "Restarting menu"
 }
 
 

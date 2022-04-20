@@ -1,6 +1,6 @@
 HURONDIR=/run/initramfs/memory/data/huronOS/
 internet/chrome			false
-internet/chromium		true
+internet/chromium		false
 internet/crow			false
 internet/firefox		false
 langs/g++			false
@@ -29,3 +29,4 @@ programming/pycharm		false
 programming/sublime		false
 programming/vim			false
 programming/vscode		false
+

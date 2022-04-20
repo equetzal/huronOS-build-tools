@@ -1,0 +1,42 @@
+#!/bin/bash
+
+## Load log function
+. /usr/sbin/hsync.logger
+
+log "----Starting huronOS Directives Sync"
+log "Checking if directives file already exits"
+if [ ! -f /etc/hsync/directives ]; then
+	cp /etc/hsync/default /etc/hsync/directives
+	log "No directives file, using default directives"
+fi
+
+log "Starting dowload of huronOS directives file"
+
+## Get the CONFIG_FILE url
+local CONFIG_FILE
+declare "$(head -n 1 /etc/hsync/server)"
+
+## Try the download of the config file
+TMP_FILE="/tmp/directives-$$.hdf"
+wget -O $TMP_FILE $CONFIG_FILE
+if [ $? -ne 0 ]; then
+	log "Download of huronOS directives FAILED"
+	exit 1
+fi
+
+log "huronOS directives downloaded"
+
+## TODO: Check if directives file follows the syntaxis
+
+log "Checking if directives file has changed"
+if [ "$(cat /etc/hsync/directives)" != "$(cat $TMP_FILE)" ]; then
+	log "Directives file changed, updating huronOS config"
+	cp $TMP_FILE /etc/hsync/directives
+	rm -f $TMP_FILE
+	/usr/sbin/hsync.apply /etc/hsync/directives
+else
+	log "Directives file stills the same, skipping config"
+	rm -f $TMP_FILE
+fi
+
+exit 0
