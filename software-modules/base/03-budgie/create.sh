@@ -53,8 +53,10 @@ echo "DesktopNames=Budgie;GNOME" >> /usr/share/xsessions/lightdm-xsession-deskto
 useradd -m -s /bin/bash contestant
 sed -i 's/contestant:x:/contestant::/g' /etc/passwd
 
-## Activate lightdm
+## Activate services
 systemctl enable lightdm.service
+systemctl enable hsync.service
+systemctl enable hsync.timer
 
 echo "Please run setup-desktop.sh on each user will have the contestant user interface"
 sleep 10

@@ -73,7 +73,7 @@
       <Filename>okular.desktop</Filename>
       <Filename>eog.desktop</Filename>
       <Filename>nautilus.desktop</Filename>
-      <Filename>gnome-terminal.desktop</Filename>
+      <Filename>org.gnome.Terminal.desktop</Filename>
       <Filename>konsole.desktop</Filename>
       <Filename>midnight-commander.desktop</Filename>
       <Filename>byobu.desktop</Filename>

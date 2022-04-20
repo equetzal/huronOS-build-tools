@@ -7,7 +7,7 @@
 cp files/huronOS-plank-config.dump /tmp/huronOS-plank-config.dump
 chmod 777 /tmp/huronOS-plank-config.dump
 mkdir -p ~/.config/plank/dock1/launchers/
-echo -e "[PlankDockItemPreferences]\nLauncher=file:///usr/share/applications/gnome-terminal.desktop" > ~/.config/plank/dock1/launchers/terminal.dockitem
+echo -e "[PlankDockItemPreferences]\nLauncher=file:///usr/share/applications/org.gnome.Terminal.desktop" > ~/.config/plank/dock1/launchers/org.gnome.Terminal.dockitem
 echo -e "[PlankDockItemPreferences]\nLauncher=file:///usr/share/applications/nautilus.desktop" > ~/.config/plank/dock1/launchers/files.dockitem
 dconf load /net/launchpad/plank/docks/ < /tmp/huronOS-plank-config.dump
 
