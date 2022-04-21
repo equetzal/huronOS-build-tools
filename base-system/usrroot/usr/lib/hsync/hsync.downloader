@@ -25,8 +25,13 @@ fi
 
 log "huronOS directives downloaded"
 
-## TODO: Check if directives file follows the syntaxis
-
+## Check if directives file follows the syntaxis
+log "Checking if directives file follows the syntaxis"
+/usr/lib/hsync/hsync.validator $TMP_FILE | tee -a /var/log/hsync.log
+if [ $? -ne 0 ]; then
+	log "Invalid syntax of directives file"
+	exit 1
+fi
 
 log "Checking if directives file has changed"
 if [ "$(cat /etc/hsync/directives)" != "$(cat $TMP_FILE)" ]; then
