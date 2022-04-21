@@ -105,7 +105,7 @@ set_specific_config(){
 		NAME=$(basename $Wallpaper)
 		FILE="/usr/share/backgrounds/custom-background-$$-$NAME"
 		rm -f /usr/share/backgrounds/custom-background-*
-		wget $Wallpaper -O $FILE
+		wget --timeout=10 $Wallpaper -O $FILE
 		chmod 777 $FILE
 		if [ $? -ne 0 ]; then
 			log "Wallpaper cannot be downloaded, Wrong URL?"

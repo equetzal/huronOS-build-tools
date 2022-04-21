@@ -17,7 +17,7 @@ declare "$(head -n 1 /etc/hsync/server)"
 
 ## Try the download of the config file
 TMP_FILE="/tmp/directives-$$.hdf"
-wget -O $TMP_FILE $CONFIG_FILE
+wget --timeout=10 -O $TMP_FILE $CONFIG_FILE
 if [ $? -ne 0 ]; then
 	log "Download of huronOS directives FAILED"
 	exit 0
