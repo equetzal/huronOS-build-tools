@@ -58,6 +58,9 @@ systemctl enable lightdm.service
 systemctl enable hsync.service
 systemctl enable hsync.timer
 
+## Deactivate services
+systemctl mask udisks2.service
+
 echo "Please run setup-desktop.sh on each user will have the contestant user interface"
 sleep 10
 

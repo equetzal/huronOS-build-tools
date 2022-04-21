@@ -838,25 +838,6 @@ fstab_create()
    echo sysfs /sys sysfs defaults 0 0 >> $FSTAB
    echo devpts /dev/pts devpts gid=5,mode=620 0 0 >> $FSTAB
    echo tmpfs /dev/shm tmpfs defaults 0 0 >> $FSTAB
-
-   if grep -vq automount /proc/cmdline; then
-      return
-   fi
-
-   BOOTDEVICE=$(df "$2" | tail -n 1 | cut -d " " -f 1)
-
-   echo >> $FSTAB
-
-   blkid | grep -v "^/dev/loop" | grep -v "^/dev/zram" | cut -d: -f 1 | while read DEVICE; do
-      FS="$(device_bestfs $DEVICE)"
-      LABEL="$(basename $DEVICE)"
-      OPTS="defaults,noatime,nofail,x-systemd.device-timeout=10"
-
-      if [ "$FS" != "" -a "$FS" != "swap" -a "$FS" != "squashfs" -a "$DEVICE" != "$BOOTDEVICE" ]; then
-         mkdir -p "$1/media/$LABEL"
-         echo "$DEVICE" "/media/$LABEL" $FS $OPTS 0 0 >> $FSTAB
-      fi
-   done
 }
 
 
