@@ -2,17 +2,22 @@
 #include <fstream>
 #include <functional>
 #include <iostream>
+#include <map>
 #include <sstream>
 #include <vector>
 
-#define ERROR std::cout << "Error in " << line_counter << "-th line: "
+struct Line {
+	int line_number;
+	std::string line;
 
-int line_counter = 0;
+	Line () {}
+	Line (const int &line_number, const std::string& line) : 
+		line_number(line_number), 
+		line(line) {}
+};
 
-std::istream& read_line (std::istream& infile, std::string& str) {
-	line_counter++;
-	return std::getline(infile, str);
-}
+#define ERR std::cout << "Error: "
+#define ERROR(line_number) std::cout << "Error in " << line_number << "-th line: "
 
 // -------------- Value format checkers ----------------
 std::function<bool(const std::string&)> url_address =
@@ -85,108 +90,124 @@ std::function<bool(const std::string&, const std::function<bool(const std::strin
 };
 // -----------------------------------------------------
 
-// --------------- Header checker ----------------------
-void group_header_error (const std::string &group_name) {
-	ERROR << "Expected valid header for group " << group_name << std::endl;
-	exit(1);
+// --------------- Line reading utils ------------------
+bool is_group_header (const std::string& line, const std::string &group_name) {
+	return line == "[" + group_name + "]";
 }
 
-void group_header (std::ifstream &infile, const std::string &group_name) {
-	std::string line;
-	if (!read_line(infile, line)) {
-		group_header_error(group_name);
-	}
-
-	if (line != "[" + group_name + "]") {
-		group_header_error(group_name);
-	}
-}
-// ------------------------------------------------------
-
-// ----------- Key-value lines checker ------------------
-void key_value_error (const std::string &key) {
-	ERROR << "Expected valid key-value line for key " << key << std::endl;
-	exit(1);
+void error_variable_value (const Line& line) {
+	ERROR(line.line_number) << "Variable definition invalid" << std::endl;
 }
 
-std::string key_value (std::ifstream &infile, const std::string &key) {
-	std::string line;
-	if (!read_line(infile, line)) {
-		key_value_error(key);
-	}
-
-	size_t found = line.find("=");
+std::string get_variable (const Line& line) {
+	size_t found = line.line.find("=");
 	if (found == std::string::npos) {
-		key_value_error(key);
+		error_variable_value(line);
 	}
 
-	std::string key_in_line = line.substr(0, found);
-	if (key_in_line != key) {
-		key_value_error(key); 
+	return line.line.substr(0, found);
+}
+
+std::string get_value (const Line& line) {
+	size_t found = line.line.find("=");
+	if (found == std::string::npos) {
+		error_variable_value(line);
 	}
 
-	std::string value = line.substr(found + 1);
-	return value;
-}
-// --------------------------------------------------------
-
-// ------------- Blank line checker -----------------------
-void blank_line_error () {
-	ERROR << "Expected blank line" << std::endl;
-	exit(1);
+	return line.line.substr(found + 1);
 }
 
-void blank_line (std::ifstream &infile) {
+std::map<std::string, Line> get_variables (const std::vector<Line>& lines) {
+	std::map<std::string, Line> variables;
+
+	for (const auto &line : lines) {
+		size_t space_pos = line.line.find(' ');
+		if (space_pos != std::string::npos) {
+			ERROR(line.line_number) << "Extra space found" << std::endl;
+			exit(1);
+		}
+
+		variables[get_variable(line)] = line;
+	}
+
+	return variables;
+}
+
+std::vector<Line> get_group (const std::string &filename, const std::string& group_name) {
+	std::ifstream infile(filename);
+	std::vector<Line> lines;
 	std::string line;
-	if (!read_line(infile, line) || !line.empty()) {
-		blank_line_error();
+
+	bool group_found = false;
+	for (int i = 1; getline(infile, line); i++) {
+		if (line.empty()) {
+			continue;
+		}
+
+		if (group_found) {
+			if (line[0] == '[') {
+				break;
+			}
+
+			lines.emplace_back(i, line);
+		} else {
+			if (is_group_header(line, group_name)) {
+				group_found = true;
+			}
+		}
 	}
+
+	if (!group_found) {
+		ERR << "Group " << group_name << " not found" << std::endl;
+		exit(1);
+	}
+
+	return lines;
 }
 // --------------------------------------------------------
 
 // -------------- Time range checker ----------------------
-void time_range_error () {
-	ERROR << "Expected valid time range" << std::endl;
+void time_range_error (int line_number) {
+	ERROR(line_number) << "Invalid time range" << std::endl;
 	exit(1);
 }
 
-date::local_seconds get_timestamp (const std::string& date) {
+date::local_seconds get_timestamp (const std::string& date, int line_number) {
 	date::local_seconds timestamp;
 
 	std::istringstream in(date);
 	in >> date::parse("%FT%T", timestamp);
 
 	if (in.fail()) {
-		time_range_error();
+		time_range_error(line_number);
 	}
 
 	return timestamp;
 }
 
 using time_range = std::pair<date::local_seconds, date::local_seconds>;
-std::vector<time_range> mode_times (std::ifstream &infile, const std::string& mode_name, bool expected_exactly_one) {
+std::vector<time_range> mode_times (
+		const std::string& filename, 
+		const std::string& mode_name, 
+		bool expected_exactly_one) {
+	const auto lines = get_group(filename, mode_name + "-Times");
+
 	std::vector<time_range> ranges;
 	std::string line;
 
-	// [<mode_name>-Times]
-	group_header(infile, mode_name + "-Times");
-
-	while (read_line(infile, line)) {
-		if (line.empty()) {
-			break;
-		}
-		
-		std::stringstream ss(line);
+	for (const auto& line : lines) {
+		std::stringstream ss(line.line);
 		std::string start, end;
+
 		if (!(ss >> start >> end)) {
-			time_range_error();
+			time_range_error(line.line_number);
 		}
 
-		auto start_ts = get_timestamp(start);
-		auto end_ts = get_timestamp(end);
+		auto start_ts = get_timestamp(start, line.line_number);
+		auto end_ts = get_timestamp(end, line.line_number);
 
 		if (start_ts >= end_ts) {
-			time_range_error();
+			time_range_error(line.line_number);
 		}
 
 		ranges.emplace_back(start_ts, end_ts);
@@ -194,173 +215,208 @@ std::vector<time_range> mode_times (std::ifstream &infile, const std::string& mo
 
 	if (expected_exactly_one) {
 		if (ranges.size() != 1) {
-			ERROR << "Expected 1 time range but found " << ranges.size() << std::endl;
+			ERR << "Expected 1 time range but found " 
+				<< ranges.size() 
+				<< " time ranges for mode " 
+				<< mode_name 
+				<< std::endl;
 		}
 	} else {
 		if (ranges.size() < 1) {
-			ERROR << "Expected at least 1 time range but found " << ranges.size() << std::endl;
+			ERR << "Expected at least 1 time range but found " 
+				<< ranges.size() 
+				<< " time ranges for mode " 
+				<< mode_name 
+				<< std::endl;
 		}
 	}
 
 	return ranges;
 }
 
-void check_valid_ranges (const std::vector<time_range>& event_time, const std::vector<time_range>& contest_times) {
+void check_valid_ranges (
+		const std::vector<time_range>& event_time, 
+		const std::vector<time_range>& contest_times) {
 	for (size_t i = 0; i < contest_times.size(); i++) {
-		if (!(event_time[0].first <= contest_times[i].first && contest_times[i].second <= event_time[0].second)) {
-			std::cout << "Error: " << i + 1 << "-th contest does not happen within event" << std::endl;
+		if (!(
+				event_time[0].first <= contest_times[i].first && 
+				contest_times[i].second <= event_time[0].second)) {
+			std::cout << "Error: " 
+					  << i + 1 
+					  << "-th contest does not happen during event" 
+					  << std::endl;
 			exit(1);
 		}
 
 		if (0 < i && !(contest_times[i - 1].second < contest_times[i].first)) {
-			std::cout << "Error: " << i + 1 << "-th does not happen after " << i << "-th contest ends" << std::endl;
+			std::cout << "Error: " 
+					  << i + 1 
+					  << "-th does not happen after " 
+					  << i 
+					  << "-th contest ends" 
+					  << std::endl;
 			exit(1);
 		}
 	}
 }
 // --------------------------------------------------------------
 
-// ----------------- Key-Value line checkers --------------------
-void check_time_zone (std::ifstream &infile) {
+// ------------ Variable declaration checkers -------------------
+const Line& get_line_for_variable (
+		const std::map<std::string, Line>& variables,
+		const std::string& variable) {
+	if (variables.count(variable) == 0) {
+		ERR << "Definition of variable " << variable << " not found" << std::endl;
+		exit(0);
+	}
+
+	return variables.at(variable);
+} 
+
+void check_time_zone (const std::map<std::string, Line>& variables) {
 	// Format: TimeZone=Continent/City
-	auto value = key_value(infile, "TimeZone");
+	const auto& line = get_line_for_variable(variables, "TimeZone");
+	const auto value = get_value(line);
 
 	if (!time_zone(value)) {
-		ERROR << "Time zone not valid" << std::endl;
+		ERROR(line.line_number) << "Time zone not valid" << std::endl;
 		exit(1);
 	}
 }
 
-void check_expiration_time (std::ifstream &infile) {
+void check_expiration_time (const std::map<std::string, Line>& variables) {
 	// Format: ConfigExpirationTime=[ never | GNU Time ]
-	auto value = key_value(infile, "ConfigExpirationTime");
+	const auto& line = get_line_for_variable(variables, "ConfigExpirationTime");
+	const auto value = get_value(line);
 
 	if (!exact_value(value, "never") && !date_in_iso8601(value)) {
-		ERROR << "Expiration time not valid" << std::endl;
+		ERROR(line.line_number) << "Expiration time not valid" << std::endl;
 		exit(1);
 	}
 }
 
-std::vector<std::string> check_available_layouts (std::ifstream &infile) {
+std::vector<std::string> check_available_layouts (const std::map<std::string, Line>& variables) {
 	// Format: AvailableKeyboardLayouts=layout1;layout2;...;
-	auto value = key_value(infile, "AvailableKeyboardLayouts");
+	const auto& line = get_line_for_variable(variables, "AvailableKeyboardLayouts");
+	const auto value = get_value(line);
 
 	if (!list_of_values(value, keyboard_layout)) {
-		ERROR << "Keyboard layout not valid" << std::endl;
+		ERROR(line.line_number) << "Keyboard layout not valid" << std::endl;
 		exit(1);
 	}
 
 	return value_to_list(value);
 }
 
-void check_default_layout (std::ifstream &infile, const std::vector<std::string> &available_layouts) {
+void check_default_layout (
+		const std::map<std::string, Line>& variables, 
+		const std::vector<std::string> &available_layouts) {
 	// Format: DefaultKeyboardLayout=layout
-	auto value = key_value(infile, "DefaultKeyboardLayout");
+	const auto& line = get_line_for_variable(variables, "DefaultKeyboardLayout");
+	const auto value = get_value(line);
 
 	if (std::find(available_layouts.begin(), available_layouts.end(), value) == available_layouts.end()) {
-		ERROR << "Layout not in available layouts" << std::endl;
+		ERROR(line.line_number) << "Layout not in available layouts" << std::endl;
 		exit(1);
 	}
 }
 
-bool check_event_config (std::ifstream &infile) {
+bool check_event_config (const std::map<std::string, Line>& variables) {
 	// Format: EventConfig=[ True | False ]
-	auto value = key_value(infile, "EventConfig");
+	const auto& line = get_line_for_variable(variables, "EventConfig");
+	const auto value = get_value(line);
 
 	if (!exact_value(value, "true") && !exact_value(value, "false")) {
-		ERROR << "Event config not valid" << std::endl;
+		ERROR(line.line_number) << "Event config not valid" << std::endl;
 		exit(1);
 	}
 
 	return value == "true";
 }
 
-bool check_contest_config (std::ifstream &infile) {
+bool check_contest_config (const std::map<std::string, Line>& variables) {
 	// Format: ContestConfig=[ True | False ]
-	auto value = key_value(infile, "ContestConfig");
+	const auto& line = get_line_for_variable(variables, "ContestConfig");
+	const auto value = get_value(line);
 
 	if (!exact_value(value, "true") && !exact_value(value, "false")) {
-		ERROR << "Contest config not valid" << std::endl;
+		ERROR(line.line_number) << "Contest config not valid" << std::endl;
 		exit(1);
 	}
 
 	return value == "true";
 }
 
-void check_wallpaper (std::ifstream &infile) {
+void check_wallpaper (const std::map<std::string, Line>& variables) {
 	// Format: Wallpaper=[ default | url ]
-	auto value = key_value(infile, "Wallpaper");
+	const auto& line = get_line_for_variable(variables, "Wallpaper");
+	const auto value = get_value(line);
 
 	if (!exact_value(value, "default") && !list_of_values(value, url_address)) {
-		ERROR << "Wallpaper config not valid or url not recheable" << std::endl;
+		ERROR(line.line_number) << "Wallpaper declaration not valid or url not recheable" << std::endl;
 		exit(1);
 	}
 }
 
-void check_allow_list (std::ifstream &infile) {
+void check_allow_list (const std::map<std::string, Line>& variables) {
 	// Format: AllowList=[ all | url1;url2;...; ]
-	auto value = key_value(infile, "AllowList");
+	const auto& line = get_line_for_variable(variables, "AllowList");
+	const auto value = get_value(line);
 
 	if (!exact_value(value, "all") && !exact_value(value, "any") && !list_of_values(value, url_address)) {
-		ERROR << "Allow list config not valid or url not recheable" << std::endl;
+		ERROR(line.line_number) << "Allow list config not valid or url not recheable" << std::endl;
 		exit(1);
 	}
 }
 
-void check_available_software (std::ifstream &infile) {
+void check_available_software (const std::map<std::string, Line>& variables) {
 	// Format: AvailableSoftware=software1;software2;...;
-	auto value = key_value(infile, "AvailableSoftware");
+	const auto& line = get_line_for_variable(variables, "AvailableSoftware");
+	const auto value = get_value(line);
 
 	if (!list_of_values(value, software)) {
-		ERROR << "Software name not valid" << std::endl;
+		ERROR(line.line_number) << "Software name not valid" << std::endl;
 		exit(1);
 	}
 }
-// --------------------------------------------------------------
+// -------------------------------------------------------------
 
-void check_mode_config (std::ifstream &infile, const std::string& mode_name) {
-	// [<mode_name>]
-	group_header(infile, mode_name);
+void check_mode_config (const std::string& filename, const std::string& mode_name) {
+	const auto lines = get_group(filename, mode_name);
+	const auto variables = get_variables(lines);
 
-	check_wallpaper(infile);
-	check_allow_list(infile);
-	check_available_software(infile);
-
-	blank_line(infile);
+	check_wallpaper(variables);
+	check_allow_list(variables);
+	check_available_software(variables);
 }
 
 void check_valid_file (std::string filename) {
-	std::ifstream infile(filename);
+	// Global config
+	const auto global_lines = get_group(filename, "Global");
+	const auto global_variables = get_variables(global_lines);
 
-	// [Global]
-	group_header(infile, "Global");
+	check_time_zone(global_variables);
+	check_expiration_time(global_variables);
+	auto available_layouts = check_available_layouts(global_variables);
+	check_default_layout(global_variables, available_layouts);
+	bool is_event_set = check_event_config(global_variables);
+	bool is_contest_set = check_contest_config(global_variables);
 
-	check_time_zone(infile);
-	check_expiration_time(infile);
-	auto available_layouts = check_available_layouts(infile);
-	check_default_layout(infile, available_layouts);
-	bool is_event_set = check_event_config(infile);
-	bool is_contest_set = check_contest_config(infile);
+	// Always config
+	check_mode_config(filename, "Always");
 
-	blank_line(infile);
-
-	// [Always]
-	check_mode_config(infile, "Always");
-
+	// Event config
 	std::vector<time_range> event_time;
 	if (is_event_set) {
-		// [Event]
-		check_mode_config(infile, "Event");
-		// [Event-times]
-		event_time = mode_times(infile, "Event", true);
+		check_mode_config(filename, "Event");
+		event_time = mode_times(filename, "Event", true);
 	}
 
+	// Contest config
 	std::vector<time_range> contest_times;
 	if (is_contest_set) {
-		// [Contest]
-		check_mode_config(infile, "Contest");
-		// [Contest-times]
-		contest_times = mode_times(infile, "Contest", false);
+		check_mode_config(filename, "Contest");
+		contest_times = mode_times(filename, "Contest", false);
 	}
 
 	if (event_time.size() && contest_times.size()) {
