@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ## Load log function
-. /usr/sbin/hsync.logger
+. /usr/lib/hsync/hsync.logger
 
 log "----Starting huronOS Directives Sync"
 log "Checking if directives file already exits"
@@ -13,7 +13,6 @@ fi
 log "Starting dowload of huronOS directives file"
 
 ## Get the CONFIG_FILE url
-local CONFIG_FILE
 declare "$(head -n 1 /etc/hsync/server)"
 
 ## Try the download of the config file
@@ -27,6 +26,7 @@ fi
 log "huronOS directives downloaded"
 
 ## TODO: Check if directives file follows the syntaxis
+
 
 log "Checking if directives file has changed"
 if [ "$(cat /etc/hsync/directives)" != "$(cat $TMP_FILE)" ]; then
