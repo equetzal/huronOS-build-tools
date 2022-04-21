@@ -11,6 +11,23 @@ rm -rf /usr/share/lightdm/*
 rm -rf /usr/share/images/desktop-base/*
 rm /usr/share/xsessions/budgie-desktop.desktop
 
+## Replace debian logo branding with huronOS
+rm -rf /usr/share/icons/desktop-base/*
+cp -rf files/vendor/* /usr/share/icons/desktop-base
+ln -sf /usr/share/icons/desktop-base/scalable/emblems/emblem-huronos.svg /etc/alternatives/emblem-vendor-scalable
+ln -sf /usr/share/icons/desktop-base/scalable/emblems/emblem-huronos-symbolic.svg /etc/alternatives/emblem-vendor-symbolic-scalable
+ln -sf /usr/share/icons/desktop-base/scalable/emblems/emblem-huronos-white.svg /etc/alternatives/emblem-vendor-white-scalable
+ln -sf /usr/share/icons/desktop-base/64/emblems/emblem-huronos.png /etc/alternatives/emblem-vendor-64
+ln -sf /usr/share/icons/desktop-base/64/emblems/emblem-huronos-symbolic.png /etc/alternatives/emblem-vendor-symbolic-64
+ln -sf /usr/share/icons/desktop-base/64/emblems/emblem-huronos-white.png /etc/alternatives/emblem-vendor-white-64
+ln -sf /usr/share/icons/desktop-base/128/emblems/emblem-huronos.png /etc/alternatives/emblem-vendor-128
+ln -sf /usr/share/icons/desktop-base/128/emblems/emblem-huronos-symbolic.png /etc/alternatives/emblem-vendor-symbolic-128
+ln -sf /usr/share/icons/desktop-base/128/emblems/emblem-huronos-white.png /etc/alternatives/emblem-vendor-white-128
+ln -sf /usr/share/icons/desktop-base/256/emblems/emblem-huronos.png /etc/alternatives/emblem-vendor-256
+ln -sf /usr/share/icons/desktop-base/256/emblems/emblem-huronos-symbolic.png /etc/alternatives/emblem-vendor-symbolic-256
+ln -sf /usr/share/icons/desktop-base/256/emblems/emblem-huronos-white.png /etc/alternatives/emblem-vendor-white-256
+
+
 ## Fix terminals not updating $PATH on su
 echo "ALWAYS_SET_PATH	yes" >> /etc/login.defs
 
