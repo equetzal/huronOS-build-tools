@@ -17,25 +17,25 @@ std::istream& read_line (std::istream& infile, std::string& str) {
 // -------------- Value format checkers ----------------
 std::function<bool(const std::string&)> url_address =
 		[] (const std::string& url) -> bool {
-	std::string command = "./url_validator " + url;
+	std::string command = "/usr/lib/hsync/url_validator " + url;
 	return system(command.c_str()) == 0;
 };
 
 std::function<bool(const std::string&)> time_zone =
 		[] (const std::string &time_zone) -> bool {
-	std::string command = "./timezone_validator " + time_zone;
+	std::string command = "/usr/lib/hsync/timezone_validator " + time_zone;
 	return system(command.c_str()) == 0;
 };
 
 std::function<bool(const std::string&)> keyboard_layout =
 		[] (const std::string &keyboard_layout) -> bool {
-	std::string command = "./layout_validator " + keyboard_layout;
+	std::string command = "/usr/lib/hsync/layout_validator " + keyboard_layout;
 	return system(command.c_str()) == 0;
 };
 
 std::function<bool(const std::string&)> software =
 		[] (const std::string &software) -> bool {
-	std::string command = "./software_validator " + software;
+	std::string command = "/usr/lib/hsync/software_validator " + software;
 	return system(command.c_str()) == 0;
 };
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-timezones=($(cat all_software.txt))
+timezones=($(cat /etc/hsync/all_software))
 
 if [[ ! " ${timezones[*]} " =~ " $1 " ]]; then
    exit 1
