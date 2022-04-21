@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if ! curl --output /dev/null --silent --head --fail "$1"; then
+  exit 1
+fi

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+timezones=($(cat all_software.txt))
+
+if [[ ! " ${timezones[*]} " =~ " $1 " ]]; then
+   exit 1
+fi
