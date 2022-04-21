@@ -2,21 +2,21 @@ All
 
 Programming
 	Atom, atom
+	Clion, clion
 	Codeblocks, codeblocks
 	Eclipse, eclipse
 	Emacs, emacs
 	Geany, geany
 	Gedit, gedit
 	Gvim, gvim
-	Kate, kate
-	Kdevelop, kdevelop
-	Visual Studio Code, vscode
 	IntelliJ, intellij
 	Joe, joe
-	Vim, vim
-	Clion, clion
+	Kate, kate
+	Kdevelop, kdevelop
 	Pycharm, pycharm
 	Sublime Text, sublime
+	Vim, vim
+	Visual Studio Code, vscode
 
 Reference
 	C Documentation, c-documentation
@@ -25,22 +25,29 @@ Reference
 	Kotlin Documentation kotlin-documentation
 	Python 3 Documentation, python3-documentation
 	Ruby Documentation, ruby-documentation
-	Crow Translation, crow-translation
+
+g++
+gcc
+javac
+kotlinc
+pypy3
+python3
+ruby
 
 Tools
 	Calculator, gnome-calculator
-	PDF Viewer, okular
-	Image Viewer, eog
 	Files, nautilus
 	Gnome-Terminal, gnome-terminal
-	Konsole, konsole
-	Midnight Commander, midnight-commander (mc)
-	Byobu, byobu
+	Image Viewer, eog
+	PDF Viewer, okular
 	UXTerm, uxterm
 	XTerm, xterm
+	Byobu, byobu
+	Konsole, konsole
+	Midnight Commander, midnight-commander (mc)
 
 Internet
 	Chrome, chrome
 	Chromium, chromium
-	Firefox, firefox
 	Crow Translate, crow
+	Firefox, firefox
