@@ -27,5 +27,9 @@ fi
 ln -sf /etc/dpkg/origins/huronos /etc/dpkg/origins/default
 ln -sf /usr/lib/os-release /etc/os-release
 
+## hsync symlinks
+ln -sf /usr/lib/systemd/system/hsync.service /etc/systemd/system/hsync.service
+ln -sf /usr/lib/systemd/system/hsync.timer /etc/systemd/system/hsync.timer
+
 # Replace debian branding with huronOS branding
 

@@ -20,7 +20,7 @@ TMP_FILE="/tmp/directives-$$.hdf"
 wget -O $TMP_FILE $CONFIG_FILE
 if [ $? -ne 0 ]; then
 	log "Download of huronOS directives FAILED"
-	exit 1
+	exit 0
 fi
 
 log "huronOS directives downloaded"
@@ -30,7 +30,7 @@ log "Checking if directives file follows the syntaxis"
 /usr/lib/hsync/hsync.validator $TMP_FILE | tee -a /var/log/hsync.log
 if [ $? -ne 0 ]; then
 	log "Invalid syntax of directives file"
-	exit 1
+	exit 0
 fi
 
 log "Checking if directives file has changed"

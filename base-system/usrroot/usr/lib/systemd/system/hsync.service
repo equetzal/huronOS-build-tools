@@ -5,7 +5,8 @@ Description=huronOS sync service
 User=root
 Group=root
 ExecStart=/usr/lib/hsync/hsync.downloader
-Restart=always
+Restart=on-failure
+SuccessExitStatus=0
 
 [Install]
 WantedBy=multi-user.target
