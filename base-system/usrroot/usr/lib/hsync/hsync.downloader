@@ -34,14 +34,30 @@ if [ $? -ne 0 ]; then
 fi
 
 log "Checking if directives file has changed"
-if [ "$(cat /etc/hsync/directives)" != "$(cat $TMP_FILE)" ]; then
-	log "Directives file changed, updating huronOS config"
-	cp $TMP_FILE /etc/hsync/directives
-	rm -f $TMP_FILE
-	/usr/sbin/hsync.apply /etc/hsync/directives
-else
+if [ "$(cat /etc/hsync/directives)" == "$(cat $TMP_FILE)" ]; then
 	log "Directives file stills the same, skipping config"
 	rm -f $TMP_FILE
+	exit 0
 fi
+
+## Check if directive file has already expired
+log "Checking if directive file has already expired"
+GLOBAL=$(sed -nE '/^\[Global\]$/{:l n;/^(\[.*\])?$/q;p;bl}' $TMP_FILE)
+for CONFIG in $GLOBAL; do
+	declare $CONFIG
+done
+
+if [ "$ConfigExpirationTime" != "never" ]; then
+	if [ "$(date -u +'%s')" -ge "$(date --date="TZ=\"$TimeZone\" $ConfigExpirationTime" +'%s')" ]; then
+		log "Directives file has already expired"
+		rm -f $TMP_FILE
+		exit 0
+	fi
+fi
+
+log "Directives file changed, updating huronOS config"
+cp $TMP_FILE /etc/hsync/directives
+rm -f $TMP_FILE
+/usr/sbin/hsync.apply /etc/hsync/directives
 
 exit 0
