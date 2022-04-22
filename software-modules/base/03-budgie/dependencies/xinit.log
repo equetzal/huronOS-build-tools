@@ -1,0 +1,17 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libxmuu1 xauth
+Recommended packages:
+  xserver-xorg | xserver xterm | x-session-manager | x-window-manager
+  | x-terminal-emulator
+The following NEW packages will be installed:
+  libxmuu1 xauth xinit
+0 upgraded, 3 newly installed, 0 to remove and 18 not upgraded.
+Inst libxmuu1 (2:1.1.2-2+b3 Debian:11.3/stable [amd64])
+Inst xauth (1:1.1-1 Debian:11.3/stable [amd64])
+Inst xinit (1.4.0-1 Debian:11.3/stable [amd64])
+Conf libxmuu1 (2:1.1.2-2+b3 Debian:11.3/stable [amd64])
+Conf xauth (1:1.1-1 Debian:11.3/stable [amd64])
+Conf xinit (1.4.0-1 Debian:11.3/stable [amd64])

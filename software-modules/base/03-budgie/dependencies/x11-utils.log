@@ -1,0 +1,41 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libfontenc1 libxaw7 libxcb-shape0 libxcomposite1 libxft2 libxinerama1
+  libxkbfile1 libxmu6 libxmuu1 libxpm4 libxrandr2 libxt6 libxv1 libxxf86dga1
+The following NEW packages will be installed:
+  libfontenc1 libxaw7 libxcb-shape0 libxcomposite1 libxft2 libxinerama1
+  libxkbfile1 libxmu6 libxmuu1 libxpm4 libxrandr2 libxt6 libxv1 libxxf86dga1
+  x11-utils
+0 upgraded, 15 newly installed, 0 to remove and 18 not upgraded.
+Inst libfontenc1 (1:1.1.4-1 Debian:11.3/stable [amd64])
+Inst libxt6 (1:1.2.0-1 Debian:11.3/stable [amd64])
+Inst libxmu6 (2:1.1.2-2+b3 Debian:11.3/stable [amd64])
+Inst libxpm4 (1:3.5.12-1 Debian:11.3/stable [amd64])
+Inst libxaw7 (2:1.0.13-1.1 Debian:11.3/stable [amd64])
+Inst libxcb-shape0 (1.14-3 Debian:11.3/stable [amd64])
+Inst libxcomposite1 (1:0.4.5-1 Debian:11.3/stable [amd64])
+Inst libxft2 (2.3.2-2 Debian:11.3/stable [amd64])
+Inst libxinerama1 (2:1.1.4-2 Debian:11.3/stable [amd64])
+Inst libxkbfile1 (1:1.1.0-1 Debian:11.3/stable [amd64])
+Inst libxmuu1 (2:1.1.2-2+b3 Debian:11.3/stable [amd64])
+Inst libxrandr2 (2:1.5.1-1 Debian:11.3/stable [amd64])
+Inst libxv1 (2:1.0.11-1 Debian:11.3/stable [amd64])
+Inst libxxf86dga1 (2:1.1.4-1+b3 Debian:11.3/stable [amd64])
+Inst x11-utils (7.7+5 Debian:11.3/stable [amd64])
+Conf libfontenc1 (1:1.1.4-1 Debian:11.3/stable [amd64])
+Conf libxt6 (1:1.2.0-1 Debian:11.3/stable [amd64])
+Conf libxmu6 (2:1.1.2-2+b3 Debian:11.3/stable [amd64])
+Conf libxpm4 (1:3.5.12-1 Debian:11.3/stable [amd64])
+Conf libxaw7 (2:1.0.13-1.1 Debian:11.3/stable [amd64])
+Conf libxcb-shape0 (1.14-3 Debian:11.3/stable [amd64])
+Conf libxcomposite1 (1:0.4.5-1 Debian:11.3/stable [amd64])
+Conf libxft2 (2.3.2-2 Debian:11.3/stable [amd64])
+Conf libxinerama1 (2:1.1.4-2 Debian:11.3/stable [amd64])
+Conf libxkbfile1 (1:1.1.0-1 Debian:11.3/stable [amd64])
+Conf libxmuu1 (2:1.1.2-2+b3 Debian:11.3/stable [amd64])
+Conf libxrandr2 (2:1.5.1-1 Debian:11.3/stable [amd64])
+Conf libxv1 (2:1.0.11-1 Debian:11.3/stable [amd64])
+Conf libxxf86dga1 (2:1.1.4-1+b3 Debian:11.3/stable [amd64])
+Conf x11-utils (7.7+5 Debian:11.3/stable [amd64])

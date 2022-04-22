@@ -1,0 +1,768 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  accountsservice acl adwaita-icon-theme apg bubblewrap budgie-core
+  cheese-common colord colord-data dbus-x11 desktop-base desktop-file-utils
+  dictionaries-common emacsen-common fonts-quicksand gir1.2-atk-1.0
+  gir1.2-budgie-1.0 gir1.2-freedesktop gir1.2-gdkpixbuf-2.0 gir1.2-glib-2.0
+  gir1.2-gtk-3.0 gir1.2-harfbuzz-0.0 gir1.2-pango-1.0 gir1.2-peas-1.0
+  glib-networking glib-networking-common glib-networking-services
+  gnome-control-center gnome-control-center-data gnome-desktop3-data
+  gnome-menus gnome-screensaver gnome-session-bin gnome-session-common
+  gnome-settings-daemon gnome-settings-daemon-common gsettings-desktop-schemas
+  gstreamer1.0-clutter-3.0 gstreamer1.0-plugins-bad gstreamer1.0-plugins-base
+  gstreamer1.0-plugins-good gstreamer1.0-x gtk-update-icon-cache
+  hicolor-icon-theme hunspell-en-us iso-codes libaa1 libaccountsservice0
+  libaspell15 libass9 libatk-bridge2.0-0 libatk1.0-0 libatk1.0-data libatomic1
+  libatspi2.0-0 libavc1394-0 libayatana-appindicator3-1 libayatana-ido3-0.4-0
+  libayatana-indicator3-7 libbluetooth3 libbs2b0 libbudgie-plugin0
+  libbudgie-private0 libbudgietheme0 libcaca0 libcanberra-gtk3-0 libcanberra0
+  libcdparanoia0 libcheese-gtk25 libcheese8 libchromaprint1 libclutter-1.0-0
+  libclutter-gst-3.0-0 libclutter-gtk-1.0-0 libcogl-pango20 libcogl-path20
+  libcogl20 libcolord-gtk1 libcolord2 libcolorhug2 libcrack2 libcurl3-gnutls
+  libcurl4 libdbus-glib-1-2 libdbusmenu-glib4 libdbusmenu-gtk3-4 libdc1394-25
+  libdca0 libde265-0 libdv4 libdvdnav4 libdvdread8 libenchant-2-2 libepoxy0
+  libevdev2 libexif12 libfaad2 libfftw3-double3 libflite1 libfluidsynth2
+  libfontenc1 libgck-1-0 libgcr-base-3-1 libgd3 libgdk-pixbuf-xlib-2.0-0
+  libgdk-pixbuf2.0-0 libgeoclue-2-0 libgeocode-glib0 libgirepository-1.0-1
+  libgme0 libgnome-bluetooth13 libgnome-desktop-3-19 libgnome-menu-3-0
+  libgnomekbd-common libgnomekbd8 libgoa-1.0-0b libgoa-1.0-common
+  libgoa-backend-1.0-1 libgphoto2-6 libgphoto2-port12 libgpm2
+  libgraphene-1.0-0 libgsound0 libgssdp-1.2-0 libgstreamer-gl1.0-0
+  libgstreamer-plugins-bad1.0-0 libgstreamer-plugins-base1.0-0
+  libgstreamer1.0-0 libgtk-3-0 libgtk-3-common libgtop-2.0-11 libgtop2-common
+  libgudev-1.0-0 libgupnp-1.2-0 libgupnp-igd-1.0-4 libgusb2 libgweather-3-16
+  libgweather-common libhandy-1-0 libharfbuzz-icu0 libhunspell-1.7-0
+  libhyphen0 libibus-1.0-5 libiec61883-0 libieee1284-3 libilmbase25
+  libimobiledevice6 libinput-bin libinput10 libinstpatch-1.0-2
+  libjavascriptcoregtk-4.0-18 libjson-glib-1.0-0 libjson-glib-1.0-common
+  libkate1 libldap-2.4-2 libldb2 liblilv-0-0 libltc11 libmalcontent-0-0
+  libmanette-0.2-0 libmjpegutils-2.1-0 libmm-glib0 libmms0 libmodplug1
+  libmpcdec6 libmpdec3 libmpeg2encpp-2.1-0 libmpg123-0 libmplex2-2.1-0
+  libmtdev1 libmutter-7-0 libndp0 libnghttp2-14 libnice10 libnm0 libnma-common
+  libnma0 libnotify4 libofa0 libopenal-data libopenal1 libopenexr25 libopengl0
+  libopenmpt0 libopenni2-0 libpangoxft-1.0-0 libpeas-1.0-0 libpeas-common
+  libpipewire-0.3-0 libplist3 libpolkit-agent-1-0 libpolkit-gobject-1-0
+  libpoppler-glib8 libproxy1v5 libpulse-mainloop-glib0 libpwquality-common
+  libpwquality1 libpython3-stdlib libpython3.9 libpython3.9-minimal
+  libpython3.9-stdlib libraven0 libraw1394-11 librest-0.7-0 librsvg2-common
+  librtmp1 libsane-common libsane1 libsasl2-2 libsasl2-modules-db libsbc1
+  libsdl2-2.0-0 libsecret-1-0 libsecret-common libserd-0-0 libshout3
+  libsmbclient libsndio7.0 libsnmp-base libsnmp40 libsord-0-0 libsoundtouch1
+  libsoup-gnome2.4-1 libsoup2.4-1 libspa-0.2-modules libspandsp2 libsratom-0-0
+  libsrt1.4-gnutls libsrtp2-1 libssh2-1 libstartup-notification0 libtag1v5
+  libtag1v5-vanilla libtalloc2 libteamdctl0 libtevent0 libudisks2-0 libunwind8
+  libupower-glib3 libusbmuxd6 libv4l-0 libv4lconvert0 libvisual-0.4-0
+  libvo-aacenc0 libvo-amrwbenc0 libvorbisfile3 libwacom-common libwacom2
+  libwayland-cursor0 libwbclient0 libwebkit2gtk-4.0-37 libwebpdemux2
+  libwildmidi2 libwnck-3-0 libwnck-3-common libwoff1 libwpe-1.0-1
+  libwpebackend-fdo-1.0-1 libxaw7 libxcb-res0 libxcb-util1 libxcb-xkb1
+  libxcomposite1 libxcursor1 libxfont2 libxft2 libxinerama1 libxkbcommon-x11-0
+  libxkbcommon0 libxkbfile1 libxkbregistry0 libxklavier16 libxmu6 libxpm4
+  libxrandr2 libxres1 libxslt1.1 libxss1 libxt6 libxv1 libzbar0 media-types
+  mutter-common network-manager network-manager-gnome policykit-1
+  policykit-1-gnome python3 python3-ldb python3-minimal python3-talloc
+  python3.9 python3.9-minimal samba-libs sound-theme-freedesktop
+  timgm6mb-soundfont upower x11-xkb-utils xdg-dbus-proxy xserver-common
+  xwayland
+Suggested packages:
+  slick-greeter nautilus gnome-terminal gnome | kde-standard | xfce4 | wmaker
+  ispell | aspell | hunspell wordlist gnome-software | gnome-packagekit
+  gstreamer1.0-pulseaudio libcanberra-gtk-module libcanberra-gtk3-module
+  x11-xserver-utils usbguard frei0r-plugins gvfs hunspell
+  openoffice.org-hunspell | openoffice.org-core isoquery aspell
+  libcanberra-gtk0 libcanberra-pulse libdv-bin oss-compat libdvdcss2
+  libenchant-2-voikko libfftw3-bin libfftw3-dev libgd-tools gphoto2 gpm
+  libvisual-0.4-plugins gstreamer1.0-tools libusbmuxd-tools libportaudio2
+  libraw1394-doc hplip xdg-utils serdi sndiod snmp-mibs-downloader sordi
+  gstreamer1.0-alsa libwildmidi-config libteam-utils
+  network-manager-openconnect-gnome network-manager-openvpn-gnome
+  network-manager-vpnc-gnome network-manager-pptp-gnome python3-doc python3-tk
+  python3-venv python3.9-venv python3.9-doc binutils binfmt-support
+  fluid-soundfont-gm
+Recommended packages:
+  budgie-desktop-view plymouth-label cups-pk-helper gnome-online-accounts
+  gnome-user-docs gnome-user-share gkbd-capplet libcanberra-pulse rygel
+  | rygel-tracker system-config-printer-common malcontent-gui
+  libnss-myhostname cracklib-runtime pulseaudio-module-bluetooth realmd
+  gnome-power-manager | xfce4-power-manager libpam-gnome-keyring
+  iio-sensor-proxy x11-xserver-utils aspell-en | aspell-dictionary
+  | aspell6a-dictionary at-spi2-core libcanberra-gtk3-module
+  libclutter-1.0-common libcogl-common enchant-2 libgdk-pixbuf2.0-bin
+  libgphoto2-l10n gstreamer1.0-gl libgtk-3-bin usb.ids usbmuxd libldap-common
+  modemmanager notification-daemon pipewire sane-utils ipp-usb
+  libsasl2-modules libwacom-bin xdg-desktop-portal-gtk gstreamer1.0-libav ppp
+  wireless-regdb gnome-keyring mobile-broadband-provider-info xfonts-base
+  xauth
+The following NEW packages will be installed:
+  accountsservice acl adwaita-icon-theme apg bubblewrap budgie-core
+  budgie-desktop cheese-common colord colord-data dbus-x11 desktop-base
+  desktop-file-utils dictionaries-common emacsen-common fonts-quicksand
+  gir1.2-atk-1.0 gir1.2-budgie-1.0 gir1.2-freedesktop gir1.2-gdkpixbuf-2.0
+  gir1.2-glib-2.0 gir1.2-gtk-3.0 gir1.2-harfbuzz-0.0 gir1.2-pango-1.0
+  gir1.2-peas-1.0 glib-networking glib-networking-common
+  glib-networking-services gnome-control-center gnome-control-center-data
+  gnome-desktop3-data gnome-menus gnome-screensaver gnome-session-bin
+  gnome-session-common gnome-settings-daemon gnome-settings-daemon-common
+  gsettings-desktop-schemas gstreamer1.0-clutter-3.0 gstreamer1.0-plugins-bad
+  gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-x
+  gtk-update-icon-cache hicolor-icon-theme hunspell-en-us iso-codes libaa1
+  libaccountsservice0 libaspell15 libass9 libatk-bridge2.0-0 libatk1.0-0
+  libatk1.0-data libatomic1 libatspi2.0-0 libavc1394-0
+  libayatana-appindicator3-1 libayatana-ido3-0.4-0 libayatana-indicator3-7
+  libbluetooth3 libbs2b0 libbudgie-plugin0 libbudgie-private0 libbudgietheme0
+  libcaca0 libcanberra-gtk3-0 libcanberra0 libcdparanoia0 libcheese-gtk25
+  libcheese8 libchromaprint1 libclutter-1.0-0 libclutter-gst-3.0-0
+  libclutter-gtk-1.0-0 libcogl-pango20 libcogl-path20 libcogl20 libcolord-gtk1
+  libcolord2 libcolorhug2 libcrack2 libcurl3-gnutls libcurl4 libdbus-glib-1-2
+  libdbusmenu-glib4 libdbusmenu-gtk3-4 libdc1394-25 libdca0 libde265-0 libdv4
+  libdvdnav4 libdvdread8 libenchant-2-2 libepoxy0 libevdev2 libexif12 libfaad2
+  libfftw3-double3 libflite1 libfluidsynth2 libfontenc1 libgck-1-0
+  libgcr-base-3-1 libgd3 libgdk-pixbuf-xlib-2.0-0 libgdk-pixbuf2.0-0
+  libgeoclue-2-0 libgeocode-glib0 libgirepository-1.0-1 libgme0
+  libgnome-bluetooth13 libgnome-desktop-3-19 libgnome-menu-3-0
+  libgnomekbd-common libgnomekbd8 libgoa-1.0-0b libgoa-1.0-common
+  libgoa-backend-1.0-1 libgphoto2-6 libgphoto2-port12 libgpm2
+  libgraphene-1.0-0 libgsound0 libgssdp-1.2-0 libgstreamer-gl1.0-0
+  libgstreamer-plugins-bad1.0-0 libgstreamer-plugins-base1.0-0
+  libgstreamer1.0-0 libgtk-3-0 libgtk-3-common libgtop-2.0-11 libgtop2-common
+  libgudev-1.0-0 libgupnp-1.2-0 libgupnp-igd-1.0-4 libgusb2 libgweather-3-16
+  libgweather-common libhandy-1-0 libharfbuzz-icu0 libhunspell-1.7-0
+  libhyphen0 libibus-1.0-5 libiec61883-0 libieee1284-3 libilmbase25
+  libimobiledevice6 libinput-bin libinput10 libinstpatch-1.0-2
+  libjavascriptcoregtk-4.0-18 libjson-glib-1.0-0 libjson-glib-1.0-common
+  libkate1 libldap-2.4-2 libldb2 liblilv-0-0 libltc11 libmalcontent-0-0
+  libmanette-0.2-0 libmjpegutils-2.1-0 libmm-glib0 libmms0 libmodplug1
+  libmpcdec6 libmpdec3 libmpeg2encpp-2.1-0 libmpg123-0 libmplex2-2.1-0
+  libmtdev1 libmutter-7-0 libndp0 libnghttp2-14 libnice10 libnm0 libnma-common
+  libnma0 libnotify4 libofa0 libopenal-data libopenal1 libopenexr25 libopengl0
+  libopenmpt0 libopenni2-0 libpangoxft-1.0-0 libpeas-1.0-0 libpeas-common
+  libpipewire-0.3-0 libplist3 libpolkit-agent-1-0 libpolkit-gobject-1-0
+  libpoppler-glib8 libproxy1v5 libpulse-mainloop-glib0 libpwquality-common
+  libpwquality1 libpython3-stdlib libpython3.9 libpython3.9-minimal
+  libpython3.9-stdlib libraven0 libraw1394-11 librest-0.7-0 librsvg2-common
+  librtmp1 libsane-common libsane1 libsasl2-2 libsasl2-modules-db libsbc1
+  libsdl2-2.0-0 libsecret-1-0 libsecret-common libserd-0-0 libshout3
+  libsmbclient libsndio7.0 libsnmp-base libsnmp40 libsord-0-0 libsoundtouch1
+  libsoup-gnome2.4-1 libsoup2.4-1 libspa-0.2-modules libspandsp2 libsratom-0-0
+  libsrt1.4-gnutls libsrtp2-1 libssh2-1 libstartup-notification0 libtag1v5
+  libtag1v5-vanilla libtalloc2 libteamdctl0 libtevent0 libudisks2-0 libunwind8
+  libupower-glib3 libusbmuxd6 libv4l-0 libv4lconvert0 libvisual-0.4-0
+  libvo-aacenc0 libvo-amrwbenc0 libvorbisfile3 libwacom-common libwacom2
+  libwayland-cursor0 libwbclient0 libwebkit2gtk-4.0-37 libwebpdemux2
+  libwildmidi2 libwnck-3-0 libwnck-3-common libwoff1 libwpe-1.0-1
+  libwpebackend-fdo-1.0-1 libxaw7 libxcb-res0 libxcb-util1 libxcb-xkb1
+  libxcomposite1 libxcursor1 libxfont2 libxft2 libxinerama1 libxkbcommon-x11-0
+  libxkbcommon0 libxkbfile1 libxkbregistry0 libxklavier16 libxmu6 libxpm4
+  libxrandr2 libxres1 libxslt1.1 libxss1 libxt6 libxv1 libzbar0 media-types
+  mutter-common network-manager network-manager-gnome policykit-1
+  policykit-1-gnome python3 python3-ldb python3-minimal python3-talloc
+  python3.9 python3.9-minimal samba-libs sound-theme-freedesktop
+  timgm6mb-soundfont upower x11-xkb-utils xdg-dbus-proxy xserver-common
+  xwayland
+0 upgraded, 302 newly installed, 0 to remove and 18 not upgraded.
+Inst libsane-common (1.0.31-4.1 Debian:11.3/stable [all])
+Inst libsasl2-modules-db (2.1.27+dfsg-2.1+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Inst libsasl2-2 (2.1.27+dfsg-2.1+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Inst libldap-2.4-2 (2.4.57+dfsg-3 Debian:11.3/stable [amd64])
+Inst libtalloc2 (2.3.1-2+b1 Debian:11.3/stable [amd64])
+Inst libtevent0 (0.10.2-1 Debian:11.3/stable [amd64])
+Inst libldb2 (2:2.2.3-2~deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Inst libpython3.9-minimal (3.9.2-1 Debian:11.3/stable [amd64])
+Inst media-types (4.0.0 Debian:11.3/stable [all])
+Inst libmpdec3 (2.5.1-1 Debian:11.3/stable [amd64])
+Inst libpython3.9-stdlib (3.9.2-1 Debian:11.3/stable [amd64])
+Inst libpython3.9 (3.9.2-1 Debian:11.3/stable [amd64])
+Inst libwbclient0 (2:4.13.13+dfsg-1~deb11u3 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Inst python3.9-minimal (3.9.2-1 Debian:11.3/stable [amd64])
+Conf libpython3.9-minimal (3.9.2-1 Debian:11.3/stable [amd64])
+Conf python3.9-minimal (3.9.2-1 Debian:11.3/stable [amd64])
+Inst python3-minimal (3.9.2-3 Debian:11.3/stable [amd64])
+Inst python3.9 (3.9.2-1 Debian:11.3/stable [amd64])
+Inst libpython3-stdlib (3.9.2-3 Debian:11.3/stable [amd64])
+Conf python3-minimal (3.9.2-3 Debian:11.3/stable [amd64])
+Inst python3 (3.9.2-3 Debian:11.3/stable [amd64])
+Inst python3-ldb (2:2.2.3-2~deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Inst python3-talloc (2.3.1-2+b1 Debian:11.3/stable [amd64])
+Inst samba-libs (2:4.13.13+dfsg-1~deb11u3 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Inst libsmbclient (2:4.13.13+dfsg-1~deb11u3 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Inst libaccountsservice0 (0.6.55-3 Debian:11.3/stable [amd64])
+Inst libpolkit-gobject-1-0 (0.105-31+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Inst accountsservice (0.6.55-3 Debian:11.3/stable [amd64])
+Inst acl (2.2.53-10 Debian:11.3/stable [amd64])
+Inst hicolor-icon-theme (0.17-2 Debian:11.3/stable [all])
+Inst gtk-update-icon-cache (3.24.24-4+deb11u2 Debian:11.3/stable [amd64])
+Inst adwaita-icon-theme (3.38.0-1 Debian:11.3/stable [all])
+Inst apg (2.2.3.dfsg.1-5+b2 Debian:11.3/stable [amd64])
+Inst bubblewrap (0.4.1-3 Debian:11.3/stable [amd64])
+Inst gnome-settings-daemon-common (3.38.2-1 Debian:11.3/stable [all])
+Inst gsettings-desktop-schemas (3.38.0-2 Debian:11.3/stable [all])
+Inst libatk1.0-data (2.36.0-2 Debian:11.3/stable [all])
+Inst libatk1.0-0 (2.36.0-2 Debian:11.3/stable [amd64])
+Inst libvorbisfile3 (1.3.7-1 Debian:11.3/stable [amd64])
+Inst sound-theme-freedesktop (0.8-2 Debian:11.3/stable [all])
+Inst libcanberra0 (0.30-7 Debian:11.3/stable [amd64])
+Inst libgdk-pixbuf-xlib-2.0-0 (2.40.2-2 Debian:11.3/stable [amd64])
+Inst libgdk-pixbuf2.0-0 (2.40.2-2 Debian:11.3/stable [amd64])
+Inst libatspi2.0-0 (2.38.0-4 Debian:11.3/stable [amd64])
+Inst libatk-bridge2.0-0 (2.38.0-1 Debian:11.3/stable [amd64])
+Inst libcolord2 (1.4.5-3 Debian:11.3/stable [amd64])
+Inst libepoxy0 (1.5.5-1 Debian:11.3/stable [amd64])
+Inst libjson-glib-1.0-common (1.6.2-1 Debian:11.3/stable [all])
+Inst libjson-glib-1.0-0 (1.6.2-1 Debian:11.3/stable [amd64])
+Inst libproxy1v5 (0.4.17-1 Debian:11.3/stable [amd64])
+Inst glib-networking-common (2.66.0-2 Debian:11.3/stable [all])
+Inst glib-networking-services (2.66.0-2 Debian:11.3/stable [amd64])
+Inst glib-networking (2.66.0-2 Debian:11.3/stable [amd64])
+Inst libsoup2.4-1 (2.72.0-2 Debian:11.3/stable [amd64])
+Inst libsoup-gnome2.4-1 (2.72.0-2 Debian:11.3/stable [amd64])
+Inst librest-0.7-0 (0.8.1-1.1 Debian:11.3/stable [amd64])
+Inst libwayland-cursor0 (1.18.0-2~exp1.1 Debian:11.3/stable [amd64])
+Inst libxcomposite1 (1:0.4.5-1 Debian:11.3/stable [amd64])
+Inst libxcursor1 (1:1.2.0-2 Debian:11.3/stable [amd64])
+Inst libxinerama1 (2:1.1.4-2 Debian:11.3/stable [amd64])
+Inst libxkbcommon0 (1.0.3-2 Debian:11.3/stable [amd64])
+Inst libxrandr2 (2:1.5.1-1 Debian:11.3/stable [amd64])
+Inst libgtk-3-common (3.24.24-4+deb11u2 Debian:11.3/stable [all])
+Inst libgtk-3-0 (3.24.24-4+deb11u2 Debian:11.3/stable [amd64])
+Inst libcanberra-gtk3-0 (0.30-7 Debian:11.3/stable [amd64])
+Inst libgck-1-0 (3.38.1-2 Debian:11.3/stable [amd64])
+Inst libgcr-base-3-1 (3.38.1-2 Debian:11.3/stable [amd64])
+Inst libgeoclue-2-0 (2.5.7-3 Debian:11.3/stable [amd64])
+Inst libgeocode-glib0 (3.26.2-2 Debian:11.3/stable [amd64])
+Inst gnome-desktop3-data (3.38.5-3 Debian:11.3/stable [all])
+Inst libxkbregistry0 (1.0.3-2 Debian:11.3/stable [amd64])
+Inst libgnome-desktop-3-19 (3.38.5-3 Debian:11.3/stable [amd64])
+Inst libgudev-1.0-0 (234-1 Debian:11.3/stable [amd64])
+Inst libgweather-common (3.36.1-3 Debian:11.3/stable [all])
+Inst libgweather-3-16 (3.36.1-3 Debian:11.3/stable [amd64])
+Inst libmm-glib0 (1.14.12-0.2 Debian:11.3/stable [amd64])
+Inst libnm0 (1.30.0-2 Debian:11.3/stable [amd64])
+Inst libnotify4 (0.7.9-3 Debian:11.3/stable [amd64])
+Inst libpulse-mainloop-glib0 (14.2-2 Debian:11.3/stable [amd64])
+Inst libupower-glib3 (0.99.11-2 Debian:11.3/stable [amd64])
+Inst libwacom-common (1.8-2 Debian:11.3/stable [all])
+Inst libwacom2 (1.8-2 Debian:11.3/stable [amd64])
+Inst gnome-settings-daemon (3.38.2-1 Debian:11.3/stable [amd64])
+Inst dbus-x11 (1.12.20-2 Debian:11.3/stable [amd64])
+Inst libplist3 (2.2.0-6 Debian:11.3/stable [amd64])
+Inst libusbmuxd6 (2.0.2-3 Debian:11.3/stable [amd64])
+Inst libimobiledevice6 (1.3.0-6 Debian:11.3/stable [amd64])
+Inst upower (0.99.11-2 Debian:11.3/stable [amd64])
+Inst libxt6 (1:1.2.0-1 Debian:11.3/stable [amd64])
+Inst libxmu6 (2:1.1.2-2+b3 Debian:11.3/stable [amd64])
+Inst libxpm4 (1:3.5.12-1 Debian:11.3/stable [amd64])
+Inst libxaw7 (2:1.0.13-1.1 Debian:11.3/stable [amd64])
+Inst libxkbfile1 (1:1.1.0-1 Debian:11.3/stable [amd64])
+Inst x11-xkb-utils (7.7+5 Debian:11.3/stable [amd64])
+Inst xserver-common (2:1.20.11-1+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [all])
+Inst libunwind8 (1.3.2-2 Debian:11.3/stable [amd64])
+Inst libfontenc1 (1:1.1.4-1 Debian:11.3/stable [amd64])
+Inst libxfont2 (1:2.0.4-1 Debian:11.3/stable [amd64])
+Inst xwayland (2:1.20.11-1+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Inst gnome-session-bin (3.38.0-4 Debian:11.3/stable [amd64])
+Inst gnome-session-common (3.38.0-4 Debian:11.3/stable [all])
+Inst libdbus-glib-1-2 (0.110-6 Debian:11.3/stable [amd64])
+Inst iso-codes (4.6.0-1 Debian:11.3/stable [all])
+Inst libgnomekbd-common (3.26.1-1 Debian:11.3/stable [all])
+Inst libxklavier16 (5.4-4 Debian:11.3/stable [amd64])
+Inst libgnomekbd8 (3.26.1-1 Debian:11.3/stable [amd64])
+Inst gnome-screensaver (3.6.1-13 Debian:11.3/stable [amd64])
+Inst libpeas-common (1.28.0-2 Debian:11.3/stable [all])
+Inst libgirepository-1.0-1 (1.66.1-1+b1 Debian:11.3/stable [amd64])
+Inst libpeas-1.0-0 (1.28.0-2+b1 Debian:11.3/stable [amd64])
+Inst libbudgie-plugin0 (10.5.2-4 Debian:11.3/stable [amd64])
+Inst libbudgie-private0 (10.5.2-4 Debian:11.3/stable [amd64])
+Inst libbudgietheme0 (10.5.2-4 Debian:11.3/stable [amd64])
+Inst libgnome-bluetooth13 (3.34.3-2 Debian:11.3/stable [amd64])
+Inst libgnome-menu-3-0 (3.36.0-1 Debian:11.3/stable [amd64])
+Inst libibus-1.0-5 (1.5.23-2 Debian:11.3/stable [amd64])
+Inst mutter-common (3.38.6-2~deb11u2 Debian:11.3/stable [all])
+Inst libgraphene-1.0-0 (1.10.4+dfsg1-1 Debian:11.3/stable [amd64])
+Inst libevdev2 (1.11.0+dfsg-1 Debian:11.3/stable [amd64])
+Inst libmtdev1 (1.1.6-1 Debian:11.3/stable [amd64])
+Inst libinput-bin (1.16.4-3 Debian:11.3/stable [amd64])
+Inst libinput10 (1.16.4-3 Debian:11.3/stable [amd64])
+Inst libspa-0.2-modules (0.3.19-4 Debian:11.3/stable [amd64])
+Inst libpipewire-0.3-0 (0.3.19-4 Debian:11.3/stable [amd64])
+Inst libxcb-util1 (0.4.0-1+b1 Debian:11.3/stable [amd64])
+Inst libstartup-notification0 (0.12-6+b1 Debian:11.3/stable [amd64])
+Inst libxcb-res0 (1.14-3 Debian:11.3/stable [amd64])
+Inst libxcb-xkb1 (1.14-3 Debian:11.3/stable [amd64])
+Inst libxkbcommon-x11-0 (1.0.3-2 Debian:11.3/stable [amd64])
+Inst libmutter-7-0 (3.38.6-2~deb11u2 Debian:11.3/stable [amd64])
+Inst libpolkit-agent-1-0 (0.105-31+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Inst libraven0 (10.5.2-4 Debian:11.3/stable [amd64])
+Inst libxres1 (2:1.2.0-4 Debian:11.3/stable [amd64])
+Inst libwnck-3-common (3.36.0-1 Debian:11.3/stable [all])
+Inst libwnck-3-0 (3.36.0-1 Debian:11.3/stable [amd64])
+Inst budgie-core (10.5.2-4 Debian:11.3/stable [amd64])
+Inst gir1.2-glib-2.0 (1.66.1-1+b1 Debian:11.3/stable [amd64])
+Inst gir1.2-atk-1.0 (2.36.0-2 Debian:11.3/stable [amd64])
+Inst gir1.2-freedesktop (1.66.1-1+b1 Debian:11.3/stable [amd64])
+Inst gir1.2-gdkpixbuf-2.0 (2.42.2+dfsg-1 Debian:11.3/stable [amd64])
+Inst gir1.2-harfbuzz-0.0 (2.7.4-1 Debian:11.3/stable [amd64])
+Inst libxft2 (2.3.2-2 Debian:11.3/stable [amd64])
+Inst libpangoxft-1.0-0 (1.46.2-3 Debian:11.3/stable [amd64])
+Inst gir1.2-pango-1.0 (1.46.2-3 Debian:11.3/stable [amd64])
+Inst gir1.2-gtk-3.0 (3.24.24-4+deb11u2 Debian:11.3/stable [amd64])
+Inst gir1.2-peas-1.0 (1.28.0-2+b1 Debian:11.3/stable [amd64])
+Inst gir1.2-budgie-1.0 (10.5.2-4 Debian:11.3/stable [amd64])
+Inst libcogl20 (1.22.8-2 Debian:11.3/stable [amd64])
+Inst libcogl-pango20 (1.22.8-2 Debian:11.3/stable [amd64])
+Inst libcogl-path20 (1.22.8-2 Debian:11.3/stable [amd64])
+Inst libclutter-1.0-0 (1.26.4+dfsg-2 Debian:11.3/stable [amd64])
+Inst libgstreamer1.0-0 (1.18.4-2.1 Debian:11.3/stable [amd64])
+Inst libgstreamer-plugins-base1.0-0 (1.18.4-2 Debian:11.3/stable [amd64])
+Inst libclutter-gst-3.0-0 (3.0.27-2 Debian:11.3/stable [amd64])
+Inst libass9 (1:0.15.0-2 Debian:11.3/stable [amd64])
+Inst libbs2b0 (3.1.0+dfsg-2.2+b1 Debian:11.3/stable [amd64])
+Inst libchromaprint1 (1.5.0-2 Debian:11.3/stable [amd64])
+Inst libnghttp2-14 (1.43.0-1 Debian:11.3/stable [amd64])
+Inst librtmp1 (2.4+20151223.gitfa8646d.1-2+b2 Debian:11.3/stable [amd64])
+Inst libssh2-1 (1.9.0-2 Debian:11.3/stable [amd64])
+Inst libcurl3-gnutls (7.74.0-1.3+deb11u1 Debian:11.3/stable [amd64])
+Inst libraw1394-11 (2.1.2-2 Debian:11.3/stable [amd64])
+Inst libdc1394-25 (2.2.6-3 Debian:11.3/stable [amd64])
+Inst libdca0 (0.0.7-2 Debian:11.3/stable [amd64])
+Inst libde265-0 (1.0.8-1 Debian:11.3/stable [amd64])
+Inst libdvdread8 (6.1.1-2 Debian:11.3/stable [amd64])
+Inst libdvdnav4 (6.1.0-1+b1 Debian:11.3/stable [amd64])
+Inst libfaad2 (2.10.0-1 Debian:11.3/stable [amd64])
+Inst libflite1 (2.2-2 Debian:11.3/stable [amd64])
+Inst libinstpatch-1.0-2 (1.1.6-1 Debian:11.3/stable [amd64])
+Inst libxss1 (1:1.2.3-1 Debian:11.3/stable [amd64])
+Inst libsdl2-2.0-0 (2.0.14+dfsg2-3 Debian:11.3/stable [amd64])
+Inst timgm6mb-soundfont (1.3-5 Debian:11.3/stable [all])
+Inst libfluidsynth2 (2.1.7-1.1 Debian:11.3/stable [amd64])
+Inst libgme0 (0.6.3-2 Debian:11.3/stable [amd64])
+Inst libgstreamer-gl1.0-0 (1.18.4-2 Debian:11.3/stable [amd64])
+Inst libgstreamer-plugins-bad1.0-0 (1.18.4-3 Debian:11.3/stable [amd64])
+Inst libilmbase25 (2.5.4-1 Debian:11.3/stable [amd64])
+Inst libkate1 (0.4.1-11 Debian:11.3/stable [amd64])
+Inst libserd-0-0 (0.30.10-2 Debian:11.3/stable [amd64])
+Inst libsord-0-0 (0.16.8-2 Debian:11.3/stable [amd64])
+Inst libsratom-0-0 (0.6.8-1 Debian:11.3/stable [amd64])
+Inst liblilv-0-0 (0.24.12-2 Debian:11.3/stable [amd64])
+Inst libltc11 (1.3.1-1 Debian:11.3/stable [amd64])
+Inst libmjpegutils-2.1-0 (1:2.1.0+debian-6 Debian:11.3/stable [amd64])
+Inst libmms0 (0.6.4-3 Debian:11.3/stable [amd64])
+Inst libmodplug1 (1:0.8.9.0-3 Debian:11.3/stable [amd64])
+Inst libmpcdec6 (2:0.1~r495-2 Debian:11.3/stable [amd64])
+Inst libmpeg2encpp-2.1-0 (1:2.1.0+debian-6 Debian:11.3/stable [amd64])
+Inst libmplex2-2.1-0 (1:2.1.0+debian-6 Debian:11.3/stable [amd64])
+Inst libgssdp-1.2-0 (1.2.3-2 Debian:11.3/stable [amd64])
+Inst libgupnp-1.2-0 (1.2.4-1 Debian:11.3/stable [amd64])
+Inst libgupnp-igd-1.0-4 (1.2.0-1 Debian:11.3/stable [amd64])
+Inst libnice10 (0.1.16-1 Debian:11.3/stable [amd64])
+Inst libfftw3-double3 (3.3.8-2 Debian:11.3/stable [amd64])
+Inst libofa0 (0.9.3-21 Debian:11.3/stable [amd64])
+Inst libopenal-data (1:1.19.1-2 Debian:11.3/stable [all])
+Inst libsndio7.0 (1.5.0-3 Debian:11.3/stable [amd64])
+Inst libopenal1 (1:1.19.1-2 Debian:11.3/stable [amd64])
+Inst libopenexr25 (2.5.4-2 Debian:11.3/stable [amd64])
+Inst libmpg123-0 (1.26.4-1 Debian:11.3/stable [amd64])
+Inst libopenmpt0 (0.4.11-1 Debian:11.3/stable [amd64])
+Inst libopenni2-0 (2.2.0.33+dfsg-15 Debian:11.3/stable [amd64])
+Inst libsbc1 (1.5-3 Debian:11.3/stable [amd64])
+Inst libsoundtouch1 (2.2+ds1-2 Debian:11.3/stable [amd64])
+Inst libspandsp2 (0.0.6+dfsg-2 Debian:11.3/stable [amd64])
+Inst libsrt1.4-gnutls (1.4.2-1.3 Debian:11.3/stable [amd64])
+Inst libsrtp2-1 (2.3.0-5 Debian:11.3/stable [amd64])
+Inst libvo-aacenc0 (0.1.3-2 Debian:11.3/stable [amd64])
+Inst libvo-amrwbenc0 (0.1.3-2 Debian:11.3/stable [amd64])
+Inst libwildmidi2 (0.4.3-1 Debian:11.3/stable [amd64])
+Inst libv4lconvert0 (1.20.0-2 Debian:11.3/stable [amd64])
+Inst libv4l-0 (1.20.0-2 Debian:11.3/stable [amd64])
+Inst libzbar0 (0.23.90-1 Debian:11.3/stable [amd64])
+Inst libcdparanoia0 (3.10.2+debian-13.1 Debian:11.3/stable [amd64])
+Inst libvisual-0.4-0 (0.4.0-17 Debian:11.3/stable [amd64])
+Inst gstreamer1.0-plugins-base (1.18.4-2 Debian:11.3/stable [amd64])
+Inst gstreamer1.0-plugins-bad (1.18.4-3 Debian:11.3/stable [amd64])
+Inst cheese-common (3.38.0-3 Debian:11.3/stable [all])
+Inst libgpm2 (1.20.7-8 Debian:11.3/stable [amd64])
+Inst libaa1 (1.4p5-48 Debian:11.3/stable [amd64])
+Inst libavc1394-0 (0.5.4-5 Debian:11.3/stable [amd64])
+Inst libcaca0 (0.99.beta19-2.2 Debian:11.3/stable [amd64])
+Inst libdv4 (1.0.0-13 Debian:11.3/stable [amd64])
+Inst libiec61883-0 (1.2.0-4 Debian:11.3/stable [amd64])
+Inst libshout3 (2.4.5-1+b1 Debian:11.3/stable [amd64])
+Inst libtag1v5-vanilla (1.11.1+dfsg.1-3 Debian:11.3/stable [amd64])
+Inst libtag1v5 (1.11.1+dfsg.1-3 Debian:11.3/stable [amd64])
+Inst gstreamer1.0-plugins-good (1.18.4-2 Debian:11.3/stable [amd64])
+Inst libxv1 (2:1.0.11-1 Debian:11.3/stable [amd64])
+Inst gstreamer1.0-x (1.18.4-2 Debian:11.3/stable [amd64])
+Inst libcheese8 (3.38.0-3 Debian:11.3/stable [amd64])
+Inst libclutter-gtk-1.0-0 (1.8.4-4 Debian:11.3/stable [amd64])
+Inst gstreamer1.0-clutter-3.0 (3.0.27-2 Debian:11.3/stable [amd64])
+Inst libcheese-gtk25 (3.38.0-3 Debian:11.3/stable [amd64])
+Inst libcolord-gtk1 (0.1.26-2 Debian:11.3/stable [amd64])
+Inst libgoa-1.0-common (3.38.0-3 Debian:11.3/stable [all])
+Inst libgoa-1.0-0b (3.38.0-3 Debian:11.3/stable [amd64])
+Inst libatomic1 (10.2.1-6 Debian:11.3/stable [amd64])
+Inst libjavascriptcoregtk-4.0-18 (2.36.0-3~deb11u1 Debian-Security:11/stable-security [amd64])
+Inst libsecret-common (0.20.4-2 Debian:11.3/stable [all])
+Inst libsecret-1-0 (0.20.4-2 Debian:11.3/stable [amd64])
+Inst xdg-dbus-proxy (0.1.2-2 Debian:11.3/stable [amd64])
+Inst emacsen-common (3.0.4 Debian:11.3/stable [all])
+Inst dictionaries-common (1.28.4 Debian:11.3/stable [all])
+Inst hunspell-en-us (1:2019.10.06-1 Debian:11.3/stable [all])
+Inst libaspell15 (0.60.8-3 Debian:11.3/stable [amd64])
+Inst libhunspell-1.7-0 (1.7.0-3 Debian:11.3/stable [amd64])
+Inst libenchant-2-2 (2.2.15-1 Debian:11.3/stable [amd64])
+Inst libharfbuzz-icu0 (2.7.4-1 Debian:11.3/stable [amd64])
+Inst libhyphen0 (2.8.8-7 Debian:11.3/stable [amd64])
+Inst libmanette-0.2-0 (0.2.5-1 Debian:11.3/stable [amd64])
+Inst libopengl0 (1.3.2-1 Debian:11.3/stable [amd64])
+Inst libwebpdemux2 (0.6.1-2.1 Debian:11.3/stable [amd64])
+Inst libwoff1 (1.0.2-1+b1 Debian:11.3/stable [amd64])
+Inst libwpe-1.0-1 (1.10.0-2 Debian:11.3/stable [amd64])
+Inst libwpebackend-fdo-1.0-1 (1.8.0-1 Debian:11.3/stable [amd64])
+Inst libxslt1.1 (1.1.34-4 Debian:11.3/stable [amd64])
+Inst libwebkit2gtk-4.0-37 (2.36.0-3~deb11u1 Debian-Security:11/stable-security [amd64])
+Inst libgoa-backend-1.0-1 (3.38.0-3 Debian:11.3/stable [amd64])
+Inst libgsound0 (1.0.2-5 Debian:11.3/stable [amd64])
+Inst libgtop2-common (2.40.0-2 Debian:11.3/stable [all])
+Inst libgtop-2.0-11 (2.40.0-2 Debian:11.3/stable [amd64])
+Inst libhandy-1-0 (1.0.3-2 Debian:11.3/stable [amd64])
+Inst libmalcontent-0-0 (0.10.0-2 Debian:11.3/stable [amd64])
+Inst libnma-common (1.8.30-1 Debian:11.3/stable [all])
+Inst libnma0 (1.8.30-1 Debian:11.3/stable [amd64])
+Inst libcrack2 (2.9.6-3.4 Debian:11.3/stable [amd64])
+Inst libpwquality-common (1.4.4-1 Debian:11.3/stable [all])
+Inst libpwquality1 (1.4.4-1 Debian:11.3/stable [amd64])
+Inst libudisks2-0 (2.9.2-2+deb11u1 Debian:11.3/stable [amd64])
+Inst colord-data (1.4.5-3 Debian:11.3/stable [all])
+Inst policykit-1 (0.105-31+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Inst libgusb2 (0.3.5-1 Debian:11.3/stable [amd64])
+Inst libcolorhug2 (1.4.5-3 Debian:11.3/stable [amd64])
+Inst libcurl4 (7.74.0-1.3+deb11u1 Debian:11.3/stable [amd64])
+Inst libexif12 (0.6.22-3 Debian:11.3/stable [amd64])
+Inst libgd3 (2.3.0-2 Debian:11.3/stable [amd64])
+Inst libgphoto2-port12 (2.5.27-1 Debian:11.3/stable [amd64])
+Inst libgphoto2-6 (2.5.27-1 Debian:11.3/stable [amd64])
+Inst libieee1284-3 (0.2.11-14 Debian:11.3/stable [amd64])
+Inst libpoppler-glib8 (20.09.0-3.1 Debian:11.3/stable [amd64])
+Inst libsnmp-base (5.9+dfsg-3 Debian:11.3/stable [all])
+Inst libsnmp40 (5.9+dfsg-3+b1 Debian:11.3/stable [amd64])
+Inst libsane1 (1.0.31-4.1 Debian:11.3/stable [amd64])
+Inst colord (1.4.5-3 Debian:11.3/stable [amd64])
+Inst librsvg2-common (2.50.3+dfsg-1 Debian:11.3/stable [amd64])
+Inst fonts-quicksand (0.2016-2.1 Debian:11.3/stable [all])
+Inst desktop-base (11.0.3 Debian:11.3/stable [all])
+Inst desktop-file-utils (0.26-1 Debian:11.3/stable [amd64])
+Inst gnome-control-center-data (1:3.38.4-1 Debian:11.3/stable [all])
+Inst gnome-control-center (1:3.38.4-1 Debian:11.3/stable [amd64])
+Inst gnome-menus (3.36.0-1 Debian:11.3/stable [amd64])
+Inst libayatana-ido3-0.4-0 (0.8.2-1 Debian:11.3/stable [amd64])
+Inst libayatana-indicator3-7 (0.8.4-1+deb11u2 Debian:11.3/stable [amd64])
+Inst libdbusmenu-glib4 (18.10.20180917~bzr492+repack1-2 Debian:11.3/stable [amd64])
+Inst libdbusmenu-gtk3-4 (18.10.20180917~bzr492+repack1-2 Debian:11.3/stable [amd64])
+Inst libayatana-appindicator3-1 (0.5.5-2 Debian:11.3/stable [amd64])
+Inst libbluetooth3 (5.55-3.1 Debian:11.3/stable [amd64])
+Inst libndp0 (1.6-1+b1 Debian:11.3/stable [amd64])
+Inst libteamdctl0 (1.31-1 Debian:11.3/stable [amd64])
+Inst network-manager (1.30.0-2 Debian:11.3/stable [amd64])
+Inst policykit-1-gnome (0.105-7 Debian:11.3/stable [amd64])
+Inst network-manager-gnome (1.20.0-3 Debian:11.3/stable [amd64])
+Inst budgie-desktop (10.5.2-4 Debian:11.3/stable [all])
+Conf libsane-common (1.0.31-4.1 Debian:11.3/stable [all])
+Conf libsasl2-modules-db (2.1.27+dfsg-2.1+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Conf libsasl2-2 (2.1.27+dfsg-2.1+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Conf libldap-2.4-2 (2.4.57+dfsg-3 Debian:11.3/stable [amd64])
+Conf libtalloc2 (2.3.1-2+b1 Debian:11.3/stable [amd64])
+Conf libtevent0 (0.10.2-1 Debian:11.3/stable [amd64])
+Conf libldb2 (2:2.2.3-2~deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Conf media-types (4.0.0 Debian:11.3/stable [all])
+Conf libmpdec3 (2.5.1-1 Debian:11.3/stable [amd64])
+Conf libpython3.9-stdlib (3.9.2-1 Debian:11.3/stable [amd64])
+Conf libpython3.9 (3.9.2-1 Debian:11.3/stable [amd64])
+Conf libwbclient0 (2:4.13.13+dfsg-1~deb11u3 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Conf python3.9 (3.9.2-1 Debian:11.3/stable [amd64])
+Conf libpython3-stdlib (3.9.2-3 Debian:11.3/stable [amd64])
+Conf python3 (3.9.2-3 Debian:11.3/stable [amd64])
+Conf python3-ldb (2:2.2.3-2~deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Conf python3-talloc (2.3.1-2+b1 Debian:11.3/stable [amd64])
+Conf samba-libs (2:4.13.13+dfsg-1~deb11u3 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Conf libsmbclient (2:4.13.13+dfsg-1~deb11u3 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Conf libaccountsservice0 (0.6.55-3 Debian:11.3/stable [amd64])
+Conf libpolkit-gobject-1-0 (0.105-31+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Conf accountsservice (0.6.55-3 Debian:11.3/stable [amd64])
+Conf acl (2.2.53-10 Debian:11.3/stable [amd64])
+Conf hicolor-icon-theme (0.17-2 Debian:11.3/stable [all])
+Conf gtk-update-icon-cache (3.24.24-4+deb11u2 Debian:11.3/stable [amd64])
+Conf adwaita-icon-theme (3.38.0-1 Debian:11.3/stable [all])
+Conf apg (2.2.3.dfsg.1-5+b2 Debian:11.3/stable [amd64])
+Conf bubblewrap (0.4.1-3 Debian:11.3/stable [amd64])
+Conf gnome-settings-daemon-common (3.38.2-1 Debian:11.3/stable [all])
+Conf gsettings-desktop-schemas (3.38.0-2 Debian:11.3/stable [all])
+Conf libatk1.0-data (2.36.0-2 Debian:11.3/stable [all])
+Conf libatk1.0-0 (2.36.0-2 Debian:11.3/stable [amd64])
+Conf libvorbisfile3 (1.3.7-1 Debian:11.3/stable [amd64])
+Conf sound-theme-freedesktop (0.8-2 Debian:11.3/stable [all])
+Conf libcanberra0 (0.30-7 Debian:11.3/stable [amd64])
+Conf libgdk-pixbuf-xlib-2.0-0 (2.40.2-2 Debian:11.3/stable [amd64])
+Conf libgdk-pixbuf2.0-0 (2.40.2-2 Debian:11.3/stable [amd64])
+Conf libatspi2.0-0 (2.38.0-4 Debian:11.3/stable [amd64])
+Conf libatk-bridge2.0-0 (2.38.0-1 Debian:11.3/stable [amd64])
+Conf libcolord2 (1.4.5-3 Debian:11.3/stable [amd64])
+Conf libepoxy0 (1.5.5-1 Debian:11.3/stable [amd64])
+Conf libjson-glib-1.0-common (1.6.2-1 Debian:11.3/stable [all])
+Conf libjson-glib-1.0-0 (1.6.2-1 Debian:11.3/stable [amd64])
+Conf libproxy1v5 (0.4.17-1 Debian:11.3/stable [amd64])
+Conf glib-networking-common (2.66.0-2 Debian:11.3/stable [all])
+Conf glib-networking-services (2.66.0-2 Debian:11.3/stable [amd64])
+Conf glib-networking (2.66.0-2 Debian:11.3/stable [amd64])
+Conf libsoup2.4-1 (2.72.0-2 Debian:11.3/stable [amd64])
+Conf libsoup-gnome2.4-1 (2.72.0-2 Debian:11.3/stable [amd64])
+Conf librest-0.7-0 (0.8.1-1.1 Debian:11.3/stable [amd64])
+Conf libwayland-cursor0 (1.18.0-2~exp1.1 Debian:11.3/stable [amd64])
+Conf libxcomposite1 (1:0.4.5-1 Debian:11.3/stable [amd64])
+Conf libxcursor1 (1:1.2.0-2 Debian:11.3/stable [amd64])
+Conf libxinerama1 (2:1.1.4-2 Debian:11.3/stable [amd64])
+Conf libxkbcommon0 (1.0.3-2 Debian:11.3/stable [amd64])
+Conf libxrandr2 (2:1.5.1-1 Debian:11.3/stable [amd64])
+Conf libgtk-3-common (3.24.24-4+deb11u2 Debian:11.3/stable [all])
+Conf libgtk-3-0 (3.24.24-4+deb11u2 Debian:11.3/stable [amd64])
+Conf libcanberra-gtk3-0 (0.30-7 Debian:11.3/stable [amd64])
+Conf libgck-1-0 (3.38.1-2 Debian:11.3/stable [amd64])
+Conf libgcr-base-3-1 (3.38.1-2 Debian:11.3/stable [amd64])
+Conf libgeoclue-2-0 (2.5.7-3 Debian:11.3/stable [amd64])
+Conf libgeocode-glib0 (3.26.2-2 Debian:11.3/stable [amd64])
+Conf gnome-desktop3-data (3.38.5-3 Debian:11.3/stable [all])
+Conf libxkbregistry0 (1.0.3-2 Debian:11.3/stable [amd64])
+Conf libgnome-desktop-3-19 (3.38.5-3 Debian:11.3/stable [amd64])
+Conf libgudev-1.0-0 (234-1 Debian:11.3/stable [amd64])
+Conf libgweather-common (3.36.1-3 Debian:11.3/stable [all])
+Conf libgweather-3-16 (3.36.1-3 Debian:11.3/stable [amd64])
+Conf libmm-glib0 (1.14.12-0.2 Debian:11.3/stable [amd64])
+Conf libnm0 (1.30.0-2 Debian:11.3/stable [amd64])
+Conf libnotify4 (0.7.9-3 Debian:11.3/stable [amd64])
+Conf libpulse-mainloop-glib0 (14.2-2 Debian:11.3/stable [amd64])
+Conf libupower-glib3 (0.99.11-2 Debian:11.3/stable [amd64])
+Conf libwacom-common (1.8-2 Debian:11.3/stable [all])
+Conf libwacom2 (1.8-2 Debian:11.3/stable [amd64])
+Conf gnome-settings-daemon (3.38.2-1 Debian:11.3/stable [amd64])
+Conf dbus-x11 (1.12.20-2 Debian:11.3/stable [amd64])
+Conf libplist3 (2.2.0-6 Debian:11.3/stable [amd64])
+Conf libusbmuxd6 (2.0.2-3 Debian:11.3/stable [amd64])
+Conf libimobiledevice6 (1.3.0-6 Debian:11.3/stable [amd64])
+Conf upower (0.99.11-2 Debian:11.3/stable [amd64])
+Conf libxt6 (1:1.2.0-1 Debian:11.3/stable [amd64])
+Conf libxmu6 (2:1.1.2-2+b3 Debian:11.3/stable [amd64])
+Conf libxpm4 (1:3.5.12-1 Debian:11.3/stable [amd64])
+Conf libxaw7 (2:1.0.13-1.1 Debian:11.3/stable [amd64])
+Conf libxkbfile1 (1:1.1.0-1 Debian:11.3/stable [amd64])
+Conf x11-xkb-utils (7.7+5 Debian:11.3/stable [amd64])
+Conf xserver-common (2:1.20.11-1+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [all])
+Conf libunwind8 (1.3.2-2 Debian:11.3/stable [amd64])
+Conf libfontenc1 (1:1.1.4-1 Debian:11.3/stable [amd64])
+Conf libxfont2 (1:2.0.4-1 Debian:11.3/stable [amd64])
+Conf xwayland (2:1.20.11-1+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Conf gnome-session-bin (3.38.0-4 Debian:11.3/stable [amd64])
+Conf gnome-session-common (3.38.0-4 Debian:11.3/stable [all])
+Conf libdbus-glib-1-2 (0.110-6 Debian:11.3/stable [amd64])
+Conf iso-codes (4.6.0-1 Debian:11.3/stable [all])
+Conf libgnomekbd-common (3.26.1-1 Debian:11.3/stable [all])
+Conf libxklavier16 (5.4-4 Debian:11.3/stable [amd64])
+Conf libgnomekbd8 (3.26.1-1 Debian:11.3/stable [amd64])
+Conf gnome-screensaver (3.6.1-13 Debian:11.3/stable [amd64])
+Conf libpeas-common (1.28.0-2 Debian:11.3/stable [all])
+Conf libgirepository-1.0-1 (1.66.1-1+b1 Debian:11.3/stable [amd64])
+Conf libpeas-1.0-0 (1.28.0-2+b1 Debian:11.3/stable [amd64])
+Conf libbudgie-plugin0 (10.5.2-4 Debian:11.3/stable [amd64])
+Conf libbudgie-private0 (10.5.2-4 Debian:11.3/stable [amd64])
+Conf libbudgietheme0 (10.5.2-4 Debian:11.3/stable [amd64])
+Conf libgnome-bluetooth13 (3.34.3-2 Debian:11.3/stable [amd64])
+Conf libgnome-menu-3-0 (3.36.0-1 Debian:11.3/stable [amd64])
+Conf libibus-1.0-5 (1.5.23-2 Debian:11.3/stable [amd64])
+Conf mutter-common (3.38.6-2~deb11u2 Debian:11.3/stable [all])
+Conf libgraphene-1.0-0 (1.10.4+dfsg1-1 Debian:11.3/stable [amd64])
+Conf libevdev2 (1.11.0+dfsg-1 Debian:11.3/stable [amd64])
+Conf libmtdev1 (1.1.6-1 Debian:11.3/stable [amd64])
+Conf libinput-bin (1.16.4-3 Debian:11.3/stable [amd64])
+Conf libinput10 (1.16.4-3 Debian:11.3/stable [amd64])
+Conf libspa-0.2-modules (0.3.19-4 Debian:11.3/stable [amd64])
+Conf libpipewire-0.3-0 (0.3.19-4 Debian:11.3/stable [amd64])
+Conf libxcb-util1 (0.4.0-1+b1 Debian:11.3/stable [amd64])
+Conf libstartup-notification0 (0.12-6+b1 Debian:11.3/stable [amd64])
+Conf libxcb-res0 (1.14-3 Debian:11.3/stable [amd64])
+Conf libxcb-xkb1 (1.14-3 Debian:11.3/stable [amd64])
+Conf libxkbcommon-x11-0 (1.0.3-2 Debian:11.3/stable [amd64])
+Conf libmutter-7-0 (3.38.6-2~deb11u2 Debian:11.3/stable [amd64])
+Conf libpolkit-agent-1-0 (0.105-31+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Conf libraven0 (10.5.2-4 Debian:11.3/stable [amd64])
+Conf libxres1 (2:1.2.0-4 Debian:11.3/stable [amd64])
+Conf libwnck-3-common (3.36.0-1 Debian:11.3/stable [all])
+Conf libwnck-3-0 (3.36.0-1 Debian:11.3/stable [amd64])
+Conf budgie-core (10.5.2-4 Debian:11.3/stable [amd64])
+Conf gir1.2-glib-2.0 (1.66.1-1+b1 Debian:11.3/stable [amd64])
+Conf gir1.2-atk-1.0 (2.36.0-2 Debian:11.3/stable [amd64])
+Conf gir1.2-freedesktop (1.66.1-1+b1 Debian:11.3/stable [amd64])
+Conf gir1.2-gdkpixbuf-2.0 (2.42.2+dfsg-1 Debian:11.3/stable [amd64])
+Conf gir1.2-harfbuzz-0.0 (2.7.4-1 Debian:11.3/stable [amd64])
+Conf libxft2 (2.3.2-2 Debian:11.3/stable [amd64])
+Conf libpangoxft-1.0-0 (1.46.2-3 Debian:11.3/stable [amd64])
+Conf gir1.2-pango-1.0 (1.46.2-3 Debian:11.3/stable [amd64])
+Conf gir1.2-gtk-3.0 (3.24.24-4+deb11u2 Debian:11.3/stable [amd64])
+Conf gir1.2-peas-1.0 (1.28.0-2+b1 Debian:11.3/stable [amd64])
+Conf gir1.2-budgie-1.0 (10.5.2-4 Debian:11.3/stable [amd64])
+Conf libcogl20 (1.22.8-2 Debian:11.3/stable [amd64])
+Conf libcogl-pango20 (1.22.8-2 Debian:11.3/stable [amd64])
+Conf libcogl-path20 (1.22.8-2 Debian:11.3/stable [amd64])
+Conf libclutter-1.0-0 (1.26.4+dfsg-2 Debian:11.3/stable [amd64])
+Conf libgstreamer1.0-0 (1.18.4-2.1 Debian:11.3/stable [amd64])
+Conf libgstreamer-plugins-base1.0-0 (1.18.4-2 Debian:11.3/stable [amd64])
+Conf libclutter-gst-3.0-0 (3.0.27-2 Debian:11.3/stable [amd64])
+Conf libass9 (1:0.15.0-2 Debian:11.3/stable [amd64])
+Conf libbs2b0 (3.1.0+dfsg-2.2+b1 Debian:11.3/stable [amd64])
+Conf libchromaprint1 (1.5.0-2 Debian:11.3/stable [amd64])
+Conf libnghttp2-14 (1.43.0-1 Debian:11.3/stable [amd64])
+Conf librtmp1 (2.4+20151223.gitfa8646d.1-2+b2 Debian:11.3/stable [amd64])
+Conf libssh2-1 (1.9.0-2 Debian:11.3/stable [amd64])
+Conf libcurl3-gnutls (7.74.0-1.3+deb11u1 Debian:11.3/stable [amd64])
+Conf libraw1394-11 (2.1.2-2 Debian:11.3/stable [amd64])
+Conf libdc1394-25 (2.2.6-3 Debian:11.3/stable [amd64])
+Conf libdca0 (0.0.7-2 Debian:11.3/stable [amd64])
+Conf libde265-0 (1.0.8-1 Debian:11.3/stable [amd64])
+Conf libdvdread8 (6.1.1-2 Debian:11.3/stable [amd64])
+Conf libdvdnav4 (6.1.0-1+b1 Debian:11.3/stable [amd64])
+Conf libfaad2 (2.10.0-1 Debian:11.3/stable [amd64])
+Conf libflite1 (2.2-2 Debian:11.3/stable [amd64])
+Conf libinstpatch-1.0-2 (1.1.6-1 Debian:11.3/stable [amd64])
+Conf libxss1 (1:1.2.3-1 Debian:11.3/stable [amd64])
+Conf libsdl2-2.0-0 (2.0.14+dfsg2-3 Debian:11.3/stable [amd64])
+Conf timgm6mb-soundfont (1.3-5 Debian:11.3/stable [all])
+Conf libfluidsynth2 (2.1.7-1.1 Debian:11.3/stable [amd64])
+Conf libgme0 (0.6.3-2 Debian:11.3/stable [amd64])
+Conf libgstreamer-gl1.0-0 (1.18.4-2 Debian:11.3/stable [amd64])
+Conf libgstreamer-plugins-bad1.0-0 (1.18.4-3 Debian:11.3/stable [amd64])
+Conf libilmbase25 (2.5.4-1 Debian:11.3/stable [amd64])
+Conf libkate1 (0.4.1-11 Debian:11.3/stable [amd64])
+Conf libserd-0-0 (0.30.10-2 Debian:11.3/stable [amd64])
+Conf libsord-0-0 (0.16.8-2 Debian:11.3/stable [amd64])
+Conf libsratom-0-0 (0.6.8-1 Debian:11.3/stable [amd64])
+Conf liblilv-0-0 (0.24.12-2 Debian:11.3/stable [amd64])
+Conf libltc11 (1.3.1-1 Debian:11.3/stable [amd64])
+Conf libmjpegutils-2.1-0 (1:2.1.0+debian-6 Debian:11.3/stable [amd64])
+Conf libmms0 (0.6.4-3 Debian:11.3/stable [amd64])
+Conf libmodplug1 (1:0.8.9.0-3 Debian:11.3/stable [amd64])
+Conf libmpcdec6 (2:0.1~r495-2 Debian:11.3/stable [amd64])
+Conf libmpeg2encpp-2.1-0 (1:2.1.0+debian-6 Debian:11.3/stable [amd64])
+Conf libmplex2-2.1-0 (1:2.1.0+debian-6 Debian:11.3/stable [amd64])
+Conf libgssdp-1.2-0 (1.2.3-2 Debian:11.3/stable [amd64])
+Conf libgupnp-1.2-0 (1.2.4-1 Debian:11.3/stable [amd64])
+Conf libgupnp-igd-1.0-4 (1.2.0-1 Debian:11.3/stable [amd64])
+Conf libnice10 (0.1.16-1 Debian:11.3/stable [amd64])
+Conf libfftw3-double3 (3.3.8-2 Debian:11.3/stable [amd64])
+Conf libofa0 (0.9.3-21 Debian:11.3/stable [amd64])
+Conf libopenal-data (1:1.19.1-2 Debian:11.3/stable [all])
+Conf libsndio7.0 (1.5.0-3 Debian:11.3/stable [amd64])
+Conf libopenal1 (1:1.19.1-2 Debian:11.3/stable [amd64])
+Conf libopenexr25 (2.5.4-2 Debian:11.3/stable [amd64])
+Conf libmpg123-0 (1.26.4-1 Debian:11.3/stable [amd64])
+Conf libopenmpt0 (0.4.11-1 Debian:11.3/stable [amd64])
+Conf libopenni2-0 (2.2.0.33+dfsg-15 Debian:11.3/stable [amd64])
+Conf libsbc1 (1.5-3 Debian:11.3/stable [amd64])
+Conf libsoundtouch1 (2.2+ds1-2 Debian:11.3/stable [amd64])
+Conf libspandsp2 (0.0.6+dfsg-2 Debian:11.3/stable [amd64])
+Conf libsrt1.4-gnutls (1.4.2-1.3 Debian:11.3/stable [amd64])
+Conf libsrtp2-1 (2.3.0-5 Debian:11.3/stable [amd64])
+Conf libvo-aacenc0 (0.1.3-2 Debian:11.3/stable [amd64])
+Conf libvo-amrwbenc0 (0.1.3-2 Debian:11.3/stable [amd64])
+Conf libwildmidi2 (0.4.3-1 Debian:11.3/stable [amd64])
+Conf libv4lconvert0 (1.20.0-2 Debian:11.3/stable [amd64])
+Conf libv4l-0 (1.20.0-2 Debian:11.3/stable [amd64])
+Conf libzbar0 (0.23.90-1 Debian:11.3/stable [amd64])
+Conf libcdparanoia0 (3.10.2+debian-13.1 Debian:11.3/stable [amd64])
+Conf libvisual-0.4-0 (0.4.0-17 Debian:11.3/stable [amd64])
+Conf gstreamer1.0-plugins-base (1.18.4-2 Debian:11.3/stable [amd64])
+Conf gstreamer1.0-plugins-bad (1.18.4-3 Debian:11.3/stable [amd64])
+Conf cheese-common (3.38.0-3 Debian:11.3/stable [all])
+Conf libgpm2 (1.20.7-8 Debian:11.3/stable [amd64])
+Conf libaa1 (1.4p5-48 Debian:11.3/stable [amd64])
+Conf libavc1394-0 (0.5.4-5 Debian:11.3/stable [amd64])
+Conf libcaca0 (0.99.beta19-2.2 Debian:11.3/stable [amd64])
+Conf libdv4 (1.0.0-13 Debian:11.3/stable [amd64])
+Conf libiec61883-0 (1.2.0-4 Debian:11.3/stable [amd64])
+Conf libshout3 (2.4.5-1+b1 Debian:11.3/stable [amd64])
+Conf libtag1v5-vanilla (1.11.1+dfsg.1-3 Debian:11.3/stable [amd64])
+Conf libtag1v5 (1.11.1+dfsg.1-3 Debian:11.3/stable [amd64])
+Conf gstreamer1.0-plugins-good (1.18.4-2 Debian:11.3/stable [amd64])
+Conf libxv1 (2:1.0.11-1 Debian:11.3/stable [amd64])
+Conf gstreamer1.0-x (1.18.4-2 Debian:11.3/stable [amd64])
+Conf libcheese8 (3.38.0-3 Debian:11.3/stable [amd64])
+Conf libclutter-gtk-1.0-0 (1.8.4-4 Debian:11.3/stable [amd64])
+Conf gstreamer1.0-clutter-3.0 (3.0.27-2 Debian:11.3/stable [amd64])
+Conf libcheese-gtk25 (3.38.0-3 Debian:11.3/stable [amd64])
+Conf libcolord-gtk1 (0.1.26-2 Debian:11.3/stable [amd64])
+Conf libgoa-1.0-common (3.38.0-3 Debian:11.3/stable [all])
+Conf libgoa-1.0-0b (3.38.0-3 Debian:11.3/stable [amd64])
+Conf libatomic1 (10.2.1-6 Debian:11.3/stable [amd64])
+Conf libjavascriptcoregtk-4.0-18 (2.36.0-3~deb11u1 Debian-Security:11/stable-security [amd64])
+Conf libsecret-common (0.20.4-2 Debian:11.3/stable [all])
+Conf libsecret-1-0 (0.20.4-2 Debian:11.3/stable [amd64])
+Conf xdg-dbus-proxy (0.1.2-2 Debian:11.3/stable [amd64])
+Conf emacsen-common (3.0.4 Debian:11.3/stable [all])
+Conf dictionaries-common (1.28.4 Debian:11.3/stable [all])
+Conf hunspell-en-us (1:2019.10.06-1 Debian:11.3/stable [all])
+Conf libaspell15 (0.60.8-3 Debian:11.3/stable [amd64])
+Conf libhunspell-1.7-0 (1.7.0-3 Debian:11.3/stable [amd64])
+Conf libenchant-2-2 (2.2.15-1 Debian:11.3/stable [amd64])
+Conf libharfbuzz-icu0 (2.7.4-1 Debian:11.3/stable [amd64])
+Conf libhyphen0 (2.8.8-7 Debian:11.3/stable [amd64])
+Conf libmanette-0.2-0 (0.2.5-1 Debian:11.3/stable [amd64])
+Conf libopengl0 (1.3.2-1 Debian:11.3/stable [amd64])
+Conf libwebpdemux2 (0.6.1-2.1 Debian:11.3/stable [amd64])
+Conf libwoff1 (1.0.2-1+b1 Debian:11.3/stable [amd64])
+Conf libwpe-1.0-1 (1.10.0-2 Debian:11.3/stable [amd64])
+Conf libwpebackend-fdo-1.0-1 (1.8.0-1 Debian:11.3/stable [amd64])
+Conf libxslt1.1 (1.1.34-4 Debian:11.3/stable [amd64])
+Conf libwebkit2gtk-4.0-37 (2.36.0-3~deb11u1 Debian-Security:11/stable-security [amd64])
+Conf libgoa-backend-1.0-1 (3.38.0-3 Debian:11.3/stable [amd64])
+Conf libgsound0 (1.0.2-5 Debian:11.3/stable [amd64])
+Conf libgtop2-common (2.40.0-2 Debian:11.3/stable [all])
+Conf libgtop-2.0-11 (2.40.0-2 Debian:11.3/stable [amd64])
+Conf libhandy-1-0 (1.0.3-2 Debian:11.3/stable [amd64])
+Conf libmalcontent-0-0 (0.10.0-2 Debian:11.3/stable [amd64])
+Conf libnma-common (1.8.30-1 Debian:11.3/stable [all])
+Conf libnma0 (1.8.30-1 Debian:11.3/stable [amd64])
+Conf libcrack2 (2.9.6-3.4 Debian:11.3/stable [amd64])
+Conf libpwquality-common (1.4.4-1 Debian:11.3/stable [all])
+Conf libpwquality1 (1.4.4-1 Debian:11.3/stable [amd64])
+Conf libudisks2-0 (2.9.2-2+deb11u1 Debian:11.3/stable [amd64])
+Conf colord-data (1.4.5-3 Debian:11.3/stable [all])
+Conf policykit-1 (0.105-31+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Conf libgusb2 (0.3.5-1 Debian:11.3/stable [amd64])
+Conf libcolorhug2 (1.4.5-3 Debian:11.3/stable [amd64])
+Conf libcurl4 (7.74.0-1.3+deb11u1 Debian:11.3/stable [amd64])
+Conf libexif12 (0.6.22-3 Debian:11.3/stable [amd64])
+Conf libgd3 (2.3.0-2 Debian:11.3/stable [amd64])
+Conf libgphoto2-port12 (2.5.27-1 Debian:11.3/stable [amd64])
+Conf libgphoto2-6 (2.5.27-1 Debian:11.3/stable [amd64])
+Conf libieee1284-3 (0.2.11-14 Debian:11.3/stable [amd64])
+Conf libpoppler-glib8 (20.09.0-3.1 Debian:11.3/stable [amd64])
+Conf libsnmp-base (5.9+dfsg-3 Debian:11.3/stable [all])
+Conf libsnmp40 (5.9+dfsg-3+b1 Debian:11.3/stable [amd64])
+Conf libsane1 (1.0.31-4.1 Debian:11.3/stable [amd64])
+Conf colord (1.4.5-3 Debian:11.3/stable [amd64])
+Conf librsvg2-common (2.50.3+dfsg-1 Debian:11.3/stable [amd64])
+Conf fonts-quicksand (0.2016-2.1 Debian:11.3/stable [all])
+Conf desktop-base (11.0.3 Debian:11.3/stable [all])
+Conf desktop-file-utils (0.26-1 Debian:11.3/stable [amd64])
+Conf gnome-control-center-data (1:3.38.4-1 Debian:11.3/stable [all])
+Conf gnome-control-center (1:3.38.4-1 Debian:11.3/stable [amd64])
+Conf gnome-menus (3.36.0-1 Debian:11.3/stable [amd64])
+Conf libayatana-ido3-0.4-0 (0.8.2-1 Debian:11.3/stable [amd64])
+Conf libayatana-indicator3-7 (0.8.4-1+deb11u2 Debian:11.3/stable [amd64])
+Conf libdbusmenu-glib4 (18.10.20180917~bzr492+repack1-2 Debian:11.3/stable [amd64])
+Conf libdbusmenu-gtk3-4 (18.10.20180917~bzr492+repack1-2 Debian:11.3/stable [amd64])
+Conf libayatana-appindicator3-1 (0.5.5-2 Debian:11.3/stable [amd64])
+Conf libbluetooth3 (5.55-3.1 Debian:11.3/stable [amd64])
+Conf libndp0 (1.6-1+b1 Debian:11.3/stable [amd64])
+Conf libteamdctl0 (1.31-1 Debian:11.3/stable [amd64])
+Conf network-manager (1.30.0-2 Debian:11.3/stable [amd64])
+Conf policykit-1-gnome (0.105-7 Debian:11.3/stable [amd64])
+Conf network-manager-gnome (1.20.0-3 Debian:11.3/stable [amd64])
+Conf budgie-desktop (10.5.2-4 Debian:11.3/stable [all])

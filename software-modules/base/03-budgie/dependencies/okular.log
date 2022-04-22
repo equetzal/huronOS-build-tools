@@ -1,0 +1,620 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  dirmngr gnupg gnupg-l10n gnupg-utils gpg gpg-agent gpg-wks-client
+  gpg-wks-server gpgconf gpgsm gpgv kded5 kinit kio kpackagetool5 liba52-0.7.4
+  libaa1 libaccounts-glib0 libaccounts-qt5-1 libarchive13 libaribb24-0 libass9
+  libassuan0 libavc1394-0 libavformat58 libbluray2 libcaca0 libcddb2
+  libchromaprint1 libdbusmenu-qt5-2 libdc1394-25 libdca0 libdouble-conversion3
+  libdvbpsi10 libdvdnav4 libdvdread8 libebml5 libepoxy0 libevdev2 libexiv2-27
+  libfaad2 libfam0 libgme0 libgpgme11 libgpgmepp6 libgpm2 libgudev-1.0-0
+  libinput-bin libinput10 libixml10 libkaccounts2 libkate1 libkf5activities5
+  libkf5archive5 libkf5attica5 libkf5auth-data libkf5authcore5
+  libkf5bluezqt-data libkf5bluezqt6 libkf5bookmarks-data libkf5bookmarks5
+  libkf5codecs-data libkf5codecs5 libkf5completion-data libkf5completion5
+  libkf5config-data libkf5configcore5 libkf5configgui5
+  libkf5configwidgets-data libkf5configwidgets5 libkf5coreaddons-data
+  libkf5coreaddons5 libkf5crash5 libkf5dbusaddons-data libkf5dbusaddons5
+  libkf5declarative-data libkf5declarative5 libkf5doctools5
+  libkf5globalaccel-bin libkf5globalaccel-data libkf5globalaccel5
+  libkf5globalaccelprivate5 libkf5guiaddons5 libkf5i18n-data libkf5i18n5
+  libkf5iconthemes-data libkf5iconthemes5 libkf5itemviews-data
+  libkf5itemviews5 libkf5jobwidgets-data libkf5jobwidgets5 libkf5js5
+  libkf5jsapi5 libkf5kexiv2-15.0.0 libkf5kiocore5 libkf5kiogui5 libkf5kiontlm5
+  libkf5kiowidgets5 libkf5notifications-data libkf5notifications5
+  libkf5package-data libkf5package5 libkf5parts-data libkf5parts5
+  libkf5pty-data libkf5pty5 libkf5purpose-bin libkf5purpose5
+  libkf5quickaddons5 libkf5service-bin libkf5service-data libkf5service5
+  libkf5solid5 libkf5solid5-data libkf5sonnet5-data libkf5sonnetcore5
+  libkf5sonnetui5 libkf5textwidgets-data libkf5textwidgets5
+  libkf5threadweaver5 libkf5wallet-bin libkf5wallet-data libkf5wallet5
+  libkf5widgetsaddons-data libkf5widgetsaddons5 libkf5windowsystem-data
+  libkf5windowsystem5 libkf5xmlgui-data libkf5xmlgui5 libksba8
+  libkwalletbackend5-5 libldap-2.4-2 liblirc-client0 liblua5.2-0 libmad0
+  libmatroska7 libmd4c0 libmpcdec6 libmpeg2-4 libmpg123-0 libmtdev1
+  libmtp-common libmtp9 libmysofa1 libnfs13 libnorm1 libnpth0 libokular5core9
+  libopenmpt-modplug1 libopenmpt0 libpcre2-16-0 libpgm-5.3-0 libphonon4qt5-4
+  libphonon4qt5-data libplacebo72 libpolkit-agent-1-0 libpolkit-gobject-1-0
+  libpolkit-qt5-1-1 libpoppler-qt5-1 libpostproc55 libprotobuf-lite23
+  libpulse-mainloop-glib0 libqmobipocket2 libqt5core5a libqt5dbus5 libqt5gui5
+  libqt5network5 libqt5printsupport5 libqt5qml5 libqt5qmlmodels5
+  libqt5qmlworkerscript5 libqt5quick5 libqt5quickcontrols2-5
+  libqt5quicktemplates2-5 libqt5svg5 libqt5texttospeech5 libqt5waylandclient5
+  libqt5widgets5 libqt5x11extras5 libqt5xml5 librabbitmq4 libraw1394-11
+  libresid-builder0c2a libsasl2-2 libsasl2-modules-db libsdl-image1.2
+  libsdl1.2debian libsecret-1-0 libsecret-common libshout3 libsidplay2
+  libsignon-qt5-1 libsndio7.0 libsodium23 libspatialaudio0 libspectre1
+  libsrt1.4-gnutls libssh-gcrypt-4 libssh2-1 libswscale5 libtag1v5
+  libtag1v5-vanilla libudfread0 libupnp13 libva-wayland2 libvlc5 libvlccore9
+  libvorbisfile3 libwacom-common libwacom2 libwayland-cursor0 libxcb-icccm4
+  libxcb-image0 libxcb-keysyms1 libxcb-render-util0 libxcb-res0 libxcb-shape0
+  libxcb-util1 libxcb-xinerama0 libxcb-xinput0 libxcb-xkb1 libxcb-xv0
+  libxkbcommon-x11-0 libxkbcommon0 libxslt1.1 libzmq5 phonon4qt5
+  phonon4qt5-backend-vlc pinentry-curses qml-module-org-kde-bluezqt
+  qml-module-org-kde-kquickcontrolsaddons qml-module-qt-labs-folderlistmodel
+  qml-module-qt-labs-settings qml-module-qtqml qml-module-qtquick-controls2
+  qml-module-qtquick-dialogs qml-module-qtquick-privatewidgets
+  qml-module-qtquick-templates2 qml-module-qtquick-window2 qml-module-qtquick2
+  vlc-data vlc-plugin-base vlc-plugin-video-output
+Suggested packages:
+  pinentry-gnome3 tor parcimonie xloadimage scdaemon lrzip libbluray-bdj
+  libdvdcss2 exiv2 fam gpm kdeconnect kde-telepathy-send-file lirc
+  qt5-image-formats-plugins qtwayland5 qt5-qmltooling-plugins libraw1394-doc
+  sndiod okular-extra-backends texlive-binaries unrar
+  phonon4qt5-backend-gstreamer pinentry-doc
+Recommended packages:
+  libaacs0 kaccounts-providers kactivities-bin kactivitymanagerd
+  keditbookmarks libkf5config-bin libkf5dbusaddons-bin kpackagelauncherqml
+  libkf5iconthemes-bin libkf5parts-plugins qml-module-org-kde-purpose
+  media-player-info sonnet-plugins kwayland-integration qtwayland5
+  libkf5xmlgui-bin libldap-common libmtp-runtime qttranslations5-l10n
+  qt5-gtk-platformtheme qtspeech5-speechd-plugin | qtspeech5-flite-plugin
+  libsasl2-modules libvlc-bin libproxy-tools libwacom-bin cups-bsd xdg-utils
+The following NEW packages will be installed:
+  dirmngr gnupg gnupg-l10n gnupg-utils gpg gpg-agent gpg-wks-client
+  gpg-wks-server gpgconf gpgsm kded5 kinit kio kpackagetool5 liba52-0.7.4
+  libaa1 libaccounts-glib0 libaccounts-qt5-1 libarchive13 libaribb24-0 libass9
+  libassuan0 libavc1394-0 libavformat58 libbluray2 libcaca0 libcddb2
+  libchromaprint1 libdbusmenu-qt5-2 libdc1394-25 libdca0 libdouble-conversion3
+  libdvbpsi10 libdvdnav4 libdvdread8 libebml5 libepoxy0 libevdev2 libexiv2-27
+  libfaad2 libfam0 libgme0 libgpgme11 libgpgmepp6 libgpm2 libgudev-1.0-0
+  libinput-bin libinput10 libixml10 libkaccounts2 libkate1 libkf5activities5
+  libkf5archive5 libkf5attica5 libkf5auth-data libkf5authcore5
+  libkf5bluezqt-data libkf5bluezqt6 libkf5bookmarks-data libkf5bookmarks5
+  libkf5codecs-data libkf5codecs5 libkf5completion-data libkf5completion5
+  libkf5config-data libkf5configcore5 libkf5configgui5
+  libkf5configwidgets-data libkf5configwidgets5 libkf5coreaddons-data
+  libkf5coreaddons5 libkf5crash5 libkf5dbusaddons-data libkf5dbusaddons5
+  libkf5declarative-data libkf5declarative5 libkf5doctools5
+  libkf5globalaccel-bin libkf5globalaccel-data libkf5globalaccel5
+  libkf5globalaccelprivate5 libkf5guiaddons5 libkf5i18n-data libkf5i18n5
+  libkf5iconthemes-data libkf5iconthemes5 libkf5itemviews-data
+  libkf5itemviews5 libkf5jobwidgets-data libkf5jobwidgets5 libkf5js5
+  libkf5jsapi5 libkf5kexiv2-15.0.0 libkf5kiocore5 libkf5kiogui5 libkf5kiontlm5
+  libkf5kiowidgets5 libkf5notifications-data libkf5notifications5
+  libkf5package-data libkf5package5 libkf5parts-data libkf5parts5
+  libkf5pty-data libkf5pty5 libkf5purpose-bin libkf5purpose5
+  libkf5quickaddons5 libkf5service-bin libkf5service-data libkf5service5
+  libkf5solid5 libkf5solid5-data libkf5sonnet5-data libkf5sonnetcore5
+  libkf5sonnetui5 libkf5textwidgets-data libkf5textwidgets5
+  libkf5threadweaver5 libkf5wallet-bin libkf5wallet-data libkf5wallet5
+  libkf5widgetsaddons-data libkf5widgetsaddons5 libkf5windowsystem-data
+  libkf5windowsystem5 libkf5xmlgui-data libkf5xmlgui5 libksba8
+  libkwalletbackend5-5 libldap-2.4-2 liblirc-client0 liblua5.2-0 libmad0
+  libmatroska7 libmd4c0 libmpcdec6 libmpeg2-4 libmpg123-0 libmtdev1
+  libmtp-common libmtp9 libmysofa1 libnfs13 libnorm1 libnpth0 libokular5core9
+  libopenmpt-modplug1 libopenmpt0 libpcre2-16-0 libpgm-5.3-0 libphonon4qt5-4
+  libphonon4qt5-data libplacebo72 libpolkit-agent-1-0 libpolkit-gobject-1-0
+  libpolkit-qt5-1-1 libpoppler-qt5-1 libpostproc55 libprotobuf-lite23
+  libpulse-mainloop-glib0 libqmobipocket2 libqt5core5a libqt5dbus5 libqt5gui5
+  libqt5network5 libqt5printsupport5 libqt5qml5 libqt5qmlmodels5
+  libqt5qmlworkerscript5 libqt5quick5 libqt5quickcontrols2-5
+  libqt5quicktemplates2-5 libqt5svg5 libqt5texttospeech5 libqt5waylandclient5
+  libqt5widgets5 libqt5x11extras5 libqt5xml5 librabbitmq4 libraw1394-11
+  libresid-builder0c2a libsasl2-2 libsasl2-modules-db libsdl-image1.2
+  libsdl1.2debian libsecret-1-0 libsecret-common libshout3 libsidplay2
+  libsignon-qt5-1 libsndio7.0 libsodium23 libspatialaudio0 libspectre1
+  libsrt1.4-gnutls libssh-gcrypt-4 libssh2-1 libswscale5 libtag1v5
+  libtag1v5-vanilla libudfread0 libupnp13 libva-wayland2 libvlc5 libvlccore9
+  libvorbisfile3 libwacom-common libwacom2 libwayland-cursor0 libxcb-icccm4
+  libxcb-image0 libxcb-keysyms1 libxcb-render-util0 libxcb-res0 libxcb-shape0
+  libxcb-util1 libxcb-xinerama0 libxcb-xinput0 libxcb-xkb1 libxcb-xv0
+  libxkbcommon-x11-0 libxkbcommon0 libxslt1.1 libzmq5 okular phonon4qt5
+  phonon4qt5-backend-vlc pinentry-curses qml-module-org-kde-bluezqt
+  qml-module-org-kde-kquickcontrolsaddons qml-module-qt-labs-folderlistmodel
+  qml-module-qt-labs-settings qml-module-qtqml qml-module-qtquick-controls2
+  qml-module-qtquick-dialogs qml-module-qtquick-privatewidgets
+  qml-module-qtquick-templates2 qml-module-qtquick-window2 qml-module-qtquick2
+  vlc-data vlc-plugin-base vlc-plugin-video-output
+The following packages will be upgraded:
+  gpgv
+1 upgraded, 243 newly installed, 0 to remove and 17 not upgraded.
+Inst libdouble-conversion3 (3.1.5-6.1 Debian:11.3/stable [amd64])
+Inst libpcre2-16-0 (10.36-2 Debian:11.3/stable [amd64])
+Inst libqt5core5a (5.15.2+dfsg-9 Debian:11.3/stable [amd64])
+Inst libevdev2 (1.11.0+dfsg-1 Debian:11.3/stable [amd64])
+Inst libmtdev1 (1.1.6-1 Debian:11.3/stable [amd64])
+Inst libgudev-1.0-0 (234-1 Debian:11.3/stable [amd64])
+Inst libwacom-common (1.8-2 Debian:11.3/stable [all])
+Inst libwacom2 (1.8-2 Debian:11.3/stable [amd64])
+Inst libinput-bin (1.16.4-3 Debian:11.3/stable [amd64])
+Inst libinput10 (1.16.4-3 Debian:11.3/stable [amd64])
+Inst libmd4c0 (0.4.7-2 Debian:11.3/stable [amd64])
+Inst libqt5dbus5 (5.15.2+dfsg-9 Debian:11.3/stable [amd64])
+Inst libqt5network5 (5.15.2+dfsg-9 Debian:11.3/stable [amd64])
+Inst libxcb-icccm4 (0.4.1-1.1 Debian:11.3/stable [amd64])
+Inst libxcb-util1 (0.4.0-1+b1 Debian:11.3/stable [amd64])
+Inst libxcb-image0 (0.4.0-1+b3 Debian:11.3/stable [amd64])
+Inst libxcb-keysyms1 (0.4.0-1+b2 Debian:11.3/stable [amd64])
+Inst libxcb-render-util0 (0.3.9-1+b1 Debian:11.3/stable [amd64])
+Inst libxcb-shape0 (1.14-3 Debian:11.3/stable [amd64])
+Inst libxcb-xinerama0 (1.14-3 Debian:11.3/stable [amd64])
+Inst libxcb-xinput0 (1.14-3 Debian:11.3/stable [amd64])
+Inst libxcb-xkb1 (1.14-3 Debian:11.3/stable [amd64])
+Inst libxkbcommon0 (1.0.3-2 Debian:11.3/stable [amd64])
+Inst libxkbcommon-x11-0 (1.0.3-2 Debian:11.3/stable [amd64])
+Inst libqt5gui5 (5.15.2+dfsg-9 Debian:11.3/stable [amd64])
+Inst libqt5widgets5 (5.15.2+dfsg-9 Debian:11.3/stable [amd64])
+Inst libqt5svg5 (5.15.2-3 Debian:11.3/stable [amd64])
+Inst gpgv [2.2.27-2] (2.2.27-2+deb11u1 Debian:11.3/stable [amd64])
+Conf gpgv (2.2.27-2+deb11u1 Debian:11.3/stable [amd64])
+Inst libassuan0 (2.5.3-7.1 Debian:11.3/stable [amd64])
+Inst gpgconf (2.2.27-2+deb11u1 Debian:11.3/stable [amd64])
+Inst libksba8 (1.5.0-3 Debian:11.3/stable [amd64])
+Inst libsasl2-modules-db (2.1.27+dfsg-2.1+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Inst libsasl2-2 (2.1.27+dfsg-2.1+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Inst libldap-2.4-2 (2.4.57+dfsg-3 Debian:11.3/stable [amd64])
+Inst libnpth0 (1.6-3 Debian:11.3/stable [amd64])
+Inst dirmngr (2.2.27-2+deb11u1 Debian:11.3/stable [amd64])
+Inst gnupg-l10n (2.2.27-2+deb11u1 Debian:11.3/stable [all])
+Inst gnupg-utils (2.2.27-2+deb11u1 Debian:11.3/stable [amd64])
+Inst gpg (2.2.27-2+deb11u1 Debian:11.3/stable [amd64])
+Inst pinentry-curses (1.1.0-4 Debian:11.3/stable [amd64])
+Inst gpg-agent (2.2.27-2+deb11u1 Debian:11.3/stable [amd64])
+Inst gpg-wks-client (2.2.27-2+deb11u1 Debian:11.3/stable [amd64])
+Inst gpg-wks-server (2.2.27-2+deb11u1 Debian:11.3/stable [amd64])
+Inst gpgsm (2.2.27-2+deb11u1 Debian:11.3/stable [amd64])
+Inst gnupg (2.2.27-2+deb11u1 Debian:11.3/stable [all])
+Inst libkf5config-data (5.78.0-4 Debian:11.3/stable [all])
+Inst libkf5configcore5 (5.78.0-4 Debian:11.3/stable [amd64])
+Inst libkf5coreaddons-data (5.78.0-4 Debian:11.3/stable [all])
+Inst libfam0 (2.7.0-17.3 Debian:11.3/stable [amd64])
+Inst libkf5coreaddons5 (5.78.0-4 Debian:11.3/stable [amd64])
+Inst libkf5windowsystem-data (5.78.0-2 Debian:11.3/stable [all])
+Inst libqt5x11extras5 (5.15.2-2 Debian:11.3/stable [amd64])
+Inst libxcb-res0 (1.14-3 Debian:11.3/stable [amd64])
+Inst libkf5windowsystem5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5crash5 (5.78.0-3 Debian:11.3/stable [amd64])
+Inst libkf5dbusaddons-data (5.78.0-2 Debian:11.3/stable [all])
+Inst libkf5dbusaddons5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5i18n-data (5.78.0-2 Debian:11.3/stable [all])
+Inst libqt5qml5 (5.15.2+dfsg-6 Debian:11.3/stable [amd64])
+Inst libkf5i18n5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5service-data (5.78.0-2 Debian:11.3/stable [all])
+Inst libqt5xml5 (5.15.2+dfsg-9 Debian:11.3/stable [amd64])
+Inst libkf5service5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5service-bin (5.78.0-2 Debian:11.3/stable [amd64])
+Inst kded5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5archive5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5auth-data (5.78.0-2 Debian:11.3/stable [all])
+Inst libpolkit-gobject-1-0 (0.105-31+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Inst libpolkit-agent-1-0 (0.105-31+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Inst libpolkit-qt5-1-1 (0.113.0-1 Debian:11.3/stable [amd64])
+Inst libkf5authcore5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5codecs-data (5.78.0-2 Debian:11.3/stable [all])
+Inst libkf5codecs5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5completion-data (5.78.0-3 Debian:11.3/stable [all])
+Inst libkf5configgui5 (5.78.0-4 Debian:11.3/stable [amd64])
+Inst libkf5widgetsaddons-data (5.78.0-2 Debian:11.3/stable [all])
+Inst libkf5widgetsaddons5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5completion5 (5.78.0-3 Debian:11.3/stable [amd64])
+Inst libkf5configwidgets-data (5.78.0-2 Debian:11.3/stable [all])
+Inst libwayland-cursor0 (1.18.0-2~exp1.1 Debian:11.3/stable [amd64])
+Inst libqt5waylandclient5 (5.15.2-3 Debian:11.3/stable [amd64])
+Inst libkf5guiaddons5 (5.78.0-3 Debian:11.3/stable [amd64])
+Inst libkf5configwidgets5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libxslt1.1 (1.1.34-4 Debian:11.3/stable [amd64])
+Inst libkf5doctools5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5itemviews-data (5.78.0-2 Debian:11.3/stable [all])
+Inst libkf5itemviews5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5kiocore5 (5.78.0-5 Debian:11.3/stable [amd64])
+Inst libkf5kiontlm5 (5.78.0-5 Debian:11.3/stable [amd64])
+Inst libkf5iconthemes-data (5.78.0-2 Debian:11.3/stable [all])
+Inst libkf5iconthemes5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5jobwidgets-data (5.78.0-2 Debian:11.3/stable [all])
+Inst libkf5jobwidgets5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5kiogui5 (5.78.0-5 Debian:11.3/stable [amd64])
+Inst libkf5kiowidgets5 (5.78.0-5 Debian:11.3/stable [amd64])
+Inst libkf5notifications-data (5.78.0-2 Debian:11.3/stable [all])
+Inst libdbusmenu-qt5-2 (0.9.3+16.04.20160218-2+b1 Debian:11.3/stable [amd64])
+Inst libphonon4qt5-data (4:4.11.1-4 Debian:11.3/stable [all])
+Inst libpulse-mainloop-glib0 (14.2-2 Debian:11.3/stable [amd64])
+Inst libphonon4qt5-4 (4:4.11.1-4 Debian:11.3/stable [amd64])
+Inst libqt5texttospeech5 (5.15.2-2 Debian:11.3/stable [amd64])
+Inst vlc-data (3.0.16-1 Debian:11.3/stable [all])
+Inst liba52-0.7.4 (0.7.4-20 Debian:11.3/stable [amd64])
+Inst libarchive13 (3.4.3-2+deb11u1 Debian:11.3/stable [amd64])
+Inst libaribb24-0 (1.0.3-2 Debian:11.3/stable [amd64])
+Inst libass9 (1:0.15.0-2 Debian:11.3/stable [amd64])
+Inst libraw1394-11 (2.1.2-2 Debian:11.3/stable [amd64])
+Inst libavc1394-0 (0.5.4-5 Debian:11.3/stable [amd64])
+Inst libudfread0 (1.1.1-1 Debian:11.3/stable [amd64])
+Inst libbluray2 (1:1.2.1-4+deb11u1 Debian:11.3/stable [amd64])
+Inst libchromaprint1 (1.5.0-2 Debian:11.3/stable [amd64])
+Inst libgme0 (0.6.3-2 Debian:11.3/stable [amd64])
+Inst libmpg123-0 (1.26.4-1 Debian:11.3/stable [amd64])
+Inst libvorbisfile3 (1.3.7-1 Debian:11.3/stable [amd64])
+Inst libopenmpt0 (0.4.11-1 Debian:11.3/stable [amd64])
+Inst librabbitmq4 (0.10.0-1 Debian:11.3/stable [amd64])
+Inst libsrt1.4-gnutls (1.4.2-1.3 Debian:11.3/stable [amd64])
+Inst libssh-gcrypt-4 (0.9.5-1+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Inst libnorm1 (1.5.9+dfsg-2 Debian:11.3/stable [amd64])
+Inst libpgm-5.3-0 (5.3.128~dfsg-2 Debian:11.3/stable [amd64])
+Inst libsodium23 (1.0.18-1 Debian:11.3/stable [amd64])
+Inst libzmq5 (4.3.4-1 Debian:11.3/stable [amd64])
+Inst libavformat58 (7:4.3.3-0+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Inst libcddb2 (1.3.2-6+b1 Debian:11.3/stable [amd64])
+Inst libdc1394-25 (2.2.6-3 Debian:11.3/stable [amd64])
+Inst libdca0 (0.0.7-2 Debian:11.3/stable [amd64])
+Inst libdvbpsi10 (1.3.3-1 Debian:11.3/stable [amd64])
+Inst libdvdread8 (6.1.1-2 Debian:11.3/stable [amd64])
+Inst libdvdnav4 (6.1.0-1+b1 Debian:11.3/stable [amd64])
+Inst libebml5 (1.4.2-1 Debian:11.3/stable [amd64])
+Inst libfaad2 (2.10.0-1 Debian:11.3/stable [amd64])
+Inst libixml10 (1:1.8.4-2 Debian:11.3/stable [amd64])
+Inst libkate1 (0.4.1-11 Debian:11.3/stable [amd64])
+Inst liblirc-client0 (0.10.1-6.3 Debian:11.3/stable [amd64])
+Inst liblua5.2-0 (5.2.4-1.1+b3 Debian:11.3/stable [amd64])
+Inst libmad0 (0.15.1b-10 Debian:11.3/stable [amd64])
+Inst libmatroska7 (1.6.2-1 Debian:11.3/stable [amd64])
+Inst libmpcdec6 (2:0.1~r495-2 Debian:11.3/stable [amd64])
+Inst libmpeg2-4 (0.5.1-9 Debian:11.3/stable [amd64])
+Inst libmtp-common (1.1.17-3 Debian:11.3/stable [all])
+Inst libmtp9 (1.1.17-3 Debian:11.3/stable [amd64])
+Inst libnfs13 (4.0.0-1 Debian:11.3/stable [amd64])
+Inst libopenmpt-modplug1 (0.4.11-1 Debian:11.3/stable [amd64])
+Inst libpostproc55 (7:4.3.3-0+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Inst libprotobuf-lite23 (3.12.4-1 Debian:11.3/stable [amd64])
+Inst libresid-builder0c2a (2.1.1-15+b1 Debian:11.3/stable [amd64])
+Inst libcaca0 (0.99.beta19-2.2 Debian:11.3/stable [amd64])
+Inst libsdl1.2debian (1.2.15+dfsg2-6 Debian:11.3/stable [amd64])
+Inst libsdl-image1.2 (1.2.12-12 Debian:11.3/stable [amd64])
+Inst libsecret-common (0.20.4-2 Debian:11.3/stable [all])
+Inst libsecret-1-0 (0.20.4-2 Debian:11.3/stable [amd64])
+Inst libshout3 (2.4.5-1+b1 Debian:11.3/stable [amd64])
+Inst libsidplay2 (2.1.1-15+b1 Debian:11.3/stable [amd64])
+Inst libsndio7.0 (1.5.0-3 Debian:11.3/stable [amd64])
+Inst libmysofa1 (1.2~dfsg0-1 Debian:11.3/stable [amd64])
+Inst libspatialaudio0 (0.3.0+git20180730+dfsg1-2+b1 Debian:11.3/stable [amd64])
+Inst libssh2-1 (1.9.0-2 Debian:11.3/stable [amd64])
+Inst libswscale5 (7:4.3.3-0+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Inst libtag1v5-vanilla (1.11.1+dfsg.1-3 Debian:11.3/stable [amd64])
+Inst libtag1v5 (1.11.1+dfsg.1-3 Debian:11.3/stable [amd64])
+Inst libupnp13 (1:1.8.4-2 Debian:11.3/stable [amd64])
+Inst libvlccore9 (3.0.16-1 Debian:11.3/stable [amd64])
+Inst vlc-plugin-base (3.0.16-1 Debian:11.3/stable [amd64])
+Inst libgpm2 (1.20.7-8 Debian:11.3/stable [amd64])
+Inst libaa1 (1.4p5-48 Debian:11.3/stable [amd64])
+Inst libepoxy0 (1.5.5-1 Debian:11.3/stable [amd64])
+Inst libplacebo72 (2.72.2-1 Debian:11.3/stable [amd64])
+Inst libva-wayland2 (2.10.0-1 Debian:11.3/stable [amd64])
+Inst libxcb-xv0 (1.14-3 Debian:11.3/stable [amd64])
+Inst vlc-plugin-video-output (3.0.16-1 Debian:11.3/stable [amd64])
+Inst libvlc5 (3.0.16-1 Debian:11.3/stable [amd64])
+Inst phonon4qt5-backend-vlc (0.11.2-1 Debian:11.3/stable [amd64])
+Inst phonon4qt5 (4:4.11.1-4 Debian:11.3/stable [amd64])
+Inst libkf5notifications5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5solid5-data (5.78.0-2 Debian:11.3/stable [all])
+Inst libkf5solid5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5textwidgets-data (5.78.0-2 Debian:11.3/stable [all])
+Inst libkf5sonnet5-data (5.78.0-2 Debian:11.3/stable [all])
+Inst libkf5sonnetcore5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5sonnetui5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5textwidgets5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5wallet-data (5.78.0-2 Debian:11.3/stable [all])
+Inst libgpgme11 (1.14.0-1+b2 Debian:11.3/stable [amd64])
+Inst libgpgmepp6 (1.14.0-1+b2 Debian:11.3/stable [amd64])
+Inst libkwalletbackend5-5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5wallet5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5wallet-bin (5.78.0-2 Debian:11.3/stable [amd64])
+Inst kio (5.78.0-5 Debian:11.3/stable [amd64])
+Inst kinit (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5package-data (5.78.0-3 Debian:11.3/stable [all])
+Inst libkf5package5 (5.78.0-3 Debian:11.3/stable [amd64])
+Inst kpackagetool5 (5.78.0-3 Debian:11.3/stable [amd64])
+Inst libaccounts-glib0 (1.25-1 Debian:11.3/stable [amd64])
+Inst libaccounts-qt5-1 (1.16-2 Debian:11.3/stable [amd64])
+Inst libexiv2-27 (0.27.3-3+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Inst libsignon-qt5-1 (8.60-4 Debian:11.3/stable [amd64])
+Inst libkaccounts2 (4:20.12.1-1 Debian:11.3/stable [amd64])
+Inst libkf5activities5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5attica5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5bluezqt-data (5.78.0-3 Debian:11.3/stable [all])
+Inst libkf5bluezqt6 (5.78.0-3 Debian:11.3/stable [amd64])
+Inst libkf5bookmarks-data (5.78.0-2 Debian:11.3/stable [all])
+Inst libkf5xmlgui-data (5.78.0-2 Debian:11.3/stable [all])
+Inst libkf5globalaccel-data (5.78.0-3 Debian:11.3/stable [all])
+Inst libkf5globalaccel5 (5.78.0-3 Debian:11.3/stable [amd64])
+Inst libkf5globalaccelprivate5 (5.78.0-3 Debian:11.3/stable [amd64])
+Inst libkf5globalaccel-bin (5.78.0-3 Debian:11.3/stable [amd64])
+Inst libqt5printsupport5 (5.15.2+dfsg-9 Debian:11.3/stable [amd64])
+Inst libkf5xmlgui5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5bookmarks5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5declarative-data (5.78.0-2 Debian:11.3/stable [all])
+Inst libqt5qmlmodels5 (5.15.2+dfsg-6 Debian:11.3/stable [amd64])
+Inst libqt5quick5 (5.15.2+dfsg-6 Debian:11.3/stable [amd64])
+Inst libkf5declarative5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5js5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5jsapi5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5kexiv2-15.0.0 (20.12.0-1 Debian:11.3/stable [amd64])
+Inst libkf5parts-data (5.78.0-3 Debian:11.3/stable [all])
+Inst libkf5parts5 (5.78.0-3 Debian:11.3/stable [amd64])
+Inst libkf5pty-data (5.78.0-2 Debian:11.3/stable [all])
+Inst libkf5pty5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst qml-module-org-kde-bluezqt (5.78.0-3 Debian:11.3/stable [amd64])
+Inst libkf5quickaddons5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst qml-module-org-kde-kquickcontrolsaddons (5.78.0-2 Debian:11.3/stable [amd64])
+Inst qml-module-qt-labs-folderlistmodel (5.15.2+dfsg-6 Debian:11.3/stable [amd64])
+Inst qml-module-qt-labs-settings (5.15.2+dfsg-6 Debian:11.3/stable [amd64])
+Inst qml-module-qtqml (5.15.2+dfsg-6 Debian:11.3/stable [amd64])
+Inst libqt5qmlworkerscript5 (5.15.2+dfsg-6 Debian:11.3/stable [amd64])
+Inst qml-module-qtquick2 (5.15.2+dfsg-6 Debian:11.3/stable [amd64])
+Inst qml-module-qtquick-privatewidgets (5.15.2-2 Debian:11.3/stable [amd64])
+Inst qml-module-qtquick-window2 (5.15.2+dfsg-6 Debian:11.3/stable [amd64])
+Inst qml-module-qtquick-dialogs (5.15.2-2 Debian:11.3/stable [amd64])
+Inst libqt5quicktemplates2-5 (5.15.2+dfsg-2 Debian:11.3/stable [amd64])
+Inst qml-module-qtquick-templates2 (5.15.2+dfsg-2 Debian:11.3/stable [amd64])
+Inst libqt5quickcontrols2-5 (5.15.2+dfsg-2 Debian:11.3/stable [amd64])
+Inst qml-module-qtquick-controls2 (5.15.2+dfsg-2 Debian:11.3/stable [amd64])
+Inst libkf5purpose5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5purpose-bin (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libkf5threadweaver5 (5.78.0-2 Debian:11.3/stable [amd64])
+Inst libokular5core9 (4:20.12.3-2 Debian:11.3/stable [amd64])
+Inst libpoppler-qt5-1 (20.09.0-3.1 Debian:11.3/stable [amd64])
+Inst libqmobipocket2 (4:20.12.0-1 Debian:11.3/stable [amd64])
+Inst libspectre1 (0.2.9-1 Debian:11.3/stable [amd64])
+Inst okular (4:20.12.3-2 Debian:11.3/stable [amd64])
+Conf libdouble-conversion3 (3.1.5-6.1 Debian:11.3/stable [amd64])
+Conf libpcre2-16-0 (10.36-2 Debian:11.3/stable [amd64])
+Conf libqt5core5a (5.15.2+dfsg-9 Debian:11.3/stable [amd64])
+Conf libevdev2 (1.11.0+dfsg-1 Debian:11.3/stable [amd64])
+Conf libmtdev1 (1.1.6-1 Debian:11.3/stable [amd64])
+Conf libgudev-1.0-0 (234-1 Debian:11.3/stable [amd64])
+Conf libwacom-common (1.8-2 Debian:11.3/stable [all])
+Conf libwacom2 (1.8-2 Debian:11.3/stable [amd64])
+Conf libinput-bin (1.16.4-3 Debian:11.3/stable [amd64])
+Conf libinput10 (1.16.4-3 Debian:11.3/stable [amd64])
+Conf libmd4c0 (0.4.7-2 Debian:11.3/stable [amd64])
+Conf libqt5dbus5 (5.15.2+dfsg-9 Debian:11.3/stable [amd64])
+Conf libqt5network5 (5.15.2+dfsg-9 Debian:11.3/stable [amd64])
+Conf libxcb-icccm4 (0.4.1-1.1 Debian:11.3/stable [amd64])
+Conf libxcb-util1 (0.4.0-1+b1 Debian:11.3/stable [amd64])
+Conf libxcb-image0 (0.4.0-1+b3 Debian:11.3/stable [amd64])
+Conf libxcb-keysyms1 (0.4.0-1+b2 Debian:11.3/stable [amd64])
+Conf libxcb-render-util0 (0.3.9-1+b1 Debian:11.3/stable [amd64])
+Conf libxcb-shape0 (1.14-3 Debian:11.3/stable [amd64])
+Conf libxcb-xinerama0 (1.14-3 Debian:11.3/stable [amd64])
+Conf libxcb-xinput0 (1.14-3 Debian:11.3/stable [amd64])
+Conf libxcb-xkb1 (1.14-3 Debian:11.3/stable [amd64])
+Conf libxkbcommon0 (1.0.3-2 Debian:11.3/stable [amd64])
+Conf libxkbcommon-x11-0 (1.0.3-2 Debian:11.3/stable [amd64])
+Conf libqt5gui5 (5.15.2+dfsg-9 Debian:11.3/stable [amd64])
+Conf libqt5widgets5 (5.15.2+dfsg-9 Debian:11.3/stable [amd64])
+Conf libqt5svg5 (5.15.2-3 Debian:11.3/stable [amd64])
+Conf libassuan0 (2.5.3-7.1 Debian:11.3/stable [amd64])
+Conf gpgconf (2.2.27-2+deb11u1 Debian:11.3/stable [amd64])
+Conf libksba8 (1.5.0-3 Debian:11.3/stable [amd64])
+Conf libsasl2-modules-db (2.1.27+dfsg-2.1+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Conf libsasl2-2 (2.1.27+dfsg-2.1+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Conf libldap-2.4-2 (2.4.57+dfsg-3 Debian:11.3/stable [amd64])
+Conf libnpth0 (1.6-3 Debian:11.3/stable [amd64])
+Conf dirmngr (2.2.27-2+deb11u1 Debian:11.3/stable [amd64])
+Conf gnupg-l10n (2.2.27-2+deb11u1 Debian:11.3/stable [all])
+Conf gnupg-utils (2.2.27-2+deb11u1 Debian:11.3/stable [amd64])
+Conf gpg (2.2.27-2+deb11u1 Debian:11.3/stable [amd64])
+Conf pinentry-curses (1.1.0-4 Debian:11.3/stable [amd64])
+Conf gpg-agent (2.2.27-2+deb11u1 Debian:11.3/stable [amd64])
+Conf gpg-wks-client (2.2.27-2+deb11u1 Debian:11.3/stable [amd64])
+Conf gpg-wks-server (2.2.27-2+deb11u1 Debian:11.3/stable [amd64])
+Conf gpgsm (2.2.27-2+deb11u1 Debian:11.3/stable [amd64])
+Conf gnupg (2.2.27-2+deb11u1 Debian:11.3/stable [all])
+Conf libkf5config-data (5.78.0-4 Debian:11.3/stable [all])
+Conf libkf5configcore5 (5.78.0-4 Debian:11.3/stable [amd64])
+Conf libkf5coreaddons-data (5.78.0-4 Debian:11.3/stable [all])
+Conf libfam0 (2.7.0-17.3 Debian:11.3/stable [amd64])
+Conf libkf5coreaddons5 (5.78.0-4 Debian:11.3/stable [amd64])
+Conf libkf5windowsystem-data (5.78.0-2 Debian:11.3/stable [all])
+Conf libqt5x11extras5 (5.15.2-2 Debian:11.3/stable [amd64])
+Conf libxcb-res0 (1.14-3 Debian:11.3/stable [amd64])
+Conf libkf5windowsystem5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5crash5 (5.78.0-3 Debian:11.3/stable [amd64])
+Conf libkf5dbusaddons-data (5.78.0-2 Debian:11.3/stable [all])
+Conf libkf5dbusaddons5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5i18n-data (5.78.0-2 Debian:11.3/stable [all])
+Conf libqt5qml5 (5.15.2+dfsg-6 Debian:11.3/stable [amd64])
+Conf libkf5i18n5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5service-data (5.78.0-2 Debian:11.3/stable [all])
+Conf libqt5xml5 (5.15.2+dfsg-9 Debian:11.3/stable [amd64])
+Conf libkf5service5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5service-bin (5.78.0-2 Debian:11.3/stable [amd64])
+Conf kded5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5archive5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5auth-data (5.78.0-2 Debian:11.3/stable [all])
+Conf libpolkit-gobject-1-0 (0.105-31+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Conf libpolkit-agent-1-0 (0.105-31+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Conf libpolkit-qt5-1-1 (0.113.0-1 Debian:11.3/stable [amd64])
+Conf libkf5authcore5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5codecs-data (5.78.0-2 Debian:11.3/stable [all])
+Conf libkf5codecs5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5completion-data (5.78.0-3 Debian:11.3/stable [all])
+Conf libkf5configgui5 (5.78.0-4 Debian:11.3/stable [amd64])
+Conf libkf5widgetsaddons-data (5.78.0-2 Debian:11.3/stable [all])
+Conf libkf5widgetsaddons5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5completion5 (5.78.0-3 Debian:11.3/stable [amd64])
+Conf libkf5configwidgets-data (5.78.0-2 Debian:11.3/stable [all])
+Conf libwayland-cursor0 (1.18.0-2~exp1.1 Debian:11.3/stable [amd64])
+Conf libqt5waylandclient5 (5.15.2-3 Debian:11.3/stable [amd64])
+Conf libkf5guiaddons5 (5.78.0-3 Debian:11.3/stable [amd64])
+Conf libkf5configwidgets5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libxslt1.1 (1.1.34-4 Debian:11.3/stable [amd64])
+Conf libkf5doctools5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5itemviews-data (5.78.0-2 Debian:11.3/stable [all])
+Conf libkf5itemviews5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5kiocore5 (5.78.0-5 Debian:11.3/stable [amd64])
+Conf libkf5kiontlm5 (5.78.0-5 Debian:11.3/stable [amd64])
+Conf libkf5iconthemes-data (5.78.0-2 Debian:11.3/stable [all])
+Conf libkf5iconthemes5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5jobwidgets-data (5.78.0-2 Debian:11.3/stable [all])
+Conf libkf5jobwidgets5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5kiogui5 (5.78.0-5 Debian:11.3/stable [amd64])
+Conf libkf5kiowidgets5 (5.78.0-5 Debian:11.3/stable [amd64])
+Conf libkf5notifications-data (5.78.0-2 Debian:11.3/stable [all])
+Conf libdbusmenu-qt5-2 (0.9.3+16.04.20160218-2+b1 Debian:11.3/stable [amd64])
+Conf libphonon4qt5-data (4:4.11.1-4 Debian:11.3/stable [all])
+Conf libpulse-mainloop-glib0 (14.2-2 Debian:11.3/stable [amd64])
+Conf libphonon4qt5-4 (4:4.11.1-4 Debian:11.3/stable [amd64])
+Conf libqt5texttospeech5 (5.15.2-2 Debian:11.3/stable [amd64])
+Conf vlc-data (3.0.16-1 Debian:11.3/stable [all])
+Conf liba52-0.7.4 (0.7.4-20 Debian:11.3/stable [amd64])
+Conf libarchive13 (3.4.3-2+deb11u1 Debian:11.3/stable [amd64])
+Conf libaribb24-0 (1.0.3-2 Debian:11.3/stable [amd64])
+Conf libass9 (1:0.15.0-2 Debian:11.3/stable [amd64])
+Conf libraw1394-11 (2.1.2-2 Debian:11.3/stable [amd64])
+Conf libavc1394-0 (0.5.4-5 Debian:11.3/stable [amd64])
+Conf libudfread0 (1.1.1-1 Debian:11.3/stable [amd64])
+Conf libbluray2 (1:1.2.1-4+deb11u1 Debian:11.3/stable [amd64])
+Conf libchromaprint1 (1.5.0-2 Debian:11.3/stable [amd64])
+Conf libgme0 (0.6.3-2 Debian:11.3/stable [amd64])
+Conf libmpg123-0 (1.26.4-1 Debian:11.3/stable [amd64])
+Conf libvorbisfile3 (1.3.7-1 Debian:11.3/stable [amd64])
+Conf libopenmpt0 (0.4.11-1 Debian:11.3/stable [amd64])
+Conf librabbitmq4 (0.10.0-1 Debian:11.3/stable [amd64])
+Conf libsrt1.4-gnutls (1.4.2-1.3 Debian:11.3/stable [amd64])
+Conf libssh-gcrypt-4 (0.9.5-1+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Conf libnorm1 (1.5.9+dfsg-2 Debian:11.3/stable [amd64])
+Conf libpgm-5.3-0 (5.3.128~dfsg-2 Debian:11.3/stable [amd64])
+Conf libsodium23 (1.0.18-1 Debian:11.3/stable [amd64])
+Conf libzmq5 (4.3.4-1 Debian:11.3/stable [amd64])
+Conf libavformat58 (7:4.3.3-0+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Conf libcddb2 (1.3.2-6+b1 Debian:11.3/stable [amd64])
+Conf libdc1394-25 (2.2.6-3 Debian:11.3/stable [amd64])
+Conf libdca0 (0.0.7-2 Debian:11.3/stable [amd64])
+Conf libdvbpsi10 (1.3.3-1 Debian:11.3/stable [amd64])
+Conf libdvdread8 (6.1.1-2 Debian:11.3/stable [amd64])
+Conf libdvdnav4 (6.1.0-1+b1 Debian:11.3/stable [amd64])
+Conf libebml5 (1.4.2-1 Debian:11.3/stable [amd64])
+Conf libfaad2 (2.10.0-1 Debian:11.3/stable [amd64])
+Conf libixml10 (1:1.8.4-2 Debian:11.3/stable [amd64])
+Conf libkate1 (0.4.1-11 Debian:11.3/stable [amd64])
+Conf liblirc-client0 (0.10.1-6.3 Debian:11.3/stable [amd64])
+Conf liblua5.2-0 (5.2.4-1.1+b3 Debian:11.3/stable [amd64])
+Conf libmad0 (0.15.1b-10 Debian:11.3/stable [amd64])
+Conf libmatroska7 (1.6.2-1 Debian:11.3/stable [amd64])
+Conf libmpcdec6 (2:0.1~r495-2 Debian:11.3/stable [amd64])
+Conf libmpeg2-4 (0.5.1-9 Debian:11.3/stable [amd64])
+Conf libmtp-common (1.1.17-3 Debian:11.3/stable [all])
+Conf libmtp9 (1.1.17-3 Debian:11.3/stable [amd64])
+Conf libnfs13 (4.0.0-1 Debian:11.3/stable [amd64])
+Conf libopenmpt-modplug1 (0.4.11-1 Debian:11.3/stable [amd64])
+Conf libpostproc55 (7:4.3.3-0+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Conf libprotobuf-lite23 (3.12.4-1 Debian:11.3/stable [amd64])
+Conf libresid-builder0c2a (2.1.1-15+b1 Debian:11.3/stable [amd64])
+Conf libcaca0 (0.99.beta19-2.2 Debian:11.3/stable [amd64])
+Conf libsdl1.2debian (1.2.15+dfsg2-6 Debian:11.3/stable [amd64])
+Conf libsdl-image1.2 (1.2.12-12 Debian:11.3/stable [amd64])
+Conf libsecret-common (0.20.4-2 Debian:11.3/stable [all])
+Conf libsecret-1-0 (0.20.4-2 Debian:11.3/stable [amd64])
+Conf libshout3 (2.4.5-1+b1 Debian:11.3/stable [amd64])
+Conf libsidplay2 (2.1.1-15+b1 Debian:11.3/stable [amd64])
+Conf libsndio7.0 (1.5.0-3 Debian:11.3/stable [amd64])
+Conf libmysofa1 (1.2~dfsg0-1 Debian:11.3/stable [amd64])
+Conf libspatialaudio0 (0.3.0+git20180730+dfsg1-2+b1 Debian:11.3/stable [amd64])
+Conf libssh2-1 (1.9.0-2 Debian:11.3/stable [amd64])
+Conf libswscale5 (7:4.3.3-0+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Conf libtag1v5-vanilla (1.11.1+dfsg.1-3 Debian:11.3/stable [amd64])
+Conf libtag1v5 (1.11.1+dfsg.1-3 Debian:11.3/stable [amd64])
+Conf libupnp13 (1:1.8.4-2 Debian:11.3/stable [amd64])
+Conf libvlccore9 (3.0.16-1 Debian:11.3/stable [amd64])
+Conf vlc-plugin-base (3.0.16-1 Debian:11.3/stable [amd64])
+Conf libgpm2 (1.20.7-8 Debian:11.3/stable [amd64])
+Conf libaa1 (1.4p5-48 Debian:11.3/stable [amd64])
+Conf libepoxy0 (1.5.5-1 Debian:11.3/stable [amd64])
+Conf libplacebo72 (2.72.2-1 Debian:11.3/stable [amd64])
+Conf libva-wayland2 (2.10.0-1 Debian:11.3/stable [amd64])
+Conf libxcb-xv0 (1.14-3 Debian:11.3/stable [amd64])
+Conf vlc-plugin-video-output (3.0.16-1 Debian:11.3/stable [amd64])
+Conf libvlc5 (3.0.16-1 Debian:11.3/stable [amd64])
+Conf phonon4qt5-backend-vlc (0.11.2-1 Debian:11.3/stable [amd64])
+Conf phonon4qt5 (4:4.11.1-4 Debian:11.3/stable [amd64])
+Conf libkf5notifications5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5solid5-data (5.78.0-2 Debian:11.3/stable [all])
+Conf libkf5solid5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5textwidgets-data (5.78.0-2 Debian:11.3/stable [all])
+Conf libkf5sonnet5-data (5.78.0-2 Debian:11.3/stable [all])
+Conf libkf5sonnetcore5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5sonnetui5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5textwidgets5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5wallet-data (5.78.0-2 Debian:11.3/stable [all])
+Conf libgpgme11 (1.14.0-1+b2 Debian:11.3/stable [amd64])
+Conf libgpgmepp6 (1.14.0-1+b2 Debian:11.3/stable [amd64])
+Conf libkwalletbackend5-5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5wallet5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5wallet-bin (5.78.0-2 Debian:11.3/stable [amd64])
+Conf kio (5.78.0-5 Debian:11.3/stable [amd64])
+Conf kinit (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5package-data (5.78.0-3 Debian:11.3/stable [all])
+Conf libkf5package5 (5.78.0-3 Debian:11.3/stable [amd64])
+Conf kpackagetool5 (5.78.0-3 Debian:11.3/stable [amd64])
+Conf libaccounts-glib0 (1.25-1 Debian:11.3/stable [amd64])
+Conf libaccounts-qt5-1 (1.16-2 Debian:11.3/stable [amd64])
+Conf libexiv2-27 (0.27.3-3+deb11u1 Debian:11.3/stable, Debian-Security:11/stable-security [amd64])
+Conf libsignon-qt5-1 (8.60-4 Debian:11.3/stable [amd64])
+Conf libkaccounts2 (4:20.12.1-1 Debian:11.3/stable [amd64])
+Conf libkf5activities5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5attica5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5bluezqt-data (5.78.0-3 Debian:11.3/stable [all])
+Conf libkf5bluezqt6 (5.78.0-3 Debian:11.3/stable [amd64])
+Conf libkf5bookmarks-data (5.78.0-2 Debian:11.3/stable [all])
+Conf libkf5xmlgui-data (5.78.0-2 Debian:11.3/stable [all])
+Conf libkf5globalaccel-data (5.78.0-3 Debian:11.3/stable [all])
+Conf libkf5globalaccel5 (5.78.0-3 Debian:11.3/stable [amd64])
+Conf libkf5globalaccelprivate5 (5.78.0-3 Debian:11.3/stable [amd64])
+Conf libkf5globalaccel-bin (5.78.0-3 Debian:11.3/stable [amd64])
+Conf libqt5printsupport5 (5.15.2+dfsg-9 Debian:11.3/stable [amd64])
+Conf libkf5xmlgui5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5bookmarks5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5declarative-data (5.78.0-2 Debian:11.3/stable [all])
+Conf libqt5qmlmodels5 (5.15.2+dfsg-6 Debian:11.3/stable [amd64])
+Conf libqt5quick5 (5.15.2+dfsg-6 Debian:11.3/stable [amd64])
+Conf libkf5declarative5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5js5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5jsapi5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5kexiv2-15.0.0 (20.12.0-1 Debian:11.3/stable [amd64])
+Conf libkf5parts-data (5.78.0-3 Debian:11.3/stable [all])
+Conf libkf5parts5 (5.78.0-3 Debian:11.3/stable [amd64])
+Conf libkf5pty-data (5.78.0-2 Debian:11.3/stable [all])
+Conf libkf5pty5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf qml-module-org-kde-bluezqt (5.78.0-3 Debian:11.3/stable [amd64])
+Conf libkf5quickaddons5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf qml-module-org-kde-kquickcontrolsaddons (5.78.0-2 Debian:11.3/stable [amd64])
+Conf qml-module-qt-labs-folderlistmodel (5.15.2+dfsg-6 Debian:11.3/stable [amd64])
+Conf qml-module-qt-labs-settings (5.15.2+dfsg-6 Debian:11.3/stable [amd64])
+Conf qml-module-qtqml (5.15.2+dfsg-6 Debian:11.3/stable [amd64])
+Conf libqt5qmlworkerscript5 (5.15.2+dfsg-6 Debian:11.3/stable [amd64])
+Conf qml-module-qtquick2 (5.15.2+dfsg-6 Debian:11.3/stable [amd64])
+Conf qml-module-qtquick-privatewidgets (5.15.2-2 Debian:11.3/stable [amd64])
+Conf qml-module-qtquick-window2 (5.15.2+dfsg-6 Debian:11.3/stable [amd64])
+Conf qml-module-qtquick-dialogs (5.15.2-2 Debian:11.3/stable [amd64])
+Conf libqt5quicktemplates2-5 (5.15.2+dfsg-2 Debian:11.3/stable [amd64])
+Conf qml-module-qtquick-templates2 (5.15.2+dfsg-2 Debian:11.3/stable [amd64])
+Conf libqt5quickcontrols2-5 (5.15.2+dfsg-2 Debian:11.3/stable [amd64])
+Conf qml-module-qtquick-controls2 (5.15.2+dfsg-2 Debian:11.3/stable [amd64])
+Conf libkf5purpose5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5purpose-bin (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libkf5threadweaver5 (5.78.0-2 Debian:11.3/stable [amd64])
+Conf libokular5core9 (4:20.12.3-2 Debian:11.3/stable [amd64])
+Conf libpoppler-qt5-1 (20.09.0-3.1 Debian:11.3/stable [amd64])
+Conf libqmobipocket2 (4:20.12.0-1 Debian:11.3/stable [amd64])
+Conf libspectre1 (0.2.9-1 Debian:11.3/stable [amd64])
+Conf okular (4:20.12.3-2 Debian:11.3/stable [amd64])
