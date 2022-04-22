@@ -5,7 +5,23 @@ set -xe
 ## Load log function
 . /usr/sbin/hsync.logger
 
+### Decide if apply [Always], [Event] or [Contest], and if directives file has expired
+NOW=$(date +'%s')
+
 TO_APPLY="Always"
+NEXT_APPLY=""
+
+update_next_apply () {
+	interesting_time=$(date --date "$1" +'%s')
+	## Check if interesting_time happens after now and earlier than previous NEXT_APPLY
+	if [ $NOW -lt $interesting_time ]; then
+		if [ ! $NEXT_APPLY ]; then
+			NEXT_APPLY=$interesting_time
+		elif [ $NEXT_APPLY -gt $interesting_time ]; then
+			NEXT_APPLY=$interesting_time
+		fi
+	fi
+}
 
 set_global_config () {
 	local GLOBAL KEYBOARDS XKB XKBS IDX LAYOUT
@@ -23,6 +39,18 @@ set_global_config () {
 	## Timezone
 	timedatectl set-timezone $TimeZone
 	log "Setting timezone to $TimeZone"
+	
+	## Expiration time
+	if [ "$ConfigExpirationTime" != "never" ]; then
+		if [ $NOW -ge $(date --date "$ConfigExpirationTime" +'%s') ]; then
+			## Apply default directives
+			cp /etc/hsync/default $CONFIG_FILE
+			echo "$0 $CONFIG_FILE" | at now
+			exit 0
+		else
+			update_next_apply $ConfigExpirationTime
+		fi
+	fi
 
 	## Update available keyboards
 	KEYBOARDS=$(echo $AvailableKeyboardLayouts | sed 's/;/ /g')
@@ -50,9 +78,6 @@ get_specific_config(){
 	## Get the EventConfig and ContestConfig
 	declare $(sed -nE '/^\[Global\]$/{:l n;/^(\[.*\])?$/q;p;bl}' $CONFIG_FILE | grep EventConfig)
 	declare $(sed -nE '/^\[Global\]$/{:l n;/^(\[.*\])?$/q;p;bl}' $CONFIG_FILE | grep ContestConfig)
-	
-	### Decide if apply [Always], [Event] or [Contest]
-	NOW=$(date +'%s')
 
 	### Check if event is configured, if so check if event is running
 	if [ "$EventConfig" = "true" ]; then
@@ -62,9 +87,13 @@ get_specific_config(){
 
 		## Check if we are in a event
 		while read START END; do
-			if [ $NOW -ge $(date --date "$START" +'%s') ] && [ $NOW -le $(date --date "$END" +'%s') ]; then
+			if [ $NOW -ge $(date --date "$START" +'%s') ] && [ $NOW -lt $(date --date "$END" +'%s') ]; then
 				TO_APPLY="Event"
 			fi
+			
+			## Check if we need to apply directives file in the future
+			update_next_apply $START
+			update_next_apply $END
 		done < <(echo $EVENT_TIMES | xargs -n 2)
 	fi
 
@@ -76,9 +105,13 @@ get_specific_config(){
 
 		## Check if we are in a event
 		while read START END; do
-				if [ $NOW -ge $(date --date "$START" +'%s') ] && [ $NOW -le $(date --date "$END" +'%s') ]; then
+				if [ $NOW -ge $(date --date "$START" +'%s') ] && [ $NOW -lt $(date --date "$END" +'%s') ]; then
 						TO_APPLY="Contest"
 				fi
+				
+				## Check if we need to apply directives file in the future
+				update_next_apply $START
+				update_next_apply $END
 		done < <(echo $CONTEST_TIMES | xargs -n 2)
 	fi
 }
@@ -168,6 +201,18 @@ set_global_config
 ## Apply specific configuration
 log "Applying [$TO_APPLY] configuration"
 set_specific_config $TO_APPLY
+
+## Remove previous apply jobs
+for i in $(atq | cut -f 1); do 
+	atrm $i; 
+done
+
+### Schedule next apply job
+if [ $NEXT_APPLY ]; then
+	formated_next_time=$(date -d @$NEXT_APPLY +"%Y%m%d%H%M.%S");
+	log "Scheduling next apply job at $formated_next_time"
+	echo "$0 $CONFIG_FILE" | at -t $formated_next_time
+fi
 
 log "--------------------------------------------- Ended huronOS configuration"
 
