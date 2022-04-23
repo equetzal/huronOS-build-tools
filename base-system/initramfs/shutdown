@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Shutdown script for initramfs. It's automatically started by
 # systemd (if you use it) on shutdown, no need for any tweaks.
@@ -77,4 +77,4 @@ reboot -f
 
 echo We should never reach so far. Something is totally fucked up.
 echo Here you have a shell, to experiment with the universe.
-/bin/sh
+/bin/bash

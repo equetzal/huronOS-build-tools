@@ -1,21 +1,22 @@
-#!/bin/sh
+#!/bin/bash
 
 # Functions library :: for Linux Live Kit scripts
-# Author: Tomas M. <http://www.linux-live.org>
-#
+# Adapted to supply huronOS requirements
+# Taken from Linux-Live, Originally authored by: Tomas M <http://www.linux-live.org>
+# Modified by the huronOS team:
+#	Enya Quetzalli <equetzal@huronos.org>
 
 # =================================================================
 # debug and output functions
 # =================================================================
 
-debug_start()
-{
-   if grep -q debug /proc/cmdline; then
-      DEBUG_IS_ENABLED=1
-      set -x
-   else
-      DEBUG_IS_ENABLED=
-   fi
+debug_start(){
+	if cmdline_has "debug"; then
+		DEBUG_IS_ENABLED=1
+		set -x
+	else
+		DEBUG_IS_ENABLED=
+	fi
 }
 
 debug_log()
@@ -88,15 +89,20 @@ fatal()
    setsid sh -c 'exec sh < /dev/tty1 >/dev/tty1 2>&1'
 }
 
-
-# get value of commandline parameter $1
-# $1 = parameter to search for
-#
-cmdline_value()
-{
-   cat /proc/cmdline | egrep -o "(^|[[:space:]])$1=[^[:space:]]+" | tr -d " " | cut -d "=" -f 2- | tail -n 1
+# $1 key to search value of. Eg. $1="ip", "ip=1.1.1.1" -> "1.1.1.1"
+cmdline_value(){
+   	cat /proc/cmdline | sed "s/.*huronos.flags=(\(.*\)).*/\1/" | sed -ne "/.*$1=\([^;]*\).*/!d;s//\1/p"
 }
 
+# $1 key to expect value as true
+cmdline_has(){
+	VALUE="$(cmdline_value $1)"
+	if [ "$VALUE" = "true" ]; then
+   		return 0
+   	else
+   		return 1
+   	fi
+}
 
 # test if the script is started by root user. If not, exit
 #
@@ -639,7 +645,7 @@ persistent_changes()
    mkdir -p "$2"
 
    # If persistent changes are not requested, end here
-   if grep -vq perch /proc/cmdline; then
+   if ! cmdline_has "persistence"; then
       return
    fi
 
@@ -730,7 +736,7 @@ copy_to_ram()
 
    local MDIR MDEV RAM CHANGES
 
-   if grep -vq toram /proc/cmdline; then
+   if ! cmdline_has "toram"; then
       echo "$1"
       return
    fi

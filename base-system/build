@@ -94,7 +94,7 @@ echo cd $LIVEKITDATA '&&' zip -0 -r "$TARGET/$LIVEKITNAME-$ARCH.zip" '*' \
 > $TARGET/gen_"$LIVEKITNAME"_zip.sh
 chmod o+x $TARGET/gen_"$LIVEKITNAME"_zip.sh
 
-. ./restore.sh
+. $CHANGEDIR/restore.sh
 
 echo "-----------------------------"
 echo "Finished. Find your result in $LIVEKITDATA"
