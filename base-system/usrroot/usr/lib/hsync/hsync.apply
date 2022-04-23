@@ -75,7 +75,8 @@ set_global_config () {
 }
 
 get_specific_config(){
-	## Get the EventConfig and ContestConfig
+	## Get the TimeZone, EventConfig and ContestConfig
+	declare $(sed -nE '/^\[Global\]$/{:l n;/^(\[.*\])?$/q;p;bl}' $CONFIG_FILE | grep TimeZone)
 	declare $(sed -nE '/^\[Global\]$/{:l n;/^(\[.*\])?$/q;p;bl}' $CONFIG_FILE | grep EventConfig)
 	declare $(sed -nE '/^\[Global\]$/{:l n;/^(\[.*\])?$/q;p;bl}' $CONFIG_FILE | grep ContestConfig)
 
@@ -87,7 +88,7 @@ get_specific_config(){
 
 		## Check if we are in a event
 		while read START END; do
-			if [ $NOW -ge $(date --date "$START" +'%s') ] && [ $NOW -lt $(date --date "$END" +'%s') ]; then
+			if [ $NOW -ge $(date --date='TZ="'"$TimeZone"'" '"$START"'' +'%s') ] && [ $NOW -lt $(date --date='TZ="'"$TimeZone"'" '"$END"'' +'%s') ]; then
 				TO_APPLY="Event"
 			fi
 			
@@ -105,13 +106,13 @@ get_specific_config(){
 
 		## Check if we are in a event
 		while read START END; do
-				if [ $NOW -ge $(date --date "$START" +'%s') ] && [ $NOW -lt $(date --date "$END" +'%s') ]; then
-						TO_APPLY="Contest"
-				fi
-				
-				## Check if we need to apply directives file in the future
-				update_next_apply $START
-				update_next_apply $END
+			if [ $NOW -ge $(date --date='TZ="'"$TimeZone"'" '"$START"'' +'%s') ] && [ $NOW -lt $(date --date='TZ="'"$TimeZone"'" '"$END"'' +'%s') ]; then
+					TO_APPLY="Contest"
+			fi
+			
+			## Check if we need to apply directives file in the future
+			update_next_apply $START
+			update_next_apply $END
 		done < <(echo $CONTEST_TIMES | xargs -n 2)
 	fi
 }
