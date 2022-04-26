@@ -2,7 +2,7 @@
 Type=Application
 Exec=kdevelop
 MimeType=
-Icon=kdevelop
+Icon=/usr/share/icons/hicolor/scalable/apps/kdevelop.svg
 X-DocPath=kdevelop/index.html
 Actions=OpenSession;
 Terminal=false

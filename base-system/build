@@ -50,9 +50,10 @@ BOOT="$LIVEKITDATA"/boot
 FILES="$LIVEKITDATA"/"$LIVEKITNAME"
 mkdir -p "$BOOT"
 mkdir -p "$FILES"/base
-mkdir -p "$FILES"/core-apps
+mkdir -p "$FILES"/internet
 mkdir -p "$FILES"/langs
 mkdir -p "$FILES"/programming
+mkdir -p "$FILES"/tools
 mkdir -p "$FILES"/changes
 
 if [ "$INITRAMFS" != "" ]; then
