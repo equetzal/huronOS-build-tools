@@ -330,6 +330,7 @@ ruby-test-unit
 ruby-xmlrpc
 ruby2.7
 rubygems-integration
+tmux
 vlc-data
 vlc-plugin-base
 vlc-plugin-video-output
