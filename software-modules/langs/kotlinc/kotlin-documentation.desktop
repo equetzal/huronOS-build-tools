@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Kotlin Documentation
+Comment=Kotlin Programming Language Documentation
+Icon=accessories-dictionary-symbolic
+Exec=open /usr/share/doc/reference/kotlinc/kotlin-reference.pdf
+Categories=Reference;
+NoDisplay=false
