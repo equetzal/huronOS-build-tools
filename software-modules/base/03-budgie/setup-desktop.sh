@@ -23,6 +23,13 @@ gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgro
 gsettings set org.gnome.desktop.interface icon-theme 'Moka'
 gsettings set org.gnome.desktop.media-handling automount false
 gsettings set org.gnome.desktop.media-handling automount-open false
+gsettings set org.gnome.settings-daemon.plugins.power idle-dim false
+gsettings set org.gnome.settings-daemon.plugins.power ambient-enabled false
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 0
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 'nothing'
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout 0
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout 'nothing'
+
 
 ## Time and date
 gsettings set org.gnome.desktop.interface clock-format '12h' 

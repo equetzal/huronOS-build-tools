@@ -69,6 +69,8 @@ echo "DesktopNames=Budgie;GNOME" >> /usr/share/xsessions/lightdm-xsession-deskto
 ## Create user for contest with no password for login
 useradd -m -s /bin/bash contestant
 sed -i 's/contestant:x:/contestant::/g' /etc/passwd
+mkdir -p /home/contestant/.config/Jetbrains
+chown -r contestant:contestant /home/contestant/
 
 ## Activate services
 systemctl enable lightdm.service
