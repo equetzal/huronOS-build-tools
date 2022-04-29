@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 ## Load log function
 . /usr/lib/hsync/hsync.logger
 
@@ -27,10 +29,10 @@ log "huronOS directives downloaded"
 
 ## Check if directives file follows the syntaxis
 log "Checking if directives file follows the syntaxis"
-/usr/lib/hsync/hsync.validator $TMP_FILE | tee -a /var/log/hsync.log
+/usr/lib/hsync/hsync.validator $TMP_FILE >> /var/log/hsync.log
 if [ $? -ne 0 ]; then
 	log "Invalid syntax of directives file"
-	exit 0
+	exit 1
 fi
 
 log "Checking if directives file has changed"
