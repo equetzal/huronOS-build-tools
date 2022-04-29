@@ -1,7 +1,7 @@
 [Global]
 TimeZone=America/Mexico_City
 ConfigExpirationTime=never
-AvailableKeyboardLayouts=latam;us;
+AvailableKeyboardLayouts=latam|us|
 DefaultKeyboardLayout=latam
 EventConfig=false
 ContestConfig=false
@@ -9,7 +9,7 @@ ContestConfig=false
 [Always]
 Wallpaper=default
 AllowList=all
-AvailableSoftware=internet/chrome;internet/chromium;internet/crow;internet/firefox;langs/g++;langs/gcc;langs/javac;langs/kotlinc;langs/pypy3;langs/python3;langs/ruby;tools/byobu;tools/konsole;tools/midnight-commander;programming/atom;programming/clion;programming/codeblocks;programming/eclipse;programming/emacs;programming/geany;programming/gedit;programming/gvim;programming/intellij;programming/joe;programming/kate;programming/kdevelop;programming/pycharm;programming/sublime;programming/vim;programming/vscode;
+AvailableSoftware=internet/chrome|internet/chromium|internet/crow|internet/firefox|langs/g++|langs/gcc|langs/javac|langs/kotlinc|langs/pypy3|langs/python3|langs/ruby|tools/byobu|tools/konsole|tools/midnight-commander|programming/atom|programming/clion|programming/codeblocks|programming/eclipse|programming/emacs|programming/geany|programming/gedit|programming/gvim|programming/intellij|programming/joe|programming/kate|programming/kdevelop|programming/pycharm|programming/sublime|programming/vim|programming/vscode|
 
 [Event]
 

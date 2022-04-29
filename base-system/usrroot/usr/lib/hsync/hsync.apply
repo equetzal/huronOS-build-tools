@@ -53,7 +53,7 @@ set_global_config () {
 	fi
 
 	## Update available keyboards
-	KEYBOARDS=$(echo $AvailableKeyboardLayouts | sed 's/;/ /g')
+	KEYBOARDS=$(echo $AvailableKeyboardLayouts | sed 's/|/ /g')
 	XKB=""
 	for LAYOUT in $KEYBOARDS; do
 		XKB+=" ('xkb', '$LAYOUT')"
@@ -160,7 +160,7 @@ set_specific_config(){
 		log "Network filter set to: Deny all"
 	else
 		## Deny all connections except this exceptions
-		WEBSITES=$(echo $AllowList | sed 's/;/ /g')
+		WEBSITES=$(echo $AllowList | sed 's/|/ /g')
 		IPv4=""
 		IPv6=""
 		for WEB in $WEBSITES; do
@@ -172,7 +172,7 @@ set_specific_config(){
 	fi
 	
 	## Available Software
-	SOFTWARE=$(echo $AvailableSoftware | sed 's/;/ /g')
+	SOFTWARE=$(echo $AvailableSoftware | sed 's/|/ /g')
 	cp -f /etc/hmm/any /etc/hmm/current
 	for SFW in $SOFTWARE; do
 		sed "s%$SFW.*%$SFW\t\t\ttrue%g" -i /etc/hmm/current
