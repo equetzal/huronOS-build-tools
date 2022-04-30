@@ -1,5 +1,6 @@
 [Default Applications]
 text/html=firefox.desktop
+text/calendar=org.gnome.Calendar.desktop
 application/xhtml+xml=firefox.desktop
 application/xhtml_xml=firefox.desktop
 x-scheme-handler/http=firefox.desktop
