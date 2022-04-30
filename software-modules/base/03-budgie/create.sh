@@ -61,6 +61,10 @@ cp files/applications/* /usr/share/applications/
 cp /tmp/save/* /usr/share/applications/
 rm -rf /tmp/save
 
+## Add our own default mime apps
+rm -rf /usr/share/applications/gnome-mimeapps.list
+ln -s /etc/xdg/mimeapps.list /usr/share/applications/mimeapps.list
+
 ## Set Budgie as default desktop
 sed -i 's/Name=.*/Name=Budgie/g' /usr/share/xsessions/lightdm-xsession.desktop
 sed -i 's/Exec=.*/Exec=budgie-desktop/g' /usr/share/xsessions/lightdm-xsession.desktop
