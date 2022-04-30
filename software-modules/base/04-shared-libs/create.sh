@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -xe
+
 systemctl stop hsync.timer
 systemctl stop hsync.service
 /usr/lib/hsync/hsync.apply /etc/hsync/default
