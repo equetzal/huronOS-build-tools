@@ -69,7 +69,7 @@ std::vector<std::string> value_to_list (const std::string &value) {
 	std::vector<std::string> list;
 	std::string element;
 
-	while (std::getline(ss, element, ';')) {
+	while (std::getline(ss, element, '|')) {
 		list.push_back(element);
 	}
 
