@@ -35,11 +35,17 @@ if [ $? -ne 0 ]; then
 	exit 1
 fi
 
-log "Checking if directives file has changed"
-if [ "$(cat /etc/hsync/directives)" == "$(cat $TMP_FILE)" ]; then
-	log "Directives file stills the same, skipping config"
-	rm -f $TMP_FILE
-	exit 0
+## Check if huronOS rebooted in the last 120 seconds
+log "Checking if huronOS rebooted in the last 120 seconds"
+last_reboot_time=$(uptime -s | sed 's/ /T/g')
+if [ "$(date --date="-120 sec" +%s)" -gt "$(date --date="$last_reboot_time" +%s)" ]; then
+    ## Check if directives has changed
+    log "Checking if directives file has changed"
+    if [ "$(cat /etc/hsync/directives)" == "$(cat $TMP_FILE)" ]; then
+        log "Directives file stills the same, skipping config"
+        rm -f $TMP_FILE
+        exit 0
+    fi
 fi
 
 ## Check if directive file has already expired
