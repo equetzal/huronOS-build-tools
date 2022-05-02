@@ -63,15 +63,20 @@ set_global_config () {
 	log "Setting available keyboards to -> $KEYBOARDS"
 
 	## Update current (default) keyboard layout
-	IDX=0
-	for LAYOUT in $KEYBOARDS; do
-		if [ "$LAYOUT" = "$DefaultKeyboardLayout" ]; then
-			break
-		fi
-		let "IDX+=1"
-	done;
-	su contestant -c "gsettings set org.gnome.desktop.input-sources current $IDX"
-	log "Setting current keyboard to -> $DefaultKeyboardLayout"
+	if [ "$TO_APPLY" != "Contest" ]; then
+		# Update only if current mode is not contest
+		IDX=0
+		for LAYOUT in $KEYBOARDS; do
+			if [ "$LAYOUT" = "$DefaultKeyboardLayout" ]; then
+				break
+			fi
+			let "IDX+=1"
+		done;
+		su contestant -c "gsettings set org.gnome.desktop.input-sources current $IDX"
+		log "Setting current keyboard to -> $DefaultKeyboardLayout"
+	else
+		log "Skipping current keyboard layout update"
+	fi
 }
 
 get_specific_config(){
