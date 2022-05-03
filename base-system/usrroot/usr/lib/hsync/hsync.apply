@@ -184,15 +184,21 @@ set_specific_config(){
 		BOOKMARKS_LINES="$BOOKMARKS_LINES\n        <DT><A HREF=\"$URL\">$NAME</A>"
 	done < <(echo $BOOKMARKS | xargs -n 2)
 	log "Setting bookmarks:\n$BOOKMARKS_LINES"
-	# Prepare bookmarks file
-	TMP_FILE="/tmp/bookmarks-file-$$.html"
+	
+	# Firefox bookmarks
+	TMP_FILE="/tmp/firefox-bookmarks-$$.html"
 	cp /etc/hsync/bookmarks/templates/firefox.html $TMP_FILE
 	sed -i "s|<!-- Bookmarks Lines -->|$BOOKMARKS_LINES|g" $TMP_FILE
-	# Firefox bookmarks
 	log "Updating firefox bookmarks in /usr/lib/firefox-esr/bookmarks.html"
+	mkdir -p /usr/lib/firefox-esr
 	cp $TMP_FILE /usr/lib/firefox-esr/bookmarks.html
+	
 	# Chromium bookmarks
+	TMP_FILE="/tmp/chromium-bookmarks-$$.html"
+	cp /etc/hsync/bookmarks/templates/chromium.html $TMP_FILE
+	sed -i "s|<!-- Bookmarks Lines -->|$BOOKMARKS_LINES|g" $TMP_FILE
 	log "Updating chromium bookmarks in /usr/share/chromium/initial_bookmarks.html"
+	mkdir -p /usr/share/chromium
 	cp $TMP_FILE /usr/share/chromium/initial_bookmarks.html
 	
 	## Available Software
