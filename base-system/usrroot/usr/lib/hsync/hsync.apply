@@ -176,6 +176,22 @@ set_specific_config(){
 		#TODO: Update network filter module
 	fi
 	
+	## Bookmarks for Internet Browsers
+	BOOKMARKS=$(echo $Bookmarks | sed 's/[{}^|]/ /g')
+	BOOKMARKS_LINES=""
+	echo $BOOKMARKS
+	while read NAME URL; do
+		BOOKMARKS_LINES="$BOOKMARKS_LINES\n        <DT><A HREF=\"$URL\">$NAME</A>"
+	done < <(echo $BOOKMARKS | xargs -n 2)
+	log "Setting bookmarks:\n$BOOKMARKS_LINES"
+	# Prepare bookmarks file
+	TMP_FILE="/tmp/bookmarks-file-$$.html"
+	cp /etc/hsync/bookmarks/templates/firefox.html $TMP_FILE
+	sed -i "s|<!-- Bookmarks Lines -->|$BOOKMARKS_LINES|g" $TMP_FILE
+	# Firefox bookmarks
+	log "Updating firefox bookmarks in /usr/lib/firefox-esr/bookmarks.html"
+	cp $TMP_FILE /usr/lib/firefox-esr/bookmarks.html
+	
 	## Available Software
 	SOFTWARE=$(echo $AvailableSoftware | sed 's/|/ /g')
 	cp -f /etc/hmm/any /etc/hmm/current
