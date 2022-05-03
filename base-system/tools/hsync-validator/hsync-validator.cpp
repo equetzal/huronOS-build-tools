@@ -88,6 +88,55 @@ std::function<bool(const std::string&, const std::function<bool(const std::strin
 
 	return true;
 };
+
+bool is_valid_pair (const std::string& value) {
+	if (value.empty()) {
+		return false;
+	}
+
+	int cnt = 0;
+	for (const char &c : value) {
+		if (c == '^') {
+			cnt++;
+		}
+	}
+
+	return value[0] == '{' && value.back() == '}' && cnt == 1;
+}
+
+std::pair<std::string, std::string> get_pair (std::string value) {
+	for (char c : "{}^") {
+		std::replace(value.begin(), value.end(), c, ' ');
+	}
+
+	std::istringstream ss(value);
+	std::string first, second;
+
+	ss >> first >> second;
+	return std::make_pair(first, second);
+}
+
+std::function<bool(const std::string&, const std::pair<
+	const std::function<bool(const std::string&)>&, 
+	const std::function<bool(const std::string&)>&>)> list_of_pairs =
+		[] (const std::string& value, const std::pair<
+				const std::function<bool(const std::string&)>&, 
+				const std::function<bool(const std::string&)>&> fun_pair) -> bool {
+	const auto list = value_to_list(value);
+
+	for (const auto &element : list) {
+		if (!is_valid_pair(element)) {
+			return false;
+		}
+
+		auto [first, second] = get_pair(element);
+		if (!fun_pair.first(first) || !fun_pair.second(second)) {
+			return false;
+		}
+	}
+
+	return true;
+};
 // -----------------------------------------------------
 
 // --------------- Line reading utils ------------------
@@ -369,6 +418,17 @@ void check_allow_list (const std::map<std::string, Line>& variables) {
 	}
 }
 
+void check_bookmarks (const std::map<std::string, Line>& variables) {
+	// Format: Bookmarks={first1^second1};{first2^second2};..;
+	const auto& line = get_line_for_variable(variables, "Bookmarks");
+	const auto value = get_value(line);
+
+	if (!list_of_pairs(value, std::make_pair(any_value, url_address))) {
+		ERROR(line.line_number) << "Bookmarks declaration not valid" << std::endl;
+		exit(1);
+	}
+}
+
 void check_available_software (const std::map<std::string, Line>& variables) {
 	// Format: AvailableSoftware=software1;software2;...;
 	const auto& line = get_line_for_variable(variables, "AvailableSoftware");
@@ -387,6 +447,7 @@ void check_mode_config (const std::string& filename, const std::string& mode_nam
 
 	check_wallpaper(variables);
 	check_allow_list(variables);
+	check_bookmarks(variables);
 	check_available_software(variables);
 }
 
