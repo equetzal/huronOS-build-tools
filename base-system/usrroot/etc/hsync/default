@@ -9,7 +9,7 @@ ContestConfig=false
 [Always]
 Wallpaper=default
 AllowList=all
-Bookmarks={huronOS^http://huronos.org}|{ESCOM IPN^https://www.escom.ipn.mx}|
+Bookmarks={huronOS^http://huronos.org}|{ESCOM_IPN^https://www.escom.ipn.mx}|
 AvailableSoftware=internet/chromium|
 
 [Event]
