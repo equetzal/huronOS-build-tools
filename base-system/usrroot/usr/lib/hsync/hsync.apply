@@ -191,6 +191,9 @@ set_specific_config(){
 	# Firefox bookmarks
 	log "Updating firefox bookmarks in /usr/lib/firefox-esr/bookmarks.html"
 	cp $TMP_FILE /usr/lib/firefox-esr/bookmarks.html
+	# Chromium bookmarks
+	log "Updating chromium bookmarks in /usr/share/chromium/initial_bookmarks.html"
+	cp $TMP_FILE /usr/share/chromium/initial_bookmarks.html
 	
 	## Available Software
 	SOFTWARE=$(echo $AvailableSoftware | sed 's/|/ /g')
