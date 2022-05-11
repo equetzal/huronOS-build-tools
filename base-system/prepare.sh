@@ -31,3 +31,8 @@ ln -sf /usr/lib/os-release /etc/os-release
 ln -sf /usr/lib/systemd/system/hsync.service /etc/systemd/system/hsync.service
 ln -sf /usr/lib/systemd/system/hsync.timer /etc/systemd/system/hsync.timer
 
+## hmount permissions
+chmod 640 /etc/fstab
+chmod 640 /etc/hmount/rule
+chmod 644 /usr/lib/udev/rules.d/80-huronOS-mount.rules
+chmod 740 /usr/lib/hmount/hmount.automount
