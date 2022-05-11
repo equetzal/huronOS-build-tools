@@ -27,7 +27,6 @@ ln -sf /usr/share/icons/desktop-base/256/emblems/emblem-huronos.png /etc/alterna
 ln -sf /usr/share/icons/desktop-base/256/emblems/emblem-huronos-symbolic.png /etc/alternatives/emblem-vendor-symbolic-256
 ln -sf /usr/share/icons/desktop-base/256/emblems/emblem-huronos-white.png /etc/alternatives/emblem-vendor-white-256
 
-
 ## Fix terminals not updating $PATH on su
 echo "ALWAYS_SET_PATH	yes" >> /etc/login.defs
 
@@ -54,8 +53,10 @@ cp files/directories/* /usr/share/desktop-directories/
 
 ## Set .desktop launchers
 mkdir -p /tmp/save/ 
+cp files/nano.svg /usr/share/icons/hicolor/scalable/apps/
 cp /usr/share/applications/gnome-*-panel.desktop /tmp/save/
 cp /usr/share/applications/budgie-*.desktop /tmp/save/
+cp /usr/share/applications/org.gnome.Calendar.desktop /tmp/save/
 rm /usr/share/applications/*.desktop -f
 cp files/applications/* /usr/share/applications/
 cp /tmp/save/* /usr/share/applications/
@@ -81,8 +82,9 @@ systemctl enable lightdm.service
 systemctl enable hsync.service
 systemctl enable hsync.timer
 
-## Deactivate services
+## Deactivate udisks service
 systemctl mask udisks2.service
+rm /usr/lib/udev/rules.d/*udisks2*.rules
 
 echo "Please run setup-desktop.sh on each user will have the contestant user interface"
 sleep 10

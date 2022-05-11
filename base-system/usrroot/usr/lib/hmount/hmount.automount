@@ -21,27 +21,39 @@
 PATH=$PATH:/usr/bin:/usr/sbin:/bin:/sbin
 
 BAS="$(basename "$DEVNAME")"
-UNIT="media-$BAS.mount"
+UNIT="huron-media-$BAS.mount"
 MNT="/media/$BAS"
 TARGET="/etc/systemd/system/$UNIT"
+OPTIONS="rw,sync,nosuid,dev,noexec,user,users,noauto,relatime"
 
-## Check the automount rule
-if cat /etc/hmount/rule; then
-	declare $(head -n 1 /etc/hmount/rule);
-	if [ "$ShouldMount" = "true" ]; then
-		echo "Allowing the mount of $DEVNAME";
-	else
-		echo "Denying the mount of $DEVNAME";
-		exit
-	fi
+## Avoid mounting huronOS-usb partitions
+if [[ "$BAS" =~ ^sda[1-9]*|^sdb[1-9]* ]]; then
+	echo "Skipping the mount of $DEVNAME";
+	exit
 fi
 
 if [ "$ACTION" = "add" -o "$ACTION" = "change" ]; then
+
+	## Allow new mounts only if current rule allows them
+	if cat /etc/hmount/rule; then
+		declare $(head -n 1 /etc/hmount/rule);
+		if [ "$ShouldMount" = "true" ]; then
+			echo "Allowing the mount of $DEVNAME";
+		else
+			echo "Denying the mount of $DEVNAME";
+			exit
+		fi
+	fi
+
+	## Unit should not exists
 	if [ ! -r "$TARGET" ]; then
 		if [ "$ID_FS_TYPE" != "" -a "$(cat /proc/filesystems | grep "$ID_FS_TYPE")" != "" ]; then
 			
+			## Create directory for the mount point, transfer rights to contestant
 			mkdir -p "$MNT"
-			chown contestant "$MNT"
+			chown -R contestant:contestant "$MNT"
+
+			## Create a mount unit for systemd to automount it
 			cat <<EOT >> $TARGET
 [Unit]
 Description=Disk $BAS
@@ -50,21 +62,33 @@ Description=Disk $BAS
 What=$DEVNAME
 Where=$MNT
 Type=$ID_FS_TYPE
-Options=defaults,uid=contestant
+Options=$OPTIONS
 
 [Install]
 WantedBy=multi-user.target
 EOT
 
+			## Allow contestant user to mount or umount using suid bit
+			echo "$DEVNAME $MNT $ID_FS_TYPE $OPTIONS 0 0" >> /etc/fstab
+			
+			## Do the automount with systemd
 			systemctl enable $UNIT
 			systemctl start $UNIT
+
+			## Open the file explorer with the mounted unit
 			su contestant -c "export DISPLAY=:0; (nautilus -w file://$MNT >/dev/null 2>&1 &)"
 		fi
 	fi
 fi
 
 if [ "$ACTION" = "remove" ]; then
+	## Remove the fstab rule to avoid using unauthorized suid
+	sed "s%.*$MNT.*%%g" -i /etc/fstab
+
+	## Tell systemd to disable the .mount unit
 	systemctl disable $UNIT
+
+	## Remove the files and directories used
 	rm "$TARGET"
 	rmdir "$MNT"
 fi

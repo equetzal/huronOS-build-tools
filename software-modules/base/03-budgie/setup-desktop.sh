@@ -26,9 +26,9 @@ gsettings set org.gnome.desktop.media-handling automount-open false
 gsettings set org.gnome.settings-daemon.plugins.power idle-dim false
 gsettings set org.gnome.settings-daemon.plugins.power ambient-enabled false
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 0
-gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 'nothing'
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout 0
-gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout 'nothing'
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing'
 
 
 ## Time and date
