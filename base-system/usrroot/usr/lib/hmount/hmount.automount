@@ -1,0 +1,70 @@
+#!/bin/bash
+
+# Recreate fstab entries in /etc/fstab and make /media directories
+# This script is called by udev rules, see /lib/udev/rules.d/
+# This script considers the huronOS directives to decide when to autmount devices.
+
+
+# Taken from Slax Originally authored by: Tomas M <http://www.slax.org/>
+# Modified by the huronOS team:
+#  Enya Quetzalli <equetzal@huronos.org>
+
+
+# Variables available in udev environment:
+# $ACTION (eg: add, remove)
+# $DEVNAME (full device node name including path)
+# $DEVTYPE (eg: disk)
+# $ID_FS_TYPE (eg: ext3)
+# $MAJOR and $MINOR numbers
+# $SUBSYSTEM (eg: block)
+
+PATH=$PATH:/usr/bin:/usr/sbin:/bin:/sbin
+
+BAS="$(basename "$DEVNAME")"
+UNIT="media-$BAS.mount"
+MNT="/media/$BAS"
+TARGET="/etc/systemd/system/$UNIT"
+
+## Check the automount rule
+if cat /etc/hmount/rule; then
+	declare $(head -n 1 /etc/hmount/rule);
+	if [ "$ShouldMount" = "true" ]; then
+		echo "Allowing the mount of $DEVNAME";
+	else
+		echo "Denying the mount of $DEVNAME";
+		exit
+	fi
+fi
+
+if [ "$ACTION" = "add" -o "$ACTION" = "change" ]; then
+	if [ ! -r "$TARGET" ]; then
+		if [ "$ID_FS_TYPE" != "" -a "$(cat /proc/filesystems | grep "$ID_FS_TYPE")" != "" ]; then
+			
+			mkdir -p "$MNT"
+			chown contestant "$MNT"
+			cat <<EOT >> $TARGET
+[Unit]
+Description=Disk $BAS
+
+[Mount]
+What=$DEVNAME
+Where=$MNT
+Type=$ID_FS_TYPE
+Options=defaults,uid=contestant
+
+[Install]
+WantedBy=multi-user.target
+EOT
+
+			systemctl enable $UNIT
+			systemctl start $UNIT
+			su contestant -c "export DISPLAY=:0; (nautilus -w file://$MNT >/dev/null 2>&1 &)"
+		fi
+	fi
+fi
+
+if [ "$ACTION" = "remove" ]; then
+	systemctl disable $UNIT
+	rm "$TARGET"
+	rmdir "$MNT"
+fi

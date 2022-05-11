@@ -1,0 +1,2 @@
+## Tell udev to call our mounting script each time a USB Block Device (aka memory stick) is connected. This way we can control when to allow USB memory (during contest, event, etc.) 
+KERNEL=="[!lr]*", SUBSYSTEM=="block", RUN+="/usr/lib/hmount/hmount.automount %r/%k"
