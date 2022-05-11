@@ -1,6 +1,16 @@
-PACKAGES="apparmor budgie-desktop budgie-countdown-applet budgie-network-manager-applet dconf-cli eog gnome-calculator gnome-calendar gnome-terminal libdrm-intel1 libgl1-mesa-dri libglib2.0-bin libglu1-mesa lightdm moka-icon-theme nautilus okular plank x11-utils xinit xinput xserver-xorg xserver-xorg-video-intel xterm"
+#!/bin/bash
 
-set -x
+#	budgie.sh
+#	Building and configuring the user interface module.
+#	This module introduces the contest enviroment,
+#	activaves the huron scripts, and directives sync.
+
+#	Author, the huronOS team:
+#		Enya Quetzalli <equetzal@huronos.org>
+
+set -xe
+
+PACKAGES="apparmor budgie-desktop budgie-countdown-applet budgie-network-manager-applet dconf-cli eog gnome-calculator gnome-calendar gnome-terminal libdrm-intel1 libgl1-mesa-dri libglib2.0-bin libglu1-mesa lightdm moka-icon-theme nautilus okular plank x11-utils xinit xinput xserver-xorg xserver-xorg-video-intel xterm"
 
 ## Install
 apt update
