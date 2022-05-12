@@ -3,7 +3,7 @@
 set -xe
 
 ## Load log function
-. /usr/sbin/hsync.logger
+. /usr/lib/hsync/hsync.logger
 
 ### Decide if apply [Always], [Event] or [Contest], and if directives file has expired
 NOW=$(date +'%s')

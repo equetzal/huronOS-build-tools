@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# Author, the huronOS team:
-#	Enya Quetzalli <equetzal@huronos.org>
+#	firmware.sh
+#	Building the firmware .hsm module for huronOS
+#	Author, the huronOS team:
+#		Enya Quetzalli <equetzal@huronos.org>
 
 set -xe
 

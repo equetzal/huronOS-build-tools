@@ -18,13 +18,15 @@
 # $MAJOR and $MINOR numbers
 # $SUBSYSTEM (eg: block)
 
+set -x
+
 PATH=$PATH:/usr/bin:/usr/sbin:/bin:/sbin
 
 BAS="$(basename "$DEVNAME")"
-UNIT="huron-media-$BAS.mount"
+UNIT="media-$BAS.mount"
 MNT="/media/$BAS"
 TARGET="/etc/systemd/system/$UNIT"
-OPTIONS="rw,sync,nosuid,dev,noexec,user,users,noauto,relatime"
+OPTIONS="rw,sync,nosuid,dev,noexec,user,users,noauto,relatime,uid=1000"
 
 ## Avoid mounting huronOS-usb partitions
 if [[ "$BAS" =~ ^sda[1-9]*|^sdb[1-9]* ]]; then
@@ -50,11 +52,11 @@ if [ "$ACTION" = "add" -o "$ACTION" = "change" ]; then
 		if [ "$ID_FS_TYPE" != "" -a "$(cat /proc/filesystems | grep "$ID_FS_TYPE")" != "" ]; then
 			
 			## Create directory for the mount point, transfer rights to contestant
-			mkdir -p "$MNT"
-			chown -R contestant:contestant "$MNT"
+			install -d -m 0755 -o contestant -g contestant "$MNT"
 
 			## Create a mount unit for systemd to automount it
 			cat <<EOT >> $TARGET
+## hmount-rule:do_not_save_on_persistence
 [Unit]
 Description=Disk $BAS
 

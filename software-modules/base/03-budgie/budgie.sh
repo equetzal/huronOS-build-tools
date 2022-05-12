@@ -81,6 +81,10 @@ sed -i 's/Name=.*/Name=Budgie/g' /usr/share/xsessions/lightdm-xsession.desktop
 sed -i 's/Exec=.*/Exec=budgie-desktop/g' /usr/share/xsessions/lightdm-xsession.desktop
 echo "DesktopNames=Budgie;GNOME" >> /usr/share/xsessions/lightdm-xsession-desktop
 
+## Set default dconf settings 
+cp -rf files/dconf/* /etc/dconf/
+dconf update
+
 ## Create user for contest with no password for login
 useradd -m -s /bin/bash contestant
 sed -i 's/contestant:x:/contestant::/g' /etc/passwd
