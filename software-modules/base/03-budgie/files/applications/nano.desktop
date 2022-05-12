@@ -1,1 +1,10 @@
 [Desktop Entry]
+Name=Nano
+GenericName=Text Editor
+Comment=The GNU Nano Text Editor
+Icon=/usr/share/icons/hicolor/scalable/apps/nano.svg
+Categories=Programming;Tools;
+Type=Application
+Exec=/usr/bin/nano -l %F
+Terminal=true
+NoDisplay=false

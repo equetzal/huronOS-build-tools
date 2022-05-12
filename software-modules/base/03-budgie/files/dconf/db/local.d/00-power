@@ -1,0 +1,11 @@
+[org/gnome/desktop/session]
+idle-delay=0
+idle-activation-enabled=false
+
+[org/gnome/settings-daemon/plugins/power]
+idle-dim=false
+ambient-enabled=false
+sleep-inactive-ac-timeout=0
+sleep-inactive-ac-type='nothing'
+sleep-inactive-battery-timeout=0
+sleep-inactive-battery-type='nothing'

@@ -5,7 +5,7 @@ Description=huronOS sync service
 User=root
 Group=root
 ExecStart=/usr/lib/hsync/hsync.downloader
-Restart=on-failure
+Restart=on-abnormal
 SuccessExitStatus=0
 
 [Install]

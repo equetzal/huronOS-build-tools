@@ -1,4 +1,12 @@
-#!/bin/sh
+#!/bin/bash
+
+#	shared-libs.sh
+#	This module preinstall most of the required dependencies
+#	of the modular-software available for huronOS.
+#	(eg. required software by ICPC or IOI)
+
+#	Author, the huronOS team:
+#		Enya Quetzalli <equetzal@huronos.org>
 
 set -xe
 

@@ -8,6 +8,7 @@ ContestConfig=false
 
 [Always]
 Wallpaper=default
+AllowUsbStorage=true
 AllowList=all
 Bookmarks={huronOS^http://huronos.org}|{ESCOM_IPN^https://www.escom.ipn.mx}|
 AvailableSoftware=internet/chromium|

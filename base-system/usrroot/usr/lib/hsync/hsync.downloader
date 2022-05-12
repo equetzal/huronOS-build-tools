@@ -66,6 +66,6 @@ fi
 log "Directives file changed, updating huronOS config"
 cp $TMP_FILE /etc/hsync/directives
 rm -f $TMP_FILE
-/usr/sbin/hsync.apply /etc/hsync/directives
+/usr/lib/hsync/hsync.apply /etc/hsync/directives
 
 exit 0

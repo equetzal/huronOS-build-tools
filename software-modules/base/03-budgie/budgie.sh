@@ -1,6 +1,16 @@
-PACKAGES="apparmor budgie-desktop budgie-countdown-applet budgie-network-manager-applet dconf-cli eog gnome-calculator gnome-calendar gnome-terminal libdrm-intel1 libgl1-mesa-dri libglib2.0-bin libglu1-mesa lightdm moka-icon-theme nautilus okular plank x11-utils xinit xinput xserver-xorg xserver-xorg-video-intel xterm"
+#!/bin/bash
 
-set -x
+#	budgie.sh
+#	Building and configuring the user interface module.
+#	This module introduces the contest enviroment,
+#	activaves the huron scripts, and directives sync.
+
+#	Author, the huronOS team:
+#		Enya Quetzalli <equetzal@huronos.org>
+
+set -xe
+
+PACKAGES="apparmor budgie-desktop budgie-countdown-applet budgie-network-manager-applet dconf-cli eog gnome-calculator gnome-calendar gnome-terminal libdrm-intel1 libgl1-mesa-dri libglib2.0-bin libglu1-mesa lightdm moka-icon-theme nautilus okular plank x11-utils xinit xinput xserver-xorg xserver-xorg-video-intel xterm"
 
 ## Install
 apt update
@@ -26,7 +36,6 @@ ln -sf /usr/share/icons/desktop-base/128/emblems/emblem-huronos-white.png /etc/a
 ln -sf /usr/share/icons/desktop-base/256/emblems/emblem-huronos.png /etc/alternatives/emblem-vendor-256
 ln -sf /usr/share/icons/desktop-base/256/emblems/emblem-huronos-symbolic.png /etc/alternatives/emblem-vendor-symbolic-256
 ln -sf /usr/share/icons/desktop-base/256/emblems/emblem-huronos-white.png /etc/alternatives/emblem-vendor-white-256
-
 
 ## Fix terminals not updating $PATH on su
 echo "ALWAYS_SET_PATH	yes" >> /etc/login.defs
@@ -54,8 +63,10 @@ cp files/directories/* /usr/share/desktop-directories/
 
 ## Set .desktop launchers
 mkdir -p /tmp/save/ 
+cp files/nano.svg /usr/share/icons/hicolor/scalable/apps/
 cp /usr/share/applications/gnome-*-panel.desktop /tmp/save/
 cp /usr/share/applications/budgie-*.desktop /tmp/save/
+cp /usr/share/applications/org.gnome.Calendar.desktop /tmp/save/
 rm /usr/share/applications/*.desktop -f
 cp files/applications/* /usr/share/applications/
 cp /tmp/save/* /usr/share/applications/
@@ -70,6 +81,10 @@ sed -i 's/Name=.*/Name=Budgie/g' /usr/share/xsessions/lightdm-xsession.desktop
 sed -i 's/Exec=.*/Exec=budgie-desktop/g' /usr/share/xsessions/lightdm-xsession.desktop
 echo "DesktopNames=Budgie;GNOME" >> /usr/share/xsessions/lightdm-xsession-desktop
 
+## Set default dconf settings 
+cp -rf files/dconf/* /etc/dconf/
+dconf update
+
 ## Create user for contest with no password for login
 useradd -m -s /bin/bash contestant
 sed -i 's/contestant:x:/contestant::/g' /etc/passwd
@@ -81,8 +96,9 @@ systemctl enable lightdm.service
 systemctl enable hsync.service
 systemctl enable hsync.timer
 
-## Deactivate services
+## Deactivate udisks service
 systemctl mask udisks2.service
+rm /usr/lib/udev/rules.d/*udisks2*.rules
 
 echo "Please run setup-desktop.sh on each user will have the contestant user interface"
 sleep 10
