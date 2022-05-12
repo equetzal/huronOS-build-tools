@@ -23,6 +23,38 @@ update_next_apply () {
 	fi
 }
 
+# Function taken from https://unix.stackexchange.com/questions/571772/how-to-ensure-all-processes-are-killed-before-unmounting-a-filesystem
+# $1 = mount point
+force_umount() {
+	mkdir -p /sys/fs/cgroup/freezer/prepareumount
+	echo FROZEN > /sys/fs/cgroup/freezer/prepareumount/freezer.state
+
+	for i in $(seq 1 10); do
+		for p in $(fuser -m $1 2>/dev/null); do
+			echo $p > /sys/fs/cgroup/freezer/prepareumount/cgroup.procs
+			for t in $(ps -L -o tid= -p $p); do
+				echo $t > /sys/fs/cgroup/freezer/prepareumount/tasks
+			done
+		done
+	done
+
+	#give time to an overloaded kernel to freeze everything (FREEZING->FROZEN)
+	while ! cat /sys/fs/cgroup/freezer/prepareumount/freezer.state | grep -q FROZEN; do
+		sleep 0.1
+	done
+
+	# kills, delayed
+	for i in $(cat /sys/fs/cgroup/freezer/prepareumount/cgroup.procs); do
+		kill -KILL $i
+	done
+
+	# actual kills happen now, at once
+	echo THAWED > /sys/fs/cgroup/freezer/prepareumount/freezer.state
+
+	sleep 1
+	umount $1
+}
+
 set_global_config () {
 	local GLOBAL KEYBOARDS XKB XKBS IDX LAYOUT
 	
@@ -153,6 +185,30 @@ set_specific_config(){
 			su contestant -c "gsettings set org.gnome.desktop.background picture-uri file://$FILE"
 		fi
 	fi
+
+	## USB storage config with hmount
+	if [ "$AllowUsbStorage" = "true" ]; then
+		sed "s/ShouldMount=.*/ShouldMount=true/g" -i /etc/hmount/rule
+		chmod 640 /etc/hmount/rule
+	else
+		## Change the rule
+		sed "s/ShouldMount=.*/ShouldMount=false/g" -i /etc/hmount/rule
+		chmod 640 /etc/hmount/rule
+
+		## For each device mounted, kill all processes that are using the mount point, then umount
+		MOUNT_POINTS=$(cat /proc/mounts | grep -E '/dev/sd([c-z]|[a-z][a-z])[1-9][0-9]*' | awk '{ print $2 }')
+		for MNT in $MOUNT_POINTS; do
+			#force_umount $MNT
+			if [ fuser -k -m "$MNT" || true ]; then
+				umount --lazy "$MNT"
+				rm -rf "$MNT"
+				sed "s%.*$MNT.*%%g" -i /etc/fstab
+				systemctl disable "media-$(basename $MNT).mount"
+				rm -rf "/etc/systemd/system/media-$(basename $MNT).mount"
+			fi
+		done
+	fi
+
 	
 	## Network Filtering
 	if [ "$AllowList" = "all" ]; then
