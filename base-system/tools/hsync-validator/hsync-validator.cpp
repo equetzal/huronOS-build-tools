@@ -334,7 +334,7 @@ void check_time_zone (const std::map<std::string, Line>& variables) {
 }
 
 void check_expiration_time (const std::map<std::string, Line>& variables) {
-	// Format: ConfigExpirationTime=[ never | GNU Time ]
+	// Format: ConfigExpirationTime=[ never || GNU Time ]
 	const auto& line = get_line_for_variable(variables, "ConfigExpirationTime");
 	const auto value = get_value(line);
 
@@ -345,7 +345,7 @@ void check_expiration_time (const std::map<std::string, Line>& variables) {
 }
 
 std::vector<std::string> check_available_layouts (const std::map<std::string, Line>& variables) {
-	// Format: AvailableKeyboardLayouts=layout1;layout2;...;
+	// Format: AvailableKeyboardLayouts=layout1|layout2|...|
 	const auto& line = get_line_for_variable(variables, "AvailableKeyboardLayouts");
 	const auto value = get_value(line);
 
@@ -371,7 +371,7 @@ void check_default_layout (
 }
 
 bool check_event_config (const std::map<std::string, Line>& variables) {
-	// Format: EventConfig=[ True | False ]
+	// Format: EventConfig=[ true || false ]
 	const auto& line = get_line_for_variable(variables, "EventConfig");
 	const auto value = get_value(line);
 
@@ -384,7 +384,7 @@ bool check_event_config (const std::map<std::string, Line>& variables) {
 }
 
 bool check_contest_config (const std::map<std::string, Line>& variables) {
-	// Format: ContestConfig=[ True | False ]
+	// Format: ContestConfig=[ true || false ]
 	const auto& line = get_line_for_variable(variables, "ContestConfig");
 	const auto value = get_value(line);
 
@@ -397,7 +397,7 @@ bool check_contest_config (const std::map<std::string, Line>& variables) {
 }
 
 void check_wallpaper (const std::map<std::string, Line>& variables) {
-	// Format: Wallpaper=[ default | url ]
+	// Format: Wallpaper=[ default || url ]
 	const auto& line = get_line_for_variable(variables, "Wallpaper");
 	const auto value = get_value(line);
 
@@ -407,8 +407,19 @@ void check_wallpaper (const std::map<std::string, Line>& variables) {
 	}
 }
 
+void check_usb_storage_config (const std::map<std::string, Line>& variables) {
+	// Format: AllowUsbStorage=[ true || false ]
+	const auto& line = get_line_for_variable(variables, "AllowUsbStorage");
+	const auto value = get_value(line);
+
+	if (!exact_value(value, "true") && !exact_value(value, "false")) {
+		ERROR(line.line_number) << "Allow USB storage config not valid" << std::endl;
+		exit(1);
+	}
+}
+
 void check_allow_list (const std::map<std::string, Line>& variables) {
-	// Format: AllowList=[ all | url1;url2;...; ]
+	// Format: AllowList=[ all || url1|url2|...| ]
 	const auto& line = get_line_for_variable(variables, "AllowList");
 	const auto value = get_value(line);
 
@@ -419,7 +430,7 @@ void check_allow_list (const std::map<std::string, Line>& variables) {
 }
 
 void check_bookmarks (const std::map<std::string, Line>& variables) {
-	// Format: Bookmarks={first1^second1};{first2^second2};..;
+	// Format: Bookmarks={first1^second1}|{first2^second2}|..|
 	const auto& line = get_line_for_variable(variables, "Bookmarks");
 	const auto value = get_value(line);
 
@@ -430,7 +441,7 @@ void check_bookmarks (const std::map<std::string, Line>& variables) {
 }
 
 void check_available_software (const std::map<std::string, Line>& variables) {
-	// Format: AvailableSoftware=software1;software2;...;
+	// Format: AvailableSoftware=software1|software2|...|
 	const auto& line = get_line_for_variable(variables, "AvailableSoftware");
 	const auto value = get_value(line);
 
@@ -446,6 +457,7 @@ void check_mode_config (const std::string& filename, const std::string& mode_nam
 	const auto variables = get_variables(lines);
 
 	check_wallpaper(variables);
+	check_usb_storage_config(variables);
 	check_allow_list(variables);
 	check_bookmarks(variables);
 	check_available_software(variables);
