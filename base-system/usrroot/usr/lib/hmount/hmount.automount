@@ -23,10 +23,12 @@ set -x
 PATH=$PATH:/usr/bin:/usr/sbin:/bin:/sbin
 
 BAS="$(basename "$DEVNAME")"
-UNIT="media-$BAS.mount"
-MNT="/media/$BAS"
+LABEL="$(echo $ID_FS_LABEL | sed 's%-%_%g')"
+UNIT="media-$LABEL.mount"
+MNT="/media/$LABEL"
 TARGET="/etc/systemd/system/$UNIT"
-OPTIONS="rw,sync,nosuid,dev,noexec,user,users,noauto,relatime,uid=1000"
+OPTIONS="rw,sync,nosuid,dev,noexec,user,users,noauto,relatime"
+OWNER="uid=1000"
 
 ## Avoid mounting huronOS-usb partitions
 if [[ "$BAS" =~ ^sda[1-9]*|^sdb[1-9]* ]]; then
@@ -51,6 +53,11 @@ if [ "$ACTION" = "add" -o "$ACTION" = "change" ]; then
 	if [ ! -r "$TARGET" ]; then
 		if [ "$ID_FS_TYPE" != "" -a "$(cat /proc/filesystems | grep "$ID_FS_TYPE")" != "" ]; then
 			
+			## If the file system es FAT32 (pretty common), use OWNER as FAT32 is not POSIX compatible
+			if [ "$ID_FS_TYPE" = "vfat" ]; then
+				OPTIONS="${OPTIONS},${OWNER}"
+			fi
+
 			## Create directory for the mount point, transfer rights to contestant
 			install -d -m 0755 -o contestant -g contestant "$MNT"
 
@@ -76,6 +83,9 @@ EOT
 			## Do the automount with systemd
 			systemctl enable $UNIT
 			systemctl start $UNIT
+
+			## If filesystem is POSIX, reasign ownership
+			chown -R contestant:contestant "$MNT"
 
 			## Open the file explorer with the mounted unit
 			su contestant -c "export DISPLAY=:0; (nautilus -w file://$MNT >/dev/null 2>&1 &)"
