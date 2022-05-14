@@ -70,6 +70,9 @@ cp bootloader/EFI/Boot/syslinux.efi $BOOT/EFI/Boot/bootx64.efi
 cp bootloader/EFI/Boot/{ldlinux.e64,menu.c32,libutil.c32,vesamenu.c32,libcom32.c32} $BOOT/EFI/Boot
 cp bootloader/syslinux.cfg $BOOT/EFI/Boot
 
+## Copy installer
+cp tools/installer/install.sh "${LIVEKITDATA}/install.sh"
+
 # create compressed 01-core.sb
 COREFS=""
 for i in $MKMOD; do

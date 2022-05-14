@@ -1,12 +1,24 @@
 #!/bin/bash
 
-#set -x
+#	install.sh
+#	Script to select, partition, format, configure and install 
+#	huronOS on a removable USB storage device.
+#	Author:
+#		Enya Quetzalli <equetzal@huronos.org>
+
+# $1 = message to print
+print_step(){
+	echo -e "$(tput setab 2)$(tput bold)$1$(tput sgr0)"
+}
+
+print_step "Starting huronOS installation"
 
 ## Save the directory where the script is running, it should match the ISO of huronOS
 ISO_DIR=$(dirname $(readlink -f $0))
-echo "huronOS Image directory -> $ISO_DIR"
+print_step "[1/n] Locating huronOS image -> $ISO_DIR"
 
 ## Select the device we want to install huronOS to
+print_step "[2/n] Selecting removable device to install huronOS on"
 DEVICES=$(lsblk --pairs --output NAME,PATH,HOTPLUG,TYPE,VENDOR,MODEL,SIZE,LABEL --sort NAME) 
 COPY_DEVICES="$DEVICES"
 DEVNUM=0
@@ -62,18 +74,21 @@ read -p "The selected disk is $(tput setab 2)$(tput setaf 1)$(tput bold)$TARGET$
 
 ## Exit if answer is not Y or y
 if [ "$CONFIRM" != "Y" ] && [ "$CONFIRM" != "y" ]; then
+	print_step "Exiting installer"
 	exit 1
 fi
 
 ## User confirmed, continue
 
 ## For each mountpoint that the device is using, kill and unmount
-for MNT_PNT in $(lsblk --output PATH,MOUNTPOINT | grep -E "/dev/sdc[1-9]+" | awk '{ print $2 }'); do
+print_step "[3/n] Unmounting selected device partitions"
+for MNT_PNT in $(lsblk --output PATH,MOUNTPOINT | grep -E "${TARGET}[1-9]+" | awk '{ print $2 }'); do
 	echo "Cleaning $MNT_PNT"
 	fuser -k -m "$MNT_PNT" || true
 	umount "$MNT_PNT"
 done
 
+print_step "[4/n] Partitioning device $TARGET"
 ## Set positions on the target device
 DISK_SIZE=$(blockdev --getsize64 $TARGET)
 DISK_SECTORS=$(blockdev --getsz $TARGET)
@@ -97,8 +112,10 @@ parted -a optimal --script $TARGET \
 	mkpart primary 0% $SYSTEM_PART_END \
 	mkpart primary $SYSTEM_PART_END $EVENT_PART_END \
 	mkpart primary $EVENT_PART_END 100% \
+	set 1 boot on
 
 ## Create the filesystems
+print_step "[5/n] Creating filesystems"
 mkfs.vfat -F 32 -n HURONOS -I "${TARGET}1"
 mkfs.ext4 -L event-data -F "${TARGET}2"
 mkfs.ext4 -L contest-data -F "${TARGET}3"
@@ -111,8 +128,29 @@ echo "system.uuid=$SYSTEM_UUID"
 echo "event.uuid=$EVENT_UUID"
 echo "contest.uuid=$CONTEST_UUID"
 
+## Mount filesystems
+SYSTEM_MNT=/tmp/$$/SYS
+mkdir -p $SYSTEM_MNT
+mount UUID=$SYSTEM_UUID $SYSTEM_MNT
+
 ## Start copying the contents of huronOS installation
+print_step "[6/n] Copying huronOS system data"
+cp --verbose -rf $ISO_DIR/huronOS/ $SYSTEM_MNT
+cp --verbose -rf $ISO_DIR/boot/ $SYSTEM_MNT
+mv --verbose $SYSTEM_MNT/boot/EFI/ $SYSTEM_MNT
 
 ## Configure the bootloader
+print_step "[7/n] Making device bootable"
+sed "s|system.partition=UUID|system.partition=$SYSTEM_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
+sed "s|event.partition=UUID|event.partition=$EVENT_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
+sed "s|contest.partition=UUID|contest.partition=$CONTEST_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
+$SYSTEM_MNT/boot/extlinux.x64 --install $SYSTEM_MNT/boot/
 
 ## Configure root password and other things
+
+## Unmount fylesystems
+print_step "[8/n] Unmounting device"
+umount $SYSTEM_MNT
+rm -rf /tmp/$$/
+
+print_step "Done!, you can remove your device now :)"
