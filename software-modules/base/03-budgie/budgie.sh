@@ -22,6 +22,7 @@ rm -rf /usr/share/images/desktop-base/*
 rm /usr/share/xsessions/budgie-desktop.desktop
 
 ## Replace debian logo branding with huronOS
+rm -rf /usr/share/wallpapers/
 rm -rf /usr/share/icons/desktop-base/*
 cp -rf files/vendor/* /usr/share/icons/desktop-base
 ln -sf /usr/share/icons/desktop-base/scalable/emblems/emblem-huronos.svg /etc/alternatives/emblem-vendor-scalable
@@ -82,7 +83,11 @@ sed -i 's/Exec=.*/Exec=budgie-desktop/g' /usr/share/xsessions/lightdm-xsession.d
 echo "DesktopNames=Budgie;GNOME" >> /usr/share/xsessions/lightdm-xsession-desktop
 
 ## Set default dconf settings 
+cp files/huronOS-plank-config.dump /tmp/huronOS-plank-config.dump
+chmod 777 /tmp/huronOS-plank-config.dump
+mkdir -p /etc/dconf/
 cp -rf files/dconf/* /etc/dconf/
+chmod -R 755 /etc/dconf/
 dconf update
 
 ## Create user for contest with no password for login

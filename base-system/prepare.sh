@@ -23,6 +23,8 @@ if [ "$DEVELOPER" = "true" ]; then
 	pushd devroot && cp --parents -afr * / && popd
 fi
 
+rm -rf /usr/share/wallpapers/
+
 # Create symlinks according to https://wiki.debian.org/Derivatives/Guidelines
 ln -sf /etc/dpkg/origins/huronos /etc/dpkg/origins/default
 ln -sf /usr/lib/os-release /etc/os-release

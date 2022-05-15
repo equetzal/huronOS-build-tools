@@ -13,4 +13,5 @@ apt update
 apt install --yes --no-install-recommends $FIRMWARE
 apt autoremove --yes --purge
 
-savechanges /02-firmware.hsm
+savechanges /tmp/02-firmware.hsm
+cp /tmp/02-firmware.hsm /run/initramfs/memory/data/huronOS/base --verbose

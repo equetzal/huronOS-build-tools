@@ -2,7 +2,7 @@
 Name=Midnight Commander
 Comment=File manager
 Exec=mc
-Icon=MidnightCommander
+Icon=mc
 Terminal=true
 Type=Application
 Categories=Tools;

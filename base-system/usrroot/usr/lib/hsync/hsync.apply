@@ -248,6 +248,7 @@ set_specific_config(){
 	log "Updating firefox bookmarks in /usr/lib/firefox-esr/bookmarks.html"
 	mkdir -p /usr/lib/firefox-esr
 	cp $TMP_FILE /usr/lib/firefox-esr/bookmarks.html
+	rm -rf $TMP_FILE
 	
 	# Chromium bookmarks
 	TMP_FILE="/tmp/chromium-bookmarks-$$.html"
@@ -256,6 +257,7 @@ set_specific_config(){
 	log "Updating chromium bookmarks in /usr/share/chromium/initial_bookmarks.html"
 	mkdir -p /usr/share/chromium
 	cp $TMP_FILE /usr/share/chromium/initial_bookmarks.html
+	rm -rf $TMP_FILE
 	
 	## Available Software
 	SOFTWARE=$(echo $AvailableSoftware | sed 's/|/ /g')
@@ -265,6 +267,7 @@ set_specific_config(){
 	done
 	log "Activating software -> $SOFTWARE"
 	hmm block-update /etc/hmm/current | sed -r "s/\x1B\[(([0-9]{1,2})?(;)?([0-9]{1,2})?)?[m,K,H,f,J]//g" | tee -a /var/log/hsync.log
+	chown -R contestant:contestant /home/contestant/.config/JetBrains
 }
 
 aufs_move_current_partition(){

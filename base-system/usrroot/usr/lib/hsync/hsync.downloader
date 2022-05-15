@@ -21,6 +21,7 @@ declare "$(head -n 1 /etc/hsync/server)"
 TMP_FILE="/tmp/directives-$$.hdf"
 wget --timeout=10 -O $TMP_FILE $CONFIG_FILE
 if [ $? -ne 0 ]; then
+	rm -rf $TMP_FILE
 	log "Download of huronOS directives FAILED"
 	exit 0
 fi
@@ -43,7 +44,7 @@ if [ "$(date --date="-120 sec" +%s)" -gt "$(date --date="$last_reboot_time" +%s)
     log "Checking if directives file has changed"
     if [ "$(cat /etc/hsync/directives)" == "$(cat $TMP_FILE)" ]; then
         log "Directives file stills the same, skipping config"
-        rm -f $TMP_FILE
+        rm -rf $TMP_FILE
         exit 0
     fi
 fi
@@ -65,7 +66,7 @@ fi
 
 log "Directives file changed, updating huronOS config"
 cp $TMP_FILE /etc/hsync/directives
-rm -f $TMP_FILE
+rm -rf $TMP_FILE
 /usr/lib/hsync/hsync.apply /etc/hsync/directives
 
 exit 0

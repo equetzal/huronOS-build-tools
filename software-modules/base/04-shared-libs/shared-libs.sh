@@ -26,4 +26,5 @@ apt install --yes --no-install-recommends $LIBS
 mkdir -p /usr/share/glib-2.0/schemas/
 cp gschemas.compiled /usr/share/glib-2.0/schemas/
 
-savechanges /run/initramfs/memory/data/huronOS/base/04-shared-libs.hsm
+savechanges /tmp/04-shared-libs.hsm
+cp /tmp/04-shared-libs.hsm /run/initramfs/memory/data/huronOS/base --verbose
