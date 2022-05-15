@@ -141,9 +141,9 @@ mv --verbose $SYSTEM_MNT/boot/EFI/ $SYSTEM_MNT
 
 ## Configure the bootloader
 print_step "[7/n] Making device bootable"
-sed "s|system.partition=UUID|system.partition=$SYSTEM_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
-sed "s|event.partition=UUID|event.partition=$EVENT_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
-sed "s|contest.partition=UUID|contest.partition=$CONTEST_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
+sed "s|system.uuid=UUID|system.uuid=$SYSTEM_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
+sed "s|event.uuid=UUID|event.uuid=$EVENT_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
+sed "s|contest.uuid=UUID|contest.uuid=$CONTEST_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
 $SYSTEM_MNT/boot/extlinux.x64 --install $SYSTEM_MNT/boot/
 
 ## Configure root password and other things
