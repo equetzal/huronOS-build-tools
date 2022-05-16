@@ -181,6 +181,17 @@ update_cache()
 	echo "Restarting menu"
 }
 
+## The mount.aufs binary tool, kill proceses, we do not want that
+mask_aufs_mounts(){
+	mv -f /usr/sbin/mount.aufs /usr/sbin/mount.aufs-
+	mv -f /usr/sbin/umount.aufs /usr/sbin/umount.aufs-
+}
+
+unmask_aufs_mounts(){
+	mv -f /usr/sbin/mount.aufs- /usr/sbin/mount.aufs
+	mv -f /usr/sbin/umount.aufs- /usr/sbin/umount.aufs
+}
+
 
 usage()
 {
@@ -192,13 +203,17 @@ usage()
 
 
 if [ "$1" = "activate" ]; then
+	mask_aufs_mounts
 	activate "$2"
+	unmask_aufs_mounts
 	update_cache
 	exit
 fi
 
 if [ "$1" = "deactivate" ]; then
+	mask_aufs_mounts
 	deactivate "$2"
+	unmask_aufs_mounts
 	update_cache
 	exit
 fi
@@ -209,7 +224,9 @@ if [ "$1" = "active-modules" ]; then
 fi
 
 if [ "$1" = "block-update" ]; then
+	mask_aufs_mounts
 	block_update "$2"
+	unmask_aufs_mounts
 	update_cache
 	exit
 fi
