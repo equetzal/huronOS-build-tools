@@ -419,7 +419,7 @@ void check_usb_storage_config (const std::map<std::string, Line>& variables) {
 }
 
 void check_allow_list (const std::map<std::string, Line>& variables) {
-	// Format: AllowList=[ all || url1|url2|...| ]
+	// Format: AllowList=[ all || any || url1|url2|...| ]
 	const auto& line = get_line_for_variable(variables, "AllowList");
 	const auto value = get_value(line);
 
