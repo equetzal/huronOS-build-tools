@@ -13,7 +13,7 @@ set -xe
 systemctl stop hsync.timer
 systemctl stop hsync.service
 /usr/lib/hsync/hsync.apply /etc/hsync/default
-hmm block-update /etc/hmm/any
+hmm -u --block-update /etc/hmm/any
 rm -rf /etc/hsync/directives
 rm -rf /etc/hmm/current
 rm -rf /usr/share/backgrounds/custom*

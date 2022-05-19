@@ -266,7 +266,7 @@ set_specific_config(){
 		sed "s%$SFW.*%$SFW\t\t\ttrue%g" -i /etc/hmm/current
 	done
 	log "Activating software -> $SOFTWARE"
-	hmm block-update /etc/hmm/current | sed -r "s/\x1B\[(([0-9]{1,2})?(;)?([0-9]{1,2})?)?[m,K,H,f,J]//g" | tee -a /var/log/hsync.log
+	hmm -u --block-update /etc/hmm/current | sed -r "s/\x1B\[(([0-9]{1,2})?(;)?([0-9]{1,2})?)?[m,K,H,f,J]//g" | tee -a /var/log/hsync.log
 	chown -R contestant:contestant /home/contestant/.config/JetBrains
 }
 

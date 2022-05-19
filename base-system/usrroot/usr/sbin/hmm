@@ -1,167 +1,262 @@
 #!/bin/bash
 
 # hmm // Huron Module Manager
-#	Huron module manager, is the tool that allows huronOS to activate and
-#	decativate modules automatically on the fly using AUFS. It also allows
-#	the creation of new modules.
+# Huron module manager, is the tool that allows huronOS to activate and
+# decativate modules automatically on the fly using AUFS. It also allows
+# the creation of new modules.
 
-# Taken from Slax, Originally authored by: Tomas M <http://www.slax.org/>
-# Modified by the huronOS team:
+# Taken from Slax, authored by: Tomas M <http://www.slax.org/>
+# Modified and redistributed by the huronOS team:
 #	Enya Quetzalli <equetzal@huronos.org>
 #	Abraham Omar   <aomm@huronos.org>
 
-LIVE=/run/initramfs/memory
-RAMSTORE=$LIVE/modules
+## Basic vars
+readonly MEMORY=/run/initramfs/memory
+readonly MODULES_MNT=$MEMORY/bundles
+readonly MODULES_STORE=$MEMORY/store
+declare SILENT="false"
+declare FORCE="false"
+declare UPDATE_MENU="false"
 
-# Print error message and exit
-# $1 = error message
-#
-die(){
-	echo "$1" >&2
-	exit 1
+## Help function, it prints sintax to user
+help(){
+	echo "Huron Module Manager"
+	echo "This tool will help you to automate the addition and removal"
+	echo "of Huron Software Modules (.hsm files), you can also provide"
+	echo "a Modules Description File (.mdf file) to activate/deactive "
+	echo "serveral .hsm"
+	echo
+	echo "Syntax: hmm [options] [operation]"
+	echo
+	echo "operation:"
+	printf '%-30.30s\t%s\n' 	"--help"			"Display the help and exit."
+	printf '%-30.30s\t%s\n' 	"--list-modules" 		"Lists the modules stacked on the root AUFS union."
+	printf '%-30.30s\t%s\n' 	"--activate [.hsm file]"	"Add the provided module to the root AUFS union."
+	printf '%-30.30s\t%s\n'		"--deactivate [.hsm file]"	"Removes the provided module from the root AUFS union."
+	printf '%-30.30s\t%s\n'		"--block-update [.mdf file]"	"Add or Remove each of the modules provided on the file."
+	echo
+	echo "options:"
+	printf '%-5.5s\t%s\n'	"-s"	"Do operations silently."
+	printf '%-5.5s\t%s\n'	"-f"	"Force the deactivation of modules by killing any program that is blocking the"
+	printf '%-5.5s\t%s\n'	""	"module, like a file being used that is part of the module."
+	printf '%-5.5s\t%s\n'	"-u"	"Updates the menu bar after operation"
 }
 
 
-print_branches(){
-	local SI MODULE LOOP CWD
+## Main function to execute
+# $1 = options OR operation
+main(){
 
-	SI="/sys/fs/aufs/$(cat /proc/mounts | grep 'aufs / aufs' | egrep -o 'si=([^,) ]+)' | tr = _)"
-	CWD="$(pwd)"
-	cd "$SI"
-	ls -v1 | grep -v xi_path | egrep 'br[0-9]+' | xargs cat | grep memory/bundles | rev | cut -b 4- | rev | while read MODULE; do
+	## Iterate while input options still available
+	while [ True ]; do
 
-	if mountpoint -q "$MODULE"; then
-		LOOP=$(cat /proc/mounts | fgrep " $MODULE squashfs" | cut -d " " -f 1)
-		echo -n "$MODULE"
-		echo -ne "\t"
-		losetup $LOOP | sed -r "s:.*[(]|[)].*::g"
-	fi
-	done | tac
-	cd "$CWD"
+		## This is an operation
+		if [[ $1 == --* ]]; then
+			case $1 in
+				"--help")
+					help; shift 1;;
+				"--list-modules")
+					list_modules; shift 1;;
+				"--activate")
+					mask; activate $2; unmask; update_menu; shift 2;;
+				"--deactivate")
+					mask; deactivate $2; unmask; update_menu; shift 2;;
+				"--block-update")
+					mask; block_update $2; unmask; update_menu; shift 2 ;;
+				*) echo "Unknown operation '$1', please run [hmm --help] for help";exit 1;;
+			esac
+			exit 0
+
+		## This are options
+		elif [[ $1 == -* ]]; then
+			## Loop on each option
+			OPTIONS=$(echo $1 | sed 's/-//g' | sed 's:\(.\):\1\n:g')
+			while read OP; do
+				case $OP in
+					"s") SILENT="true" ;;
+					"f") FORCE="true" ;;
+					"u") UPDATE_MENU="true" ;;
+					" "|"") : ;;
+					*) echo "Unknown option '$OP', please run [hmm --help] for help";exit 1;;
+				esac
+			done < <(echo $OPTIONS | xargs -n 1)
+			shift 1
+
+		## The command input does not follow sintax
+		else
+			echo "Unknown syntax, please run [hmm --help] for help"
+			exit 1
+		fi
+
+	done
 }
 
+## List the huronOS modules loaded on the system
+list_modules(){
+	local STACK_ID BRANCHES_DIR MODULE LOOP CWD
+	## AUFS is able to have several union filesystems, each have a Stack Id (SI).
+	# we want the one used on the / root filesystem.
+	STACK_ID=$(cat /proc/mounts | grep 'aufs / aufs' | egrep -o 'si=([^,) ]+)' | tr = _)
+	BRANCHES_DIR="/sys/fs/aufs/${STACK_ID}"
+
+	## Move to the branches dir
+	pushd $BRANCHES_DIR >/dev/null
+	ls -v1 | grep -v xi_path | egrep 'br[0-9]+' | xargs cat | grep $MODULES_MNT | cut -d= -f1 | while read MODULE; do
+		## Returns true if the path is a mountpoint
+		if mountpoint -q "$MODULE"; then
+			LOOP=$(cat /proc/mounts | fgrep " $MODULE squashfs" | cut -d " " -f 1)
+			printf '%-55.55s\t%s\n' "$MODULE" "$(losetup $LOOP | sed -r 's:.*[(]|[)].*::g')"
+		fi
+	done
+	## Return to original path
+	popd >/dev/null
+}
 
 # Activate Module
 # $1 = file to activate
-#
 activate(){
-	local MODULE TGT BAS
+	local MODULE_PATH TARGET_MNT MODULE_BAS
 
-	MODULE="$(readlink -f "$1")"
-	BAS="$(basename "$MODULE")"
+	MODULE_PATH="$(readlink -f "$1")"
+	MODULE_BAS="$(basename "$MODULE_PATH")"
 
-	# If file does not exists
-	if [ ! -r "$MODULE" ]; then
-		echo "$(tput setaf 1)!huronOS module not found: $MODULE$(tput sgr0)"
+	## If module does not exists
+	if [ ! -r "$MODULE_PATH" ]; then
+		[ "$SILENT" != "true" ] &&  echo "$(tput setaf 1)!huronOS module not found: $MODULE_PATH$(tput sgr0)"
 		return 1
 	fi
 
-	# check if the file is part of aufs union, if yes we need to copy it outside
-	if df "$MODULE" | cut -d " " -f 1 | grep -q aufs; then
-		TGT="$RAMSTORE"
-		mkdir -p "$TGT"
-		if [ -r $TGT/$BAS ]; then
-			echo "$(tput setaf 1)!huronOS module failed to load: File exists $TGT/$BAS, Staff member needed!!$(tput sgr0)"
+	## If the module in aufs union, we need to copy it outside
+	if df "$MODULE_PATH" | cut -d " " -f 1 | grep -q aufs; then
+		TARGET="$MODULES_STORE"
+		mkdir -p "$TARGET"
+		if [ -r $TARGET/$MODULE_BAS ]; then
+			[ "$SILENT" != "true" ] && echo "$(tput setaf 1)!huronOS module failed to load: File exists $TARGET/$MODULE_BAS, Staff member needed!!$(tput sgr0)"
 			return 1
 		fi
-		cp -n "$MODULE" "$TGT/$BAS"
+		cp -n "$MODULE_PATH" "$TARGET/$MODULE_BAS"
 		if [ $? -ne 0 ]; then
-			echo "$(tput setaf 1)!huronOS module failed to load: Error copying module $TGT/$BAS: Low RAM/Disk, Staff member needed!!$(tput sgr0)"
+			[ "$SILENT" != "true" ] && echo "$(tput setaf 1)!huronOS module failed to load: Error copying module $TARGET/$MODULE_BAS: Low RAM/Disk, Staff member needed!!$(tput sgr0)"
 			return 1
 		fi
-		MODULE="$TGT/$BAS"
+		MODULE_PATH="$TARGET/$MODULE_BAS"
 	fi
 
-	# If this particular file is already activated
-	if print_branches | cut -f 2 | fgrep -q "$MODULE"; then
-		echo "$(tput setaf 2)+huronOS module activated: $BAS$(tput sgr0)"
+	## If this module is already activated
+	if list_modules | cut -f 2 | fgrep -q "$MODULE_PATH"; then
+		[ "$SILENT" != "true" ] && echo "$(tput setaf 2)+huronOS module activated: $MODULE_BAS$(tput sgr0)"
 		return 0
 	fi
 
-	# mount remount,add
-	TGT="$LIVE/bundles/$BAS"
-	mkdir -p "$TGT"
-
-	mount -n -o loop,ro "$MODULE" "$TGT"
+	## Mount module as loop device
+	TARGET="$MODULES_MNT/$MODULE_BAS"
+	mkdir -p "$TARGET"
+	mount -n -o loop,ro "$MODULE_PATH" "$TARGET"
 	if [ $? -ne 0 ]; then
-		echo "$(tput setaf 1)!huronOS module failed to load: $MODULE -> $TGT, Staff member needed!!$(tput sgr0)"
+		[ "$SILENT" != "true" ] && echo "$(tput setaf 1)!huronOS module failed to load: $MODULE_PATH -> $TARGET, Staff member needed!!$(tput sgr0)"
 		return 1
 	fi
 
-	# Add current branch to aufs union
-	mount -t aufs -o remount,add:1:"$TGT" aufs /
+	## Add module branch to aufs union
+	mount -t aufs -o remount,add:1:"$TARGET" aufs /
 	if [ $? -ne 0 ]; then
-		umount "$TGT"
-		rmdir "$TGT"
-		echo "$(tput setaf 1)!huronOS module faied to attach on AUFS, Staff member needed!!$(tput sgr0)"
+		umount "$TARGET"
+		rmdir "$TARGET"
+		[ "$SILENT" != "true" ] && echo "$(tput setaf 1)!huronOS module $MODULE_BAS failed to attach on AUFS, Staff member needed!!$(tput sgr0)"
 		return 1
 	fi
 
-	echo "$(tput setaf 2)+huronOS module activated: $BAS$(tput sgr0)"
+	[ "$SILENT" != "true" ] && echo "$(tput setaf 2)+huronOS module activated: $MODULE_BAS$(tput sgr0)"
 	return 0
 }
 
 
 # Deactivate module of the given name
 # $1 = path to module file, or its name
-#
 deactivate(){
-	local BUNDLES MODULE MATCH LOOP LOOPFILE
+	local MODULE_BAS MATCH LOOP LOOPFILE
+	MODULE_BAS="$(basename "$1")"
 
-	BUNDLES=$LIVE/bundles
-	MODULES=$LIVE/modules
-	MODULE="$(basename "$1")"
+	rmdir "$MODULES_MNT/$MODULE_BAS" 2>/dev/null    # this fails unless the dir is
+	rmdir "$MODULES_MNT/$MODULE_BAS.hsm" 2>/dev/null # forgotten there empty. It's safe this way
 
-	rmdir "$BUNDLES/$MODULE" 2>/dev/null    # this fails unless the dir is
-	rmdir "$BUNDLES/$MODULE.hsm" 2>/dev/null # forgotten there empty. It's safe this way
-
-	if [ ! -d "$BUNDLES/$MODULE" ]; then
+	if [ ! -d "$MODULES_MNT/$MODULE_BAS" ]; then
 		# we don't have real filename match, lets try to add .hsm extension
-		if [ ! -d "$BUNDLES/$MODULE.hsm" ]; then
+		if [ ! -d "$MODULES_MNT/$MODULE_BAS.hsm" ]; then
 			# no, still no match. Lets use some guesswork
-			MODULE=$(print_branches | cut -f 2 | egrep -o "/[0-9]+-$MODULE.hsm\$" | tail -n 1 | xargs -r basename)
+			MODULE_BAS=$(list_modules | cut -f 2 | egrep -o "/[0-9]+-$MODULE_BAS.hsm\$" | tail -n 1 | xargs -r basename)
 		else
-			MODULE="$MODULE.hsm"
+			MODULE="$MODULE_BAS.hsm"
 		fi
 	fi
 
-	if [ "$MODULE" = "" -o ! -d "$BUNDLES/$MODULE" ]; then
-		echo "$(tput setaf 3)-huronOS module deactivated: $(basename "$1")$(tput sgr0)"
+	if [ "$MODULE_BAS" = "" -o ! -d "$MODULES_MNT/$MODULE_BAS" ]; then
+		[ "$SILENT" != "true" ] && echo "$(tput setaf 3)-huronOS module deactivated: $(basename "$1")$(tput sgr0)"
 		return 0
 	fi
 
-	mount -t aufs -o remount,verbose,del:"$BUNDLES/$MODULE" aufs / 2>/dev/null
-   	if [ $? -ne 0 ]; then
-		echo "$(tput setaf 4)>huronOS module busy: Cannot deactivate module. See dmesg for more.$(tput sgr0)"
-		return 1
-	fi
+	if ! remove_branch "$MODULES_MNT/$MODULE_BAS"; then return 1; fi
 
 	# remember what loop device was the bundle mounted to, it may be needed later
-	LOOP="$(cat /proc/mounts | fgrep " $BUNDLES/$MODULE " | cut -d " " -f 1)"
+	LOOP="$(cat /proc/mounts | fgrep " $MODULES_MNT/$MODULE_BAS " | cut -d " " -f 1)"
 	LOOPFILE="$(losetup "$LOOP" | cut -d " " -f 3 | sed -r 's:^.|.$::g')"
 
-	umount "$BUNDLES/$MODULE" 2>/dev/null
+	umount "$MODULES_MNT/$MODULE_BAS" 2>/dev/null
 	if [ $? -ne 0 ]; then
-		echo "$(tput setaf 1)>huronOS module cannot be unmounted: Manual umount will be required. $BUNDLES/$MODULE$(tput sgr0)"
+		[ "$SILENT" != "true" ] && echo "$(tput setaf 1)>huronOS module cannot be unmounted: Manual umount will be required. $MODULES_MNT/$MODULE_BAS$(tput sgr0)"
 		return 1
 	fi
-	rmdir "$BUNDLES/$MODULE"
+	rmdir "$MODULES_MNT/$MODULE_BAS"
 
 	# free the loop device manually since umount fails to do that if the bundle was activated on boot
 	losetup -d "$LOOP" 2>/dev/null
 
-	if echo "$LOOPFILE" | grep -q $RAMSTORE; then
+	if echo "$LOOPFILE" | grep -q $MODULES_STORE; then
 		rm -f $LOOPFILE
 	fi
 
-	echo "$(tput setaf 3)-huronOS module deactivated: $(basename "$MODULE")$(tput sgr0)"
+	[ "$SILENT" != "true" ] && echo "$(tput setaf 3)-huronOS module deactivated: $(basename "$MODULE_BAS")$(tput sgr0)"
 	return 0
 }
 
+## Remove the desired branch from the AUFS union
+# $1 = Module branch to deactivate
+remove_branch(){
+#	set -x
+	## Force module deletion from AUFS union by killing all the processes that are using any file on that branch
+	if [ "$FORCE" = "true" ]; then
+		## Try a fist time to delete branch
+		mount -t aufs -o remount,del:"$1" aufs / 2>/dev/null
+   		[ $? -eq 0 ] && return 0
+
+		## That did not worked, let's get the PID of any process that is using this
+		while : ; do
+			PIDS=$(aubusy -v / $1 | awk '{print $1}' | sort | uniq | sed 's:\n: :g')
+			for PID in $PIDS; do
+				[ "$SILENT" != "true" ] && echo "Killing process with ID $PID aka. $(ps -p $PID -o command --no-headers | awk '{print $1}')"
+				kill -9 $PID >/dev/null 2>/dev/null
+			done
+			mount -t aufs -o remount,verbose,del:"$1" aufs / 2>/dev/null
+   			[ $? -eq 0 ] && return 0
+		done
+	## Just try it once, and do not kill any PID
+	else
+		mount -t aufs -o remount,verbose,del:"$1" aufs / 2>/dev/null
+		if [ $? -ne 0 ]; then
+			[ "$SILENT" != "true" ] && echo "$(tput setaf 4)>huronOS module busy: Cannot deactivate module $(basename $1). See dmesg for more.$(tput sgr0)"
+			return 1
+		fi
+	fi
+}
+
+
+## For a .mdf (Modules Definition File), activate or deactivate depending on instruction
 # $1 = Configuration file
 block_update(){
-	echo "Activating/Deactivating huronOS modules:"
-	declare "$(head -n 1 $1)"
+	[ "$SILENT" != "true" ] && echo "Activating/Deactivating huronOS modules:"
+
+	local PACKAGES HURONDIR BASE
+	declare "$(head -n 1 $1)" # Declared hurondir
 	PACKAGES="$(tail -n+2 $1)"
 	while read BASE OPTION; do
 		HSM="${HURONDIR}${BASE}.hsm"
@@ -171,71 +266,30 @@ block_update(){
 			deactivate $(basename $HSM)
 		fi
 	done < <(echo $PACKAGES | xargs -n 2)
+	return
 }
 
-update_cache()
-{
+## Update the MIME types database, the .desktop database, restart the menu bar to show updates
+update_menu(){
+	[ "$UPDATE_MENU" != "true" ] && return
 	update-mime-database /usr/share/mime
 	update-desktop-database /usr/share/applications
 	su contestant -c 'export DISPLAY=:0; (nohup budgie-panel --replace > /dev/null 2>&1 &)'
-	echo "Restarting menu"
+	[ "$SILENT" != "true" ] && echo "Restarting menu"
+	return
 }
 
 ## The mount.aufs binary tool, kill proceses, we do not want that
-mask_aufs_mounts(){
+mask(){
 	mv -f /usr/sbin/mount.aufs /usr/sbin/mount.aufs-
 	mv -f /usr/sbin/umount.aufs /usr/sbin/umount.aufs-
+	return
 }
 
-unmask_aufs_mounts(){
+unmask(){
 	mv -f /usr/sbin/mount.aufs- /usr/sbin/mount.aufs
 	mv -f /usr/sbin/umount.aufs- /usr/sbin/umount.aufs
+	return
 }
 
-
-usage()
-{
-   echo "Usage: $0 [ activate | deactivate | active-modules | block-update ] [ file.hsm ]" >&2
-   if [ "$1" != "" ]; then
-      echo "$1" >&2
-   fi
-}
-
-
-if [ "$1" = "activate" ]; then
-	mask_aufs_mounts
-	activate "$2"
-	unmask_aufs_mounts
-	update_cache
-	exit
-fi
-
-if [ "$1" = "deactivate" ]; then
-	mask_aufs_mounts
-	deactivate "$2"
-	unmask_aufs_mounts
-	update_cache
-	exit
-fi
-
-if [ "$1" = "active-modules" ]; then
-	print_branches
-	exit
-fi
-
-if [ "$1" = "block-update" ]; then
-	mask_aufs_mounts
-	block_update "$2"
-	unmask_aufs_mounts
-	update_cache
-	exit
-fi
-
-if [ "$1" = "savechanges" ]; then
-   shift
-   savechanges "$@"
-   exit
-fi
-
-usage
-exit 1
+main "$@"; exit
