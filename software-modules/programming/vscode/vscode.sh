@@ -29,5 +29,5 @@ rm -rf /tmp/$NAME.hsm/usr/share/applications/code.desktop
 rm -rf /tmp/$NAME.hsm/usr/share/applications/code-url-handler.desktop
 dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/$NAME.hsm /run/initramfs/memory/data/huronOS/programming/
+cp /tmp/$NAME.hsm /run/initramfs/memory/system/huronOS/programming/
 echo "Finished creating $NAME.hsm!"

@@ -21,5 +21,5 @@ rm -rf /tmp/$NAME.hsm/usr/bin/*.bat
 rm -rf /tmp/compiler/
 dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/$NAME.hsm /run/initramfs/memory/data/huronOS/langs/
+cp /tmp/$NAME.hsm /run/initramfs/memory/system/huronOS/langs/
 echo "Finished creating $NAME.hsm!"

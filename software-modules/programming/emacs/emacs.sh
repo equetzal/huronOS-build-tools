@@ -30,5 +30,5 @@ rm -rf /tmp/$NAME.hsm/usr/share/applications/mimeinfo.cache
 rm -rf /tmp/$NAME.hsm/usr/share/applications/emacs-term.desktop
 dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/$NAME.hsm /run/initramfs/memory/data/huronOS/programming/
+cp /tmp/$NAME.hsm /run/initramfs/memory/system/huronOS/programming/
 echo "Finished creating $NAME.hsm!"

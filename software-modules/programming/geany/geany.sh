@@ -26,4 +26,4 @@ rm -rf /tmp/$NAME.hsm/usr/share/applications/bamf-2.index
 rm -rf /tmp/$NAME.hsm/usr/share/applications/mimeinfo.cache
 dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/$NAME.hsm /run/initramfs/memory/data/huronOS/programming/
+cp /tmp/$NAME.hsm /run/initramfs/memory/system/huronOS/programming/

@@ -28,4 +28,4 @@ rm -rf /tmp/codeblocks.hsm/usr/share/applications/bamf-2.index
 rm -rf /tmp/codeblocks.hsm/usr/share/applications/mimeinfo.cache
 dir2hsm /tmp/codeblocks.hsm
 
-cp /tmp/codeblocks.hsm /run/initramfs/memory/data/huronOS/programming/
+cp /tmp/codeblocks.hsm /run/initramfs/memory/system/huronOS/programming/

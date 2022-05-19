@@ -27,5 +27,5 @@ rm -rf /tmp/$NAME.hsm/usr/share/applications/jpico.desktop
 rm -rf /tmp/$NAME.hsm/usr/share/applications/jmacs.desktop
 dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/$NAME.hsm /run/initramfs/memory/data/huronOS/programming/
+cp /tmp/$NAME.hsm /run/initramfs/memory/system/huronOS/programming/
 echo "Finished creating $NAME.hsm!"

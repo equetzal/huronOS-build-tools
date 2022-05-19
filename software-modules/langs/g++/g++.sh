@@ -24,4 +24,4 @@ rm -rf /tmp/g++.hsm/home
 rm -f /tmp/g++.hsm/usr/bin/*gcc*
 dir2hsm /tmp/g++.hsm
 
-cp /tmp/g++.hsm /run/initramfs/memory/data/huronOS/langs/
+cp /tmp/g++.hsm /run/initramfs/memory/system/huronOS/langs/

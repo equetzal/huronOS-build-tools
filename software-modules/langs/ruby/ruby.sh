@@ -22,4 +22,4 @@ rm -rf /tmp/ruby.hsm/root
 rm -rf /tmp/ruby.hsm/etc
 dir2hsm /tmp/ruby.hsm
 
-cp /tmp/ruby.hsm /run/initramfs/memory/data/huronOS/langs/
+cp /tmp/ruby.hsm /run/initramfs/memory/system/huronOS/langs/

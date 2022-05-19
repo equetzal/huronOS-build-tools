@@ -6,95 +6,98 @@
 # Modified by the huronOS team:
 #	Enya Quetzalli <equetzal@huronos.org>
 
-# =================================================================
-# debug and output functions
-# =================================================================
 
+
+## Sets the DEBUG_IS_ENABLED constant
 debug_start(){
+	## Check if the syslinux boot command contains debug option
 	if cmdline_has "debug"; then
 		DEBUG_IS_ENABLED=1
 		set -x
 	else
 		DEBUG_IS_ENABLED=
 	fi
+
+	## After setting, put on readonly to avoid changing it later
+	readonly DEBUG_IS_ENABLED
 }
 
-debug_log()
-{
-   if [ "$DEBUG_IS_ENABLED" ]; then
-      echo "- debug: $*" >&2
-   fi
-   log "- debug: $*"
+## Print logs on shell if debug is enabled, but always log to debug file
+debug_log(){
+	if [ "$DEBUG_IS_ENABLED" ]; then
+		echo "- debug: $*" >&2
+	fi
+	log "- debug: $*"
 }
 
-# header
+## Header text to print on the boot process
 # $1 = text to show
-#
-header()
-{
-   echo "[0;1m""$@""[0;0m"
+header(){
+	echo "[0;1m""$@""[0;0m"
+}
+
+## Echo a green star
+echo_green_star(){
+	echo -ne "[0;32m""* ""[0;39m"
+}
+
+## Print debug logs on /var/log/huronOS_boot_log file
+log(){
+   echo "$@" 2>/dev/null >>/var/log/huronOS_boot_log
+}
+
+## Echo to terminal and log to boot_log file
+echolog(){
+	echo "$@"
+	log "$@"
+}
+
+## Print info about debug shell
+show_debug_banner(){
+	echo ": ---huronOS boot process debug is enabled---"
+	echo ": Starting a [root] shell for debuging."
+	echo ": Press [Ctrl+D] for next debug stop."
+}
+
+## Prompt a debug shell
+debug_shell(){
+	if [ "$DEBUG_IS_ENABLED" ]; then
+		show_debug_banner
+		setsid sh -c 'exec sh < /dev/tty1 >/dev/tty1 2>&1'
+		echo
+	fi
+}
+
+## Something is wrong and huronOS cannot continue booting. Reboot or prompt debug shell.
+fatal(){
+	## Tell user about the error
+	echolog
+	header "Fatal error occured - $1"
+	echolog "Something went wrong and we can't continue. This should never happen."
+	echolog "Please reboot your computer with Ctrl+Alt+Delete ..."
+	echolog
+
+	## Wait 10 seconds to have chance of read the message
+	sleep 10
+
+	## If debug, then prompt a debug shell
+	debug_shell
+
+	## If user closes the debug shell, or is not debugging just reboot.
+	reboot -f
 }
 
 
-# echo green star
-#
-echo_green_star()
-{
-   echo -ne "[0;32m""* ""[0;39m"
-}
 
-# log - store given text in /var/log/livedbg
-log()
-{
-   echo "$@" 2>/dev/null >>/var/log/livedbg
-}
-
-echolog()
-{
-   echo "$@"
-   log "$@"
-}
-
-
-# show information about the debug shell
-show_debug_banner()
-{
-   echo
-   echo "====="
-   echo ": Debugging started. Here is the root shell for you."
-   echo ": Type your desired commands or hit Ctrl+D to continue booting."
-   echo
-}
-
-
-# debug_shell
-# executed when debug boot parameter is present
-#
-debug_shell()
-{
-   if [ "$DEBUG_IS_ENABLED" ]; then
-      show_debug_banner
-      setsid sh -c 'exec sh < /dev/tty1 >/dev/tty1 2>&1'
-      echo
-   fi
-}
-
-fatal()
-{
-   echolog
-   header "Fatal error occured - $1"
-   echolog "Something went wrong and we can't continue. This should never happen."
-   echolog "Please reboot your computer with Ctrl+Alt+Delete ..."
-   echolog
-   setsid sh -c 'exec sh < /dev/tty1 >/dev/tty1 2>&1'
-}
-
-# $1 key to search value of. Eg. $1="ip", "ip=1.1.1.1" -> "1.1.1.1"
+## Get the huronos.flags cmdline value for a given key
+# $1 = key to search value of
+# Eg. $1="ip", "ip=1.1.1.1" -> "1.1.1.1"
 cmdline_value(){
    	cat /proc/cmdline | sed "s/.*huronos.flags=(\(.*\)).*/\1/" | sed -ne "/.*$1=\([^;]*\).*/!d;s//\1/p"
 }
 
-# $1 key to expect value as true
+## Returns true if there is a huronos.flag with value equals true
+# $1 = key to expect value as true
 cmdline_has(){
 	VALUE="$(cmdline_value $1)"
 	if [ "$VALUE" = "true" ]; then
@@ -104,14 +107,13 @@ cmdline_has(){
    	fi
 }
 
-# test if the script is started by root user. If not, exit
-#
-allow_only_root()
-{
-  if [ "0$UID" -ne 0 ]; then
-     echo "Only root can run $(basename $0)"; exit 1
-  fi
+## Test if the script is started by root user. If not, exit
+allow_only_root(){
+	if [ "0$UID" -ne 0 ]; then
+		echo "Only root can run $(basename $0)"; exit 1
+	fi
 }
+
 
 
 # Create bundle
@@ -120,253 +122,261 @@ allow_only_root()
 # $2 = output file
 # $3..$9 = optional arguments like -keep-as-directory or -b 123456789
 #
-create_bundle()
-{
-   debug_log "create_module" "$*"
-   rm -f "$2" # overwrite, never append to existing file
-   mksquashfs "$1" "$2" -comp xz -b 1024K -always-use-fragments $3 $4 $5 $6 $7 $8 $9>/dev/null
+create_bundle(){
+	debug_log "create_module" "$*"
+	rm -f "$2" # overwrite, never append to existing file
+	mksquashfs "$1" "$2" -comp xz -b 1024K -always-use-fragments $3 $4 $5 $6 $7 $8 $9>/dev/null
 }
-
 
 # Move entire initramfs tree to tmpfs mount.
 # It's a bit tricky but is necessray to enable pivot_root
 # even for initramfs boot image
 #
-transfer_initramfs()
-{
-   if [ ! -r /lib/initramfs_escaped ]; then
-      echo "Switching root from initramfs to ramfs"
-      SWITCH=/m # one letter directory
-      mkdir -p $SWITCH
-      mount -t tmpfs -o size="100%" tmpfs $SWITCH
-      cp -a /??* $SWITCH 2>/dev/null # only copy two-and-more-letter directories
-      cd $SWITCH
-      echo "This file indicates that we successfully escaped initramfs" > $SWITCH/lib/initramfs_escaped
-      exec switch_root -c /dev/console . $0
-   fi
+transfer_initramfs(){
+	local SWITCH
+
+	if [ ! -r /lib/initramfs_escaped ]; then
+		echo "Switching root from initramfs to ramfs"
+		## One letter directory
+		SWITCH=/m
+		mkdir -p $SWITCH
+		mount -t tmpfs -o size="100%" tmpfs $SWITCH
+
+		## Copy two-and-more-letter directories
+		cp -a /??* $SWITCH 2>/dev/null
+		cd $SWITCH
+		echo "This file indicates that we successfully escaped initramfs" > $SWITCH/lib/initramfs_escaped
+		
+		## Move the filesystem as the root of the tmpfs
+		exec switch_root -c /dev/console . $0
+	fi
 }
 
-
-# mount virtual filesystems like proc etc
-#
-init_proc_sysfs()
-{
-   debug_log "init_proc_sysfs" "$*"
-   mkdir -p /proc /sys /etc $MEMORY
-   mount -n -t proc proc /proc
-   echo "0" >/proc/sys/kernel/printk
-   mount -n -t sysfs sysfs /sys
-   mount -n -o remount,rw rootfs /
-   ln -sf /proc/mounts /etc/mtab
+## Mount the virtual filesystems on the tmpfs
+init_proc_sysfs(){
+	debug_log "init_proc_sysfs" "$*"
+	mkdir -p /proc /sys /etc $MEMORY
+	mount -n -t proc proc /proc
+	echo "0" >/proc/sys/kernel/printk
+	mount -n -t sysfs sysfs /sys
+	mount -n -o remount,rw rootfs /
+	ln -sf /proc/mounts /etc/mtab
 }
 
-
-# modprobe all modules found in initial ramdisk
+## Load kernel with modprobe all modules found in initial ramdisk
 # $1 = -e for match, -v for negative match
 # $2 = regex pattern
-#
-modprobe_everything()
-{
-   debug_log "modprobe_everything" "$*"
+load_kernel_modules(){
+	debug_log "load_kernel_modules" "$*"
 
-   echo_green_star >&2
-   echo "Probing for hardware" >&2
+	local MATCH REGEX
+	MATCH="$1"
+	REGEX="$2"
+	
+	echo_green_star >&2
+	echo "Probing for hardware" >&2
 
-   find /lib/modules/ | fgrep .ko | egrep $1 $2 | sed -r "s:^.*/|[.]ko\$::g" | xargs -n 1 modprobe 2>/dev/null
-   refresh_devs
+	## Look for all the loadable kernel modules (.ko) and enable them
+	find /lib/modules/ | fgrep .ko | egrep $MATCH $REGEX | sed -r "s:^.*/|[.]ko\$::g" | xargs -n 1 modprobe 2>/dev/null
+	
+	## Update newly created devices
+	refresh_devs
 }
 
+## Reaload available devices with mdev
+refresh_devs(){
+	debug_log "refresh_devs" "$*"
+	if [ -r /proc/sys/kernel/hotplug ]; then
+		## If hotplug policy exists, set mdev as the controller
+		echo /sbin/mdev > /proc/sys/kernel/hotplug
+	fi
 
-refresh_devs()
-{
-   debug_log "refresh_devs" "$*"
-   if [ -r /proc/sys/kernel/hotplug ]; then
-      echo /sbin/mdev > /proc/sys/kernel/hotplug
-   fi
-   mdev -s
+	## Reload devices
+	mdev -s
 }
 
+## Check that kernel modules for some devices are available
+init_devs(){
+	debug_log "init_devs" "$*"
 
-# make sure some devices are there
-init_devs()
-{
-   debug_log "init_devs" "$*"
-   modprobe zram 2>/dev/null
-   modprobe loop 2>/dev/null
-   modprobe squashfs 2>/dev/null
-   modprobe fuse 2>/dev/null
-   refresh_devs
+	## Load kernel modules
+	modprobe zram 2>/dev/null
+	modprobe loop 2>/dev/null
+	modprobe squashfs 2>/dev/null
+	modprobe fuse 2>/dev/null
+
+	## Load the newly created devices
+	refresh_devs
 }
-
 
 # Activate zram (auto-compression of RAM)
 # Compressed RAM consumes 1/2 or even 1/4 of original size
 # Setup static size of 500MB
-#
-init_zram()
-{
-   debug_log "init_zram" "$*"
-   echo_green_star
-   echo "Setting dynamic RAM compression using ZRAM if available"
-   if [ -r /sys/block/zram0/disksize ]; then
-      echo 536870912 > /sys/block/zram0/disksize # 512MB
-      mkswap /dev/zram0 >/dev/null
-      swapon /dev/zram0
-      echo 100 > /proc/sys/vm/swappiness
-   fi
+init_zram(){
+	debug_log "init_zram" "$*"
+	if [ -r /sys/block/zram0/disksize ]; then
+		echo_green_star
+		echo "Setting dynamic RAM compression"
+		echo 536870912 > /sys/block/zram0/disksize # 512MB
+		mkswap /dev/zram0 >/dev/null
+		swapon /dev/zram0
+		echo 100 > /proc/sys/vm/swappiness
+		## TODO: Future work, search for SWAP devices on hard disks, use them.
+	fi
 }
 
-
-aufs_is_supported()
-{
+## Returns true if AUFS is available in Kernel
+aufs_is_supported(){
    cat /proc/filesystems | grep aufs
 }
 
+## Load the AUFS kernel driver
+init_aufs(){
+	debug_log "init_aufs" "$*"
 
-# load the AUFS kernel driver. If not found,
-# load overlayfs instead.
-#
-init_aufs()
-{
-   debug_log "init_aufs" "$*"
-   modprobe aufs 2>/dev/null
-   if ! aufs_is_supported >/dev/null; then
-      modprobe overlay 2>/dev/null
-   fi
-   refresh_devs
+	## Load AUFS module (as huronOS was compiled with AUFS as module)
+	modprobe aufs 2>/dev/null
+	if ! aufs_is_supported >/dev/null; then
+		# This should never happen, if it happens probably someone
+		# changed the kernel on the system partition and it does not
+		# have been compiled with AUFS support.
+		# huronOS cannot work without AUFS as all of its features work
+		# with AUFS, so we will prevent booting on a system that will not work
+		fatal "AUFS is not available on the Kernel, huronOS can't continue booting."
+	fi
+
+	## Load the newly created devices
+	refresh_devs
 }
 
+## Setup empty aufs union
+# $SYSCHANGES = syschanges/ branch dir
+# $USRCHANGES = usrchanges/ branch dir
+# $BASE_MNT = base/ dir, where base modules will be located
+# $MODULES_MNT = modules/ dir, where non-essencial modules will be located
+# $UNION = union/ dir, where the resulting union will be located
+init_union(){
+	debug_log "init_union" "$*"
 
-# Setup empty aufs union, or create overlayfs union
-# $1 = changes directory (ramfs or persistent changes)
-# $2 = union directory where to mount the union
-# $3 = bundles directory
-#
-init_union()
-{
-   debug_log "init_union" "$*"
-   mkdir -p "$1"
-   mkdir -p "$2"
+	## Create branch directory in case it does not exists
+	mkdir -p "$SYSCHANGES"
+	mkdir -p "$USRCHANGES"
+	mkdir -p "$BASE_MNT"
+	mkdir -p "$MODULES_MNT"
+	mkdir -p "$UNION"
 
-   if aufs_is_supported >/dev/null; then
-      echo_green_star
-      echo "Setting up empty union using aufs"
-      mount -t aufs -o xino="/.xino",trunc_xino,br="$1" aufs "$2"
-   else
-      echo_green_star
-      echo "Setting up union using overlayfs"
-      mkdir -p "$1/changes"
-      mkdir -p "$1/workdir"
-      mount -t overlay overlay -o lowerdir=$(find "$3" -mindepth 1 -maxdepth 1 | sortmod | tac | tr '\n' ':' | sed -r 's/:$//'),upperdir=$1/changes,workdir=$1/workdir $2
-   fi
+	echo_green_star
+	echo "Creating / filesystem using AUFS"
+
+	# Set first branch as rw, it will set the / filesystem as rw
+	# otherwise, the resulting filesystem would be ro and chroot will not be possible.
+	# Option xino is set on root /, user will never see this file as it is hidden.
+	# Option udba is set to reval to avoid AUFS having problems if -by some reason-
+	# someone edited the AUFS branches during the live system.
+	# Option cpup is set to bottom-up so that any already existing file that is
+	# edited is only copied to syschanges/ instead of usrchanges/, this will mantain
+	# system files on syschanges/ and avoid locking usrchanges/ for later delete.
+	# Option create is set to top-down-parent so that any newly created file
+	# will be stored on the highest writable branch that has the parent dir of the file
+	# it will be required to create some dirs on the usrchanges/ branch to ensure that
+	# files created by the contestant user reside on usrchanges/ and not over syschanges/
+	# and loose persistence feature.
+	mount -t aufs -o xino=/.xino,trunc_xino,udba=reval,cpup=bu,create=tdp,br="$SYSCHANGES"=rw aufs "$UNION"
+	## usrchanges/ needs to be mounted after chroot
 }
 
-
-# Return device mounted for given directory
+## Return device mounted for given directory
 # $1 = directory
-#
-mounted_device()
-{
-   debug_log "mounted_device" "$*"
+mounted_device(){
+	debug_log "mounted_device" "$*"
 
-   local MNT TARGET
-   MNT="$1"
-   while [ "$MNT" != "/" -a "$MNT" != "." -a "$MNT" != "" ]; do
-      TARGET="$(grep -F " $MNT " /proc/mounts | cut -d " " -f 1)"
-      if [ "$TARGET" != "" ]; then
-         echo "$TARGET"
-         return
-      fi
-      MNT="$(dirname "$MNT")"
-   done
+	local MNT TARGET
+	MNT="$1"
+
+	while [ "$MNT" != "/" -a "$MNT" != "." -a "$MNT" != "" ]; do
+		TARGET="$(grep -F " $MNT " /proc/mounts | cut -d " " -f 1)"
+		if [ "$TARGET" != "" ]; then
+			echo "$TARGET"
+			return
+		fi
+		MNT="$(dirname "$MNT")"
+	done
 }
 
 
 # Return mounted dir for given directory
 # $1 = directory
-#
-mounted_dir()
-{
-   debug_log "mounted_dir" "$*"
+mounted_dir(){
+	debug_log "mounted_dir" "$*"
 
-   local MNT
-   MNT="$1"
-   while [ "$MNT" != "/" -a "$MNT" != "." -a "$MNT" != "" ]; do
-      if mountpoint -q "$MNT" 2>/dev/null; then
-         echo "$MNT"
-         return
-      fi
-      MNT="$(dirname "$MNT")"
-   done
+	local MNT
+	MNT="$1"
+	while [ "$MNT" != "/" -a "$MNT" != "." -a "$MNT" != "" ]; do
+		if mountpoint -q "$MNT" 2>/dev/null; then
+			echo "$MNT"
+			return
+		fi
+		MNT="$(dirname "$MNT")"
+	done
 }
-
 
 # Get device tag.
 # $1 = device
 # $2 = tag name, such as TYPE, LABEL, UUID, etc
-#
-device_tag()
-{
-   blkid -s $2 "$1" | sed -r "s/^[^=]+=//" | tr -d '"'
+device_tag(){
+	blkid -s $2 "$1" | sed -r "s/^[^=]+=//" | tr -d '"'
 }
-
 
 # Make sure to mount FAT12/16/32 using vfat
 # in order to support long filenames
 # $1 = device
 # $2 = prefix to add, like -t
-#
-device_bestfs()
-{
-   debug_log "device_bestfs" "$*"
-   local FS
+device_bestfs(){
+	debug_log "device_bestfs" "$*"
+	local FS
 
-   FS="$(device_tag "$1" TYPE | tr [A-Z] [a-z])"
-   if [ "$FS" = "msdos" -o "$FS" = "fat" -o "$FS" = "vfat" ]; then
-      FS="vfat"
-   elif [ "$FS" = "ntfs" ]; then
-      FS="ntfs-3g"
-   fi
+	FS="$(device_tag "$1" TYPE | tr [A-Z] [a-z])"
+	if [ "$FS" = "msdos" -o "$FS" = "fat" -o "$FS" = "vfat" ]; then
+		FS="vfat"
+	elif [ "$FS" = "ntfs" ]; then
+		FS="ntfs-3g"
+	fi
 
-   if [ "$2" != "" ]; then
-      echo -n "$2"
-   fi
+	if [ "$2" != "" ]; then
+		echo -n "$2"
+	fi
 
-   echo "$FS"
+	echo "$FS"
 }
 
 
 # Filesystem options for initial mount
 # $1.. = filesystem
-#
-fs_options()
-{
-   debug_log "fs_options" "$*"
+fs_options(){
+	debug_log "fs_options" "$*"
 
-   if [ "$1" != "ntfs-3g" ]; then
-      echo -n "-t $1 "
-   fi
+	if [ "$1" != "ntfs-3g" ]; then
+		echo -n "-t $1 "
+	fi
 
-   echo -n "-o rw"
+	echo -n "-o rw"
 
-   if [ "$1" = "vfat" ]; then
-      echo ",check=s,shortname=mixed,iocharset=utf8"
-   fi
+	if [ "$1" = "vfat" ]; then
+		echo ",check=s,shortname=mixed,iocharset=utf8"
+	fi
 }
 
 
 # Mount command for given filesystem
 # $1.. = filesystem
-#
-mount_command()
-{
-   debug_log "mount_command" "$*"
+mount_command(){
+	debug_log "mount_command" "$*"
 
-   if [ "$1" = "ntfs-3g" ]; then
-      echo "@mount.ntfs-3g"
-   else
-      echo "mount"
-   fi
+	if [ "$1" = "ntfs-3g" ]; then
+		echo "@mount.ntfs-3g"
+	else
+		echo "mount"
+	fi
 }
 
 
@@ -529,65 +539,90 @@ download_data_pxe()
    echo "$1/$LIVEKITNAME"
 }
 
+## Mount the device with the given UUID on dest dir
+# $1 = UUID of device to mount
+# $2 = Destiny directory
+mount_device(){
+	local UUID TARGET DEVICE FS OPTIONS MOUNT
 
-# Find LIVEKIT data by mounting all devices
-# If found, keep mounted, else unmount
-# $1 = data directory target (mount here)
-# $2 = data directory which contains compressed bundles
-# $3 = UUID of the filesystem which contains the system data
-#
-find_data_try(){
-	debug_log "find_data_try" "$*"
-	local DEVICE FS BASE OPTIONS MOUNT
-
-	mkdir -p "$1"
-	DEVICE=$(blkid | grep "$3" | cut -d: -f 1)
-	BASE="$2"
+	## Get info about device
+	UUID="$1"
+	TARGET="$2"
+	DEVICE=$(blkid | grep "$UUID" | cut -d: -f 1)
 	FS="$(device_bestfs "$DEVICE")"
 	OPTIONS="$(fs_options $FS)"
 	MOUNT="$(mount_command $FS)"
 
-	$MOUNT "$DEVICE" "$1" $OPTIONS 2>/dev/null
+	## Do mount
+	mkdir -p $TARGET
+	$MOUNT "$DEVICE" "$TARGET" $OPTIONS 2>/dev/null
+}
+
+# Find huronOS system data using the UUID provided on cmd_line
+# $1 = UUID of the filesystem which contains the system data
+# $SYSTEM_MNT = huronOS system data mount point
+# $BASE_DIR = system data directory that contain base huron software modules
+find_data_try(){
+	debug_log "find_data_try" "$*"
+
+	local SYSTEM_UUID
+	SYSTEM_UUID="$1"
+
+	## Mount the device with UUID on the system mount point
+	mount_device "$SYSTEM_UUID" "$SYSTEM_MNT"
 
 	## Look for huronOS base system
-	if [ "$(find "$1/$BASE" "$1/$BASE/" -maxdepth 1 -name "*.$BEXT" 2>/dev/null)" != "" ]; then
-		# we found at least one bundle/module here
-		echo "$1/$BASE" | tr -s "/" | sed -r "s:/[^/]+/[.][.]/:/:g"
+	if [ "$(find "$BASE_DIR" -maxdepth 1 -name "*.$BEXT" 2>/dev/null)" != "" ]; then
+		## A module has been found on here
+		echo "$BASE_DIR" | tr -s "/" | sed -r "s:/[^/]+/[.][.]/:/:g"
 		return
 	fi
 
-	umount "$1" 2>/dev/null
-	umount "$1" 2>/dev/null
+	## If we reached this point, the device may not exist yet
+	umount "$SYSTEM_MNT" 2>/dev/null
+	umount "$SYSTEM_MNT" 2>/dev/null
 }
 
 
-# Retry finding LIVEKIT data several times,
+# Try finding huronOS system data several times,
 # until timeouted or until data is found
-# $1 = timeout
-# $2 = data directory target (mount here)
-#
+# $1 = Timeout
+# $SYSTEM_MNT = System data mount point
+# $BASE_DIR = Directory inside system data where the base .hsm are expected
 find_data(){
 	debug_log "find_data" "$*"
 
-	local DATA UUID BASE
-	BASE="$LIVEKITNAME/base"
-	UUID="$(cmdline_value system.uuid)"
+	local TIMEOUT SYSTEM_UUID RESULT
+	TIMEOUT="$1"
+	SYSTEM_UUID="$(cmdline_value system.uuid)"
+	RESULT=""
 
 	echo_green_star >&2
-	echo -n "Looking for $LIVEKITNAME data in UUID=$UUID" | tr -s "/" >&2
-	for timeout in $(seq 1 $1); do
+	echo -n "Looking for $LIVEKITNAME data in UUID=$SYSTEM_UUID" | tr -s "/" >&2
+
+	## Retry $TIMEOUT times
+	for timeout in $(seq 1 $TIMEOUT); do
+		## Echo a dot as waiting indicator
 		echo -n "." >&2
+
+		## Reload devices, maybe this time the block device we're looking is here
 		refresh_devs
-		DATA="$(find_data_try "$2" "$BASE" "$UUID")"
-		if [ "$DATA" != "" ]; then
+
+		## Ask to mount the partition with the system UUID
+		RESULT="$(find_data_try "$SYSTEM_UUID")"
+
+		## If the huronOS base modules are there
+		if [ "$RESULT" != "" ]; then
 			echo "" >&2
-			echo "* Device with UUID=$UUID is $(mounted_device "$2")" >&2
-			echo "$DATA"
+			echo "* Device with UUID=$SYSTEM_UUID is $(mounted_device "$SYSTEM_MNT")" >&2
 			return
 		fi
 		sleep 1
 	done
 	echo "" >&2
+
+	## If we reach this point, no huronOS base system is found, so no huronOS
+	fatal "No base system found on device $SYSTEM_UUID, refusing to boot"
 }
 
 
@@ -603,66 +638,82 @@ check_data_found()
 
 
 # Activate persistent changes
-# $1 = data directory
-# $2 = target changes directory
-#
-persistent_changes()
-{
-   debug_log "persistent_changes" "$*"
+# $SYSCHANGES = syschanges/ directory
+# $USRCHANGES = usrchanges/ directory
+# $SYSTEM_MNT = System data
+# $EVENT_MNT = Event partition
+# $CONTEST_MNT = Contest partition
+persistent_changes(){
+	debug_log "persistent_changes" "$*"
 
-   local CHANGES T1 T2 EXISTS
+	local DUMMY_FILE EVENT_UUID CONTEST_UUID
+	DUMMY_FILE="$SYSCHANGES/.dummyfile"
 
-   CHANGES="$1/../$(basename "$2")"
-   T1="$CHANGES/.empty"
-   T2="$T1"2
+	## Create mount points in case they does not exist
+	mkdir -p "$SYSCHANGES"
+	mkdir -p "$USRCHANGES"
+	mkdir -p "$SYSTEM_MNT"
+	mkdir -p "$EVENT_MNT"
+	mkdir -p "$CONTEST_MNT"
 
-   # Setup the directory anyway, it will be used in all cases
-   mkdir -p "$2"
+	# Mount removable devices for persistence, they will not be used
+	# by initramfs as we don't want them so store system files that will 
+	# lock their branch deletion once booted. So, just mounted.
+	EVENT_UUID="$(cmdline_value event.uuid)"
+	CONTEST_UUID="$(cmdline_value contest.uuid)"
+	mount_device "$EVENT_UUID" "$EVENT_MNT"
+	mount_device "$CONTEST_UUID" "$CONTEST_MNT"
+	echo "* Setting event data storage on UUID=$EVENT_UUID"
+	echo "* Setting contest data storage on UUID=$CONTEST_UUID"
+	## TODO: set them as non readable for anyone but root.
 
-   # If persistent changes are not requested, end here
-   if ! cmdline_has "persistence"; then
-      return
-   fi
+	## Check if changes directory exists and is writable
+	touch "$DUMMY_FILE" 2>/dev/null && rm -f "$DUMMY_FILE" 2>/dev/null
+	if [ $? -ne 0 ]; then
+		echo "* Persistent changes not writable"
+		return
+	fi
 
-   # check if changes directory exists and is writable
-   touch "$T1" 2>/dev/null && rm -f "$T1" 2>/dev/null
+	# ## Validating the filesystem is posix compatible (eg. ext4)
+	# touch "$DUMMY_FILE" && \
+	# ln -sf "$DUMMY_FILE" "${DUMMY_FILE}2" 2>/dev/null && \
+	# chmod +x "$DUMMY_FILE" 2>/dev/null && \
+	# test -x "$DUMMY_FILE" && \
+	# chmod -x "$DUMMY_FILE" 2>/dev/null && \
+	# test ! -x "$DUMMY_FILE" && \
+	# rm "$DUMMY_FILE" "${DUMMY_FILE}2" 2>/dev/null
 
-   # if not, simply return back
-   if [ $? -ne 0 ]; then
-      echo "* Persistent changes not writable or not used"
-      return
-   fi
+	# ## If filesystem is posix
+	# if [ $? -eq 0 ]; then
+	# 	## Set the persistent changes over the partition
+	# 	echo_green_star
+	# 	echo "Setting persistent changes on UUID=$EVENT_UUID"
+	# 	mkdir -p "$PERCHMNT"
+	# 	## Where data exist -> Where data will be edited, eg. usb -> aufs-branch
+	# 	mount --bind "$EVENTMNT" "$PERCHMNT"
+	# 	return
+	# else
+	# 	## This should not happen, maybe user edited UUID and the filesystem is not posix
+	# 	echo_green_star
+	# 	echo "Device UUID=$EVENT_UUID is not POSIX compatible, skipping persistent changes"
+	# 	rm "$PERCHMNT/.dummyfile" "$PERCHMNT/.dummyfile2" 2>/dev/null
+	# 	rmdir "$PERCHMNT/lost+found" 2>/dev/null
+	# 	return
+	# fi
 
-   echo_green_star
-   echo "Testing persistent changes for posix compatibility"
-   touch "$T1" && ln -sf "$T1" "$T2" 2>/dev/null && \
-   chmod +x "$T1" 2>/dev/null && test -x "$T1" && \
-   chmod -x "$T1" 2>/dev/null && test ! -x "$T1" && \
-   rm "$T1" "$T2" 2>/dev/null
-
-   if [ $? -eq 0 ]; then
-      echo "* Activating native persistent changes"
-      mount --bind "$CHANGES" "$2"
-      return
-   fi
-
-   if [ -e "$CHANGES/changes.dat" ]; then
-      echo "* Restoring persistent changes"
-      EXISTS="true"
-   else
-      echo "* Creating new persistent changes"
-      EXISTS=""
-   fi
-
-   @mount.dynfilefs "$CHANGES/changes.dat" 4000 "$2"
-   if [ ! "$EXISTS" ]; then
-      mke2fs -F "$2/loop.fs" >/dev/null 2>&1
-   fi
-   mount -o loop,sync "$2/loop.fs" "$2"
-
-   # if test failed at any point, we may have temp files left behind
-   rm "$T1" "$T2" 2>/dev/null
-   rmdir "$2/lost+found" 2>/dev/null
+	## Original Slax changes over FAT32, max size is 4GiB, keeping just in case.
+	# if [ -e "$CHANGES/changes.dat" ]; then
+	# 	echo "* Restoring persistent changes"
+	# 	EXISTS="true"
+	# else
+	# 	echo "* Creating new persistent changes"
+	# 	EXISTS=""
+	# fi
+	# @mount.dynfilefs "$CHANGES/changes.dat" 4000 "$2"
+	# if [ ! "$EXISTS" ]; then
+	# 	mke2fs -F "$2/loop.fs" >/dev/null 2>&1
+	# fi
+	# mount -o loop,sync "$2/loop.fs" "$2"
 }
 
 
@@ -704,33 +755,30 @@ user_preinit()
 # Copy data to RAM if requested
 # $1 = live data directory
 # $2 = changes directory
-#
-copy_to_ram()
-{
-   debug_log "copy_to_ram" "$*"
+copy_to_ram(){
+	debug_log "copy_to_ram" "$*"
+	local MDIR MDEV RAM CHANGES
+	
+	if ! cmdline_has "toram"; then
+		echo "$1"
+		return
+	fi
 
-   local MDIR MDEV RAM CHANGES
+	echo "* Copying $LIVEKITNAME data to RAM..." >&2
+	RAM="$(dirname "$2")"/toram
+	mkdir  -p "$RAM"
+	cp -a "$1"/* "$RAM"
+	echo "$RAM"
 
-   if ! cmdline_has "toram"; then
-      echo "$1"
-      return
-   fi
+	MDIR="$(mounted_dir "$1")"
+	MDEV="$(mounted_device "$1")"
+	MDEV="$(losetup $MDEV 2>/dev/null | cut -d " " -f 3)"
+	umount "$MDIR" 2>/dev/null
 
-   echo "* Copying $LIVEKITNAME data to RAM..." >&2
-   RAM="$(dirname "$2")"/toram
-   mkdir  -p "$RAM"
-   cp -a "$1"/* "$RAM"
-   echo "$RAM"
-
-   MDIR="$(mounted_dir "$1")"
-   MDEV="$(mounted_device "$1")"
-   MDEV="$(losetup $MDEV 2>/dev/null | cut -d " " -f 3)"
-   umount "$MDIR" 2>/dev/null
-
-   if [ "$MDEV" ]; then # iso was mounted here, try to unmount the FS it resides on too
-      MDEV="$(mounted_device "$MDEV")"
-      umount "$MDEV" 2>/dev/null
-   fi
+	if [ "$MDEV" ]; then # iso was mounted here, try to unmount the FS it resides on too
+		MDEV="$(mounted_device "$MDEV")"
+		umount "$MDEV" 2>/dev/null
+	fi
 }
 
 
@@ -761,113 +809,134 @@ filter_noload()
    fi
 }
 
-# sort modules by number even if they are in subdirectory
-#
-sortmod()
-{
-   cat - | sed -r "s,(.*/(.*)),\\2:\\1," | sort -n | cut -d : -f 2-
+
+## Sort modules in desending order
+sortmod(){
+   cat - | sed -r "s,(.*/(.*)),\\2:\\1," | sort -nr | cut -d : -f 2-
 }
 
 
-# Mount squashfs filesystem bundles
-# $1 = directory where to search for bundles
-# $2 = directory where to mount bundles
-mount_bundles()
-{
-   echo_green_star
-   echo "Mounting bundles"
-   ( ls -1 "$1" | sort -n ; cd "$1" ; find modules/ 2>/dev/null | sortmod | filter_load) | grep '[.]'$BEXT'$' | filter_noload | while read BUNDLE; do
-      echo "* $BUNDLE"
-      BUN="$(basename "$BUNDLE")"
-      mkdir -p "$2/$BUN"
-      mount -o loop,ro -t squashfs "$1/$BUNDLE" "$2/$BUN"
-   done
+## Mount base huron software modules, aka squashfs filesystems
+# $BASE_DIR = Directory with the huronOS base modules
+# $BASE_MNT = Directory to mount base modules on
+mount_modules(){
+	local MODULE MODULE_BAS
+
+	echo_green_star
+	echo "Mounting system base modules"
+	( ls -1 "$BASE_DIR" | sort -n ; cd "$BASE_DIR" | sortmod | filter_load) | grep '[.]'$BEXT'$' | filter_noload | while read MODULE; do
+		echo "* Mounting $MODULE"
+		MODULE_BAS="$(basename "$MODULE")"
+		mkdir -p "$BASE_MNT/$MODULE_BAS"
+		mount -o loop,ro -t squashfs "$BASE_DIR/$MODULE_BAS" "$BASE_MNT/$MODULE_BAS"
+	done
 }
 
 
-# Add mounted bundles to aufs union
-# $1 = directory where bundles are mounted
-# $2 = directory where union is mounted
-#
-union_append_bundles()
-{
-   debug_log "union_append_bundles" "$*"
+## Add mounted modules to the AUFS union
+# $1 = directory where modules are mounted
+# $UNION = directory where union is mounted
+union_append_modules(){
+	debug_log "union_append_bundles" "$*"
 
-   if aufs_is_supported >/dev/null; then
-      echo_green_star
-      echo "Adding bundles to union"
-      find "$1" -mindepth 1 -maxdepth 1 | sortmod | while read BUNDLE; do
-         mount -o remount,add:1:"$BUNDLE" aufs "$2"
-      done
-   fi
+	local MNT MODULE
+	MNT="$1"
+
+	echo_green_star
+	echo "Adding modules to AUFS union"
+
+	# The lower the index, the highest preferences over same file on different layers
+	# so, to ensure huronOS filesystem is created correctly, we need
+	# 	br0 - syschanges/
+	#	br1 - 04-shared-libs/
+	#	br2 - 03-budgie/
+	#	br3 - 02-firmware/
+	#	br4 - 01-core/
+	find "$MNT" -mindepth 1 -maxdepth 1 | sortmod | while read MODULE; do
+		mount -o remount,append:"$MODULE" "$UNION"
+	done
 }
 
 
-# Create empty fstab properly
-# $1 = root directory
-# $2 = directory where boot disk is mounted
-#
-fstab_create()
-{
-   debug_log "fstab_create" "$*"
+## Create empty fstab properly
+# $UNION = Union directory, aka future root directory
+fstab_create(){
+	debug_log "fstab_create" "$*"
 
-   local FSTAB DEVICE FS LABEL BOOTDEVICE OPTS
+	local FSTAB
+	FSTAB="$UNION/etc/fstab"
 
-   FSTAB="$1/etc/fstab"
-   echo aufs / aufs defaults 0 0 > $FSTAB
-   echo proc /proc proc defaults 0 0 >> $FSTAB
-   echo sysfs /sys sysfs defaults 0 0 >> $FSTAB
-   echo devpts /dev/pts devpts gid=5,mode=620 0 0 >> $FSTAB
-   echo tmpfs /dev/shm tmpfs defaults 0 0 >> $FSTAB
+	echo aufs / aufs defaults 0 0 > $FSTAB
+	echo proc /proc proc defaults 0 0 >> $FSTAB
+	echo sysfs /sys sysfs defaults 0 0 >> $FSTAB
+	echo devpts /dev/pts devpts gid=5,mode=620 0 0 >> $FSTAB
+	echo tmpfs /dev/shm tmpfs defaults 0 0 >> $FSTAB
+	echo >> $FSTAB
+	echo "# hmount devices" >> $FSTAB
 }
 
 
-# Change root and execute init
-# $1 = where to change root
-#
-change_root()
-{
-   debug_log "change_root" "$*"
+## Change root from tmpfs to AUFS union, then execute init process
+# $UNION = where to change root
+change_root(){
+	debug_log "change_root" "$*"
 
-   # if we are booting over httpfs, we need to copyup some files so they are
-   # accessible on union without any further lookup down, else httpfs locks
-   if [ "$(network_device)" != "" ]; then
-      touch "/net.up.flag"
-      touch "$1/etc/resolv.conf"
-      touch "$1/etc/hosts"
-      touch "$1/etc/gai.conf"
-   fi
+	# if we are booting over httpfs, we need to copyup some files so they are
+	# accessible on union without any further lookup down, else httpfs locks
+	if [ "$(network_device)" != "" ]; then
+		touch "/net.up.flag"
+		touch "$UNION/etc/resolv.conf"
+		touch "$UNION/etc/hosts"
+		touch "$UNION/etc/gai.conf"
+	fi
 
-   umount /proc
-   umount /sys
+	## Unmount procfs and sysfs as they will be properly remounted by systemd
+	umount /proc
+	umount /sys
 
-   cd "$1"
+	## Change directory to the union before chroot
+	cd "$UNION"
 
-   # make sure important device files and directories are in union
-   mkdir -p boot dev proc sys tmp media mnt run
-   chmod 1777 tmp
-   if [ ! -e dev/console ]; then mknod dev/console c 5 1; fi
-   if [ ! -e dev/tty ]; then mknod dev/tty c 5 0; fi
-   if [ ! -e dev/tty0 ]; then mknod dev/tty0 c 4 0; fi
-   if [ ! -e dev/tty1 ]; then mknod dev/tty1 c 4 1; fi
-   if [ ! -e dev/null ]; then mknod dev/null c 1 3; fi
-   if [ ! -e sbin/fsck.aufs ]; then ln -s /bin/true sbin/fsck.aufs; fi
+	## Validate important directories are present on the new root fs
+	mkdir -p dev proc sys tmp media mnt run
+	chmod 1777 tmp
 
-   # find chroot and init
-   if [ -x bin/chroot -o -L bin/chroot ]; then  CHROOT=bin/chroot; fi
-   if [ -x sbin/chroot -o -L sbin/chroot ]; then  CHROOT=sbin/chroot; fi
-   if [ -x usr/bin/chroot -o -L usr/bin/chroot ]; then  CHROOT=usr/bin/chroot; fi
-   if [ -x usr/sbin/chroot -o -L usr/sbin/chroot ]; then CHROOT=usr/sbin/chroot; fi
-   if [ "$CHROOT" = "" ]; then fatal "Can't find executable chroot command"; fi
+	## Check if important devices are present on new root fs, if not, create them.
+	if [ ! -e dev/console ]; then mknod dev/console c 5 1; fi
+	if [ ! -e dev/tty ]; then mknod dev/tty c 5 0; fi
+	if [ ! -e dev/tty0 ]; then mknod dev/tty0 c 4 0; fi
+	if [ ! -e dev/tty1 ]; then mknod dev/tty1 c 4 1; fi
+	if [ ! -e dev/null ]; then mknod dev/null c 1 3; fi
 
-   if [ -x bin/init -o -L bin/init ]; then INIT=bin/init; fi
-   if [ -x sbin/init -o -L sbin/init  ]; then INIT=sbin/init; fi
-   if [ "$INIT" = "" ]; then fatal "Can't find executable init command"; fi
+	## Make sure AUFS has fsck.aufs utility, if its not present just send true
+	if [ ! -e sbin/fsck.aufs ]; then ln -s /bin/true sbin/fsck.aufs; fi
 
-   mkdir -p run
-   mount -t tmpfs tmpfs run
-   mkdir -p run/initramfs
-   mount -n -o remount,ro aufs .
-   pivot_root . run/initramfs
-   exec $CHROOT . $INIT < dev/console > dev/console 2>&1
+	## Find the new root fs chroot binary
+	if [ -x bin/chroot -o -L bin/chroot ]; then  CHROOT=bin/chroot; fi
+	if [ -x sbin/chroot -o -L sbin/chroot ]; then  CHROOT=sbin/chroot; fi
+	if [ -x usr/bin/chroot -o -L usr/bin/chroot ]; then  CHROOT=usr/bin/chroot; fi
+	if [ -x usr/sbin/chroot -o -L usr/sbin/chroot ]; then CHROOT=usr/sbin/chroot; fi
+	if [ "$CHROOT" = "" ]; then fatal "Can't find executable chroot command"; fi
+
+	## Find the init process (aka systemd for debian-like)
+	if [ -x bin/init -o -L bin/init ]; then INIT=bin/init; fi
+	if [ -x sbin/init -o -L sbin/init  ]; then INIT=sbin/init; fi
+	if [ "$INIT" = "" ]; then fatal "Can't find executable init command"; fi
+
+	## Mount the run/ filesystem
+	mkdir -p run
+	mount -t tmpfs tmpfs run
+
+	## Create dir where the current root-fs will be moved to
+	mkdir -p run/initramfs
+
+	## Prepare AUFS for chroot as root-fs
+	mount -n -o remount,ro aufs .
+
+	## Change the root-fs to the AUFS union, moves the old root-fs to initramfs
+	# this will also lock the chroot jail so that there is no way to get out of it.
+	pivot_root . run/initramfs
+
+	## Chroot the FS and call the final Init process.
+	exec $CHROOT . $INIT < dev/console > dev/console 2>&1
 }

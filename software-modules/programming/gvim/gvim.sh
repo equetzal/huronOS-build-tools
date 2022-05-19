@@ -40,5 +40,5 @@ rm -rf /tmp/$NAME.hsm/etc/alternatives/view
 rm -rf /tmp/$NAME.hsm/etc/alternatives/ex
 dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/$NAME.hsm /run/initramfs/memory/data/huronOS/programming/
+cp /tmp/$NAME.hsm /run/initramfs/memory/system/huronOS/programming/
 echo "Finished creating $NAME.hsm!"

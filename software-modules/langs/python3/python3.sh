@@ -21,4 +21,4 @@ rm -rf /tmp/python3.hsm/root
 rm -rf /tmp/python3.hsm/etc
 dir2hsm /tmp/python3.hsm
 
-cp /tmp/python3.hsm /run/initramfs/memory/data/huronOS/langs/
+cp /tmp/python3.hsm /run/initramfs/memory/system/huronOS/langs/

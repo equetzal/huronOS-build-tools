@@ -2,7 +2,7 @@
 
 TMP=/tmp/changes$$
 EXCLUDE="^\$|/\$|[.]wh[.][.]wh[.]orph/|^[.]wh[.][.]pwd[.]lock|^[.]wh[.][.]wh[.]plnk/|^[.]wh[.][.]wh[.]aufs|^var/cache/|^var/log/hsync.log|^var/backups/|^var/tmp/|^var/log/|^var/lib/apt/|^var/lib/dhcp/|^var/lib/systemd/|^sbin/fsck[.]aufs|^etc/resolv[.]conf|^home/contestant/[.]bash_history|^home/contestant/[.]Xauthority|^home/contestant/[.]xsession-errors|^home/contestant/[.]fehbg|^root/[.]bash_history|^root/[.]Xauthority|^root/[.]xsession-errors|^root/[.]fehbg|^root/[.]fluxbox/lastwallpaper|^root/[.]fluxbox/menu_resolution|^etc/timezone|^etc/localtime|^etc/hsync/|^etc/hmm/|^etc/mtab|^etc/fstab|^usr/share/backgrounds/custom-|^boot/|^dev/|^mnt/|^proc/|^run/|^sys/|^tmp/"
-CHANGES=/run/initramfs/memory/changes
+CHANGES=/run/initramfs/memory/syschanges
 
 if [ "$1" = "" ]; then
    echo ""
@@ -13,7 +13,7 @@ if [ "$1" = "" ]; then
    echo "Usage:"
    echo "        $0 [ target_file.hsm ] [ changes_directory ]"
    echo ""
-   echo "If changes_directory is not specified, /run/initramfs/memory/changes is used."
+   echo "If changes_directory is not specified, /run/initramfs/memory/syschanges is used."
    echo ""
    exit 1
 fi

@@ -1,73 +1,135 @@
 #!/bin/sh
 
-# Initial script for huronOS
+# Initial script for huronOS init ram fs
 # Taken from Slax, Originally authored by: Tomas M <http://www.slax.org/>
-# Modified by the huronOS team:
-#	Enya Quetzalli <equetzal@huronos.org>
+# Modified by the huronOS team: Enya Quetzalli <equetzal@huronos.org>
 
+## Set the initial PATH enviroment variable
 export PATH=.:/:/usr/sbin:/usr/bin:/sbin:/bin
 
+## Get the configuration set on the livekit, load shell functions
 . /lib/config
 . /lib/livekitlib
 
+## Only print if we're on the initramfs and not over tmpfs
 if [ ! -r /lib/initramfs_escaped ]; then
 	echo "Starting huronOS"
 fi
 
+## Move the initramfs (fixed) to tmpfs, this will allow pivot_root command to work
 transfer_initramfs
 
-MEMORY=/memory
-CHANGES=$MEMORY/changes
-UNION=$MEMORY/union
-DATAMNT=$MEMORY/data
-BUNDLES=$MEMORY/bundles
+## AUFS mix lab
+readonly MEMORY=/memory
 
+## Dev mounts
+readonly SYSTEM_MNT=$MEMORY/system
+readonly EVENT_MNT=$MEMORY/event
+readonly CONTEST_MNT=$MEMORY/contest
+
+## Important dirs that contains modules
+readonly BASE_DIR="$SYSTEM_MNT/huronOS/base"
+readonly INTERNET_DIR="$SYSTEM_MNT/huronOS/internet"
+readonly LANGS_DIR="$SYSTEM_MNT/huronOS/langs"
+readonly PROGRAMMING_DIR="$SYSTEM_MNT/huronOS/programming"
+readonly TOOLS_DIR="$SYSTEM_MNT/huronOS/tools"
+
+## AUFS branches
+	# syschanges/ branch will hold all the system-created
+	# changes that are necesary to boot, like the procfs, sysfs, etc.
+	# also, is the default place to copy up from lower readonly branches.
+	# eg. if /etc/fstab is edited, the modification will be writted in this branch.
+	readonly SYSCHANGES=$MEMORY/syschanges
+
+	# userchanges/ branch, is where all the newly-created files
+	# will be stored, it can be bind to a device to setup persistence
+	# or it can use ram to drop changes after reboot.
+	# This branch should be mounted AFTER boot on chroot over AUFS union.
+	readonly USRCHANGES=$MEMORY/usrchanges
+
+	# base/ is not branch, but the directory where the base modules branches
+	# should be mounted and then appended to the AUFS union.
+	readonly BASE_MNT=$MEMORY/base
+
+	# modules/ is not branch, but the directory where any other module that is
+	# not essential for huronOS will be mounted and then appended to the AUFS union.
+	readonly MODULES_MNT=$MEMORY/modules
+
+## AUFS resulting union
+readonly UNION=$MEMORY/union
+
+## Print init process to user
 header "huronOS Init process <https://huronos.org/>"
-
 echo "Creating target filesystem"
+
+## Mount the virtual filesystems
 init_proc_sysfs
 
+## Init debug, then promt debug
 debug_start
-                                                                                                                                                       debug_shell
-# load some modules manually first, then modprobe everything we have
+debug_shell
+
+## Load basic devices kernel modules, verify AUFS availability and set RAM compression
 init_devs
 init_aufs
 init_zram
+debug_shell
 
-# modprobe all devices excluding network drivers
-modprobe_everything -v /drivers/net/
+## Load all the available kernel modules, skip network.
+load_kernel_modules -v /drivers/net/
+debug_shell
 
-# find data dir with filesystem bundles
-DATA="$(find_data 45 "$DATAMNT")"
-check_data_found "$DATA"
-                                                                                                                                                      debug_shell
-# setup persistent changes, if possible
-persistent_changes "$DATA" "$CHANGES"
-                                                                                                                                                      debug_shell
-# copy to RAM if needed
-DATA="$(copy_to_ram "$DATA" "$CHANGES")"
+## Find the system data and the base huron software modules
+find_data 45
+debug_shell
 
-# mount bundles
-mount_bundles "$DATA" "$BUNDLES"
-                                                                                                                                                      debug_shell
-# init aufs union, or setup overlayfs union
-init_union "$CHANGES" "$UNION" "$BUNDLES"
+## Setup persistent changes
+persistent_changes
+debug_shell
 
-# add data to aufs union
-union_append_bundles "$BUNDLES" "$UNION"
-                                                                                                                                                      debug_shell
-# rootcopy
-copy_rootcopy_content "$DATA" "$UNION"
+## copy to RAM if needed
+# TODO: Check if this feature will be supported by huronOS
+# 		huronOS software is not -that- light, so this may not be a good idea
+#		for school computers which rarely have a big amount of RAM.
+# DATA="$(copy_to_ram "$DATA" "$CHANGES")"
+# debug_shell
 
-# create fstab
-fstab_create "$UNION" "$DATAMNT"
-                                                                                                                                                      debug_shell
-# run user custom preinit
+## Mount the base system modules
+mount_modules
+debug_shell
+
+## Init the empty AUFS union for later chroot
+init_union
+debug_shell
+
+## Append the base modules of huronOS to the union
+union_append_modules "$BASE_MNT"
+debug_shell
+
+## Rootcopy content to huronOS
+# TODO: Check if this feature will be supported by huronOS
+# 		this can mean a security hole for contestants being able to 
+#		easily add files to the rootcopy dir and gain root access.
+# copy_rootcopy_content "$DATA" "$UNION"
+# debug_shell
+
+## Create the fstab so that systemd mount filesystems at boot.
+fstab_create
+debug_shell
+
+## Run user custom preinit script
+# TODO: Check if this feature will be supported by huronOS
+# 		this can mean a security hole for contestants being able to 
+#		easily change essencial huronOS configurations.
 # user_preinit "$DATA" "$UNION"
+# debug_shell
 
 header "huronOS ready!, starting contest enviroment"
 header "Keep Training!"
-change_root "$UNION"
 
-header "!!ERROR occured, you shouldn't be here.!!"
+## Move the temporal ram disk system to the real huronOS system. 
+change_root
+
+## Adding open exclamation to surprise non-spanish speakers lol.
+header "¡¡ERROR occured, you shouldn't be here!! e.e"
 /bin/sh

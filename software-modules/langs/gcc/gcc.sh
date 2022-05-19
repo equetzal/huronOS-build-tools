@@ -23,4 +23,4 @@ rm -rf /tmp/gcc.hsm/root
 rm -rf /tmp/gcc.hsm/home
 dir2hsm /tmp/gcc.hsm
 
-cp /tmp/gcc.hsm /run/initramfs/memory/data/huronOS/langs/
+cp /tmp/gcc.hsm /run/initramfs/memory/system/huronOS/langs/

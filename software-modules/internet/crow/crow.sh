@@ -27,5 +27,5 @@ rm -rf /tmp/$NAME.hsm/usr/share/applications/mimeinfo.cache
 rm -rf /tmp/$NAME.hsm/usr/share/applications/io.crow*
 dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/$NAME.hsm /run/initramfs/memory/data/huronOS/internet/
+cp /tmp/$NAME.hsm /run/initramfs/memory/system/huronOS/internet/
 echo "Finished creating $NAME.hsm!"

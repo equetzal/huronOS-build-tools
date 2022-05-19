@@ -22,4 +22,4 @@ rm -rf /tmp/pypy3.hsm/root
 rm -rf /tmp/pypy3.hsm/etc
 dir2hsm /tmp/pypy3.hsm
 
-cp /tmp/pypy3.hsm /run/initramfs/memory/data/huronOS/langs/
+cp /tmp/pypy3.hsm /run/initramfs/memory/system/huronOS/langs/

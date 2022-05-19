@@ -28,5 +28,5 @@ rm -rf /tmp/$NAME.hsm/usr/share/applications/mc.desktop
 rm -rf /tmp/$NAME.hsm/usr/share/applications/mcedit.desktop
 dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/$NAME.hsm /run/initramfs/memory/data/huronOS/tools/
+cp /tmp/$NAME.hsm /run/initramfs/memory/system/huronOS/tools/
 echo "Finished creating $NAME.hsm!"
