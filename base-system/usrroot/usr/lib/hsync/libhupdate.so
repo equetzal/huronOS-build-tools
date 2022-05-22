@@ -1,0 +1,128 @@
+#!/bin/bash
+
+## Try the download of the directives file, and if succeed it validates the syntax of the file.
+try_directives_download(){
+
+	## Get the directives file URL
+	DIRECTIVES_FILE_URL="$(head -n 1 /etc/hsync/server | cut -d= -f2)"
+	DIRECTIVES_TEMP_FILE="/tmp/directives-$$.hdf"
+
+	if ! wget --timeout=10 -O $DIRECTIVES_TEMP_FILE $DIRECTIVES_FILE_URL; then
+		log "-Directives file cannot be downloaded"
+		return 1 # error
+	fi
+	log "+Directives file $DIRECTIVES_TEMP_FILE, successfuly downloaded"
+	
+	# Ok, so we have a new directives file, we must have to check it follows the syntaxis
+	# or the directives comparison between old and new directives file will crash.
+	# If directives files does not follow the syntax, let's just drop the file.
+	## Check if directives file follows the syntaxis
+	log " Syntax revision over $DIRECTIVES_TEMP_FILE"
+	if ! /usr/lib/hsync/hsync.validator $DIRECTIVES_TEMP_FILE >> /var/log/hsync.log; then
+		log "-Directives file $DIRECTIVES_TEMP_FILE have an invalid syntaxis. Droping file."
+		rm -f $DIRECTIVES_TEMP_FILE
+		return 1 # error
+	fi
+
+	log "+Directives file $DIRECTIVES_TEMP_FILE have an valid syntaxis."
+	return 0 #success
+}
+
+## Compare the same variable over two different configuration files
+# $1 = variable name
+# $2 = configuration A
+# $3 = configuration B
+is_var_equal(){
+	if [ "$(echo "$2" | grep "$1" | cut -d= -f2)" = "$(echo "$3" | grep "$1" | cut -d= -f2)" ]; then
+		return 0 # true, equal
+	fi
+	return 1 # false, not-equal
+}
+
+## Returns true if some variable on the global config is different between files
+have_global_config_changed(){
+	local CURRENT_DIRECTIVES NEW_DIRECTIVES
+	CURRENT_DIRECTIVES="$(sed -nE "/^\[Global\]$/{:l n;/^(\[.*\])?$/q;p;bl}" $DIRECTIVES_FILE)"
+	NEW_DIRECTIVES="$(sed -nE "/^\[Global\]$/{:l n;/^(\[.*\])?$/q;p;bl}" $DIRECTIVES_TEMP_FILE)"
+
+	is_var_equal "TimeZone" "$CURRENT_DIRECTIVES" "$NEW_DIRECTIVES" || return 0 # true, have-changed
+	is_var_equal "ConfigExpirationTime" "$CURRENT_DIRECTIVES" "$NEW_DIRECTIVES" || return 0 # true, have-changed
+	is_var_equal "AvailableKeyboardLayouts" "$CURRENT_DIRECTIVES" "$NEW_DIRECTIVES" || return 0 # true, have-changed
+	is_var_equal "DefaultKeyboardLayout" "$CURRENT_DIRECTIVES" "$NEW_DIRECTIVES" || return 0 # true, have-changed
+	is_var_equal "EventConfig" "$CURRENT_DIRECTIVES" "$NEW_DIRECTIVES" || return 0 # true, have-changed
+	is_var_equal "ContestConfig" "$CURRENT_DIRECTIVES" "$NEW_DIRECTIVES" || return 0 # true, have-changed
+
+	return 1 # false, have-not-changed
+}
+
+## Returns true if some variable on the specific config is different between files
+# $1 = specific config name
+have_specific_config_changed(){
+	local SECTION CURRENT_DIRECTIVES NEW_DIRECTIVES
+	SECTION="$1"
+	CURRENT_DIRECTIVES="$(sed -nE "/^\[$SECTION\]$/{:l n;/^(\[.*\])?$/q;p;bl}" $DIRECTIVES_FILE)"
+	NEW_DIRECTIVES="$(sed -nE "/^\[$SECTION\]$/{:l n;/^(\[.*\])?$/q;p;bl}" $DIRECTIVES_TEMP_FILE)"
+
+	is_var_equal "Wallpaper" "$CURRENT_DIRECTIVES" "$NEW_DIRECTIVES" || return 0 # true, have-changed
+	is_var_equal "AllowUsbStorage" "$CURRENT_DIRECTIVES" "$NEW_DIRECTIVES" || return 0 # true, have-changed
+	is_var_equal "AllowedWebsites" "$CURRENT_DIRECTIVES" "$NEW_DIRECTIVES" || return 0 # true, have-changed
+	is_var_equal "Bookmarks" "$CURRENT_DIRECTIVES" "$NEW_DIRECTIVES" || return 0 # true, have-changed
+	is_var_equal "AvailableSoftware" "$CURRENT_DIRECTIVES" "$NEW_DIRECTIVES" || return 0 # true, have-changed
+
+	return 1 # false, have-not-changed
+}
+
+## Returns true if any character on the event times have changed
+# $1 = specific config name
+have_specific_times_changed(){
+	local SECTION CURRENT_DIRECTIVES NEW_DIRECTIVES
+	SECTION="$1"
+	CURRENT_DIRECTIVES="$(sed -nE "/^\[$SECTION\]$/{:l n;/^(\[.*\])?$/q;p;bl}" $DIRECTIVES_FILE)"
+	NEW_DIRECTIVES="$(sed -nE "/^\[$SECTION\]$/{:l n;/^(\[.*\])?$/q;p;bl}" $DIRECTIVES_TEMP_FILE)"
+
+	if [ "$CURRENT_DIRECTIVES" = "$NEW_DIRECTIVES" ]; then
+		return 1 # false, have-not-changed
+	fi
+	return 0 # true, have-changed
+}
+
+have_directives_changed(){
+	have_global_config_changed; DIRECTIVES_GLOBAL_CONFIG_HAVE_CHANGED=$?
+	have_specific_config_changed "Always"; DIRECTIVES_ALWAYS_CONFIG_HAVE_CHANGED=$?
+	have_specific_config_changed "Event"; DIRECTIVES_EVENT_CONFIG_HAVE_CHANGED=$?
+	have_specific_config_changed "Contest"; DIRECTIVES_CONTEST_CONFIG_HAVE_CHANGED=$?
+	have_specific_times_changed "Event-Times"; DIRECTIVES_EVENT_TIMES_HAVE_CHANGED=$?
+	have_specific_times_changed "Contest-Times"; DIRECTIVES_CONTEST_TIMES_HAVE_CHANGED=$?
+	
+	DIRECTIVES_HAVE_CHANGED=1 # false, not-changed
+	if [ $DIRECTIVES_GLOBAL_CONFIG_HAVE_CHANGED -eq 0 ];	then DIRECTIVES_HAVE_CHANGED=0; fi
+	if [ $DIRECTIVES_ALWAYS_CONFIG_HAVE_CHANGED -eq 0 ];	then DIRECTIVES_HAVE_CHANGED=0; fi
+	if [ $DIRECTIVES_EVENT_CONFIG_HAVE_CHANGED -eq 0 ];		then DIRECTIVES_HAVE_CHANGED=0; fi
+	if [ $DIRECTIVES_CONTEST_CONFIG_HAVE_CHANGED -eq 0 ];	then DIRECTIVES_HAVE_CHANGED=0; fi
+	if [ $DIRECTIVES_EVENT_TIMES_HAVE_CHANGED -eq 0 ];		then DIRECTIVES_HAVE_CHANGED=0; fi
+	if [ $DIRECTIVES_CONTEST_TIMES_HAVE_CHANGED -eq 0 ];	then DIRECTIVES_HAVE_CHANGED=0; fi
+
+	log " Comparing new directives file, result:
+	DIRECTIVES_HAVE_CHANGED=$DIRECTIVES_HAVE_CHANGED
+	DIRECTIVES_GLOBAL_CONFIG_HAVE_CHANGED=$DIRECTIVES_GLOBAL_CONFIG_HAVE_CHANGED
+	DIRECTIVES_ALWAYS_CONFIG_HAVE_CHANGED=$DIRECTIVES_ALWAYS_CONFIG_HAVE_CHANGED
+	DIRECTIVES_EVENT_CONFIG_HAVE_CHANGED=$DIRECTIVES_EVENT_CONFIG_HAVE_CHANGED
+	DIRECTIVES_CONTEST_CONFIG_HAVE_CHANGED=$DIRECTIVES_CONTEST_CONFIG_HAVE_CHANGED
+	DIRECTIVES_EVENT_TIMES_HAVE_CHANGED=$DIRECTIVES_EVENT_TIMES_HAVE_CHANGED
+	DIRECTIVES_CONTEST_TIMES_HAVE_CHANGED=$DIRECTIVES_CONTEST_TIMES_HAVE_CHANGED"
+
+
+	if [ $DIRECTIVES_HAVE_CHANGED -eq 0 ]; then
+		log "+Directives file have changed"
+		return 0 # true, have changed
+	fi
+	log "-Directives file have not changed, removing $DIRECTIVES_TEMP_FILE"
+	rm -f $DIRECTIVES_TEMP_FILE
+	return 1 # false, have not changed
+}
+
+update_directives(){
+	log "+Writting new directives file on $DIRECTIVES_FILE"
+	mv $DIRECTIVES_TEMP_FILE $DIRECTIVES_FILE 
+	return $? 
+}

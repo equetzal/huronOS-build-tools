@@ -1,0 +1,109 @@
+#!/bin/bash
+
+# readonly MEMORY=/run/initramfs/memory
+# readonly SYSTEM_MNT=$MEMORY/system
+# readonly EVENT_MNT=$MEMORY/event
+# readonly CONTEST_MNT=$MEMORY/contest
+# readonly SYSCHANGES=$MEMORY/syschanges
+# readonly USRCHANGES=$MEMORY/usrchanges
+# readonly BASE_MNT=$MEMORY/base
+# readonly MODULES_MNT=$MEMORY/modules
+# readonly UNION=/
+# readonly DIRECTIVES_FILE=/etc/hsync/directives
+# readonly STATE_FILE=/etc/hsync/state
+# readonly BACKUP_DIR=$USRCHANGES/.huronOS..sysbackup.d
+
+## Set some global variables
+# declare STATE_IS_CLOCK_SYNC
+# declare STATE_MODE
+# declare STATE_MODE_START_TIME_UTC
+# declare STATE_MODE_END_TIME_UTC
+# declare STATE_IS_PERSISTENCE_ENABLED
+# declare STATE_PERSISTENCE_DISK
+# declare STATE_LAST_HSYNC_EXECUTION_TIME_UTC
+
+restore_state_from_disk(){
+	local BACKUP_PATH
+	BACKUP_PATH=""
+
+	# Let's verify that event and contest partitions are mounted
+	if ! cat /proc/mounts | grep $EVENT_MNT | grep rw; then
+		log "-Cannot find mounted event partition on $EVENT_MNT. Have bootloader configs been wronly edited?"
+		return 1 # error
+	fi
+	if ! cat /proc/mounts | grep $CONTEST_MNT | grep rw; then
+		log "-Cannot find mounted contest partition on $CONTEST_MNT. Have bootloader configs been wronly edited?"
+		return 1 # error
+	fi
+
+	# We will start checking the event partiton and look if we can find our persistent system state
+	if [ -d "$EVENT_MNT/$BACKUP_DIR_NAME" ]; then 
+		BACKUP_PATH="$EVENT_MNT/$BACKUP_DIR_NAME"
+		log "+System state found over $BACKUP_PATH."
+	fi
+	# If we also find a contest partition state, something is wrong because there should only exist
+	# a system state dir over the last partition used for persistence.
+	if [ -d "$CONTEST_MNT/$BACKUP_DIR_NAME" ]; then
+		BACKUP_PATH="$CONTEST_MNT/$BACKUP_DIR_NAME"
+		log "+System state found over $BACKUP_PATH."
+	fi
+	# If no backup is found, then there was no persistence set, or the system is newly installed,
+	# or it was cleaned as purpose. So, nothing to restore then :)
+	if [ "$BACKUP_PATH" = "" ]; then
+		log "-No system state found, system cannot restore to a previous state."
+		return 0 # success 
+	fi
+
+	# We do need both files to restore huronOS in the mode it was.
+	# Directives file indicates the timings for all events and contests
+	# so it drives the mode in which huronOS should ran. But the directives
+	# file can be downloaded again, and the state can only be created on here.
+	# Also, in the case that we do only have a state file but not a directives file,
+	# huronOS should at least, recover the persistent data available on the partition
+	# until it is able to download a directives file, and follow it's instructions.
+	if [ ! -f "$BACKUP_PATH/$(basename $STATE_FILE)" ];then
+		log "-Directives file $BACKUP_PATH/$(basename $STATE_FILE) does not exist, Impossible to restore the system state. Aborting"
+		return 1 # error
+	fi
+	cp -f $BACKUP_PATH/$(basename $STATE_FILE) $STATE_FILE && \
+	log "+Directives file was backed up on $BACKUP_PATH/$(basename $STATE_FILE)"
+
+	if [ -f "$BACKUP_PATH/$(basename $DIRECTIVES_FILE)" ];then
+		cp -f $BACKUP_PATH/$(basename $DIRECTIVES_FILE) $DIRECTIVES_FILE && \
+		log "+Directives file was backed up on $BACKUP_PATH/$(basename $DIRECTIVES_FILE)"
+	else
+		log "-Directives file $BACKUP_PATH/$(basename $DIRECTIVES_FILE) does not exist!\nThis might lead to a restoration issue."
+	fi
+
+	return 0 # sucess
+}
+
+backup_state_to_disk(){
+
+	# Let's verify that there's a drive mounted on usrchanges/ branch,
+	# otherwise it will be useless to save it
+	if ! cat /proc/mounts | grep $USRCHANGES | grep rw; then
+		log "-Cannot backup huronOS state, no writable $USRCHANGES branch"
+		return 1 # error
+	fi
+
+	mkdir -p $BACKUP_DIR
+	
+	if [ -f "$DIRECTIVES_FILE" ];then
+		cp -f $DIRECTIVES_FILE $BACKUP_DIR/$(basename $DIRECTIVES_FILE) && \
+		log "+Directives file backed up on $BACKUP_DIR/$(basename $DIRECTIVES_FILE)"
+	else
+		log "-Directives file $DIRECTIVES_FILE does not exist"
+	fi
+
+	if [ -f "$STATE_FILE" ];then
+		cp -f $STATE_FILE $BACKUP_DIR/$(basename $STATE_FILE) && \
+		log "+Directives file backed up on $BACKUP_DIR/$(basename $STATE_FILE)"
+	else
+		log "-Directives file $STATE_FILE does not exist"
+	fi
+
+	chmod -R 600 $BACKUP_DIR
+
+	return 0 # success
+}

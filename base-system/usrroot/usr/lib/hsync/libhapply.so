@@ -1,0 +1,5 @@
+#/bin/bash
+
+apply_directives_to_system(){
+	return 0
+}

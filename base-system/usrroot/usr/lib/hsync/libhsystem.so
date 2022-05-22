@@ -1,0 +1,121 @@
+#!/bin/bash
+
+# ## Set some constants
+# readonly MEMORY=/run/initramfs/memory
+# readonly SYSTEM_MNT=$MEMORY/system
+# readonly EVENT_MNT=$MEMORY/event
+# readonly CONTEST_MNT=$MEMORY/contest
+# readonly SYSCHANGES=$MEMORY/syschanges
+# readonly USRCHANGES=$MEMORY/usrchanges
+# readonly BASE_MNT=$MEMORY/base
+# readonly MODULES_MNT=$MEMORY/modules
+# readonly UNION=/
+# readonly DIRECTIVES_FILE=/etc/hsync/directives
+# readonly STATE_FILE=/etc/hsync/state
+# readonly BACKUP_DIR=$USRCHANGES/.huronOS..sysbackup.d
+
+# ## Set some global variables
+# declare STATE_IS_CLOCK_SYNC
+# declare STATE_MODE
+# declare STATE_MODE_START_TIME_UTC
+# declare STATE_MODE_END_TIME_UTC
+# declare STATE_IS_PERSISTENCE_ENABLED
+# declare STATE_PERSISTENCE_DISK
+# declare STATE_LAST_HSYNC_EXECUTION_TIME_UTC
+
+
+# Returns true if the uptime has 120 or less seconds of boottime.
+# The hsync.timer is configured to start 60 seconds after boot,
+# once network is initialized and graphical enviroment is set.
+# So, first execution should be between ~60s and ~120s of bootime.
+system_has_just_booted(){
+	## Check if huronOS rebooted in the last 120 seconds
+	log " Checking if huronOS has just booted"
+	seconds_since_boot=$(awk '{print int($1)}' /proc/uptime)
+
+	# If hardware clock is not sync with ntp server, this will still working as the uptime
+	# only counts seconds since boot using hardware clock.
+	if [ "$seconds_since_boot" -le "12" ]; then
+		log " huronOS has just booted, hsync first execution after boot."
+		return 0 # true
+	fi
+
+	log " huronOS already booted before, recurring hsync execution."
+	return 1 # false
+}
+
+## Get the huronos.flags cmdline value for a given key
+# $1 = key to search value of
+# Eg. $1="ip", "ip=1.1.1.1" -> "1.1.1.1"
+cmdline_value(){
+   	cat /proc/cmdline | sed "s/.*huronos.flags=(\(.*\)).*/\1/" | sed -ne "/.*$1=\([^;]*\).*/!d;s//\1/p"
+}
+
+## Returns true if there is a huronos.flag with value equals true
+# $1 = key to expect value as true
+cmdline_has(){
+	VALUE="$(cmdline_value $1)"
+	if [ "$VALUE" = "true" ]; then
+   		return 0
+   	else
+   		return 1
+   	fi
+}
+
+## Returns true if the cmdline at boot has persistence set to true
+system_has_persistece_enabled(){
+	return $(cmdline_has "persistence")
+}
+
+state_clock_sync(){
+	STATE_IS_CLOCK_SYNC="$(timedatectl show | grep NTPSynchronized | cut -d= -f2)"
+}
+
+state_hsync_execution_time(){
+	STATE_LAST_HSYNC_EXECUTION_TIME_UTC="$(date --utc --iso-8601='seconds')"
+}
+
+load_state(){
+	if [ ! -f $STATE_FILE ]; then
+		log "-Cannot load current state"
+		return 1 # error
+	fi
+
+	STATE_IS_CLOCK_SYNC="$(cat /etc/hsync/state | grep is-clock-sync= | cut -d= -f2)"
+	STATE_MODE="$(cat /etc/hsync/state | grep mode= | cut -d= -f2)"
+	STATE_MODE_START_TIME_UTC="$(cat /etc/hsync/state | grep mode-start-time-utc= | cut -d= -f2)"
+	STATE_MODE_END_TIME_UTC="$(cat /etc/hsync/state | grep mode-end-time-utc= | cut -d= -f2)"
+	STATE_IS_PERSISTENCE_ENABLED="$(cat /etc/hsync/state | grep is-persistence-enabled= | cut -d= -f2)"
+	STATE_PERSISTENCE_DISK="$(cat /etc/hsync/state | grep persistence-disk=| cut -d= -f2)"
+	STATE_LAST_HSYNC_EXECUTION_TIME_UTC="$(cat /etc/hsync/state | grep last-hsync-execution-time-utc=| cut -d= -f2)"
+	
+	log "+System state is set to:
+	is-clock-sync=$STATE_IS_CLOCK_SYNC
+	mode=$STATE_MODE
+	mode-start-time-utc=$STATE_MODE_START_TIME_UTC
+	mode-end-time-utc=$STATE_MODE_END_TIME_UTC
+	is-persistence-enabled=$STATE_IS_PERSISTENCE_ENABLED
+	persistence-disk=$STATE_PERSISTENCE_DISK
+	last-hsync-execution-time-utc=$STATE_LAST_HSYNC_EXECUTION_TIME_UTC"
+	return 0 # success
+}
+
+save_state(){
+	cat <<EOT > $STATE_FILE
+is-clock-sync=$STATE_IS_CLOCK_SYNC
+mode=$STATE_MODE
+mode-start-time-utc=$STATE_MODE_START_TIME_UTC
+mode-end-time-utc=$STATE_MODE_END_TIME_UTC
+is-persistence-enabled=$STATE_IS_PERSISTENCE_ENABLED
+persistence-disk=$STATE_PERSISTENCE_DISK
+last-hsync-execution-time-utc=$STATE_LAST_HSYNC_EXECUTION_TIME_UTC
+EOT
+	log "+System state updated to:
+	is-clock-sync=$STATE_IS_CLOCK_SYNC
+	mode=$STATE_MODE
+	mode-start-time-utc=$STATE_MODE_START_TIME_UTC
+	mode-end-time-utc=$STATE_MODE_END_TIME_UTC
+	is-persistence-enabled=$STATE_IS_PERSISTENCE_ENABLED
+	persistence-disk=$STATE_PERSISTENCE_DISK
+	last-hsync-execution-time-utc=$STATE_LAST_HSYNC_EXECUTION_TIME_UTC"
+}
