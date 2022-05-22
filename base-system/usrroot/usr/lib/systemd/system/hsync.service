@@ -1,5 +1,8 @@
 [Unit]
 Description=huronOS sync service
+Requires=network.target
+After=network.target
+After=multi-user.target
 
 [Service]
 User=root
@@ -7,6 +10,3 @@ Group=root
 ExecStart=/usr/lib/hsync/hsync.downloader
 Restart=on-abnormal
 SuccessExitStatus=0
-
-[Install]
-WantedBy=multi-user.target

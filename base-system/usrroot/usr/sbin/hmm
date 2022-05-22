@@ -12,7 +12,7 @@
 
 ## Basic vars
 readonly MEMORY=/run/initramfs/memory
-readonly MODULES_MNT=$MEMORY/bundles
+readonly MODULES_MNT=$MEMORY/modules
 readonly MODULES_STORE=$MEMORY/store
 declare SILENT="false"
 declare FORCE="false"
