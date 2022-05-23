@@ -5,10 +5,28 @@ log(){
 	echo -e "[$(date)] $1" | tee -a /var/log/hsync.log
 }
 
+log_start(){
+	echo -e "
+
+
+	------------------------------------------------------------------------------
+	Starting huronOS hsync service
+	" | tee -a /var/log/hsync.log
+}
+
+log_end(){
+	echo -e "
+	
+	End of huronOS hsync service
+	------------------------------------------------------------------------------
+
+
+	" | tee -a /var/log/hsync.log
+}
 
 log_aufs_branches(){
 	local STACK_ID BRANCHES_DIR BRANCHES_LIST  
-	STACK_ID=$(cat /proc/mounts | grep 'aufs / aufs' | egrep -o 'si=([^,) ]+)' | tr = _)
+	STACK_ID="$(cat /proc/mounts | grep 'aufs / aufs' | egrep -o 'si=([^,) ]+)' | tr = _)"
 	BRANCHES_DIR="/sys/fs/aufs/${STACK_ID}"
 	BRANCHES_LIST="$(ls -v1 $BRANCHES_DIR | grep -E "br[0-9]+")"
 

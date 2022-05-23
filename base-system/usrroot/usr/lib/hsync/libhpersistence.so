@@ -1,40 +1,134 @@
 #!/bin/bash
 
-# ## Set some constants
-# readonly MEMORY=/run/initramfs/memory
-# readonly SYSTEM_MNT=$MEMORY/system
-# readonly EVENT_MNT=$MEMORY/event
-# readonly CONTEST_MNT=$MEMORY/contest
-# readonly SYSCHANGES=$MEMORY/syschanges
-# readonly USRCHANGES=$MEMORY/usrchanges
-# readonly BASE_MNT=$MEMORY/base
-# readonly MODULES_MNT=$MEMORY/modules
-# readonly UNION=/
-# readonly DIRECTIVES_FILE=/etc/hsync/directives
-# readonly DIRECTIVES_FILE_SERVER=/etc/hsync/server
-# readonly STATE_FILE=/etc/hsync/state
-# readonly BACKUP_DIR_NAME=.huronOS..sysbackup.d
-# readonly BACKUP_DIR=$USRCHANGES/$BACKUP_DIR_NAME
+# This is the first execution of hsync, here we don't have a current state.
+# It is 'none', so in this part we need to either set a previous persistent state
+# or set 'always' mode if no other state is available.
+start_persistence(){
 
+	case $STATE_MODE in
+		# If there's no STATE_MODE, then there was no persistence set.
+		# Let's clean the partition and start the always mode
+		"")
+			log "No previous state found, creating new persistence in always mode"
+			start_always_mode || return 1 # error
+			return 0 # sucess
+			;;
 
-# ## Set some global variables
-# declare STATE_IS_CLOCK_SYNC
-# declare STATE_MODE
-# declare STATE_MODE_START_TIME_UTC
-# declare STATE_MODE_END_TIME_UTC
-# declare STATE_IS_PERSISTENCE_ENABLED
-# declare STATE_PERSISTENCE_DISK
-# declare STATE_LAST_HSYNC_EXECUTION_TIME_UTC
+		# If the state was always, then let's restore the files
+		"always")
+			log "Previous state found, restoring persistence in always mode"
+			restore_always_mode || return 1
+			return 0 # sucess
+			;;
 
-# declare DIRECTIVES_FILE_URL
-# declare DIRECTIVES_TEMP_FILE
-# declare DIRECTIVES_HAVE_CHANGED
-# declare DIRECTIVES_GLOBAL_CONFIG_HAVE_CHANGED
-# declare DIRECTIVES_ALWAYS_CONFIG_HAVE_CHANGED
-# declare DIRECTIVES_EVENT_CONFIG_HAVE_CHANGED
-# declare DIRECTIVES_CONTEST_CONFIG_HAVE_CHANGED
-# declare DIRECTIVES_EVENT_TIMES_HAVE_CHANGED
-# declare DIRECTIVES_CONTEST_TIMES_HAVE_CHANGED
+		# If the state was event, then let's restore the files
+		"event")
+			log "Previous state found, restoring persistence in event mode"
+			restore_event_mode || return 1
+			return 0 # sucess
+			;;
+
+		# If the state was contest, then let's restore the files
+		"event")
+			log "Previous state found, restoring persistence in contest mode"
+			restore_contest_mode || return 1
+			return 0 # sucess
+			;;
+	esac
+		
+	return 0
+}
+
+# This function is supposed to be called when there's a mode already set,
+# so that this function only change the persistence between modes.
+apply_persistence_mode(){
+
+	if ! system_has_persistece_enabled; then
+		STATE_IS_PERSISTENCE_ENABLED="false"
+		return 0 #success
+	fi
+
+	## Check if the current state is the same as the directives specified mode.
+	if is_running_mode_same_as_new_mode; then
+		log "+The following mode timeframes are considered to be the same:
+		#1: $STATE_MODE 
+		    $STATE_MODE_START_TIME_UTC - $STATE_MODE_END_TIME_UTC
+		#2: $NEW_MODE 
+		    $NEW_MODE_START_TIME_UTC - $NEW_MODE_END_TIME_UTC
+		No modification will be done on persistence, preserving changes."
+		return 0 # success. 
+	else
+		log "+The following mode timeframes are considered to be the different:
+		#1: $STATE_MODE 
+		    $STATE_MODE_START_TIME_UTC - $STATE_MODE_END_TIME_UTC
+		#2: $NEW_MODE 
+		    $NEW_MODE_START_TIME_UTC - $NEW_MODE_END_TIME_UTC
+		Modifications to persistence will be done."
+	fi
+
+	#set -x
+	[ "$STATE_MODE" = "always" ]	&& [ "$NEW_MODE" = "event" ]	&& always_to_event
+	[ "$STATE_MODE" = "always" ]	&& [ "$NEW_MODE" = "contest" ]	&& always_to_contest
+	[ "$STATE_MODE" = "event" ]		&& [ "$NEW_MODE" = "always" ]	&& event_to_always
+	[ "$STATE_MODE" = "event" ]		&& [ "$NEW_MODE" = "event" ]	&& event_to_event
+	[ "$STATE_MODE" = "event" ]		&& [ "$NEW_MODE" = "contest" ]	&& event_to_contest
+	[ "$STATE_MODE" = "contest" ]	&& [ "$NEW_MODE" = "always" ]	&& contest_to_always
+	[ "$STATE_MODE" = "contest" ]	&& [ "$NEW_MODE" = "event" ]	&& contest_to_event
+	[ "$STATE_MODE" = "contest" ]	&& [ "$NEW_MODE" = "contest" ]	&& contest_to_contest
+	#set +x
+
+	STATE_IS_PERSISTENCE_ENABLED="true"
+	[ "$NEW_MODE" = "always" ] && STATE_PERSISTENCE_DISK="event"
+	[ "$NEW_MODE" = "event" ] && STATE_PERSISTENCE_DISK="event"
+	[ "$NEW_MODE" = "contest" ] && STATE_PERSISTENCE_DISK="contest"
+
+	log_aufs_branches
+
+	return 0
+}
+
+## Given a persistent branch currently part of the AUFS union
+#  let it be free. That is, removing the branch from the union.
+# $1 = Branch to free
+free_branch(){
+	local BRANCH PIDS PID
+	BRANCH="$1"
+
+	## First, let's quit all the modules as they may lock the persistent branch
+	hmm -f --block-update /etc/hmm/any
+
+	## Now, we will stop the user interface as budgie regulary keep cache files that locks the branch
+	systemctl stop lightdm.service
+	sleep 5
+
+	## Let's try to remove the branch from AUFS
+	mount -t aufs -o remount,del:"$BRANCH" aufs / 2>/dev/null
+	[ $? -eq 0 ] && return 0
+
+	## Ok, we cannot remove the AUFS branch, so, a non-graphical process is locking the branch
+	# we will try killing all processes that are locking them. If huronOS is well configured,
+	# any important process should be locking the branch
+	while : ; do
+		PIDS=$(aubusy -v / $BRANCH | awk '{print $1}' | sort | uniq | sed 's:\n: :g')
+		for PID in $PIDS; do
+			echo "Killing process with ID $PID aka. $(ps -p $PID -o command --no-headers | awk '{print $1}')"
+			kill -9 $PID >/dev/null 2>/dev/null
+		done
+		## Let's retry to remove the branch
+		mount -t aufs -o remount,del:"$BRANCH" aufs / 2>/dev/null
+		[ $? -eq 0 ] && return 0 # We are free!!
+	done
+}
+
+## Branch is unified into AUFS and then realeased for user to use.
+# $1 = Branch to release
+release_branch(){
+	local BRANCH
+	BRANCH="$1"
+
+	mount -t aufs -o remount,prepend:"$BRANCH" aufs /
+	systemctl start lightdm.service
+}
 
 ## Cleans the given partition of ANY file, then creates the base dirs that will redirect
 # the AUFS tdp create policy to save changes on usrchanges instead of syschanges
@@ -57,6 +151,21 @@ prepare_perch(){
 	chown -R contestant:contestant $DIR
 }
 
+## Saves the changes of a partition on the selected directory with the date and hour stamp
+# $1 = partition mount point
+# $2 = destiny directory to save
+# $3 = preffix of directory where changes will be saved
+save_changes(){
+	local ORIGIN DESTINY PREFFIX DIR
+	ORIGIN="$1"
+	DESTINY="$2"
+	PREFFIX="$3"
+	DIR="$DESTINY/$PREFFIX-$(date '+%Y-%m-%d_%H.%M')"
+
+	mkdir -p $DIR
+	cp -rf --verbose $ORIGIN/* $DIR/
+	chown contestant:contestant $DIR
+}
 
 start_always_mode(){
 	# Let's deactivate all modules to prevent syschanges/ to stay at a higher index layer
@@ -157,41 +266,72 @@ restore_contest_mode(){
 	return 0
 }
 
-# This is the first execution of hsync, here we don't have a current state.
-# It is 'none', so in this part we need to either set a previous persistent state
-# or set 'always' mode if no other state is available.
-start_persistence(){
-
-	case $STATE_MODE in
-		# If there's no STATE_MODE, then there was no persistence set.
-		# Let's clean the partition and start the always mode
-		"")
-			log "No previous state found, creating new persistence in always mode"
-			start_always_mode || return 1 # error
-			return 0 # sucess
-			;;
-
-		# If the state was always, then let's restore the files
-		"always")
-			log "Previous state found, restoring persistence in always mode"
-			restore_always_mode || return 1
-			return 0 # sucess
-			;;
-
-		# If the state was event, then let's restore the files
-		"event")
-			log "Previous state found, restoring persistence in event mode"
-			restore_event_mode || return 1
-			return 0 # sucess
-			;;
-
-		# If the state was contest, then let's restore the files
-		"event")
-			log "Previous state found, restoring persistence in contest mode"
-			restore_contest_mode || return 1
-			return 0 # sucess
-			;;
-	esac
-		
+always_to_event(){
+	free_branch $USRCHANGES
+	prepare_perch $USRCHANGES
+	release_branch $USRCHANGES
 	return 0
 }
+
+always_to_contest(){
+	free_branch $USRCHANGES
+	umount $USRCHANGES
+	prepare_perch $CONTEST_MNT
+	mount --bind $CONTEST_MNT $USRCHANGES
+	release_branch $USRCHANGES
+	return 0
+}
+
+event_to_always(){
+	free_branch $USRCHANGES
+	prepare_perch $USRCHANGES
+	release_branch $USRCHANGES
+	return 0
+}
+
+event_to_event(){
+	free_branch $USRCHANGES
+	prepare_perch $USRCHANGES
+	release_branch $USRCHANGES
+	return 0
+}
+
+event_to_contest(){
+	free_branch $USRCHANGES
+	umount $USRCHANGES
+	prepare_perch $CONTEST_MNT
+	mount --bind $CONTEST_MNT $USRCHANGES
+	release_branch $USRCHANGES
+	return 0
+}
+
+contest_to_always(){
+	free_branch $USRCHANGES
+	umount $USRCHANGES
+	prepare_perch $EVENT_MNT
+	save_changes $CONTEST_MNT "$EVENT_MNT/home/contestant" "contest"
+	prepare_perch $CONTEST_MNT
+	mount --bind $EVENT_MNT $USRCHANGES
+	release_branch $USRCHANGES
+	return 0
+}
+
+contest_to_event(){
+	free_branch $USRCHANGES
+	umount $USRCHANGES
+	prepare_perch $EVENT_MNT
+	save_changes $CONTEST_MNT "$EVENT_MNT/home/contestant" "contest"
+	prepare_perch $CONTEST_MNT
+	mount --bind $EVENT_MNT $USRCHANGES
+	release_branch $USRCHANGES
+	return 0
+}
+
+contest_to_contest(){
+	free_branch $USRCHANGES
+	save_changes $CONTEST_MNT "$EVENT_MNT/home/contestant" "contest"
+	prepare_perch $USRCHANGES
+	release_branch $USRCHANGES
+	return 0
+}
+

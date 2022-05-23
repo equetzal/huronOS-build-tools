@@ -1,27 +1,5 @@
 #!/bin/bash
 
-# readonly MEMORY=/run/initramfs/memory
-# readonly SYSTEM_MNT=$MEMORY/system
-# readonly EVENT_MNT=$MEMORY/event
-# readonly CONTEST_MNT=$MEMORY/contest
-# readonly SYSCHANGES=$MEMORY/syschanges
-# readonly USRCHANGES=$MEMORY/usrchanges
-# readonly BASE_MNT=$MEMORY/base
-# readonly MODULES_MNT=$MEMORY/modules
-# readonly UNION=/
-# readonly DIRECTIVES_FILE=/etc/hsync/directives
-# readonly STATE_FILE=/etc/hsync/state
-# readonly BACKUP_DIR=$USRCHANGES/.huronOS..sysbackup.d
-
-## Set some global variables
-# declare STATE_IS_CLOCK_SYNC
-# declare STATE_MODE
-# declare STATE_MODE_START_TIME_UTC
-# declare STATE_MODE_END_TIME_UTC
-# declare STATE_IS_PERSISTENCE_ENABLED
-# declare STATE_PERSISTENCE_DISK
-# declare STATE_LAST_HSYNC_EXECUTION_TIME_UTC
-
 restore_state_from_disk(){
 	local BACKUP_PATH
 	BACKUP_PATH=""
@@ -62,11 +40,11 @@ restore_state_from_disk(){
 	# huronOS should at least, recover the persistent data available on the partition
 	# until it is able to download a directives file, and follow it's instructions.
 	if [ ! -f "$BACKUP_PATH/$(basename $STATE_FILE)" ];then
-		log "-Directives file $BACKUP_PATH/$(basename $STATE_FILE) does not exist, Impossible to restore the system state. Aborting"
+		log "-State file $BACKUP_PATH/$(basename $STATE_FILE) does not exist, Impossible to restore the system state. Aborting"
 		return 1 # error
 	fi
 	cp -f $BACKUP_PATH/$(basename $STATE_FILE) $STATE_FILE && \
-	log "+Directives file was backed up on $BACKUP_PATH/$(basename $STATE_FILE)"
+	log "+State file was backed up on $BACKUP_PATH/$(basename $STATE_FILE)"
 
 	if [ -f "$BACKUP_PATH/$(basename $DIRECTIVES_FILE)" ];then
 		cp -f $BACKUP_PATH/$(basename $DIRECTIVES_FILE) $DIRECTIVES_FILE && \
@@ -98,9 +76,9 @@ backup_state_to_disk(){
 
 	if [ -f "$STATE_FILE" ];then
 		cp -f $STATE_FILE $BACKUP_DIR/$(basename $STATE_FILE) && \
-		log "+Directives file backed up on $BACKUP_DIR/$(basename $STATE_FILE)"
+		log "+State file backed up on $BACKUP_DIR/$(basename $STATE_FILE)"
 	else
-		log "-Directives file $STATE_FILE does not exist"
+		log "-State file $STATE_FILE does not exist"
 	fi
 
 	chmod -R 600 $BACKUP_DIR

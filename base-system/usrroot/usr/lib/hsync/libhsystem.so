@@ -1,29 +1,5 @@
 #!/bin/bash
 
-# ## Set some constants
-# readonly MEMORY=/run/initramfs/memory
-# readonly SYSTEM_MNT=$MEMORY/system
-# readonly EVENT_MNT=$MEMORY/event
-# readonly CONTEST_MNT=$MEMORY/contest
-# readonly SYSCHANGES=$MEMORY/syschanges
-# readonly USRCHANGES=$MEMORY/usrchanges
-# readonly BASE_MNT=$MEMORY/base
-# readonly MODULES_MNT=$MEMORY/modules
-# readonly UNION=/
-# readonly DIRECTIVES_FILE=/etc/hsync/directives
-# readonly STATE_FILE=/etc/hsync/state
-# readonly BACKUP_DIR=$USRCHANGES/.huronOS..sysbackup.d
-
-# ## Set some global variables
-# declare STATE_IS_CLOCK_SYNC
-# declare STATE_MODE
-# declare STATE_MODE_START_TIME_UTC
-# declare STATE_MODE_END_TIME_UTC
-# declare STATE_IS_PERSISTENCE_ENABLED
-# declare STATE_PERSISTENCE_DISK
-# declare STATE_LAST_HSYNC_EXECUTION_TIME_UTC
-
-
 # Returns true if the uptime has 120 or less seconds of boottime.
 # The hsync.timer is configured to start 60 seconds after boot,
 # once network is initialized and graphical enviroment is set.
@@ -100,6 +76,13 @@ load_state(){
 	return 0 # success
 }
 
+update_state(){
+	STATE_MODE="$NEW_MODE"
+	STATE_MODE_START_TIME_UTC="$NEW_MODE_START_TIME_UTC"
+	STATE_MODE_END_TIME_UTC="$NEW_MODE_END_TIME_UTC"
+	return 0
+}
+
 save_state(){
 	cat <<EOT > $STATE_FILE
 is-clock-sync=$STATE_IS_CLOCK_SYNC
@@ -118,4 +101,59 @@ EOT
 	is-persistence-enabled=$STATE_IS_PERSISTENCE_ENABLED
 	persistence-disk=$STATE_PERSISTENCE_DISK
 	last-hsync-execution-time-utc=$STATE_LAST_HSYNC_EXECUTION_TIME_UTC"
+}
+
+# Determines if the running mode, is the same as the
+# calculated on the directives file.
+is_running_mode_same_as_new_mode(){
+	log " Running mode is $STATE_MODE, directives ask to set mode $NEW_MODE"
+
+	## If the state mode and the new mode are different, we know is not the same
+	if [ "$STATE_MODE" != "$NEW_MODE" ]; then
+		return 1 # false, not-the-same
+	fi
+
+	# If both are the same, and they're -Always- mode, there's no timeframes,
+	# so they're the same mode.
+	if [ "$STATE_MODE" = "always" ]; then
+		return 0 # true, the-same
+	fi
+
+	# Ok, so if the same mode is running we need to verify both of them are 
+	# on the same time frame. This is not trivial because eg. maybe while an event is
+	# running, the organizers updated the end time. We need to handle this by not 
+	# moving the persistence, just the next forced execution.
+	# By the other hand, maybe the last time the system was powered off, was during
+	# a running event. So, at the boot time we will restore the persistence of that
+	# event, BUT now we're at a different date with a new directives file and a
+	# new event running right now. In this case, the event is not the same and we
+	# need to clean the past event data.
+	declare STATE_MODE_START=$(date --date="$STATE_MODE_START_TIME_UTC" +'%s')
+	declare STATE_MODE_END=$(date --date="$STATE_MODE_END_TIME_UTC" +'%s')
+	declare NEW_MODE_START=$(date --date="$NEW_MODE_START_TIME_UTC" +'%s')
+	declare NEW_MODE_END=$(date --date="$NEW_MODE_END_TIME_UTC" +'%s')
+	declare CURRENT_TIME=$(date +'%s')
+	
+	# Asumtions will be the following:
+	#	-If the current mode end time was before (lower equal) than CURRENT_TIME, then they
+	# 	 will be considered different event.
+	#	-If the current mode start time was after (greter) than CURRENT_TIME, they will be
+	#	 considered different event. Also, this is supposed to not be possible as the
+	# 	 state file is only generated if the mode is already running, so start time must had
+	#	 to be before CURRENT_TIME. This can mean the system clock is not sync with NTP server.
+	#	-If the current mode was started before the new end time and it ends after CURRENT_TIME
+	#	 it will be cosidered the same event.
+	#	-Any other possbile combination will be considered to be different.
+	if [ $STATE_MODE_END -le $CURRENT_TIME ]; then
+		return 1 # false, different
+	fi
+	if [ $STATE_MODE_START -gt $CURRENT_TIME ]; then
+		return 1 # false, different
+	fi
+	if  [ $STATE_MODE_START -lt $NEW_MODE_END ] && \
+		[ $STATE_MODE_END -gt $CURRENT_TIME ]; then
+			return 0 # true, same
+	fi
+
+	return 1 # false, different
 }

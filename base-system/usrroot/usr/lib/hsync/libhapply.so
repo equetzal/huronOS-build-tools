@@ -1,5 +1,349 @@
 #/bin/bash
 
 apply_directives_to_system(){
+	log "+Running directives apply,
+	IS_SCHEDULED_FORCED_APPLY=$EXECUTION_IS_SCHEDULED_APPLY
+	IS_ROUTINE_SYNC=$EXECUTION_IS_ROUTINE"
+
+	## Select between default directives and custom ones
+	select_directives_to_use
+	## Select the mode that will be applied
+	select_mode_to_apply
+
+	## Change the persistent partition
+	apply_persistence_mode
+	apply_global_directives
+	apply_specific_directives
+
+	## Update the new state
+	update_state
+	# When the current time reaches it end or other mode
+	# should interrupt current mode, force the execution
+	# of this function even if the directives file have
+	# not changed.
+	schedule_next_mode_change
+
 	return 0
+}
+
+apply_global_directives(){
+
+	## 1 is false, then no global config has been changed, do not update anything.
+	if [ $DIRECTIVES_GLOBAL_CONFIG_HAVE_CHANGED -eq 1 ]; then
+		log "+[Global] directives have not changed, skipping application."
+		return 0 # success
+	fi
+
+	log "Applying [Global] directives"
+	set_timezone
+	set_keyboards
+	set_current_keyboard
+
+	return 0 # success
+}
+
+# $1 = Section name of specific directives
+apply_specific_directives(){
+
+	case $NEW_MODE in
+		"always") DIRECTIVES_SPECIFIC_CONFIG="Always";;
+		"event") DIRECTIVES_SPECIFIC_CONFIG="Event";;
+		"contest") DIRECTIVES_SPECIFIC_CONFIG="Contest";;
+	esac
+
+	set_hmount_rules
+	set_network_filters
+	set_software
+	set_bookmarks
+	set_wallpaper
+
+	return 0 # success
+}
+
+select_directives_to_use(){
+	DIRECTIVES_FILE_TO_USE=$DIRECTIVES_FILE
+	if directives_already_expired "$DIRECTIVES_FILE"; then
+		log "-The directives file is already expired, using default directives."
+		DIRECTIVES_FILE_TO_USE=$DIRECTIVES_DEFAULT
+	fi
+	return 0 # sucess
+}
+
+## Function to return the value of a given variable
+# $1 = Section
+# $2 = Variable name
+get_directives_var(){
+	declare SECTION="$1"
+	declare VAR="$2"
+	sed -nE "/^\[$SECTION\]$/{:l n;/^(\[.*\])?$/q;p;bl}" $DIRECTIVES_FILE_TO_USE | grep $VAR | cut -d= -f2
+}
+
+## Function to return the times of a event or contest
+# $1 = Times Section
+get_directives_times(){
+	declare SECTION="$1"
+	sed -nE "/^\[$SECTION\]$/{:l n;/^(\[.*\])?$/q;p;bl}" $DIRECTIVES_FILE_TO_USE
+}
+
+select_mode_to_apply(){
+
+	# Modes have priority set to -Always < Event < Contest-, so
+	# we will assume mode is Always unless a higher priority mode
+	# overrides the new mode.
+	NEW_MODE="always"
+	NEW_MODE_START_TIME_UTC=""
+	NEW_MODE_END_TIME_UTC=""
+
+	## Declare some variables
+	local TIMES START END START_SECONDS END_SECONDS
+	declare HAS_EVENT_CONFIG="$(get_directives_var "Global" "EventConfig")"
+	declare HAS_CONTEST_CONFIG="$(get_directives_var "Global" "ContestConfig")"
+	declare TIMEZONE="$(get_directives_var "Global" "TimeZone")"
+	declare CURRENT_TIME_SECONDS="$(date +'%s')"
+
+	## Check for event mode, and override NEW_MODE if it is running
+	if [ "$HAS_EVENT_CONFIG" = "true" ]; then
+		declare TIMES="$(get_directives_times "Event-Times")"
+		log "Reading [Event-Times]:
+		$TIMES"
+
+		# For each start-time and end-time, check if we're in between.
+		while read START END; do
+			START_SECONDS=$(date --date="TZ=\"$TIMEZONE\" $START" +'%s')
+			END_SECONDS=$(date --date="TZ=\"$TIMEZONE\" $END" +'%s') 
+			if 	[ $CURRENT_TIME_SECONDS -ge $START_SECONDS ] && \
+				[ $CURRENT_TIME_SECONDS -lt $END_SECONDS ]; then
+					NEW_MODE="event"
+					NEW_MODE_START_TIME_UTC=$(date --utc --iso-8601="seconds" --date="@$START_SECONDS")
+					NEW_MODE_END_TIME_UTC=$(date --utc --iso-8601="seconds" --date="@$END_SECONDS")
+			fi
+		done < <(echo $TIMES | xargs -n 2)
+	fi
+
+	## Check for event mode, and override NEW_MODE if it is running
+	if [ "$HAS_CONTEST_CONFIG" = "true" ]; then
+		declare TIMES="$(get_directives_times "Contest-Times")"
+		log "Reading [Contest-Times]:
+		$TIMES"
+
+		# For each start-time and end-time, check if we're in between.
+		while read START END; do
+			START_SECONDS=$(date --date="TZ=\"$TIMEZONE\" $START" +'%s')
+			END_SECONDS=$(date --date="TZ=\"$TIMEZONE\" $END" +'%s') 
+			if 	[ $CURRENT_TIME_SECONDS -ge $START_SECONDS ] && \
+				[ $CURRENT_TIME_SECONDS -lt $END_SECONDS ]; then
+					NEW_MODE="contest"
+					NEW_MODE_START_TIME_UTC=$(date --utc --iso-8601="seconds" --date="@$START_SECONDS")
+					NEW_MODE_END_TIME_UTC=$(date --utc --iso-8601="seconds" --date="@$END_SECONDS")
+			fi
+		done < <(echo $TIMES | xargs -n 2)
+	fi
+
+	log "Selected mode to apply:
+	NEW_MODE=$NEW_MODE
+	NEW_MODE_START_TIME_UTC=$NEW_MODE_START_TIME_UTC
+	NEW_MODE_END_TIME_UTC=$NEW_MODE_END_TIME_UTC"
+
+	return 0 # success
+}
+
+schedule_next_mode_change(){
+	return 0
+}
+
+set_timezone(){
+	declare TIMEZONE="$(get_directives_var "Global" "TimeZone")"
+	timedatectl set-timezone $TIMEZONE
+	log "+Setting timezone to $TIMEZONE"
+}
+
+set_keyboards(){
+
+	local LAYOUT XKBS
+	declare AVAILABLE_KEYBOARD_LAYOUTS="$(get_directives_var "Global" "AvailableKeyboardLayouts")"
+	declare KEYBOARDS=$(echo $AVAILABLE_KEYBOARD_LAYOUTS | sed 's/|/ /g')
+	declare XKB=""
+
+	for LAYOUT in $KEYBOARDS; do
+		XKB+=" ('xkb', '$LAYOUT')"
+	done
+
+	XKBS="[$(echo $XKB | sed 's/) (/), (/g')]"
+	su contestant -c "export DISPLAY=:0; gsettings set org.gnome.desktop.input-sources sources \"$XKBS\""
+
+	log "+Setting available keyboards to -> $KEYBOARDS"
+}
+
+set_current_keyboard(){
+
+	# If the mode is contest, let's stop updating this as it can modify the current
+	# while the user is typing.
+	if [ $NEW_MODE = "contest" ]; then
+		log "-Cannot modify default keyboard while in contest mode."
+		return 0
+	fi
+
+	local LAYOUT
+	declare AVAILABLE_KEYBOARD_LAYOUTS="$(get_directives_var "Global" "AvailableKeyboardLayouts")"
+	declare DEFAULT_KEYBOARD_LAYOUT="$(get_directives_var "Global" "DefaultKeyboardLayout")"
+	declare KEYBOARDS=$(echo $AVAILABLE_KEYBOARD_LAYOUTS | sed 's/|/ /g')
+	declare IDX=0
+
+	for LAYOUT in $KEYBOARDS; do
+		if [ "$LAYOUT" = "$DEFAULT_KEYBOARD_LAYOUT" ]; then
+			break
+		fi
+		let "IDX+=1"
+	done;
+
+	su contestant -c "export DISPLAY=:0; gsettings set org.gnome.desktop.input-sources current $IDX"
+	log "Setting current keyboard to -> $DEFAULT_KEYBOARD_LAYOUT"
+}
+
+set_hmount_rules(){
+
+	local MOUNT_POINTS MNT
+	declare ALLOW_USB_STORAGE="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "AllowUsbStorage")"
+
+	if [ "$ALLOW_USB_STORAGE" = "true" ]; then
+		sed "s/ShouldMount=.*/ShouldMount=true/g" -i /etc/hmount/rule
+		chmod 640 /etc/hmount/rule
+	else
+		## Change the rule
+		sed "s/ShouldMount=.*/ShouldMount=false/g" -i /etc/hmount/rule
+		chmod 640 /etc/hmount/rule
+
+		## For each device mounted, kill all processes that are using the mount point, then umount
+		MOUNT_POINTS=$(cat /proc/mounts | grep -E '/dev/sd([c-z]|[a-z][a-z])[1-9][0-9]*' | awk '{ print $2 }')
+		for MNT in $MOUNT_POINTS; do
+			#force_umount $MNT
+			if [ fuser -k -m "$MNT" || true ]; then
+				umount --lazy "$MNT"
+				rm -rf "$MNT"
+				sed "s%.*$MNT.*%%g" -i /etc/fstab
+				systemctl disable "media-$(basename $MNT).mount"
+				rm -rf "/etc/systemd/system/media-$(basename $MNT).mount"
+			fi
+		done
+	fi
+
+	return 0 # success
+}
+
+set_network_filters(){
+
+	local WEBSITES IPv4 IPv6 WEB
+	declare ALLOWED_WEBSITES="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "AllowedWebsites")"
+
+	if [ "$ALLOWED_WEBSITES" = "all" ]; then
+		## Do not filter anything (allow all)
+		#TODO: Update network filter module
+		log " Network filter set to: [Allow all]"
+	elif [ "$ALLOWED_WEBSITES" = "any" ]; then
+		## Any kind of connection is not permited (deny all)
+		#TODO: Update network filter module
+		log " Network filter set to: [Deny all]"
+		# Even if this happen, some things needs to have exeptions like
+		# directives URL, dhcp and NTP servers
+	else
+		# Some things needs to have hardcoded exeptions like
+		# directives URL, dhcp and NTP servers
+
+		## Deny all connections except this exceptions
+		WEBSITES=$(echo $AllowList | sed 's/|/ /g')
+		IPv4=""
+		IPv6=""
+		for WEB in $WEBSITES; do
+			IPv4+=" $(dig +short $WEB A)"
+			IPv6+=" $(dig +short $WEB AAAA)"
+		done
+		log " Network filter set to: [Deny all with exceptions]
+		IPv4 Exceptions: $IPv4
+		IPv6 Exeptions: $IPv6"
+		#TODO: Update network filter module
+	fi
+
+	return 0 # success
+}
+
+
+set_software(){
+
+	declare AVAILABLE_SOFTWARE="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "AvailableSoftware")"
+	declare SOFTWARE_LIST="$(echo "$AVAILABLE_SOFTWARE" | sed 's/|/ /g')"
+
+	log " Activating software modules:"
+	cp -f /etc/hmm/any /etc/hmm/current
+	for SFW in $SOFTWARE_LIST; do
+		sed "s:$SFW.*:$SFW\t\t\ttrue:g" -i /etc/hmm/current
+		echo -e "\t\t$SFW" | tee -a /var/log/hsync.log
+	done
+
+	hmm -uf --block-update /etc/hmm/current | sed -r "s/\x1B\[(([0-9]{1,2})?(;)?([0-9]{1,2})?)?[m,K,H,f,J]//g" | tee -a /var/log/hsync.log
+	chown -R contestant:contestant /home/contestant/.config/JetBrains
+
+	return 0 # success
+}
+
+
+# Set default bookmarks on web browsers.
+# Currently, only Firefox and Chromium are supported. 
+set_bookmarks(){
+
+	local NAME URL TMP_FILE
+	declare BOOKMARKS="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "Bookmarks" | sed 's/[{}^|]/ /g')"
+	declare BOOKMARKS_LINES=""
+	
+	log " Setting default bookmarks on Firefox and Chromium to:"
+	while read NAME URL; do
+		BOOKMARKS_LINES="$BOOKMARKS_LINES\n        <DT><A HREF=\"$URL\">$NAME</A>"
+		echo -e "\t\t$(echo $NAME | sed 's:_: :g') -> $URL" | tee -a /var/log/hsync.log
+	done < <(echo $BOOKMARKS | xargs -n 2)
+	
+	# Firefox bookmarks
+	TMP_FILE="/tmp/firefox-bookmarks-$$.html"
+	cp /etc/hsync/bookmarks/templates/firefox.html $TMP_FILE
+	sed -i "s|<!-- Bookmarks Lines -->|$BOOKMARKS_LINES|g" $TMP_FILE
+	log "+Updating firefox bookmarks in /usr/lib/firefox-esr/bookmarks.html"
+	mkdir -p /usr/lib/firefox-esr
+	cp $TMP_FILE /usr/lib/firefox-esr/bookmarks.html
+	rm -rf $TMP_FILE
+	
+	# Chromium bookmarks
+	TMP_FILE="/tmp/chromium-bookmarks-$$.html"
+	cp /etc/hsync/bookmarks/templates/chromium.html $TMP_FILE
+	sed -i "s|<!-- Bookmarks Lines -->|$BOOKMARKS_LINES|g" $TMP_FILE
+	log "+Updating chromium bookmarks in /usr/share/chromium/initial_bookmarks.html"
+	mkdir -p /usr/share/chromium
+	cp $TMP_FILE /usr/share/chromium/initial_bookmarks.html
+	rm -rf $TMP_FILE
+}
+
+
+set_wallpaper(){
+
+	local NAME FILE
+	declare WALLPAPER="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "Wallpaper")"
+
+	if [ "$WALLPAPER" = "default" ]; then
+		log " Setting default huronOS wallpaper"
+		su contestant -c "export DISPLAY=:0; gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/huronos-background.png"
+		return 0 # success
+	fi
+	
+	log " Downloading wallpaper $WALLPAPER"
+	NAME=$(basename $WALLPAPER)
+	FILE="/usr/share/backgrounds/custom-background-$$-$NAME"
+	rm -f /usr/share/backgrounds/custom-background-*
+	wget --timeout=10 $WALLPAPER -O $FILE
+	if [ $? -ne 0 ]; then
+		log "-Wallpaper cannot be downloaded, Wrong URL?"
+		return 1 # error
+	fi
+
+	log "+Setting new wallpaper"
+	chmod 777 $FILE
+	su contestant -c "export DISPLAY=:0; gsettings set org.gnome.desktop.background picture-uri file://$FILE"
+	
+	return 0 # success
 }

@@ -86,6 +86,13 @@ have_specific_times_changed(){
 	return 0 # true, have-changed
 }
 
+bool_to_string(){
+	if [ $1 -eq 0 ];then
+		echo "true"
+	fi
+	echo "false"
+}
+
 have_directives_changed(){
 	have_global_config_changed; DIRECTIVES_GLOBAL_CONFIG_HAVE_CHANGED=$?
 	have_specific_config_changed "Always"; DIRECTIVES_ALWAYS_CONFIG_HAVE_CHANGED=$?
@@ -103,13 +110,13 @@ have_directives_changed(){
 	if [ $DIRECTIVES_CONTEST_TIMES_HAVE_CHANGED -eq 0 ];	then DIRECTIVES_HAVE_CHANGED=0; fi
 
 	log " Comparing new directives file, result:
-	DIRECTIVES_HAVE_CHANGED=$DIRECTIVES_HAVE_CHANGED
-	DIRECTIVES_GLOBAL_CONFIG_HAVE_CHANGED=$DIRECTIVES_GLOBAL_CONFIG_HAVE_CHANGED
-	DIRECTIVES_ALWAYS_CONFIG_HAVE_CHANGED=$DIRECTIVES_ALWAYS_CONFIG_HAVE_CHANGED
-	DIRECTIVES_EVENT_CONFIG_HAVE_CHANGED=$DIRECTIVES_EVENT_CONFIG_HAVE_CHANGED
-	DIRECTIVES_CONTEST_CONFIG_HAVE_CHANGED=$DIRECTIVES_CONTEST_CONFIG_HAVE_CHANGED
-	DIRECTIVES_EVENT_TIMES_HAVE_CHANGED=$DIRECTIVES_EVENT_TIMES_HAVE_CHANGED
-	DIRECTIVES_CONTEST_TIMES_HAVE_CHANGED=$DIRECTIVES_CONTEST_TIMES_HAVE_CHANGED"
+	DIRECTIVES_HAVE_CHANGED=$(bool_to_string $DIRECTIVES_HAVE_CHANGED)
+	DIRECTIVES_GLOBAL_CONFIG_HAVE_CHANGED=$(bool_to_string $DIRECTIVES_GLOBAL_CONFIG_HAVE_CHANGED)
+	DIRECTIVES_ALWAYS_CONFIG_HAVE_CHANGED=$(bool_to_string $DIRECTIVES_ALWAYS_CONFIG_HAVE_CHANGED)
+	DIRECTIVES_EVENT_CONFIG_HAVE_CHANGED=$(bool_to_string $DIRECTIVES_EVENT_CONFIG_HAVE_CHANGED)
+	DIRECTIVES_CONTEST_CONFIG_HAVE_CHANGED=$(bool_to_string $DIRECTIVES_CONTEST_CONFIG_HAVE_CHANGED)
+	DIRECTIVES_EVENT_TIMES_HAVE_CHANGED=$(bool_to_string $DIRECTIVES_EVENT_TIMES_HAVE_CHANGED)
+	DIRECTIVES_CONTEST_TIMES_HAVE_CHANGED=$(bool_to_string $DIRECTIVES_CONTEST_TIMES_HAVE_CHANGED)"
 
 
 	if [ $DIRECTIVES_HAVE_CHANGED -eq 0 ]; then
@@ -121,7 +128,37 @@ have_directives_changed(){
 	return 1 # false, have not changed
 }
 
+## Return true if the directives are expired
+# $1 = Directives file to test
+directives_already_expired(){
+	## Check if the directives file was set to expire.
+	local NEW_DIRECTIVES_EXPIRATION_TIME NEW_DIRECTIVES_TIMEZONE
+	NEW_DIRECTIVES_EXPIRATION_TIME="$(cat $1 | grep ConfigExpirationTime | cut -d= -f2)"
+	NEW_DIRECTIVES_TIMEZONE="$(cat $1 | grep TimeZone | cut -d= -f2)"
+
+	## Oh, no expiration date. Then let's always return false as it has not expired :)
+	if [ "$NEW_DIRECTIVES_EXPIRATION_TIME" = "never" ]; then
+		return 1 # false, not-expired
+	fi
+
+	# Ok, so if the clock is sync with ntp server, we now this is accurate. 
+	# BUT, if the clock is not sync, then the hardware clock is the relevant, but it can be wrong :/
+	# MORE if the installed OS has set the clock to take TZ as time instead of UTC.
+	# TODO: Do something if the clock is not in sync, for now let's asume HW clock is OK.
+	if [ "$(date -u +'%s')" -ge "$(date --date="TZ=\"$NEW_DIRECTIVES_TIMEZONE\" $NEW_DIRECTIVES_EXPIRATION_TIME" +'%s')" ]; then
+		return 0 # true, have-expired
+	fi
+
+	return 1 # false, not-expired
+}
+
 update_directives(){
+	if directives_already_expired "$DIRECTIVES_TEMP_FILE"; then
+		log "-The new directives file is already expired"
+		rm -f $DIRECTIVES_TEMP_FILE
+		return 1 # false, cannot update directives
+	fi
+
 	log "+Writting new directives file on $DIRECTIVES_FILE"
 	mv $DIRECTIVES_TEMP_FILE $DIRECTIVES_FILE 
 	return $? 
