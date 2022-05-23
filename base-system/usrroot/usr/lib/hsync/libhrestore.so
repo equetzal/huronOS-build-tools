@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 restore_state_from_disk(){
 	local BACKUP_PATH
 	BACKUP_PATH=""

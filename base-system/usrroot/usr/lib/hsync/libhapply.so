@@ -1,5 +1,6 @@
 #/bin/bash
 
+
 apply_directives_to_system(){
 	log "+Running directives apply,
 	IS_SCHEDULED_FORCED_APPLY=$EXECUTION_IS_SCHEDULED_APPLY
@@ -51,8 +52,8 @@ apply_specific_directives(){
 		"contest") DIRECTIVES_SPECIFIC_CONFIG="Contest";;
 	esac
 
-	set_hmount_rules
 	set_network_filters
+	set_hmount_rules
 	set_software
 	set_bookmarks
 	set_wallpaper
@@ -83,6 +84,20 @@ get_directives_var(){
 get_directives_times(){
 	declare SECTION="$1"
 	sed -nE "/^\[$SECTION\]$/{:l n;/^(\[.*\])?$/q;p;bl}" $DIRECTIVES_FILE_TO_USE
+}
+
+update_next_apply () {
+	declare CURRENT_TIME=$(date +'%s')
+	declare INTERESTING_TIME=$(date --date "$1" +'%s')
+
+	## Check if interesting_time happens after now and earlier than previous NEXT_APPLY
+	if [ $CURRENT_TIME -lt $INTERESTING_TIME ]; then
+		if [ ! $EXECUTION_NEXT_SCHEDULED_APPLY_TIME ]; then
+			EXECUTION_NEXT_SCHEDULED_APPLY_TIME=$INTERESTING_TIME
+		elif [ $EXECUTION_NEXT_SCHEDULED_APPLY_TIME -gt $INTERESTING_TIME ]; then
+			EXECUTION_NEXT_SCHEDULED_APPLY_TIME=$INTERESTING_TIME
+		fi
+	fi
 }
 
 select_mode_to_apply(){
@@ -117,6 +132,8 @@ select_mode_to_apply(){
 					NEW_MODE_START_TIME_UTC=$(date --utc --iso-8601="seconds" --date="@$START_SECONDS")
 					NEW_MODE_END_TIME_UTC=$(date --utc --iso-8601="seconds" --date="@$END_SECONDS")
 			fi
+			update_next_apply $START
+			update_next_apply $END
 		done < <(echo $TIMES | xargs -n 2)
 	fi
 
@@ -136,6 +153,8 @@ select_mode_to_apply(){
 					NEW_MODE_START_TIME_UTC=$(date --utc --iso-8601="seconds" --date="@$START_SECONDS")
 					NEW_MODE_END_TIME_UTC=$(date --utc --iso-8601="seconds" --date="@$END_SECONDS")
 			fi
+			update_next_apply $START
+			update_next_apply $END
 		done < <(echo $TIMES | xargs -n 2)
 	fi
 
@@ -148,6 +167,19 @@ select_mode_to_apply(){
 }
 
 schedule_next_mode_change(){
+	local FORMATED_NEXT_TIME
+
+	## Remove previous apply jobs
+	for i in $(atq | cut -f 1); do 
+		atrm $i; 
+	done
+
+	### Schedule next apply job
+	if [ $EXECUTION_NEXT_SCHEDULED_APPLY_TIME ]; then
+		FORMATED_NEXT_TIME=$(date -d @$EXECUTION_NEXT_SCHEDULED_APPLY_TIME +"%Y%m%d%H%M.%S");
+		log "Scheduling next apply job at $FORMATED_NEXT_TIME"
+		echo "$0 --scheduled-apply" | at -t $FORMATED_NEXT_TIME
+	fi
 	return 0
 }
 
@@ -232,36 +264,14 @@ set_hmount_rules(){
 
 set_network_filters(){
 
-	local WEBSITES IPv4 IPv6 WEB
+	log " Starting network filters"
+
 	declare ALLOWED_WEBSITES="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "AllowedWebsites")"
 
-	if [ "$ALLOWED_WEBSITES" = "all" ]; then
-		## Do not filter anything (allow all)
-		#TODO: Update network filter module
-		log " Network filter set to: [Allow all]"
-	elif [ "$ALLOWED_WEBSITES" = "any" ]; then
-		## Any kind of connection is not permited (deny all)
-		#TODO: Update network filter module
-		log " Network filter set to: [Deny all]"
-		# Even if this happen, some things needs to have exeptions like
-		# directives URL, dhcp and NTP servers
-	else
-		# Some things needs to have hardcoded exeptions like
-		# directives URL, dhcp and NTP servers
-
-		## Deny all connections except this exceptions
-		WEBSITES=$(echo $AllowList | sed 's/|/ /g')
-		IPv4=""
-		IPv6=""
-		for WEB in $WEBSITES; do
-			IPv4+=" $(dig +short $WEB A)"
-			IPv6+=" $(dig +short $WEB AAAA)"
-		done
-		log " Network filter set to: [Deny all with exceptions]
-		IPv4 Exceptions: $IPv4
-		IPv6 Exeptions: $IPv6"
-		#TODO: Update network filter module
-	fi
+	case $ALLOWED_WEBSITES in
+		"all") firewall_accept_all;;
+		*) firewall_accept_filtered_web;;
+	esac
 
 	return 0 # success
 }

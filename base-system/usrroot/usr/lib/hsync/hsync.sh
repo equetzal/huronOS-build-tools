@@ -61,6 +61,7 @@ readonly BACKUP_DIR=$USRCHANGES/$BACKUP_DIR_NAME
 
 ## Include libraries of hsync
 . /usr/lib/hsync/libhapply.so
+. /usr/lib/hsync/libhfirewall.so
 . /usr/lib/hsync/libhlog.so
 . /usr/lib/hsync/libhpersistence.so
 . /usr/lib/hsync/libhrestore.so

@@ -1,0 +1,102 @@
+#!/bin/bash
+
+
+enable_interfaces(){
+	declare INTERFACES="$(ifconfig -a | grep -E "^.*: " | cut -d: -f1 | grep -v lo)"
+
+	for INTERF in $INTERFACES; do
+		ifconfig $INTERF up
+	done
+
+	return 0 # success
+}
+
+get_domain(){
+	sed -E -e 's_.*://([^/@]*@)?([^/:]+).*_\2_'
+}
+
+
+firewall_accept_all(){
+
+	enable_interfaces
+
+	## Set all policies to ACCEPT
+	iptables -P INPUT ACCEPT
+	iptables -P OUTPUT ACCEPT
+	iptables -P FORWARD ACCEPT
+
+	## Clean rules
+	iptables -F INPUT
+	iptables -F OUTPUT
+	iptables -F FORWARD
+
+	return 0
+}
+
+firewall_filter_ipv4(){
+
+	## Get all the IP addresses to ALLOW web traffic
+	declare DIRECTIVES_IP="$(echo "$DIRECTIVES_FILE_URL" | get_domain | xargs -n 1 dig +short $1 A)"
+	declare WALLPAPER_IP="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "Wallpaper" | get_domain | xargs -n 1 dig +short $1 A)"
+	declare ALLOWED_WEBSITES="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "AllowedWebsites" | sed 's/|/ /g')"
+	declare ALLOW_IPS=""
+
+	ALLOW_IPS+=" $DIRECTIVES_IP"
+	ALLOW_IPS+=" $WALLPAPER_IP"
+
+	if [ "$ALLOWED_WEBSITES" != "any" ];then
+		for WEBSITE in $ALLOWED_WEBSITES; do
+			IP="$(echo $WEBSITE | get_domain | xargs -n 1 dig +short $1 A)"
+			ALLOW_IPS+=" $IP"
+		done
+	fi
+
+	# Set policy to deny all input
+	# We don't need to take care of the output, what we want is user not to receive data.
+	iptables -P INPUT DROP
+	iptables -P OUTPUT ACCEPT
+	iptables -P FORWARD ACCEPT
+
+	## Clean rules
+	iptables -F INPUT
+	iptables -F OUTPUT
+	iptables -F FORWARD
+
+	## Allow ALL loopback
+	iptables -A INPUT -i lo -j ACCEPT
+
+	## Allow ICMP
+	iptables -A INPUT -p icmp -j ACCEPT
+
+	## Allow DHCP
+	iptables -A INPUT -p udp --sport 67 --dport 68 -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+	## Allow DNS
+	iptables -A INPUT -p udp --sport 53 -j ACCEPT
+	iptables -A INPUT -p tcp --sport 53 -j ACCEPT
+
+
+	for IP in $ALLOW_IPS; do
+		## Start ip filtering
+		iptables -A INPUT -p tcp -m multiport --sport 80,443,8080 -s $IP -m state --state ESTABLISHED,RELATED -j ACCEPT
+	done
+
+	return 0
+}
+
+firewall_filter_ipv6(){
+	#TODO: Implement
+	return 0
+}
+
+firewall_accept_filtered_web(){
+
+	enable_interfaces
+	firewall_filter_ipv4
+	firewall_filter_ipv6
+
+	log "Setting firewall rules to:
+	$(iptables --list)"
+
+	return 0
+}

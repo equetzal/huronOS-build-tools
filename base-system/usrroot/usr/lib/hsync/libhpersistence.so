@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # This is the first execution of hsync, here we don't have a current state.
 # It is 'none', so in this part we need to either set a previous persistent state
 # or set 'always' mode if no other state is available.

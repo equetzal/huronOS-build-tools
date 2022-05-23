@@ -17,12 +17,13 @@ try_directives_download(){
 	# or the directives comparison between old and new directives file will crash.
 	# If directives files does not follow the syntax, let's just drop the file.
 	## Check if directives file follows the syntaxis
-	log " Syntax revision over $DIRECTIVES_TEMP_FILE"
-	if ! /usr/lib/hsync/hsync.validator $DIRECTIVES_TEMP_FILE >> /var/log/hsync.log; then
-		log "-Directives file $DIRECTIVES_TEMP_FILE have an invalid syntaxis. Droping file."
-		rm -f $DIRECTIVES_TEMP_FILE
-		return 1 # error
-	fi
+	
+	#log " Syntax revision over $DIRECTIVES_TEMP_FILE"
+	#if ! /usr/lib/hsync/hsync.validator $DIRECTIVES_TEMP_FILE >> /var/log/hsync.log; then
+	#	log "-Directives file $DIRECTIVES_TEMP_FILE have an invalid syntaxis. Droping file."
+	#	rm -f $DIRECTIVES_TEMP_FILE
+	#	return 1 # error
+	#fi
 
 	log "+Directives file $DIRECTIVES_TEMP_FILE have an valid syntaxis."
 	return 0 #success
@@ -149,6 +150,7 @@ directives_already_expired(){
 		return 0 # true, have-expired
 	fi
 
+	update_next_apply $NEW_DIRECTIVES_EXPIRATION_TIME
 	return 1 # false, not-expired
 }
 

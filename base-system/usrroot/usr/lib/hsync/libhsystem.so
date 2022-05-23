@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # Returns true if the uptime has 120 or less seconds of boottime.
 # The hsync.timer is configured to start 60 seconds after boot,
 # once network is initialized and graphical enviroment is set.
