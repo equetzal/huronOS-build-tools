@@ -3,6 +3,7 @@
 #include <functional>
 #include <iostream>
 #include <map>
+#include <regex>
 #include <sstream>
 #include <vector>
 
@@ -22,8 +23,8 @@ struct Line {
 // -------------- Value format checkers ----------------
 std::function<bool(const std::string&)> url_address =
 		[] (const std::string& url) -> bool {
-	std::string command = "/usr/lib/hsync/url_validator " + url;
-	return system(command.c_str()) == 0;
+	std::regex regex(R"(^(([^:\/?#]+):)?(//([^\/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?)", std::regex::extended);
+	return std::regex_match (url, regex);
 };
 
 std::function<bool(const std::string&)> time_zone =
