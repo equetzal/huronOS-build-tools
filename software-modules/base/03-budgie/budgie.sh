@@ -10,7 +10,7 @@
 
 set -xe
 
-PACKAGES="apparmor budgie-desktop budgie-countdown-applet budgie-network-manager-applet dconf-cli eog gnome-calculator gnome-calendar gnome-terminal libdrm-intel1 libgl1-mesa-dri libglib2.0-bin libglu1-mesa lightdm moka-icon-theme nautilus okular plank x11-utils xdg-user-dirs xinit xinput xserver-xorg xserver-xorg-video-intel xterm"
+PACKAGES="apparmor budgie-desktop budgie-countdown-applet budgie-network-manager-applet dconf-cli eog gnome-calculator gnome-calendar gnome-terminal libdrm-intel1 libgl1-mesa-dri libglib2.0-bin libglu1-mesa lightdm moka-icon-theme nautilus nautilus-extension-gnome-terminal okular plank x11-utils xdg-user-dirs xinit xinput xserver-xorg xserver-xorg-video-intel xterm"
 
 ## Install
 apt update

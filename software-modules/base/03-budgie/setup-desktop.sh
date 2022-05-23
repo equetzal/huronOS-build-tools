@@ -40,4 +40,5 @@ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-typ
 
 ## Time and date
 gsettings set org.gnome.desktop.interface clock-format '12h' 
+gsettings set org.gnome.desktop.interface clock-show-seconds true 
 gsettings set org.gnome.desktop.interface clock-show-date false
