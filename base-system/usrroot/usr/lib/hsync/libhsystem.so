@@ -12,7 +12,7 @@ system_has_just_booted(){
 
 	# If hardware clock is not sync with ntp server, this will still working as the uptime
 	# only counts seconds since boot using hardware clock.
-	if [ "$seconds_since_boot" -le "12" ]; then
+	if [ $seconds_since_boot -lt 120 ]; then
 		log " huronOS has just booted, hsync first execution after boot."
 		return 0 # true
 	fi
@@ -55,6 +55,7 @@ state_hsync_execution_time(){
 load_state(){
 	if [ ! -f $STATE_FILE ]; then
 		log "-Cannot load current state"
+		STATE_MODE="none"
 		return 1 # error
 	fi
 

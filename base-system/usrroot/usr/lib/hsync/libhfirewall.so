@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-enable_interfaces(){
+enable_network_interfaces(){
 	declare INTERFACES="$(ifconfig -a | grep -E "^.*: " | cut -d: -f1 | grep -v lo)"
 
 	for INTERF in $INTERFACES; do
@@ -18,7 +18,7 @@ get_domain(){
 
 firewall_accept_all(){
 
-	enable_interfaces
+	enable_network_interfaces
 
 	## Set all policies to ACCEPT
 	iptables -P INPUT ACCEPT
@@ -30,24 +30,42 @@ firewall_accept_all(){
 	iptables -F OUTPUT
 	iptables -F FORWARD
 
+	## Clean chains
+	iptables -X
+	iptables -Z
+
+	log "Setting firewall rules to:
+	$(iptables-legacy --list)"
+
 	return 0
 }
 
 firewall_filter_ipv4(){
 
 	## Get all the IP addresses to ALLOW web traffic
-	declare DIRECTIVES_IP="$(echo "$DIRECTIVES_FILE_URL" | get_domain | xargs -n 1 dig +short $1 A)"
-	declare WALLPAPER_IP="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "Wallpaper" | get_domain | xargs -n 1 dig +short $1 A)"
+	declare DIRECTIVES_DOMAIN="$(echo "$DIRECTIVES_FILE_URL" | get_domain)"
+	declare WALLPAPER_DOMAIN="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "Wallpaper" | get_domain)"
 	declare ALLOWED_WEBSITES="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "AllowedWebsites" | sed 's/|/ /g')"
 	declare ALLOW_IPS=""
 
-	ALLOW_IPS+=" $DIRECTIVES_IP"
-	ALLOW_IPS+=" $WALLPAPER_IP"
+
+	DIRECTIVES_IP="$(dig +short $DIRECTIVES_DOMAIN A)"
+	if ! [[ "$DIRECTIVES_IP" =~ ^\;\;.* ]]; then
+		ALLOW_IPS+=" $DIRECTIVES_IP"
+	fi
+
+	WALLPAPER_IP="$(dig +short $DIRECTIVES_DOMAIN A)"
+	if ! [[ "$WALLPAPER_IP" =~ ^\;\;.* ]]; then
+		ALLOW_IPS+=" $WALLPAPER_IP"
+	fi
 
 	if [ "$ALLOWED_WEBSITES" != "any" ];then
 		for WEBSITE in $ALLOWED_WEBSITES; do
-			IP="$(echo $WEBSITE | get_domain | xargs -n 1 dig +short $1 A)"
-			ALLOW_IPS+=" $IP"
+			DOMAIN="$(echo $WEBSITE | get_domain)"
+			IP="$(dig +short $DIRECTIVES_DOMAIN A)"
+			if ! [[ "$WALLPAPER_IP" =~ ^\;\;.* ]]; then
+				ALLOW_IPS+=" $IP"
+			fi
 		done
 	fi
 
@@ -61,6 +79,10 @@ firewall_filter_ipv4(){
 	iptables -F INPUT
 	iptables -F OUTPUT
 	iptables -F FORWARD
+
+	## Clean chains
+	iptables -X
+	iptables -Z
 
 	## Allow ALL loopback
 	iptables -A INPUT -i lo -j ACCEPT
@@ -91,12 +113,12 @@ firewall_filter_ipv6(){
 
 firewall_accept_filtered_web(){
 
-	enable_interfaces
+	enable_network_interfaces
 	firewall_filter_ipv4
 	firewall_filter_ipv6
 
 	log "Setting firewall rules to:
-	$(iptables --list)"
+	$(iptables-legacy --list)"
 
 	return 0
 }

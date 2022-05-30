@@ -1,10 +1,7 @@
-#/bin/bash
+#!/bin/bash
 
 
 apply_directives_to_system(){
-	log "+Running directives apply,
-	IS_SCHEDULED_FORCED_APPLY=$EXECUTION_IS_SCHEDULED_APPLY
-	IS_ROUTINE_SYNC=$EXECUTION_IS_ROUTINE"
 
 	## Select between default directives and custom ones
 	select_directives_to_use
@@ -67,6 +64,9 @@ select_directives_to_use(){
 		log "-The directives file is already expired, using default directives."
 		DIRECTIVES_FILE_TO_USE=$DIRECTIVES_DEFAULT
 	fi
+
+	log " Directives file contents:\n$(cat $DIRECTIVES_FILE)\n"
+
 	return 0 # sucess
 }
 
@@ -232,6 +232,22 @@ set_current_keyboard(){
 	log "Setting current keyboard to -> $DEFAULT_KEYBOARD_LAYOUT"
 }
 
+
+set_network_filters(){
+
+	log " Starting network filters"
+
+	declare ALLOWED_WEBSITES="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "AllowedWebsites")"
+
+	case $ALLOWED_WEBSITES in
+		"all") firewall_accept_all;;
+		*) firewall_accept_filtered_web;;
+	esac
+
+	return 0 # success
+}
+
+
 set_hmount_rules(){
 
 	local MOUNT_POINTS MNT
@@ -258,20 +274,6 @@ set_hmount_rules(){
 			fi
 		done
 	fi
-
-	return 0 # success
-}
-
-set_network_filters(){
-
-	log " Starting network filters"
-
-	declare ALLOWED_WEBSITES="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "AllowedWebsites")"
-
-	case $ALLOWED_WEBSITES in
-		"all") firewall_accept_all;;
-		*) firewall_accept_filtered_web;;
-	esac
 
 	return 0 # success
 }
@@ -344,16 +346,29 @@ set_wallpaper(){
 	log " Downloading wallpaper $WALLPAPER"
 	NAME=$(basename $WALLPAPER)
 	FILE="/usr/share/backgrounds/custom-background-$$-$NAME"
-	rm -f /usr/share/backgrounds/custom-background-*
-	wget --timeout=10 $WALLPAPER -O $FILE
-	if [ $? -ne 0 ]; then
-		log "-Wallpaper cannot be downloaded, Wrong URL?"
-		return 1 # error
+	if wget --timeout=10 $WALLPAPER -O $FILE; then
+		log "+Setting new wallpaper"
+		chmod 777 $FILE
+		su contestant -c "export DISPLAY=:0; gsettings set org.gnome.desktop.background picture-uri file://$FILE"
+		find /usr/share/backgrounds/ | grep custom-background | grep -v $$ | xargs -n 1 rm -f 
+		return 0 # success
+	fi
+	rm -f $FILE
+	log "-Wallpaper cannot be downloaded. Wrong URL?, No internet?"
+	
+	# There's a chance that if persistence is set, and this is a restoration of a previous state
+	# the background image stills available. Let's search for it.
+	log " Attempting to restore previous background image"
+	FILE="$(ls /usr/share/backgrounds/ | sed 's: :\n:g' | grep $NAME | head -n 1)"
+	if [ "$FILE" != "" ]; then
+		FILE="/usr/share/backgrounds/${FILE}"
+		log "+Wallpaper found: $FILE, restoring wallpaper"
+		chmod 777 $FILE
+		su contestant -c "export DISPLAY=:0; gsettings set org.gnome.desktop.background picture-uri file://$FILE"
+		find /usr/share/backgrounds/ | grep custom-background | grep -v $FILE | xargs -n 1 rm -f 
+		return 0 #success
 	fi
 
-	log "+Setting new wallpaper"
-	chmod 777 $FILE
-	su contestant -c "export DISPLAY=:0; gsettings set org.gnome.desktop.background picture-uri file://$FILE"
-	
-	return 0 # success
+	log "-Couldn't find any background to restore"
+	return 1 # error
 }

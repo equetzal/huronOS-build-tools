@@ -6,32 +6,34 @@
 # or set 'always' mode if no other state is available.
 start_persistence(){
 
+	log " Starting a new persistent layer on AUFS."
+
 	case $STATE_MODE in
 		# If there's no STATE_MODE, then there was no persistence set.
 		# Let's clean the partition and start the always mode
-		"")
-			log "No previous state found, creating new persistence in always mode"
+		"none")
+			log "-No previous state found, creating new persistence in always mode"
 			start_always_mode || return 1 # error
 			return 0 # sucess
 			;;
 
 		# If the state was always, then let's restore the files
 		"always")
-			log "Previous state found, restoring persistence in always mode"
+			log "+Previous state found, restoring persistence in always mode"
 			restore_always_mode || return 1
 			return 0 # sucess
 			;;
 
 		# If the state was event, then let's restore the files
 		"event")
-			log "Previous state found, restoring persistence in event mode"
+			log "+Previous state found, restoring persistence in event mode"
 			restore_event_mode || return 1
 			return 0 # sucess
 			;;
 
 		# If the state was contest, then let's restore the files
 		"event")
-			log "Previous state found, restoring persistence in contest mode"
+			log "+Previous state found, restoring persistence in contest mode"
 			restore_contest_mode || return 1
 			return 0 # sucess
 			;;
@@ -47,6 +49,12 @@ apply_persistence_mode(){
 	if ! system_has_persistece_enabled; then
 		STATE_IS_PERSISTENCE_ENABLED="false"
 		return 0 #success
+	fi
+
+	if [ "$STATE_MODE" = "none" ]; then
+		log "!Hey state was set to none, How is this possible?, Did the boot hsync failed?
+		Starting a persistent mode for security!"
+		start_persistence
 	fi
 
 	## Check if the current state is the same as the directives specified mode.
@@ -149,7 +157,8 @@ prepare_perch(){
 	# the files modified or edited by the software modules will be copied up to the bottom-up writtable branch
 	# of where the file was located, so, only usrchages/ is rw. Then software preferences should be sorted here.
 	mkdir -p $DIR/home/contestant/{Desktop,Documents,Downloads,Music,Pictures,Public,Templates,Videos,.config,.local}
-	chown -R contestant:contestant $DIR
+	chown -R contestant:contestant $DIR/home/contestant
+	mkdir -p $DIR/usr/share/backgrounds/
 }
 
 ## Saves the changes of a partition on the selected directory with the date and hour stamp
@@ -320,7 +329,6 @@ contest_to_always(){
 contest_to_event(){
 	free_branch $USRCHANGES
 	umount $USRCHANGES
-	prepare_perch $EVENT_MNT
 	save_changes $CONTEST_MNT "$EVENT_MNT/home/contestant" "contest"
 	prepare_perch $CONTEST_MNT
 	mount --bind $EVENT_MNT $USRCHANGES

@@ -12,20 +12,21 @@ try_directives_download(){
 		return 1 # error
 	fi
 	log "+Directives file $DIRECTIVES_TEMP_FILE, successfuly downloaded"
+	log " Downloaded directives file contents:\n$(cat $DIRECTIVES_TEMP_FILE)\n"
 	
 	# Ok, so we have a new directives file, we must have to check it follows the syntaxis
 	# or the directives comparison between old and new directives file will crash.
 	# If directives files does not follow the syntax, let's just drop the file.
 	## Check if directives file follows the syntaxis
 	
-	#log " Syntax revision over $DIRECTIVES_TEMP_FILE"
-	#if ! /usr/lib/hsync/hsync.validator $DIRECTIVES_TEMP_FILE >> /var/log/hsync.log; then
-	#	log "-Directives file $DIRECTIVES_TEMP_FILE have an invalid syntaxis. Droping file."
-	#	rm -f $DIRECTIVES_TEMP_FILE
-	#	return 1 # error
-	#fi
+	log " Syntax revision over $DIRECTIVES_TEMP_FILE"
+	# if ! /usr/lib/hsync/hsync.validator $DIRECTIVES_TEMP_FILE >> /var/log/hsync.log; then
+	# 	log "-Directives file $DIRECTIVES_TEMP_FILE have an invalid syntaxis. Droping file."
+	# 	rm -f $DIRECTIVES_TEMP_FILE
+	# 	return 1 # error
+	# fi
 
-	log "+Directives file $DIRECTIVES_TEMP_FILE have an valid syntaxis."
+	log "+Directives file $DIRECTIVES_TEMP_FILE have a valid syntaxis."
 	return 0 #success
 }
 
@@ -42,9 +43,16 @@ is_var_equal(){
 
 ## Returns true if some variable on the global config is different between files
 have_global_config_changed(){
+
+	## It's supposed that at this point, $DIRECTIVES_TEMP_FILE should exist, but no the directives file
+	if [ ! -f $DIRECTIVES_FILE ]; then
+		log "-No $DIRECTIVES_FILE found, Assuming Global directives have changed."
+		return 0 # true, changed
+	fi
+
 	local CURRENT_DIRECTIVES NEW_DIRECTIVES
-	CURRENT_DIRECTIVES="$(sed -nE "/^\[Global\]$/{:l n;/^(\[.*\])?$/q;p;bl}" $DIRECTIVES_FILE)"
-	NEW_DIRECTIVES="$(sed -nE "/^\[Global\]$/{:l n;/^(\[.*\])?$/q;p;bl}" $DIRECTIVES_TEMP_FILE)"
+	CURRENT_DIRECTIVES="$(cat $DIRECTIVES_FILE | sed -nE "/^\[Global\]$/{:l n;/^(\[.*\])?$/q;p;bl}")"
+	NEW_DIRECTIVES="$(cat $DIRECTIVES_TEMP_FILE | sed -nE "/^\[Global\]$/{:l n;/^(\[.*\])?$/q;p;bl}")"
 
 	is_var_equal "TimeZone" "$CURRENT_DIRECTIVES" "$NEW_DIRECTIVES" || return 0 # true, have-changed
 	is_var_equal "ConfigExpirationTime" "$CURRENT_DIRECTIVES" "$NEW_DIRECTIVES" || return 0 # true, have-changed
@@ -59,10 +67,17 @@ have_global_config_changed(){
 ## Returns true if some variable on the specific config is different between files
 # $1 = specific config name
 have_specific_config_changed(){
+
+	## It's supposed that at this point, $DIRECTIVES_TEMP_FILE should exist, but no the directives file
+	if [ ! -f $DIRECTIVES_FILE ]; then
+		log "-No $DIRECTIVES_FILE found, Assuming $1 directives have changed."
+		return 0 # true, changed
+	fi
+
 	local SECTION CURRENT_DIRECTIVES NEW_DIRECTIVES
 	SECTION="$1"
-	CURRENT_DIRECTIVES="$(sed -nE "/^\[$SECTION\]$/{:l n;/^(\[.*\])?$/q;p;bl}" $DIRECTIVES_FILE)"
-	NEW_DIRECTIVES="$(sed -nE "/^\[$SECTION\]$/{:l n;/^(\[.*\])?$/q;p;bl}" $DIRECTIVES_TEMP_FILE)"
+	CURRENT_DIRECTIVES="$(cat $DIRECTIVES_FILE | sed -nE "/^\[$SECTION\]$/{:l n;/^(\[.*\])?$/q;p;bl}")"
+	NEW_DIRECTIVES="$(cat $DIRECTIVES_TEMP_FILE | sed -nE "/^\[$SECTION\]$/{:l n;/^(\[.*\])?$/q;p;bl}")"
 
 	is_var_equal "Wallpaper" "$CURRENT_DIRECTIVES" "$NEW_DIRECTIVES" || return 0 # true, have-changed
 	is_var_equal "AllowUsbStorage" "$CURRENT_DIRECTIVES" "$NEW_DIRECTIVES" || return 0 # true, have-changed
@@ -76,10 +91,17 @@ have_specific_config_changed(){
 ## Returns true if any character on the event times have changed
 # $1 = specific config name
 have_specific_times_changed(){
+
+	## It's supposed that at this point, $DIRECTIVES_TEMP_FILE should exist, but no the directives file
+	if [ ! -f $DIRECTIVES_FILE ]; then
+		log "-No $DIRECTIVES_FILE found, Assuming $1 directives have changed."
+		return 0 # true, changed
+	fi
+
 	local SECTION CURRENT_DIRECTIVES NEW_DIRECTIVES
 	SECTION="$1"
-	CURRENT_DIRECTIVES="$(sed -nE "/^\[$SECTION\]$/{:l n;/^(\[.*\])?$/q;p;bl}" $DIRECTIVES_FILE)"
-	NEW_DIRECTIVES="$(sed -nE "/^\[$SECTION\]$/{:l n;/^(\[.*\])?$/q;p;bl}" $DIRECTIVES_TEMP_FILE)"
+	CURRENT_DIRECTIVES="$(cat $DIRECTIVES_FILE | sed -nE "/^\[$SECTION\]$/{:l n;/^(\[.*\])?$/q;p;bl}")"
+	NEW_DIRECTIVES="$(cat $DIRECTIVES_TEMP_FILE | sed -nE "/^\[$SECTION\]$/{:l n;/^(\[.*\])?$/q;p;bl}")"
 
 	if [ "$CURRENT_DIRECTIVES" = "$NEW_DIRECTIVES" ]; then
 		return 1 # false, have-not-changed
@@ -90,8 +112,9 @@ have_specific_times_changed(){
 bool_to_string(){
 	if [ $1 -eq 0 ];then
 		echo "true"
+	else
+		echo "false"
 	fi
-	echo "false"
 }
 
 have_directives_changed(){
@@ -132,6 +155,13 @@ have_directives_changed(){
 ## Return true if the directives are expired
 # $1 = Directives file to test
 directives_already_expired(){
+
+	## In case the directives file does not exist, let's consider it expired
+	if [ ! -f $1 ]; then
+		log "-No $1 found, considering expired file."
+		return 0 # true, have-expired
+	fi
+
 	## Check if the directives file was set to expire.
 	local NEW_DIRECTIVES_EXPIRATION_TIME NEW_DIRECTIVES_TIMEZONE
 	NEW_DIRECTIVES_EXPIRATION_TIME="$(cat $1 | grep ConfigExpirationTime | cut -d= -f2)"
@@ -163,5 +193,6 @@ update_directives(){
 
 	log "+Writting new directives file on $DIRECTIVES_FILE"
 	mv $DIRECTIVES_TEMP_FILE $DIRECTIVES_FILE 
+	chmod 640 $DIRECTIVES_FILE
 	return $? 
 }

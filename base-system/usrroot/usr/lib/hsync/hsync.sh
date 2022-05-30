@@ -2,8 +2,13 @@
 
 # Huron Sync Script
 # This tool, is the driver script to be executed by the hsync.service systemd-unit.
-# It manages the correct application of the directives for huronOS and keep it 
+# It manages the correct application of the directives for huronOS and keep it
 # synchronized.
+
+set -x
+
+## Set some system vars
+export TERM=dumb
 
 ## Set some constants
 readonly MEMORY=/run/initramfs/memory
@@ -51,12 +56,12 @@ readonly BACKUP_DIR=$USRCHANGES/$BACKUP_DIR_NAME
 	declare DIRECTIVES_FILE_TO_USE
 	declare DIRECTIVES_SPECIFIC_CONFIG
 	declare DIRECTIVES_HAVE_CHANGED=1
-	declare DIRECTIVES_GLOBAL_CONFIG_HAVE_CHANGED=1
-	declare DIRECTIVES_ALWAYS_CONFIG_HAVE_CHANGED=1
-	declare DIRECTIVES_EVENT_CONFIG_HAVE_CHANGED=1
-	declare DIRECTIVES_CONTEST_CONFIG_HAVE_CHANGED=1
-	declare DIRECTIVES_EVENT_TIMES_HAVE_CHANGED=1
-	declare DIRECTIVES_CONTEST_TIMES_HAVE_CHANGED=1
+	declare DIRECTIVES_GLOBAL_CONFIG_HAVE_CHANGED=0
+	declare DIRECTIVES_ALWAYS_CONFIG_HAVE_CHANGED=0
+	declare DIRECTIVES_EVENT_CONFIG_HAVE_CHANGED=0
+	declare DIRECTIVES_CONTEST_CONFIG_HAVE_CHANGED=0
+	declare DIRECTIVES_EVENT_TIMES_HAVE_CHANGED=0
+	declare DIRECTIVES_CONTEST_TIMES_HAVE_CHANGED=0
 
 
 ## Include libraries of hsync
@@ -90,6 +95,10 @@ main(){
 		state_clock_sync
 		start_persistence
 
+		# Enable network interfaces before atempting a download.
+		# Only at boot as they're not supposed to be deactivated, only root can do that.
+		enable_network_interfaces
+
 		# Let's try to download a new directives file, there might be an update to
 		# the one restored from the disk. If there is an update, then let's use
 		# this new directives
@@ -101,8 +110,9 @@ main(){
 		# Let's always run directives on boot to set a current state.
 		apply_directives_to_system
 		state_hsync_execution_time
-		backup_state_to_disk
 		save_state
+		backup_state_to_disk
+		log_end
 		exit
 	fi
 
@@ -147,6 +157,10 @@ check_execution_arguments(){
 		"--routine-sync") EXECUTION_IS_ROUTINE="true";;
 		*) exit;;
 	esac
+
+	log "+Running hsync,
+	IS_SCHEDULED_FORCED_APPLY=$EXECUTION_IS_SCHEDULED_APPLY
+	IS_ROUTINE_SYNC=$EXECUTION_IS_ROUTINE"
 }
 
 main "$@"; exit;

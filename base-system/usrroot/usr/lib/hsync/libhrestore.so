@@ -62,7 +62,13 @@ backup_state_to_disk(){
 	# Let's verify that there's a drive mounted on usrchanges/ branch,
 	# otherwise it will be useless to save it
 	if ! cat /proc/mounts | grep $USRCHANGES | grep rw; then
-		log "-Cannot backup huronOS state, no writable $USRCHANGES branch"
+		log "!Cannot backup huronOS state, no writable $USRCHANGES branch
+
+			This is severe, at this point persistence should be already set!
+			Mode changes will not work as there's no persistence set.
+			This MUST be debugged!
+
+		"
 		return 1 # error
 	fi
 
