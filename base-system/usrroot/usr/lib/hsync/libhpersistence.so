@@ -32,13 +32,13 @@ start_persistence(){
 			;;
 
 		# If the state was contest, then let's restore the files
-		"event")
+		"contest")
 			log "+Previous state found, restoring persistence in contest mode"
 			restore_contest_mode || return 1
 			return 0 # sucess
 			;;
 	esac
-		
+
 	return 0
 }
 
@@ -108,7 +108,7 @@ free_branch(){
 
 	## Now, we will stop the user interface as budgie regulary keep cache files that locks the branch
 	systemctl stop lightdm.service
-	sleep 5
+	sleep 3
 
 	## Let's try to remove the branch from AUFS
 	mount -t aufs -o remount,del:"$BRANCH" aufs / 2>/dev/null
@@ -136,6 +136,7 @@ release_branch(){
 	BRANCH="$1"
 
 	mount -t aufs -o remount,prepend:"$BRANCH" aufs /
+	su contestant -c '(xdg-user-dirs-update --force)'
 	systemctl start lightdm.service
 }
 
@@ -205,6 +206,9 @@ start_always_mode(){
 }
 
 restore_always_mode(){
+
+	systemctl stop lightdm.service
+
 	# Silently deactivate all modules to prevent syschanges/ to stay at a higher index layer
 	# than any module. That would cause that modularized-software changes to be saved
 	# on the syschanges/ instead of the usrchanges/
@@ -219,16 +223,21 @@ restore_always_mode(){
 
 	## Let's notify the state that we're setting
 	STATE_MODE="always"
-	STATE_MODE_START_TIME_UTC=""
-	STATE_MODE_END_TIME_UTC=""
 	STATE_IS_PERSISTENCE_ENABLED="true"
 	STATE_PERSISTENCE_DISK="event"
 
 	log_aufs_branches
+	#su contestant -c '(xdg-user-dirs-update --force)'
+	systemctl start lightdm.service
+	sleep 2
+
 	return 0
 }
 
 restore_event_mode(){
+
+	systemctl stop lightdm.service
+
 	# Silently deactivate all modules to prevent syschanges/ to stay at a higher index layer
 	# than any module. That would cause that modularized-software changes to be saved
 	# on the syschanges/ instead of the usrchanges/
@@ -243,16 +252,21 @@ restore_event_mode(){
 
 	## Let's notify the state that we're setting
 	STATE_MODE="event"
-	STATE_MODE_START_TIME_UTC=""
-	STATE_MODE_END_TIME_UTC=""
 	STATE_IS_PERSISTENCE_ENABLED="true"
 	STATE_PERSISTENCE_DISK="event"
 
 	log_aufs_branches
+	#su contestant -c '(xdg-user-dirs-update --force)'
+	systemctl start lightdm.service
+	sleep 2
+
 	return 0
 }
 
 restore_contest_mode(){
+
+	systemctl stop lightdm.service
+
 	# Silently deactivate all modules to prevent syschanges/ to stay at a higher index layer
 	# than any module. That would cause that modularized-software changes to be saved
 	# on the syschanges/ instead of the usrchanges/
@@ -267,12 +281,14 @@ restore_contest_mode(){
 
 	## Let's notify the state that we're setting
 	STATE_MODE="contest"
-	STATE_MODE_START_TIME_UTC=""
-	STATE_MODE_END_TIME_UTC=""
 	STATE_IS_PERSISTENCE_ENABLED="true"
 	STATE_PERSISTENCE_DISK="contest"
 
 	log_aufs_branches
+	#su contestant -c '(xdg-user-dirs-update --force)'
+	systemctl start lightdm.service
+	sleep 2
+
 	return 0
 }
 

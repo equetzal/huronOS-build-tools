@@ -76,6 +76,7 @@ readonly BACKUP_DIR=$USRCHANGES/$BACKUP_DIR_NAME
 
 main(){
 	log_start
+	apply_demo_if_on
 	check_execution_arguments "$@"
 
 	# Hsync is executed every 1 minute to mantain the system updated acording to the directives file

@@ -823,7 +823,7 @@ mount_modules(){
 	local MODULE MODULE_BAS
 
 	echo_green_star
-	echo "Mounting system base modules"
+	echo "Mounting huronOS System Layers"
 	( ls -1 "$BASE_DIR" | sort -n ; cd "$BASE_DIR" | sortmod | filter_load) | grep '[.]'$BEXT'$' | filter_noload | while read MODULE; do
 		echo "* Mounting $MODULE"
 		MODULE_BAS="$(basename "$MODULE")"

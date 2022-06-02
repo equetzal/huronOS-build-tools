@@ -97,6 +97,7 @@ mkdir -p /home/contestant/.config/JetBrains
 chown -R contestant:contestant /home/contestant/
 
 ## Activate services
+cp -f files/lightdm.service /usr/lib/systemd/system/
 systemctl enable lightdm.service
 systemctl enable hsync.service
 systemctl enable hsync.timer

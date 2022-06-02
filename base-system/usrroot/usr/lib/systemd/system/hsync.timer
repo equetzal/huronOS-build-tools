@@ -4,7 +4,7 @@ Description=Timer to download new huronOS directives
 [Timer]
 AccuracySec=1s
 OnUnitInactiveSec=60s
-OnBootSec=60s
+OnBootSec=1s
 OnClockChange=false
 OnTimezoneChange=false
 

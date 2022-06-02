@@ -7,7 +7,7 @@ try_directives_download(){
 	DIRECTIVES_FILE_URL="$(head -n 1 /etc/hsync/server | cut -d= -f2)"
 	DIRECTIVES_TEMP_FILE="/tmp/directives-$$.hdf"
 
-	if ! wget --timeout=10 -O $DIRECTIVES_TEMP_FILE $DIRECTIVES_FILE_URL; then
+	if ! wget --tries=2 --timeout=10 -O $DIRECTIVES_TEMP_FILE $DIRECTIVES_FILE_URL; then
 		log "-Directives file cannot be downloaded"
 		return 1 # error
 	fi
@@ -20,11 +20,11 @@ try_directives_download(){
 	## Check if directives file follows the syntaxis
 	
 	log " Syntax revision over $DIRECTIVES_TEMP_FILE"
-	# if ! /usr/lib/hsync/hsync.validator $DIRECTIVES_TEMP_FILE >> /var/log/hsync.log; then
-	# 	log "-Directives file $DIRECTIVES_TEMP_FILE have an invalid syntaxis. Droping file."
-	# 	rm -f $DIRECTIVES_TEMP_FILE
-	# 	return 1 # error
-	# fi
+	if ! /usr/lib/hsync/hsync.validator $DIRECTIVES_TEMP_FILE >> /var/log/hsync.log; then
+	 	log "-Directives file $DIRECTIVES_TEMP_FILE have an invalid syntaxis. Droping file."
+	 	rm -f $DIRECTIVES_TEMP_FILE
+	 	return 1 # error
+	 fi
 
 	log "+Directives file $DIRECTIVES_TEMP_FILE have a valid syntaxis."
 	return 0 #success

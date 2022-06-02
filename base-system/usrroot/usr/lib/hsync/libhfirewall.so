@@ -12,7 +12,7 @@ enable_network_interfaces(){
 }
 
 get_domain(){
-	sed -E -e 's_.*://([^/@]*@)?([^/:]+).*_\2_'
+	sed -E -e 's_.*://([^/@]*@)?([^/:]+).*_\2_' | cut -d/ -f1
 }
 
 
@@ -54,7 +54,7 @@ firewall_filter_ipv4(){
 		ALLOW_IPS+=" $DIRECTIVES_IP"
 	fi
 
-	WALLPAPER_IP="$(dig +short $DIRECTIVES_DOMAIN A)"
+	WALLPAPER_IP="$(dig +short $WALLPAPER_DOMAIN A)"
 	if ! [[ "$WALLPAPER_IP" =~ ^\;\;.* ]]; then
 		ALLOW_IPS+=" $WALLPAPER_IP"
 	fi
@@ -62,12 +62,15 @@ firewall_filter_ipv4(){
 	if [ "$ALLOWED_WEBSITES" != "any" ];then
 		for WEBSITE in $ALLOWED_WEBSITES; do
 			DOMAIN="$(echo $WEBSITE | get_domain)"
-			IP="$(dig +short $DIRECTIVES_DOMAIN A)"
-			if ! [[ "$WALLPAPER_IP" =~ ^\;\;.* ]]; then
+			IP="$(dig +short $DOMAIN A)"
+			if ! [[ "$IP" =~ ^\;\;.* ]]; then
 				ALLOW_IPS+=" $IP"
 			fi
 		done
 	fi
+
+	# Delete repeated ips
+	ALLOW_IPS="$(echo -n $ALLOW_IPS | sed 's: :\n:g' | sort -u | sed 's:\n: :g')"
 
 	# Set policy to deny all input
 	# We don't need to take care of the output, what we want is user not to receive data.
@@ -96,6 +99,9 @@ firewall_filter_ipv4(){
 	## Allow DNS
 	iptables -A INPUT -p udp --sport 53 -j ACCEPT
 	iptables -A INPUT -p tcp --sport 53 -j ACCEPT
+
+	## Allow NTP time sync
+	iptables -A INPUT -p udp --sport 123 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
 
 
 	for IP in $ALLOW_IPS; do

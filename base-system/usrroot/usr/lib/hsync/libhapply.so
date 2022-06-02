@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!bin/bash
 
 apply_directives_to_system(){
 
@@ -25,12 +24,6 @@ apply_directives_to_system(){
 }
 
 apply_global_directives(){
-
-	## 1 is false, then no global config has been changed, do not update anything.
-	if [ $DIRECTIVES_GLOBAL_CONFIG_HAVE_CHANGED -eq 1 ]; then
-		log "+[Global] directives have not changed, skipping application."
-		return 0 # success
-	fi
 
 	log "Applying [Global] directives"
 	set_timezone
@@ -86,7 +79,7 @@ get_directives_times(){
 	sed -nE "/^\[$SECTION\]$/{:l n;/^(\[.*\])?$/q;p;bl}" $DIRECTIVES_FILE_TO_USE
 }
 
-update_next_apply () {
+update_next_apply() {
 	declare CURRENT_TIME=$(date +'%s')
 	declare INTERESTING_TIME=$(date --date "$1" +'%s')
 
@@ -178,7 +171,7 @@ schedule_next_mode_change(){
 	if [ $EXECUTION_NEXT_SCHEDULED_APPLY_TIME ]; then
 		FORMATED_NEXT_TIME=$(date -d @$EXECUTION_NEXT_SCHEDULED_APPLY_TIME +"%Y%m%d%H%M.%S");
 		log "Scheduling next apply job at $FORMATED_NEXT_TIME"
-		echo "$0 --scheduled-apply" | at -t $FORMATED_NEXT_TIME
+		echo "systemctl start happly.service" | at -t $FORMATED_NEXT_TIME
 	fi
 	return 0
 }
@@ -210,7 +203,7 @@ set_current_keyboard(){
 
 	# If the mode is contest, let's stop updating this as it can modify the current
 	# while the user is typing.
-	if [ $NEW_MODE = "contest" ]; then
+	if ! system_has_just_booted && [ $NEW_MODE = "contest" ]; then
 		log "-Cannot modify default keyboard while in contest mode."
 		return 0
 	fi
@@ -294,6 +287,8 @@ set_software(){
 	hmm -uf --block-update /etc/hmm/current | sed -r "s/\x1B\[(([0-9]{1,2})?(;)?([0-9]{1,2})?)?[m,K,H,f,J]//g" | tee -a /var/log/hsync.log
 	chown -R contestant:contestant /home/contestant/.config/JetBrains
 
+	log_aufs_branches
+
 	return 0 # success
 }
 
@@ -346,7 +341,7 @@ set_wallpaper(){
 	log " Downloading wallpaper $WALLPAPER"
 	NAME=$(basename $WALLPAPER)
 	FILE="/usr/share/backgrounds/custom-background-$$-$NAME"
-	if wget --timeout=10 $WALLPAPER -O $FILE; then
+	if wget --tries=2 --timeout=10 $WALLPAPER -O $FILE; then
 		log "+Setting new wallpaper"
 		chmod 777 $FILE
 		su contestant -c "export DISPLAY=:0; gsettings set org.gnome.desktop.background picture-uri file://$FILE"

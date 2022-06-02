@@ -12,9 +12,16 @@ system_has_just_booted(){
 
 	# If hardware clock is not sync with ntp server, this will still working as the uptime
 	# only counts seconds since boot using hardware clock.
-	if [ $seconds_since_boot -lt 120 ]; then
+	if [ $seconds_since_boot -lt 60 ]; then
 		log " huronOS has just booted, hsync first execution after boot."
 		return 0 # true
+	fi
+
+	# In case demo was enabled on cmdline, first execution of hsync may be out of boot time.
+	# If that happen, let's replace demo work with booted to run this at anytime only on first manual launch
+	if cmdline_has "demo" && [ -f /run/hsync/demo ] && [ "$(cat /run/hsync/demo)" = "demo" ]; then
+		echo "booted" > /run/hsync/demo
+		return 0
 	fi
 
 	log " huronOS already booted before, recurring hsync execution."
@@ -37,6 +44,29 @@ cmdline_has(){
    	else
    		return 1
    	fi
+}
+
+apply_demo_if_on(){
+
+	# If demo flag is set on cmdline, hsync services
+	# should stop to let orgs set screen settings, etc.
+	# then hsync services must have to be manually activated
+	if cmdline_has "demo"; then
+		local HSYNC_RUN_DIR="/run/hsync"
+		mkdir -p $HSYNC_RUN_DIR
+		# If file does not exist, services has not been stoped yet.
+		if [ ! -f $HSYNC_RUN_DIR/demo ]; then
+			# Create demo file to mark the services are being stoped
+			echo "demo" > $HSYNC_RUN_DIR/demo
+			# Stop current execution and future ones
+			systemctl stop hsync.timer
+			systemctl stop hsync.service
+			exit
+		## If demo file is here, services were manually started
+		else
+			return 0
+		fi
+	fi
 }
 
 ## Returns true if the cmdline at boot has persistence set to true

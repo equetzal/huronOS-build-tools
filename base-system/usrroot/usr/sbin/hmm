@@ -230,7 +230,7 @@ remove_branch(){
    		[ $? -eq 0 ] && return 0
 
 		## That did not worked, let's get the PID of any process that is using this
-		while : ; do
+		for i in {1..50} ; do
 			PIDS=$(aubusy -v / $1 | awk '{print $1}' | sort | uniq | sed 's:\n: :g')
 			for PID in $PIDS; do
 				[ "$SILENT" != "true" ] && echo "Killing process with ID $PID aka. $(ps -p $PID -o command --no-headers | awk '{print $1}')"
@@ -239,6 +239,8 @@ remove_branch(){
 			mount -t aufs -o remount,verbose,del:"$1" aufs / 2>/dev/null
    			[ $? -eq 0 ] && return 0
 		done
+		[ "$SILENT" != "true" ] && echo "$(tput setaf 4)>huronOS module busy: Cannot deactivate module $(basename $1). See dmesg for more.$(tput sgr0)"
+		return 1
 	## Just try it once, and do not kill any PID
 	else
 		mount -t aufs -o remount,verbose,del:"$1" aufs / 2>/dev/null
