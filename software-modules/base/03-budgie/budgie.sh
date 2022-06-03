@@ -10,7 +10,7 @@
 
 set -xe
 
-PACKAGES="apparmor budgie-desktop budgie-countdown-applet budgie-network-manager-applet dconf-cli eog gnome-calculator gnome-calendar gnome-terminal libdrm-intel1 libgl1-mesa-dri libglib2.0-bin libglu1-mesa lightdm moka-icon-theme nautilus nautilus-extension-gnome-terminal okular plank x11-utils xdg-user-dirs xinit xinput xserver-xorg xserver-xorg-video-intel xterm"
+PACKAGES="apparmor budgie-desktop budgie-countdown-applet budgie-extras-daemon budgie-network-manager-applet dconf-cli eog gnome-calculator gnome-calendar gnome-terminal gnome-themes-extra libdrm-intel1 libgl1-mesa-dri libglib2.0-bin libglu1-mesa lightdm moka-icon-theme nautilus nautilus-extension-gnome-terminal okular plank x11-utils xdg-user-dirs xinit xinput xserver-xorg xserver-xorg-video-intel xterm"
 
 ## Install
 apt update
@@ -24,6 +24,9 @@ rm /usr/share/xsessions/budgie-desktop.desktop
 ## Replace debian logo branding with huronOS
 rm -rf /usr/share/wallpapers/
 rm -rf /usr/share/icons/desktop-base/*
+rm -rf /usr/share/desktop-base/
+rm -rf /usr/share/plymouth/
+rm -rf /usr/share/pixmaps/debian*
 cp -rf files/vendor/* /usr/share/icons/desktop-base
 ln -sf /usr/share/icons/desktop-base/scalable/emblems/emblem-huronos.svg /etc/alternatives/emblem-vendor-scalable
 ln -sf /usr/share/icons/desktop-base/scalable/emblems/emblem-huronos-symbolic.svg /etc/alternatives/emblem-vendor-symbolic-scalable
@@ -67,7 +70,9 @@ mkdir -p /tmp/save/
 cp files/nano.svg /usr/share/icons/hicolor/scalable/apps/
 cp /usr/share/applications/gnome-*-panel.desktop /tmp/save/
 cp /usr/share/applications/budgie-*.desktop /tmp/save/
+cp /usr/share/applications/gnome-control-center.desktop /tmp/save/
 cp /usr/share/applications/org.gnome.Calendar.desktop /tmp/save/
+cp /usr/share/applications/org.gnome.Nautilus.desktop /tmp/save/
 rm /usr/share/applications/*.desktop -f
 cp files/applications/* /usr/share/applications/
 cp /tmp/save/* /usr/share/applications/

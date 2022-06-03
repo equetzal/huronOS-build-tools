@@ -1,5 +1,6 @@
 [Unit]
 Description=Timer to download new huronOS directives
+After=network-online.target time-sync.target
 
 [Timer]
 AccuracySec=1s
@@ -9,4 +10,4 @@ OnClockChange=false
 OnTimezoneChange=false
 
 [Install]
-WantedBy=timers.target
+WantedBy=display-manager.target

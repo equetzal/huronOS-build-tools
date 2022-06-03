@@ -285,7 +285,17 @@ set_software(){
 	done
 
 	hmm -uf --block-update /etc/hmm/current | sed -r "s/\x1B\[(([0-9]{1,2})?(;)?([0-9]{1,2})?)?[m,K,H,f,J]//g" | tee -a /var/log/hsync.log
+
+	## Special cases
 	chown -R contestant:contestant /home/contestant/.config/JetBrains
+	rm -f /home/contestant/.config/plank/dock1/launchers/{chromium,firefox}.dockitem
+	if [ "$(echo $SOFTWARE_LIST | sed 's: :\n:g' | grep internet/chromium)" != "" ]; then
+		echo -e "[PlankDockItemPreferences]\nLauncher=file:///usr/share/applications/chromium.desktop" > /home/contestant/.config/plank/dock1/launchers/chromium.dockitem
+		chown contestant:contestant /home/contestant/.config/plank/dock1/launchers/chromium.dockitem
+	elif [ "$(echo $SOFTWARE_LIST | sed 's: :\n:g' | grep internet/firefox)" != "" ]; then
+		echo -e "[PlankDockItemPreferences]\nLauncher=file:///usr/share/applications/firefox.desktop" > /home/contestant/.config/plank/dock1/launchers/firefox.dockitem
+		chown contestant:contestant /home/contestant/.config/plank/dock1/launchers/firefox.dockitem
+	fi
 
 	log_aufs_branches
 

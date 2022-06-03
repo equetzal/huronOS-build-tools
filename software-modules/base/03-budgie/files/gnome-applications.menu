@@ -69,13 +69,13 @@
       <And>
         <Category>Tools</Category>
       </And>
-      <Filename>nautilus.desktop</Filename>
       <Filename>nano.desktop</Filename>
       <Filename>gnome-calculator.desktop</Filename>
       <Filename>okular.desktop</Filename>
       <Filename>eog.desktop</Filename>
       <Filename>org.gnome.Calendar.desktop</Filename>
       <Filename>org.gnome.Terminal.desktop</Filename>
+      <Filename>org.gnome.Nautilus.desktop</Filename>
       <Filename>konsole.desktop</Filename>
       <Filename>midnight-commander.desktop</Filename>
       <Filename>byobu.desktop</Filename>

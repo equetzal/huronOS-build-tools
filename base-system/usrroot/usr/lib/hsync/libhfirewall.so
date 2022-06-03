@@ -103,7 +103,10 @@ firewall_filter_ipv4(){
 	## Allow NTP time sync
 	iptables -A INPUT -p udp --sport 123 -m state --state NEW,RELATED,ESTABLISHED -j ACCEPT
 
+	## Allow Crow Translate to use googleapis, this does allow access to search engine or web proxy via google
+	iptables -A INPUT -p tcp -m multiport --sport 443 -s translate.googleapis.com -m state --state ESTABLISHED,RELATED -j ACCEPT
 
+	## Allow resolved ips on the directives file
 	for IP in $ALLOW_IPS; do
 		## Start ip filtering
 		iptables -A INPUT -p tcp -m multiport --sport 80,443,8080 -s $IP -m state --state ESTABLISHED,RELATED -j ACCEPT

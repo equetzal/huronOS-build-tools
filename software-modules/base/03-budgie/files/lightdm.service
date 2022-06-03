@@ -2,7 +2,7 @@
 Description=Light Display Manager
 Documentation=man:lightdm(1)
 After=systemd-user-sessions.service
-After=hsync.timer
+Before=hsync.service
 
 [Service]
 ExecStart=/usr/sbin/lightdm

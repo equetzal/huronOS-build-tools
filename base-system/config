@@ -40,7 +40,7 @@ NETWORK=false
 LIVEKITDATA=/tmp/$LIVEKITNAME-data-$$
 
 # Bundle extension, for example 'sb' for .sb extension
-BEXT=hsm
+BEXT=hsl
 
 # Directory with kernel .ko modules, can be different in some distros
 LMK="lib/modules/$KERNEL"

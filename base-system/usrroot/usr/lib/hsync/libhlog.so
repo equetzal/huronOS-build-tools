@@ -25,13 +25,5 @@ log_end(){
 }
 
 log_aufs_branches(){
-	local STACK_ID BRANCHES_DIR BRANCHES_LIST  
-	STACK_ID="$(cat /proc/mounts | grep 'aufs / aufs' | egrep -o 'si=([^,) ]+)' | tr = _)"
-	BRANCHES_DIR="/sys/fs/aufs/${STACK_ID}"
-	BRANCHES_LIST="$(ls -v1 $BRANCHES_DIR | grep -E "br[0-9]+")"
-
-	log "Current AUFS branches state: "
-	for BR in $BRANCHES_LIST; do
-		echo -e "\t${BR}\t$(cat $BRANCHES_DIR/$BR)" | tee -a /var/log/hsync.log
-	done
+	auls
 }

@@ -1,12 +1,13 @@
 #!/bin/bash
 
-
 # This is the first execution of hsync, here we don't have a current state.
 # It is 'none', so in this part we need to either set a previous persistent state
 # or set 'always' mode if no other state is available.
 start_persistence(){
 
 	log " Starting a new persistent layer on AUFS."
+	systemctl stop lightdm
+	sleep 3
 
 	case $STATE_MODE in
 		# If there's no STATE_MODE, then there was no persistence set.
@@ -48,6 +49,7 @@ apply_persistence_mode(){
 
 	if ! system_has_persistece_enabled; then
 		STATE_IS_PERSISTENCE_ENABLED="false"
+		log_aufs_branches
 		return 0 #success
 	fi
 
@@ -65,6 +67,7 @@ apply_persistence_mode(){
 		#2: $NEW_MODE 
 		    $NEW_MODE_START_TIME_UTC - $NEW_MODE_END_TIME_UTC
 		No modification will be done on persistence, preserving changes."
+		log_aufs_branches
 		return 0 # success. 
 	else
 		log "+The following mode timeframes are considered to be the different:
@@ -92,7 +95,6 @@ apply_persistence_mode(){
 	[ "$NEW_MODE" = "contest" ] && STATE_PERSISTENCE_DISK="contest"
 
 	log_aufs_branches
-
 	return 0
 }
 
@@ -117,16 +119,19 @@ free_branch(){
 	## Ok, we cannot remove the AUFS branch, so, a non-graphical process is locking the branch
 	# we will try killing all processes that are locking them. If huronOS is well configured,
 	# any important process should be locking the branch
-	while : ; do
-		PIDS=$(aubusy -v / $BRANCH | awk '{print $1}' | sort | uniq | sed 's:\n: :g')
+	for i in {1..50} ; do
+		echo -n ".$i"
+		PIDS=$(aubusy -v / $BRANCH | awk '{print $1}' | sort -u | sed 's:\n: :g')
 		for PID in $PIDS; do
 			echo "Killing process with ID $PID aka. $(ps -p $PID -o command --no-headers | awk '{print $1}')"
 			kill -9 $PID >/dev/null 2>/dev/null
 		done
 		## Let's retry to remove the branch
 		mount -t aufs -o remount,del:"$BRANCH" aufs / 2>/dev/null
-		[ $? -eq 0 ] && return 0 # We are free!!
+		[ $? -eq 0 ] && echo && return 0 # We are free!!
 	done
+	echo
+	log " Couldn't remove $BRANCH from AUFS / filesystem"
 }
 
 ## Branch is unified into AUFS and then realeased for user to use.
@@ -137,7 +142,8 @@ release_branch(){
 
 	mount -t aufs -o remount,prepend:"$BRANCH" aufs /
 	su contestant -c '(xdg-user-dirs-update --force)'
-	systemctl start lightdm.service
+	systemctl start lightdm
+	sleep 4
 }
 
 ## Cleans the given partition of ANY file, then creates the base dirs that will redirect
@@ -202,12 +208,13 @@ start_always_mode(){
 	STATE_PERSISTENCE_DISK="event"
 
 	log_aufs_branches
+	systemctl start lightdm
+	sleep 4
+
 	return 0
 }
 
 restore_always_mode(){
-
-	systemctl stop lightdm.service
 
 	# Silently deactivate all modules to prevent syschanges/ to stay at a higher index layer
 	# than any module. That would cause that modularized-software changes to be saved
@@ -228,15 +235,13 @@ restore_always_mode(){
 
 	log_aufs_branches
 	#su contestant -c '(xdg-user-dirs-update --force)'
-	systemctl start lightdm.service
-	sleep 2
+	systemctl start lightdm
+	sleep 4
 
 	return 0
 }
 
 restore_event_mode(){
-
-	systemctl stop lightdm.service
 
 	# Silently deactivate all modules to prevent syschanges/ to stay at a higher index layer
 	# than any module. That would cause that modularized-software changes to be saved
@@ -257,15 +262,13 @@ restore_event_mode(){
 
 	log_aufs_branches
 	#su contestant -c '(xdg-user-dirs-update --force)'
-	systemctl start lightdm.service
-	sleep 2
+	systemctl start lightdm
+	sleep 4
 
 	return 0
 }
 
 restore_contest_mode(){
-
-	systemctl stop lightdm.service
 
 	# Silently deactivate all modules to prevent syschanges/ to stay at a higher index layer
 	# than any module. That would cause that modularized-software changes to be saved
@@ -286,8 +289,8 @@ restore_contest_mode(){
 
 	log_aufs_branches
 	#su contestant -c '(xdg-user-dirs-update --force)'
-	systemctl start lightdm.service
-	sleep 2
+	systemctl start lightdm
+	sleep 4
 
 	return 0
 }

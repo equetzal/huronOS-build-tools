@@ -1,7 +1,8 @@
 [Unit]
 Description=huronOS sync service
-Requires=network-online.target
-After=network-online.target
+Requires=network.target
+After=network-online.target display-manager.target
+
 
 [Service]
 User=root
