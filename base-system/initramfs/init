@@ -33,6 +33,7 @@ readonly INTERNET_DIR="$SYSTEM_MNT/huronOS/internet"
 readonly LANGS_DIR="$SYSTEM_MNT/huronOS/langs"
 readonly PROGRAMMING_DIR="$SYSTEM_MNT/huronOS/programming"
 readonly TOOLS_DIR="$SYSTEM_MNT/huronOS/tools"
+readonly ROOTCOPY_DIR="$SYSTEM_MNT/huronOS/rootcopy"
 
 ## AUFS branches
 	# syschanges/ branch will hold all the system-created
@@ -110,7 +111,7 @@ debug_shell
 # TODO: Check if this feature will be supported by huronOS
 # 		this can mean a security hole for contestants being able to 
 #		easily add files to the rootcopy dir and gain root access.
-# copy_rootcopy_content "$DATA" "$UNION"
+copy_rootcopy_content "$ROOTCOPY_DIR" "$UNION"
 # debug_shell
 
 ## Create the fstab so that systemd mount filesystems at boot.

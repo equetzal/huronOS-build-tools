@@ -19,12 +19,12 @@ try_directives_download(){
 	# If directives files does not follow the syntax, let's just drop the file.
 	## Check if directives file follows the syntaxis
 	
-	log " Syntax revision over $DIRECTIVES_TEMP_FILE"
-	# if ! /usr/lib/hsync/hsync.validator $DIRECTIVES_TEMP_FILE >> /var/log/hsync.log; then
+	#log " Syntax revision over $DIRECTIVES_TEMP_FILE"
+	#if ! timeout 2 /usr/lib/hsync/hsync.validator $DIRECTIVES_TEMP_FILE >> /var/log/hsync.log; then
 	# 	log "-Directives file $DIRECTIVES_TEMP_FILE have an invalid syntaxis. Droping file."
 	# 	rm -f $DIRECTIVES_TEMP_FILE
 	# 	return 1 # error
-	# fi
+	#fi
 
 	log "+Directives file $DIRECTIVES_TEMP_FILE have a valid syntaxis."
 	return 0 #success

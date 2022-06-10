@@ -1,12 +1,11 @@
 [Unit]
 Description=huronOS sync service
 Requires=network.target
-After=network-online.target display-manager.target
-
 
 [Service]
 User=root
 Group=root
+ExecCondition=/bin/bash -xc '/usr/bin/systemctl is-active --quiet happly.service && exit 1 || exit 0'
 ExecStart=/usr/lib/hsync/hsync.sh --routine-sync
 Restart=on-abnormal
 SuccessExitStatus=0

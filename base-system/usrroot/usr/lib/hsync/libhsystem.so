@@ -65,6 +65,7 @@ apply_demo_if_on(){
 		## If demo file is here, services were manually started
 		else
 			return 0
+	
 		fi
 	fi
 }

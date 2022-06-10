@@ -73,6 +73,7 @@ cp /usr/share/applications/budgie-*.desktop /tmp/save/
 cp /usr/share/applications/gnome-control-center.desktop /tmp/save/
 cp /usr/share/applications/org.gnome.Calendar.desktop /tmp/save/
 cp /usr/share/applications/org.gnome.Nautilus.desktop /tmp/save/
+cp /usr/share/applications/org.gnome.Terminal.desktop /tmp/save/
 rm /usr/share/applications/*.desktop -f
 cp files/applications/* /usr/share/applications/
 cp /tmp/save/* /usr/share/applications/
@@ -102,7 +103,7 @@ mkdir -p /home/contestant/.config/JetBrains
 chown -R contestant:contestant /home/contestant/
 
 ## Activate services
-cp -f files/lightdm.service /usr/lib/systemd/system/
+#cp -f files/lightdm.service /usr/lib/systemd/system/
 systemctl enable lightdm.service
 systemctl enable hsync.service
 systemctl enable hsync.timer

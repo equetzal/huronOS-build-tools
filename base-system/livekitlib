@@ -720,15 +720,14 @@ persistent_changes(){
 # Copy content of rootcopy directory to union
 # $1 = data directory
 # $2 = union directory
-copy_rootcopy_content()
-{
-   debug_log "copy_rootcopy_content" "$*"
+copy_rootcopy_content(){
+	debug_log "copy_rootcopy_content" "$*"
 
-   if [ "$(ls -1 "$1/rootcopy/" 2>/dev/null)" != "" ]; then
-      echo_green_star
-      echo "Copying content of rootcopy directory..."
-      cp -a "$1"/rootcopy/* "$2"
-   fi
+	if [ "$(ls -1 "$1/" 2>/dev/null)" != "" ]; then
+		echo_green_star
+		echo "Copying content of rootcopy directory..."
+		cp -a "$1"/* "$2"
+	fi
 }
 
 
@@ -880,6 +879,8 @@ fstab_create(){
 # $UNION = where to change root
 change_root(){
 	debug_log "change_root" "$*"
+
+	chmod 700 $MEMORY
 
 	# if we are booting over httpfs, we need to copyup some files so they are
 	# accessible on union without any further lookup down, else httpfs locks
