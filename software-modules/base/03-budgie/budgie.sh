@@ -1,11 +1,18 @@
 #!/bin/bash
 
 #	budgie.sh
-#	Building and configuring the user interface module.
-#	This module introduces the contest enviroment,
-#	activaves the huron scripts, and directives sync.
-
-#	Author, the huronOS team:
+#	Script to build the budgie huronOS System Layer (.hsl)
+#	for huronOS image. It install, and configures the graphical
+#	enviroment designed for competitive programming along with the
+#	activation of the huronOS contest system subsistems. 
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#
+#	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
 
 set -xe

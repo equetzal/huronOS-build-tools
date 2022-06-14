@@ -1,8 +1,18 @@
 #!/bin/bash
 
 #	firmware.sh
-#	Building the firmware .hsm module for huronOS
-#	Author, the huronOS team:
+#	Script to build the firmware huronOS System Layer (.hsl)
+#	for huronOS image. It packs the huronOS' selection
+#	of free, open and private firmware to improve the
+#	performance of the distribution over several hardware.
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#
+#	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
 
 set -xe

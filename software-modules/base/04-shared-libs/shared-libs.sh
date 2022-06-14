@@ -1,11 +1,19 @@
 #!/bin/bash
 
 #	shared-libs.sh
-#	This module preinstall most of the required dependencies
-#	of the modular-software available for huronOS.
-#	(eg. required software by ICPC or IOI)
-
-#	Author, the huronOS team:
+#	Script to build the shared-libs huronOS System Layer (.hsl)
+#	for huronOS image. It packs the huronOS' selection
+#	of dependencies required by the ICPC/IOI software rules.
+#	This layer reduces the amount of duplicated dependencies
+#	once overlayed the software modular packages.
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#
+#	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
 
 set -xe

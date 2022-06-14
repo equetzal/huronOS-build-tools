@@ -1,4 +1,18 @@
-#!/bin/sh
+#!/bin/bash
+
+#	vscode.sh
+#	Script to build the modular software package of Visual Studio Code
+#	for huronOS. It purges the unnecessary files on the FS
+#	to allow AUFS add/del operations on the fly.
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#
+#	Authors:
+#		Enya Quetzalli <equetzal@huronos.org>
 
 set -xe
 NAME=vscode

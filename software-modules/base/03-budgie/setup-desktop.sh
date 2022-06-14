@@ -1,10 +1,17 @@
 #!/bin/bash
 
 #	setup-desktop.sh
-#	This script configures the user preferences stored on dbus.
-#	It has to be run on the contestant user.
-
-#	Author, the huronOS team:
+#	Script that configures the user default user preferences
+#	for the graphical enviroment.
+#	It has to be run on the contestant user
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#
+#	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
 
 set -xe
