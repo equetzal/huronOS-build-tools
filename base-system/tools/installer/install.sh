@@ -22,10 +22,10 @@ print_step "Starting huronOS installation"
 
 ## Save the directory where the script is running, it should match the ISO of huronOS
 ISO_DIR=$(dirname $(readlink -f $0))
-print_step "[1/n] Locating huronOS image -> $ISO_DIR"
+print_step "[1/9] Locating huronOS image -> $ISO_DIR"
 
 ## Select the device we want to install huronOS to
-print_step "[2/n] Selecting removable device to install huronOS on"
+print_step "[2/9] Selecting removable device to install huronOS on"
 DEVICES=$(lsblk --pairs --output NAME,PATH,HOTPLUG,TYPE,VENDOR,MODEL,SIZE,LABEL --sort NAME) 
 COPY_DEVICES="$DEVICES"
 DEVNUM=0
@@ -88,14 +88,14 @@ fi
 ## User confirmed, continue
 
 ## For each mountpoint that the device is using, kill and unmount
-print_step "[3/n] Unmounting selected device partitions"
+print_step "[3/9] Unmounting selected device partitions"
 for MNT_PNT in $(lsblk --output PATH,MOUNTPOINT | grep -E "${TARGET}[1-9]+" | awk '{ print $2 }'); do
 	echo "Cleaning $MNT_PNT"
 	fuser -k -m "$MNT_PNT" || true
 	umount "$MNT_PNT"
 done
 
-print_step "[4/n] Partitioning device $TARGET"
+print_step "[4/9] Partitioning device $TARGET"
 ## Set positions on the target device
 DISK_SIZE=$(blockdev --getsize64 $TARGET)
 DISK_SECTORS=$(blockdev --getsz $TARGET)
@@ -122,7 +122,7 @@ parted -a optimal --script $TARGET \
 	set 1 boot on
 
 ## Create the filesystems
-print_step "[5/n] Creating filesystems"
+print_step "[5/9] Creating filesystems"
 mkfs.vfat -F 32 -n HURONOS -I "${TARGET}1"
 mkfs.ext4 -L event-data -F "${TARGET}2"
 mkfs.ext4 -L contest-data -F "${TARGET}3"
@@ -141,13 +141,23 @@ mkdir -p $SYSTEM_MNT
 mount UUID=$SYSTEM_UUID $SYSTEM_MNT
 
 ## Start copying the contents of huronOS installation
-print_step "[6/n] Copying huronOS system data"
+print_step "[6/9] Copying huronOS system data"
 cp --verbose -rf $ISO_DIR/huronOS/ $SYSTEM_MNT
 cp --verbose -rf $ISO_DIR/boot/ $SYSTEM_MNT
 mv --verbose $SYSTEM_MNT/boot/EFI/ $SYSTEM_MNT
 
+
+print_step "[7/9] Cleaning device buffers"
+sync &
+SYNC_PID=$!
+while ps -p $SYNC_PID > /dev/null 2>&1; do
+	echo -ne "\rRemaining data -> $(grep -e "Dirty:" /proc/meminfo)\t$(grep -i "Writeback:" /proc/meminfo)"
+	sleep 1
+done
+echo
+
 ## Configure the bootloader
-print_step "[7/n] Making device bootable"
+print_step "[8/9] Making device bootable"
 sed "s|system.uuid=UUID|system.uuid=$SYSTEM_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
 sed "s|event.uuid=UUID|event.uuid=$EVENT_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
 sed "s|contest.uuid=UUID|contest.uuid=$CONTEST_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
@@ -157,7 +167,7 @@ $SYSTEM_MNT/boot/extlinux.x64 --install $SYSTEM_MNT/boot/
 ## Configure root password and other things
 
 ## Unmount fylesystems
-print_step "[8/n] Unmounting device"
+print_step "[9/9] Unmounting device"
 umount $SYSTEM_MNT
 rm -rf /tmp/$$/
 
