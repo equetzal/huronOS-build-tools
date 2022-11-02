@@ -151,6 +151,7 @@ print_step "[7/n] Making device bootable"
 sed "s|system.uuid=UUID|system.uuid=$SYSTEM_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
 sed "s|event.uuid=UUID|event.uuid=$EVENT_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
 sed "s|contest.uuid=UUID|contest.uuid=$CONTEST_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
+dd if=boot/mbr.bin of="$TARGET" bs=440 count=1 conv=notrunc 2>/dev/null
 $SYSTEM_MNT/boot/extlinux.x64 --install $SYSTEM_MNT/boot/
 
 ## Configure root password and other things
