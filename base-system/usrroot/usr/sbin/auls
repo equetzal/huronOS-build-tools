@@ -1,5 +1,18 @@
 #!/bin/bash
 
+#	auls.sh
+#	Small script to print the current arrangement of the AUFS layers (branches).
+#	The order is from superior layers to the bottom layers.
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#
+#	Authors:
+#		Enya Quetzalli <equetzal@huronos.org>
+
 STACK_ID="$(cat /proc/mounts | grep 'aufs / aufs' | egrep -o 'si=([^,) ]+)' | tr = _)"
 BRANCHES_DIR="/sys/fs/aufs/${STACK_ID}"
 BRANCHES_LIST="$(ls -v1 $BRANCHES_DIR | grep -E "br[0-9]+")"

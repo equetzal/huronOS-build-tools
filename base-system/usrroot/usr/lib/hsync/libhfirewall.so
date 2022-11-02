@@ -1,5 +1,18 @@
 #!/bin/bash
 
+#	libhfirewall.sh (hsync.sh library)
+#	This library contains functions to configure iptables firewall
+#	according to the exeptions specified on the directives. 
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#
+#	Authors:
+#		Enya Quetzalli <equetzal@huronos.org>
+#		Abraham Omar   <aomm@huronos.org>
 
 enable_network_interfaces(){
 	declare INTERFACES="$(ifconfig -a | grep -E "^.*: " | cut -d: -f1 | grep -v lo)"

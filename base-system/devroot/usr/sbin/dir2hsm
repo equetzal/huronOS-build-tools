@@ -1,8 +1,20 @@
 #!/bin/bash
 
-# Taken from Slax, Originally authored by: Tomas M <http://www.slax.org/>
-# Modified by the huronOS team:
-#	Enya Quetzalli <equetzal@huronos.org>
+#	dir2hsm
+#	Script to compress an directory tree into a .hsm compressed module
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#
+#	Taken from the Slax project, authored by:
+#		Tomas M <http://www.slax.org/>
+#
+#	Modified and redistributed by the huronOS team:
+#		Enya Quetzalli <equetzal@huronos.org>
+
 
 usage()
 {

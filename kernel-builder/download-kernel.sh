@@ -1,8 +1,15 @@
 #!/bin/bash
 
 #	download-kernel.sh
-#	Download AUFS Kernel and AUFS Tools
-#	Author:
+#	Download Linux Kernel, AUFS patches and AUFS Tools
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#
+#	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
 
 cp -ar ./sources.list /etc/apt/sources.list

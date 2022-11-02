@@ -1,5 +1,23 @@
 #!/bin/bash
 
+#	libhupdate.sh (hsync.sh library)
+#	This library contains functions to download the directives file
+#	from the huronOS directives server, and then compare it's values
+#	with the current directives file, then decide if the directives 
+#	needs to be applied based on the current time, the directives and
+#	changes on it.
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#
+#	Authors:
+#		Enya Quetzalli <equetzal@huronos.org>
+#		Abraham Omar   <aomm@huronos.org>
+
+
 ## Try the download of the directives file, and if succeed it validates the syntax of the file.
 try_directives_download(){
 

@@ -1,8 +1,29 @@
 #!/bin/sh
 
-# Initial script for huronOS init ram fs
-# Taken from Slax, Originally authored by: Tomas M <http://www.slax.org/>
-# Modified by the huronOS team: Enya Quetzalli <equetzal@huronos.org>
+#	init
+#	Init script for the initramfs. This script is compressed in the
+#	initrd.img file which contains busybox and basic file system to
+#	boot. It is loaded by the bootloader. During this process, the 
+#	init process will load some kernel modules in order to find the
+#	huronOS disk by using the UUID provided by the bootloader.
+#	Then, it will create the final union file system with AUFS, 
+#	making the .hsl (huronOS System Layer) files part of the final
+#	file system to be chrooted. 
+#	After the execution of this init process, the regular systemd
+# 	process is executed after the chroot.
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#
+#	Taken from the Slax project, authored by:
+#		Tomas M <http://www.slax.org/>
+#
+#	Heavily modified and redistributed by the huronOS team:
+#		Enya Quetzalli <equetzal@huronos.org>
+
 
 ## Set the initial PATH enviroment variable
 export PATH=.:/:/usr/sbin:/usr/bin:/sbin:/bin

@@ -1,9 +1,18 @@
 #!/bin/bash
 
 #	compile-kernel.sh
-#	Compile AUFS Kernel
-#	Author:
+#	Compile huronOS Kernel
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#
+#	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
+
+
 
 pushd linux-$KERNEL_VERSION
 

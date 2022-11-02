@@ -1,9 +1,23 @@
 #!/bin/bash
 
-# Taken from Linux-Live, Originally authored by: Tomas M <http://www.linux-live.org/>
-# Modified by the huronOS team:
-#	Enya Quetzalli <equetzal@huronos.org>
-#	Abraham Omar   <aomm@huronos.org>
+#	base.sh
+#	Script to build the 01-core.hsl system layer.
+#	This script needs to be executed on a super-light debian
+#	installation and update the ./config file to be successful.
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#
+#	Taken from the Slax project, authored by:
+#		Tomas M <http://www.slax.org/>
+#		(Original script was ./build)
+#
+#	Modified and redistributed by the huronOS team:
+#		Enya Quetzalli <equetzal@huronos.org>
+#		Abraham Omar   <aomm@huronos.org>
 
 export PATH=.:./tools:../tools:/usr/sbin:/usr/bin:/sbin:/bin:/
 set -xe

@@ -1,5 +1,21 @@
 #!/bin/bash
 
+#	libhpersistence.sh (hsync.sh library)
+#	This library contains functions to modify the AUFS union layers and set
+#	them to the necesary arangement for the modality of huronOS and change
+#	the persistence disk depending on the current modality.
+
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#
+#	Authors:
+#		Enya Quetzalli <equetzal@huronos.org>
+#		Abraham Omar   <aomm@huronos.org>
+
+
 # This is the first execution of hsync, here we don't have a current state.
 # It is 'none', so in this part we need to either set a previous persistent state
 # or set 'always' mode if no other state is available.

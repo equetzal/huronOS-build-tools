@@ -1,8 +1,18 @@
 #!/bin/bash
 
 #	build-kernel.sh
-#	Building AUFS Kernel for huronOS
-#	Author:
+#	Scripts to automate the build of the huronOS kernel
+#	which required to support AUFS and AUFS-tools, and
+#	do also have a custom configuration file according to
+#	the hardware targeted by huronOS.
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#
+#	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
 
 # Run as root

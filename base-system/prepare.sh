@@ -1,5 +1,19 @@
 #!/bin/bash
 
+#	prepare.sh
+#	Script to prepare the debian system previous to pack the system into
+#	the 01-core.hsl.
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#
+#	Authors:
+#		Enya Quetzalli <equetzal@huronos.org>
+
+
 set -xe
 
 # Install destiny build packages

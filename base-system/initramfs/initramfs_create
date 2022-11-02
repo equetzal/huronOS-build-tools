@@ -1,9 +1,21 @@
 #!/bin/bash
 
-# Initramfs image
-# Taken from Slax, Originally authored by: Tomas M <http://www.slax.org/>
-# Modified by the huronOS team:
-#	Enya Quetzalli <equetzal@huronos.org>
+#	initramfs_create
+#	This script allows the creation of the initramfs that will allow
+#	huronOS to create it's final file system and boot on the OS. 
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#
+#	Taken from the Slax project, authored by:
+#		Tomas M <http://www.slax.org/>
+#
+#	Modified and redistributed by the huronOS team:
+#		Enya Quetzalli <equetzal@huronos.org>
+
 
 . ../config
 

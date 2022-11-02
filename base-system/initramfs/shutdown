@@ -1,10 +1,21 @@
 #!/bin/bash
 
-# Shutdown script for initramfs. It's automatically started by
-# systemd (if you use it) on shutdown, no need for any tweaks.
-# Purpose of this script is to unmount everything cleanly.
+#	shutdown
+#	Shutdown script for initramfs. It's automatically started by
+#	systemd (if you use it) on shutdown, no need for any tweaks.
+#	Purpose of this script is to unmount everything cleanly. 
 #
-# Taken from Slax, Originally authored by: Tomas M <http://www.slax.org/>
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#
+#	Taken from the Slax project, authored by:
+#		Tomas M <http://www.slax.org/>
+#
+#	Modified and redistributed by the huronOS team:
+#		Enya Quetzalli <equetzal@huronos.org>
 
 . /lib/config
 . /lib/livekitlib

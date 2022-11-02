@@ -1,10 +1,24 @@
 #!/bin/bash
 
-# Functions library :: for Linux Live Kit scripts
-# Adapted to supply huronOS requirements
-# Taken from Linux-Live, Originally authored by: Tomas M <http://www.linux-live.org>
-# Modified by the huronOS team:
-#	Enya Quetzalli <equetzal@huronos.org>
+#	livekitlib
+#	This script is basically the implementation of the init process.
+#	This library contains the functions to prepare all the system to boot
+#	on the huronOS final file system.
+#	This script was inherited from Slax's own livekitlib, but is has been
+#	heavily modified to pursue the huronOS needs, and also contains neewer
+#	functionalities needed for the huronOS purpose.
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#
+#	Taken from the Slax project, authored by:
+#		Tomas M <http://www.slax.org/>
+#
+#	Heavily modified and redistributed by the huronOS team:
+#		Enya Quetzalli <equetzal@huronos.org>
 
 
 

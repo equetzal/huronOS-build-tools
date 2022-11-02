@@ -1,5 +1,19 @@
 #!/bin/bash
 
+#	libhsystem.sh (hsync.sh library)
+#	This library contains functions to get information about the system
+#	and it's state.
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#
+#	Authors:
+#		Enya Quetzalli <equetzal@huronos.org>
+#		Abraham Omar   <aomm@huronos.org>
+
 
 # Returns true if the uptime has 120 or less seconds of boottime.
 # The hsync.timer is configured to start 60 seconds after boot,

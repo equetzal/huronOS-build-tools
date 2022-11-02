@@ -3,7 +3,14 @@
 #	install.sh
 #	Script to select, partition, format, configure and install 
 #	huronOS on a removable USB storage device.
-#	Author:
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#
+#	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
 
 # $1 = message to print

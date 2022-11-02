@@ -1,3 +1,18 @@
+
+//	hsync-validator.cpp
+//	This program validates the syntaxis of the huronOS directives file (.hdf)
+//	according to the syntaxis stipulated for huronOS.
+//
+//	Copyright (C) 2022, huronOS Project:
+//		<http://huronos.org>
+//
+//	Licensed under the GNU GPL Version 2
+//		<http://www.gnu.org/licenses/gpl-2.0.html>	
+//
+//	Authors:
+//		Enya Quetzalli <equetzal@huronos.org>
+
+
 #include "date.h"
 #include <fstream>
 #include <functional>

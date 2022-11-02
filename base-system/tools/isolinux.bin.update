@@ -1,10 +1,17 @@
 #!/bin/bash
 
-# This script will update the file ../bootfiles/isolinux.bin to match
-# your LiveKit name. Note you may need to run this on a 32bit system.
+#	isolinux.bin.update
+#	This script will update the file ../bootfiles/isolinux.bin to match
+#	your LiveKit name. Note you may need to run this on a 32bit system.
+#	Requires: Debian
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
 #
-# Requires: Debian
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>	
 #
+#	Taken from the Slax project, authored by:
+#		Tomas M <http://www.slax.org/>
 
 set -e
 

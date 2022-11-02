@@ -1,5 +1,17 @@
 #!/bin/bash
 
+#	libhog.sh (hsync.sh library)
+#	This library contains helper functions to log the hsync process.
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#
+#	Authors:
+#		Enya Quetzalli <equetzal@huronos.org>
+#		Abraham Omar   <aomm@huronos.org>
 
 log(){
 	echo -e "[$(date)] $1" | tee -a /var/log/hsync.log

@@ -1,14 +1,22 @@
 #!/bin/bash
 
-# hmm // Huron Module Manager
-# Huron module manager, is the tool that allows huronOS to activate and
-# decativate modules automatically on the fly using AUFS. It also allows
-# the creation of new modules.
-
-# Taken from Slax, authored by: Tomas M <http://www.slax.org/>
-# Modified and redistributed by the huronOS team:
-#	Enya Quetzalli <equetzal@huronos.org>
-#	Abraham Omar   <aomm@huronos.org>
+#	hmm.sh (huronOS Modules Manager)
+#	This is the tool that allows huronOS to activate and
+#	decativate modules automatically on the fly using AUFS. It also allows
+#	the creation of new modules.
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#
+#	Taken from the Slax project, authored by:
+#		Tomas M <http://www.slax.org/>
+#		(Original script was splitted into activate/deactivate)
+#
+#	Heavily modified and redistributed by the huronOS team:
+#		Enya Quetzalli <equetzal@huronos.org>
 
 ## Basic vars
 readonly MEMORY=/run/initramfs/memory

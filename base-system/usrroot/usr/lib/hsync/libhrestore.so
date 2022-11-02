@@ -1,5 +1,21 @@
 #!/bin/bash
 
+#	libhrestore.sh (hsync.sh library)
+#	This library contains functions to backup the directives file and the 
+#	state of the system to the persistence disk, so that after a reboot
+#	or power loss, the system is able to restore itself to the previous
+#	state.
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#
+#	Authors:
+#		Enya Quetzalli <equetzal@huronos.org>
+#		Abraham Omar   <aomm@huronos.org>
+
 
 restore_state_from_disk(){
 	local BACKUP_PATH
