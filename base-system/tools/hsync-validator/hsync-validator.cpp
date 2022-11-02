@@ -13,6 +13,9 @@
 //		Enya Quetzalli <equetzal@huronos.org>
 
 
+// Required date.h file on this same directory to compile
+// https://github.com/HowardHinnant/date/blob/master/include/date/date.h
+
 #include "date.h"
 #include <fstream>
 #include <functional>
