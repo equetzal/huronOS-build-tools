@@ -56,6 +56,10 @@ readonly PROGRAMMING_DIR="$SYSTEM_MNT/huronOS/programming"
 readonly TOOLS_DIR="$SYSTEM_MNT/huronOS/tools"
 readonly ROOTCOPY_DIR="$SYSTEM_MNT/huronOS/rootcopy"
 
+## Important dirs that contain system persistent data
+readonly LOGS_DIR="$SYSTEM_MNT/huronOS/logs"
+readonly JOURNAL_DIR="$SYSTEM_MNT/huronOS/logs/journal"
+
 ## AUFS branches
 	# syschanges/ branch will hold all the system-created
 	# changes that are necesary to boot, like the procfs, sysfs, etc.
@@ -134,6 +138,8 @@ debug_shell
 #		easily add files to the rootcopy dir and gain root access.
 copy_rootcopy_content "$ROOTCOPY_DIR" "$UNION"
 # debug_shell
+
+activate_journal_persistence "$JOURNAL_DIR" "$UNION"
 
 ## Create the fstab so that systemd mount filesystems at boot.
 fstab_create

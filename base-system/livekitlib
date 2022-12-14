@@ -669,6 +669,8 @@ persistent_changes(){
 	mkdir -p "$SYSTEM_MNT"
 	mkdir -p "$EVENT_MNT"
 	mkdir -p "$CONTEST_MNT"
+	mkdir -p "$LOGS_DIR"
+	mkdir -p "$JOURNAL_DIR"
 
 	# Mount removable devices for persistence, they will not be used
 	# by initramfs as we don't want them so store system files that will 
@@ -688,7 +690,7 @@ persistent_changes(){
 		return
 	fi
 
-	# ## Validating the filesystem is posix compatible (eg. ext4)
+	## Validating the filesystem is posix compatible (eg. ext4)
 	# touch "$DUMMY_FILE" && \
 	# ln -sf "$DUMMY_FILE" "${DUMMY_FILE}2" 2>/dev/null && \
 	# chmod +x "$DUMMY_FILE" 2>/dev/null && \
@@ -888,6 +890,15 @@ fstab_create(){
 	echo "# hmount devices" >> $FSTAB
 }
 
+## Recover the journal from previous boot
+# $1 = Journal backup directory
+# $2 = Union directory
+activate_journal_persistence(){
+	debug_log "activate_journal_persistence" "$*"
+
+	## Sync journal files using system disk
+	mount --bind "$1" "$2/var/log/journal"
+}
 
 ## Change root from tmpfs to AUFS union, then execute init process
 # $UNION = where to change root
