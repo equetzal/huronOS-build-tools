@@ -7,5 +7,6 @@ User=root
 Group=root
 ExecCondition=/bin/bash -xc '/usr/bin/systemctl is-active --quiet happly.service && exit 1 || exit 0'
 ExecStart=/usr/lib/hsync/hsync.sh --routine-sync
+ExecStopPost=/usr/lib/hsync/hsync-post.sh
 Restart=on-abnormal
 SuccessExitStatus=0
