@@ -17,7 +17,7 @@
 set -xe
 
 # Install destiny build packages
-INST_PACKAGES="acpi-support-base acpid alsa-utils at bzip2 connman curl dnsutils dosfstools file hdparm htop less lsof lzma man ntfs-3g ntpdate parted pm-utils powermgmt-base psmisc rfkill sdparm squashfs-tools usb-modeswitch wget wireless-tools wpasupplicant xz-utils"
+INST_PACKAGES="acpi-support-base acpid alsa-utils at bzip2 connman curl dbus-broker dnsutils dosfstools file hdparm htop less lsof lzma man ntfs-3g ntpdate parted pm-utils powermgmt-base psmisc rfkill sdparm squashfs-tools usb-modeswitch wget wireless-tools wpasupplicant xz-utils"
 DEV_PACKAGES="gddrescue genisoimage gpart net-tools netcat smartmontools unzip zip"
 REM_PACKAGES="debconf-i18n dvd+rw-tools dnsmasq installation-report mc mdadm rsync ssh vim-common vim-tiny virt-what grub-common grub-pc-bin grub-pc-bin grub2-common"
 
@@ -55,4 +55,6 @@ chmod 740 /usr/lib/hmount/hmount.automount
 chmod 760 /usr/lib/hsync/*
 chmod 660 /usr/lib/systemd/system/hsync*
 chmod 660 /usr/lib/systemd/system/happly*
-## apt,  
+
+## Journal max size
+sed -i 's;#SystemMaxUse=.*;SystemMaxUse=300M' /
