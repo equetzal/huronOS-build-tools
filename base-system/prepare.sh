@@ -57,4 +57,4 @@ chmod 660 /usr/lib/systemd/system/hsync*
 chmod 660 /usr/lib/systemd/system/happly*
 
 ## Journal max size
-sed -i 's;#SystemMaxUse=.*;SystemMaxUse=300M' /
+sed -i 's;#SystemMaxUse=.*;SystemMaxUse=300M;1' /etc/systemd/journald.conf
