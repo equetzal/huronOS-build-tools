@@ -45,13 +45,13 @@ patch_kernel(){
 	cp -ar ../$AUFS_REPOSITORY/Documentation .
 	cp -ar ../$AUFS_REPOSITORY/fs .
 	cp -a ../$AUFS_REPOSITORY/include/uapi/linux/aufs_type.h include/uapi/linux
+	patch -p1 < ../$AUFS_REPOSITORY/aufs6-standalone.patch
 	patch -p1 < ../$AUFS_REPOSITORY/aufs6-kbuild.patch
 	patch -p1 < ../$AUFS_REPOSITORY/aufs6-base.patch
 	patch -p1 < ../$AUFS_REPOSITORY/aufs6-mmap.patch
 	patch -p1 < ../$AUFS_REPOSITORY/aufs6-loopback.patch
 	patch -p1 < ../$AUFS_REPOSITORY/vfs-ino.patch
 	patch -p1 < ../$AUFS_REPOSITORY/tmpfs-idr.patch
-	#patch -p1 < ../$AUFS_REPOSITORY/aufs5-standalone.patch
 	popd
 }
 
@@ -67,19 +67,20 @@ configure_kernel(){
 }
 
 compile_kernel(){
-	pushd linux
-
 	set -o pipefail
 
 	## Compile Linux
-	#make clean
-	make -j 1 bzImage 2>&1 | tee ../kernel_compilation2.log
-	make -j 1 modules 2>&1 | tee ../kernel_modules_compilation2.log
+	pushd linux
+	#make clean  ## Uncomment if facing hard to solve compile errors, keep commented to resume compilation
+	make -j 1 bzImage 2>&1 | tee ../kernel_compilation.log
+	make -j 1 modules 2>&1 | tee ../kernel_modules_compilation.log
 	make headers_install
 	make modules_install INSTALL_MOD_STRIP=1
+	popd
 
 	## Compile AUFS Module
 	pushd $AUFS_REPOSITORY
+	sed -i "s;KDIR = .*; KDIR = /lib/modules/$KERNEL_VERSION-huronos+/build;1" ./Makefile
 	make
 	make install
 	make install_headers
@@ -98,18 +99,32 @@ compile_kernel(){
 save_kernel(){
 	## Save installed kernel for future use
 	TMP=/tmp/kernel-save-$$
-	NAME=$KERNEL_VERSION-huronos
+	NAME=$KERNEL_VERSION-huronos+
 	mkdir -p $TMP/usr/lib/modules
 	mkdir -p $TMP/usr/include/linux
 	cp -ar /usr/lib/modules/$NAME $TMP/usr/lib/modules
 	cp -ar /usr/include/linux/* $TMP/usr/include/linux/
 	rm -f $TMP/usr/lib/modules/$NAME/{build,source}
 	mkdir -p $TMP/boot
-	cp arch/x86/boot/bzImage $TMP/boot/vmlinuz-$NAME
+	cp linux/arch/x86/boot/bzImage $TMP/boot/vmlinuz-$NAME
 	cd $TMP
 	tar -c * | gzip -f >$HTOOLS_KERNEL_DIR/kernel-stuff/$NAME.tar.gz
 	echo "Your compiled kernel has been saved on $HTOOLS_KERNEL_DIR/kernel-stuff/$NAME.tar.gz"
-	popd
+}
+
+clean_other_kernels(){
+	for KERNEL_PACKAGE in $(dpkg --list | grep -Ei 'linux-image|linux-headers|linux-modules' | awk '{ print $2 }'); do
+		yes | apt purge "$KERNEL_PACKAGE"
+	done
+
+	apt autoremove --purge --yes
+	apt clean --yes
+}
+
+delete_packages(){
+	apt remove --yes $PACKAGES
+	apt autoremove --purge --yes
+	apt clean --yes
 }
 
 main(){
@@ -125,17 +140,21 @@ main(){
 	mkdir -p ./kernel-stuff/
 	pushd ./kernel-stuff/
 
-	download_kernel
-	patch_kernel
-	configure_kernel
-	compile_kernel
-	save_kernel
-
-	# Clean
-	#source clean.sh
+	if [ "$1" = "--build" ]; then
+		download_kernel
+		patch_kernel
+		configure_kernel
+		compile_kernel
+		save_kernel
+	elif [ "$1" = "--clean-kernel" ]; then
+		clean_other_kernels
+	elif [ "$1" = "--clean-packages" ]; then
+		delete_packages
+	else
+		echo -E "No option selected, run:\nbuild-kernel.sh [--build | --clean-kernel | --clean-packages]"
+	fi
 
 	popd
 }
 
-main
-
+main $1
