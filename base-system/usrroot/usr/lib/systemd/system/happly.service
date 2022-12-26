@@ -7,6 +7,6 @@ After=hsync.service
 User=root
 Group=root
 ExecStart=/usr/lib/hsync/hsync.sh --scheduled-apply
-ExecPostStop=/usr/lib/hsync/hsync-post.sh
+ExecStopPost=/usr/lib/hsync/hsync-post.sh
 Restart=on-abnormal
 SuccessExitStatus=0
