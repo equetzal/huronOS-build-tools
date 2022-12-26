@@ -44,6 +44,7 @@ umount_all()
 # Update devs so we are aware of all active /dev/loop* files.
 # Detach loop devices which are no longer used
 debug_log "- Detaching loops"
+umount /var/logs/journal
 mdev -s
 detach_free_loops
 
