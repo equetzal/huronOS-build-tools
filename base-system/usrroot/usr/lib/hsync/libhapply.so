@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 #	libhapply.sh (hsync.sh library)
 #	This library contains functions to apply the directives to the
@@ -72,7 +72,7 @@ select_directives_to_use(){
 		DIRECTIVES_FILE_TO_USE=$DIRECTIVES_DEFAULT
 	fi
 
-	log " Directives file contents:\n$(cat $DIRECTIVES_FILE)\n"
+	log " Directives file contents:\n$(cat "$DIRECTIVES_FILE")\n"
 
 	return 0 # sucess
 }
@@ -83,25 +83,25 @@ select_directives_to_use(){
 get_directives_var(){
 	declare SECTION="$1"
 	declare VAR="$2"
-	sed -nE "/^\[$SECTION\]$/{:l n;/^(\[.*\])?$/q;p;bl}" $DIRECTIVES_FILE_TO_USE | grep $VAR | cut -d= -f2
+	sed -nE "/^\[$SECTION\]$/{:l n;/^(\[.*\])?$/q;p;bl}" "$DIRECTIVES_FILE_TO_USE" | grep "$VAR" | cut -d= -f2
 }
 
 ## Function to return the times of a event or contest
 # $1 = Times Section
 get_directives_times(){
 	declare SECTION="$1"
-	sed -nE "/^\[$SECTION\]$/{:l n;/^(\[.*\])?$/q;p;bl}" $DIRECTIVES_FILE_TO_USE
+	sed -nE "/^\[$SECTION\]$/{:l n;/^(\[.*\])?$/q;p;bl}" "$DIRECTIVES_FILE_TO_USE"
 }
 
 update_next_apply() {
-	declare CURRENT_TIME=$(date +'%s')
-	declare INTERESTING_TIME=$(date --date "$1" +'%s')
+	CURRENT_TIME=$(date +'%s')
+	INTERESTING_TIME=$(date --date "$1" +'%s')
 
 	## Check if interesting_time happens after now and earlier than previous NEXT_APPLY
-	if [ $CURRENT_TIME -lt $INTERESTING_TIME ]; then
-		if [ ! $EXECUTION_NEXT_SCHEDULED_APPLY_TIME ]; then
+	if [ "$CURRENT_TIME" -lt "$INTERESTING_TIME" ]; then
+		if [ ! "$EXECUTION_NEXT_SCHEDULED_APPLY_TIME" ]; then
 			EXECUTION_NEXT_SCHEDULED_APPLY_TIME=$INTERESTING_TIME
-		elif [ $EXECUTION_NEXT_SCHEDULED_APPLY_TIME -gt $INTERESTING_TIME ]; then
+		elif [ "$EXECUTION_NEXT_SCHEDULED_APPLY_TIME" -gt "$INTERESTING_TIME" ]; then
 			EXECUTION_NEXT_SCHEDULED_APPLY_TIME=$INTERESTING_TIME
 		fi
 	fi
@@ -118,51 +118,51 @@ select_mode_to_apply(){
 
 	## Declare some variables
 	local TIMES START END START_SECONDS END_SECONDS
-	declare HAS_EVENT_CONFIG="$(get_directives_var "Global" "EventConfig")"
-	declare HAS_CONTEST_CONFIG="$(get_directives_var "Global" "ContestConfig")"
-	declare TIMEZONE="$(get_directives_var "Global" "TimeZone")"
-	declare CURRENT_TIME_SECONDS="$(date +'%s')"
+	HAS_EVENT_CONFIG="$(get_directives_var "Global" "EventConfig")"
+	HAS_CONTEST_CONFIG="$(get_directives_var "Global" "ContestConfig")"
+	TIMEZONE="$(get_directives_var "Global" "TimeZone")"
+	CURRENT_TIME_SECONDS="$(date +'%s')"
 
 	## Check for event mode, and override NEW_MODE if it is running
 	if [ "$HAS_EVENT_CONFIG" = "true" ]; then
-		declare TIMES="$(get_directives_times "Event-Times")"
+		TIMES="$(get_directives_times "Event-Times")"
 		log "Reading [Event-Times]:
 		$TIMES"
 
 		# For each start-time and end-time, check if we're in between.
-		while read START END; do
+		while read -r START END; do
 			START_SECONDS=$(date --date="TZ=\"$TIMEZONE\" $START" +'%s')
 			END_SECONDS=$(date --date="TZ=\"$TIMEZONE\" $END" +'%s') 
-			if 	[ $CURRENT_TIME_SECONDS -ge $START_SECONDS ] && \
-				[ $CURRENT_TIME_SECONDS -lt $END_SECONDS ]; then
+			if 	[ "$CURRENT_TIME_SECONDS" -ge "$START_SECONDS" ] && \
+				[ "$CURRENT_TIME_SECONDS" -lt "$END_SECONDS" ]; then
 					NEW_MODE="event"
 					NEW_MODE_START_TIME_UTC=$(date --utc --iso-8601="seconds" --date="@$START_SECONDS")
 					NEW_MODE_END_TIME_UTC=$(date --utc --iso-8601="seconds" --date="@$END_SECONDS")
 			fi
-			update_next_apply $START
-			update_next_apply $END
-		done < <(echo $TIMES | xargs -n 2)
+			update_next_apply "$START"
+			update_next_apply "$END"
+		done < <(echo "$TIMES" | xargs -n 2)
 	fi
 
 	## Check for event mode, and override NEW_MODE if it is running
 	if [ "$HAS_CONTEST_CONFIG" = "true" ]; then
-		declare TIMES="$(get_directives_times "Contest-Times")"
+		TIMES="$(get_directives_times "Contest-Times")"
 		log "Reading [Contest-Times]:
 		$TIMES"
 
 		# For each start-time and end-time, check if we're in between.
-		while read START END; do
+		while read -r START END; do
 			START_SECONDS=$(date --date="TZ=\"$TIMEZONE\" $START" +'%s')
 			END_SECONDS=$(date --date="TZ=\"$TIMEZONE\" $END" +'%s') 
-			if 	[ $CURRENT_TIME_SECONDS -ge $START_SECONDS ] && \
-				[ $CURRENT_TIME_SECONDS -lt $END_SECONDS ]; then
+			if 	[ "$CURRENT_TIME_SECONDS" -ge "$START_SECONDS" ] && \
+				[ "$CURRENT_TIME_SECONDS" -lt "$END_SECONDS" ]; then
 					NEW_MODE="contest"
 					NEW_MODE_START_TIME_UTC=$(date --utc --iso-8601="seconds" --date="@$START_SECONDS")
 					NEW_MODE_END_TIME_UTC=$(date --utc --iso-8601="seconds" --date="@$END_SECONDS")
 			fi
-			update_next_apply $START
-			update_next_apply $END
-		done < <(echo $TIMES | xargs -n 2)
+			update_next_apply "$START"
+			update_next_apply "$END"
+		done < <(echo "$TIMES" | xargs -n 2)
 	fi
 
 	log "Selected mode to apply:
@@ -178,30 +178,30 @@ schedule_next_mode_change(){
 
 	## Remove previous apply jobs
 	for i in $(atq | cut -f 1); do 
-		atrm $i; 
+		atrm "$i"; 
 	done
 
 	### Schedule next apply job
-	if [ $EXECUTION_NEXT_SCHEDULED_APPLY_TIME ]; then
-		FORMATED_NEXT_TIME=$(date -d @$EXECUTION_NEXT_SCHEDULED_APPLY_TIME +"%Y%m%d%H%M.%S");
+	if [ "$EXECUTION_NEXT_SCHEDULED_APPLY_TIME" ]; then
+		FORMATED_NEXT_TIME=$(date -d @"$EXECUTION_NEXT_SCHEDULED_APPLY_TIME" +"%Y%m%d%H%M.%S");
 		log "Scheduling next apply job at $FORMATED_NEXT_TIME"
-		echo "systemctl start happly.service" | at -t $FORMATED_NEXT_TIME
+		echo "systemctl start happly.service" | at -t "$FORMATED_NEXT_TIME"
 	fi
 	return 0
 }
 
 set_timezone(){
-	declare TIMEZONE="$(get_directives_var "Global" "TimeZone")"
-	timedatectl set-timezone $TIMEZONE
+	TIMEZONE="$(get_directives_var "Global" "TimeZone")"
+	timedatectl set-timezone "$TIMEZONE"
 	log "+Setting timezone to $TIMEZONE"
 }
 
 set_keyboards(){
 
 	local LAYOUT XKBS
-	declare AVAILABLE_KEYBOARD_LAYOUTS="$(get_directives_var "Global" "AvailableKeyboardLayouts")"
-	declare KEYBOARDS=$(echo $AVAILABLE_KEYBOARD_LAYOUTS | sed 's/|/ /g')
-	declare XKB=""
+	AVAILABLE_KEYBOARD_LAYOUTS="$(get_directives_var "Global" "AvailableKeyboardLayouts")"
+	KEYBOARDS=$(echo $AVAILABLE_KEYBOARD_LAYOUTS | sed 's/|/ /g')
+	XKB=""
 
 	for LAYOUT in $KEYBOARDS; do
 		XKB+=" ('xkb', '$LAYOUT')"
@@ -217,16 +217,16 @@ set_current_keyboard(){
 
 	# If the mode is contest, let's stop updating this as it can modify the current
 	# while the user is typing.
-	if ! system_has_just_booted && [ $NEW_MODE = "contest" ]; then
+	if ! system_has_just_booted && [ "$NEW_MODE" = "contest" ]; then
 		log "-Cannot modify default keyboard while in contest mode."
 		return 0
 	fi
 
 	local LAYOUT
-	declare AVAILABLE_KEYBOARD_LAYOUTS="$(get_directives_var "Global" "AvailableKeyboardLayouts")"
-	declare DEFAULT_KEYBOARD_LAYOUT="$(get_directives_var "Global" "DefaultKeyboardLayout")"
-	declare KEYBOARDS=$(echo $AVAILABLE_KEYBOARD_LAYOUTS | sed 's/|/ /g')
-	declare IDX=0
+	AVAILABLE_KEYBOARD_LAYOUTS="$(get_directives_var "Global" "AvailableKeyboardLayouts")"
+	DEFAULT_KEYBOARD_LAYOUT="$(get_directives_var "Global" "DefaultKeyboardLayout")"
+	KEYBOARDS=$(echo $AVAILABLE_KEYBOARD_LAYOUTS | sed 's/|/ /g')
+	IDX=0
 
 	for LAYOUT in $KEYBOARDS; do
 		if [ "$LAYOUT" = "$DEFAULT_KEYBOARD_LAYOUT" ]; then
@@ -244,7 +244,7 @@ set_network_filters(){
 
 	log " Starting network filters"
 
-	declare ALLOWED_WEBSITES="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "AllowedWebsites")"
+	ALLOWED_WEBSITES="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "AllowedWebsites")"
 
 	case $ALLOWED_WEBSITES in
 		"all") firewall_accept_all;;
@@ -258,7 +258,7 @@ set_network_filters(){
 set_hmount_rules(){
 
 	local MOUNT_POINTS MNT
-	declare ALLOW_USB_STORAGE="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "AllowUsbStorage")"
+	ALLOW_USB_STORAGE="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "AllowUsbStorage")"
 
 	if [ "$ALLOW_USB_STORAGE" = "true" ]; then
 		sed "s/ShouldMount=.*/ShouldMount=true/g" -i /etc/hmount/rule
@@ -272,12 +272,12 @@ set_hmount_rules(){
 		MOUNT_POINTS=$(cat /proc/mounts | grep -E '/dev/sd([c-z]|[a-z][a-z])[1-9][0-9]*' | awk '{ print $2 }')
 		for MNT in $MOUNT_POINTS; do
 			#force_umount $MNT
-			if [ fuser -k -m "$MNT" || true ]; then
+			if fuser -k -m "$MNT" || true; then
 				umount --lazy "$MNT"
 				rm -rf "$MNT"
 				sed "s%.*$MNT.*%%g" -i /etc/fstab
-				systemctl disable "media-$(basename $MNT).mount"
-				rm -rf "/etc/systemd/system/media-$(basename $MNT).mount"
+				systemctl disable "media-$(basename "$MNT").mount"
+				rm -rf "/etc/systemd/system/media-$(basename "$MNT").mount"
 			fi
 		done
 	fi
@@ -288,8 +288,8 @@ set_hmount_rules(){
 
 set_software(){
 
-	declare AVAILABLE_SOFTWARE="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "AvailableSoftware")"
-	declare SOFTWARE_LIST="$(echo "$AVAILABLE_SOFTWARE" | sed 's/|/ /g')"
+	AVAILABLE_SOFTWARE="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "AvailableSoftware")"
+	SOFTWARE_LIST="$(echo "$AVAILABLE_SOFTWARE" | sed 's/|/ /g')"
 
 	log " Activating software modules:"
 	cp -f /etc/hmm/any /etc/hmm/current
@@ -322,11 +322,11 @@ set_software(){
 set_bookmarks(){
 
 	local NAME URL TMP_FILE
-	declare BOOKMARKS="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "Bookmarks" | sed 's/[{}^|]/ /g')"
-	declare BOOKMARKS_LINES=""
+	BOOKMARKS="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "Bookmarks" | sed 's/[{}^|]/ /g')"
+	BOOKMARKS_LINES=""
 	
 	log " Setting default bookmarks on Firefox and Chromium to:"
-	while read NAME URL; do
+	while read -r NAME URL; do
 		BOOKMARKS_LINES="$BOOKMARKS_LINES\n        <DT><A HREF=\"$URL\">$NAME</A>"
 		echo -e "\t\t$(echo $NAME | sed 's:_: :g') -> $URL" | tee -a /var/log/hsync.log
 	done < <(echo $BOOKMARKS | xargs -n 2)
@@ -354,7 +354,7 @@ set_bookmarks(){
 set_wallpaper(){
 
 	local NAME FILE
-	declare WALLPAPER="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "Wallpaper")"
+	WALLPAPER="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "Wallpaper")"
 
 	if [ "$WALLPAPER" = "default" ]; then
 		log " Setting default huronOS wallpaper"
@@ -363,28 +363,28 @@ set_wallpaper(){
 	fi
 	
 	log " Downloading wallpaper $WALLPAPER"
-	NAME=$(basename $WALLPAPER)
+	NAME=$(basename "$WALLPAPER")
 	FILE="/usr/share/backgrounds/custom-background-$$-$NAME"
-	if wget --tries=2 --timeout=10 $WALLPAPER -O $FILE; then
+	if wget --tries=2 --timeout=10 "$WALLPAPER" -O "$FILE"; then
 		log "+Setting new wallpaper"
-		chmod 777 $FILE
+		chmod 777 "$FILE"
 		su contestant -c "export DISPLAY=:0; gsettings set org.gnome.desktop.background picture-uri file://$FILE"
 		find /usr/share/backgrounds/ | grep custom-background | grep -v $$ | xargs -n 1 rm -f 
 		return 0 # success
 	fi
-	rm -f $FILE
+	rm -f "$FILE"
 	log "-Wallpaper cannot be downloaded. Wrong URL?, No internet?"
 	
 	# There's a chance that if persistence is set, and this is a restoration of a previous state
 	# the background image stills available. Let's search for it.
 	log " Attempting to restore previous background image"
-	FILE="$(ls /usr/share/backgrounds/ | sed 's: :\n:g' | grep $NAME | head -n 1)"
+	FILE="$(ls /usr/share/backgrounds/ | sed 's: :\n:g' | grep "$NAME" | head -n 1)"
 	if [ "$FILE" != "" ]; then
 		FILE="/usr/share/backgrounds/${FILE}"
 		log "+Wallpaper found: $FILE, restoring wallpaper"
 		chmod 777 $FILE
 		su contestant -c "export DISPLAY=:0; gsettings set org.gnome.desktop.background picture-uri file://$FILE"
-		find /usr/share/backgrounds/ | grep custom-background | grep -v $FILE | xargs -n 1 rm -f 
+		find /usr/share/backgrounds/ | grep custom-background | grep -v "$FILE" | xargs -n 1 rm -f 
 		return 0 #success
 	fi
 
