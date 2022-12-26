@@ -122,7 +122,9 @@ free_branch(){
 	BRANCH="$1"
 
 	## First, let's quit all the modules as they may lock the persistent branch
+	auls
 	hmm -f --block-update /etc/hmm/any
+	auls
 
 	## Now, we will stop the user interface as budgie regulary keep cache files that locks the branch
 	systemctl stop lightdm.service
@@ -131,6 +133,7 @@ free_branch(){
 	## Let's try to remove the branch from AUFS
 	mount -t aufs -o remount,del:"$BRANCH" aufs / 2>/dev/null
 	[ $? -eq 0 ] && return 0
+	auls
 
 	## Ok, we cannot remove the AUFS branch, so, a non-graphical process is locking the branch
 	# we will try killing all processes that are locking them. If huronOS is well configured,
@@ -148,6 +151,38 @@ free_branch(){
 	done
 	echo
 	log " Couldn't remove $BRANCH from AUFS / filesystem"
+
+	## We couldn't change mode. TODO: Find the right decistion of what to do on here
+	# in the meanwhile, we can disable our service, restart the UI and exit with error.
+	systemctl mask hsync.timer
+	systemctl mask hsync.service
+	systemctl mask happly.service
+	systemctl start lightdm.service
+
+	su contestant -c '(\
+		export DISPLAY=:0; \
+		sleep 5s; \
+		zenity \
+		--error \
+		--title="huronOS fatal error."\
+		--text="
+<b>If you are a contestant, contact a staff member for help.</b>
+huronOS is not able to change its modality behaviour due to a conflicting process locking the current persistent branch (persistent user data) on AUFS.
+The sync manager could not found the process that its locking the system, so it cannot continue and finding the pid manually will be complicated.
+Please reboot the system in order to unlock AUFS.
+If this is happening during a contest <b> please, for precaution make sure to save the persistent data before starting the contest system again.</b>
+
+To save the user data, with a root terminal please run:
+<span foreground=\"#aaa\" background=\"#444\">
+<tt>hos-usb --enable</tt>
+</span>
+This will allow USB connections. Then, backup the user data, finally reboot."\
+		--width=500 \
+		>/dev/null 2>/dev/null\
+	) &'
+	exit 3
+	## TODO: Use reboot as alternative method if the the AUFS branch cannot be removed.
+
 }
 
 ## Branch is unified into AUFS and then realeased for user to use.
