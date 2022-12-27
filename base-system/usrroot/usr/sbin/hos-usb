@@ -2,13 +2,13 @@
 
 #	hos-usb.sh (huronOS USB rule manager)
 #	This is the tool that allows huronOS to enable and
-#	disable the USB mount rule. Can only be ran by root. 
+#	disable the USB mount rule. Can only be ran by root.
 #
 #	Copyright (C) 2022, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2
-#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>

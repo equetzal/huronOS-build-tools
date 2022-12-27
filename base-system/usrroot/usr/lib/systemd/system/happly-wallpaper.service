@@ -1,0 +1,12 @@
+[Unit]
+Description=huronOS Wallpaper Sync Service
+Requires=network.target
+Requires=time-sync.target
+Requires=graphical.target
+
+[Service]
+User=root
+Group=root
+ExecStart=/usr/sbin/hos-wallpaper
+Restart=on-abnormal
+SuccessExitStatus=0

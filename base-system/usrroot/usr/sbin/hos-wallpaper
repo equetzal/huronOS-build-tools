@@ -8,7 +8,7 @@ help(){
 }
 
 main(){
-	check_wallpapers "Contest"
+	check_wallpapers "$(hos-dmode)"
 
 }
 
