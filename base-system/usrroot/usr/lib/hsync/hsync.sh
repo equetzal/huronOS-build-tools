@@ -50,7 +50,7 @@ readonly MODULES_MNT=$MEMORY/modules
 readonly DATA_DIR="$SYSTEM_MNT/huronOS/data"
 readonly CONFIGS_DIR="$DATA_DIR/configs"
 readonly DIRECTIVES_DIR="$DATA_DIR/directives"
-readonly FILES_DIR="$DATA_DIR/files"
+readonly FILES_DIR="$DATA_DIR/backups"
 readonly JOURNAL_DIR="$DATA_DIR/journal"
 readonly LOGS_DIR="$DATA_DIR/logs"
 
