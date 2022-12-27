@@ -30,7 +30,7 @@ main(){
 	fi
 
 	if [ "times" = "${VAR_NAME}" ]; then
-		sed -nE "/^\[$SECTION\]$/{:l n;/^(\[.*\])?$/q;p;bl}" "$CURRENT_DIRECTIVES_FILE"
+		sed -nE "/^\[$SECTION-Times\]$/{:l n;/^(\[.*\])?$/q;p;bl}" "$CURRENT_DIRECTIVES_FILE"
 	else
 		sed -nE "/^\[$SECTION\]$/{:l n;/^(\[.*\])?$/q;p;bl}" "$CURRENT_DIRECTIVES_FILE" | grep "$VAR_NAME" | cut -d= -f2
 	fi
