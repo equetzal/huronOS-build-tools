@@ -64,11 +64,17 @@ BOOT="$LIVEKITDATA"/boot
 FILES="$LIVEKITDATA"/"$LIVEKITNAME"
 mkdir -p "$BOOT"
 mkdir -p "$FILES"/base
-mkdir -p "$FILES"/internet
-mkdir -p "$FILES"/langs
-mkdir -p "$FILES"/programming
-mkdir -p "$FILES"/tools
-mkdir -p "$FILES"/changes
+mkdir -p "$FILES"/data
+mkdir -p "$FILES"/data/logs
+mkdir -p "$FILES"/data/journal
+mkdir -p "$FILES"/data/files
+mkdir -p "$FILES"/data/directives
+mkdir -p "$FILES"/data/configs
+mkdir -p "$FILES"/software
+mkdir -p "$FILES"/software/internet
+mkdir -p "$FILES"/software/langs
+mkdir -p "$FILES"/software/programming
+mkdir -p "$FILES"/software/tools
 
 if [ "$INITRAMFS" != "" ]; then
    mv "$INITRAMFS" $BOOT/initrfs.img

@@ -15,19 +15,37 @@
 
 set -x
 
+
 ## Set some system vars
 export TERM=dumb
 
-## Set some constants
+## AUFS Mix Lab
 readonly MEMORY=/run/initramfs/memory
+
+## Disk partitions mounts
 readonly SYSTEM_MNT=$MEMORY/system
 readonly EVENT_MNT=$MEMORY/event
 readonly CONTEST_MNT=$MEMORY/contest
+
+## Persistence branches to bind
 readonly SYSCHANGES=$MEMORY/syschanges
 readonly USRCHANGES=$MEMORY/usrchanges
+
+## Loopback dirs for squashfs
 readonly BASE_MNT=$MEMORY/base
 readonly MODULES_MNT=$MEMORY/modules
+
+## Data dirs
+readonly DATA_DIR="$SYSTEM_MNT/huronOS/data"
+readonly CONFIGS_DIR="$DATA_DIR/configs"
+readonly DIRECTIVES_DIR="$DATA_DIR/directives"
+readonly FILES_DIR="$DATA_DIR/files"
+readonly JOURNAL_DIR="$DATA_DIR/journal"
+readonly LOGS_DIR="$DATA_DIR/logs"
+
 readonly UNION=/
+
+## Special files
 readonly DIRECTIVES_FILE=/etc/hsync/directives
 readonly DIRECTIVES_DEFAULT=/etc/hsync/default
 readonly DIRECTIVES_FILE_SERVER=/etc/hsync/server

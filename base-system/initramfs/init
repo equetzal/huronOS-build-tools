@@ -48,17 +48,25 @@ readonly SYSTEM_MNT=$MEMORY/system
 readonly EVENT_MNT=$MEMORY/event
 readonly CONTEST_MNT=$MEMORY/contest
 
-## Important dirs that contains modules
+## Important dirs
 readonly BASE_DIR="$SYSTEM_MNT/huronOS/base"
-readonly INTERNET_DIR="$SYSTEM_MNT/huronOS/internet"
-readonly LANGS_DIR="$SYSTEM_MNT/huronOS/langs"
-readonly PROGRAMMING_DIR="$SYSTEM_MNT/huronOS/programming"
-readonly TOOLS_DIR="$SYSTEM_MNT/huronOS/tools"
+readonly DATA_DIR="$SYSTEM_MNT/huronOS/data"
+readonly SOFTWARE_DIR="$SYSTEM_MNT/huronOS/software"
 readonly ROOTCOPY_DIR="$SYSTEM_MNT/huronOS/rootcopy"
 
-## Important dirs that contain system persistent data
-readonly LOGS_DIR="$SYSTEM_MNT/huronOS/logs"
-readonly JOURNAL_DIR="$SYSTEM_MNT/huronOS/logs/journal"
+## Data dirs
+readonly CONFIGS_DIR="$DATA_DIR/configs"
+readonly DIRECTIVES_DIR="$DATA_DIR/directives"
+readonly FILES_DIR="$DATA_DIR/files"
+readonly JOURNAL_DIR="$DATA_DIR/journal"
+readonly LOGS_DIR="$DATA_DIR/logs"
+
+## Software dirs
+readonly INTERNET_DIR="$SOFTWARE_DIR/internet"
+readonly LANGS_DIR="$SOFTWARE_DIR/langs"
+readonly PROGRAMMING_DIR="$SOFTWARE_DIR/programming"
+readonly TOOLS_DIR="$SOFTWARE_DIR/tools"
+
 
 ## AUFS branches
 	# syschanges/ branch will hold all the system-created

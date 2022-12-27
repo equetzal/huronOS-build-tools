@@ -1,4 +1,4 @@
-HURONDIR=/run/initramfs/memory/system/huronOS/
+HURONDIR=/run/initramfs/memory/system/huronOS/software/
 internet/chrome			true
 internet/chromium		true
 internet/crow			true
