@@ -45,7 +45,9 @@ ln -sf /usr/lib/os-release /etc/os-release
 
 ## hsync symlinks
 ln -sf /usr/lib/systemd/system/hsync.service /etc/systemd/system/hsync.service
+ln -sf /usr/lib/systemd/system/happly.service /etc/systemd/system/happly.service
 ln -sf /usr/lib/systemd/system/hsync.timer /etc/systemd/system/hsync.timer
+ln -sf /usr/lib/hsync/hsync.sh /usr/lib/hsync/happly.sh
 
 ## Permissions
 chmod 640 /etc/fstab
