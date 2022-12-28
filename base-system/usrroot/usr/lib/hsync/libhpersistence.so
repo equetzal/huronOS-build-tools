@@ -9,7 +9,7 @@
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2
-#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
@@ -23,7 +23,8 @@ start_persistence(){
 
 	log " Starting a new persistent layer on AUFS."
 	systemctl stop lightdm
-	sleep 3
+	systemctl stop user@1000.service
+	sleep 2
 
 	case $STATE_MODE in
 		# If there's no STATE_MODE, then there was no persistence set.
@@ -78,18 +79,18 @@ apply_persistence_mode(){
 	## Check if the current state is the same as the directives specified mode.
 	if is_running_mode_same_as_new_mode; then
 		log "+The following mode timeframes are considered to be the same:
-		#1: $STATE_MODE 
+		#1: $STATE_MODE
 		    $STATE_MODE_START_TIME_UTC - $STATE_MODE_END_TIME_UTC
-		#2: $NEW_MODE 
+		#2: $NEW_MODE
 		    $NEW_MODE_START_TIME_UTC - $NEW_MODE_END_TIME_UTC
 		No modification will be done on persistence, preserving changes."
 		log_aufs_branches
-		return 0 # success. 
+		return 0 # success.
 	else
 		log "+The following mode timeframes are considered to be the different:
-		#1: $STATE_MODE 
+		#1: $STATE_MODE
 		    $STATE_MODE_START_TIME_UTC - $STATE_MODE_END_TIME_UTC
-		#2: $NEW_MODE 
+		#2: $NEW_MODE
 		    $NEW_MODE_START_TIME_UTC - $NEW_MODE_END_TIME_UTC
 		Modifications to persistence will be done."
 	fi
@@ -123,12 +124,13 @@ free_branch(){
 
 	## First, let's quit all the modules as they may lock the persistent branch
 	auls
-	hmm -f --block-update /etc/hmm/any
+	hmm -f --block-update "/etc/hmm/any"
 	auls
 
 	## Now, we will stop the user interface as budgie regulary keep cache files that locks the branch
 	systemctl stop lightdm.service
-	sleep 3
+	systemctl stop user@1000.service
+	sleep 2
 
 	## Let's try to remove the branch from AUFS
 	mount -t aufs -o remount,del:"$BRANCH" aufs / 2>/dev/null
@@ -139,11 +141,13 @@ free_branch(){
 	# we will try killing all processes that are locking them. If huronOS is well configured,
 	# any important process should be locking the branch
 	for i in {1..50} ; do
-		echo -n ".$i"
-		PIDS=$(aubusy -v / $BRANCH | awk '{print $1}' | sort -u | sed 's:\n: :g')
+		echo -n "Try #$i"
+		sleep "$(echo 0.1*"$i" | bc)"
+		PIDS="$(aubusy -v / "$BRANCH" | awk '{print $1}' | sort -u | tr '\n' ' ')"
+		echo "pids=\"$PIDS\""
 		for PID in $PIDS; do
-			echo "Killing process with ID $PID aka. $(ps -p $PID -o command --no-headers | awk '{print $1}')"
-			kill -9 $PID >/dev/null 2>/dev/null
+			echo "Killing process with ID $PID aka. $(ps -p "$PID" -o command --no-headers | awk '{print $1}')"
+			kill -9 "$PID" >/dev/null 2>/dev/null
 		done
 		## Let's retry to remove the branch
 		mount -t aufs -o remount,del:"$BRANCH" aufs / 2>/dev/null
@@ -194,7 +198,7 @@ release_branch(){
 	mount -t aufs -o remount,prepend:"$BRANCH" aufs /
 	su contestant -c '(xdg-user-dirs-update --force)'
 	systemctl start lightdm
-	sleep 4
+	sleep 3
 }
 
 ## Cleans the given partition of ANY file, then creates the base dirs that will redirect
@@ -205,18 +209,18 @@ prepare_perch(){
 	DIR="$1"
 
 	## Clean directory
-	chattr -R -i $DIR
-	chown -R root:root $DIR
-	rm -rf $DIR/* 2>/dev/null || true
-	rm -rf $DIR/.* 2>/dev/null || true
+	chattr -R -i "$DIR"
+	chown -R root:root "$DIR"
+	rm -rf "${DIR:?}/*" 2>/dev/null || true
+	rm -rf "${DIR:?}/.*" 2>/dev/null || true
 
 	## By doing this, all the files created under this directories will be saved on usrchanges/
 	# Also, because all the modules/ are mounted between syschanges/ on the low, and usrchanges/ on the top
 	# the files modified or edited by the software modules will be copied up to the bottom-up writtable branch
 	# of where the file was located, so, only usrchages/ is rw. Then software preferences should be sorted here.
-	mkdir -p $DIR/home/contestant/{Desktop,Documents,Downloads,Music,Pictures,Public,Templates,Videos,.config,.local}
-	chown -R contestant:contestant $DIR/home/contestant
-	mkdir -p $DIR/usr/share/backgrounds/
+	mkdir -p "$DIR/home/contestant/{Desktop,Documents,Downloads,Music,Pictures,Public,Templates,Videos,.config,.local}"
+	chown -R contestant:contestant "$DIR/home/contestant"
+	mkdir -p "$DIR/usr/share/backgrounds/"
 }
 
 ## Saves the changes of a partition on the selected directory with the date and hour stamp
@@ -230,9 +234,9 @@ save_changes(){
 	PREFFIX="$3"
 	DIR="$DESTINY/$PREFFIX-$(date '+%Y-%m-%d_%H.%M')"
 
-	mkdir -p $DIR
-	cp -rf --verbose $ORIGIN/* $DIR/
-	chown contestant:contestant $DIR
+	mkdir -p "$DIR"
+	cp -rf --verbose "$ORIGIN/*" "$DIR/"
+	chown contestant:contestant "$DIR"
 }
 
 start_always_mode(){
@@ -242,14 +246,14 @@ start_always_mode(){
 	hmm -f --block-update /etc/hmm/any
 
 	## Bind the mount to the usrchanges as an intermediate layer.
-	mount --bind $EVENT_MNT $USRCHANGES
+	mount --bind "$EVENT_MNT" "$USRCHANGES"
 
 	## Clean the disk, create base directory tree to allow AUFS copyup policy
-	prepare_perch $USRCHANGES
+	prepare_perch "$USRCHANGES"
 
 	# At this moment, usrchanges/ branch is not used by anyone so we should be able to
 	# prepend it without needing to restart any graphical service.
-	mount -t aufs -o remount,prepend:$USRCHANGES aufs /
+	mount -t aufs -o remount,prepend:"$USRCHANGES" aufs /
 
 	## Let's notify the state that we're setting
 	STATE_MODE="always"
@@ -260,7 +264,7 @@ start_always_mode(){
 
 	log_aufs_branches
 	systemctl start lightdm
-	sleep 4
+	sleep 3
 
 	return 0
 }
@@ -273,11 +277,11 @@ restore_always_mode(){
 	hmm -f --block-update /etc/hmm/any
 
 	## Bind the mount to the usrchanges as an intermediate layer.
-	mount --bind $EVENT_MNT $USRCHANGES
+	mount --bind "$EVENT_MNT" "$USRCHANGES"
 
 	# At this moment, usrchanges/ branch is not used by anyone so we should be able to
 	# prepend it without needing to restart any graphical service.
-	mount -t aufs -o remount,prepend:$USRCHANGES aufs /
+	mount -t aufs -o remount,prepend:"$USRCHANGES" aufs /
 
 	## Let's notify the state that we're setting
 	STATE_MODE="always"
@@ -297,14 +301,14 @@ restore_event_mode(){
 	# Silently deactivate all modules to prevent syschanges/ to stay at a higher index layer
 	# than any module. That would cause that modularized-software changes to be saved
 	# on the syschanges/ instead of the usrchanges/
-	hmm -f --block-update /etc/hmm/any
+	hmm -f --block-update "/etc/hmm/any"
 
 	## Bind the mount to the usrchanges as an intermediate layer.
-	mount --bind $EVENT_MNT $USRCHANGES
+	mount --bind "$EVENT_MNT" "$USRCHANGES"
 
 	# At this moment, usrchanges/ branch is not used by anyone so we should be able to
 	# prepend it without needing to restart any graphical service.
-	mount -t aufs -o remount,prepend:$USRCHANGES aufs /
+	mount -t aufs -o remount,prepend:"$USRCHANGES" aufs /
 
 	## Let's notify the state that we're setting
 	STATE_MODE="event"
@@ -324,14 +328,14 @@ restore_contest_mode(){
 	# Silently deactivate all modules to prevent syschanges/ to stay at a higher index layer
 	# than any module. That would cause that modularized-software changes to be saved
 	# on the syschanges/ instead of the usrchanges/
-	hmm -f --block-update /etc/hmm/any
+	hmm -f --block-update "/etc/hmm/any"
 
 	## Bind the mount to the usrchanges as an intermediate layer.
-	mount --bind $CONTEST_MNT $USRCHANGES
+	mount --bind "$CONTEST_MNT" "$USRCHANGES"
 
 	# At this moment, usrchanges/ branch is not used by anyone so we should be able to
 	# prepend it without needing to restart any graphical service.
-	mount -t aufs -o remount,prepend:$USRCHANGES aufs /
+	mount -t aufs -o remount,prepend:"$USRCHANGES" aufs /
 
 	## Let's notify the state that we're setting
 	STATE_MODE="contest"
@@ -341,76 +345,76 @@ restore_contest_mode(){
 	log_aufs_branches
 	#su contestant -c '(xdg-user-dirs-update --force)'
 	systemctl start lightdm
-	sleep 4
+	sleep 3
 
 	return 0
 }
 
 always_to_event(){
-	free_branch $USRCHANGES
-	prepare_perch $USRCHANGES
-	release_branch $USRCHANGES
+	free_branch "$USRCHANGES"
+	prepare_perch "$USRCHANGES"
+	release_branch "$USRCHANGES"
 	return 0
 }
 
 always_to_contest(){
-	free_branch $USRCHANGES
-	umount $USRCHANGES
-	prepare_perch $CONTEST_MNT
-	mount --bind $CONTEST_MNT $USRCHANGES
-	release_branch $USRCHANGES
+	free_branch "$USRCHANGES"
+	umount "$USRCHANGES"
+	prepare_perch "$CONTEST_MNT"
+	mount --bind "$CONTEST_MNT" "$USRCHANGES"
+	release_branch "$USRCHANGES"
 	return 0
 }
 
 event_to_always(){
-	free_branch $USRCHANGES
-	prepare_perch $USRCHANGES
-	release_branch $USRCHANGES
+	free_branch "$USRCHANGES"
+	prepare_perch "$USRCHANGES"
+	release_branch "$USRCHANGES"
 	return 0
 }
 
 event_to_event(){
-	free_branch $USRCHANGES
-	prepare_perch $USRCHANGES
-	release_branch $USRCHANGES
+	free_branch "$USRCHANGES"
+	prepare_perch "$USRCHANGES"
+	release_branch "$USRCHANGES"
 	return 0
 }
 
 event_to_contest(){
-	free_branch $USRCHANGES
-	umount $USRCHANGES
-	prepare_perch $CONTEST_MNT
-	mount --bind $CONTEST_MNT $USRCHANGES
-	release_branch $USRCHANGES
+	free_branch "$USRCHANGES"
+	umount "$USRCHANGES"
+	prepare_perch "$CONTEST_MNT"
+	mount --bind "$CONTEST_MNT" "$USRCHANGES"
+	release_branch "$USRCHANGES"
 	return 0
 }
 
 contest_to_always(){
-	free_branch $USRCHANGES
-	umount $USRCHANGES
-	prepare_perch $EVENT_MNT
-	save_changes $CONTEST_MNT "$EVENT_MNT/home/contestant" "contest"
-	prepare_perch $CONTEST_MNT
-	mount --bind $EVENT_MNT $USRCHANGES
-	release_branch $USRCHANGES
+	free_branch "$USRCHANGES"
+	umount "$USRCHANGES"
+	prepare_perch "$EVENT_MNT"
+	save_changes "$CONTEST_MNT" "$EVENT_MNT/home/contestant" "contest"
+	prepare_perch "$CONTEST_MNT"
+	mount --bind "$EVENT_MNT" "$USRCHANGES"
+	release_branch "$USRCHANGES"
 	return 0
 }
 
 contest_to_event(){
-	free_branch $USRCHANGES
-	umount $USRCHANGES
-	save_changes $CONTEST_MNT "$EVENT_MNT/home/contestant" "contest"
-	prepare_perch $CONTEST_MNT
-	mount --bind $EVENT_MNT $USRCHANGES
-	release_branch $USRCHANGES
+	free_branch "$USRCHANGES"
+	umount "$USRCHANGES"
+	save_changes "$CONTEST_MNT" "$EVENT_MNT/home/contestant" "contest"
+	prepare_perch "$CONTEST_MNT"
+	mount --bind "$EVENT_MNT" "$USRCHANGES"
+	release_branch "$USRCHANGES"
 	return 0
 }
 
 contest_to_contest(){
-	free_branch $USRCHANGES
-	save_changes $CONTEST_MNT "$EVENT_MNT/home/contestant" "contest"
-	prepare_perch $USRCHANGES
-	release_branch $USRCHANGES
+	free_branch "$USRCHANGES"
+	save_changes "$CONTEST_MNT" "$EVENT_MNT/home/contestant" "contest"
+	prepare_perch "$USRCHANGES"
+	release_branch "$USRCHANGES"
 	return 0
 }
 
