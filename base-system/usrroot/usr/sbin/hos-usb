@@ -2,7 +2,7 @@
 
 #	hos-usb.sh (huronOS USB rule manager)
 #	This is the tool that allows huronOS to enable and
-#	disable the USB mount rule. Can only be ran by root.
+#	disable the USB mount rule. Can only be run by root.
 #
 #	Copyright (C) 2022, huronOS Project:
 #		<http://huronos.org>
@@ -12,6 +12,20 @@
 #
 #	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
+
+## Help function, it prints sintax to user
+help(){
+	echo "huronOS USB Storage Mount Tools"
+	echo "This tool will let you change the mount rules for newly connected"
+	echo "USB storage devices. "
+	echo
+	echo "Syntax: hos-usb [operation]"
+	echo
+	echo "operations:"
+	printf '%-38.38s\t%s\n' 	"--help"	"Display this menu and exit."
+	printf '%-38.38s\t%s\n' 	"--enable"	"Enable the mount of usb storage devices."
+	printf '%-38.38s\t%s\n'		"--disable"	"Disable the mount of usb storage devices."
+}
 
 enable_usb(){
 	sed -i 's/ShouldMount=.*/ShouldMount=true/g' /etc/hmount/rule
@@ -25,13 +39,15 @@ disable_usb(){
 
 main(){
 	case $1 in
+		"--help")
+			help;exit 0;;
 		"--enable")
-			enable_usb;;
+			enable_usb; exit 0;;
 		"--disable")
-			disable_usb;;
+			disable_usb; exit 0;;
 		*)
-			echo "Unknown operation"; exit 1;;
+			echo "Unknown operation, please run [hos-usb --help] for help"; exit 1;;
 	esac
 }
 
-main "$@"; exit
+main "$@";

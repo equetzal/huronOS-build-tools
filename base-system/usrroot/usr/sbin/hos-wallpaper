@@ -1,15 +1,60 @@
 #!/bin/bash
 
+#	hos-wallpaper.sh
+#	This tool automate the download of wallpapers, its hash vertification,
+#	prevents re-downloading the same previusly-downloaded wallpapers, stores
+# 	the wallpapers persistently and prevents deletion on modality change.
+#	It can also be executed in background with the happly-wallpaper service.
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
+#
+#	Authors:
+#		Enya Quetzalli <equetzal@huronos.org>
+
+# shellcheck source=/dev/null
 . /usr/lib/hos/enviroment.sh
 . /usr/lib/hos/utils.sh
 
+## Help function
 help(){
-	echo "TODO: Write help"
+	echo "huronOS Wallpaper Tool"
+	echo "This tool will help you to update the wallpapers of the system"
+	echo "it can be automatically using the directives file, or manually."
+	echo
+	echo "Syntax: hos-wallpaper [operation]"
+	echo
+	echo "operations:"
+	printf '%-30.30s\t%s\n' 	"--help"			"Display this help and exit."
+	printf '%-30.30s\t%s\n' 	"--automatic" 		"Automatically download and set the wallpapers in directives."
+#	printf '%-30.30s\t%s\n' 	"--manual [Mode] [URL]"	"Add the provided module to the root AUFS union."
+	echo
+#	echo "options:"
+#	printf '%-5.5s\t%s\n'	"-s"	"Do operations silently."
+#	printf '%-5.5s\t%s\n'	"-p"	"Save wallpapers persistently"
 }
 
 main(){
-	check_wallpapers "$(hos-dmode)"
+	local SET_MODE
 
+	while(($#)); do
+		case $1 in
+			"--help")
+				help; exit 0;;
+			"--automatic")
+				SET_MODE="$(hos-dmode)";;
+			*) echo "Unknown operation '$1', please run [hos-wallpaper --help] for help"; exit 1;;
+		esac
+	done
+
+	if [ -z "${SET_MODE}" ]; then
+		echo "Execution mode not specified, please run [hos-wallpaper --help] for help"; exit 1;
+	fi
+
+	check_wallpapers "$SET_MODE";
 }
 
 # $1 = Wallpaper Section

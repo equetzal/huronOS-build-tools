@@ -1,9 +1,35 @@
 #!/bin/bash
 
+#	hos-dvar.sh
+#	This tool returns the specified variable of the sync directives file.
+#	If 'times' are specified for sections Event and Contest, the lapses
+# 	will be returned. In any other case, the variable value will be returned
+#	as long as the variable exists.
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
+#
+#	Authors:
+#		Enya Quetzalli <equetzal@huronos.org>
+
+# shellcheck source=/dev/null
 . /usr/lib/hos/enviroment.sh
 
+## Help function, it prints sintax to user
 help(){
-	echo "TODO: write help page"
+	echo "huronOS Directives Variable Helper Tool"
+	echo "This tool will let you retrieve a variable from the current directives"
+	echo "that are sync in the system. "
+	echo
+	echo "Syntax: hos-dvar [options]"
+	echo
+	echo "options:"
+	printf '%-38.38s\t%s\n' 	"--help"			"Display this menu and exit."
+	printf '%-38.38s\t%s\n' 	"--variable-name [ times | variable ]"	"Variable to lookup, returns empty when not valid."
+	printf '%-38.38s\t%s\n'		"--section [ Global | Event | Contest ]"	"Section to lookup variable, empty when invalid section."
 }
 
 main(){

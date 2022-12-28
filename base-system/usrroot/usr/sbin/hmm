@@ -9,7 +9,7 @@
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2
-#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Taken from the Slax project, authored by:
 #		Tomas M <http://www.slax.org/>
@@ -56,7 +56,7 @@ help(){
 main(){
 
 	## Iterate while input options still available
-	while [ True ]; do
+	while(($#)); do
 
 		## This is an operation
 		if [[ $1 == --* ]]; then
@@ -78,8 +78,8 @@ main(){
 		## This are options
 		elif [[ $1 == -* ]]; then
 			## Loop on each option
-			OPTIONS=$(echo $1 | sed 's/-//g' | sed 's:\(.\):\1\n:g')
-			while read OP; do
+			OPTIONS=$(echo "$1" | sed 's/-//g' | sed 's:\(.\):\1\n:g')
+			while read -r OP; do
 				case $OP in
 					"s") SILENT="true" ;;
 					"f") FORCE="true" ;;
@@ -87,7 +87,7 @@ main(){
 					" "|"") : ;;
 					*) echo "Unknown option '$OP', please run [hmm --help] for help";exit 1;;
 				esac
-			done < <(echo $OPTIONS | xargs -n 1)
+			done < <(echo "$OPTIONS" | xargs -n 1)
 			shift 1
 
 		## The command input does not follow sintax
@@ -104,7 +104,7 @@ list_modules(){
 	local STACK_ID BRANCHES_DIR MODULE LOOP CWD
 	## AUFS is able to have several union filesystems, each have a Stack Id (SI).
 	# we want the one used on the / root filesystem.
-	STACK_ID=$(cat /proc/mounts | grep 'aufs / aufs' | egrep -o 'si=([^,) ]+)' | tr = _)
+	STACK_ID=$(cat /proc/mounts | grep 'aufs / aufs' | grep -Eo 'si=([^,) ]+)' | tr '=' '_')
 	BRANCHES_DIR="/sys/fs/aufs/${STACK_ID}"
 
 	## Move to the branches dir
@@ -112,7 +112,7 @@ list_modules(){
 	ls -v1 | grep -v xi_path | egrep 'br[0-9]+' | xargs cat | grep $MODULES_MNT | cut -d= -f1 | while read MODULE; do
 		## Returns true if the path is a mountpoint
 		if mountpoint -q "$MODULE"; then
-			LOOP=$(cat /proc/mounts | fgrep " $MODULE squashfs" | cut -d " " -f 1)
+			LOOP=$(cat /proc/mounts | grep " -F $MODULE squashfs" | cut -d " " -f 1)
 			printf '%-55.55s\t%s\n' "$MODULE" "$(losetup $LOOP | sed -r 's:.*[(]|[)].*::g')"
 		fi
 	done
@@ -151,7 +151,7 @@ activate(){
 	fi
 
 	## If this module is already activated
-	if list_modules | cut -f 2 | fgrep -q "$MODULE_PATH"; then
+	if list_modules | cut -f 2 | grep -Fq "$MODULE_PATH"; then
 		[ "$SILENT" != "true" ] && echo "$(tput setaf 2)+huronOS module activated: $MODULE_BAS$(tput sgr0)"
 		return 0
 	fi
