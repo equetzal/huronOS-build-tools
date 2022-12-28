@@ -46,6 +46,7 @@ ln -sf /usr/lib/os-release /etc/os-release
 ## hsync symlinks
 ln -sf /usr/lib/systemd/system/hsync.service /etc/systemd/system/hsync.service
 ln -sf /usr/lib/systemd/system/happly.service /etc/systemd/system/happly.service
+ln -sf /usr/lib/systemd/system/happly-wallpaper.service /etc/systemd/system/happly-wallpaper.service
 ln -sf /usr/lib/systemd/system/hsync.timer /etc/systemd/system/hsync.timer
 ln -sf /usr/lib/hsync/hsync.sh /usr/lib/hsync/happly.sh
 
@@ -57,6 +58,10 @@ chmod 740 /usr/lib/hmount/hmount.automount
 chmod 760 /usr/lib/hsync/*
 chmod 660 /usr/lib/systemd/system/hsync*
 chmod 660 /usr/lib/systemd/system/happly*
+chmod 760 /usr/sbin/auls
+chmod 760 /usr/sbin/hmm
+chmod 760 /usr/sbin/hos-*
+chmod 760 /usr/sbin/savechanges
 
 ## Journal max size
 sed -i 's;#SystemMaxUse=.*;SystemMaxUse=300M;1' /etc/systemd/journald.conf

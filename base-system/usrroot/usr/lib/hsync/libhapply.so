@@ -60,7 +60,7 @@ apply_specific_directives(){
 	set_hmount_rules
 	set_software
 	set_bookmarks
-	systemctl start happly-wallpaper.sevice
+	systemctl start happly-wallpaper.service
 
 	return 0 # success
 }
