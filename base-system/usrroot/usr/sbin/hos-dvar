@@ -1,0 +1,40 @@
+#!/bin/bash
+
+. /usr/lib/hos/enviroment.sh
+
+help(){
+	echo "TODO: write help page"
+}
+
+main(){
+	local VAR_NAME SECTION
+
+	while(($#)); do
+		case $1 in
+			"--help")
+				help; exit 0;;
+			"--variable-name")
+				VAR_NAME="$2"; shift 2;;
+			"--section")
+				SECTION="$2"; shift 2;;
+			*) echo "Unknown operation '$1', please run [hos-dvar --help] for help"; exit 1;;
+		esac
+	done
+
+	if [ -z "${VAR_NAME}" ]; then
+		echo "Variable name not specified, please run [hos-dvar --help] for help"; exit 1;
+	fi
+
+	if [ -z "${SECTION}" ]; then
+		echo "Section not specified, please run [hos-dvar --help] for help"; exit 1;
+	fi
+
+	if [ "times" = "${VAR_NAME}" ]; then
+		sed -nE "/^\[$SECTION-Times\]$/{:l n;/^(\[.*\])?$/q;p;bl}" "$CURRENT_DIRECTIVES_FILE"
+	else
+		sed -nE "/^\[$SECTION\]$/{:l n;/^(\[.*\])?$/q;p;bl}" "$CURRENT_DIRECTIVES_FILE" | grep "$VAR_NAME" | cut -d= -f2
+	fi
+}
+
+main "$@"; exit 0
+

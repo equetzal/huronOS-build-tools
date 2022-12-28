@@ -1,0 +1,55 @@
+#!/bin/bash
+
+#	hos-dmode.sh
+#	This tool returns the current modality that should rule the system
+#	taking in consideration the current system time and the specified directives.
+#	The lapses override other lapses based on the modality priority, which is:
+#	Contest > Event > Always
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
+#
+#	Authors:
+#		Enya Quetzalli <equetzal@huronos.org>
+
+# $1 = Lapses
+fits_lapse(){
+	local LAPSES CURRENT_TIMEZONE CURRENT_TIME START_TIME END_TIME
+	LAPSES="$1"
+	CURRENT_TIMEZONE="$(hos-dvar --variable-name TimeZone --section Global)"
+	CURRENT_TIME="$(date +'%s')"
+
+	# For each start-time and end-time, check if we're in between.
+	while read -r START END; do
+		START_TIME="$(date --date="TZ=\"$CURRENT_TIMEZONE\" $START" +'%s')"
+		END_TIME="$(date --date="TZ=\"$CURRENT_TIMEZONE\" $END" +'%s')"
+		if 	[ "$CURRENT_TIME" -ge "$START_TIME" ] && \
+			[ "$CURRENT_TIME" -lt "$END_TIME" ]; then
+				return 0 # Yes
+		fi
+	done < <(echo "$LAPSES" | xargs -n 2)
+
+	return 1 #No
+}
+
+current_directives_mode(){
+	local CURRENT_MODE EVENT_LAPSES CONTEST_LAPSES
+	CURRENT_MODE="Always"
+	EVENT_LAPSES="$(hos-dvar --variable-name times --section Event)"
+	CONTEST_LAPSES="$(hos-dvar --variable-name times --section Contest)"
+
+	if [ -n "$EVENT_LAPSES" ] && fits_lapse "$EVENT_LAPSES"; then
+		CURRENT_MODE="Event"
+	fi
+
+	if [ -n "$CONTEST_LAPSES" ] && fits_lapse "$CONTEST_LAPSES"; then
+		CURRENT_MODE="Contest"
+	fi
+
+	echo "$CURRENT_MODE"
+}
+
+current_directives_mode
