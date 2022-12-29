@@ -45,7 +45,7 @@ main(){
 			"--help")
 				help; exit 0;;
 			"--automatic")
-				SET_MODE="$(hos-dmode)";;
+				SET_MODE="$(hos-dmode)"; shift 1;;
 			*) echo "Unknown operation '$1', please run [hos-wallpaper --help] for help"; exit 1;;
 		esac
 	done
