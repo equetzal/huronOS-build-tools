@@ -198,7 +198,7 @@ release_branch(){
 	mount -t aufs -o remount,prepend:"$BRANCH" aufs /
 	su contestant -c '(xdg-user-dirs-update --force)'
 	systemctl start lightdm
-	sleep 3
+	sleep 2
 }
 
 ## Cleans the given partition of ANY file, then creates the base dirs that will redirect
@@ -209,18 +209,18 @@ prepare_perch(){
 	DIR="$1"
 
 	## Clean directory
-	chattr -R -i "$DIR"
-	chown -R root:root "$DIR"
-	rm -rf "${DIR:?}/*" 2>/dev/null || true
-	rm -rf "${DIR:?}/.*" 2>/dev/null || true
+	chattr -R -i "$DIR/"
+	chown -R root:root "$DIR/"
+	rm -rf "${DIR:?}"/* 2>/dev/null || true
+	rm -rf "${DIR:?}"/.* 2>/dev/null || true
 
 	## By doing this, all the files created under this directories will be saved on usrchanges/
 	# Also, because all the modules/ are mounted between syschanges/ on the low, and usrchanges/ on the top
 	# the files modified or edited by the software modules will be copied up to the bottom-up writtable branch
 	# of where the file was located, so, only usrchages/ is rw. Then software preferences should be sorted here.
-	mkdir -p "$DIR/home/contestant/{Desktop,Documents,Downloads,Music,Pictures,Public,Templates,Videos,.config,.local}"
-	chown -R contestant:contestant "$DIR/home/contestant"
-	mkdir -p "$DIR/usr/share/backgrounds/"
+	mkdir -p "$DIR"/home/contestant/{Desktop,Documents,Downloads,Music,Pictures,Public,Templates,Videos,.config,.local}
+	chown -R contestant:contestant "$DIR"/home/contestant
+	mkdir -p "$DIR"/usr/share/backgrounds/
 }
 
 ## Saves the changes of a partition on the selected directory with the date and hour stamp
@@ -235,7 +235,7 @@ save_changes(){
 	DIR="$DESTINY/$PREFFIX-$(date '+%Y-%m-%d_%H.%M')"
 
 	mkdir -p "$DIR"
-	cp -rf --verbose "$ORIGIN/*" "$DIR/"
+	cp -rf --verbose "$ORIGIN"/* "$DIR"/
 	chown contestant:contestant "$DIR"
 }
 
@@ -264,7 +264,7 @@ start_always_mode(){
 
 	log_aufs_branches
 	systemctl start lightdm
-	sleep 3
+	sleep 2
 
 	return 0
 }
@@ -291,7 +291,7 @@ restore_always_mode(){
 	log_aufs_branches
 	#su contestant -c '(xdg-user-dirs-update --force)'
 	systemctl start lightdm
-	sleep 4
+	sleep 2
 
 	return 0
 }
@@ -301,7 +301,7 @@ restore_event_mode(){
 	# Silently deactivate all modules to prevent syschanges/ to stay at a higher index layer
 	# than any module. That would cause that modularized-software changes to be saved
 	# on the syschanges/ instead of the usrchanges/
-	hmm -f --block-update "/etc/hmm/any"
+	hmm -f --block-update /etc/hmm/any
 
 	## Bind the mount to the usrchanges as an intermediate layer.
 	mount --bind "$EVENT_MNT" "$USRCHANGES"
@@ -318,7 +318,7 @@ restore_event_mode(){
 	log_aufs_branches
 	#su contestant -c '(xdg-user-dirs-update --force)'
 	systemctl start lightdm
-	sleep 4
+	sleep 2
 
 	return 0
 }
@@ -345,7 +345,7 @@ restore_contest_mode(){
 	log_aufs_branches
 	#su contestant -c '(xdg-user-dirs-update --force)'
 	systemctl start lightdm
-	sleep 3
+	sleep 2
 
 	return 0
 }
