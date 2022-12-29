@@ -140,8 +140,8 @@ main(){
 		# Let's try to download a new directives file, there might be an update to
 		# the one restored from the disk. If there is an update, then let's use
 		# this new directives
-		if try_directives_download && have_directives_changed; then 
-			update_directives 
+		if try_directives_download && have_directives_changed; then
+			update_directives
 		fi
 
 		# The system has just booted, so there's no directives applied!

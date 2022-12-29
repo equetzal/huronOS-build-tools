@@ -2,13 +2,13 @@
 
 #	libhapply.sh (hsync.sh library)
 #	This library contains functions to apply the directives to the
-#	system such as configurations, software or preferences. 
+#	system such as configurations, software or preferences.
 #
 #	Copyright (C) 2022, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2
-#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
@@ -61,6 +61,7 @@ apply_specific_directives(){
 	set_software
 	set_bookmarks
 	systemctl start happly-wallpaper.service
+	rfkill unblock bluetooth
 
 	return 0 # success
 }
@@ -132,7 +133,7 @@ select_mode_to_apply(){
 		# For each start-time and end-time, check if we're in between.
 		while read -r START END; do
 			START_SECONDS=$(date --date="TZ=\"$TIMEZONE\" $START" +'%s')
-			END_SECONDS=$(date --date="TZ=\"$TIMEZONE\" $END" +'%s') 
+			END_SECONDS=$(date --date="TZ=\"$TIMEZONE\" $END" +'%s')
 			if 	[ "$CURRENT_TIME_SECONDS" -ge "$START_SECONDS" ] && \
 				[ "$CURRENT_TIME_SECONDS" -lt "$END_SECONDS" ]; then
 					NEW_MODE="event"
@@ -324,13 +325,13 @@ set_bookmarks(){
 	local NAME URL TMP_FILE
 	BOOKMARKS="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "Bookmarks" | sed 's/[{}^|]/ /g')"
 	BOOKMARKS_LINES=""
-	
+
 	log " Setting default bookmarks on Firefox and Chromium to:"
 	while read -r NAME URL; do
 		BOOKMARKS_LINES="$BOOKMARKS_LINES\n        <DT><A HREF=\"$URL\">$NAME</A>"
 		echo -e "\t\t$(echo $NAME | sed 's:_: :g') -> $URL" | tee -a /var/log/hsync.log
 	done < <(echo $BOOKMARKS | xargs -n 2)
-	
+
 	# Firefox bookmarks
 	TMP_FILE="/tmp/firefox-bookmarks-$$.html"
 	cp /etc/hsync/bookmarks/templates/firefox.html $TMP_FILE
@@ -339,7 +340,7 @@ set_bookmarks(){
 	mkdir -p /usr/lib/firefox-esr
 	cp $TMP_FILE /usr/lib/firefox-esr/bookmarks.html
 	rm -rf $TMP_FILE
-	
+
 	# Chromium bookmarks
 	TMP_FILE="/tmp/chromium-bookmarks-$$.html"
 	cp /etc/hsync/bookmarks/templates/chromium.html $TMP_FILE
@@ -361,7 +362,7 @@ set_wallpaper(){
 		su contestant -c "export DISPLAY=:0; gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/huronos-background.png"
 		return 0 # success
 	fi
-	
+
 	log " Downloading wallpaper $WALLPAPER"
 	NAME=$(basename "$WALLPAPER")
 	FILE="/usr/share/backgrounds/custom-background-$$-$NAME"
@@ -374,7 +375,7 @@ set_wallpaper(){
 	fi
 	rm -f "$FILE"
 	log "-Wallpaper cannot be downloaded. Wrong URL?, No internet?"
-	
+
 	# There's a chance that if persistence is set, and this is a restoration of a previous state
 	# the background image stills available. Let's search for it.
 	log " Attempting to restore previous background image"
