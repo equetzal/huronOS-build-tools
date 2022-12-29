@@ -17,7 +17,7 @@
 
 set -xe
 
-PACKAGES="apparmor budgie-desktop budgie-countdown-applet budgie-extras-daemon budgie-network-manager-applet dconf-cli eog gnome-calculator gnome-calendar gnome-terminal gnome-themes-extra libdrm-intel1 libgl1-mesa-dri libglib2.0-bin libglu1-mesa lightdm moka-icon-theme nautilus nautilus-extension-gnome-terminal okular plank x11-utils xdg-user-dirs xinit xinput xserver-xorg xserver-xorg-video-intel xterm"
+PACKAGES="apparmor budgie-desktop budgie-countdown-applet budgie-extras-daemon dconf-cli eog gnome-calculator gnome-calendar gnome-terminal gnome-themes-extra libdrm-intel1 libgl1-mesa-dri libglib2.0-bin libglu1-mesa lightdm moka-icon-theme nautilus nautilus-extension-gnome-terminal okular plank x11-utils xdg-user-dirs xinit xinput xserver-xorg xserver-xorg-video-intel xterm"
 
 ## Install
 apt update
@@ -71,6 +71,7 @@ chmod 777 /tmp/huronOS-desktop-config.dump
 cp files/gnome-applications.menu /etc/xdg/menus/gnome-applications.menu
 rm /usr/share/desktop-directories/* -rf
 cp files/directories/* /usr/share/desktop-directories/
+rfkill unblock bluetooth
 
 ## Set .desktop launchers
 mkdir -p /tmp/save/ 
