@@ -10,7 +10,7 @@
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2
-#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
@@ -18,5 +18,5 @@
 declare "$(head -n 1 ./create.sh)"
 
 for PKG in $PACKAGES; do
-	apt -s install $PKG | tee dependencies/$PKG.log
+	apt -s install "$PKG" | tee dependencies/"$PKG.log"
 done

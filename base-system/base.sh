@@ -9,7 +9,7 @@
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2
-#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Taken from the Slax project, authored by:
 #		Tomas M <http://www.slax.org/>
@@ -22,9 +22,9 @@
 export PATH=.:./tools:../tools:/usr/sbin:/usr/bin:/sbin:/bin:/
 set -xe
 
-CHANGEDIR=$(dirname $(readlink -f $0))
+CHANGEDIR="$(dirname "$(readlink -f "$0")")"
 echo "Changing current directory to $CHANGEDIR"
-cd $CHANGEDIR
+cd "$CHANGEDIR"
 CWD="$(pwd)"
 
 . ./config || exit 1
@@ -76,18 +76,18 @@ mkdir -p "$FILES"/software/programming
 mkdir -p "$FILES"/software/tools
 
 if [ "$INITRAMFS" != "" ]; then
-   mv "$INITRAMFS" $BOOT/initrfs.img
+   mv "$INITRAMFS" "$BOOT"/initrfs.img
 fi
 
 # BIOS / MBR booting
-cp -r bootloader/* $BOOT
-cp $VMLINUZ $BOOT/ || exit
+cp -r bootloader/* "$BOOT"
+cp "$VMLINUZ" "$BOOT"/ || exit
 
 # UEFI booting
-mkdir -p $BOOT/EFI/Boot
-cp bootloader/EFI/Boot/syslinux.efi $BOOT/EFI/Boot/bootx64.efi
-cp bootloader/EFI/Boot/{ldlinux.e64,menu.c32,libutil.c32,vesamenu.c32,libcom32.c32} $BOOT/EFI/Boot
-cp bootloader/syslinux.cfg $BOOT/EFI/Boot
+mkdir -p "$BOOT"/EFI/Boot
+cp bootloader/EFI/Boot/syslinux.efi "$BOOT"/EFI/Boot/bootx64.efi
+cp bootloader/EFI/Boot/{ldlinux.e64,menu.c32,libutil.c32,vesamenu.c32,libcom32.c32} "$BOOT"/EFI/Boot
+cp bootloader/syslinux.cfg "$BOOT"/EFI/Boot
 
 ## Copy installer
 cp tools/installer/install.sh "${LIVEKITDATA}/install.sh"
@@ -99,7 +99,7 @@ for i in $MKMOD; do
       COREFS="$COREFS /$i"
    fi
 done
-mksquashfs $COREFS $LIVEKITDATA/$LIVEKITNAME/base/01-core.$BEXT -comp xz -b 1024K -always-use-fragments -keep-as-directory || exit
+mksquashfs "$COREFS" "$LIVEKITDATA/$LIVEKITNAME/base/01-core.$BEXT" -comp xz -b 1024K -always-use-fragments -keep-as-directory || exit
 
 cd "$LIVEKITDATA"
 ARCH=$(uname -m)
@@ -107,21 +107,22 @@ TARGET=/tmp
 
 # cat "$CWD/bootinfo.txt" | fgrep -v "#" | sed -r "s/mylinux/$LIVEKITNAME/" | sed -r "s/\$/\x0D/" > readme.txt
 
-echo cd $LIVEKITDATA '&&' $MKISOFS -o "$TARGET/$LIVEKITNAME-$ARCH.iso" -v -J -R -D -A "$LIVEKITNAME" -V "$LIVEKITNAME" \
+echo cd "$LIVEKITDATA" '&&' "$MKISOFS" -o "$TARGET/$LIVEKITNAME-$ARCH.iso" -v -J -R -D -A "$LIVEKITNAME" -V "$LIVEKITNAME" \
 -no-emul-boot -boot-info-table -boot-load-size 4 \
 -b boot/isolinux.bin -c boot/isolinux.boot . \
 > $TARGET/gen_"$LIVEKITNAME"_iso.sh
 chmod o+x $TARGET/gen_"$LIVEKITNAME"_iso.sh
 
-echo cd $LIVEKITDATA '&&' zip -0 -r "$TARGET/$LIVEKITNAME-$ARCH.zip" '*' \
+echo cd "$LIVEKITDATA" '&&' zip -0 -r "$TARGET/$LIVEKITNAME-$ARCH.zip" '*' \
 > $TARGET/gen_"$LIVEKITNAME"_zip.sh
 chmod o+x $TARGET/gen_"$LIVEKITNAME"_zip.sh
 
-. $CHANGEDIR/restore.sh
+# shellcheck source=/dev/null
+. "$CHANGEDIR/restore.sh"
 
 echo "-----------------------------"
 echo "Finished. Find your result in $LIVEKITDATA"
-echo "To build ISO, run: $TARGET/gen_"$LIVEKITNAME"_iso.sh"
-echo "To build ZIP, run: $TARGET/gen_"$LIVEKITNAME"_zip.sh"
-cd $CWD
+echo "To build ISO, run: $TARGET/gen_${LIVEKITNAME}_iso.sh"
+echo "To build ZIP, run: $TARGET/gen_${LIVEKITNAME}_zip.sh"
+cd "$CWD"
 

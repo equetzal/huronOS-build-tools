@@ -4,13 +4,13 @@
 #	Script to build the budgie huronOS System Layer (.hsl)
 #	for huronOS image. It install, and configures the graphical
 #	enviroment designed for competitive programming along with the
-#	activation of the huronOS contest system subsistems. 
+#	activation of the huronOS contest system subsistems.
 #
 #	Copyright (C) 2022, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2
-#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
@@ -21,7 +21,7 @@ PACKAGES="apparmor budgie-desktop budgie-countdown-applet budgie-extras-daemon d
 
 ## Install
 apt update
-apt install --yes --no-install-recommends $PACKAGES
+apt install --yes --no-install-recommends "$PACKAGES"
 
 ## Delete debian lightdm configs
 rm -rf /usr/share/lightdm/*

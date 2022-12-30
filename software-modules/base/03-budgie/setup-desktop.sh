@@ -9,7 +9,7 @@
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2
-#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
@@ -29,7 +29,7 @@ dconf load /net/launchpad/plank/docks/ < /tmp/huronOS-plank-config.dump
 mkdir -p ~/.config/autostart/
 cp -r files/autostart/* ~/.config/autostart/
 
-## Load the menu bar configuration 
+## Load the menu bar configuration
 dconf load /com/solus-project/ < /tmp/huronOS-desktop-config.dump
 
 ## Background, Icons, Preferences
@@ -48,6 +48,6 @@ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-typ
 
 
 ## Time and date
-gsettings set org.gnome.desktop.interface clock-format '12h' 
-gsettings set org.gnome.desktop.interface clock-show-seconds true 
+gsettings set org.gnome.desktop.interface clock-format '12h'
+gsettings set org.gnome.desktop.interface clock-show-seconds true
 gsettings set org.gnome.desktop.interface clock-show-date false
