@@ -99,7 +99,8 @@ for i in $MKMOD; do
       COREFS="$COREFS /$i"
    fi
 done
-mksquashfs "$COREFS" "$LIVEKITDATA/$LIVEKITNAME/base/01-core.$BEXT" -comp xz -b 1024K -always-use-fragments -keep-as-directory || exit
+# shellcheck disable=SC2086
+mksquashfs $COREFS "$LIVEKITDATA/$LIVEKITNAME/base/01-core.$BEXT" -comp xz -b 1024K -always-use-fragments -keep-as-directory || exit
 
 cd "$LIVEKITDATA"
 ARCH=$(uname -m)
