@@ -56,7 +56,7 @@ export DEFAULT_WALLPAPER_FILE="/usr/share/backgrounds/huronos-background.png"
 export CURRENT_DIRECTIVES_FILE="/etc/hsync/directives"
 export CURRENT_STATE_VARIABLES_FILE="/etc/hsync/state-variables"
 export CURRENT_STATE_SUMMARY_FILE="/etc/hsync/state-summary"
-export CURRENT_SYNC_SERVER_CONFIG_FILE="/etc/hsync/sync-server.conf"
+export CURRENT_SYNC_SERVER_CONFIG_FILE="$SYSTEM_DATA_DIR/sync-server.conf"
 
 ## Special files backup
 export BACKUP_DIRECTIVES_FILE="$SYSTEM_BACKUP_FILES_DIR/directives.backup"
