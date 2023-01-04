@@ -60,6 +60,7 @@ readonly UNION=/
 readonly DIRECTIVES_FILE=/etc/hsync/directives
 readonly DIRECTIVES_DEFAULT=/etc/hsync/default
 readonly DIRECTIVES_FILE_SERVER=/etc/hsync/server
+readonly CURRENT_SYNC_SERVER_CONFIG_FILE="$DATA_DIR/sync-server.conf"
 readonly STATE_FILE=/etc/hsync/state
 readonly BACKUP_DIR_NAME=.huronOS..sysbackup.d
 readonly BACKUP_DIR=$USRCHANGES/$BACKUP_DIR_NAME
