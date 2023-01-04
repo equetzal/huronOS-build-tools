@@ -22,13 +22,17 @@ DEV_PACKAGES="gddrescue genisoimage gpart net-tools netcat smartmontools unzip z
 REM_PACKAGES="debconf-i18n dvd+rw-tools dnsmasq installation-report mc mdadm rsync ssh vim-common vim-tiny virt-what grub-common grub-pc-bin grub-pc-bin grub2-common"
 
 apt update
-apt install --yes --no-install-recommends "$INST_PACKAGES"
+# shellcheck disable=SC2086
+apt install --yes --no-install-recommends $INST_PACKAGES
 if [ "$DEVELOPER" = "true" ]; then
-	apt install --yes --no-install-recommends "$DEV_PACKAGES"
+	# shellcheck disable=SC2086
+	apt install --yes --no-install-recommends $DEV_PACKAGES
 else
-	apt autoremove --yes --purge "$DEV_PACKAGES"
+	# shellcheck disable=SC2086
+	apt autoremove --yes --purge $DEV_PACKAGES
 fi
-apt autoremove --yes --purge "$REM_PACKAGES"
+# shellcheck disable=SC2086
+apt autoremove --yes --purge $REM_PACKAGES
 
 
 # Copy root directories
