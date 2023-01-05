@@ -2,13 +2,13 @@
 
 #	libhfirewall.sh (hsync.sh library)
 #	This library contains functions to configure iptables firewall
-#	according to the exeptions specified on the directives. 
+#	according to the exeptions specified on the directives.
 #
 #	Copyright (C) 2022, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2
-#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
@@ -48,7 +48,7 @@ firewall_accept_all(){
 	iptables -Z
 
 	log "Setting firewall rules to:
-	$(iptables-legacy --list)"
+	$(iptables --list)"
 
 	return 0
 }

@@ -1,14 +1,14 @@
 #!/bin/bash
 
 #	install.sh
-#	Script to select, partition, format, configure and install 
+#	Script to select, partition, format, configure and install
 #	huronOS on a removable USB storage device.
 #
 #	Copyright (C) 2022, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2
-#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
@@ -21,12 +21,18 @@ print_step(){
 print_step "Starting huronOS installation"
 
 ## Save the directory where the script is running, it should match the ISO of huronOS
-ISO_DIR=$(dirname $(readlink -f $0))
-print_step "[1/9] Locating huronOS image -> $ISO_DIR"
+ISO_DIR="$(dirname "$(readlink -f "$0")")"
+print_step "[1/10] Locating huronOS image -> $ISO_DIR"
+
+## Configure the remote directives file
+print_step "[2/10] Configuring directives server."
+TMP_SERVER_CONFIG="/tmp/$$-sync-server.conf"
+read -r -p "URL (http/s) of directives file to configure:" DIRECTIVES_FILE_URL
+echo -e "[Server]\nIP=\nDOMAIN=\nDIRECTIVES_ENDPOINT=\nSERVER_ROOM=\nDIRECTIVES_FILE_URL=$DIRECTIVES_FILE_URL\n" > "$TMP_SERVER_CONFIG"
 
 ## Select the device we want to install huronOS to
-print_step "[2/9] Selecting removable device to install huronOS on"
-DEVICES=$(lsblk --pairs --output NAME,PATH,HOTPLUG,TYPE,VENDOR,MODEL,SIZE,LABEL --sort NAME) 
+print_step "[3/10] Selecting removable device to install huronOS on"
+DEVICES=$(lsblk --pairs --output NAME,PATH,HOTPLUG,TYPE,VENDOR,MODEL,SIZE,LABEL --sort NAME)
 COPY_DEVICES="$DEVICES"
 DEVNUM=0
 echo "Disks compatible with huronOS installation"
@@ -45,7 +51,7 @@ while read -r NAME DEV HOTPLUG TYPE VENDOR MODEL SIZE LABEL; do
 	declare "${SIZE}"
 	declare "${LABEL}"
 	#echo -e "$NAME $DEV $HOTPLUG $TYPE $VENDOR $MODEL $SIZE $LABEL"
-	
+
 	## Mark disks as green, partitions indented on disk
 	if [ "$HOTPLUG" = "1" ] && [ "$TYPE" = "disk" ]; then
 		echo -e "\t$(tput setab 2)$(tput setaf 1)$(tput bold)$TYPE $DEVNUM  $DEV  $SIZE  $VENDOR  $MODEL $(tput sgr0)"
@@ -57,7 +63,7 @@ done < <(echo "$COPY_DEVICES" | xargs -n 8)
 
 
 ## Ask the user the number of the selected disk
-read -p "Please, select the disk where you want to install huronOS on:" SELECTION
+read -r -p "Please, select the disk where you want to install huronOS on:" SELECTION
 COPY_DEVICES="$DEVICES"
 DEVNUM=0
 while read -r NAME DEV HOTPLUG TYPE VENDOR MODEL SIZE LABEL; do
@@ -77,7 +83,7 @@ while read -r NAME DEV HOTPLUG TYPE VENDOR MODEL SIZE LABEL; do
 		DEVNUM=$((DEVNUM+1))
 	fi
 done < <(echo "$COPY_DEVICES" | xargs -n 8)
-read -p "The selected disk is $(tput setab 2)$(tput setaf 1)$(tput bold)$TARGET$(tput sgr0), $(tput bold)ALL DATA WILL BE LOST (includes partitions) $(tput sgr0), do you want to continue? (Y/n) " CONFIRM
+read -r -p "The selected disk is $(tput setab 2)$(tput setaf 1)$(tput bold)$TARGET$(tput sgr0), $(tput bold)ALL DATA WILL BE LOST (includes partitions) $(tput sgr0), do you want to continue? (Y/n) " CONFIRM
 
 ## Exit if answer is not Y or y
 if [ "$CONFIRM" != "Y" ] && [ "$CONFIRM" != "y" ]; then
@@ -88,24 +94,24 @@ fi
 ## User confirmed, continue
 
 ## For each mountpoint that the device is using, kill and unmount
-print_step "[3/9] Unmounting selected device partitions"
+print_step "[4/10] Unmounting selected device partitions"
 for MNT_PNT in $(lsblk --output PATH,MOUNTPOINT | grep -E "${TARGET}[1-9]+" | awk '{ print $2 }'); do
 	echo "Cleaning $MNT_PNT"
 	fuser -k -m "$MNT_PNT" || true
 	umount "$MNT_PNT"
 done
 
-print_step "[4/9] Partitioning device $TARGET"
+print_step "[5/10] Partitioning device $TARGET"
 ## Set positions on the target device
-DISK_SIZE=$(blockdev --getsize64 $TARGET)
-DISK_SECTORS=$(blockdev --getsz $TARGET)
+DISK_SIZE=$(blockdev --getsize64 "$TARGET")
+DISK_SECTORS=$(blockdev --getsz "$TARGET")
 DISK_SIZE_MB=$(( $DISK_SIZE / 1024 / 1024 )) #Convert disk size to MiB
 SYSTEM_PART_END=$(( 5*1024 )) #Set 5GiB to store huronOS
 EVENT_PART_END=$(( ( ($DISK_SIZE_MB - $SYSTEM_PART_END) / 2) + SYSTEM_PART_END ))
 
 ## Clean possible partition tables, asuming 512 block size dev (hope there's no 1ZiB usbs soon)
-dd bs=512 if=/dev/zero of=$TARGET count=34
-dd bs=512 if=/dev/zero of=$TARGET count=34 seek=$(( $DISK_SECTORS-34 ))
+dd bs=512 if=/dev/zero of="$TARGET" count=34
+dd bs=512 if=/dev/zero of="$TARGET" count=34 seek=$(( $DISK_SECTORS-34 ))
 
 ## Do de partioning
 # 0% = minimal start alignment between sector size vs optimal I/O speed
@@ -113,7 +119,7 @@ dd bs=512 if=/dev/zero of=$TARGET count=34 seek=$(( $DISK_SECTORS-34 ))
 # part1 = system partition aka. huronOS partition
 # part2 = event-persistence partition
 # part3 = contest-persistence partition
-parted -a optimal --script $TARGET \
+parted -a optimal --script "$TARGET" \
 	unit MiB \
 	mklabel msdos \
 	mkpart primary 0% $SYSTEM_PART_END \
@@ -122,7 +128,7 @@ parted -a optimal --script $TARGET \
 	set 1 boot on
 
 ## Create the filesystems
-print_step "[5/9] Creating filesystems"
+print_step "[6/10] Creating filesystems"
 mkfs.vfat -F 32 -n HURONOS -I "${TARGET}1"
 mkfs.ext4 -L event-data -F "${TARGET}2"
 mkfs.ext4 -L contest-data -F "${TARGET}3"
@@ -141,13 +147,14 @@ mkdir -p $SYSTEM_MNT
 mount UUID=$SYSTEM_UUID $SYSTEM_MNT
 
 ## Start copying the contents of huronOS installation
-print_step "[6/9] Copying huronOS system data"
-cp --verbose -rf $ISO_DIR/huronOS/ $SYSTEM_MNT
-cp --verbose -rf $ISO_DIR/boot/ $SYSTEM_MNT
-mv --verbose $SYSTEM_MNT/boot/EFI/ $SYSTEM_MNT
+print_step "[7/10] Copying huronOS system data"
+cp --verbose -rf "$ISO_DIR/huronOS/" "$SYSTEM_MNT"
+cp --verbose -rf "$ISO_DIR/boot/" "$SYSTEM_MNT"
+cp --verbose -rf "$TMP_SERVER_CONFIG" "$SYSTEM_MNT/huronOS/data/configs/sync-server.conf"
+mv --verbose "$SYSTEM_MNT/boot/EFI/" "$SYSTEM_MNT"
 
 
-print_step "[7/9] Cleaning device buffers"
+print_step "[8/10] Cleaning device buffers"
 sync &
 SYNC_PID=$!
 while ps -p $SYNC_PID > /dev/null 2>&1; do
@@ -157,7 +164,7 @@ done
 echo
 
 ## Configure the bootloader
-print_step "[8/9] Making device bootable"
+print_step "[9/10] Making device bootable"
 sed "s|system.uuid=UUID|system.uuid=$SYSTEM_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
 sed "s|event.uuid=UUID|event.uuid=$EVENT_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
 sed "s|contest.uuid=UUID|contest.uuid=$CONTEST_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
@@ -167,7 +174,7 @@ $SYSTEM_MNT/boot/extlinux.x64 --install $SYSTEM_MNT/boot/
 ## Configure root password and other things
 
 ## Unmount fylesystems
-print_step "[9/9] Unmounting device"
+print_step "[10/10] Unmounting device"
 umount $SYSTEM_MNT
 rm -rf /tmp/$$/
 

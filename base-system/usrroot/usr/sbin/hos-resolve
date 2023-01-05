@@ -1,0 +1,37 @@
+#!/bin/bash
+
+#	hos-resolve.sh
+#	This tool parses the domain names provided on the directives file
+#	an writes a file with only IP addresses or
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
+#
+#	Authors:
+#		Enya Quetzalli <equetzal@huronos.org>
+
+# shellcheck source=/dev/null
+. /usr/lib/hos/enviroment.sh
+
+##Get all the domains/directions/urls
+magic(){
+	local AUX_DIR AUX_FILE SECTION
+	AUX_DIR="/tmp/magic-$$-d"
+	AUX_FILE="$AUX_DIR/aux"
+	SECTION="Always"
+
+	mkdir -p "$AUX_DIR"
+
+	echo "https://directives.huronos.org/directives.hdf" >> "$AUX_FILE"
+	hos-dvar --variable-name Wallpaper --section "$SECTION" >> "$AUX_FILE"
+
+
+	cat "$AUX_FILE"
+
+}
+
+
+magic;
