@@ -21,7 +21,7 @@ PACKAGES="apparmor budgie-desktop budgie-countdown-applet budgie-extras-daemon d
 
 ## Install
 apt update
-apt install --yes --no-install-recommends "$PACKAGES"
+apt install --yes --no-install-recommends $PACKAGES
 
 ## Delete debian lightdm configs
 rm -rf /usr/share/lightdm/*
