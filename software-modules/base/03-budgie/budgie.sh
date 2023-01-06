@@ -17,11 +17,12 @@
 
 set -xe
 
-PACKAGES="apparmor budgie-desktop budgie-countdown-applet budgie-extras-daemon dconf-cli eog gnome-calculator gnome-calendar gnome-terminal gnome-themes-extra libdrm-intel1 libgl1-mesa-dri libglib2.0-bin libglu1-mesa lightdm moka-icon-theme nautilus nautilus-extension-gnome-terminal okular plank x11-utils xdg-user-dirs xinit xinput xserver-xorg xserver-xorg-input-mouse xserver-xorg-input-synaptics xserver-xorg-video-amdgpu xserver-xorg-video-ati xserver-xorg-video-intel xserver-xorg-video-nvidia xserver-xorg-video-radeon xserver-xorg-video-vesa xterm"
+PACKAGES="apparmor budgie-desktop budgie-countdown-applet budgie-extras-daemon dconf-cli eog gnome-calculator gnome-calendar gnome-terminal gnome-themes-extra libdrm-intel1 libgl1-mesa-dri libglib2.0-bin libglu1-mesa lightdm moka-icon-theme nautilus nautilus-extension-gnome-terminal okular plank x11-utils xdg-user-dirs xinit xinput xserver-xorg xserver-xorg-input-all xserver-xorg-video-amdgpu xserver-xorg-video-ati xserver-xorg-video-intel xserver-xorg-video-nvidia xserver-xorg-video-radeon xserver-xorg-video-vesa xterm"
 
 ## Install
 apt update
-apt install --yes --no-install-recommends "$PACKAGES"
+# shellcheck disable=SC2086
+apt install --yes --no-install-recommends $PACKAGES
 
 ## Delete debian lightdm configs
 rm -rf /usr/share/lightdm/*
@@ -113,7 +114,7 @@ chown -R contestant:contestant /home/contestant/
 ## Activate services
 #cp -f files/lightdm.service /usr/lib/systemd/system/
 systemctl enable lightdm.service
-systemctl enable hsync.service
+#systemctl enable hsync.service
 systemctl enable hsync.timer
 
 ## Deactivate udisks service

@@ -90,6 +90,7 @@ system_has_persistece_enabled(){
 }
 
 state_clock_sync(){
+	ntpdate pool.ntp.org || true
 	STATE_IS_CLOCK_SYNC="$(timedatectl show | grep NTPSynchronized | cut -d= -f2)"
 }
 
