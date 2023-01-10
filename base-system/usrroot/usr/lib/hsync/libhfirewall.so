@@ -128,7 +128,7 @@ firewall_filter_ipv4(){
 	## Allow resolved ips on the directives file
 	for IP in $ALLOW_IPS; do
 		## Start ip filtering
-		iptables -A INPUT -p tcp -m multiport --sport 80,443,8080 -s $IP state --state ESTABLISHED,RELATED -j ACCEPT
+		iptables -A INPUT -p tcp -m multiport --sport 80,443,8080 -s $IP -m state --state ESTABLISHED,RELATED -j ACCEPT
 	done
 
 	return 0
