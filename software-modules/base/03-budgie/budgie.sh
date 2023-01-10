@@ -75,7 +75,7 @@ cp files/directories/* /usr/share/desktop-directories/
 rfkill unblock bluetooth
 
 ## Set .desktop launchers
-mkdir -p /tmp/save/ 
+mkdir -p /tmp/save/
 cp files/nano.svg /usr/share/icons/hicolor/scalable/apps/
 cp /usr/share/applications/gnome-*-panel.desktop /tmp/save/
 cp /usr/share/applications/budgie-*.desktop /tmp/save/
@@ -112,9 +112,13 @@ mkdir -p /home/contestant/.config/JetBrains
 chown -R contestant:contestant /home/contestant/
 
 ## Activate services
-#cp -f files/lightdm.service /usr/lib/systemd/system/
+rm -f "/usr/lib/systemd/system/lightdm.service"
+cp -f "files/lightdm.service" "/lib/systemd/system/lightdm.service"
+
+chmod 0644 "/lib/systemd/system/lightdm.service"
+
+systemctl daemon-reload
 systemctl enable lightdm.service
-#systemctl enable hsync.service
 systemctl enable hsync.timer
 
 ## Deactivate udisks service
