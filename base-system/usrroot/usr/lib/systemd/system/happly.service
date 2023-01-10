@@ -1,6 +1,7 @@
 [Unit]
 Description=huronOS sync service
-Requires=network.target
+Wants=NetworkManager.service
+After=NetworkManager.service
 After=hsync.service
 
 [Service]
