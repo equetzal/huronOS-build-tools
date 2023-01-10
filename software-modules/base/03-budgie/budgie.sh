@@ -121,6 +121,9 @@ systemctl enable hsync.timer
 systemctl mask udisks2.service
 rm /usr/lib/udev/rules.d/*udisks2*.rules
 
+## Set default resolution for VGA unknown displays
+cp -f "files/10-unknown.conf" "/usr/share/X11/xorg.conf.d/10-unknown.conf"
+
 echo "Please run setup-desktop.sh on each user will have the contestant user interface"
 sleep 10
 
