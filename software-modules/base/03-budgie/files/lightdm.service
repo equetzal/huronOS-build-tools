@@ -1,8 +1,8 @@
 [Unit]
 Description=Light Display Manager
 Documentation=man:lightdm(1)
-Wants=NetworkManager.service
-After=NetworkManager.service
+Wants=connman.service
+After=connman.service
 After=systemd-user-sessions.service
 
 [Service]

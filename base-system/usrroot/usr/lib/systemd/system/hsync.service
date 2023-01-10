@@ -1,7 +1,7 @@
 [Unit]
 Description=huronOS sync service
-Wants=NetworkManager.service
-After=NetworkManager.service
+Wants=connman.service
+After=connman.service
 
 [Service]
 User=root

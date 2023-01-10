@@ -121,8 +121,11 @@ systemctl daemon-reload
 systemctl enable lightdm.service
 systemctl enable hsync.timer
 
-## Deactivate udisks service
-systemctl mask udisks2.service
+## Deactivate unwanted services
+systemctl mask udisks2.service # Will be managed by hmount
+systemctl mask NetworkManager.service # Already managed with connman, and we don't want to depend on GUI
+systemctl mask NetworkManager-dispatcher.service
+systemctl mask NetworkManager-wait-online.service
 rm /usr/lib/udev/rules.d/*udisks2*.rules
 
 echo "Please run setup-desktop.sh on each user will have the contestant user interface"
