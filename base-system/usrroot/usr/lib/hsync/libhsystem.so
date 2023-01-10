@@ -79,7 +79,6 @@ apply_demo_if_on(){
 		## If demo file is here, services were manually started
 		else
 			return 0
-	
 		fi
 	fi
 }
@@ -90,8 +89,12 @@ system_has_persistece_enabled(){
 }
 
 state_clock_sync(){
-	ntpdate pool.ntp.org || true
 	STATE_IS_CLOCK_SYNC="$(timedatectl show | grep NTPSynchronized | cut -d= -f2)"
+	if [ "$STATE_IS_CLOCK_SYNC" = "no" ]; then
+		if ntpdate -t 2 pool.ntp.org; then
+			STATE_IS_CLOCK_SYNC="$(timedatectl show | grep NTPSynchronized | cut -d= -f2)"
+		fi
+	fi
 }
 
 state_hsync_execution_time(){
