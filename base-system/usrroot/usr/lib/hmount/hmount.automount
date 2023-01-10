@@ -22,6 +22,13 @@ set -x
 
 PATH=$PATH:/usr/bin:/usr/sbin:/bin:/sbin
 
+## Get the huronos.flags cmdline value for a given key
+# $1 = key to search value of
+# Eg. $1="ip", "ip=1.1.1.1" -> "1.1.1.1"
+cmdline_value(){
+   	cat /proc/cmdline | sed "s/.*huronos.flags=(\(.*\)).*/\1/" | sed -ne "/.*$1=\([^;]*\).*/!d;s//\1/p"
+}
+
 BAS="$(basename "$DEVNAME")"
 LABEL="$(echo $ID_FS_LABEL | sed 's%-%_%g')"
 UNIT="media-$LABEL.mount"
@@ -30,8 +37,13 @@ TARGET="/etc/systemd/system/$UNIT"
 OPTIONS="rw,sync,nosuid,dev,noexec,user,users,noauto,relatime"
 OWNER="uid=1000"
 
+TMP_SYSTEM_UUID="$(cmdline_value system.uuid)"
+TMP_EVENT_UUID="$(cmdline_value event.uuid)"
+TMP_CONTEST_UUID="$(cmdline_value contest.uuid)"
+HOS_DRIVES="$(blkid | grep -E "$TMP_SYSTEM_UUID|$TMP_EVENT_UUID|$TMP_CONTEST_UUID" | cut -d: -f1 | cut -d/ -f3 | tr '\n' '|')"
+
 ## Avoid mounting huronOS-usb partitions
-if [[ "$BAS" =~ ^sda[1-9]*|^sdb[1-9]* ]]; then
+if echo "$BAS" | grep -E "${HOS_DRIVES}popo"; then
 	echo "Skipping the mount of $DEVNAME";
 	exit
 fi
@@ -52,7 +64,7 @@ if [ "$ACTION" = "add" -o "$ACTION" = "change" ]; then
 	## Unit should not exists
 	if [ ! -r "$TARGET" ]; then
 		if [ "$ID_FS_TYPE" != "" -a "$(cat /proc/filesystems | grep "$ID_FS_TYPE")" != "" ]; then
-			
+
 			## If the file system es FAT32 (pretty common), use OWNER as FAT32 is not POSIX compatible
 			if [ "$ID_FS_TYPE" = "vfat" ]; then
 				OPTIONS="${OPTIONS},${OWNER}"
