@@ -17,7 +17,7 @@
 
 set -xe
 
-PACKAGES="apparmor budgie-desktop budgie-countdown-applet budgie-extras-daemon dconf-cli eog gnome-calculator gnome-calendar gnome-terminal gnome-themes-extra libdrm-intel1 libgl1-mesa-dri libglib2.0-bin libglu1-mesa lightdm moka-icon-theme nautilus nautilus-extension-gnome-terminal okular plank x11-utils xdg-user-dirs xinit xinput xserver-xorg xserver-xorg-input-all xserver-xorg-video-amdgpu xserver-xorg-video-ati xserver-xorg-video-intel xserver-xorg-video-nvidia xserver-xorg-video-radeon xserver-xorg-video-vesa xterm"
+PACKAGES="apparmor budgie-desktop budgie-countdown-applet budgie-extras-daemon dconf-cli eog gnome-calculator gnome-calendar gnome-terminal gnome-themes-extra libdrm-intel1 libgl1-mesa-dri libglib2.0-bin libglu1-mesa lightdm moka-icon-theme nautilus nautilus-extension-gnome-terminal okular plank x11-xserver-utils x11-utils xdg-user-dirs xinit xinput xserver-xorg xserver-xorg-input-all xserver-xorg-video-amdgpu xserver-xorg-video-ati xserver-xorg-video-intel xserver-xorg-video-nvidia xserver-xorg-video-radeon xserver-xorg-video-vesa xterm"
 
 ## Install
 apt update
@@ -75,7 +75,7 @@ cp files/directories/* /usr/share/desktop-directories/
 rfkill unblock bluetooth
 
 ## Set .desktop launchers
-mkdir -p /tmp/save/ 
+mkdir -p /tmp/save/
 cp files/nano.svg /usr/share/icons/hicolor/scalable/apps/
 cp /usr/share/applications/gnome-*-panel.desktop /tmp/save/
 cp /usr/share/applications/budgie-*.desktop /tmp/save/
@@ -112,13 +112,20 @@ mkdir -p /home/contestant/.config/JetBrains
 chown -R contestant:contestant /home/contestant/
 
 ## Activate services
-#cp -f files/lightdm.service /usr/lib/systemd/system/
+rm -f "/usr/lib/systemd/system/lightdm.service"
+cp -f "files/lightdm.service" "/lib/systemd/system/lightdm.service"
+
+chmod 0644 "/lib/systemd/system/lightdm.service"
+
+systemctl daemon-reload
 systemctl enable lightdm.service
-#systemctl enable hsync.service
 systemctl enable hsync.timer
 
-## Deactivate udisks service
-systemctl mask udisks2.service
+## Deactivate unwanted services
+systemctl mask udisks2.service # Will be managed by hmount
+systemctl mask NetworkManager.service # Already managed with connman, and we don't want to depend on GUI
+systemctl mask NetworkManager-dispatcher.service
+systemctl mask NetworkManager-wait-online.service
 rm /usr/lib/udev/rules.d/*udisks2*.rules
 
 echo "Please run setup-desktop.sh on each user will have the contestant user interface"

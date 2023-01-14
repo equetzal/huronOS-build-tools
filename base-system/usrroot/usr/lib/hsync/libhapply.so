@@ -262,15 +262,17 @@ set_hmount_rules(){
 	ALLOW_USB_STORAGE="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "AllowUsbStorage")"
 
 	if [ "$ALLOW_USB_STORAGE" = "true" ]; then
-		sed "s/ShouldMount=.*/ShouldMount=true/g" -i /etc/hmount/rule
-		chmod 640 /etc/hmount/rule
+		hos-usb --enable
 	else
 		## Change the rule
-		sed "s/ShouldMount=.*/ShouldMount=false/g" -i /etc/hmount/rule
-		chmod 640 /etc/hmount/rule
+		hos-usb --disable
 
 		## For each device mounted, kill all processes that are using the mount point, then umount
-		MOUNT_POINTS=$(cat /proc/mounts | grep -E '/dev/sd([c-z]|[a-z][a-z])[1-9][0-9]*' | awk '{ print $2 }')
+		TMP_SYSTEM_UUID="$(cmdline_value system.uuid)"
+		TMP_EVENT_UUID="$(cmdline_value event.uuid)"
+		TMP_CONTEST_UUID="$(cmdline_value contest.uuid)"
+		REGEX="$(blkid | grep -v -E "$TMP_SYSTEM_UUID|$TMP_EVENT_UUID|$TMP_CONTEST_UUID" | cut -d: -f1 | tr '\n' '|')"
+		MOUNT_POINTS="$(cat /proc/mounts | grep -E "${REGEX}popo" | grep -E '/dev/sd([a-z]|[a-z][a-z])' | awk '{ print $1 }')"
 		for MNT in $MOUNT_POINTS; do
 			#force_umount $MNT
 			if fuser -k -m "$MNT" || true; then
