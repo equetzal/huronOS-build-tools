@@ -1,0 +1,14 @@
+[Unit]
+Description=Light Display Manager
+Documentation=man:lightdm(1)
+Wants=connman.service
+After=connman.service
+After=systemd-user-sessions.service
+
+[Service]
+ExecStart=/usr/sbin/lightdm
+Restart=always
+BusName=org.freedesktop.DisplayManager
+
+[Install]
+Alias=display-manager.service

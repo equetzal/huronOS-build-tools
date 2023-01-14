@@ -60,8 +60,8 @@ chmod 640 /etc/hmount/rule
 chmod 644 /usr/lib/udev/rules.d/80-huronOS-mount.rules
 chmod 740 /usr/lib/hmount/hmount.automount
 chmod 760 /usr/lib/hsync/*
-chmod 660 /usr/lib/systemd/system/hsync*
-chmod 660 /usr/lib/systemd/system/happly*
+chmod 0644 /usr/lib/systemd/system/hsync*
+chmod 0644 /usr/lib/systemd/system/happly*
 chmod 760 /usr/sbin/auls
 chmod 760 /usr/sbin/hmm
 chmod 760 /usr/sbin/hos-*
