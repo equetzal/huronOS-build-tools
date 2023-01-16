@@ -214,6 +214,9 @@ prepare_perch(){
 	rm -rf "${DIR:?}"/* 2>/dev/null || true
 	rm -rf "${DIR:?}"/.* 2>/dev/null || true
 
+	## Clean /tmp directory to avoid users preserving files between modes
+	rm -rf /tmp/* || true
+
 	## By doing this, all the files created under this directories will be saved on usrchanges/
 	# Also, because all the modules/ are mounted between syschanges/ on the low, and usrchanges/ on the top
 	# the files modified or edited by the software modules will be copied up to the bottom-up writtable branch

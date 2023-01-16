@@ -886,6 +886,7 @@ fstab_create(){
 	echo sysfs /sys sysfs defaults 0 0 >> $FSTAB
 	echo devpts /dev/pts devpts gid=5,mode=620 0 0 >> $FSTAB
 	echo tmpfs /dev/shm tmpfs defaults 0 0 >> $FSTAB
+	echo tmpfs /tmp tmpfs mode=1777,nosuid,nodev 0 0 >> $FSTAB
 	echo >> $FSTAB
 	echo "# hmount devices" >> $FSTAB
 }
