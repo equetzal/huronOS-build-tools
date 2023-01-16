@@ -882,11 +882,11 @@ fstab_create(){
 	FSTAB="$UNION/etc/fstab"
 
 	echo aufs / aufs defaults 0 0 > $FSTAB
+	echo tmpfs /tmp tmpfs mode=1777,nosuid,nodev 0 0 >> $FSTAB
 	echo proc /proc proc defaults 0 0 >> $FSTAB
 	echo sysfs /sys sysfs defaults 0 0 >> $FSTAB
 	echo devpts /dev/pts devpts gid=5,mode=620 0 0 >> $FSTAB
 	echo tmpfs /dev/shm tmpfs defaults 0 0 >> $FSTAB
-	echo tmpfs /tmp tmpfs mode=1777,nosuid,nodev 0 0 >> $FSTAB
 	echo >> $FSTAB
 	echo "# hmount devices" >> $FSTAB
 }
