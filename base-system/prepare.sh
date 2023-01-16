@@ -43,6 +43,11 @@ fi
 
 rm -rf /usr/share/wallpapers/
 
+## Disable lid suspend
+sed -i 's/#HandleLidSwitch=.*/HandleLidSwitch=ignore/g' /etc/systemd/logind.conf
+sed -i 's/#HandleLidSwitchExternalPower=.*/HandleLidSwitchExternalPower=ignore/g' /etc/systemd/logind.conf
+sed -i 's/#HandleLidSwitchDocked=.*/HandleLidSwitchDocked=ignore/g' /etc/systemd/logind.conf
+
 # Create symlinks according to https://wiki.debian.org/Derivatives/Guidelines
 ln -sf /etc/dpkg/origins/huronos /etc/dpkg/origins/default
 ln -sf /usr/lib/os-release /etc/os-release
