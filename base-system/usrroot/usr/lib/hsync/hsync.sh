@@ -2,7 +2,7 @@
 
 #	hsync.sh (huronOS Directives Syncronizer)
 #	This script is executed by the hsync.service and the happly.service
-#	to maintain the system configurations, persistence disks, firewall, 
+#	to maintain the system configurations, persistence disks, firewall,
 #	software and directives syncronized with the huronOS directives server.
 #	When executed by:
 #		hsync.service, the --routine-sync flag will be present.
@@ -10,16 +10,16 @@
 #			and directives might not be applied if the directives file has
 #			not changed yet.
 #		happly.service, the --scheduled-apply flag will be present.
-#			This means that the directives needs to be applied now and 
+#			This means that the directives needs to be applied now and
 #			set the system state to the one stipulated on the directives.
-#	This script, uses another own-created bash libraries for it's 
+#	This script, uses another own-created bash libraries for it's
 #	execution and they are necesary to correctly execute this driver script.
 #
 #	Copyright (C) 2022, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2
-#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
