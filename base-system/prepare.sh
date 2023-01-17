@@ -41,7 +41,9 @@ if [ "$DEVELOPER" = "true" ]; then
 	pushd devroot && cp --parents -afr * / && popd
 fi
 
+## Remove unwanted files/dirs
 rm -rf /usr/share/wallpapers/
+rm -f /var/lib/systemd/random-seed
 
 ## Disable lid suspend
 sed -i 's/#HandleLidSwitch=.*/HandleLidSwitch=ignore/g' /etc/systemd/logind.conf
