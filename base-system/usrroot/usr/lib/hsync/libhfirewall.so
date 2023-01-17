@@ -17,6 +17,7 @@
 enable_network_interfaces(){
 	declare INTERFACES="$(ifconfig -a | grep -E "^.*: " | cut -d: -f1 | grep -v lo)"
 
+	rfkill unblock all
 	for INTERF in $INTERFACES; do
 		ifconfig $INTERF up
 	done
