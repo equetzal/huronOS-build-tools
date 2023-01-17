@@ -89,12 +89,16 @@ system_has_persistece_enabled(){
 }
 
 state_clock_sync(){
-	STATE_IS_CLOCK_SYNC="$(timedatectl show | grep NTPSynchronized | cut -d= -f2)"
 	if [ "$STATE_IS_CLOCK_SYNC" = "no" ]; then
-		if ntpdate -t 2 pool.ntp.org; then
-			STATE_IS_CLOCK_SYNC="$(timedatectl show | grep NTPSynchronized | cut -d= -f2)"
+		ntpdate -t 2 pool.ntp.org
+		STATE_IS_CLOCK_SYNC="$(timedatectl show | grep NTPSynchronized | cut -d= -f2)"
+		if [ "$STATE_IS_CLOCK_SYNC" = "yes" ]; then
+			HAS_CLOCK_CHANGED_SINCE_LAST_SYNC="yes"
+			log "System clock has changed"
+			return 0 #success
 		fi
 	fi
+	STATE_IS_CLOCK_SYNC="$(timedatectl show | grep NTPSynchronized | cut -d= -f2)"
 }
 
 state_hsync_execution_time(){

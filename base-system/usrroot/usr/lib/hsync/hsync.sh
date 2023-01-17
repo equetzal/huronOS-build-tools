@@ -71,6 +71,7 @@ readonly BACKUP_DIR=$USRCHANGES/$BACKUP_DIR_NAME
 	declare EXECUTION_IS_SCHEDULED_APPLY
 	declare EXECUTION_IS_ROUTINE
 	declare EXECUTION_NEXT_SCHEDULED_APPLY_TIME
+	declare HAS_CLOCK_CHANGED_SINCE_LAST_SYNC
 
 	# STATE preffix is the current state that the system have.
 	declare STATE_IS_CLOCK_SYNC
@@ -165,6 +166,9 @@ main(){
 		update_directives
 		apply_directives_to_system
 	elif is_execution_scheduled_apply; then
+		apply_directives_to_system
+	elif [ "$HAS_CLOCK_CHANGED_SINCE_LAST_SYNC" = "yes" ]; then
+		log "Re-apply directives due to system clock change"
 		apply_directives_to_system
 	fi
 
