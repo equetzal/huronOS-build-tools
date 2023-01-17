@@ -41,7 +41,7 @@ log_aufs_branches(){
 }
 
 log_journal_to_disk(){
-	local BOOT_ID, BOOT_TIMESTAMP, LOG_FILE
+	local BOOT_ID BOOT_TIMESTAMP LOG_FILE
 	BOOT_ID="$(journalctl --list-boots | tail -n 1 | awk '{print $2}')"
 	BOOT_TIMESTAMP="$(journalctl --list-boots | tail -n 1 | awk '{printf "%s-%s\n", $4,$5}' | sed 's/:/h-/1' | sed 's/:/m-/1')s"
 	LOG_FILE="$LOGS_DIR/UTC-$BOOT_TIMESTAMP-bootID-$BOOT_ID.log"
