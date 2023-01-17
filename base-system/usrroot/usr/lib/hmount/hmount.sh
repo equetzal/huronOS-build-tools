@@ -63,10 +63,12 @@ if [ "$ACTION" = "add" -o "$ACTION" = "change" ]; then
 
 	## Unit should not exists
 	if [ ! -r "$TARGET" ]; then
-		if [ "$ID_FS_TYPE" != "" -a "$(cat /proc/filesystems | grep "$ID_FS_TYPE")" != "" ]; then
+		if [ "$ID_FS_TYPE" != "" -a "$(cat /proc/filesystems | grep "$ID_FS_TYPE")" != "" ] || [ "$ID_FS_TYPE" = "ntfs" ]; then
 
 			## If the file system es FAT32 (pretty common), use OWNER as FAT32 is not POSIX compatible
 			if [ "$ID_FS_TYPE" = "vfat" ]; then
+				OPTIONS="${OPTIONS},${OWNER}"
+			elif [ "$ID_FS_TYPE" = "ntfs" ]; then
 				OPTIONS="${OPTIONS},${OWNER}"
 			fi
 
