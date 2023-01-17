@@ -23,7 +23,7 @@ apply_directives_to_system(){
 
 	## Only change the persistence disk if clock is in sync so that we're sure that
 	#  is time to change the disk.
-	if system_has_just_booted && [ "$STATE_IS_CLOCK_SYNC" = "no" ]; then
+	if [ "$STATE_IS_CLOCK_SYNC" = "yes" ]; then
 		## Change the persistent partition
 		apply_persistence_mode
 	fi
