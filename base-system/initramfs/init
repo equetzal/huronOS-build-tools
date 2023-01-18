@@ -94,6 +94,9 @@ readonly UNION=$MEMORY/union
 
 ## Print init process to user
 header "huronOS Init process <https://huronos.org/>"
+
+echo "huronOS build number $(cat /os-release | grep BUILD_ID | cut -d= -f2)"
+
 echo "Creating target filesystem"
 
 ## Mount the virtual filesystems
