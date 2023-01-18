@@ -285,7 +285,7 @@ init_union(){
 	# Set first branch as rw, it will set the / filesystem as rw
 	# otherwise, the resulting filesystem would be ro and chroot will not be possible.
 	# Option xino is set on root /, user will never see this file as it is hidden.
-	# Option udba is set to notify to avoid AUFS having problems if -by some reason-
+	# Option udba is set to reval to avoid AUFS having problems if -by some reason-
 	# someone edited the AUFS branches during the live system.
 	# Option cpup is set to bottom-up so that any already existing file that is
 	# edited is only copied to syschanges/ instead of usrchanges/, this will mantain
@@ -295,7 +295,7 @@ init_union(){
 	# it will be required to create some dirs on the usrchanges/ branch to ensure that
 	# files created by the contestant user reside on usrchanges/ and not over syschanges/
 	# and loose persistence feature.
-	mount -t aufs -o xino=/.xino,trunc_xino,udba=notify,cpup=bu,create=tdp,br="$SYSCHANGES"=rw aufs "$UNION"
+	mount -t aufs -o xino=/.xino,trunc_xino,udba=reval,cpup=bu,create=tdp,br="$SYSCHANGES"=rw aufs "$UNION"
 	## usrchanges/ needs to be mounted after chroot
 }
 

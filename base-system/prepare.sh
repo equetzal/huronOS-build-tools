@@ -17,7 +17,7 @@
 set -xe
 
 # Install destiny build packages
-INST_PACKAGES="acpi-support-base acpid alsa-utils at bzip2 curl dbus-broker dnsutils dosfstools file hdparm htop kexec-tools less lsof lzma man ntfs-3g ntpdate oomd parted pm-utils powermgmt-base psmisc rfkill sdparm speedtest-cli squashfs-tools systemd-timesyncd usb-modeswitch wget wireless-tools wpasupplicant xz-utils"
+INST_PACKAGES="acpi-support-base acpid alsa-utils at bzip2 curl dbus-broker dnsutils dosfstools file hdparm htop iptables kexec-tools less lsof lzma man ntfs-3g ntpdate oomd parted pm-utils powermgmt-base psmisc rfkill sdparm speedtest-cli squashfs-tools systemd-timesyncd usb-modeswitch wget wireless-tools wpasupplicant xz-utils"
 DEV_PACKAGES="gddrescue genisoimage gpart netcat smartmontools unzip zip"
 REM_PACKAGES="debconf-i18n dvd+rw-tools dnsmasq installation-report mc mdadm rsync ssh vim-common vim-tiny virt-what grub-common grub-pc-bin grub-pc-bin grub2-common"
 
@@ -69,7 +69,7 @@ ln -sf /usr/lib/hsync/hsync.sh /usr/lib/hsync/happly.sh
 chmod 640 /etc/fstab
 chmod 640 /etc/hmount/rule
 chmod 644 /usr/lib/udev/rules.d/80-huronOS-mount.rules
-chmod 740 /usr/lib/hmount/hmount.automount
+chmod 740 /usr/lib/hmount/hmount.sh
 chmod 760 /usr/lib/hsync/*
 chmod 0644 /usr/lib/systemd/system/hsync*
 chmod 0644 /usr/lib/systemd/system/happly*

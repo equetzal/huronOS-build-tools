@@ -239,7 +239,7 @@ save_changes(){
 
 	mkdir -p "$DIR"
 	cp -rf --verbose "$ORIGIN"/* "$DIR"/
-	chown contestant:contestant "$DIR"
+	chown contestant:contestant -R "$DIR"
 }
 
 start_always_mode(){
