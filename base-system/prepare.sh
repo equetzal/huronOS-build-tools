@@ -17,7 +17,7 @@
 set -xe
 
 # Install destiny build packages
-INST_PACKAGES="acpi-support-base acpid alsa-utils at bc bzip2 curl dbus-broker dnsutils dosfstools file hdparm htop iptables kexec-tools less lsof lzma man ntfs-3g ntpdate oomd parted pm-utils powermgmt-base psmisc rfkill sdparm speedtest-cli squashfs-tools systemd-timesyncd usb-modeswitch wget wireless-tools wpasupplicant xz-utils"
+INST_PACKAGES="acpi-support-base acpid alsa-utils at bc bzip2 connman curl dbus-broker dnsutils dosfstools file firmware-linux hdparm htop iptables kexec-tools less lsof lzma man ntfs-3g ntpdate oomd parted pm-utils powermgmt-base psmisc rfkill sdparm speedtest-cli squashfs-tools systemd-timesyncd traceroute usb-modeswitch wget wireless-tools wpasupplicant xz-utils"
 DEV_PACKAGES="gddrescue genisoimage gpart netcat smartmontools unzip zip"
 REM_PACKAGES="debconf-i18n dvd+rw-tools dnsmasq installation-report mc mdadm rsync ssh vim-common vim-tiny virt-what grub-common grub-pc-bin grub-pc-bin grub2-common"
 
@@ -41,9 +41,10 @@ if [ "$DEVELOPER" = "true" ]; then
 	pushd devroot && cp --parents -afr * / && popd
 fi
 
-## Activate systemd-networkd and do not use any other network manager
-systemctl enable systemd-networkd
-systemctl enable systemd-resolved
+## Deactivate systemd-networkd
+systemctl mask systemd-networkd
+systemctl mask systemd-resolved
+systemctl enable connman
 
 ## Remove unwanted files/dirs
 rm -rf /usr/share/wallpapers/

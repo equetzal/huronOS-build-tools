@@ -1,6 +1,6 @@
 [Unit]
 Description=huronOS sync service
-Wants=systemd-networkd.service
+Wants=connman.service
 Wants=systemd-timedated.service
 After=hsync.service
 
