@@ -15,11 +15,11 @@
 #		Abraham Omar   <aomm@huronos.org>
 
 enable_network_interfaces(){
-	declare INTERFACES="$(ifconfig -a | grep -E "^.*: " | cut -d: -f1 | grep -v lo)"
+	declare INTERFACES="$(ip -o -br link)"
 
 	rfkill unblock all
 	for INTERF in $INTERFACES; do
-		ifconfig $INTERF up
+		ip link set $INTERF up
 	done
 
 	return 0 # success

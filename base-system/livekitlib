@@ -448,6 +448,8 @@ init_network_ip()
    echo "* Setting up network" >&2
 
    if [ "$IP" != "" ]; then
+
+	## TODO: Move to ip instead of ifconfig
       # set IP address as given by boot paramter
       echo "$IP" | while IFS=":" read CLIENT SERVER GW MASK; do
          ifconfig $ETH "$CLIENT" netmask "$MASK"
