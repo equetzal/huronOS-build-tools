@@ -63,12 +63,12 @@ firewall_filter_ipv4(){
 	declare ALLOW_IPS=""
 
 
-	DIRECTIVES_IP="$(dig +short $DIRECTIVES_DOMAIN A)"
+	DIRECTIVES_IP="$(dig +time=3 +tries=1 +short $DIRECTIVES_DOMAIN A)"
 	if ! [[ "$DIRECTIVES_IP" =~ ^\;\;.* ]]; then
 		ALLOW_IPS+=" $DIRECTIVES_IP"
 	fi
 
-	WALLPAPER_IP="$(dig +short $WALLPAPER_DOMAIN A)"
+	WALLPAPER_IP="$(dig +time=3 +tries=1 +short $WALLPAPER_DOMAIN A)"
 	if ! [[ "$WALLPAPER_IP" =~ ^\;\;.* ]]; then
 		ALLOW_IPS+=" $WALLPAPER_IP"
 	fi
@@ -76,7 +76,7 @@ firewall_filter_ipv4(){
 	if [ "$ALLOWED_WEBSITES" != "any" ];then
 		for WEBSITE in $ALLOWED_WEBSITES; do
 			DOMAIN="$(echo $WEBSITE | get_domain)"
-			IP="$(dig +short $DOMAIN A)"
+			IP="$(dig +time=3 +tries=1 +short $DOMAIN A)"
 			if ! [[ "$IP" =~ ^\;\;.* ]]; then
 				ALLOW_IPS+=" $IP"
 			fi
