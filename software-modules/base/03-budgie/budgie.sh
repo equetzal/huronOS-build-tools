@@ -17,7 +17,7 @@
 
 set -xe
 
-PACKAGES="apparmor budgie-desktop budgie-countdown-applet budgie-extras-daemon dconf-cli eog gnome-calculator gnome-calendar gnome-terminal gnome-themes-extra libdrm-intel1 libgl1-mesa-dri libglib2.0-bin libglu1-mesa lightdm moka-icon-theme nautilus nautilus-extension-gnome-terminal okular plank x11-xserver-utils x11-utils xdg-user-dirs xinit xinput xserver-xorg xserver-xorg-input-all xserver-xorg-video-amdgpu xserver-xorg-video-ati xserver-xorg-video-intel xserver-xorg-video-nvidia xserver-xorg-video-radeon xserver-xorg-video-vesa xterm"
+PACKAGES="apparmor budgie-desktop budgie-desktop-view budgie-countdown-applet budgie-extras-daemon dconf-cli eog gnome-calculator gnome-calendar gnome-terminal gnome-themes-extra libdrm-intel1 libgl1-mesa-dri libglib2.0-bin libglu1-mesa lightdm moka-icon-theme nautilus nautilus-extension-gnome-terminal okular plank x11-xserver-utils x11-utils xdg-user-dirs xinit xinput xserver-xorg xserver-xorg-input-all xserver-xorg-video-amdgpu xserver-xorg-video-ati xserver-xorg-video-intel xserver-xorg-video-nvidia xserver-xorg-video-radeon xserver-xorg-video-vesa xterm"
 
 ## Install
 apt update
@@ -97,7 +97,7 @@ sed -i 's/Name=.*/Name=Budgie/g' /usr/share/xsessions/lightdm-xsession.desktop
 sed -i 's/Exec=.*/Exec=budgie-desktop/g' /usr/share/xsessions/lightdm-xsession.desktop
 echo "DesktopNames=Budgie;GNOME" >> /usr/share/xsessions/lightdm-xsession-desktop
 
-## Set default dconf settings 
+## Set default dconf settings
 cp files/huronOS-plank-config.dump /tmp/huronOS-plank-config.dump
 chmod 777 /tmp/huronOS-plank-config.dump
 mkdir -p /etc/dconf/
@@ -117,16 +117,23 @@ cp -f "files/lightdm.service" "/lib/systemd/system/lightdm.service"
 
 chmod 0644 "/lib/systemd/system/lightdm.service"
 
-systemctl daemon-reload
-systemctl enable lightdm.service
-systemctl enable hsync.timer
-
 ## Deactivate unwanted services
+systemctl stop udisks2.service # Will be managed by hmount
+systemctl stop NetworkManager.service # Already managed with connman, and we don't want to depend on GUI
+systemctl stop NetworkManager-dispatcher.service
+systemctl stop NetworkManager-wait-online.service
 systemctl mask udisks2.service # Will be managed by hmount
 systemctl mask NetworkManager.service # Already managed with connman, and we don't want to depend on GUI
 systemctl mask NetworkManager-dispatcher.service
 systemctl mask NetworkManager-wait-online.service
 rm /usr/lib/udev/rules.d/*udisks2*.rules
+
+systemctl daemon-reload
+systemctl enable lightdm.service
+systemctl enable hsync.timer
+
+## Set default resolution for VGA unknown displays
+cp -f "files/10-unknown.conf" "/usr/share/X11/xorg.conf.d/10-unknown.conf"
 
 echo "Please run setup-desktop.sh on each user will have the contestant user interface"
 sleep 10

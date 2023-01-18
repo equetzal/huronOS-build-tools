@@ -448,6 +448,8 @@ init_network_ip()
    echo "* Setting up network" >&2
 
    if [ "$IP" != "" ]; then
+
+	## TODO: Move to ip instead of ifconfig
       # set IP address as given by boot paramter
       echo "$IP" | while IFS=":" read CLIENT SERVER GW MASK; do
          ifconfig $ETH "$CLIENT" netmask "$MASK"
@@ -882,6 +884,7 @@ fstab_create(){
 	FSTAB="$UNION/etc/fstab"
 
 	echo aufs / aufs defaults 0 0 > $FSTAB
+	echo tmpfs /tmp tmpfs mode=1777,nosuid,nodev 0 0 >> $FSTAB
 	echo proc /proc proc defaults 0 0 >> $FSTAB
 	echo sysfs /sys sysfs defaults 0 0 >> $FSTAB
 	echo devpts /dev/pts devpts gid=5,mode=620 0 0 >> $FSTAB
