@@ -117,16 +117,19 @@ cp -f "files/lightdm.service" "/lib/systemd/system/lightdm.service"
 
 chmod 0644 "/lib/systemd/system/lightdm.service"
 
-systemctl daemon-reload
-systemctl enable lightdm.service
-systemctl enable hsync.timer
-
 ## Deactivate unwanted services
+systemctl stop udisks2.service # Will be managed by hmount
+systemctl stop NetworkManager.service # Already managed with connman, and we don't want to depend on GUI
+systemctl stop NetworkManager-dispatcher.service
+systemctl stop NetworkManager-wait-online.service
 systemctl mask udisks2.service # Will be managed by hmount
 systemctl mask NetworkManager.service # Already managed with connman, and we don't want to depend on GUI
 systemctl mask NetworkManager-dispatcher.service
 systemctl mask NetworkManager-wait-online.service
 rm /usr/lib/udev/rules.d/*udisks2*.rules
+
+## Set default resolution for VGA unknown displays
+cp -f "files/10-unknown.conf" "/usr/share/X11/xorg.conf.d/10-unknown.conf"
 
 echo "Please run setup-desktop.sh on each user will have the contestant user interface"
 sleep 10
