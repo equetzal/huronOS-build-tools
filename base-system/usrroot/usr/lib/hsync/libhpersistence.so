@@ -195,6 +195,8 @@ release_branch(){
 	local BRANCH
 	BRANCH="$1"
 
+	chown -R contestant:contestant "$BRANCH"/home/contestant
+
 	mount -t aufs -o remount,prepend:"$BRANCH" aufs /
 	su contestant -c '(xdg-user-dirs-update --force)'
 	systemctl start lightdm
@@ -253,6 +255,7 @@ start_always_mode(){
 
 	## Clean the disk, create base directory tree to allow AUFS copyup policy
 	prepare_perch "$USRCHANGES"
+	chown -R contestant:contestant "$USRCHANGES"/home/contestant
 
 	# At this moment, usrchanges/ branch is not used by anyone so we should be able to
 	# prepend it without needing to restart any graphical service.
@@ -281,6 +284,7 @@ restore_always_mode(){
 
 	## Bind the mount to the usrchanges as an intermediate layer.
 	mount --bind "$EVENT_MNT" "$USRCHANGES"
+	chown -R contestant:contestant "$USRCHANGES"/home/contestant
 
 	# At this moment, usrchanges/ branch is not used by anyone so we should be able to
 	# prepend it without needing to restart any graphical service.
@@ -308,6 +312,7 @@ restore_event_mode(){
 
 	## Bind the mount to the usrchanges as an intermediate layer.
 	mount --bind "$EVENT_MNT" "$USRCHANGES"
+	chown -R contestant:contestant "$USRCHANGES"/home/contestant
 
 	# At this moment, usrchanges/ branch is not used by anyone so we should be able to
 	# prepend it without needing to restart any graphical service.
@@ -335,6 +340,7 @@ restore_contest_mode(){
 
 	## Bind the mount to the usrchanges as an intermediate layer.
 	mount --bind "$CONTEST_MNT" "$USRCHANGES"
+	chown -R contestant:contestant "$USRCHANGES"/home/contestant
 
 	# At this moment, usrchanges/ branch is not used by anyone so we should be able to
 	# prepend it without needing to restart any graphical service.
