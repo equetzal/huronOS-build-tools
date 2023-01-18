@@ -15,7 +15,7 @@
 #		Abraham Omar   <aomm@huronos.org>
 
 enable_network_interfaces(){
-	declare INTERFACES="$(ip -o -br link)"
+	declare INTERFACES="$(ip -o -br link | awk '{print $1}' | tr '\n' ' ')"
 
 	rfkill unblock all
 	for INTERF in $INTERFACES; do
