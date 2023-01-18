@@ -2,13 +2,13 @@
 
 #	initramfs_create
 #	This script allows the creation of the initramfs that will allow
-#	huronOS to create it's final file system and boot on the OS. 
+#	huronOS to create it's final file system and boot on the OS.
 #
 #	Copyright (C) 2022, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2
-#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Taken from the Slax project, authored by:
 #		Tomas M <http://www.slax.org/>
@@ -160,6 +160,7 @@ chmod a+x $INITRAMFS/shutdown
 ln -s ../init $INITRAMFS/bin/init
 cp ../livekitlib $INITRAMFS/lib/
 cp ../config $INITRAMFS/lib/
+cp /usr/lib/os-release $INITRAMFS/
 
 cd $INITRAMFS
 find . -print | cpio -o -H newc 2>/dev/null | xz -f --extreme --check=crc32 >$INITRAMFS.img
