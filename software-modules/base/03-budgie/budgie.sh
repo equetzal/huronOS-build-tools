@@ -97,7 +97,7 @@ sed -i 's/Name=.*/Name=Budgie/g' /usr/share/xsessions/lightdm-xsession.desktop
 sed -i 's/Exec=.*/Exec=budgie-desktop/g' /usr/share/xsessions/lightdm-xsession.desktop
 echo "DesktopNames=Budgie;GNOME" >> /usr/share/xsessions/lightdm-xsession-desktop
 
-## Set default dconf settings 
+## Set default dconf settings
 cp files/huronOS-plank-config.dump /tmp/huronOS-plank-config.dump
 chmod 777 /tmp/huronOS-plank-config.dump
 mkdir -p /etc/dconf/
@@ -127,6 +127,10 @@ systemctl mask NetworkManager.service # Already managed with connman, and we don
 systemctl mask NetworkManager-dispatcher.service
 systemctl mask NetworkManager-wait-online.service
 rm /usr/lib/udev/rules.d/*udisks2*.rules
+
+systemctl daemon-reload
+systemctl enable lightdm.service
+systemctl enable hsync.timer
 
 ## Set default resolution for VGA unknown displays
 cp -f "files/10-unknown.conf" "/usr/share/X11/xorg.conf.d/10-unknown.conf"
