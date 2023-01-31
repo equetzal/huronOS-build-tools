@@ -17,8 +17,8 @@
 set -xe
 
 # Install destiny build packages
-INST_PACKAGES="acpi-support-base acpid alsa-utils at bzip2 connman curl dbus-broker dnsutils dosfstools file hdparm htop kexec-tools less lsof lzma man ntfs-3g ntpdate parted pm-utils powermgmt-base psmisc rfkill sdparm speedtest-cli squashfs-tools usb-modeswitch wget wireless-tools wpasupplicant xz-utils"
-DEV_PACKAGES="gddrescue genisoimage gpart net-tools netcat smartmontools unzip zip"
+INST_PACKAGES="acpi-support-base acpid alsa-utils at bc bzip2 connman curl dbus-broker dnsutils dosfstools file firmware-linux hdparm htop iptables kexec-tools less lsof lzma man ntfs-3g ntpdate oomd parted pm-utils powermgmt-base psmisc rfkill sdparm speedtest-cli squashfs-tools systemd-timesyncd traceroute usb-modeswitch wget wireless-tools wpasupplicant xz-utils"
+DEV_PACKAGES="gddrescue genisoimage gpart netcat smartmontools unzip zip"
 REM_PACKAGES="debconf-i18n dvd+rw-tools dnsmasq installation-report mc mdadm rsync ssh vim-common vim-tiny virt-what grub-common grub-pc-bin grub-pc-bin grub2-common"
 
 apt update
@@ -41,7 +41,19 @@ if [ "$DEVELOPER" = "true" ]; then
 	pushd devroot && cp --parents -afr * / && popd
 fi
 
+## Deactivate systemd-networkd
+systemctl mask systemd-networkd
+systemctl mask systemd-resolved
+systemctl enable connman
+
+## Remove unwanted files/dirs
 rm -rf /usr/share/wallpapers/
+rm -f /var/lib/systemd/random-seed
+
+## Disable lid suspend
+sed -i 's/#HandleLidSwitch=.*/HandleLidSwitch=ignore/g' /etc/systemd/logind.conf
+sed -i 's/#HandleLidSwitchExternalPower=.*/HandleLidSwitchExternalPower=ignore/g' /etc/systemd/logind.conf
+sed -i 's/#HandleLidSwitchDocked=.*/HandleLidSwitchDocked=ignore/g' /etc/systemd/logind.conf
 
 # Create symlinks according to https://wiki.debian.org/Derivatives/Guidelines
 ln -sf /etc/dpkg/origins/huronos /etc/dpkg/origins/default
@@ -58,10 +70,10 @@ ln -sf /usr/lib/hsync/hsync.sh /usr/lib/hsync/happly.sh
 chmod 640 /etc/fstab
 chmod 640 /etc/hmount/rule
 chmod 644 /usr/lib/udev/rules.d/80-huronOS-mount.rules
-chmod 740 /usr/lib/hmount/hmount.automount
+chmod 740 /usr/lib/hmount/hmount.sh
 chmod 760 /usr/lib/hsync/*
-chmod 660 /usr/lib/systemd/system/hsync*
-chmod 660 /usr/lib/systemd/system/happly*
+chmod 0644 /usr/lib/systemd/system/hsync*
+chmod 0644 /usr/lib/systemd/system/happly*
 chmod 760 /usr/sbin/auls
 chmod 760 /usr/sbin/hmm
 chmod 760 /usr/sbin/hos-*

@@ -1,5 +1,7 @@
 [Unit]
 Description=Timer to download new huronOS directives
+Wants=connman.service
+Wants=systemd-timedated.service
 Before=lightdm.service
 
 [Timer]

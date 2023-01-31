@@ -79,7 +79,6 @@ apply_demo_if_on(){
 		## If demo file is here, services were manually started
 		else
 			return 0
-	
 		fi
 	fi
 }
@@ -90,7 +89,15 @@ system_has_persistece_enabled(){
 }
 
 state_clock_sync(){
-	ntpdate pool.ntp.org || true
+	if [ "$STATE_IS_CLOCK_SYNC" = "no" ]; then
+		ntpdate -t 2 pool.ntp.org
+		STATE_IS_CLOCK_SYNC="$(timedatectl show | grep NTPSynchronized | cut -d= -f2)"
+		if [ "$STATE_IS_CLOCK_SYNC" = "yes" ]; then
+			HAS_CLOCK_CHANGED_SINCE_LAST_SYNC="yes"
+			log "System clock has changed"
+			return 0 #success
+		fi
+	fi
 	STATE_IS_CLOCK_SYNC="$(timedatectl show | grep NTPSynchronized | cut -d= -f2)"
 }
 
@@ -181,7 +188,12 @@ is_running_mode_same_as_new_mode(){
 	declare NEW_MODE_START=$(date --date="$NEW_MODE_START_TIME_UTC" +'%s')
 	declare NEW_MODE_END=$(date --date="$NEW_MODE_END_TIME_UTC" +'%s')
 	declare CURRENT_TIME=$(date +'%s')
-	
+
+	# at is only executed on sec 00, and this line is usually reached between 3-15 seconds
+	# after the original scheduled execution time, so we can add a 30 seconds tolerance
+	# to consider the contest extension just in the past scheduled point
+	STATE_MODE_END=$((STATE_MODE_END+30))
+
 	# Asumtions will be the following:
 	#	-If the current mode end time was before (lower equal) than CURRENT_TIME, then they
 	# 	 will be considered different event.

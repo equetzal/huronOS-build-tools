@@ -21,8 +21,12 @@ apply_directives_to_system(){
 	## Select the mode that will be applied
 	select_mode_to_apply
 
-	## Change the persistent partition
-	apply_persistence_mode
+	## Only change the persistence disk if clock is in sync so that we're sure that
+	#  is time to change the disk.
+	if [ "$STATE_IS_CLOCK_SYNC" = "yes" ]; then
+		## Change the persistent partition
+		apply_persistence_mode
+	fi
 	apply_global_directives
 	apply_specific_directives
 
@@ -109,6 +113,17 @@ update_next_apply() {
 }
 
 select_mode_to_apply(){
+
+	## If the clock is not in sync, hardware clock might not match directives time
+	#  so we need to wait until clock is sync to re-apply directives. In the meanwhile,
+	#  we should asume that state stills the same as last time shutdown.
+	if system_has_just_booted && [ "$STATE_IS_CLOCK_SYNC" = "no" ]; then
+		NEW_MODE="$STATE_MODE"
+		NEW_MODE_START_TIME_UTC="$STATE_MODE_START_TIME_UTC"
+		NEW_MODE_END_TIME_UTC="$STATE_MODE_END_TIME_UTC"
+		log "Skipping mode selection due to unsync system clock."
+		return 0 #Success
+	fi
 
 	# Modes have priority set to -Always < Event < Contest-, so
 	# we will assume mode is Always unless a higher priority mode
@@ -262,15 +277,17 @@ set_hmount_rules(){
 	ALLOW_USB_STORAGE="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "AllowUsbStorage")"
 
 	if [ "$ALLOW_USB_STORAGE" = "true" ]; then
-		sed "s/ShouldMount=.*/ShouldMount=true/g" -i /etc/hmount/rule
-		chmod 640 /etc/hmount/rule
+		hos-usb --enable
 	else
 		## Change the rule
-		sed "s/ShouldMount=.*/ShouldMount=false/g" -i /etc/hmount/rule
-		chmod 640 /etc/hmount/rule
+		hos-usb --disable
 
 		## For each device mounted, kill all processes that are using the mount point, then umount
-		MOUNT_POINTS=$(cat /proc/mounts | grep -E '/dev/sd([c-z]|[a-z][a-z])[1-9][0-9]*' | awk '{ print $2 }')
+		TMP_SYSTEM_UUID="$(cmdline_value system.uuid)"
+		TMP_EVENT_UUID="$(cmdline_value event.uuid)"
+		TMP_CONTEST_UUID="$(cmdline_value contest.uuid)"
+		REGEX="$(blkid | grep -v -E "$TMP_SYSTEM_UUID|$TMP_EVENT_UUID|$TMP_CONTEST_UUID" | cut -d: -f1 | tr '\n' '|')"
+		MOUNT_POINTS="$(cat /proc/mounts | grep -E "${REGEX}popo" | grep -E '/dev/sd([a-z]|[a-z][a-z])' | awk '{ print $1 }')"
 		for MNT in $MOUNT_POINTS; do
 			#force_umount $MNT
 			if fuser -k -m "$MNT" || true; then
