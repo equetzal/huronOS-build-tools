@@ -11,7 +11,7 @@ huronOS is a GNU / Linux distribution fully designed for [competitive programmin
 - Training camps
 - Training competitions
 
-Because of this, huronOS is a very **specific-purpose** distro, and it is designed to work synchronously with a [directives server](https://github.com/equetzal/huronOS-directives-server) which specify it's behavior at any given moment. So it is **not** recommended to use huronOS as a personal use distro, but for machines that will be used by competitive programming contestants.
+Because of this, huronOS is a very **specific-purpose** distro, and it is designed to work synchronously with a [directives file]() which specify it's behavior at any given moment. So it is **not** recommended to use huronOS as a personal use distro, but for machines that will be used by competitive programming contestants.
 
 For this reason, huronOS is only able to be installed on **USB drives**. This is by design, so that you can run the system without modifying any hardware provided by schools or universities _(Usually competitive programming is run and supported by educational institutions, and it's competitors usually need to rely on their school provided hardware, which they're not allowed to modify)_
 
@@ -33,7 +33,7 @@ This was made on purpose, so that huronOS core is immutable even if persistence 
 
 ### Building huronOS
 
-To build huronOS, please check the [build](./build.md) file for detailed instructions.
+To build huronOS, please check the [build](./doc/build/build.md) file for detailed instructions.
 
 ### Releases
 
@@ -63,9 +63,14 @@ So, if you want to use huronOS, it's recommended to keep looking for newer versi
 
 ### Contribute
 
-Please, try the distro by yourself, learn how the directives work, and ply with them. Testing and trying features will help the distro become more stable.
+Please, try the distro by yourself, learn how the directives work, and play with them and the system. Testing and trying features will help the distro become more stable.
 If you want new features please open an issue.
 
 To contribute with source code, you can submit pull request, and if you want to become a main developer, please contact me directly.
 
-Other ways to help, is via donations, with you can do using Github Sponsors, clicking on the sponsor button on this repository.
+Other ways to help, is via donations, with you can do using Github Sponsors, clicking on the sponsor button on this repository. Donations helps to pay the huronOS servers, the testing computers, USB memories to play with and helps to boost the development.
+
+### Special Thanks
+
+- Thanks to Alvaro for all the donations to the project.
+- Thanks to Daniel Cerna for all the testing being performed on this tools.
