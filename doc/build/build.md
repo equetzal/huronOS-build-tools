@@ -10,18 +10,21 @@ To build huronOS you'll be needing to follow several steps:
 
 3. **Compile the huronOS kernel** <br>
    huronOS needs a kernel that supports [AUFS](https://aufs.sf.net), so we need to replace the kernel. To do so, run as **root**:
-   `bash
-	cd kernel-builder/
-	chmod +x build-kernel.sh
-	./build-kernel.sh
-	`
+
+   ```bash
+   cd kernel-builder/
+   chmod +x build-kernel.sh
+   ./build-kernel.sh
+   ```
 
 4. **Build the base system** <br>
    To build the base system (`01-base.hsl`) and the huronOS bootable skeleton filesystem, run as **root**:<br>
-   `bash
-	chmod +x base-system/base.sh
-	./base-system/base.sh
-	`
+
+   ```bash
+   chmod +x base-system/base.sh
+   ./base-system/base.sh
+   ```
+
    After this, a directory and two files on `/tmp` will be created: `gen_iso_image.sh`, `gen_zip_image.sh` and `*-huronOS-data/` directory. If your `/tmp` directory is volatile, please move this files to another newly created directory on `/` (e.g. `/iso`).
 
 5. **Build the other system layers**
@@ -53,13 +56,17 @@ To build huronOS you'll be needing to follow several steps:
      reboot
      ```
    - `04-shared-libs.hsl`:
-     `bash
-	cd software-modules/base/04-shared-libs/
-	chmod +x shared-libs.sh
-	./shared-libs.sh
-	reboot
-	`
-     After this, return to the debian installation and plug the USB drive, then copy the modules on the `*-data-huronOS/base/` directory.
+     ```bash
+     cd software-modules/base/04-shared-libs/
+     chmod +x shared-libs.sh
+     ./shared-libs.sh
+     reboot
+     ```
+
+   ```
+    After this, return to the debian installation and plug the USB drive, then copy the modules on the `*-data-huronOS/base/` directory.
+
+   ```
 
 6. **Pack the current software**
 
@@ -70,7 +77,7 @@ To build huronOS you'll be needing to follow several steps:
    - [`programming`](./software-modules/programming/)
    - [`tools`](./software-modules/tools/)
 
-   After finishing with all the software, copy the resultant `.hsm` files to the `*-data-huronOS/huronOS/software/` directory following the structure of the tree.
+   After finishing with all the software, copy the resultant `.hsm` files to the `*-data-huronOS/huronOS/software/` directory following the structure of the tree. Remember to reboot each time you create an `.hsm` module to prevent accumulating changes.
 
 7. **Create the ISO**
 

@@ -133,7 +133,7 @@ systemctl enable lightdm.service
 systemctl enable hsync.timer
 
 ## Set default resolution for VGA unknown displays
-cp -f "files/10-unknown.conf" "/usr/share/X11/xorg.conf.d/10-unknown.conf"
+#cp -f "files/10-unknown.conf" "/usr/share/X11/xorg.conf.d/10-unknown.conf"
 
 echo "Please run setup-desktop.sh on each user will have the contestant user interface"
 sleep 10
