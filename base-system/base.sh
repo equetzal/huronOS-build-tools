@@ -102,23 +102,22 @@ done
 # shellcheck disable=SC2086
 mksquashfs $COREFS "$LIVEKITDATA/$LIVEKITNAME/base/01-core.$BEXT" -comp xz -b 1024K -always-use-fragments -keep-as-directory || exit
 
-cd "$LIVEKITDATA"
-ARCH=$(uname -m)
+ARCH="amd64"
 TARGET=/tmp
 
-# cat "$CWD/bootinfo.txt" | fgrep -v "#" | sed -r "s/mylinux/$LIVEKITNAME/" | sed -r "s/\$/\x0D/" > readme.txt
-
-echo cd "$LIVEKITDATA" '&&' "$MKISOFS" -o "$TARGET/$LIVEKITNAME-$ARCH.iso" -v -J -R -D -A "$LIVEKITNAME" -V "$LIVEKITNAME" \
--no-emul-boot -boot-info-table -boot-load-size 4 \
--b boot/isolinux.bin -c boot/isolinux.boot . \
-> $TARGET/gen_"$LIVEKITNAME"_iso.sh
-chmod o+x $TARGET/gen_"$LIVEKITNAME"_iso.sh
+## Create iso maker util
+ISO_MAKER="$TARGET/make-iso.sh"
+cp tools/make-iso/make-iso.sh "$ISO_MAKER"
+sed "s|ISO_DIR=.*|ISO_DIR=\"$LIVEKITDATA\"|g" -i "$ISO_MAKER"
+sed "s|ISO_TOOL=.*|ISO_TOOL=\"$MKISOFS\"|g" -i "$ISO_MAKER"
+sed "s|ISO_OUTPUT=.*|ISO_OUTPUT=\"$TARGET/$LIVEKITNAME-b$BUILD_YEAR.$BUILD_VERSION-$ARCH.iso\"|g" -i "$ISO_MAKER"
+chmod o+x "$ISO_MAKER"
 
 # shellcheck source=/dev/null
 . "$CHANGEDIR/restore.sh"
 
 echo "-----------------------------"
 echo "Finished. Find your result in $LIVEKITDATA"
-echo "To build ISO, run: $TARGET/gen_${LIVEKITNAME}_iso.sh"
+echo "To build ISO, run: $ISO_MAKER"
 cd "$CWD"
 
