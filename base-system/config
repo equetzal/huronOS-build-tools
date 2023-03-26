@@ -14,7 +14,7 @@
 # and you're done.
 LIVEKITNAME="huronOS"
 
-BUILD_VERSION="0017"
+BUILD_VERSION="0022"
 
 # Kernel file, will be copied to your Live Kit
 # Your kernel must support aufs and squashfs. Debian Jessie's kernel is ready

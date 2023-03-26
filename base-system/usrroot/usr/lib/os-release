@@ -1,12 +1,12 @@
 NAME=huronOS
 ID=huronos
 ID_LIKE=debian
-PRETTY_NAME="huronOS Alpha 0.1 (Queue)"
+PRETTY_NAME="huronOS Alpha 0.2 (Queue)"
 CPE_NAME="cpe:/o:escom:huronos:1"
-VERSION="Alpha 0.1 (Queue)"
-VERSION_ID=alpha-v0.1
+VERSION="Alpha 0.2 (Queue)"
+VERSION_ID=alpha-v0.2
 VERSION_CODENAME=queue
-BUILD_ID=2023.0021
+BUILD_ID=2023.0022
 HOME_URL="https://huronos.org/"
 DOCUMENTATION_URL="https://huronos.org/documentation/"
 ANSI_COLOR="1;37"
