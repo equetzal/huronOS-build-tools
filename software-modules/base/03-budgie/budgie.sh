@@ -133,6 +133,9 @@ systemctl mask NetworkManager-dispatcher.service
 systemctl mask NetworkManager-wait-online.service
 rm /usr/lib/udev/rules.d/*udisks2*.rules
 
+## Compile schemas to include connman-gtk
+glib-compile-schemas /usr/share/glib-2.0/schemas/
+
 systemctl daemon-reload
 systemctl enable lightdm.service
 systemctl enable hsync.timer
