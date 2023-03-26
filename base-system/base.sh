@@ -102,15 +102,21 @@ done
 # shellcheck disable=SC2086
 mksquashfs $COREFS "$LIVEKITDATA/$LIVEKITNAME/base/01-core.$BEXT" -comp xz -b 1024K -always-use-fragments -keep-as-directory || exit
 
+## Create iso maker util
 ARCH="amd64"
 TARGET=/tmp
-
-## Create iso maker util
 ISO_MAKER="$TARGET/make-iso.sh"
+EFI_DIR="./EFI"
+BOOT_DIR="./boot"
+HURONOS_DIR="./huronOS"
 cp tools/make-iso/make-iso.sh "$ISO_MAKER"
 sed "s|ISO_DIR=.*|ISO_DIR=\"$LIVEKITDATA\"|g" -i "$ISO_MAKER"
 sed "s|ISO_TOOL=.*|ISO_TOOL=\"$MKISOFS\"|g" -i "$ISO_MAKER"
 sed "s|ISO_OUTPUT=.*|ISO_OUTPUT=\"$TARGET/$LIVEKITNAME-b$BUILD_YEAR.$BUILD_VERSION-$ARCH.iso\"|g" -i "$ISO_MAKER"
+sed "s|EFI_DIR=.*|EFI_DIR=\"$EFI_DIR\"|g" -i "$ISO_MAKER"
+sed "s|BOOT_DIR=.*|BOOT_DIR=\"$BOOT_DIR\"|g" -i "$ISO_MAKER"
+sed "s|HURONOS_DIR=.*|HURONOS_DIR=\"$HURONOS_DIR\"|g" -i "$ISO_MAKER"
+
 chmod o+x "$ISO_MAKER"
 
 # shellcheck source=/dev/null
