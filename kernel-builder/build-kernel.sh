@@ -89,7 +89,12 @@ compile_kernel(){
 
 	## Compile the AUFS Tools
 	pushd $AUFS_TOOLS_REPOSITORY
+	mkdir -p ./fakeroot
 	make install
+	make install DESTDIR=./fakeroot
+	mkdir -p ./fakeroot/usr/sbin
+	mv ./fakeroot/sbin/* ./fakeroot/usr/sbin
+	rm -rf ./fakeroot/sbin
 	#make install_ulib
 	popd
 
@@ -104,6 +109,7 @@ save_kernel(){
 	mkdir -p $TMP/usr/include/linux
 	cp -ar /usr/lib/modules/$NAME $TMP/usr/lib/modules
 	cp -ar /usr/include/linux/* $TMP/usr/include/linux/
+	cp -ar "$AUFS_TOOLS_REPOSITORY/fakeroot/"* "$TMP/"
 	rm -f $TMP/usr/lib/modules/$NAME/{build,source}
 	mkdir -p $TMP/boot
 	cp linux/arch/x86/boot/bzImage $TMP/boot/vmlinuz-$NAME
@@ -129,7 +135,7 @@ restore_kernel(){
 	mkdir -p "$KERNEL_UNTAR_DIR"
 	cp "$KERNEL_SOURCE_TAR_FILE" "$KERNEL_TAR_FILE"
 	tar -xf "$KERNEL_TAR_FILE" -C "$KERNEL_UNTAR_DIR"
-	cp -rf "$KERNEL_UNTAR_DIR/"* /
+	cp -arf $KERNEL_UNTAR_DIR/* /
 
 	KERNEL_NAME="$(ls "$KERNEL_UNTAR_DIR/boot" | sed 's:vmlinuz-::g')"
 	update-initramfs -u -k "$KERNEL_NAME" -v
