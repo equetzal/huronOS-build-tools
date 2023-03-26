@@ -299,6 +299,9 @@ mask(){
 unmask(){
 	mv -f /usr/sbin/mount.aufs- /usr/sbin/mount.aufs
 	mv -f /usr/sbin/umount.aufs- /usr/sbin/umount.aufs
+
+	## Recompile gschemas after activating/deactivating software
+	glib-compile-schemas /usr/share/glib-2.0/schemas/
 	return
 }
 
