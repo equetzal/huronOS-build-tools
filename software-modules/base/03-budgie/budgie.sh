@@ -17,7 +17,7 @@
 
 set -xe
 
-PACKAGES="apparmor budgie-desktop budgie-desktop-view budgie-countdown-applet budgie-extras-daemon dconf-cli eog gnome-calculator gnome-calendar gnome-terminal gnome-themes-extra libdrm-intel1 libgl1-mesa-dri libglib2.0-bin libglu1-mesa lightdm moka-icon-theme nautilus nautilus-extension-gnome-terminal okular plank x11-xserver-utils x11-utils xdg-user-dirs xinit xinput xserver-xorg xserver-xorg-input-all xserver-xorg-video-amdgpu xserver-xorg-video-ati xserver-xorg-video-intel xserver-xorg-video-nvidia xserver-xorg-video-radeon xserver-xorg-video-vesa xterm"
+PACKAGES="apparmor budgie-desktop budgie-desktop-view budgie-countdown-applet budgie-extras-daemon conmman-ui dconf-cli eog gnome-calculator gnome-calendar gnome-terminal gnome-themes-extra libdrm-intel1 libgl1-mesa-dri libglib2.0-bin libglu1-mesa lightdm moka-icon-theme nautilus nautilus-extension-gnome-terminal okular plank x11-xserver-utils x11-utils xdg-user-dirs xinit xinput xserver-xorg xserver-xorg-input-all xserver-xorg-video-amdgpu xserver-xorg-video-ati xserver-xorg-video-intel xserver-xorg-video-nvidia xserver-xorg-video-radeon xserver-xorg-video-vesa xterm"
 
 ## Install
 apt update
@@ -87,6 +87,11 @@ rm /usr/share/applications/*.desktop -f
 cp files/applications/* /usr/share/applications/
 cp /tmp/save/* /usr/share/applications/
 rm -rf /tmp/save
+
+## Replace nm-applet with connman-gtk
+sed -i 's/Exec=.*$/Exec=connman-gtk --tray/g' /etc/xdg/autostart/budgie-desktop-nm-applet.desktop
+sed -i 's/TryExec=.*$/Exec=connman-gtk/g' /etc/xdg/autostart/budgie-desktop-nm-applet.desktop
+mv /etc/xdg/autostart/budgie-desktop-nm-applet.desktop /etc/xdg/autostart/budgie-desktop-connman-applet.desktop
 
 ## Add our own default mime apps
 rm -rf /usr/share/applications/gnome-mimeapps.list
