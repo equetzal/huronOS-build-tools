@@ -61,8 +61,10 @@ fi
 # create live kit filesystem (cpio archive)
 rm -Rf "$LIVEKITDATA"
 BOOT="$LIVEKITDATA"/boot
+EFI="$LIVEKITDATA"/EFI/Boot
 FILES="$LIVEKITDATA"/"$LIVEKITNAME"
 mkdir -p "$BOOT"
+mkdir -p "$EFI"
 mkdir -p "$FILES"/base
 mkdir -p "$FILES"/data
 mkdir -p "$FILES"/data/logs
@@ -80,14 +82,12 @@ if [ "$INITRAMFS" != "" ]; then
 fi
 
 # BIOS / MBR booting
-cp -r bootloader/* "$BOOT"
-cp "$VMLINUZ" "$BOOT"/ || exit
+cp -r bootloader/legacy/* "$BOOT"
+cp "$VMLINUZ" "$BOOT/" || exit
 
 # UEFI booting
-mkdir -p "$BOOT"/EFI/Boot
-cp bootloader/EFI/Boot/syslinux.efi "$BOOT"/EFI/Boot/bootx64.efi
-cp bootloader/EFI/Boot/{ldlinux.e64,menu.c32,libutil.c32,vesamenu.c32,libcom32.c32} "$BOOT"/EFI/Boot
-cp bootloader/syslinux.cfg "$BOOT"/EFI/Boot
+cp -rf bootloader/EFI/Boot/syslinux.efi "$EFI"/bootx64.efi
+cp -rf bootloader/EFI/Boot/* "$EFI"
 
 ## Copy installer
 cp tools/installer/install.sh "${LIVEKITDATA}/install.sh"

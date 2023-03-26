@@ -150,8 +150,8 @@ mount UUID=$SYSTEM_UUID $SYSTEM_MNT
 print_step "[7/10] Copying huronOS system data"
 cp --verbose -rf "$ISO_DIR/huronOS/" "$SYSTEM_MNT"
 cp --verbose -rf "$ISO_DIR/boot/" "$SYSTEM_MNT"
+cp --verbose -rf "$ISO_DIR/EFI/" "$SYSTEM_MNT"
 cp --verbose -rf "$TMP_SERVER_CONFIG" "$SYSTEM_MNT/huronOS/data/configs/sync-server.conf"
-mv --verbose "$SYSTEM_MNT/boot/EFI/" "$SYSTEM_MNT"
 
 
 print_step "[8/10] Cleaning device buffers"
