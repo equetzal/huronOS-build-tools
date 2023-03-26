@@ -114,16 +114,11 @@ echo cd "$LIVEKITDATA" '&&' "$MKISOFS" -o "$TARGET/$LIVEKITNAME-$ARCH.iso" -v -J
 > $TARGET/gen_"$LIVEKITNAME"_iso.sh
 chmod o+x $TARGET/gen_"$LIVEKITNAME"_iso.sh
 
-echo cd "$LIVEKITDATA" '&&' zip -0 -r "$TARGET/$LIVEKITNAME-$ARCH.zip" '*' \
-> $TARGET/gen_"$LIVEKITNAME"_zip.sh
-chmod o+x $TARGET/gen_"$LIVEKITNAME"_zip.sh
-
 # shellcheck source=/dev/null
 . "$CHANGEDIR/restore.sh"
 
 echo "-----------------------------"
 echo "Finished. Find your result in $LIVEKITDATA"
 echo "To build ISO, run: $TARGET/gen_${LIVEKITNAME}_iso.sh"
-echo "To build ZIP, run: $TARGET/gen_${LIVEKITNAME}_zip.sh"
 cd "$CWD"
 
