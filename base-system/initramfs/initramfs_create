@@ -16,10 +16,7 @@
 #	Modified and redistributed by the huronOS team:
 #		Enya Quetzalli <equetzal@huronos.org>
 
-
-. ../config
-
-INITRAMFS=/tmp/$LIVEKITNAME-initramfs-$$
+INITRAMFS=$HBT_LAB/initramfs
 
 # copy file to initramfs tree, including
 # all library dependencies (as shown by ldd)

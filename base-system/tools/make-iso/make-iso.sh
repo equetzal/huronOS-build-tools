@@ -1,13 +1,13 @@
 #!/bin/bash
 
-ISO_DIR=""
+ISO_DATA=""
 ISO_TOOL=""
 ISO_OUTPUT=""
 CHECKSUMS="./checksums"
 EFI_DIR=""
 BOOT_DIR=""
 HURONOS_DIR=""
-readonly ISO_DIR
+readonly ISO_DATA
 readonly ISO_TOOL
 readonly ISO_OUTPUT
 readonly CHECKSUMS
@@ -17,8 +17,8 @@ readonly HURONOS_DIR
 
 ## Move to ISO directory
 CURRENT_PATH="$(pwd)"
-echo "Moving to $ISO_DIR"
-cd "$ISO_DIR" || exit 1 # error
+echo "Moving to $ISO_DATA"
+cd "$ISO_DATA" || exit 1 # error
 
 ## Calculate checksums
 rm -rf "$CHECKSUMS"

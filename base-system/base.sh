@@ -19,15 +19,15 @@
 #		Enya Quetzalli <equetzal@huronos.org>
 #		Abraham Omar   <aomm@huronos.org>
 
-export PATH=.:./tools:../tools:/usr/sbin:/usr/bin:/sbin:/bin:/
 set -xe
+
+. "./config" || exit 1
 
 CHANGEDIR="$(dirname "$(readlink -f "$0")")"
 echo "Changing current directory to $CHANGEDIR"
 cd "$CHANGEDIR"
 CWD="$(pwd)"
 
-. ./config || exit 1
 . ./livekitlib || exit 1
 . ./prepare.sh || exit 1
 
@@ -59,10 +59,10 @@ if [ "$SKIPINITRFS" = "" ]; then
 fi
 
 # create live kit filesystem (cpio archive)
-rm -Rf "$LIVEKITDATA"
-BOOT="$LIVEKITDATA"/boot
-EFI="$LIVEKITDATA"/EFI/Boot
-FILES="$LIVEKITDATA"/"$LIVEKITNAME"
+rm -Rf "$ISO_DATA"
+BOOT="$ISO_DATA"/boot
+EFI="$ISO_DATA"/EFI/Boot
+FILES="$ISO_DATA"/"$LIVEKITNAME"
 mkdir -p "$BOOT"
 mkdir -p "$EFI"
 mkdir -p "$FILES"/base
@@ -90,8 +90,8 @@ cp -rf bootloader/EFI/Boot/syslinux.efi "$EFI"/bootx64.efi
 cp -rf bootloader/EFI/Boot/* "$EFI"
 
 ## Copy installer
-cp tools/installer/install.sh "${LIVEKITDATA}/install.sh"
-chmod o+x "${LIVEKITDATA}/install.sh"
+cp tools/installer/install.sh "${ISO_DATA}/install.sh"
+chmod o+x "${ISO_DATA}/install.sh"
 
 # create compressed 01-core.sb
 COREFS=""
@@ -101,19 +101,18 @@ for i in $MKMOD; do
    fi
 done
 # shellcheck disable=SC2086
-mksquashfs $COREFS "$LIVEKITDATA/$LIVEKITNAME/base/01-core.$BEXT" -comp xz -b 1024K -always-use-fragments -keep-as-directory || exit
+mksquashfs $COREFS "$ISO_DATA/$LIVEKITNAME/base/01-core.$BEXT" -comp xz -b 1024K -always-use-fragments -keep-as-directory || exit
 
 ## Create iso maker util
 ARCH="amd64"
-TARGET=/tmp
-ISO_MAKER="$TARGET/make-iso.sh"
+ISO_MAKER="$HBT_LAB/make-iso.sh"
 EFI_DIR="./EFI"
 BOOT_DIR="./boot"
 HURONOS_DIR="./huronOS"
 cp tools/make-iso/make-iso.sh "$ISO_MAKER"
-sed "s|ISO_DIR=.*|ISO_DIR=\"$LIVEKITDATA\"|g" -i "$ISO_MAKER"
+sed "s|ISO_DATA=.*|ISO_DATA=\"$ISO_DATA\"|g" -i "$ISO_MAKER"
 sed "s|ISO_TOOL=.*|ISO_TOOL=\"$MKISOFS\"|g" -i "$ISO_MAKER"
-sed "s|ISO_OUTPUT=.*|ISO_OUTPUT=\"$TARGET/$LIVEKITNAME-b$BUILD_YEAR.$BUILD_VERSION-$ARCH.iso\"|g" -i "$ISO_MAKER"
+sed "s|ISO_OUTPUT=.*|ISO_OUTPUT=\"$HBT_LAB/$LIVEKITNAME-b$BUILD_YEAR.$BUILD_VERSION-$ARCH.iso\"|g" -i "$ISO_MAKER"
 sed "s|EFI_DIR=.*|EFI_DIR=\"$EFI_DIR\"|g" -i "$ISO_MAKER"
 sed "s|BOOT_DIR=.*|BOOT_DIR=\"$BOOT_DIR\"|g" -i "$ISO_MAKER"
 sed "s|HURONOS_DIR=.*|HURONOS_DIR=\"$HURONOS_DIR\"|g" -i "$ISO_MAKER"
@@ -124,7 +123,7 @@ chmod o+x "$ISO_MAKER"
 . "$CHANGEDIR/restore.sh"
 
 echo "-----------------------------"
-echo "Finished. Find your result in $LIVEKITDATA"
+echo "Finished. Find your result in $ISO_DATA"
 echo "To build ISO, run: $ISO_MAKER"
 cd "$CWD"
 
