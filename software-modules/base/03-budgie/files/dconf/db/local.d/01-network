@@ -1,0 +1,3 @@
+[net/connman/gtk]
+launch-to-tray=true
+status-icon-enabled=true
