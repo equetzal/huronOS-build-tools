@@ -91,6 +91,7 @@ cp -rf bootloader/EFI/Boot/* "$EFI"
 
 ## Copy installer
 cp tools/installer/install.sh "${LIVEKITDATA}/install.sh"
+chmod o+x "${LIVEKITDATA}/install.sh"
 
 # create compressed 01-core.sb
 COREFS=""

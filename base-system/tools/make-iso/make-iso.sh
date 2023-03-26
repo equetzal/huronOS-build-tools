@@ -25,8 +25,13 @@ rm -rf "$CHECKSUMS"
 FILES_TO_CHECK="$(find "$EFI_DIR" -type f -print) $(find "$BOOT_DIR" -type f -print) $(find "$HURONOS_DIR" -type f -print)"
 for FILE in $FILES_TO_CHECK; do
 	echo "Calculating checksum: $FILE"
-	sha256sum "$FILE" >> "$CHECKSUMS"
+	sha256sum -b "$FILE" >> "$CHECKSUMS"
 done
+## Delete isolinux.boot and isolinux.bin due to mkisofs recalc
+## this binaries acording to ISO 9660 standard. This will make
+## checksum to always be different.
+sed '/.*isolinux.boot.*/d' -i "$CHECKSUMS"
+sed '/.*isolinux.bin.*/d' -i "$CHECKSUMS"
 
 ## Create ISO
 echo "Generating $ISO_OUTPUT"

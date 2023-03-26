@@ -151,6 +151,7 @@ print_step "[7/10] Copying huronOS system data"
 cp --verbose -rf "$ISO_DIR/huronOS/" "$SYSTEM_MNT"
 cp --verbose -rf "$ISO_DIR/boot/" "$SYSTEM_MNT"
 cp --verbose -rf "$ISO_DIR/EFI/" "$SYSTEM_MNT"
+cp --verbose -rf "$ISO_DIR/checksums" "$SYSTEM_MNT"
 cp --verbose -rf "$TMP_SERVER_CONFIG" "$SYSTEM_MNT/huronOS/data/configs/sync-server.conf"
 
 
@@ -163,18 +164,32 @@ while ps -p $SYNC_PID > /dev/null 2>&1; do
 done
 echo
 
+## Verify file checksums
+print_step "[9/11] Validating installation files"
+CURRENT_PATH="$(pwd)"
+cd "$SYSTEM_MNT" || exit 1 # error
+if ! sha256sum --check "./checksums"; then
+	echo "Error ocurred, installed files are corrupt. Please retry."
+	umount $SYSTEM_MNT
+	rm -rf /tmp/$$/
+	cd "$CURRENT_PATH" || exit 1 # erro
+	exit 1
+fi
+cd "$CURRENT_PATH" || exit 1 # error
+
+
 ## Configure the bootloader
-print_step "[9/10] Making device bootable"
+print_step "[10/11] Making device bootable"
 sed "s|system.uuid=UUID|system.uuid=$SYSTEM_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
 sed "s|event.uuid=UUID|event.uuid=$EVENT_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
 sed "s|contest.uuid=UUID|contest.uuid=$CONTEST_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
 dd if=boot/mbr.bin of="$TARGET" bs=440 count=1 conv=notrunc 2>/dev/null
 $SYSTEM_MNT/boot/extlinux.x64 --install $SYSTEM_MNT/boot/
 
-## Configure root password and other things
+## TODO: Configure root password and other things
 
 ## Unmount fylesystems
-print_step "[10/10] Unmounting device"
+print_step "[11/11] Unmounting device"
 umount $SYSTEM_MNT
 rm -rf /tmp/$$/
 
