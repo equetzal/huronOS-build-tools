@@ -13,12 +13,20 @@
 #	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
 
+## Variables
+export INSTALLER_LAB="/tmp/huronOS-install-$$"
+export SYSTEM_MNT="$INSTALLER_LAB/usb-syspart"
+export SERVER_CONFIG="$INSTALLER_LAB/sync-server.conf"
+export ISO_DIR=""
+export DIRECTIVES_FILE_URL=""
+
 # $1 = message to print
 print_step(){
 	echo -e "$(tput setab 2)$(tput bold)$1$(tput sgr0)"
 }
 
 print_step "Starting huronOS installation"
+mkdir -p "$INSTALLER_LAB"
 
 ## Save the directory where the script is running, it should match the ISO of huronOS
 ISO_DIR="$(dirname "$(readlink -f "$0")")"
@@ -26,9 +34,8 @@ print_step "[1/10] Locating huronOS image -> $ISO_DIR"
 
 ## Configure the remote directives file
 print_step "[2/10] Configuring directives server."
-TMP_SERVER_CONFIG="/tmp/$$-sync-server.conf"
 read -r -p "URL (http/s) of directives file to configure:" DIRECTIVES_FILE_URL
-echo -e "[Server]\nIP=\nDOMAIN=\nDIRECTIVES_ENDPOINT=\nSERVER_ROOM=\nDIRECTIVES_FILE_URL=$DIRECTIVES_FILE_URL\n" > "$TMP_SERVER_CONFIG"
+echo -e "[Server]\nIP=\nDOMAIN=\nDIRECTIVES_ENDPOINT=\nSERVER_ROOM=\nDIRECTIVES_FILE_URL=$DIRECTIVES_FILE_URL\n" > "$SERVER_CONFIG"
 
 ## Select the device we want to install huronOS to
 print_step "[3/10] Selecting removable device to install huronOS on"
@@ -142,7 +149,6 @@ echo "event.uuid=$EVENT_UUID"
 echo "contest.uuid=$CONTEST_UUID"
 
 ## Mount filesystems
-SYSTEM_MNT=/tmp/$$/SYS
 mkdir -p $SYSTEM_MNT
 mount UUID=$SYSTEM_UUID $SYSTEM_MNT
 
@@ -150,9 +156,9 @@ mount UUID=$SYSTEM_UUID $SYSTEM_MNT
 print_step "[7/10] Copying huronOS system data"
 cp --verbose -rf "$ISO_DIR/huronOS/" "$SYSTEM_MNT"
 cp --verbose -rf "$ISO_DIR/boot/" "$SYSTEM_MNT"
-cp --verbose -rf "$TMP_SERVER_CONFIG" "$SYSTEM_MNT/huronOS/data/configs/sync-server.conf"
-mv --verbose "$SYSTEM_MNT/boot/EFI/" "$SYSTEM_MNT"
-
+cp --verbose -rf "$ISO_DIR/EFI/" "$SYSTEM_MNT"
+cp --verbose -rf "$ISO_DIR/checksums" "$SYSTEM_MNT"
+cp --verbose -rf "$SERVER_CONFIG" "$SYSTEM_MNT/huronOS/data/configs/sync-server.conf"
 
 print_step "[8/10] Cleaning device buffers"
 sync &
@@ -163,19 +169,32 @@ while ps -p $SYNC_PID > /dev/null 2>&1; do
 done
 echo
 
+## Verify file checksums
+print_step "[9/11] Validating installation files"
+CURRENT_PATH="$(pwd)"
+cd "$SYSTEM_MNT" || exit 1 # error
+if ! sha256sum --check "./checksums"; then
+	echo "Error ocurred, installed files are corrupt. Please retry."
+	umount $SYSTEM_MNT
+	rm -rf /tmp/$$/
+	cd "$CURRENT_PATH" || exit 1 # erro
+	exit 1
+fi
+cd "$CURRENT_PATH" || exit 1 # error
+
+
 ## Configure the bootloader
-print_step "[9/10] Making device bootable"
+print_step "[10/11] Making device bootable"
 sed "s|system.uuid=UUID|system.uuid=$SYSTEM_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
 sed "s|event.uuid=UUID|event.uuid=$EVENT_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
 sed "s|contest.uuid=UUID|contest.uuid=$CONTEST_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
 dd if=boot/mbr.bin of="$TARGET" bs=440 count=1 conv=notrunc 2>/dev/null
 $SYSTEM_MNT/boot/extlinux.x64 --install $SYSTEM_MNT/boot/
 
-## Configure root password and other things
+## TODO: Configure root password and other things
 
 ## Unmount fylesystems
-print_step "[10/10] Unmounting device"
-umount $SYSTEM_MNT
-rm -rf /tmp/$$/
+print_step "[11/11] Unmounting device"
+umount $SYSTEM_MNT && rm -rf "$INSTALLER_LAB"
 
 print_step "Done!, you can remove your device now :)"
