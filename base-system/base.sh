@@ -19,15 +19,15 @@
 #		Enya Quetzalli <equetzal@huronos.org>
 #		Abraham Omar   <aomm@huronos.org>
 
-export PATH=.:./tools:../tools:/usr/sbin:/usr/bin:/sbin:/bin:/
 set -xe
+
+. "./config" || exit 1
 
 CHANGEDIR="$(dirname "$(readlink -f "$0")")"
 echo "Changing current directory to $CHANGEDIR"
 cd "$CHANGEDIR"
 CWD="$(pwd)"
 
-. ./config || exit 1
 . ./livekitlib || exit 1
 . ./prepare.sh || exit 1
 
@@ -59,10 +59,12 @@ if [ "$SKIPINITRFS" = "" ]; then
 fi
 
 # create live kit filesystem (cpio archive)
-rm -Rf "$LIVEKITDATA"
-BOOT="$LIVEKITDATA"/boot
-FILES="$LIVEKITDATA"/"$LIVEKITNAME"
+rm -Rf "$ISO_DATA"
+BOOT="$ISO_DATA"/boot
+EFI="$ISO_DATA"/EFI/Boot
+FILES="$ISO_DATA"/"$LIVEKITNAME"
 mkdir -p "$BOOT"
+mkdir -p "$EFI"
 mkdir -p "$FILES"/base
 mkdir -p "$FILES"/data
 mkdir -p "$FILES"/data/logs
@@ -80,17 +82,16 @@ if [ "$INITRAMFS" != "" ]; then
 fi
 
 # BIOS / MBR booting
-cp -r bootloader/* "$BOOT"
-cp "$VMLINUZ" "$BOOT"/ || exit
+cp -r bootloader/legacy/* "$BOOT"
+cp "$VMLINUZ" "$BOOT/" || exit
 
 # UEFI booting
-mkdir -p "$BOOT"/EFI/Boot
-cp bootloader/EFI/Boot/syslinux.efi "$BOOT"/EFI/Boot/bootx64.efi
-cp bootloader/EFI/Boot/{ldlinux.e64,menu.c32,libutil.c32,vesamenu.c32,libcom32.c32} "$BOOT"/EFI/Boot
-cp bootloader/syslinux.cfg "$BOOT"/EFI/Boot
+cp -rf bootloader/EFI/Boot/syslinux.efi "$EFI"/bootx64.efi
+cp -rf bootloader/EFI/Boot/* "$EFI"
 
 ## Copy installer
-cp tools/installer/install.sh "${LIVEKITDATA}/install.sh"
+cp tools/installer/install.sh "${ISO_DATA}/install.sh"
+chmod o+x "${ISO_DATA}/install.sh"
 
 # create compressed 01-core.sb
 COREFS=""
@@ -100,30 +101,29 @@ for i in $MKMOD; do
    fi
 done
 # shellcheck disable=SC2086
-mksquashfs $COREFS "$LIVEKITDATA/$LIVEKITNAME/base/01-core.$BEXT" -comp xz -b 1024K -always-use-fragments -keep-as-directory || exit
+mksquashfs $COREFS "$ISO_DATA/$LIVEKITNAME/base/01-core.$BEXT" -comp xz -b 1024K -always-use-fragments -keep-as-directory || exit
 
-cd "$LIVEKITDATA"
-ARCH=$(uname -m)
-TARGET=/tmp
+## Create iso maker util
+ARCH="amd64"
+ISO_MAKER="$HBT_LAB/make-iso.sh"
+EFI_DIR="./EFI"
+BOOT_DIR="./boot"
+HURONOS_DIR="./huronOS"
+cp tools/make-iso/make-iso.sh "$ISO_MAKER"
+sed "s|ISO_DATA=.*|ISO_DATA=\"$ISO_DATA\"|g" -i "$ISO_MAKER"
+sed "s|ISO_TOOL=.*|ISO_TOOL=\"$MKISOFS\"|g" -i "$ISO_MAKER"
+sed "s|ISO_OUTPUT=.*|ISO_OUTPUT=\"$HBT_LAB/$LIVEKITNAME-b$BUILD_YEAR.$BUILD_VERSION-$ARCH.iso\"|g" -i "$ISO_MAKER"
+sed "s|EFI_DIR=.*|EFI_DIR=\"$EFI_DIR\"|g" -i "$ISO_MAKER"
+sed "s|BOOT_DIR=.*|BOOT_DIR=\"$BOOT_DIR\"|g" -i "$ISO_MAKER"
+sed "s|HURONOS_DIR=.*|HURONOS_DIR=\"$HURONOS_DIR\"|g" -i "$ISO_MAKER"
 
-# cat "$CWD/bootinfo.txt" | fgrep -v "#" | sed -r "s/mylinux/$LIVEKITNAME/" | sed -r "s/\$/\x0D/" > readme.txt
-
-echo cd "$LIVEKITDATA" '&&' "$MKISOFS" -o "$TARGET/$LIVEKITNAME-$ARCH.iso" -v -J -R -D -A "$LIVEKITNAME" -V "$LIVEKITNAME" \
--no-emul-boot -boot-info-table -boot-load-size 4 \
--b boot/isolinux.bin -c boot/isolinux.boot . \
-> $TARGET/gen_"$LIVEKITNAME"_iso.sh
-chmod o+x $TARGET/gen_"$LIVEKITNAME"_iso.sh
-
-echo cd "$LIVEKITDATA" '&&' zip -0 -r "$TARGET/$LIVEKITNAME-$ARCH.zip" '*' \
-> $TARGET/gen_"$LIVEKITNAME"_zip.sh
-chmod o+x $TARGET/gen_"$LIVEKITNAME"_zip.sh
+chmod o+x "$ISO_MAKER"
 
 # shellcheck source=/dev/null
 . "$CHANGEDIR/restore.sh"
 
 echo "-----------------------------"
-echo "Finished. Find your result in $LIVEKITDATA"
-echo "To build ISO, run: $TARGET/gen_${LIVEKITNAME}_iso.sh"
-echo "To build ZIP, run: $TARGET/gen_${LIVEKITNAME}_zip.sh"
+echo "Finished. Find your result in $ISO_DATA"
+echo "To build ISO, run: $ISO_MAKER"
 cd "$CWD"
 

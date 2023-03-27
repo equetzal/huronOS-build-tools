@@ -23,8 +23,8 @@ apt update
 # shellcheck disable=SC2086
 apt install --yes --no-install-recommends $LIBS
 
-mkdir -p /usr/share/glib-2.0/schemas/
-cp gschemas.compiled /usr/share/glib-2.0/schemas/
+## Recompile gschemas
+glib-compile-schemas /usr/share/glib-2.0/schemas/
 
 savechanges /tmp/04-shared-libs.hsl
 cp /tmp/04-shared-libs.hsl /run/initramfs/memory/system/huronOS/base --verbose

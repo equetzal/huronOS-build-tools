@@ -17,7 +17,7 @@
 #		Enya Quetzalli <equetzal@huronos.org>
 
 # Set basic kernel data
-set -ex
+set -e
 export HTOOLS_KERNEL_DIR="$(pwd)"
 export KERNEL_VERSION=6.0.15
 export AUFS_REPOSITORY=aufs-standalone
@@ -45,10 +45,10 @@ patch_kernel(){
 	cp -ar ../$AUFS_REPOSITORY/Documentation .
 	cp -ar ../$AUFS_REPOSITORY/fs .
 	cp -a ../$AUFS_REPOSITORY/include/uapi/linux/aufs_type.h include/uapi/linux
-	patch -p1 < ../$AUFS_REPOSITORY/aufs6-standalone.patch
 	patch -p1 < ../$AUFS_REPOSITORY/aufs6-kbuild.patch
 	patch -p1 < ../$AUFS_REPOSITORY/aufs6-base.patch
 	patch -p1 < ../$AUFS_REPOSITORY/aufs6-mmap.patch
+	patch -p1 < ../$AUFS_REPOSITORY/aufs6-standalone.patch
 	patch -p1 < ../$AUFS_REPOSITORY/aufs6-loopback.patch
 	patch -p1 < ../$AUFS_REPOSITORY/vfs-ino.patch
 	patch -p1 < ../$AUFS_REPOSITORY/tmpfs-idr.patch
@@ -89,7 +89,12 @@ compile_kernel(){
 
 	## Compile the AUFS Tools
 	pushd $AUFS_TOOLS_REPOSITORY
+	mkdir -p ./fakeroot
 	make install
+	make install DESTDIR=./fakeroot
+	mkdir -p ./fakeroot/usr/sbin
+	mv ./fakeroot/sbin/* ./fakeroot/usr/sbin
+	rm -rf ./fakeroot/sbin
 	#make install_ulib
 	popd
 
@@ -104,12 +109,40 @@ save_kernel(){
 	mkdir -p $TMP/usr/include/linux
 	cp -ar /usr/lib/modules/$NAME $TMP/usr/lib/modules
 	cp -ar /usr/include/linux/* $TMP/usr/include/linux/
+	cp -ar "$AUFS_TOOLS_REPOSITORY/fakeroot/"* "$TMP/"
 	rm -f $TMP/usr/lib/modules/$NAME/{build,source}
 	mkdir -p $TMP/boot
 	cp linux/arch/x86/boot/bzImage $TMP/boot/vmlinuz-$NAME
 	cd $TMP
 	tar -c * | gzip -f >$HTOOLS_KERNEL_DIR/kernel-stuff/$NAME.tar.gz
 	echo "Your compiled kernel has been saved on $HTOOLS_KERNEL_DIR/kernel-stuff/$NAME.tar.gz"
+}
+
+# $1 = Compressed .taz.gz kernel image
+restore_kernel(){
+	## Restore a previusly saved kernel into the current system
+	local KERNEL_LAB KERNEL_UNTAR_DIR KERNEL_SOURCE_TAR_FILE KERNEL_TAR_FILE
+	KERNEL_LAB="/tmp/huronOS-kernel-$$"
+	KERNEL_UNTAR_DIR="$KERNEL_LAB/data"
+	KERNEL_SOURCE_TAR_FILE="$(realpath "$1")"
+	KERNEL_TAR_FILE="$KERNEL_LAB/kernel.tar.gz"
+
+	if [ "$1" = "" ]; then
+		printf '%s\n%s' "No TAR file, please run:" "build-kernel.sh [--build | --clean-kernel | --clean-packages | --restore-kernel TAR_FILE]"
+	fi
+
+	mkdir -p "$KERNEL_LAB"
+	mkdir -p "$KERNEL_UNTAR_DIR"
+	cp "$KERNEL_SOURCE_TAR_FILE" "$KERNEL_TAR_FILE"
+	tar -xf "$KERNEL_TAR_FILE" -C "$KERNEL_UNTAR_DIR"
+	cp -arf $KERNEL_UNTAR_DIR/* /
+
+	KERNEL_NAME="$(ls "$KERNEL_UNTAR_DIR/boot" | sed 's:vmlinuz-::g')"
+	update-initramfs -u -k "$KERNEL_NAME" -v
+	update-grub2
+	rm -rf "$KERNEL_LAB"
+
+	echo "Done!, Please reboot your computer using the advanced boot with kernel version -> $KERNEL_VERSION"
 }
 
 clean_other_kernels(){
@@ -119,6 +152,7 @@ clean_other_kernels(){
 
 	apt autoremove --purge --yes
 	apt clean --yes
+	update-grub2
 }
 
 delete_packages(){
@@ -150,11 +184,13 @@ main(){
 		clean_other_kernels
 	elif [ "$1" = "--clean-packages" ]; then
 		delete_packages
+	elif [ "$1" = "--restore-kernel" ]; then
+		restore_kernel "$2"
 	else
-		echo -E "No option selected, run:\nbuild-kernel.sh [--build | --clean-kernel | --clean-packages]"
+		printf '%s\n%s' "No option selected, run:" "build-kernel.sh [--build | --clean-kernel | --clean-packages | --restore-kernel TAR_FILE]"
 	fi
 
 	popd
 }
 
-main $1
+main "$@"
