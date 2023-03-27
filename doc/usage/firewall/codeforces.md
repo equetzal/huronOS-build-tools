@@ -1,8 +1,4 @@
-## Popular online judges firewall setup for huronOS
-
-This document have some tips for setting different popular online judges that have been tested to work with huronOS remote settings while executing a restrictive firewall setup.
-
-### Codeforces
+# Codeforces Firewall Exception
 
 When firewall is set to `DROP` policy, [Codeforces](https://codeforces.com) is a website that require a lot of exceptions for setting a working website due to the fact that it makes requests to several servers on the internet. Also, allowing codeforces itself will allow contestants to access in-website blogs, editorials, previous user submissions, etc.
 Then, it's recommended to setup a [domain for groups](https://codeforces.com/blog/entry/51787) which is a codeforces feature build specifically for running contest with controlled environments.
