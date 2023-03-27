@@ -64,7 +64,7 @@ apply_specific_directives(){
 	set_hmount_rules
 	set_software
 	set_bookmarks
-	systemctl start happly-wallpaper.service
+	systemctl start "happly-wallpaper@$DIRECTIVES_SPECIFIC_CONFIG.service"
 	rfkill unblock bluetooth
 
 	return 0 # success
