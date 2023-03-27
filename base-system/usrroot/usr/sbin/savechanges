@@ -4,13 +4,13 @@
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2
-#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Taken from the Slax project, authored by:
 #		Tomas M <http://www.slax.org/>
 
 TMP=/tmp/changes$$
-EXCLUDE="^\$|/\$|[.]wh[.][.]wh[.]orph/|^[.]wh[.][.]pwd[.]lock|^[.]wh[.][.]wh[.]plnk/|^[.]wh[.][.]wh[.]aufs|^var/cache/|^var/log/hsync.log|^var/log/journal|^run/log/journal|^var/backups/|^var/tmp/|^var/log/|^var/lib/apt/|^var/lib/dhcp/|^var/lib/systemd/|^sbin/fsck[.]aufs|^etc/resolv[.]conf|^home/contestant/[.]bash_history|^home/contestant/[.]Xauthority|^home/contestant/[.]xsession-errors|^home/contestant/[.]fehbg|^root/[.]bash_history|^root/[.]Xauthority|^root/[.]xsession-errors|^root/[.]fehbg|^etc/timezone|^etc/localtime|^etc/hsync/|^etc/hmm/|^etc/mtab|^etc/fstab|^usr/share/backgrounds/custom-|^boot/|^dev/|^mnt/|^proc/|^run/|^sys/|^tmp/"
+EXCLUDE="^\$|/\$|[.]wh[.][.]wh[.]orph/|^[.]wh[.][.]pwd[.]lock|^[.]wh[.][.]wh[.]plnk/|^[.]wh[.][.]wh[.]aufs|^var/cache|^var/lib/connman|^var/log/hsync.log|^var/log/journal|^run/log/journal|^var/backups/|^var/tmp/|^var/log/|^var/lib/apt/|^var/lib/dhcp/|^var/lib/systemd/|^sbin/fsck[.]aufs|^etc/resolv[.]conf|^home/contestant/[.]bash_history|^home/contestant/[.]Xauthority|^home/contestant/[.]xsession-errors|^home/contestant/[.]fehbg|^root/[.]bash_history|^root/[.]Xauthority|^root/[.]xsession-errors|^root/[.]fehbg|^etc/timezone|^etc/localtime|^etc/hsync/|^etc/hmm/|^etc/mtab|^etc/fstab|^usr/share/backgrounds/custom-|^boot/|^dev/|^mnt/|^proc/|^run/|^sys/|^tmp/"
 CHANGES=/run/initramfs/memory/syschanges
 
 if [ "$1" = "" ]; then
