@@ -25,7 +25,7 @@ try_directives_download(){
 	DIRECTIVES_FILE_URL="$(grep DIRECTIVES_FILE_URL "$CURRENT_SYNC_SERVER_CONFIG_FILE" | cut -d= -f2)"
 	DIRECTIVES_TEMP_FILE="/tmp/directives-$$.hdf"
 
-	if ! wget --tries=2 --timeout=10 -O $DIRECTIVES_TEMP_FILE $DIRECTIVES_FILE_URL; then
+	if ! wget --no-cache --tries=2 --timeout=10 -O $DIRECTIVES_TEMP_FILE $DIRECTIVES_FILE_URL; then
 		log "-Directives file cannot be downloaded"
 		return 1 # error
 	fi

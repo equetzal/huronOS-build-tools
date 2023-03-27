@@ -28,7 +28,7 @@ safe_download(){
 
 	## Try the download into temp
 	mkdir -p "$TMP"
-	if ! wget --tries=3 --timeout=10 "$FILE_URL" -O "$TMP_FILE"; then
+	if ! wget --no-cache --tries=3 --timeout=10 "$FILE_URL" -O "$TMP_FILE"; then
 		echo "Cannot download the requested url $FILE_URL" 1>&2
 		rm -rf "$TMP"
 		return 1 # Error
@@ -36,7 +36,7 @@ safe_download(){
 
 	if [ ! -z "$FILE_HASH_URL" ]; then
 		## If hash cannot be downloaded, then it's not possible to verify file
-		if ! wget --tries=3 --timeout=10 "$FILE_HASH_URL" -O "$TMP_HASH_FILE"; then
+		if ! wget --no-cache --tries=3 --timeout=10 "$FILE_HASH_URL" -O "$TMP_HASH_FILE"; then
 			echo "Cannot download the hash file $FILE_HASH_URL" 1>&2
 			rm -rf "$TMP"
 			return 1 # Error
@@ -78,7 +78,7 @@ should_redownload_file(){
 
 	mkdir -p "$TMP"
 	## Local file exists, but we cannot download its hash. Assume current file is not valid
-	if ! wget --tries=3 --timeout=10 "$FILE_HASH_URL" -O "$TMP_HASH_FILE"; then
+	if ! wget --no-cache --tries=3 --timeout=10 "$FILE_HASH_URL" -O "$TMP_HASH_FILE"; then
 		echo "Cannot download the hash file $FILE_HASH_URL" 1>&2
 		rm -rf "$TMP"
 		return 0 # Yes, download
