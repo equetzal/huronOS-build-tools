@@ -19,6 +19,31 @@ export SYSTEM_MNT="$INSTALLER_LAB/usb-syspart"
 export SERVER_CONFIG="$INSTALLER_LAB/sync-server.conf"
 export ISO_DIR=""
 export DIRECTIVES_FILE_URL=""
+# Argument handling
+# Supports --root-password & help displaying
+NEW_PASSWORD=""
+while [ "$#" -gt 0 ]; do
+	case "$1" in
+		--root-password)
+			if [ -n "$2" ]; then
+				NEW_PASSWORD="$2"
+				shift 2
+			else
+				echo "Error: option --root-password requires an argument" >&2
+				exit 1
+			fi
+		;;
+		-h|--help)
+			echo "Installs the current huronOS into an usb"
+			echo "Usage: ./install.sh [--root-password password]"
+			exit 1
+		;;
+		#   Whichever other parameter passed, we know nothing about that here
+		*)
+			shift
+		;;
+  esac
+done
 
 # $1 = message to print
 print_step(){
@@ -159,6 +184,12 @@ cp --verbose -rf "$ISO_DIR/boot/" "$SYSTEM_MNT"
 cp --verbose -rf "$ISO_DIR/EFI/" "$SYSTEM_MNT"
 cp --verbose -rf "$ISO_DIR/checksums" "$SYSTEM_MNT"
 cp --verbose -rf "$SERVER_CONFIG" "$SYSTEM_MNT/huronOS/data/configs/sync-server.conf"
+
+# If a password was passed, update the password
+if [ -n "$NEW_PASSWORD" ]; then
+  print_step "[7.5/11] Setting new password: $NEW_PASSWORD"
+  ./change-password.sh "$NEW_PASSWORD" "$SYSTEM_MNT" || exit 1
+fi
 
 print_step "[8/10] Cleaning device buffers"
 sync &

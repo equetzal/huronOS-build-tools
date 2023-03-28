@@ -37,6 +37,7 @@
    ```txt
    /media/iso/
    	├── boot
+   	├── change-password.sh
    	├── checksums
    	├── EFI
    	├── huronOS
@@ -60,6 +61,20 @@
    2. The installer will prompt you to select a disk to target the installation. **Please do this carefully as the selected disk will be completely erased**.
    3. Wait for the installer to finish and disconnect the USB drive. If something fails during the installer, please retry.
 
+   **Note:** You can change the default root password of the current instalation by executing the installer like this
+   ```
+    ./install.sh --root-password my_password
+   ```
+   Keep in mind that if you want to change the password for every latter instalations that you might create, instead of manually passing the password each time in the installer, follow the following steps
+   
+   * Copy all the contents of the ISO somewhere where you have RW access, let's call this path ~/iso/
+   * Navigate to ~/iso/
+   * From there execute
+      ```
+      ./change-password my_password
+      ```
+      Be sure to change ***my_password*** with the password that you want to set as the root password
+   * You're all set. Every other instalation you make will have the password you defined.
 6. **Boot from huronOS.**  
    Connect your USB drive and boot from it. You will be auto-logged on the contestant user. For accessing the [root user](./root-access.md), please check the documentation.
 
