@@ -44,6 +44,8 @@ main(){
 		case $1 in
 			"--help")
 				help; exit 0;;
+			"--manual")
+				SET_MODE="$2"; shift 2;;
 			"--automatic")
 				SET_MODE="$(hos-dmode)"; shift 1;;
 			*) echo "Unknown operation '$1', please run [hos-wallpaper --help] for help"; exit 1;;
@@ -51,7 +53,7 @@ main(){
 	done
 
 	if [ -z "${SET_MODE}" ]; then
-		echo "Execution mode not specified, please run [hos-wallpaper --help] for help"; exit 1;
+		echo "Mode to apply not specified, please run [hos-wallpaper --help] for help"; exit 1;
 	fi
 
 	check_wallpapers "$SET_MODE";
