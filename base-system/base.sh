@@ -65,6 +65,7 @@ EFI="$ISO_DATA"/EFI/Boot
 FILES="$ISO_DATA"/"$LIVEKITNAME"
 mkdir -p "$BOOT"
 mkdir -p "$EFI"
+mkdir -p "${ISO_DATA}/utils"
 mkdir -p "$FILES"/base
 mkdir -p "$FILES"/data
 mkdir -p "$FILES"/data/logs
@@ -92,6 +93,10 @@ cp -rf bootloader/EFI/Boot/* "$EFI"
 ## Copy installer
 cp tools/installer/install.sh "${ISO_DATA}/install.sh"
 chmod o+x "${ISO_DATA}/install.sh"
+
+## Copy script to change password
+cp -r tools/installer/utils/* "${ISO_DATA}/utils/"
+chmod o+x "${ISO_DATA}/utils/change-password.sh"
 
 # create compressed 01-core.sb
 COREFS=""
