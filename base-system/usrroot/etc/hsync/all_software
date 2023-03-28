@@ -2,10 +2,12 @@ internet/chrome
 internet/chromium
 internet/crow
 internet/firefox
+langs/dotnet
 langs/g++
 langs/gcc
 langs/javac
 langs/kotlinc
+langs/mono
 langs/pypy3
 langs/python3
 langs/ruby
@@ -25,6 +27,7 @@ programming/joe
 programming/kate
 programming/kdevelop
 programming/pycharm
+programming/rider
 programming/sublime
 programming/vim
 programming/vscode

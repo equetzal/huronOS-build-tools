@@ -39,6 +39,7 @@
       <Filename>vim.desktop</Filename>
       <Filename>clion.desktop</Filename>
       <Filename>pycharm.desktop</Filename>
+	  <Filename>rider.desktop</Filename>
       <Filename>sublime.desktop</Filename>
 
     </Include>
@@ -54,6 +55,7 @@
       </And>
       <Filename>c-documentation.desktop</Filename>
       <Filename>c++-documentation.desktop</Filename>
+	  <Filename>csharp-documentation.desktop</Filename>
       <Filename>kotlin-documentation.desktop</Filename>
       <Filename>python3-documentation.desktop</Filename>
       <Filename>ruby-documentation.desktop</Filename>

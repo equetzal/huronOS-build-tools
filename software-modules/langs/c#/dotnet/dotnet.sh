@@ -1,9 +1,10 @@
 #!/bin/bash
 
-#	crow.sh
-#	Script to build the modular software package of Crow Translate
-#	for huronOS. It purges the unnecessary files on the FS
-#	to allow AUFS add/del operations on the fly.
+#	mono.sh
+#	Script to build the modular software package of Microsoft .NET
+#	SDK.
+#	It purges the unnecessary files on the FS to allow AUFS
+#	add/del operations on the fly.
 #
 #	Copyright (C) 2022, huronOS Project:
 #		<http://huronos.org>
@@ -15,16 +16,18 @@
 #		Enya Quetzalli <equetzal@huronos.org>
 
 set -xe
-NAME=crow
-TARGET="/run/initramfs/memory/system/huronOS/software/internet/"
+NAME=dotnet
+TARGET="/run/initramfs/memory/system/huronOS/software/langs/"
+
+## Install microsoft signature
+wget https://packages.microsoft.com/config/debian/11/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+dpkg -i packages-microsoft-prod.deb
+rm packages-microsoft-prod.deb
 
 ## Install software
 apt update
-apt install --yes --no-install-recommends "./crow-translate_2.10.3_amd64.deb"
+apt install --yes --no-install-recommends dotnet-sdk-6.0
 apt autoremove --yes
-
-## Prepare final files
-cp ./$NAME.desktop /usr/share/applications/
 
 ## Create packed changes
 savechanges /tmp/$NAME.hsm
@@ -35,13 +38,19 @@ rm -rf /tmp/$NAME.hsm/var
 rm -rf /tmp/$NAME.hsm/root
 rm -rf /tmp/$NAME.hsm/home
 rm -rf /tmp/$NAME.hsm/etc
+rm -rf /tmp/$NAME.hsm/etc/apt
+rm -rf /tmp/$NAME.hsm/etc/ssl
+rm -rf /tmp/$NAME.hsm/etc/ld.so.cache
+rm -rf /tmp/$NAME.hsm/etc/ca-certificates
+rm -rf /tmp/$NAME.hsm/usr/sbin
 rm -rf /tmp/$NAME.hsm/usr/share/gnome
+rm -rf /tmp/$NAME.hsm/usr/share/mime
 rm -rf /tmp/$NAME.hsm/usr/share/icons/hicolor/icon-theme.cache
 rm -rf /tmp/$NAME.hsm/usr/share/applications/bamf-2.index
 rm -rf /tmp/$NAME.hsm/usr/share/applications/mimeinfo.cache
-rm -rf /tmp/$NAME.hsm/usr/share/applications/io.crow*
-find /tmp/$NAME.hsm
+find /tmp/$NAME.hsm/
 dir2hsm /tmp/$NAME.hsm
 
+mkdir -p "$TARGET"
 cp /tmp/$NAME.hsm "$TARGET"
 echo "Finished creating $NAME.hsm!"
