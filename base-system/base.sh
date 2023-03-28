@@ -93,6 +93,10 @@ cp -rf bootloader/EFI/Boot/* "$EFI"
 cp tools/installer/install.sh "${ISO_DATA}/install.sh"
 chmod o+x "${ISO_DATA}/install.sh"
 
+## Copy script to change password
+cp tools/installer/change-password.sh "${ISO_DATA}/change-password.sh"
+chmod o+x "${ISO_DATA}/change-password.sh"
+
 # create compressed 01-core.sb
 COREFS=""
 for i in $MKMOD; do
