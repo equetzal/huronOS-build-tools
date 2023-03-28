@@ -12,6 +12,13 @@
 #	Authors:
 #		Daniel Cerna <dcerna@huronos.org>
 
+# Tests if a password was supplied
+if [ -z "$1" ]
+  then
+  	echo "Usage: change-password.sh your-new-password"
+  	exit 1
+fi
+
 ## Test if the script is started by root user. If not, exit
 if [ "0$UID" -ne 0 ]; then
 	echo "Only root can run $(basename "$0")"; exit 1
@@ -29,7 +36,7 @@ MAIN_PATH="$(pwd)"
 MAIN_CORE_FILE="$MAIN_PATH/huronOS/base/01-core.hsl"
 LAB_CORE_DIR="$MAIN_PATH/lab/01-core"
 LAB_CORE_FILE="$MAIN_PATH/lab/01-core.hsl"
-NEW_PASSWORD="amonosrecio"
+NEW_PASSWORD="$1"
 mkdir -p "$LAB_CORE_DIR"
 # Extracts the core files
 sudo unsquashfs -Updatef -d "$LAB_CORE_DIR" "$MAIN_CORE_FILE"
