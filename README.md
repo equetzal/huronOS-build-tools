@@ -33,7 +33,7 @@ This was made on purpose, so that huronOS core is immutable even if persistence 
 
 ### Building huronOS
 
-To build huronOS, please check the [build](./doc/build/build.md) file for detailed instructions.
+To build huronOS, please check the [build](./doc/development/how-to-create-a-build.md) file for detailed instructions.
 
 ### Releases
 
