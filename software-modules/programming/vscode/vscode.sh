@@ -33,6 +33,8 @@ apt autoremove --yes
 
 ## Prepare final files
 cp ./$NAME.desktop /usr/share/applications/
+cp ./$NAME.png /usr/share/pixmaps/vscodium.png
+cp ./$NAME.png /usr/share/codium/resources/app/resources/linux/code.png
 ln -sf /usr/bin/codium /usr/bin/code
 ln -sf /usr/bin/codium /usr/bin/vscode
 
