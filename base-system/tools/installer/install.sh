@@ -113,7 +113,7 @@ print_step "[5/10] Partitioning device $TARGET"
 DISK_SIZE=$(blockdev --getsize64 "$TARGET")
 DISK_SECTORS=$(blockdev --getsz "$TARGET")
 DISK_SIZE_MB=$(( $DISK_SIZE / 1024 / 1024 )) #Convert disk size to MiB
-SYSTEM_PART_END=$(( 5*1024 )) #Set 5GiB to store huronOS
+SYSTEM_PART_END=$(( 6*1024 )) #Set 6GiB to store huronOS
 EVENT_PART_END=$(( ( ($DISK_SIZE_MB - $SYSTEM_PART_END) / 2) + SYSTEM_PART_END ))
 
 ## Clean possible partition tables, asuming 512 block size dev (hope there's no 1ZiB usbs soon)
