@@ -14,7 +14,10 @@ To build huronOS you'll be needing to follow several steps:
    ```bash
    cd kernel-builder/
    chmod +x build-kernel.sh
-   ./build-kernel.sh
+   ./build-kernel.sh --build
+   # Wait for the kernel to finish compilation
+   ./build-kernel.sh --clean-kernel # If you want to delete other kernels
+   ./build-kernel.sh --clean-packager # Delete build-essentials packages
    ```
 
 4. **Build the base system** <br>
