@@ -31,15 +31,15 @@ mkdir -p "$INSTALLER_LAB"
 
 ## Save the directory where the script is running, it should match the ISO of huronOS
 ISO_DIR="$(dirname "$(readlink -f "$0")")"
-print_step "[1/10] Locating huronOS image -> $ISO_DIR"
+print_step "[1/11] Locating huronOS image -> $ISO_DIR"
 
 ## Configure the remote directives file
-print_step "[2/10] Configuring directives server."
+print_step "[2/11] Configuring directives server."
 read -r -p "URL (http/s) of directives file to configure:" DIRECTIVES_FILE_URL
 echo -e "[Server]\nIP=\nDOMAIN=\nDIRECTIVES_ENDPOINT=\nSERVER_ROOM=\nDIRECTIVES_FILE_URL=$DIRECTIVES_FILE_URL\n" > "$SERVER_CONFIG"
 
 ## Select the device we want to install huronOS to
-# print_step "[3/10] Selecting removable device to install huronOS on"
+# print_step "[3/11] Selecting removable device to install huronOS on"
 DEV_PATHS=$(lsblk --nodeps --noheadings --raw -o PATH)
 # Array to store the usb devices found
 HOTPLUG_DEVICES=()
@@ -97,7 +97,7 @@ fi
 ## User confirmed, continue
 
 ## For each mountpoint that the device is using, kill and unmount
-print_step "[4/10] Unmounting selected device partitions"
+print_step "[4/11] Unmounting selected device partitions"
 # Count every target device's mounted partitions
 PARTITION_COUNT=$(mount | grep "$TARGET" | awk '{print $3}' | wc -l)
 
@@ -121,12 +121,12 @@ fi
 wipefs -a "$TARGET" || exit 1
 echo "Device cleaned out succesfully"
 
-print_step "[5/10] Partitioning device $TARGET"
+print_step "[5/11] Partitioning device $TARGET"
 ## Set positions on the target device
 DISK_SIZE=$(blockdev --getsize64 "$TARGET")
 DISK_SECTORS=$(blockdev --getsz "$TARGET")
 DISK_SIZE_MB=$(( $DISK_SIZE / 1024 / 1024 )) #Convert disk size to MiB
-SYSTEM_PART_END=$(( 6*1024 )) #Set 6GiB to store huronOS
+SYSTEM_PART_END=$(( 5*1024 )) #Set 5GiB to store huronOS
 EVENT_PART_END=$(( ( ($DISK_SIZE_MB - $SYSTEM_PART_END) / 2) + SYSTEM_PART_END ))
 
 ## Clean possible partition tables, asuming 512 block size dev (hope there's no 1ZiB usbs soon)
@@ -148,7 +148,7 @@ parted -a optimal --script "$TARGET" \
 	set 1 boot on
 
 ## Create the filesystems
-print_step "[6/10] Creating filesystems"
+print_step "[6/11] Creating filesystems"
 mkfs.vfat -F 32 -n HURONOS -I "${TARGET}1"
 mkfs.ext4 -L event-data -F "${TARGET}2"
 mkfs.ext4 -L contest-data -F "${TARGET}3"
@@ -166,14 +166,14 @@ mkdir -p $SYSTEM_MNT
 mount UUID=$SYSTEM_UUID $SYSTEM_MNT
 
 ## Start copying the contents of huronOS installation
-print_step "[7/10] Copying huronOS system data"
+print_step "[7/11] Copying huronOS system data"
 cp --verbose -rf "$ISO_DIR/huronOS/" "$SYSTEM_MNT"
 cp --verbose -rf "$ISO_DIR/boot/" "$SYSTEM_MNT"
 cp --verbose -rf "$ISO_DIR/EFI/" "$SYSTEM_MNT"
 cp --verbose -rf "$ISO_DIR/checksums" "$SYSTEM_MNT"
 cp --verbose -rf "$SERVER_CONFIG" "$SYSTEM_MNT/huronOS/data/configs/sync-server.conf"
 
-print_step "[8/10] Cleaning device buffers"
+print_step "[8/11] Cleaning device buffers"
 sync &
 SYNC_PID=$!
 while ps -p $SYNC_PID > /dev/null 2>&1; do
