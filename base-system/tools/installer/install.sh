@@ -30,15 +30,15 @@ mkdir -p "$INSTALLER_LAB"
 
 ## Save the directory where the script is running, it should match the ISO of huronOS
 ISO_DIR="$(dirname "$(readlink -f "$0")")"
-print_step "[1/10] Locating huronOS image -> $ISO_DIR"
+print_step "[1/11] Locating huronOS image -> $ISO_DIR"
 
 ## Configure the remote directives file
-print_step "[2/10] Configuring directives server."
+print_step "[2/11] Configuring directives server."
 read -r -p "URL (http/s) of directives file to configure:" DIRECTIVES_FILE_URL
 echo -e "[Server]\nIP=\nDOMAIN=\nDIRECTIVES_ENDPOINT=\nSERVER_ROOM=\nDIRECTIVES_FILE_URL=$DIRECTIVES_FILE_URL\n" > "$SERVER_CONFIG"
 
 ## Select the device we want to install huronOS to
-print_step "[3/10] Selecting removable device to install huronOS on"
+print_step "[3/11] Selecting removable device to install huronOS on"
 DEVICES=$(lsblk --pairs --output NAME,PATH,HOTPLUG,TYPE,VENDOR,MODEL,SIZE,LABEL --sort NAME)
 COPY_DEVICES="$DEVICES"
 DEVNUM=0
@@ -101,14 +101,14 @@ fi
 ## User confirmed, continue
 
 ## For each mountpoint that the device is using, kill and unmount
-print_step "[4/10] Unmounting selected device partitions"
+print_step "[4/11] Unmounting selected device partitions"
 for MNT_PNT in $(lsblk --output PATH,MOUNTPOINT | grep -E "${TARGET}[1-9]+" | awk '{ print $2 }'); do
 	echo "Cleaning $MNT_PNT"
 	fuser -k -m "$MNT_PNT" || true
 	umount "$MNT_PNT"
 done
 
-print_step "[5/10] Partitioning device $TARGET"
+print_step "[5/11] Partitioning device $TARGET"
 ## Set positions on the target device
 DISK_SIZE=$(blockdev --getsize64 "$TARGET")
 DISK_SECTORS=$(blockdev --getsz "$TARGET")
@@ -135,7 +135,7 @@ parted -a optimal --script "$TARGET" \
 	set 1 boot on
 
 ## Create the filesystems
-print_step "[6/10] Creating filesystems"
+print_step "[6/11] Creating filesystems"
 mkfs.vfat -F 32 -n HURONOS -I "${TARGET}1"
 mkfs.ext4 -L event-data -F "${TARGET}2"
 mkfs.ext4 -L contest-data -F "${TARGET}3"
@@ -153,14 +153,14 @@ mkdir -p $SYSTEM_MNT
 mount UUID=$SYSTEM_UUID $SYSTEM_MNT
 
 ## Start copying the contents of huronOS installation
-print_step "[7/10] Copying huronOS system data"
+print_step "[7/11] Copying huronOS system data"
 cp --verbose -rf "$ISO_DIR/huronOS/" "$SYSTEM_MNT"
 cp --verbose -rf "$ISO_DIR/boot/" "$SYSTEM_MNT"
 cp --verbose -rf "$ISO_DIR/EFI/" "$SYSTEM_MNT"
 cp --verbose -rf "$ISO_DIR/checksums" "$SYSTEM_MNT"
 cp --verbose -rf "$SERVER_CONFIG" "$SYSTEM_MNT/huronOS/data/configs/sync-server.conf"
 
-print_step "[8/10] Cleaning device buffers"
+print_step "[8/11] Cleaning device buffers"
 sync &
 SYNC_PID=$!
 while ps -p $SYNC_PID > /dev/null 2>&1; do
