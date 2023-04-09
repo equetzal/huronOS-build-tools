@@ -21,8 +21,18 @@ export ISO_DIR=""
 export DIRECTIVES_FILE_URL=""
 
 # $1 = message to print
+BOLD="$(tput bold)"
+BOLD_GREEN="$(tput setab 2)$(tput bold)"
+BOLD_RED="$(tput setab 2)$(tput setaf 1)$(tput bold)"
+NORMAL_TEXT="$(tput sgr0)"
+print_bold(){
+	echo -e "${BOLD}$1${NORMAL_TEXT}"
+}
+print_bold_red(){
+	echo -e "${BOLD_RED}$1${NORMAL_TEXT}"
+}
 print_step(){
-	echo -e "$(tput setab 2)$(tput bold)$1$(tput sgr0)"
+	echo -e "${BOLD_GREEN}$1${NORMAL_TEXT}"
 }
 
 print_step "Starting huronOS installation"
@@ -61,7 +71,7 @@ while read -r NAME DEV HOTPLUG TYPE VENDOR MODEL SIZE LABEL; do
 
 	## Mark disks as green, partitions indented on disk
 	if [ "$HOTPLUG" = "1" ] && [ "$TYPE" = "disk" ]; then
-		echo -e "\t$(tput setab 2)$(tput setaf 1)$(tput bold)$TYPE $DEVNUM  $DEV  $SIZE  $VENDOR  $MODEL $(tput sgr0)"
+		print_bold_red "\t$$TYPE $DEVNUM  $DEV  $SIZE  $VENDOR  $MODEL"
 		DEVNUM=$((DEVNUM+1))
 	elif [ "$HOTPLUG" = "1" ] && [ "$TYPE" = "part" ]; then
 		echo -e "\t    $NAME $TYPE $SIZE  $LABEL"
@@ -90,7 +100,7 @@ while read -r NAME DEV HOTPLUG TYPE VENDOR MODEL SIZE LABEL; do
 		DEVNUM=$((DEVNUM+1))
 	fi
 done < <(echo "$COPY_DEVICES" | xargs -n 8)
-read -r -p "The selected disk is $(tput setab 2)$(tput setaf 1)$(tput bold)$TARGET$(tput sgr0), $(tput bold)ALL DATA WILL BE LOST (includes partitions) $(tput sgr0), do you want to continue? (Y/n) " CONFIRM
+read -r -p "The selected disk is $(print_bold_red "$TARGET"), $(print_bold "ALL DATA WILL BE LOST (includes partitions)"), do you want to continue? (Y/n) " CONFIRM
 
 ## Exit if answer is not Y or y
 if [ "$CONFIRM" != "Y" ] && [ "$CONFIRM" != "y" ]; then
