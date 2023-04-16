@@ -80,7 +80,7 @@ read -r -p "URL (http/s) of directives file to configure:" DIRECTIVES_FILE_URL
 echo -e "[Server]\nIP=\nDOMAIN=\nDIRECTIVES_ENDPOINT=\nSERVER_ROOM=\nDIRECTIVES_FILE_URL=$DIRECTIVES_FILE_URL\n" > "$SERVER_CONFIG"
 
 ## Select the device we want to install huronOS to
-# print_step "[3/11] Selecting removable device to install huronOS on"
+print_step "[3/11] Selecting removable device to install huronOS on"
 DEV_PATHS=$(lsblk --nodeps --noheadings --raw -o PATH)
 # Array to store the usb devices found
 HOTPLUG_DEVICES=()
