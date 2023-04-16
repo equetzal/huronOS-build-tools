@@ -46,8 +46,18 @@ while [ "$#" -gt 0 ]; do
 done
 
 # $1 = message to print
+BOLD="$(tput bold)"
+BOLD_GREEN="$(tput setab 2)$(tput bold)"
+BOLD_RED="$(tput setab 2)$(tput setaf 1)$(tput bold)"
+NORMAL_TEXT="$(tput sgr0)"
+print_bold(){
+	echo -e "${BOLD}$1${NORMAL_TEXT}"
+}
+print_bold_red(){
+	echo -e "${BOLD_RED}$1${NORMAL_TEXT}"
+}
 print_step(){
-	echo -e "$(tput setab 2)$(tput bold)$1$(tput sgr0)"
+	echo -e "${BOLD_GREEN}$1${NORMAL_TEXT}"
 }
 
 print_step "Starting huronOS installation"
@@ -55,67 +65,61 @@ mkdir -p "$INSTALLER_LAB"
 
 ## Save the directory where the script is running, it should match the ISO of huronOS
 ISO_DIR="$(dirname "$(readlink -f "$0")")"
-print_step "[1/10] Locating huronOS image -> $ISO_DIR"
+print_step "[1/11] Locating huronOS image -> $ISO_DIR"
 
 ## Configure the remote directives file
-print_step "[2/10] Configuring directives server."
+print_step "[2/11] Configuring directives server."
 read -r -p "URL (http/s) of directives file to configure:" DIRECTIVES_FILE_URL
 echo -e "[Server]\nIP=\nDOMAIN=\nDIRECTIVES_ENDPOINT=\nSERVER_ROOM=\nDIRECTIVES_FILE_URL=$DIRECTIVES_FILE_URL\n" > "$SERVER_CONFIG"
 
 ## Select the device we want to install huronOS to
-print_step "[3/10] Selecting removable device to install huronOS on"
-DEVICES=$(lsblk --pairs --output NAME,PATH,HOTPLUG,TYPE,VENDOR,MODEL,SIZE,LABEL --sort NAME)
-COPY_DEVICES="$DEVICES"
+# print_step "[3/11] Selecting removable device to install huronOS on"
+DEV_PATHS=$(lsblk --nodeps --noheadings --raw -o PATH)
+# Array to store the usb devices found
+HOTPLUG_DEVICES=()
 DEVNUM=0
-echo "Disks compatible with huronOS installation"
-while read -r NAME DEV HOTPLUG TYPE VENDOR MODEL SIZE LABEL; do
-	## Replace PATH with DEV to avoid replacing the bash-path
-	DEV="$(echo $DEV | sed 's/PATH/DEV/g')"
+for DEV_PATH in $DEV_PATHS; do
+    # Get device attributes
+    DEV_HOTPLUG="$(lsblk --nodeps --noheadings --raw -o HOTPLUG "$DEV_PATH")"
+    DEV_TYPE="$(lsblk --nodeps --noheadings --raw -o TYPE "$DEV_PATH")"
+    DEV_VENDOR="$(lsblk --nodeps --noheadings --raw -o VENDOR "$DEV_PATH")"
+    DEV_MODEL="$(lsblk --nodeps --noheadings --raw -o MODEL "$DEV_PATH")"
+    DEV_SIZE="$(lsblk --nodeps --noheadings --raw -o SIZE "$DEV_PATH")"
 
-	## The vars contain a literal declaration (eg. 'TYPE="disk"')
-	## by declaring them, we make their value usable
-	declare "${NAME}"
-	declare "${DEV}"
-	declare "${HOTPLUG}"
-	declare "${TYPE}"
-	declare "${VENDOR}"
-	declare "${MODEL}"
-	declare "${SIZE}"
-	declare "${LABEL}"
-	#echo -e "$NAME $DEV $HOTPLUG $TYPE $VENDOR $MODEL $SIZE $LABEL"
+    # USBs surely are hotplug and disks, so we'll focus on those
+    if [ "$DEV_HOTPLUG" = "1" ] && [ "$DEV_TYPE" = "disk" ];then
+        # Append device to the hotplug array
+        HOTPLUG_DEVICES+=("$DEV_PATH")
 
-	## Mark disks as green, partitions indented on disk
-	if [ "$HOTPLUG" = "1" ] && [ "$TYPE" = "disk" ]; then
-		echo -e "\t$(tput setab 2)$(tput setaf 1)$(tput bold)$TYPE $DEVNUM  $DEV  $SIZE  $VENDOR  $MODEL $(tput sgr0)"
-		DEVNUM=$((DEVNUM+1))
-	elif [ "$HOTPLUG" = "1" ] && [ "$TYPE" = "part" ]; then
-		echo -e "\t    $NAME $TYPE $SIZE  $LABEL"
-	fi
-done < <(echo "$COPY_DEVICES" | xargs -n 8)
-
-
-## Ask the user the number of the selected disk
-read -r -p "Please, select the disk where you want to install huronOS on:" SELECTION
-COPY_DEVICES="$DEVICES"
-DEVNUM=0
-while read -r NAME DEV HOTPLUG TYPE VENDOR MODEL SIZE LABEL; do
-	DEV="$(echo $DEV | sed 's/PATH/DEV/g')"
-	declare "${NAME}"
-	declare "${DEV}"
-	declare "${HOTPLUG}"
-	declare "${TYPE}"
-	declare "${VENDOR}"
-	declare "${MODEL}"
-	declare "${SIZE}"
-	declare "${LABEL}"
-	if [ "$HOTPLUG" = "1" ] && [ "$TYPE" = "disk" ]; then
-		if [ $DEVNUM -eq $SELECTION ]; then
-			TARGET="$DEV"
-		fi
+	    print_bold_red "$DEV_TYPE $DEVNUM  $DEV_PATH  $DEV_SIZE  $DEV_VENDOR  $DEV_MODEL"
+        # Get device's available paths (includes the device itself and its partitions)
+        PARTITIONS=$(lsblk --noheadings --raw -o PATH "$DEV_PATH")
+        for PARTITION in $PARTITIONS; do
+            # Ignore the device itself
+            if [ "$PARTITION" != "$DEV_PATH" ]; then
+                # Get partition attributes
+                PART_NAME="$(lsblk --nodeps --noheadings --raw -o NAME "$PARTITION")"
+                PART_TYPE="$(lsblk --nodeps --noheadings --raw -o TYPE "$PARTITION")"
+                PART_SIZE="$(lsblk --nodeps --noheadings --raw -o SIZE "$PARTITION")"
+                PART_LABEL="$(lsblk --nodeps --noheadings --raw -o LABEL "$PARTITION")"
+                echo -e "\t$PART_NAME $PART_TYPE $PART_SIZE $PART_LABEL"
+            fi
+        done
 		DEVNUM=$((DEVNUM+1))
 	fi
-done < <(echo "$COPY_DEVICES" | xargs -n 8)
-read -r -p "The selected disk is $(tput setab 2)$(tput setaf 1)$(tput bold)$TARGET$(tput sgr0), $(tput bold)ALL DATA WILL BE LOST (includes partitions) $(tput sgr0), do you want to continue? (Y/n) " CONFIRM
+done
+
+# Safety check if no hotplug+disk device was found
+if [ "${#HOTPLUG_DEVICES[@]}" == "0" ]; then
+    echo "No usb plugged was found"
+    exit 1
+fi
+
+read -r -p "Please, select the disk where you want to install huronOS on: " SELECTION
+
+# Get the target from the array of candidate devices
+TARGET=${HOTPLUG_DEVICES[$SELECTION]}
+read -r -p "The selected disk is $(print_bold_red "$TARGET"), $(print_bold "ALL DATA WILL BE LOST (includes partitions)"), do you want to continue? (Y/n) " CONFIRM
 
 ## Exit if answer is not Y or y
 if [ "$CONFIRM" != "Y" ] && [ "$CONFIRM" != "y" ]; then
@@ -126,14 +130,31 @@ fi
 ## User confirmed, continue
 
 ## For each mountpoint that the device is using, kill and unmount
-print_step "[4/10] Unmounting selected device partitions"
-for MNT_PNT in $(lsblk --output PATH,MOUNTPOINT | grep -E "${TARGET}[1-9]+" | awk '{ print $2 }'); do
-	echo "Cleaning $MNT_PNT"
-	fuser -k -m "$MNT_PNT" || true
-	umount "$MNT_PNT"
-done
+print_step "[4/11] Unmounting selected device partitions"
+# Count every target device's mounted partitions
+PARTITION_COUNT=$(mount | grep "$TARGET" | awk '{print $3}' | wc -l)
 
-print_step "[5/10] Partitioning device $TARGET"
+# If mounted partitions exists, unmount them.
+if [[ "${PARTITION_COUNT}" -gt 0 ]]; then
+  echo "Unmounting $PARTITION_COUNT partition(s)"
+  PARTITIONS="$(mount | grep "$TARGET" | awk '{print $3}')"
+  for PARTIITON in ${PARTITIONS}; do
+    echo "Unmounting '$PARTIITON'"
+    # Kill proceses interacting with the partition, if any
+    fuser -k -m "$PARTIITON" || true
+    # Unmount the partition
+    umount "$PARTIITON" || exit 1 #Error unmounting
+  done
+  echo "Partition(s) unmounted correctly"
+else
+  echo "No partitions to unmount"
+fi
+
+# Wipes device's filesystem
+wipefs -a "$TARGET" || exit 1
+echo "Device cleaned out succesfully"
+
+print_step "[5/11] Partitioning device $TARGET"
 ## Set positions on the target device
 DISK_SIZE=$(blockdev --getsize64 "$TARGET")
 DISK_SECTORS=$(blockdev --getsz "$TARGET")
@@ -160,7 +181,7 @@ parted -a optimal --script "$TARGET" \
 	set 1 boot on
 
 ## Create the filesystems
-print_step "[6/10] Creating filesystems"
+print_step "[6/11] Creating filesystems"
 mkfs.vfat -F 32 -n HURONOS -I "${TARGET}1"
 mkfs.ext4 -L event-data -F "${TARGET}2"
 mkfs.ext4 -L contest-data -F "${TARGET}3"
@@ -178,7 +199,7 @@ mkdir -p $SYSTEM_MNT
 mount UUID=$SYSTEM_UUID $SYSTEM_MNT
 
 ## Start copying the contents of huronOS installation
-print_step "[7/10] Copying huronOS system data"
+print_step "[7/11] Copying huronOS system data"
 cp --verbose -rf "$ISO_DIR/huronOS/" "$SYSTEM_MNT"
 cp --verbose -rf "$ISO_DIR/boot/" "$SYSTEM_MNT"
 cp --verbose -rf "$ISO_DIR/EFI/" "$SYSTEM_MNT"
@@ -191,7 +212,7 @@ if [ -n "$NEW_PASSWORD" ]; then
   utils/change-password.sh "$NEW_PASSWORD" "$SYSTEM_MNT" || exit 1
 fi
 
-print_step "[8/10] Cleaning device buffers"
+print_step "[8/11] Cleaning device buffers"
 sync &
 SYNC_PID=$!
 while ps -p $SYNC_PID > /dev/null 2>&1; do
