@@ -62,6 +62,13 @@ To build huronOS you'll be needing to follow several steps:
      ./shared-libs.sh
      reboot
      ```
+   - `05-password.hsl`:
+     ```bash
+     cd software-modules/base/05-password/
+     chmod +x password.sh
+     ./password.sh
+     reboot
+     ```
 
    ```
     After this, return to the debian installation and plug the USB drive, then copy the modules on the `*-data-huronOS/base/` directory.
