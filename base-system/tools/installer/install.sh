@@ -19,6 +19,13 @@ export SYSTEM_MNT="$INSTALLER_LAB/usb-syspart"
 export SERVER_CONFIG="$INSTALLER_LAB/sync-server.conf"
 export ISO_DIR=""
 export DIRECTIVES_FILE_URL=""
+
+## Test if the script is started by root user. If not, exit
+## only root user can manipulate the device as required.
+if [ "0$UID" -ne 0 ]; then
+	echo "Only root can run $(basename $0)"; exit 1
+fi
+
 # Argument handling
 # Supports --root-password & help displaying
 NEW_PASSWORD=""
