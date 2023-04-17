@@ -14,5 +14,5 @@ NoDisplay=false
 
 [Desktop Action new-empty-window]
 Name=New Empty Window
-Exec=/usr/share/code/code --new-window %F
+Exec=/usr/share/codium/codium --new-window %F
 Icon=/usr/share/codium/resources/app/resources/linux/code.png
