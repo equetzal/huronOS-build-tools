@@ -6,7 +6,6 @@ Exec=/usr/bin/codium --unity-launch %F
 Icon=/usr/share/codium/resources/app/resources/linux/code.png
 Type=Application
 StartupNotify=false
-StartupWMClass=Code
 Categories=Programming;
 MimeType=text/plain;inode/directory;application/x-code-workspace;
 Actions=new-empty-window;
