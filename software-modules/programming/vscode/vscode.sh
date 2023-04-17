@@ -15,7 +15,7 @@
 #		Enya Quetzalli <equetzal@huronos.org>
 
 set -xe
-NAME=vscode
+NAME=codium
 
 ## Add vscodium keyring
 wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
