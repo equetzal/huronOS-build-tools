@@ -139,22 +139,26 @@ fi
 ## For each mountpoint that the device is using, kill and unmount
 print_step "[4/11] Unmounting selected device partitions"
 # Count every target device's mounted partitions
-PARTITION_COUNT=$(mount | grep "$TARGET" | awk '{print $3}' | wc -l)
+PARTITION_COUNT=$(mount | grep -c "$TARGET")
 
 # If mounted partitions exists, unmount them.
 if [[ "${PARTITION_COUNT}" -gt 0 ]]; then
-  echo "Unmounting $PARTITION_COUNT partition(s)"
-  PARTITIONS="$(mount | grep "$TARGET" | awk '{print $3}')"
-  for PARTIITON in ${PARTITIONS}; do
-    echo "Unmounting '$PARTIITON'"
-    # Kill proceses interacting with the partition, if any
-    fuser -k -m "$PARTIITON" || true
-    # Unmount the partition
-    umount "$PARTIITON" || exit 1 #Error unmounting
-  done
-  echo "Partition(s) unmounted correctly"
+	echo "Unmounting $PARTITION_COUNT partition(s)"
+	PARTITIONS=$(lsblk --noheadings --raw -o PATH "$TARGET")
+	for PARTITION in $PARTITIONS; do
+		MOUNTPOINT=$(lsblk --nodeps --noheadings --raw -o MOUNTPOINT "$PARTITION")
+		# If the mountpoint is empty, this is not a mounted partition
+		if [ -n "$MOUNTPOINT" ]; then
+			echo "Unmounting '$MOUNTPOINT'"
+			# Kill proceses interacting with the partition, if any
+			fuser -k -m "$PARTITION" || true
+			# Unmount the partition
+			umount "$PARTITION" || exit 1 #Error unmounting
+		fi
+  	done
+  	echo "Partition(s) unmounted correctly"
 else
-  echo "No partitions to unmount"
+  	echo "No partitions to unmount"
 fi
 
 # Wipes device's filesystem
