@@ -13,21 +13,21 @@
 #
 #	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
+#		Daniel Cerna <equetzal@huronos.org>
 
 set -xe
 
-## Launch plank to create its own config files
-(plank > /dev/null 2>&1 &)
+## Setup autostart of plank
+mkdir -p ~/.config/autostart/
+cp -r files/autostart/* ~/.config/autostart/
+## Launch plank (from the monitor script) to create its own config files
+(plankrm > /dev/null 2>&1 &)
 
 ## Config Plank
 mkdir -p ~/.config/plank/dock1/launchers/
 echo -e "[PlankDockItemPreferences]\nLauncher=file:///usr/share/applications/org.gnome.Terminal.desktop" > ~/.config/plank/dock1/launchers/org.gnome.Terminal.dockitem
 echo -e "[PlankDockItemPreferences]\nLauncher=file:///usr/share/applications/org.gnome.Nautilus.desktop" > ~/.config/plank/dock1/launchers/org.gnome.Nautilus.dockitem
 dconf load /net/launchpad/plank/docks/ < /tmp/huronOS-plank-config.dump
-
-## Setup autostart of plank
-mkdir -p ~/.config/autostart/
-cp -r files/autostart/* ~/.config/autostart/
 
 ## Load the menu bar configuration
 dconf load /com/solus-project/ < /tmp/huronOS-desktop-config.dump

@@ -143,6 +143,10 @@ systemctl enable hsync.timer
 ## Set default resolution for VGA unknown displays
 #cp -f "files/10-unknown.conf" "/usr/share/X11/xorg.conf.d/10-unknown.conf"
 
+## Copy plank resolution monitor
+cp -f "files/plankrm" "/usr/local/bin/plankrm"
+chmod +x "/usr/local/bin/plankrm"
+
 echo "Please run setup-desktop.sh on each user will have the contestant user interface"
 sleep 10
 
