@@ -1,0 +1,26 @@
+name: DeployDocs
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ stable ]
+  release:
+    types: [ published ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
+        with:
+          source-directory: 'doc'
+          target-directory: 'docs'
+          destination-github-username: 'dt3264'
+          destination-repository-name: 'huronos-auto-website'
+          user-name: github-actions[bot]
+          user-email: 41898282+github-actions[bot]@users.noreply.github.com
+          target-branch: main
