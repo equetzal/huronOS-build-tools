@@ -1,3 +1,6 @@
+---
+sidebar_position: 2
+---
 # Accessing the root user
 
 **-> Default `root` password is `toor`**

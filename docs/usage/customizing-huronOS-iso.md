@@ -1,3 +1,6 @@
+---
+sidebar_position: 6
+---
 # Customizing the huronOS ISO
 There is many reasons for why someone would like to customize an huronOS immutable ISO. Some of the ideas could be setting a root password, changing the default wallpaper, changing the default directives to fallback, or even change de behavior of the sync manager.
 
