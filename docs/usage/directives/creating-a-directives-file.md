@@ -4,7 +4,7 @@ TODO
 
 
 - `TimeZone=<YourTimezone>`
-The time zone field must have a valid *Continent/City* format. [List of possible values](./available-timezones.md)
+The time zone field must have a valid *Continent/City* format. [List of possible values](./configurations/timezones.md)
 - `ConfigurationExpirationTime=[ never | ISO8601 Time ]`
     The time in which your configuration file will be valid. After this time the *default* configuration will be loaded instead. 
     -`never` Option should be used if the configuration file is expected to never expire.

@@ -15,7 +15,7 @@
 - A working Linux distro to install the system from.
 - A USB device to install the system on (You will lose all your data so back it up).
 - The software for executing the commands: `bash`, `fuser`, `parted` (GNU Parted), `mkfs.vfat`, `mkfs.ext4`, `sha256sum`.
-- A directives file accessible from the network that will be using huronOS. Please check the [directives file document](./creating-a-directives-file.md) for guidance on setting up this file.
+- A directives file accessible from the network that will be using huronOS. Please check the [directives file document](./directives/creating-a-directives-file.md) for guidance on setting up this file.
 
 ### Process
 
