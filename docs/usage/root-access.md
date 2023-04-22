@@ -1,4 +1,4 @@
-## Accessing the root use in huronOS
+# Accessing the root user
 
 **-> Default `root` password is `toor`**
 

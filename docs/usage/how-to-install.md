@@ -1,4 +1,4 @@
-# How to install huronOS
+# How to Install huronOS
 
 **Warnings:**
 
@@ -84,7 +84,7 @@
    > **Note:** If the computer have windows installed, make sure to fully shutdown the computer as the _Windows Fast Startup_ can prevent the computer from booting on other disks.
 
 7. **Select the boot option.**  
-   By default huronOS will boot automatically on `Start contest system` option after 7 seconds. Most of times this is what you want to use. Please refer to the [boot options]() documentation for guidance on all the boot options.
+   By default huronOS will boot automatically on `Start contest system` option after 7 seconds. Most of times this is what you want to use. Please refer to the [boot options](./boot-options.md) documentation for guidance on all the boot options.
 
 **Wohoo!, You have installed huronOS!**  
 We know, there's a lot of stuff to be improved, but you can help this project to get improved by contributing! Try the system, use it on your own community, arrange your own contests. You will find out how much time huronOS can save you to setup competitive programming competitions. Then, if you find this distro to help your community, contribute to it!, It's better for all to focus our efforts in one big definitive solution for the environment of our contests rather than creating lot of small solutions!

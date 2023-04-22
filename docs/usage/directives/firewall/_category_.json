@@ -1,0 +1,8 @@
+{
+	"label": "Common Firewall Settings",
+	"position": 2,
+	"link": {
+		"type": "generated-index",
+		"description": "This are some common configurations of firewall for huronOS."
+	}
+}
