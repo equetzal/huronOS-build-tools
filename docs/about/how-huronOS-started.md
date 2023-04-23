@@ -1,3 +1,6 @@
+---
+sidebar_position: 1
+---
 # huronOS history
 huronOS starts its development by Enya Quetzalli in 2019 as a prototype of a distribution for competitive programming.
 
