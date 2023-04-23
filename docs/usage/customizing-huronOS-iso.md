@@ -1,3 +1,6 @@
+---
+sidebar_position: 6
+---
 # Customizing the huronOS ISO
 There is many reasons for why someone would like to customize an huronOS immutable ISO. Some of the ideas could be setting a root password, changing the default wallpaper, changing the default directives to fallback, or even change de behavior of the sync manager.
 
@@ -5,7 +8,7 @@ To customize the huronOS ISO, you have 2 options: Create a system layer (`.hsl`)
 
 ## Creating an huronOS system layer
 To understand what a system layer is, please firstly read about what the *Union Filesystems* are, and what an *SquashFS* file is. This are concepts necessaries to be confident on creating this system layer.  
-After this, it's recommended to read about [how the system layers work](../design/how-the-system-layers-work.md) to better understand how those concepts are used inside huronOS.  
+After this, it's recommended to read about [how the system layers work](../design/system-layers.md) to better understand how those concepts are used inside huronOS.  
 
 After this, please select what files do you want to include in a new system layer, this are regularly the deltas between the layer `04-shared-libs.hsl` and the state you want to archive. In certain cases is better to just use `savechanges` and then remove all the unnecessary files. Other times is better to create a fake root and only include the files you want. This last option is considered to be a better practice as you have more control of what you want to include or not.  
 

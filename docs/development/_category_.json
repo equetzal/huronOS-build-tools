@@ -1,0 +1,8 @@
+{
+	"label": "Developing huronOS",
+	"position": 5,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn how huronOS is developed, which technologies we use and and what standards do we follow."
+	}
+}

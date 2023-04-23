@@ -1,4 +1,7 @@
-# Tips for developing huronOS
+---
+sidebar_position: 3
+---
+# Tips for Developing huronOS
 So, if you plan to contribute continuously to this project, or you decide to fork it and continue by your own, this tips can help you to iterate quicker on your development process. Let's check some of those tips:
 
 - **Use two computers**  

@@ -1,4 +1,4 @@
-
+# Timezones
 The directives file is able to configure a timezone for the huronOS instance via the `TimeZone` configuration, these are the possible values for this field:
 - `Africa/Abidjan`
 - `Africa/Accra`

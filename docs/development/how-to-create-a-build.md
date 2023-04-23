@@ -1,14 +1,17 @@
-## Building huronOS
+---
+sidebar_position: 5
+---
+# Building huronOS
 
 To build huronOS you'll be needing to follow several steps:
 
-1. **Install Debian:** <br>
+1. **Install Debian:**  
    Firstly install on a computer Debian 11.6 with a minimal installation setup. Make sure to do not install **any** extra software mentioned on the installer, and do not setup extra users other than root. (if you do, erase them)
 
-2. **Get huronOS-build-tools** <br>
+2. **Get huronOS-build-tools**  
    Clone this repo on the `/` root directory of your newly installed Debian.
 
-3. **Compile the huronOS kernel** <br>
+3. **Compile the huronOS kernel**  
    huronOS needs a kernel that supports [AUFS](https://aufs.sf.net), so we need to replace the kernel. To do so, run as **root**:
 
    ```bash
@@ -17,8 +20,8 @@ To build huronOS you'll be needing to follow several steps:
    ./build-kernel.sh
    ```
 
-4. **Build the base system** <br>
-   To build the base system (`01-base.hsl`) and the huronOS bootable skeleton filesystem, run as **root**:<br>
+4. **Build the base system**  
+   To build the base system (`01-base.hsl`) and the huronOS bootable skeleton filesystem, run as **root**:  
 
    ```bash
    chmod +x base-system/base.sh
