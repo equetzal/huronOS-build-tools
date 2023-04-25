@@ -91,6 +91,7 @@ readonly BACKUP_DIR=$USRCHANGES/$BACKUP_DIR_NAME
 
 	# DIRECTIVES preffix is the information about the directives file
 	declare DIRECTIVES_FILE_URL
+	declare DIRECTIVES_SERVER_IP
 	declare DIRECTIVES_TEMP_FILE
 	declare DIRECTIVES_FILE_TO_USE
 	declare DIRECTIVES_SPECIFIC_CONFIG
