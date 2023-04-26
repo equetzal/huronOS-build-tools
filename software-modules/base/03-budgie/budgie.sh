@@ -17,12 +17,13 @@
 
 set -xe
 
-PACKAGES="apparmor budgie-desktop budgie-desktop-view budgie-countdown-applet budgie-extras-daemon connman-gtk dconf-cli eog gnome-calculator gnome-calendar gnome-terminal gnome-themes-extra libdrm-intel1 libgl1-mesa-dri libglib2.0-bin libglu1-mesa lightdm moka-icon-theme nautilus nautilus-extension-gnome-terminal okular plank x11-xserver-utils x11-utils xdg-user-dirs xinit xinput xserver-xorg xserver-xorg-input-all xserver-xorg-video-amdgpu xserver-xorg-video-ati xserver-xorg-video-intel xserver-xorg-video-nvidia xserver-xorg-video-radeon xserver-xorg-video-vesa xterm"
+# Get the dependencies and replace every new line with a space
+DEPENDENCIES="$(< dependencies.txt tr '\n' ' ')"
 
 ## Install
 apt update
-# shellcheck disable=SC2086
-apt install --yes --no-install-recommends $PACKAGES
+
+apt install --yes --no-install-recommends "$DEPENDENCIES"
 
 ## Delete debian lightdm configs
 rm -rf /usr/share/lightdm/*
