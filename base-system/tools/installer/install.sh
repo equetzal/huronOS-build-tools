@@ -77,7 +77,8 @@ print_step "[1/11] Locating huronOS image -> $ISO_DIR"
 ## Configure the remote directives file
 print_step "[2/11] Configuring directives server."
 read -r -p "URL (http/s) of directives file to configure:" DIRECTIVES_FILE_URL
-echo -e "[Server]\nIP=\nDOMAIN=\nDIRECTIVES_ENDPOINT=\nSERVER_ROOM=\nDIRECTIVES_FILE_URL=$DIRECTIVES_FILE_URL\n" > "$SERVER_CONFIG"
+read -r -p "IP of the sync server:" DIRECTIVES_SERVER_IP
+echo -e "[Server]\nIP=\nDOMAIN=\nDIRECTIVES_ENDPOINT=\nSERVER_ROOM=\nDIRECTIVES_FILE_URL=$DIRECTIVES_FILE_URL\nDIRECTIVES_SERVER_IP=$DIRECTIVES_SERVER_IP\n" > "$SERVER_CONFIG"
 
 ## Select the device we want to install huronOS to
 print_step "[3/11] Selecting removable device to install huronOS on"
