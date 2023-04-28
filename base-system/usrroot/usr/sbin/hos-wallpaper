@@ -20,7 +20,7 @@
 . /usr/lib/hos/utils.sh
 
 ## Help function
-help(){
+help() {
 	echo "huronOS Wallpaper Tool"
 	echo "This tool will help you to update the wallpapers of the system"
 	echo "it can be automatically using the directives file, or manually."
@@ -28,45 +28,55 @@ help(){
 	echo "Syntax: hos-wallpaper [operation]"
 	echo
 	echo "operations:"
-	printf '%-30.30s\t%s\n' 	"--help"			"Display this help and exit."
-	printf '%-30.30s\t%s\n' 	"--automatic" 		"Automatically download and set the wallpapers in directives."
-#	printf '%-30.30s\t%s\n' 	"--manual [Mode] [URL]"	"Add the provided module to the root AUFS union."
+	printf '%-30.30s\t%s\n' "--help" "Display this help and exit."
+	printf '%-30.30s\t%s\n' "--automatic" "Automatically download and set the wallpapers in directives."
+	#	printf '%-30.30s\t%s\n' 	"--manual [Mode] [URL]"	"Add the provided module to the root AUFS union."
 	echo
-#	echo "options:"
-#	printf '%-5.5s\t%s\n'	"-s"	"Do operations silently."
-#	printf '%-5.5s\t%s\n'	"-p"	"Save wallpapers persistently"
+	#	echo "options:"
+	#	printf '%-5.5s\t%s\n'	"-s"	"Do operations silently."
+	#	printf '%-5.5s\t%s\n'	"-p"	"Save wallpapers persistently"
 }
 
-main(){
+main() {
 	local SET_MODE
 
-	while(($#)); do
+	while (($#)); do
 		case $1 in
-			"--help")
-				help; exit 0;;
-			"--manual")
-				SET_MODE="$2"; shift 2;;
-			"--automatic")
-				SET_MODE="$(hos-dmode)"; shift 1;;
-			*) echo "Unknown operation '$1', please run [hos-wallpaper --help] for help"; exit 1;;
+		"--help")
+			help
+			exit 0
+			;;
+		"--manual")
+			SET_MODE="$2"
+			shift 2
+			;;
+		"--automatic")
+			SET_MODE="$(hos-dmode)"
+			shift 1
+			;;
+		*)
+			echo "Unknown operation '$1', please run [hos-wallpaper --help] for help"
+			exit 1
+			;;
 		esac
 	done
 
 	if [ -z "${SET_MODE}" ]; then
-		echo "Mode to apply not specified, please run [hos-wallpaper --help] for help"; exit 1;
+		echo "Mode to apply not specified, please run [hos-wallpaper --help] for help"
+		exit 1
 	fi
 
-	check_wallpapers "$SET_MODE";
+	check_wallpapers "$SET_MODE"
 }
 
 # $1 = Wallpaper Section
 # $2 = Current Mode
-prepare_wallpaper(){
-	local SECTION CURRENT_MODE WALLPAPER_URL WALLPAPER_HASH_URL FILE_TYPE SAVE_FILE CURRENT_WALLPAPER
+prepare_wallpaper() {
+	local SECTION CURRENT_MODE WALLPAPER_URL WALLPAPER_HASH FILE_TYPE SAVE_FILE CURRENT_WALLPAPER
 	SECTION="$1"
 	CURRENT_MODE="$2"
 	WALLPAPER_URL="$(hos-dvar --variable-name Wallpaper --section "$SECTION")"
-	WALLPAPER_HASH_URL="${WALLPAPER_URL}.sha256"
+	WALLPAPER_HASH="$(hos-dvar --variable-name WallpaperSha256 --section "$SECTION")"
 	BASENAME="$(basename "$WALLPAPER_URL")"
 	FILE_TYPE="${BASENAME##*.}"
 	SAVE_FILE="$SYSTEM_BACKUP_FILES_DIR/${SECTION}-mode-wallpaper.${FILE_TYPE}"
@@ -78,9 +88,9 @@ prepare_wallpaper(){
 		SAVE_FILE="$SYSTEM_BACKUP_FILES_DIR/${SECTION}-mode-wallpaper.${FILE_TYPE}"
 		cp -f "$DEFAULT_WALLPAPER_FILE" "$SAVE_FILE"
 	## If current file is not valid
-	elif should_redownload_file "$SAVE_FILE" "$WALLPAPER_HASH_URL"; then
+	elif should_redownload_file "$SAVE_FILE" "$WALLPAPER_URL" "$WALLPAPER_HASH"; then
 		## Download the file
-		if ! safe_download "$WALLPAPER_URL" "$SAVE_FILE" "$WALLPAPER_HASH_URL"; then
+		if ! safe_download "$WALLPAPER_URL" "$SAVE_FILE" "$WALLPAPER_HASH"; then
 			## If not successfull, leave the file as it is unless there is no file
 			if [ ! -f "$SAVE_FILE" ]; then
 				## Set default wallpaper
@@ -105,7 +115,7 @@ prepare_wallpaper(){
 }
 
 # $1 = Current Mode
-check_wallpapers(){
+check_wallpapers() {
 	local CURRENT_MODE
 	CURRENT_MODE="$1"
 
@@ -119,4 +129,5 @@ check_wallpapers(){
 	prepare_wallpaper "Contest" "$CURRENT_MODE"
 }
 
-main "$@"; exit 0;
+main "$@"
+exit 0
