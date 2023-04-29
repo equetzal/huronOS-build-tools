@@ -20,7 +20,7 @@
 . /usr/lib/hos/utils.sh
 
 ## Help function
-help(){
+help() {
 	echo "huronOS Wallpaper Tool"
 	echo "This tool will help you to update the wallpapers of the system"
 	echo "it can be automatically using the directives file, or manually."
@@ -28,40 +28,50 @@ help(){
 	echo "Syntax: hos-wallpaper [operation]"
 	echo
 	echo "operations:"
-	printf '%-30.30s\t%s\n' 	"--help"			"Display this help and exit."
-	printf '%-30.30s\t%s\n' 	"--automatic" 		"Automatically download and set the wallpapers in directives."
-#	printf '%-30.30s\t%s\n' 	"--manual [Mode] [URL]"	"Add the provided module to the root AUFS union."
+	printf '%-30.30s\t%s\n' "--help" "Display this help and exit."
+	printf '%-30.30s\t%s\n' "--automatic" "Automatically download and set the wallpapers in directives."
+	#	printf '%-30.30s\t%s\n' 	"--manual [Mode] [URL]"	"Add the provided module to the root AUFS union."
 	echo
-#	echo "options:"
-#	printf '%-5.5s\t%s\n'	"-s"	"Do operations silently."
-#	printf '%-5.5s\t%s\n'	"-p"	"Save wallpapers persistently"
+	#	echo "options:"
+	#	printf '%-5.5s\t%s\n'	"-s"	"Do operations silently."
+	#	printf '%-5.5s\t%s\n'	"-p"	"Save wallpapers persistently"
 }
 
-main(){
+main() {
 	local SET_MODE
 
-	while(($#)); do
+	while (($#)); do
 		case $1 in
-			"--help")
-				help; exit 0;;
-			"--manual")
-				SET_MODE="$2"; shift 2;;
-			"--automatic")
-				SET_MODE="$(hos-dmode)"; shift 1;;
-			*) echo "Unknown operation '$1', please run [hos-wallpaper --help] for help"; exit 1;;
+		"--help")
+			help
+			exit 0
+			;;
+		"--manual")
+			SET_MODE="$2"
+			shift 2
+			;;
+		"--automatic")
+			SET_MODE="$(hos-dmode)"
+			shift 1
+			;;
+		*)
+			echo "Unknown operation '$1', please run [hos-wallpaper --help] for help"
+			exit 1
+			;;
 		esac
 	done
 
 	if [ -z "${SET_MODE}" ]; then
-		echo "Mode to apply not specified, please run [hos-wallpaper --help] for help"; exit 1;
+		echo "Mode to apply not specified, please run [hos-wallpaper --help] for help"
+		exit 1
 	fi
 
-	check_wallpapers "$SET_MODE";
+	check_wallpapers "$SET_MODE"
 }
 
 # $1 = Wallpaper Section
 # $2 = Current Mode
-prepare_wallpaper(){
+prepare_wallpaper() {
 	local SECTION CURRENT_MODE WALLPAPER_URL WALLPAPER_HASH_URL FILE_TYPE SAVE_FILE CURRENT_WALLPAPER
 	SECTION="$1"
 	CURRENT_MODE="$2"
@@ -105,7 +115,7 @@ prepare_wallpaper(){
 }
 
 # $1 = Current Mode
-check_wallpapers(){
+check_wallpapers() {
 	local CURRENT_MODE
 	CURRENT_MODE="$1"
 
@@ -119,4 +129,5 @@ check_wallpapers(){
 	prepare_wallpaper "Contest" "$CURRENT_MODE"
 }
 
-main "$@"; exit 0;
+main "$@"
+exit 0

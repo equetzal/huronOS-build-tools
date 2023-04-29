@@ -13,7 +13,6 @@
 #	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
 
-
 set -xe
 
 # Install destiny build packages
@@ -33,7 +32,6 @@ else
 fi
 # shellcheck disable=SC2086
 apt autoremove --yes --purge $REM_PACKAGES
-
 
 # Copy root directories
 pushd usrroot && cp --parents -afr * / && popd

@@ -14,7 +14,7 @@
 #		Enya Quetzalli <equetzal@huronos.org>
 #		Abraham Omar   <aomm@huronos.org>
 
-enable_network_interfaces(){
+enable_network_interfaces() {
 	declare INTERFACES="$(ip -o -br link | awk '{print $1}' | tr '\n' ' ')"
 
 	rfkill unblock all
@@ -25,12 +25,12 @@ enable_network_interfaces(){
 	return 0 # success
 }
 
-get_ip_from_url(){
+get_ip_from_url() {
 	## Default IP is empty (if the URL is not an IP and the domain cannot resolve to an IP, the IP is empty)
 	local IP=""
 	local URL=$1
-  	# Define the regular expression to match a domain or an IP
-  	local URL_REGEX="^(https?:\/\/)?([^\/:]+)(:[0-9]+)?\/?.*$"
+	# Define the regular expression to match a domain or an IP
+	local URL_REGEX="^(https?:\/\/)?([^\/:]+)(:[0-9]+)?\/?.*$"
 	# Test if the URL matches the regular expression
 	if [[ $URL =~ $URL_REGEX ]]; then
 		# If it does, extract the domain & subdomains (if it has) from the second group
@@ -58,8 +58,7 @@ get_ip_from_url(){
 	echo "$IP"
 }
 
-
-firewall_accept_all(){
+firewall_accept_all() {
 
 	enable_network_interfaces
 
@@ -83,7 +82,7 @@ firewall_accept_all(){
 	return 0
 }
 
-firewall_filter_ipv4(){
+firewall_filter_ipv4() {
 
 	## Get all the IP addresses to ALLOW web traffic
 	declare DIRECTIVES_FILE_IP="$(get_ip_from_url "$DIRECTIVES_FILE_URL")"
@@ -97,7 +96,7 @@ firewall_filter_ipv4(){
 	ALLOW_IPS+=" $DIRECTIVES_SERVER_IP"
 	ALLOW_IPS+=" $WALLPAPER_IP"
 
-	if [ "$ALLOWED_WEBSITES" != "any" ];then
+	if [ "$ALLOWED_WEBSITES" != "any" ]; then
 		for WEBSITE_URL in $ALLOWED_WEBSITES; do
 			IP="$(get_ip_from_url "$WEBSITE_URL")"
 			ALLOW_IPS+=" $IP"
@@ -150,12 +149,12 @@ firewall_filter_ipv4(){
 	return 0
 }
 
-firewall_filter_ipv6(){
+firewall_filter_ipv6() {
 	#TODO: Implement
 	return 0
 }
 
-firewall_accept_filtered_web(){
+firewall_accept_filtered_web() {
 
 	enable_network_interfaces
 	firewall_filter_ipv4

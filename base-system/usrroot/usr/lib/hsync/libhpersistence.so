@@ -15,11 +15,10 @@
 #		Enya Quetzalli <equetzal@huronos.org>
 #		Abraham Omar   <aomm@huronos.org>
 
-
 # This is the first execution of hsync, here we don't have a current state.
 # It is 'none', so in this part we need to either set a previous persistent state
 # or set 'always' mode if no other state is available.
-start_persistence(){
+start_persistence() {
 
 	log " Starting a new persistent layer on AUFS."
 	systemctl stop lightdm
@@ -27,34 +26,34 @@ start_persistence(){
 	sleep 2
 
 	case $STATE_MODE in
-		# If there's no STATE_MODE, then there was no persistence set.
-		# Let's clean the partition and start the always mode
-		"none")
-			log "-No previous state found, creating new persistence in always mode"
-			start_always_mode || return 1 # error
-			return 0 # sucess
-			;;
+	# If there's no STATE_MODE, then there was no persistence set.
+	# Let's clean the partition and start the always mode
+	"none")
+		log "-No previous state found, creating new persistence in always mode"
+		start_always_mode || return 1 # error
+		return 0                      # sucess
+		;;
 
-		# If the state was always, then let's restore the files
-		"always")
-			log "+Previous state found, restoring persistence in always mode"
-			restore_always_mode || return 1
-			return 0 # sucess
-			;;
+	# If the state was always, then let's restore the files
+	"always")
+		log "+Previous state found, restoring persistence in always mode"
+		restore_always_mode || return 1
+		return 0 # sucess
+		;;
 
-		# If the state was event, then let's restore the files
-		"event")
-			log "+Previous state found, restoring persistence in event mode"
-			restore_event_mode || return 1
-			return 0 # sucess
-			;;
+	# If the state was event, then let's restore the files
+	"event")
+		log "+Previous state found, restoring persistence in event mode"
+		restore_event_mode || return 1
+		return 0 # sucess
+		;;
 
-		# If the state was contest, then let's restore the files
-		"contest")
-			log "+Previous state found, restoring persistence in contest mode"
-			restore_contest_mode || return 1
-			return 0 # sucess
-			;;
+	# If the state was contest, then let's restore the files
+	"contest")
+		log "+Previous state found, restoring persistence in contest mode"
+		restore_contest_mode || return 1
+		return 0 # sucess
+		;;
 	esac
 
 	return 0
@@ -62,7 +61,7 @@ start_persistence(){
 
 # This function is supposed to be called when there's a mode already set,
 # so that this function only change the persistence between modes.
-apply_persistence_mode(){
+apply_persistence_mode() {
 
 	if ! system_has_persistece_enabled; then
 		STATE_IS_PERSISTENCE_ENABLED="false"
@@ -96,14 +95,14 @@ apply_persistence_mode(){
 	fi
 
 	#set -x
-	[ "$STATE_MODE" = "always" ]	&& [ "$NEW_MODE" = "event" ]	&& always_to_event
-	[ "$STATE_MODE" = "always" ]	&& [ "$NEW_MODE" = "contest" ]	&& always_to_contest
-	[ "$STATE_MODE" = "event" ]		&& [ "$NEW_MODE" = "always" ]	&& event_to_always
-	[ "$STATE_MODE" = "event" ]		&& [ "$NEW_MODE" = "event" ]	&& event_to_event
-	[ "$STATE_MODE" = "event" ]		&& [ "$NEW_MODE" = "contest" ]	&& event_to_contest
-	[ "$STATE_MODE" = "contest" ]	&& [ "$NEW_MODE" = "always" ]	&& contest_to_always
-	[ "$STATE_MODE" = "contest" ]	&& [ "$NEW_MODE" = "event" ]	&& contest_to_event
-	[ "$STATE_MODE" = "contest" ]	&& [ "$NEW_MODE" = "contest" ]	&& contest_to_contest
+	[ "$STATE_MODE" = "always" ] && [ "$NEW_MODE" = "event" ] && always_to_event
+	[ "$STATE_MODE" = "always" ] && [ "$NEW_MODE" = "contest" ] && always_to_contest
+	[ "$STATE_MODE" = "event" ] && [ "$NEW_MODE" = "always" ] && event_to_always
+	[ "$STATE_MODE" = "event" ] && [ "$NEW_MODE" = "event" ] && event_to_event
+	[ "$STATE_MODE" = "event" ] && [ "$NEW_MODE" = "contest" ] && event_to_contest
+	[ "$STATE_MODE" = "contest" ] && [ "$NEW_MODE" = "always" ] && contest_to_always
+	[ "$STATE_MODE" = "contest" ] && [ "$NEW_MODE" = "event" ] && contest_to_event
+	[ "$STATE_MODE" = "contest" ] && [ "$NEW_MODE" = "contest" ] && contest_to_contest
 	#set +x
 
 	STATE_IS_PERSISTENCE_ENABLED="true"
@@ -118,7 +117,7 @@ apply_persistence_mode(){
 ## Given a persistent branch currently part of the AUFS union
 #  let it be free. That is, removing the branch from the union.
 # $1 = Branch to free
-free_branch(){
+free_branch() {
 	local BRANCH PIDS PID
 	BRANCH="$1"
 
@@ -140,7 +139,7 @@ free_branch(){
 	## Ok, we cannot remove the AUFS branch, so, a non-graphical process is locking the branch
 	# we will try killing all processes that are locking them. If huronOS is well configured,
 	# any important process should be locking the branch
-	for i in {1..50} ; do
+	for i in {1..50}; do
 		echo -n "Try #$i"
 		sleep "$(echo 0.1*"$i" | bc)"
 		PIDS="$(aubusy -v / "$BRANCH" | awk '{print $1}' | sort -u | tr '\n' ' ')"
@@ -191,7 +190,7 @@ This will allow USB connections. Then, backup the user data, finally reboot."\
 
 ## Branch is unified into AUFS and then realeased for user to use.
 # $1 = Branch to release
-release_branch(){
+release_branch() {
 	local BRANCH
 	BRANCH="$1"
 
@@ -206,7 +205,7 @@ release_branch(){
 ## Cleans the given partition of ANY file, then creates the base dirs that will redirect
 # the AUFS tdp create policy to save changes on usrchanges instead of syschanges
 # $1 = Mount point to clean, should be writtable
-prepare_perch(){
+prepare_perch() {
 	local DIR
 	DIR="$1"
 
@@ -232,7 +231,7 @@ prepare_perch(){
 # $1 = partition mount point
 # $2 = destiny directory to save
 # $3 = preffix of directory where changes will be saved
-save_changes(){
+save_changes() {
 	local ORIGIN DESTINY PREFFIX DIR
 	ORIGIN="$1"
 	DESTINY="$2"
@@ -244,7 +243,7 @@ save_changes(){
 	chown contestant:contestant -R "$DIR"
 }
 
-start_always_mode(){
+start_always_mode() {
 	# Let's deactivate all modules to prevent syschanges/ to stay at a higher index layer
 	# than any module. That would cause that modularized-software changes to be saved
 	# on the syschanges/ instead of the usrchanges/
@@ -275,7 +274,7 @@ start_always_mode(){
 	return 0
 }
 
-restore_always_mode(){
+restore_always_mode() {
 
 	# Silently deactivate all modules to prevent syschanges/ to stay at a higher index layer
 	# than any module. That would cause that modularized-software changes to be saved
@@ -303,7 +302,7 @@ restore_always_mode(){
 	return 0
 }
 
-restore_event_mode(){
+restore_event_mode() {
 
 	# Silently deactivate all modules to prevent syschanges/ to stay at a higher index layer
 	# than any module. That would cause that modularized-software changes to be saved
@@ -331,7 +330,7 @@ restore_event_mode(){
 	return 0
 }
 
-restore_contest_mode(){
+restore_contest_mode() {
 
 	# Silently deactivate all modules to prevent syschanges/ to stay at a higher index layer
 	# than any module. That would cause that modularized-software changes to be saved
@@ -359,14 +358,14 @@ restore_contest_mode(){
 	return 0
 }
 
-always_to_event(){
+always_to_event() {
 	free_branch "$USRCHANGES"
 	prepare_perch "$USRCHANGES"
 	release_branch "$USRCHANGES"
 	return 0
 }
 
-always_to_contest(){
+always_to_contest() {
 	free_branch "$USRCHANGES"
 	umount "$USRCHANGES"
 	prepare_perch "$CONTEST_MNT"
@@ -375,21 +374,21 @@ always_to_contest(){
 	return 0
 }
 
-event_to_always(){
+event_to_always() {
 	free_branch "$USRCHANGES"
 	prepare_perch "$USRCHANGES"
 	release_branch "$USRCHANGES"
 	return 0
 }
 
-event_to_event(){
+event_to_event() {
 	free_branch "$USRCHANGES"
 	prepare_perch "$USRCHANGES"
 	release_branch "$USRCHANGES"
 	return 0
 }
 
-event_to_contest(){
+event_to_contest() {
 	free_branch "$USRCHANGES"
 	umount "$USRCHANGES"
 	prepare_perch "$CONTEST_MNT"
@@ -398,7 +397,7 @@ event_to_contest(){
 	return 0
 }
 
-contest_to_always(){
+contest_to_always() {
 	free_branch "$USRCHANGES"
 	umount "$USRCHANGES"
 	prepare_perch "$EVENT_MNT"
@@ -409,7 +408,7 @@ contest_to_always(){
 	return 0
 }
 
-contest_to_event(){
+contest_to_event() {
 	free_branch "$USRCHANGES"
 	umount "$USRCHANGES"
 	save_changes "$CONTEST_MNT" "$EVENT_MNT/home/contestant" "contest"
@@ -419,11 +418,10 @@ contest_to_event(){
 	return 0
 }
 
-contest_to_contest(){
+contest_to_contest() {
 	free_branch "$USRCHANGES"
 	save_changes "$CONTEST_MNT" "$EVENT_MNT/home/contestant" "contest"
 	prepare_perch "$USRCHANGES"
 	release_branch "$USRCHANGES"
 	return 0
 }
-

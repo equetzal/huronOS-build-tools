@@ -9,7 +9,7 @@
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2
-#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
@@ -18,7 +18,7 @@ set -xe
 NAME=atom
 
 ## Install software
-cat atom.deb_* > /tmp/atom-amd64.deb
+cat atom.deb_* >/tmp/atom-amd64.deb
 apt update
 apt install --yes --no-install-recommends /tmp/atom-amd64.deb
 apt autoremove --yes

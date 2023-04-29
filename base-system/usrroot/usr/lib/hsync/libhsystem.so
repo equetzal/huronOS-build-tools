@@ -8,18 +8,17 @@
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2
-#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
 #		Abraham Omar   <aomm@huronos.org>
 
-
 # Returns true if the uptime has 120 or less seconds of boottime.
 # The hsync.timer is configured to start 60 seconds after boot,
 # once network is initialized and graphical enviroment is set.
 # So, first execution should be between ~60s and ~120s of bootime.
-system_has_just_booted(){
+system_has_just_booted() {
 	## Check if huronOS rebooted in the last 120 seconds
 	log " Checking if huronOS has just booted"
 	seconds_since_boot=$(awk '{print int($1)}' /proc/uptime)
@@ -34,7 +33,7 @@ system_has_just_booted(){
 	# In case demo was enabled on cmdline, first execution of hsync may be out of boot time.
 	# If that happen, let's replace demo work with booted to run this at anytime only on first manual launch
 	if cmdline_has "demo" && [ -f /run/hsync/demo ] && [ "$(cat /run/hsync/demo)" = "demo" ]; then
-		echo "booted" > /run/hsync/demo
+		echo "booted" >/run/hsync/demo
 		return 0
 	fi
 
@@ -45,22 +44,22 @@ system_has_just_booted(){
 ## Get the huronos.flags cmdline value for a given key
 # $1 = key to search value of
 # Eg. $1="ip", "ip=1.1.1.1" -> "1.1.1.1"
-cmdline_value(){
-   	cat /proc/cmdline | sed "s/.*huronos.flags=(\(.*\)).*/\1/" | sed -ne "/.*$1=\([^;]*\).*/!d;s//\1/p"
+cmdline_value() {
+	cat /proc/cmdline | sed "s/.*huronos.flags=(\(.*\)).*/\1/" | sed -ne "/.*$1=\([^;]*\).*/!d;s//\1/p"
 }
 
 ## Returns true if there is a huronos.flag with value equals true
 # $1 = key to expect value as true
-cmdline_has(){
+cmdline_has() {
 	VALUE="$(cmdline_value $1)"
 	if [ "$VALUE" = "true" ]; then
-   		return 0
-   	else
-   		return 1
-   	fi
+		return 0
+	else
+		return 1
+	fi
 }
 
-apply_demo_if_on(){
+apply_demo_if_on() {
 
 	# If demo flag is set on cmdline, hsync services
 	# should stop to let orgs set screen settings, etc.
@@ -71,7 +70,7 @@ apply_demo_if_on(){
 		# If file does not exist, services has not been stoped yet.
 		if [ ! -f $HSYNC_RUN_DIR/demo ]; then
 			# Create demo file to mark the services are being stoped
-			echo "demo" > $HSYNC_RUN_DIR/demo
+			echo "demo" >$HSYNC_RUN_DIR/demo
 			# Stop current execution and future ones
 			systemctl stop hsync.timer
 			systemctl stop hsync.service
@@ -84,11 +83,11 @@ apply_demo_if_on(){
 }
 
 ## Returns true if the cmdline at boot has persistence set to true
-system_has_persistece_enabled(){
+system_has_persistece_enabled() {
 	return $(cmdline_has "persistence")
 }
 
-state_clock_sync(){
+state_clock_sync() {
 	if [ "$STATE_IS_CLOCK_SYNC" = "no" ]; then
 		ntpdate -t 2 pool.ntp.org
 		STATE_IS_CLOCK_SYNC="$(timedatectl show | grep NTPSynchronized | cut -d= -f2)"
@@ -101,11 +100,11 @@ state_clock_sync(){
 	STATE_IS_CLOCK_SYNC="$(timedatectl show | grep NTPSynchronized | cut -d= -f2)"
 }
 
-state_hsync_execution_time(){
+state_hsync_execution_time() {
 	STATE_LAST_HSYNC_EXECUTION_TIME_UTC="$(date --utc --iso-8601='seconds')"
 }
 
-load_state(){
+load_state() {
 	if [ ! -f $STATE_FILE ]; then
 		log "-Cannot load current state"
 		STATE_MODE="none"
@@ -117,9 +116,9 @@ load_state(){
 	STATE_MODE_START_TIME_UTC="$(cat /etc/hsync/state | grep mode-start-time-utc= | cut -d= -f2)"
 	STATE_MODE_END_TIME_UTC="$(cat /etc/hsync/state | grep mode-end-time-utc= | cut -d= -f2)"
 	STATE_IS_PERSISTENCE_ENABLED="$(cat /etc/hsync/state | grep is-persistence-enabled= | cut -d= -f2)"
-	STATE_PERSISTENCE_DISK="$(cat /etc/hsync/state | grep persistence-disk=| cut -d= -f2)"
-	STATE_LAST_HSYNC_EXECUTION_TIME_UTC="$(cat /etc/hsync/state | grep last-hsync-execution-time-utc=| cut -d= -f2)"
-	
+	STATE_PERSISTENCE_DISK="$(cat /etc/hsync/state | grep persistence-disk= | cut -d= -f2)"
+	STATE_LAST_HSYNC_EXECUTION_TIME_UTC="$(cat /etc/hsync/state | grep last-hsync-execution-time-utc= | cut -d= -f2)"
+
 	log "+System state is set to:
 	is-clock-sync=$STATE_IS_CLOCK_SYNC
 	mode=$STATE_MODE
@@ -131,15 +130,15 @@ load_state(){
 	return 0 # success
 }
 
-update_state(){
+update_state() {
 	STATE_MODE="$NEW_MODE"
 	STATE_MODE_START_TIME_UTC="$NEW_MODE_START_TIME_UTC"
 	STATE_MODE_END_TIME_UTC="$NEW_MODE_END_TIME_UTC"
 	return 0
 }
 
-save_state(){
-	cat <<EOT > $STATE_FILE
+save_state() {
+	cat <<EOT >$STATE_FILE
 is-clock-sync=$STATE_IS_CLOCK_SYNC
 mode=$STATE_MODE
 mode-start-time-utc=$STATE_MODE_START_TIME_UTC
@@ -160,7 +159,7 @@ EOT
 
 # Determines if the running mode, is the same as the
 # calculated on the directives file.
-is_running_mode_same_as_new_mode(){
+is_running_mode_same_as_new_mode() {
 	log " Running mode is $STATE_MODE, directives ask to set mode $NEW_MODE"
 
 	## If the state mode and the new mode are different, we know is not the same
@@ -174,9 +173,9 @@ is_running_mode_same_as_new_mode(){
 		return 0 # true, the-same
 	fi
 
-	# Ok, so if the same mode is running we need to verify both of them are 
+	# Ok, so if the same mode is running we need to verify both of them are
 	# on the same time frame. This is not trivial because eg. maybe while an event is
-	# running, the organizers updated the end time. We need to handle this by not 
+	# running, the organizers updated the end time. We need to handle this by not
 	# moving the persistence, just the next forced execution.
 	# By the other hand, maybe the last time the system was powered off, was during
 	# a running event. So, at the boot time we will restore the persistence of that
@@ -192,7 +191,7 @@ is_running_mode_same_as_new_mode(){
 	# at is only executed on sec 00, and this line is usually reached between 3-15 seconds
 	# after the original scheduled execution time, so we can add a 30 seconds tolerance
 	# to consider the contest extension just in the past scheduled point
-	STATE_MODE_END=$((STATE_MODE_END+30))
+	STATE_MODE_END=$((STATE_MODE_END + 30))
 
 	# Asumtions will be the following:
 	#	-If the current mode end time was before (lower equal) than CURRENT_TIME, then they
@@ -210,9 +209,9 @@ is_running_mode_same_as_new_mode(){
 	if [ $STATE_MODE_START -gt $CURRENT_TIME ]; then
 		return 1 # false, different
 	fi
-	if  [ $STATE_MODE_START -lt $NEW_MODE_END ] && \
+	if [ $STATE_MODE_START -lt $NEW_MODE_END ] &&
 		[ $STATE_MODE_END -gt $CURRENT_TIME ]; then
-			return 0 # true, same
+		return 0 # true, same
 	fi
 
 	return 1 # false, different

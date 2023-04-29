@@ -18,7 +18,7 @@
 set -xe
 
 ## Get the dependencies and replace every new line with a space
-DEPENDENCIES="$(< dependencies.txt tr '\n' ' ')"
+DEPENDENCIES="$(tr <dependencies.txt '\n' ' ')"
 
 apt update
 

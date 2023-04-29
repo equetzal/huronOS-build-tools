@@ -21,8 +21,7 @@ INITRAMFS=$HBT_LAB/initramfs
 # copy file to initramfs tree, including
 # all library dependencies (as shown by ldd)
 # $1 = file to copy (full path)
-copy_including_deps()
-{
+copy_including_deps() {
    # if source doesn't exist or target exists, do nothing
    if [ ! -e "$1" -o -e "$INITRAMFS"/"$1" ]; then
       return
@@ -32,13 +31,16 @@ copy_including_deps()
    if [ -L "$1" ]; then
       DIR="$(dirname "$1")"
       LNK="$(readlink "$1")"
-      copy_including_deps "$(cd "$DIR"; realpath -s "$LNK")"
+      copy_including_deps "$(
+         cd "$DIR"
+         realpath -s "$LNK"
+      )"
    fi
 
-   ldd "$1" 2>/dev/null | sed -r "s/.*=>|[(].*//g" | sed -r "s/^\\s+|\\s+\$//" \
-     | while read LIB; do
-        copy_including_deps "$LIB"
-     done
+   ldd "$1" 2>/dev/null | sed -r "s/.*=>|[(].*//g" | sed -r "s/^\\s+|\\s+\$//" |
+      while read LIB; do
+         copy_including_deps "$LIB"
+      done
 
    for MOD in $(find "$1" -type f | grep .ko); do
       for DEP in $(cat /$LMK/modules.dep | fgrep /$(basename $MOD):); do
@@ -48,7 +50,7 @@ copy_including_deps()
 
    shift
    if [ "$1" != "" ]; then
-       copy_including_deps "$@"
+      copy_including_deps "$@"
    fi
 }
 
@@ -137,12 +139,14 @@ copy_including_deps /$LMK/updates
 
 copy_including_deps /$LMK/modules.*
 
-
 find $INITRAMFS -name "*.ko.gz" -exec gunzip {} \;
 
 # trim modules.order file. Perhaps we could remove it entirely
-MODULEORDER="$(cd "$INITRAMFS/$LMK/"; find -name "*.ko" | sed -r "s:^./::g" | tr "\n" "|" | sed -r "s:[.]:.:g")"
-cat $INITRAMFS/$LMK/modules.order | sed -r "s/.ko.gz\$/.ko/" | grep -E "$MODULEORDER"/foo/bar > $INITRAMFS/$LMK/_
+MODULEORDER="$(
+   cd "$INITRAMFS/$LMK/"
+   find -name "*.ko" | sed -r "s:^./::g" | tr "\n" "|" | sed -r "s:[.]:.:g"
+)"
+cat $INITRAMFS/$LMK/modules.order | sed -r "s/.ko.gz\$/.ko/" | grep -E "$MODULEORDER"/foo/bar >$INITRAMFS/$LMK/_
 mv $INITRAMFS/$LMK/_ $INITRAMFS/$LMK/modules.order
 
 depmod -b $INITRAMFS $KERNEL

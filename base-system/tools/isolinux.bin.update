@@ -8,7 +8,7 @@
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2
-#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Taken from the Slax project, authored by:
 #		Tomas M <http://www.slax.org/>
@@ -22,7 +22,6 @@ echo "--------------------------------------------------------------------"
 echo "Add directory to isolinux search paths (usually /\$LIVEKITNAME/boot)"
 echo -n "(for example /slax/boot or /linux/boot): "
 read DIR
-
 
 # download, unpack, and patch syslinux
 

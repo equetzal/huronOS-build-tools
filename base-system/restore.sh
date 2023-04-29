@@ -13,7 +13,6 @@
 #	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
 
-
 RESTORE_PACKAGES="grub-common grub-pc-bin grub-pc-bin grub2-common"
 
 # shellcheck disable=SC2086

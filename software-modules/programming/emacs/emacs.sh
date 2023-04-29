@@ -9,7 +9,7 @@
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2
-#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
@@ -21,7 +21,7 @@ NAME=emacs
 apt update
 apt install --yes --no-install-recommends emacs-common
 pushd /var/lib/emacsen-common/state/
-	ln -s package flavor
+ln -s package flavor
 popd
 apt install --yes --no-install-recommends $NAME
 apt autoremove --yes

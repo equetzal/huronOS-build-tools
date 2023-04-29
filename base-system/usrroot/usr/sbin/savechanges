@@ -52,12 +52,12 @@ cd $CHANGES || exit
 mkdir -p $TMP
 mount -t tmpfs tmpfs $TMP
 
-find \( -type d -printf "%p/\n" , -not -type d -print \) \
-  | sed -r "s/^[.]\\///" | egrep -v "$EXCLUDE" \
-  | while read FILE; do
-    cp --parents -afr "$FILE" "$TMP"
-    echo "Saving $FILE"
-done
+find \( -type d -printf "%p/\n" , -not -type d -print \) |
+   sed -r "s/^[.]\\///" | egrep -v "$EXCLUDE" |
+   while read FILE; do
+      cp --parents -afr "$FILE" "$TMP"
+      echo "Saving $FILE"
+   done
 
 cd $CWD
 

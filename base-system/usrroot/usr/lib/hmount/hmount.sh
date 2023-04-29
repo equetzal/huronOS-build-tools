@@ -1,22 +1,30 @@
 #!/bin/bash
 
-# Recreate fstab entries in /etc/fstab and make /media directories
-# This script is called by udev rules, see /lib/udev/rules.d/
-# This script considers the huronOS directives to decide when to autmount devices.
+#	hmount.sh
+#	Recreate fstab entries in /etc/fstab and make /media directories
+#	This script is called by udev rules, see /lib/udev/rules.d/
+#	This script considers the huronOS directives to decide when to autmount devices.
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
+#
+#	Taken from the Slax project, authored by:
+#		Tomas M <http://www.slax.org/>
+#		(Original script was ./build)
+#
+#	Modified and redistributed by the huronOS team:
+#		Enya Quetzalli <equetzal@huronos.org>
 
-
-# Taken from Slax Originally authored by: Tomas M <http://www.slax.org/>
-# Modified by the huronOS team:
-#  Enya Quetzalli <equetzal@huronos.org>
-
-
-# Variables available in udev environment:
-# $ACTION (eg: add, remove)
-# $DEVNAME (full device node name including path)
-# $DEVTYPE (eg: disk)
-# $ID_FS_TYPE (eg: ext3)
-# $MAJOR and $MINOR numbers
-# $SUBSYSTEM (eg: block)
+#	Variables available in udev environment:
+#	$ACTION (eg: add, remove)
+#	$DEVNAME (full device node name including path)
+#	$DEVTYPE (eg: disk)
+#	$ID_FS_TYPE (eg: ext3)
+#	$MAJOR and $MINOR numbers
+#	$SUBSYSTEM (eg: block)
 
 set -x
 
@@ -25,8 +33,8 @@ PATH=$PATH:/usr/bin:/usr/sbin:/bin:/sbin
 ## Get the huronos.flags cmdline value for a given key
 # $1 = key to search value of
 # Eg. $1="ip", "ip=1.1.1.1" -> "1.1.1.1"
-cmdline_value(){
-   	cat /proc/cmdline | sed "s/.*huronos.flags=(\(.*\)).*/\1/" | sed -ne "/.*$1=\([^;]*\).*/!d;s//\1/p"
+cmdline_value() {
+	cat /proc/cmdline | sed "s/.*huronos.flags=(\(.*\)).*/\1/" | sed -ne "/.*$1=\([^;]*\).*/!d;s//\1/p"
 }
 
 BAS="$(basename "$DEVNAME")"
@@ -44,7 +52,7 @@ HOS_DRIVES="$(blkid | grep -E "$TMP_SYSTEM_UUID|$TMP_EVENT_UUID|$TMP_CONTEST_UUI
 
 ## Avoid mounting huronOS-usb partitions
 if echo "$BAS" | grep -E "${HOS_DRIVES}popo"; then
-	echo "Skipping the mount of $DEVNAME";
+	echo "Skipping the mount of $DEVNAME"
 	exit
 fi
 
@@ -52,11 +60,11 @@ if [ "$ACTION" = "add" -o "$ACTION" = "change" ]; then
 
 	## Allow new mounts only if current rule allows them
 	if cat /etc/hmount/rule; then
-		declare $(head -n 1 /etc/hmount/rule);
+		declare $(head -n 1 /etc/hmount/rule)
 		if [ "$ShouldMount" = "true" ]; then
-			echo "Allowing the mount of $DEVNAME";
+			echo "Allowing the mount of $DEVNAME"
 		else
-			echo "Denying the mount of $DEVNAME";
+			echo "Denying the mount of $DEVNAME"
 			exit
 		fi
 	fi
@@ -76,7 +84,7 @@ if [ "$ACTION" = "add" -o "$ACTION" = "change" ]; then
 			install -d -m 0755 -o contestant -g contestant "$MNT"
 
 			## Create a mount unit for systemd to automount it
-			cat <<EOT >> $TARGET
+			cat <<EOT >>$TARGET
 ## hmount-rule:do_not_save_on_persistence
 [Unit]
 Description=Disk $BAS
@@ -92,8 +100,8 @@ WantedBy=multi-user.target
 EOT
 
 			## Allow contestant user to mount or umount using suid bit
-			echo "$DEVNAME $MNT $ID_FS_TYPE $OPTIONS 0 0" >> /etc/fstab
-			
+			echo "$DEVNAME $MNT $ID_FS_TYPE $OPTIONS 0 0" >>/etc/fstab
+
 			## Do the automount with systemd
 			systemctl enable $UNIT
 			systemctl start $UNIT

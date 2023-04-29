@@ -18,7 +18,7 @@
 set -xe
 
 # Get the dependencies and replace every new line with a space
-DEPENDENCIES="$(< dependencies.txt tr '\n' ' ')"
+DEPENDENCIES="$(tr <dependencies.txt '\n' ' ')"
 
 ## Install
 apt update
@@ -51,7 +51,7 @@ ln -sf /usr/share/icons/desktop-base/256/emblems/emblem-huronos-symbolic.png /et
 ln -sf /usr/share/icons/desktop-base/256/emblems/emblem-huronos-white.png /etc/alternatives/emblem-vendor-white-256
 
 ## Fix terminals not updating $PATH on su
-echo "ALWAYS_SET_PATH	yes" >> /etc/login.defs
+echo "ALWAYS_SET_PATH	yes" >>/etc/login.defs
 
 ## Set huronOS lightdm configs
 sed -i 's/#greeter-session=.*/greeter-session=lightdm-greeter/g' /etc/lightdm/lightdm.conf
@@ -65,7 +65,7 @@ mkdir -p /usr/share/backgrounds/
 cp files/huronos-background.png /usr/share/backgrounds/huronos-background.png
 cp files/huronos-lightdm.png /usr/share/backgrounds/huronos-lightdm.png
 chmod 644 /usr/share/backgrounds/huronos*
-echo "background=/usr/share/backgrounds/huronos-lightdm.png" >> /etc/lightdm/lightdm-gtk-greeter.conf
+echo "background=/usr/share/backgrounds/huronos-lightdm.png" >>/etc/lightdm/lightdm-gtk-greeter.conf
 
 ## Set budgie menu configs
 cp files/huronOS-desktop-config.dump /tmp/huronOS-desktop-config.dump
@@ -101,7 +101,7 @@ ln -s /etc/xdg/mimeapps.list /usr/share/applications/mimeapps.list
 ## Set Budgie as default desktop
 sed -i 's/Name=.*/Name=Budgie/g' /usr/share/xsessions/lightdm-xsession.desktop
 sed -i 's/Exec=.*/Exec=budgie-desktop/g' /usr/share/xsessions/lightdm-xsession.desktop
-echo "DesktopNames=Budgie;GNOME" >> /usr/share/xsessions/lightdm-xsession-desktop
+echo "DesktopNames=Budgie;GNOME" >>/usr/share/xsessions/lightdm-xsession-desktop
 
 ## Set default dconf settings
 cp files/huronOS-plank-config.dump /tmp/huronOS-plank-config.dump
@@ -124,11 +124,11 @@ cp -f "files/lightdm.service" "/lib/systemd/system/lightdm.service"
 chmod 0644 "/lib/systemd/system/lightdm.service"
 
 ## Deactivate unwanted services
-systemctl stop udisks2.service # Will be managed by hmount
+systemctl stop udisks2.service        # Will be managed by hmount
 systemctl stop NetworkManager.service # Already managed with connman, and we don't want to depend on GUI
 systemctl stop NetworkManager-dispatcher.service
 systemctl stop NetworkManager-wait-online.service
-systemctl mask udisks2.service # Will be managed by hmount
+systemctl mask udisks2.service        # Will be managed by hmount
 systemctl mask NetworkManager.service # Already managed with connman, and we don't want to depend on GUI
 systemctl mask NetworkManager-dispatcher.service
 systemctl mask NetworkManager-wait-online.service

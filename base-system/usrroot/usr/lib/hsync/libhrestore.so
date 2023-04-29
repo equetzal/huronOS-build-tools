@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #	libhrestore.sh (hsync.sh library)
-#	This library contains functions to backup the directives file and the 
+#	This library contains functions to backup the directives file and the
 #	state of the system to the persistence disk, so that after a reboot
 #	or power loss, the system is able to restore itself to the previous
 #	state.
@@ -10,14 +10,13 @@
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2
-#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
 #		Abraham Omar   <aomm@huronos.org>
 
-
-restore_state_from_disk(){
+restore_state_from_disk() {
 	local BACKUP_PATH
 	BACKUP_PATH=""
 
@@ -32,7 +31,7 @@ restore_state_from_disk(){
 	fi
 
 	# We will start checking the event partiton and look if we can find our persistent system state
-	if [ -d "$EVENT_MNT/$BACKUP_DIR_NAME" ]; then 
+	if [ -d "$EVENT_MNT/$BACKUP_DIR_NAME" ]; then
 		BACKUP_PATH="$EVENT_MNT/$BACKUP_DIR_NAME"
 		log "+System state found over $BACKUP_PATH."
 	fi
@@ -46,7 +45,7 @@ restore_state_from_disk(){
 	# or it was cleaned as purpose. So, nothing to restore then :)
 	if [ "$BACKUP_PATH" = "" ]; then
 		log "-No system state found, system cannot restore to a previous state."
-		return 0 # success 
+		return 0 # success
 	fi
 
 	# We do need both files to restore huronOS in the mode it was.
@@ -56,16 +55,16 @@ restore_state_from_disk(){
 	# Also, in the case that we do only have a state file but not a directives file,
 	# huronOS should at least, recover the persistent data available on the partition
 	# until it is able to download a directives file, and follow it's instructions.
-	if [ ! -f "$BACKUP_PATH/$(basename $STATE_FILE)" ];then
+	if [ ! -f "$BACKUP_PATH/$(basename $STATE_FILE)" ]; then
 		log "-State file $BACKUP_PATH/$(basename $STATE_FILE) does not exist, Impossible to restore the system state. Aborting"
 		return 1 # error
 	fi
-	cp -f $BACKUP_PATH/$(basename $STATE_FILE) $STATE_FILE && \
-	log "+State file was backed up on $BACKUP_PATH/$(basename $STATE_FILE)"
+	cp -f $BACKUP_PATH/$(basename $STATE_FILE) $STATE_FILE &&
+		log "+State file was backed up on $BACKUP_PATH/$(basename $STATE_FILE)"
 
-	if [ -f "$BACKUP_PATH/$(basename $DIRECTIVES_FILE)" ];then
-		cp -f $BACKUP_PATH/$(basename $DIRECTIVES_FILE) $DIRECTIVES_FILE && \
-		log "+Directives file was backed up on $BACKUP_PATH/$(basename $DIRECTIVES_FILE)"
+	if [ -f "$BACKUP_PATH/$(basename $DIRECTIVES_FILE)" ]; then
+		cp -f $BACKUP_PATH/$(basename $DIRECTIVES_FILE) $DIRECTIVES_FILE &&
+			log "+Directives file was backed up on $BACKUP_PATH/$(basename $DIRECTIVES_FILE)"
 	else
 		log "-Directives file $BACKUP_PATH/$(basename $DIRECTIVES_FILE) does not exist!\nThis might lead to a restoration issue."
 	fi
@@ -73,7 +72,7 @@ restore_state_from_disk(){
 	return 0 # sucess
 }
 
-backup_state_to_disk(){
+backup_state_to_disk() {
 
 	# Let's verify that there's a drive mounted on usrchanges/ branch,
 	# otherwise it will be useless to save it
@@ -89,17 +88,17 @@ backup_state_to_disk(){
 	fi
 
 	mkdir -p $BACKUP_DIR
-	
-	if [ -f "$DIRECTIVES_FILE" ];then
-		cp -f $DIRECTIVES_FILE $BACKUP_DIR/$(basename $DIRECTIVES_FILE) && \
-		log "+Directives file backed up on $BACKUP_DIR/$(basename $DIRECTIVES_FILE)"
+
+	if [ -f "$DIRECTIVES_FILE" ]; then
+		cp -f $DIRECTIVES_FILE $BACKUP_DIR/$(basename $DIRECTIVES_FILE) &&
+			log "+Directives file backed up on $BACKUP_DIR/$(basename $DIRECTIVES_FILE)"
 	else
 		log "-Directives file $DIRECTIVES_FILE does not exist"
 	fi
 
-	if [ -f "$STATE_FILE" ];then
-		cp -f $STATE_FILE $BACKUP_DIR/$(basename $STATE_FILE) && \
-		log "+State file backed up on $BACKUP_DIR/$(basename $STATE_FILE)"
+	if [ -f "$STATE_FILE" ]; then
+		cp -f $STATE_FILE $BACKUP_DIR/$(basename $STATE_FILE) &&
+			log "+State file backed up on $BACKUP_DIR/$(basename $STATE_FILE)"
 	else
 		log "-State file $STATE_FILE does not exist"
 	fi

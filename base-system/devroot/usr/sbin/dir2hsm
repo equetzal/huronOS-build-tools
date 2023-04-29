@@ -7,7 +7,7 @@
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2
-#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Taken from the Slax project, authored by:
 #		Tomas M <http://www.slax.org/>
@@ -15,9 +15,7 @@
 #	Modified and redistributed by the huronOS team:
 #		Enya Quetzalli <equetzal@huronos.org>
 
-
-usage()
-{
+usage() {
    echo ""
    echo "Convert directory to .hsm compressed module"
    echo "Usage: $0 [source_directory.hsm] [[target_file.hsm]]"
@@ -54,7 +52,6 @@ if [ ! -d "$P1" ]; then
    echo "Not a directory: $P1" >&2
    exit 2
 fi
-
 
 if [ "$P2" = "" ]; then
    TARGET="$P1".hsm

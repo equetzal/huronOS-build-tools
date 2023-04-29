@@ -65,44 +65,42 @@ readonly STATE_FILE=/etc/hsync/state
 readonly BACKUP_DIR_NAME=.huronOS..sysbackup.d
 readonly BACKUP_DIR=$USRCHANGES/$BACKUP_DIR_NAME
 
-
 ## Set some global variables
 
-	declare EXECUTION_IS_SCHEDULED_APPLY
-	declare EXECUTION_IS_ROUTINE
-	declare EXECUTION_NEXT_SCHEDULED_APPLY_TIME
-	declare HAS_CLOCK_CHANGED_SINCE_LAST_SYNC
+declare EXECUTION_IS_SCHEDULED_APPLY
+declare EXECUTION_IS_ROUTINE
+declare EXECUTION_NEXT_SCHEDULED_APPLY_TIME
+declare HAS_CLOCK_CHANGED_SINCE_LAST_SYNC
 
-	# STATE preffix is the current state that the system have.
-	declare STATE_IS_CLOCK_SYNC
-	declare STATE_MODE
-	declare STATE_MODE_START_TIME_UTC
-	declare STATE_MODE_END_TIME_UTC
-	declare STATE_IS_PERSISTENCE_ENABLED
-	declare STATE_PERSISTENCE_DISK
-	declare STATE_LAST_HSYNC_EXECUTION_TIME_UTC
+# STATE preffix is the current state that the system have.
+declare STATE_IS_CLOCK_SYNC
+declare STATE_MODE
+declare STATE_MODE_START_TIME_UTC
+declare STATE_MODE_END_TIME_UTC
+declare STATE_IS_PERSISTENCE_ENABLED
+declare STATE_PERSISTENCE_DISK
+declare STATE_LAST_HSYNC_EXECUTION_TIME_UTC
 
-	# NEW preffix is for intermediate variables to set the new
-	# state.
-	declare NEW_MODE
-	declare NEW_MODE_START_TIME_UTC
-	declare NEW_MODE_END_TIME_UTC
-	declare NEW_PERSISTENCE_DISK
+# NEW preffix is for intermediate variables to set the new
+# state.
+declare NEW_MODE
+declare NEW_MODE_START_TIME_UTC
+declare NEW_MODE_END_TIME_UTC
+declare NEW_PERSISTENCE_DISK
 
-	# DIRECTIVES preffix is the information about the directives file
-	declare DIRECTIVES_FILE_URL
-	declare DIRECTIVES_SERVER_IP
-	declare DIRECTIVES_TEMP_FILE
-	declare DIRECTIVES_FILE_TO_USE
-	declare DIRECTIVES_SPECIFIC_CONFIG
-	declare DIRECTIVES_HAVE_CHANGED=1
-	declare DIRECTIVES_GLOBAL_CONFIG_HAVE_CHANGED=0
-	declare DIRECTIVES_ALWAYS_CONFIG_HAVE_CHANGED=0
-	declare DIRECTIVES_EVENT_CONFIG_HAVE_CHANGED=0
-	declare DIRECTIVES_CONTEST_CONFIG_HAVE_CHANGED=0
-	declare DIRECTIVES_EVENT_TIMES_HAVE_CHANGED=0
-	declare DIRECTIVES_CONTEST_TIMES_HAVE_CHANGED=0
-
+# DIRECTIVES preffix is the information about the directives file
+declare DIRECTIVES_FILE_URL
+declare DIRECTIVES_SERVER_IP
+declare DIRECTIVES_TEMP_FILE
+declare DIRECTIVES_FILE_TO_USE
+declare DIRECTIVES_SPECIFIC_CONFIG
+declare DIRECTIVES_HAVE_CHANGED=1
+declare DIRECTIVES_GLOBAL_CONFIG_HAVE_CHANGED=0
+declare DIRECTIVES_ALWAYS_CONFIG_HAVE_CHANGED=0
+declare DIRECTIVES_EVENT_CONFIG_HAVE_CHANGED=0
+declare DIRECTIVES_CONTEST_CONFIG_HAVE_CHANGED=0
+declare DIRECTIVES_EVENT_TIMES_HAVE_CHANGED=0
+declare DIRECTIVES_CONTEST_TIMES_HAVE_CHANGED=0
 
 ## Include libraries of hsync
 . /usr/lib/hsync/libhapply.so
@@ -113,8 +111,7 @@ readonly BACKUP_DIR=$USRCHANGES/$BACKUP_DIR_NAME
 . /usr/lib/hsync/libhsystem.so
 . /usr/lib/hsync/libhupdate.so
 
-
-main(){
+main() {
 	log_start
 	apply_demo_if_on
 	check_execution_arguments "$@"
@@ -187,19 +184,19 @@ main(){
 	log_end
 }
 
-is_execution_scheduled_apply(){
+is_execution_scheduled_apply() {
 	if [ "$EXECUTION_IS_SCHEDULED_APPLY" = "true" ]; then
 		return 0 # true
 	fi
 	return 1 # false
 }
 
-check_execution_arguments(){
+check_execution_arguments() {
 	case $1 in
-		"--help") exit ;;
-		"--scheduled-apply") EXECUTION_IS_SCHEDULED_APPLY="true";;
-		"--routine-sync") EXECUTION_IS_ROUTINE="true";;
-		*) exit;;
+	"--help") exit ;;
+	"--scheduled-apply") EXECUTION_IS_SCHEDULED_APPLY="true" ;;
+	"--routine-sync") EXECUTION_IS_ROUTINE="true" ;;
+	*) exit ;;
 	esac
 
 	log "+Running hsync,
@@ -207,5 +204,5 @@ check_execution_arguments(){
 	IS_ROUTINE_SYNC=$EXECUTION_IS_ROUTINE"
 }
 
-main "$@"; exit;
-
+main "$@"
+exit
