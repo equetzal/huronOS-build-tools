@@ -1,14 +1,3 @@
-#!/bin/bash
-
-#	Copyright (C) 2022, huronOS Project:
-#		<http://huronos.org>
-#
-#	Licensed under the GNU GPL Version 2
-#		<http://www.gnu.org/licenses/gpl-2.0.html>	
-#
-#	Taken from the Slax project, authored by:
-#		Tomas M <http://www.slax.org/>
-
 Source codes should be found at github
 https://github.com/Tomas-M/
 

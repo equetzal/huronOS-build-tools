@@ -12,7 +12,7 @@
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2
-#		<http://www.gnu.org/licenses/gpl-2.0.html>
+#		<http://www.gnu.org/licensesss/gpl-2.0.html>
 #
 #	Taken from the Slax project, authored by:
 #		Tomas M <http://www.slax.org/>
@@ -20,10 +20,8 @@
 #	Heavily modified and redistributed by the huronOS team:
 #		Enya Quetzalli <equetzal@huronos.org>
 
-
-
 ## Sets the DEBUG_IS_ENABLED constant
-debug_start(){
+debug_start() {
 	## Check if the syslinux boot command contains debug option
 	if cmdline_has "debug"; then
 		DEBUG_IS_ENABLED=1
@@ -37,7 +35,7 @@ debug_start(){
 }
 
 ## Print logs on shell if debug is enabled, but always log to debug file
-debug_log(){
+debug_log() {
 	if [ "$DEBUG_IS_ENABLED" ]; then
 		echo "- debug: $*" >&2
 	fi
@@ -46,35 +44,35 @@ debug_log(){
 
 ## Header text to print on the boot process
 # $1 = text to show
-header(){
+header() {
 	echo "[0;1m""$@""[0;0m"
 }
 
 ## Echo a green star
-echo_green_star(){
+echo_green_star() {
 	echo -ne "[0;32m""* ""[0;39m"
 }
 
 ## Print debug logs on /var/log/huronOS_boot_log file
-log(){
-   echo "$@" 2>/dev/null >>/var/log/huronOS_boot_log
+log() {
+	echo "$@" 2>/dev/null >>/var/log/huronOS_boot_log
 }
 
 ## Echo to terminal and log to boot_log file
-echolog(){
+echolog() {
 	echo "$@"
 	log "$@"
 }
 
 ## Print info about debug shell
-show_debug_banner(){
+show_debug_banner() {
 	echo ": ---huronOS boot process debug is enabled---"
 	echo ": Starting a [root] shell for debuging."
 	echo ": Press [Ctrl+D] for next debug stop."
 }
 
 ## Prompt a debug shell
-debug_shell(){
+debug_shell() {
 	if [ "$DEBUG_IS_ENABLED" ]; then
 		show_debug_banner
 		setsid sh -c 'exec sh < /dev/tty1 >/dev/tty1 2>&1'
@@ -83,7 +81,7 @@ debug_shell(){
 }
 
 ## Something is wrong and huronOS cannot continue booting. Reboot or prompt debug shell.
-fatal(){
+fatal() {
 	## Tell user about the error
 	echolog
 	header "Fatal error occured - $1"
@@ -101,34 +99,31 @@ fatal(){
 	reboot -f
 }
 
-
-
 ## Get the huronos.flags cmdline value for a given key
 # $1 = key to search value of
 # Eg. $1="ip", "ip=1.1.1.1" -> "1.1.1.1"
-cmdline_value(){
-   	cat /proc/cmdline | sed "s/.*huronos.flags=(\(.*\)).*/\1/" | sed -ne "/.*$1=\([^;]*\).*/!d;s//\1/p"
+cmdline_value() {
+	cat /proc/cmdline | sed "s/.*huronos.flags=(\(.*\)).*/\1/" | sed -ne "/.*$1=\([^;]*\).*/!d;s//\1/p"
 }
 
 ## Returns true if there is a huronos.flag with value equals true
 # $1 = key to expect value as true
-cmdline_has(){
+cmdline_has() {
 	VALUE="$(cmdline_value $1)"
 	if [ "$VALUE" = "true" ]; then
-   		return 0
-   	else
-   		return 1
-   	fi
-}
-
-## Test if the script is started by root user. If not, exit
-allow_only_root(){
-	if [ "0$UID" -ne 0 ]; then
-		echo "Only root can run $(basename $0)"; exit 1
+		return 0
+	else
+		return 1
 	fi
 }
 
-
+## Test if the script is started by root user. If not, exit
+allow_only_root() {
+	if [ "0$UID" -ne 0 ]; then
+		echo "Only root can run $(basename $0)"
+		exit 1
+	fi
+}
 
 # Create bundle
 # call mksquashfs with apropriate arguments
@@ -136,17 +131,17 @@ allow_only_root(){
 # $2 = output file
 # $3..$9 = optional arguments like -keep-as-directory or -b 123456789
 #
-create_bundle(){
+create_bundle() {
 	debug_log "create_module" "$*"
 	rm -f "$2" # overwrite, never append to existing file
-	mksquashfs "$1" "$2" -comp xz -b 1024K -always-use-fragments $3 $4 $5 $6 $7 $8 $9>/dev/null
+	mksquashfs "$1" "$2" -comp xz -b 1024K -always-use-fragments $3 $4 $5 $6 $7 $8 $9 >/dev/null
 }
 
 # Move entire initramfs tree to tmpfs mount.
 # It's a bit tricky but is necessray to enable pivot_root
 # even for initramfs boot image
 #
-transfer_initramfs(){
+transfer_initramfs() {
 	local SWITCH
 
 	if [ ! -r /lib/initramfs_escaped ]; then
@@ -159,15 +154,15 @@ transfer_initramfs(){
 		## Copy two-and-more-letter directories
 		cp -a /??* $SWITCH 2>/dev/null
 		cd $SWITCH
-		echo "This file indicates that we successfully escaped initramfs" > $SWITCH/lib/initramfs_escaped
-		
+		echo "This file indicates that we successfully escaped initramfs" >$SWITCH/lib/initramfs_escaped
+
 		## Move the filesystem as the root of the tmpfs
 		exec switch_root -c /dev/console . $0
 	fi
 }
 
 ## Mount the virtual filesystems on the tmpfs
-init_proc_sysfs(){
+init_proc_sysfs() {
 	debug_log "init_proc_sysfs" "$*"
 	mkdir -p /proc /sys /etc $MEMORY
 	mount -n -t proc proc /proc
@@ -180,29 +175,29 @@ init_proc_sysfs(){
 ## Load kernel with modprobe all modules found in initial ramdisk
 # $1 = -e for match, -v for negative match
 # $2 = regex pattern
-load_kernel_modules(){
+load_kernel_modules() {
 	debug_log "load_kernel_modules" "$*"
 
 	local MATCH REGEX
 	MATCH="$1"
 	REGEX="$2"
-	
+
 	echo_green_star >&2
 	echo "Probing for hardware" >&2
 
 	## Look for all the loadable kernel modules (.ko) and enable them
 	find /lib/modules/ | fgrep .ko | egrep $MATCH $REGEX | sed -r "s:^.*/|[.]ko\$::g" | xargs -n 1 modprobe 2>/dev/null
-	
+
 	## Update newly created devices
 	refresh_devs
 }
 
 ## Reaload available devices with mdev
-refresh_devs(){
+refresh_devs() {
 	debug_log "refresh_devs" "$*"
 	if [ -r /proc/sys/kernel/hotplug ]; then
 		## If hotplug policy exists, set mdev as the controller
-		echo /sbin/mdev > /proc/sys/kernel/hotplug
+		echo /sbin/mdev >/proc/sys/kernel/hotplug
 	fi
 
 	## Reload devices
@@ -210,7 +205,7 @@ refresh_devs(){
 }
 
 ## Check that kernel modules for some devices are available
-init_devs(){
+init_devs() {
 	debug_log "init_devs" "$*"
 
 	## Load kernel modules
@@ -226,26 +221,26 @@ init_devs(){
 # Activate zram (auto-compression of RAM)
 # Compressed RAM consumes 1/2 or even 1/4 of original size
 # Setup static size of 500MB
-init_zram(){
+init_zram() {
 	debug_log "init_zram" "$*"
 	if [ -r /sys/block/zram0/disksize ]; then
 		echo_green_star
 		echo "Setting dynamic RAM compression"
-		echo 536870912 > /sys/block/zram0/disksize # 512MB
+		echo 536870912 >/sys/block/zram0/disksize # 512MB
 		mkswap /dev/zram0 >/dev/null
 		swapon /dev/zram0
-		echo 100 > /proc/sys/vm/swappiness
+		echo 100 >/proc/sys/vm/swappiness
 		## TODO: Future work, search for SWAP devices on hard disks, use them.
 	fi
 }
 
 ## Returns true if AUFS is available in Kernel
-aufs_is_supported(){
-   cat /proc/filesystems | grep aufs
+aufs_is_supported() {
+	cat /proc/filesystems | grep aufs
 }
 
 ## Load the AUFS kernel driver
-init_aufs(){
+init_aufs() {
 	debug_log "init_aufs" "$*"
 
 	## Load AUFS module (as huronOS was compiled with AUFS as module)
@@ -269,7 +264,7 @@ init_aufs(){
 # $BASE_MNT = base/ dir, where base modules will be located
 # $MODULES_MNT = modules/ dir, where non-essencial modules will be located
 # $UNION = union/ dir, where the resulting union will be located
-init_union(){
+init_union() {
 	debug_log "init_union" "$*"
 
 	## Create branch directory in case it does not exists
@@ -301,7 +296,7 @@ init_union(){
 
 ## Return device mounted for given directory
 # $1 = directory
-mounted_device(){
+mounted_device() {
 	debug_log "mounted_device" "$*"
 
 	local MNT TARGET
@@ -317,10 +312,9 @@ mounted_device(){
 	done
 }
 
-
 # Return mounted dir for given directory
 # $1 = directory
-mounted_dir(){
+mounted_dir() {
 	debug_log "mounted_dir" "$*"
 
 	local MNT
@@ -337,7 +331,7 @@ mounted_dir(){
 # Get device tag.
 # $1 = device
 # $2 = tag name, such as TYPE, LABEL, UUID, etc
-device_tag(){
+device_tag() {
 	blkid -s $2 "$1" | sed -r "s/^[^=]+=//" | tr -d '"'
 }
 
@@ -345,7 +339,7 @@ device_tag(){
 # in order to support long filenames
 # $1 = device
 # $2 = prefix to add, like -t
-device_bestfs(){
+device_bestfs() {
 	debug_log "device_bestfs" "$*"
 	local FS
 
@@ -363,10 +357,9 @@ device_bestfs(){
 	echo "$FS"
 }
 
-
 # Filesystem options for initial mount
 # $1.. = filesystem
-fs_options(){
+fs_options() {
 	debug_log "fs_options" "$*"
 
 	if [ "$1" != "ntfs-3g" ]; then
@@ -380,10 +373,9 @@ fs_options(){
 	fi
 }
 
-
 # Mount command for given filesystem
 # $1.. = filesystem
-mount_command(){
+mount_command() {
 	debug_log "mount_command" "$*"
 
 	if [ "$1" = "ntfs-3g" ]; then
@@ -393,15 +385,12 @@ mount_command(){
 	fi
 }
 
-
 # echo first network device known at the moment of calling, eg. eth0
 #
-network_device()
-{
-   debug_log "network_device" "$*"
-   cat /proc/net/dev | grep : | grep -v lo: | cut -d : -f 1 | tr -d " " | head -n 1
+network_device() {
+	debug_log "network_device" "$*"
+	cat /proc/net/dev | grep : | grep -v lo: | cut -d : -f 1 | tr -d " " | head -n 1
 }
-
 
 # Modprobe network kernel modules until a working driver is found.
 # These drivers are (or used to be) probed in Slackware's initrd.
@@ -409,156 +398,147 @@ network_device()
 # to be a working one, eg. if the computer has two network interfaces
 # and ethernet cable is plugged only to one of them.
 #
-init_network_dev()
-{
-   debug_log "init_network_dev" "$*"
-   local MODULE ETH
+init_network_dev() {
+	debug_log "init_network_dev" "$*"
+	local MODULE ETH
 
-   for MODULE in 3c59x acenic e1000 e1000e e100 epic100 hp100 ne2k-pci \
-   pcnet32 8139too 8139cp tulip via-rhine r8169 atl1e yellowfin tg3 \
-   dl2k ns83820 atl1 b44 bnx2 skge sky2 tulip forcedeth sb1000 sis900; do
-      modprobe $MODULE 2>/dev/null
-      ETH="$(network_device)"
-      if [ "$ETH" != "" ]; then
-         echo $ETH
-         return 0
-      fi
-      rmmod $MODULE 2>/dev/null
-   done
+	for MODULE in 3c59x acenic e1000 e1000e e100 epic100 hp100 ne2k-pci \
+		pcnet32 8139too 8139cp tulip via-rhine r8169 atl1e yellowfin tg3 \
+		dl2k ns83820 atl1 b44 bnx2 skge sky2 tulip forcedeth sb1000 sis900; do
+		modprobe $MODULE 2>/dev/null
+		ETH="$(network_device)"
+		if [ "$ETH" != "" ]; then
+			echo $ETH
+			return 0
+		fi
+		rmmod $MODULE 2>/dev/null
+	done
 
-   # If we are here, none of the above specified modules worked.
-   # As a last chance, try to modprobe everything else
-   modprobe_everything -e /drivers/net/
-   echo $(network_device)
+	# If we are here, none of the above specified modules worked.
+	# As a last chance, try to modprobe everything else
+	modprobe_everything -e /drivers/net/
+	echo $(network_device)
 }
-
 
 # Initialize network IP address
 # either static from ip=bootparameter, or from DHCP
 #
-init_network_ip()
-{
-   debug_log "init_network_ip" "$*"
-   local IP ETH SCRIPT CLIENT SERVER GW MASK
+init_network_ip() {
+	debug_log "init_network_ip" "$*"
+	local IP ETH SCRIPT CLIENT SERVER GW MASK
 
-   SCRIPT=/tmp/dhcpscript
-   ETH=$(init_network_dev)
-   IP=$(cmdline_value ip)
+	SCRIPT=/tmp/dhcpscript
+	ETH=$(init_network_dev)
+	IP=$(cmdline_value ip)
 
-   echo "* Setting up network" >&2
+	echo "* Setting up network" >&2
 
-   if [ "$IP" != "" ]; then
+	if [ "$IP" != "" ]; then
 
-	## TODO: Move to ip instead of ifconfig
-      # set IP address as given by boot paramter
-      echo "$IP" | while IFS=":" read CLIENT SERVER GW MASK; do
-         ifconfig $ETH "$CLIENT" netmask "$MASK"
-         route add default gw "$GW"
-         echo nameserver "$GW" >> /etc/resolv.conf
-         echo nameserver "$SERVER" >> /etc/resolv.conf
-      done
-   else
-      # if client ip is unknown, try to get a DHCP lease
-      ifconfig $ETH up
-      echo -e '#!/bin/sh\nif [ "$1" != "bound" ]; then exit; fi\nifconfig $interface $ip netmask $subnet\nroute add default gw $router\necho nameserver $dns >>/etc/resolv.conf' >$SCRIPT
-      chmod a+x $SCRIPT
-      udhcpc -i $ETH -n -s $SCRIPT -q >/dev/null
-   fi
+		## TODO: Move to ip instead of ifconfig
+		# set IP address as given by boot paramter
+		echo "$IP" | while IFS=":" read CLIENT SERVER GW MASK; do
+			ifconfig $ETH "$CLIENT" netmask "$MASK"
+			route add default gw "$GW"
+			echo nameserver "$GW" >>/etc/resolv.conf
+			echo nameserver "$SERVER" >>/etc/resolv.conf
+		done
+	else
+		# if client ip is unknown, try to get a DHCP lease
+		ifconfig $ETH up
+		echo -e '#!/bin/sh\nif [ "$1" != "bound" ]; then exit; fi\nifconfig $interface $ip netmask $subnet\nroute add default gw $router\necho nameserver $dns >>/etc/resolv.conf' >$SCRIPT
+		chmod a+x $SCRIPT
+		udhcpc -i $ETH -n -s $SCRIPT -q >/dev/null
+	fi
 }
-
 
 # Mount data from http using httpfs
 # $1 = from URL
 # $2 = target
-mount_data_http()
-{
-   debug_log "mount_data_http" "$*"
-   local CACHE
+mount_data_http() {
+	debug_log "mount_data_http" "$*"
+	local CACHE
 
-   echo_green_star >&2
-   echo "Load data from $1" >&2
+	echo_green_star >&2
+	echo "Load data from $1" >&2
 
-   CACHE=$(cmdline_value cache | sed -r "s/[^0-9]//g" | sed -r "s/^0+//g")
-   if [ "$CACHE" != "" ]; then
-      CACHE="-C /tmp/httpfs.cache -S "$(($CACHE*1024*1024))
-   fi
+	CACHE=$(cmdline_value cache | sed -r "s/[^0-9]//g" | sed -r "s/^0+//g")
+	if [ "$CACHE" != "" ]; then
+		CACHE="-C /tmp/httpfs.cache -S "$(($CACHE * 1024 * 1024))
+	fi
 
-   init_network_ip
+	init_network_ip
 
-   if [ "$(network_device)" != "" ]; then
-      echo "* Mounting remote file..." >&2
-      mkdir -p "$2"
-      @mount.httpfs2 -r 9999 -t 5 $CACHE -c /dev/null "$1" "$2" -o ro >/dev/null 2>/dev/null
-      mount -o loop "$2"/* "$2" # self mount
-      echo "$2/$LIVEKITNAME"
-   fi
+	if [ "$(network_device)" != "" ]; then
+		echo "* Mounting remote file..." >&2
+		mkdir -p "$2"
+		@mount.httpfs2 -r 9999 -t 5 $CACHE -c /dev/null "$1" "$2" -o ro >/dev/null 2>/dev/null
+		mount -o loop "$2"/* "$2" # self mount
+		echo "$2/$LIVEKITNAME"
+	fi
 }
-
 
 # stdin = files to get
 # $1 = server
 # $2 = destination directory
 #
-tftp_mget()
-{
-   while read FNAME; do
-      echo "* $FNAME ..." >&2
-      tftp -b 1486 -g -r "$FNAME" -l "$2/$FNAME" "$1"
-   done
+tftp_mget() {
+	while read FNAME; do
+		echo "* $FNAME ..." >&2
+		tftp -b 1486 -g -r "$FNAME" -l "$2/$FNAME" "$1"
+	done
 }
-
 
 # Download data from tftp
 # $1 = target (store downloaded files there)
 #
-download_data_pxe()
-{
-   debug_log "download_data_pxe" "$*"
-   local IP CMD CLIENT SERVER GW MASK PORT PROTOCOL JOBS
+download_data_pxe() {
+	debug_log "download_data_pxe" "$*"
+	local IP CMD CLIENT SERVER GW MASK PORT PROTOCOL JOBS
 
-   mkdir -p "$1/$LIVEKITNAME"
-   IP="$(cmdline_value ip)"
+	mkdir -p "$1/$LIVEKITNAME"
+	IP="$(cmdline_value ip)"
 
-   echo "$IP" | while IFS=":" read CLIENT SERVER GW MASK PORT; do
-      echo_green_star >&2
-      echo "Contacting PXE server $SERVER" >&2
+	echo "$IP" | while IFS=":" read CLIENT SERVER GW MASK PORT; do
+		echo_green_star >&2
+		echo "Contacting PXE server $SERVER" >&2
 
-      if [ "$PORT" = "" ]; then PORT="7529"; fi
+		if [ "$PORT" = "" ]; then PORT="7529"; fi
 
-      init_network_ip
+		init_network_ip
 
-      echo "* Downloading PXE file list" >&2
+		echo "* Downloading PXE file list" >&2
 
-      PROTOCOL=http
-      wget -q -O "$1/PXEFILELIST" "http://$SERVER:$PORT/PXEFILELIST?$(uname -r):$(uname -m)"
-      if [ $? -ne 0 ]; then
-         echo "Error downloading from http://$SERVER:$PORT, trying TFTP" >&2
-         PROTOCOL=tftp
-         echo PXEFILELIST | tftp_mget "$SERVER" "$1"
-      fi
+		PROTOCOL=http
+		wget -q -O "$1/PXEFILELIST" "http://$SERVER:$PORT/PXEFILELIST?$(uname -r):$(uname -m)"
+		if [ $? -ne 0 ]; then
+			echo "Error downloading from http://$SERVER:$PORT, trying TFTP" >&2
+			PROTOCOL=tftp
+			echo PXEFILELIST | tftp_mget "$SERVER" "$1"
+		fi
 
-      echo "* Downloading files from the list" >&2
+		echo "* Downloading files from the list" >&2
 
-      if [ "$PROTOCOL" = "http" ]; then
-         cat "$1/PXEFILELIST" | while read FILE; do
-            wget -O "$1/$LIVEKITNAME/$(basename $FILE)" "http://$SERVER:$PORT/$FILE"
-         done
-      else
-         JOBS=3
-         for i in $(seq 1 $JOBS); do
-            awk "NR % $JOBS == $i-1" "$1/PXEFILELIST" | tftp_mget "$SERVER" "$1/$LIVEKITNAME" &
-         done
-         wait
-      fi
-   done
+		if [ "$PROTOCOL" = "http" ]; then
+			cat "$1/PXEFILELIST" | while read FILE; do
+				wget -O "$1/$LIVEKITNAME/$(basename $FILE)" "http://$SERVER:$PORT/$FILE"
+			done
+		else
+			JOBS=3
+			for i in $(seq 1 $JOBS); do
+				awk "NR % $JOBS == $i-1" "$1/PXEFILELIST" | tftp_mget "$SERVER" "$1/$LIVEKITNAME" &
+			done
+			wait
+		fi
+	done
 
-   echo "$1/$LIVEKITNAME"
+	echo "$1/$LIVEKITNAME"
 }
 
 ## Mount the device with the given UUID on dest dir
 # $1 = UUID of device to mount
 # $2 = Destiny directory
-mount_device(){
+mount_device() {
 	local UUID TARGET DEVICE FS OPTIONS MOUNT
 
 	## Get info about device
@@ -578,7 +558,7 @@ mount_device(){
 # $1 = UUID of the filesystem which contains the system data
 # $SYSTEM_MNT = huronOS system data mount point
 # $BASE_DIR = system data directory that contain base huron software modules
-find_data_try(){
+find_data_try() {
 	debug_log "find_data_try" "$*"
 
 	local SYSTEM_UUID
@@ -599,13 +579,12 @@ find_data_try(){
 	umount "$SYSTEM_MNT" 2>/dev/null
 }
 
-
 # Try finding huronOS system data several times,
 # until timeouted or until data is found
 # $1 = Timeout
 # $SYSTEM_MNT = System data mount point
 # $BASE_DIR = Directory inside system data where the base .hsm are expected
-find_data(){
+find_data() {
 	debug_log "find_data" "$*"
 
 	local TIMEOUT SYSTEM_UUID RESULT
@@ -641,17 +620,14 @@ find_data(){
 	fatal "No base system found on device $SYSTEM_UUID, refusing to boot"
 }
 
-
 # Check if data is found and exists
 # $1 = data directory
 #
-check_data_found()
-{
-   if [ "$1" = "" -o ! -d "$1" ]; then
-      fatal "Could not locate $LIVEKITNAME data";
-   fi
+check_data_found() {
+	if [ "$1" = "" -o ! -d "$1" ]; then
+		fatal "Could not locate $LIVEKITNAME data"
+	fi
 }
-
 
 # Activate persistent changes
 # $SYSCHANGES = syschanges/ directory
@@ -659,7 +635,7 @@ check_data_found()
 # $SYSTEM_MNT = System data
 # $EVENT_MNT = Event partition
 # $CONTEST_MNT = Contest partition
-persistent_changes(){
+persistent_changes() {
 	debug_log "persistent_changes" "$*"
 
 	local DUMMY_FILE EVENT_UUID CONTEST_UUID
@@ -675,7 +651,7 @@ persistent_changes(){
 	mkdir -p "$JOURNAL_DIR"
 
 	# Mount removable devices for persistence, they will not be used
-	# by initramfs as we don't want them so store system files that will 
+	# by initramfs as we don't want them so store system files that will
 	# lock their branch deletion once booted. So, just mounted.
 	EVENT_UUID="$(cmdline_value event.uuid)"
 	CONTEST_UUID="$(cmdline_value contest.uuid)"
@@ -734,11 +710,10 @@ persistent_changes(){
 	# mount -o loop,sync "$2/loop.fs" "$2"
 }
 
-
 # Copy content of rootcopy directory to union
 # $1 = data directory
 # $2 = union directory
-copy_rootcopy_content(){
+copy_rootcopy_content() {
 	debug_log "copy_rootcopy_content" "$*"
 
 	if [ "$(ls -1 "$1/" 2>/dev/null)" != "" ]; then
@@ -748,34 +723,31 @@ copy_rootcopy_content(){
 	fi
 }
 
-
 # Run user custom preinit script if it exists
 # $1 = data directory
 # $2 = union directory
-user_preinit()
-{
-   debug_log "user_preinit" "$*"
+user_preinit() {
+	debug_log "user_preinit" "$*"
 
-   local SRC
+	local SRC
 
-   SRC="$1/rootcopy/run/preinit.sh"
+	SRC="$1/rootcopy/run/preinit.sh"
 
-   if [ "$(ls -1 "$SRC" 2>/dev/null)" != "" ]; then
-      echo_green_star
-      echo "Executing user custom preinit..."
-      debug_log "Executing user custom preinit [$SRC]"
-      . "$SRC" "$2"
-   fi
+	if [ "$(ls -1 "$SRC" 2>/dev/null)" != "" ]; then
+		echo_green_star
+		echo "Executing user custom preinit..."
+		debug_log "Executing user custom preinit [$SRC]"
+		. "$SRC" "$2"
+	fi
 }
-
 
 # Copy data to RAM if requested
 # $1 = live data directory
 # $2 = changes directory
-copy_to_ram(){
+copy_to_ram() {
 	debug_log "copy_to_ram" "$*"
 	local MDIR MDEV RAM CHANGES
-	
+
 	if ! cmdline_has "toram"; then
 		echo "$1"
 		return
@@ -783,7 +755,7 @@ copy_to_ram(){
 
 	echo "* Copying $LIVEKITNAME data to RAM..." >&2
 	RAM="$(dirname "$2")"/toram
-	mkdir  -p "$RAM"
+	mkdir -p "$RAM"
 	cp -a "$1"/* "$RAM"
 	echo "$RAM"
 
@@ -798,50 +770,47 @@ copy_to_ram(){
 	fi
 }
 
-
 # load filter
 #
-filter_load()
-{
-   local FILTER
-   FILTER=$(cmdline_value load)
-   if [ "$FILTER" = "" ]; then
-      cat -
-   else
-      cat - | egrep "$FILTER"
-   fi
+filter_load() {
+	local FILTER
+	FILTER=$(cmdline_value load)
+	if [ "$FILTER" = "" ]; then
+		cat -
+	else
+		cat - | egrep "$FILTER"
+	fi
 }
-
 
 # noload filter
 #
-filter_noload()
-{
-   local FILTER
-   FILTER=$(cmdline_value noload)
-   if [ "$FILTER" = "" ]; then
-      cat -
-   else
-      cat - | egrep -v "$FILTER"
-   fi
+filter_noload() {
+	local FILTER
+	FILTER=$(cmdline_value noload)
+	if [ "$FILTER" = "" ]; then
+		cat -
+	else
+		cat - | egrep -v "$FILTER"
+	fi
 }
-
 
 ## Sort modules in desending order
-sortmod(){
-   cat - | sed -r "s,(.*/(.*)),\\2:\\1," | sort -nr | cut -d : -f 2-
+sortmod() {
+	cat - | sed -r "s,(.*/(.*)),\\2:\\1," | sort -nr | cut -d : -f 2-
 }
-
 
 ## Mount base huron software modules, aka squashfs filesystems
 # $BASE_DIR = Directory with the huronOS base modules
 # $BASE_MNT = Directory to mount base modules on
-mount_modules(){
+mount_modules() {
 	local MODULE MODULE_BAS
 
 	echo_green_star
 	echo "Mounting huronOS System Layers"
-	( ls -1 "$BASE_DIR" | sort -n ; cd "$BASE_DIR" | sortmod | filter_load) | grep '[.]'$BEXT'$' | filter_noload | while read MODULE; do
+	(
+		ls -1 "$BASE_DIR" | sort -n
+		cd "$BASE_DIR" | sortmod | filter_load
+	) | grep '[.]'$BEXT'$' | filter_noload | while read MODULE; do
 		echo "* Mounting $MODULE"
 		MODULE_BAS="$(basename "$MODULE")"
 		mkdir -p "$BASE_MNT/$MODULE_BAS"
@@ -849,11 +818,10 @@ mount_modules(){
 	done
 }
 
-
 ## Add mounted modules to the AUFS union
 # $1 = directory where modules are mounted
 # $UNION = directory where union is mounted
-union_append_modules(){
+union_append_modules() {
 	debug_log "union_append_bundles" "$*"
 
 	local MNT MODULE
@@ -874,29 +842,28 @@ union_append_modules(){
 	done
 }
 
-
 ## Create empty fstab properly
 # $UNION = Union directory, aka future root directory
-fstab_create(){
+fstab_create() {
 	debug_log "fstab_create" "$*"
 
 	local FSTAB
 	FSTAB="$UNION/etc/fstab"
 
-	echo aufs / aufs defaults 0 0 > $FSTAB
-	echo tmpfs /tmp tmpfs mode=1777,nosuid,nodev 0 0 >> $FSTAB
-	echo proc /proc proc defaults 0 0 >> $FSTAB
-	echo sysfs /sys sysfs defaults 0 0 >> $FSTAB
-	echo devpts /dev/pts devpts gid=5,mode=620 0 0 >> $FSTAB
-	echo tmpfs /dev/shm tmpfs defaults 0 0 >> $FSTAB
-	echo >> $FSTAB
-	echo "# hmount devices" >> $FSTAB
+	echo aufs / aufs defaults 0 0 >$FSTAB
+	echo tmpfs /tmp tmpfs mode=1777,nosuid,nodev 0 0 >>$FSTAB
+	echo proc /proc proc defaults 0 0 >>$FSTAB
+	echo sysfs /sys sysfs defaults 0 0 >>$FSTAB
+	echo devpts /dev/pts devpts gid=5,mode=620 0 0 >>$FSTAB
+	echo tmpfs /dev/shm tmpfs defaults 0 0 >>$FSTAB
+	echo >>$FSTAB
+	echo "# hmount devices" >>$FSTAB
 }
 
 ## Recover the journal from previous boot
 # $1 = Journal backup directory
 # $2 = Union directory
-activate_journal_persistence(){
+activate_journal_persistence() {
 	debug_log "activate_journal_persistence" "$*"
 
 	## Sync journal files using system disk
@@ -905,7 +872,7 @@ activate_journal_persistence(){
 
 ## Change root from tmpfs to AUFS union, then execute init process
 # $UNION = where to change root
-change_root(){
+change_root() {
 	debug_log "change_root" "$*"
 
 	chmod 700 $MEMORY
@@ -942,15 +909,15 @@ change_root(){
 	if [ ! -e sbin/fsck.aufs ]; then ln -s /bin/true sbin/fsck.aufs; fi
 
 	## Find the new root fs chroot binary
-	if [ -x bin/chroot -o -L bin/chroot ]; then  CHROOT=bin/chroot; fi
-	if [ -x sbin/chroot -o -L sbin/chroot ]; then  CHROOT=sbin/chroot; fi
-	if [ -x usr/bin/chroot -o -L usr/bin/chroot ]; then  CHROOT=usr/bin/chroot; fi
+	if [ -x bin/chroot -o -L bin/chroot ]; then CHROOT=bin/chroot; fi
+	if [ -x sbin/chroot -o -L sbin/chroot ]; then CHROOT=sbin/chroot; fi
+	if [ -x usr/bin/chroot -o -L usr/bin/chroot ]; then CHROOT=usr/bin/chroot; fi
 	if [ -x usr/sbin/chroot -o -L usr/sbin/chroot ]; then CHROOT=usr/sbin/chroot; fi
 	if [ "$CHROOT" = "" ]; then fatal "Can't find executable chroot command"; fi
 
 	## Find the init process (aka systemd for debian-like)
 	if [ -x bin/init -o -L bin/init ]; then INIT=bin/init; fi
-	if [ -x sbin/init -o -L sbin/init  ]; then INIT=sbin/init; fi
+	if [ -x sbin/init -o -L sbin/init ]; then INIT=sbin/init; fi
 	if [ "$INIT" = "" ]; then fatal "Can't find executable init command"; fi
 	debug_shell
 
@@ -971,5 +938,5 @@ change_root(){
 	debug_shell
 
 	## Chroot the FS and call the final Init process.
-	exec $CHROOT . $INIT < dev/console > dev/console 2>&1
+	exec $CHROOT . $INIT <dev/console >dev/console 2>&1
 }

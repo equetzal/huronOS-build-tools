@@ -16,7 +16,7 @@
 #		Enya Quetzalli <equetzal@huronos.org>
 
 # $1 = Lapses
-fits_lapse(){
+fits_lapse() {
 	local LAPSES CURRENT_TIMEZONE CURRENT_TIME START_TIME END_TIME
 	LAPSES="$1"
 	CURRENT_TIMEZONE="$(hos-dvar --variable-name TimeZone --section Global)"
@@ -26,16 +26,16 @@ fits_lapse(){
 	while read -r START END; do
 		START_TIME="$(date --date="TZ=\"$CURRENT_TIMEZONE\" $START" +'%s')"
 		END_TIME="$(date --date="TZ=\"$CURRENT_TIMEZONE\" $END" +'%s')"
-		if 	[ "$CURRENT_TIME" -ge "$START_TIME" ] && \
+		if [ "$CURRENT_TIME" -ge "$START_TIME" ] &&
 			[ "$CURRENT_TIME" -lt "$END_TIME" ]; then
-				return 0 # Yes
+			return 0 # Yes
 		fi
 	done < <(echo "$LAPSES" | xargs -n 2)
 
 	return 1 #No
 }
 
-current_directives_mode(){
+current_directives_mode() {
 	local CURRENT_MODE EVENT_LAPSES CONTEST_LAPSES
 	CURRENT_MODE="Always"
 	EVENT_LAPSES="$(hos-dvar --variable-name times --section Event)"

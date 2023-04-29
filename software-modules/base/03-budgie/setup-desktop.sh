@@ -21,16 +21,16 @@ set -xe
 mkdir -p ~/.config/autostart/
 cp -r files/autostart/* ~/.config/autostart/
 ## Launch plank (from the monitor script) to create its own config files
-(plankrm > /dev/null 2>&1 &)
+(plankrm >/dev/null 2>&1 &)
 
 ## Config Plank
 mkdir -p ~/.config/plank/dock1/launchers/
-echo -e "[PlankDockItemPreferences]\nLauncher=file:///usr/share/applications/org.gnome.Terminal.desktop" > ~/.config/plank/dock1/launchers/org.gnome.Terminal.dockitem
-echo -e "[PlankDockItemPreferences]\nLauncher=file:///usr/share/applications/org.gnome.Nautilus.desktop" > ~/.config/plank/dock1/launchers/org.gnome.Nautilus.dockitem
-dconf load /net/launchpad/plank/docks/ < /tmp/huronOS-plank-config.dump
+echo -e "[PlankDockItemPreferences]\nLauncher=file:///usr/share/applications/org.gnome.Terminal.desktop" >~/.config/plank/dock1/launchers/org.gnome.Terminal.dockitem
+echo -e "[PlankDockItemPreferences]\nLauncher=file:///usr/share/applications/org.gnome.Nautilus.desktop" >~/.config/plank/dock1/launchers/org.gnome.Nautilus.dockitem
+dconf load /net/launchpad/plank/docks/ </tmp/huronOS-plank-config.dump
 
 ## Load the menu bar configuration
-dconf load /com/solus-project/ < /tmp/huronOS-desktop-config.dump
+dconf load /com/solus-project/ </tmp/huronOS-desktop-config.dump
 
 ## Background, Icons, Preferences
 gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/huronos-background.png
@@ -45,7 +45,6 @@ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout 0
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing'
-
 
 ## Time and date
 gsettings set org.gnome.desktop.interface clock-format '12h'

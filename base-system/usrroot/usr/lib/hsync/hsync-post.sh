@@ -15,7 +15,6 @@
 
 set -x
 
-
 ## Set some system vars
 export TERM=dumb
 
@@ -62,10 +61,9 @@ readonly BACKUP_DIR=$USRCHANGES/$BACKUP_DIR_NAME
 . /usr/lib/hsync/libhsystem.so
 . /usr/lib/hsync/libhupdate.so
 
-
-main(){
+main() {
 	log_journal_to_disk
 }
 
-main "$@"; exit;
-
+main "$@"
+exit

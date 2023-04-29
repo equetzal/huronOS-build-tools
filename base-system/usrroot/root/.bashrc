@@ -7,7 +7,7 @@ alias la='/bin/ls --color=auto -axF'
 alias ls='/bin/ls --color=auto -xF'
 
 ## Append any additional sh scripts found in /etc/profile.d/:
-for y in /etc/profile.d/*.sh ; do [ -x $y ] && . $y; done
+for y in /etc/profile.d/*.sh; do [ -x $y ] && . $y; done
 unset y
 
 ## Setup shell prompt for root

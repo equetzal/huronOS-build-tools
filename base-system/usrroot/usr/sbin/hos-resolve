@@ -17,7 +17,7 @@
 . /usr/lib/hos/enviroment.sh
 
 ##Get all the domains/directions/urls
-magic(){
+magic() {
 	local AUX_DIR AUX_FILE SECTION
 	AUX_DIR="/tmp/magic-$$-d"
 	AUX_FILE="$AUX_DIR/aux"
@@ -25,13 +25,11 @@ magic(){
 
 	mkdir -p "$AUX_DIR"
 
-	echo "https://directives.huronos.org/directives.hdf" >> "$AUX_FILE"
-	hos-dvar --variable-name Wallpaper --section "$SECTION" >> "$AUX_FILE"
-
+	echo "https://directives.huronos.org/directives.hdf" >>"$AUX_FILE"
+	hos-dvar --variable-name Wallpaper --section "$SECTION" >>"$AUX_FILE"
 
 	cat "$AUX_FILE"
 
 }
 
-
-magic;
+magic

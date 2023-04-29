@@ -17,7 +17,7 @@
 # $1 = URL of image
 # $2 = File path to save
 # $3 = URL of sha256
-safe_download(){
+safe_download() {
 	local FILE_URL FILE_HASH_URL SAVE_PATH TMP TMP_FILE
 	FILE_URL="$1"
 	SAVE_PATH="$2"
@@ -60,11 +60,10 @@ safe_download(){
 	return 0 # Success
 }
 
-
 ## Given an URL and it's hash, returns if it should redownload a file or not
 # $1 = Saved file path
 # $2 = URL of sha256
-should_redownload_file(){
+should_redownload_file() {
 	local FILE_PATH FILE_HASH_URL TMP TMP_FILE TMP_HASH_FILE
 	FILE_PATH="$1"
 	FILE_HASH_URL="$2"
@@ -85,7 +84,7 @@ should_redownload_file(){
 	fi
 
 	## Copy local file to match hash file name
-	TMP_FILE="$TMP/$(cat "$TMP_HASH_FILE" | awk '{ print $2 }' )"
+	TMP_FILE="$TMP/$(cat "$TMP_HASH_FILE" | awk '{ print $2 }')"
 	cp -f "$FILE_PATH" "$TMP_FILE"
 
 	pushd "$TMP"

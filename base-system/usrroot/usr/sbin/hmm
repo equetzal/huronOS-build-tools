@@ -27,7 +27,7 @@ declare FORCE="false"
 declare UPDATE_MENU="false"
 
 ## Help function, it prints sintax to user
-help(){
+help() {
 	echo "Huron Module Manager"
 	echo "This tool will help you to automate the addition and removal"
 	echo "of Huron Software Modules (.hsm files), you can also provide"
@@ -37,41 +37,62 @@ help(){
 	echo "Syntax: hmm [options] [operation]"
 	echo
 	echo "operation:"
-	printf '%-30.30s\t%s\n' 	"--help"			"Display the help and exit."
-	printf '%-30.30s\t%s\n' 	"--list-modules" 		"Lists the modules stacked on the root AUFS union."
-	printf '%-30.30s\t%s\n' 	"--activate [.hsm file]"	"Add the provided module to the root AUFS union."
-	printf '%-30.30s\t%s\n'		"--deactivate [.hsm file]"	"Removes the provided module from the root AUFS union."
-	printf '%-30.30s\t%s\n'		"--block-update [.mdf file]"	"Add or Remove each of the modules provided on the file."
+	printf '%-30.30s\t%s\n' "--help" "Display the help and exit."
+	printf '%-30.30s\t%s\n' "--list-modules" "Lists the modules stacked on the root AUFS union."
+	printf '%-30.30s\t%s\n' "--activate [.hsm file]" "Add the provided module to the root AUFS union."
+	printf '%-30.30s\t%s\n' "--deactivate [.hsm file]" "Removes the provided module from the root AUFS union."
+	printf '%-30.30s\t%s\n' "--block-update [.mdf file]" "Add or Remove each of the modules provided on the file."
 	echo
 	echo "options:"
-	printf '%-5.5s\t%s\n'	"-s"	"Do operations silently."
-	printf '%-5.5s\t%s\n'	"-f"	"Force the deactivation of modules by killing any program that is blocking the"
-	printf '%-5.5s\t%s\n'	""	"module, like a file being used that is part of the module."
-	printf '%-5.5s\t%s\n'	"-u"	"Updates the menu bar after operation"
+	printf '%-5.5s\t%s\n' "-s" "Do operations silently."
+	printf '%-5.5s\t%s\n' "-f" "Force the deactivation of modules by killing any program that is blocking the"
+	printf '%-5.5s\t%s\n' "" "module, like a file being used that is part of the module."
+	printf '%-5.5s\t%s\n' "-u" "Updates the menu bar after operation"
 }
-
 
 ## Main function to execute
 # $1 = options OR operation
-main(){
+main() {
 
 	## Iterate while input options still available
-	while(($#)); do
+	while (($#)); do
 
 		## This is an operation
 		if [[ $1 == --* ]]; then
 			case $1 in
-				"--help")
-					help; shift 1;;
-				"--list-modules")
-					list_modules; shift 1;;
-				"--activate")
-					mask; activate $2; unmask; update_menu; shift 2;;
-				"--deactivate")
-					mask; deactivate $2; unmask; update_menu; shift 2;;
-				"--block-update")
-					mask; block_update $2; unmask; update_menu; shift 2 ;;
-				*) echo "Unknown operation '$1', please run [hmm --help] for help";exit 1;;
+			"--help")
+				help
+				shift 1
+				;;
+			"--list-modules")
+				list_modules
+				shift 1
+				;;
+			"--activate")
+				mask
+				activate $2
+				unmask
+				update_menu
+				shift 2
+				;;
+			"--deactivate")
+				mask
+				deactivate $2
+				unmask
+				update_menu
+				shift 2
+				;;
+			"--block-update")
+				mask
+				block_update $2
+				unmask
+				update_menu
+				shift 2
+				;;
+			*)
+				echo "Unknown operation '$1', please run [hmm --help] for help"
+				exit 1
+				;;
 			esac
 			exit 0
 
@@ -81,11 +102,14 @@ main(){
 			OPTIONS=$(echo "$1" | sed 's/-//g' | sed 's:\(.\):\1\n:g')
 			while read -r OP; do
 				case $OP in
-					"s") SILENT="true" ;;
-					"f") FORCE="true" ;;
-					"u") UPDATE_MENU="true" ;;
-					" "|"") : ;;
-					*) echo "Unknown option '$OP', please run [hmm --help] for help";exit 1;;
+				"s") SILENT="true" ;;
+				"f") FORCE="true" ;;
+				"u") UPDATE_MENU="true" ;;
+				" " | "") : ;;
+				*)
+					echo "Unknown option '$OP', please run [hmm --help] for help"
+					exit 1
+					;;
 				esac
 			done < <(echo "$OPTIONS" | xargs -n 1)
 			shift 1
@@ -100,7 +124,7 @@ main(){
 }
 
 ## List the huronOS modules loaded on the system
-list_modules(){
+list_modules() {
 	local STACK_ID BRANCHES_DIR MODULE LOOP CWD
 	## AUFS is able to have several union filesystems, each have a Stack Id (SI).
 	# we want the one used on the / root filesystem.
@@ -122,7 +146,7 @@ list_modules(){
 
 # Activate Module
 # $1 = file to activate
-activate(){
+activate() {
 	local MODULE_PATH TARGET_MNT MODULE_BAS
 
 	MODULE_PATH="$(readlink -f "$1")"
@@ -130,7 +154,7 @@ activate(){
 
 	## If module does not exists
 	if [ ! -r "$MODULE_PATH" ]; then
-		[ "$SILENT" != "true" ] &&  echo "$(tput setaf 1)!huronOS module not found: $MODULE_PATH$(tput sgr0)"
+		[ "$SILENT" != "true" ] && echo "$(tput setaf 1)!huronOS module not found: $MODULE_PATH$(tput sgr0)"
 		return 1
 	fi
 
@@ -178,14 +202,13 @@ activate(){
 	return 0
 }
 
-
 # Deactivate module of the given name
 # $1 = path to module file, or its name
-deactivate(){
+deactivate() {
 	local MODULE_BAS MATCH LOOP LOOPFILE
 	MODULE_BAS="$(basename "$1")"
 
-	rmdir "$MODULES_MNT/$MODULE_BAS" 2>/dev/null    # this fails unless the dir is
+	rmdir "$MODULES_MNT/$MODULE_BAS" 2>/dev/null     # this fails unless the dir is
 	rmdir "$MODULES_MNT/$MODULE_BAS.hsm" 2>/dev/null # forgotten there empty. It's safe this way
 
 	if [ ! -d "$MODULES_MNT/$MODULE_BAS" ]; then
@@ -229,23 +252,23 @@ deactivate(){
 
 ## Remove the desired branch from the AUFS union
 # $1 = Module branch to deactivate
-remove_branch(){
-#	set -x
+remove_branch() {
+	#	set -x
 	## Force module deletion from AUFS union by killing all the processes that are using any file on that branch
 	if [ "$FORCE" = "true" ]; then
 		## Try a fist time to delete branch
 		mount -t aufs -o remount,del:"$1" aufs / 2>/dev/null
-   		[ $? -eq 0 ] && return 0
+		[ $? -eq 0 ] && return 0
 
 		## That did not worked, let's get the PID of any process that is using this
-		for i in {1..50} ; do
+		for i in {1..50}; do
 			PIDS=$(aubusy -v / $1 | awk '{print $1}' | sort | uniq | sed 's:\n: :g')
 			for PID in $PIDS; do
 				[ "$SILENT" != "true" ] && echo "Killing process with ID $PID aka. $(ps -p $PID -o command --no-headers | awk '{print $1}')"
 				kill -9 $PID >/dev/null 2>/dev/null
 			done
 			mount -t aufs -o remount,verbose,del:"$1" aufs / 2>/dev/null
-   			[ $? -eq 0 ] && return 0
+			[ $? -eq 0 ] && return 0
 		done
 		[ "$SILENT" != "true" ] && echo "$(tput setaf 4)>huronOS module busy: Cannot deactivate module $(basename $1). See dmesg for more.$(tput sgr0)"
 		return 1
@@ -259,10 +282,9 @@ remove_branch(){
 	fi
 }
 
-
 ## For a .mdf (Modules Definition File), activate or deactivate depending on instruction
 # $1 = Configuration file
-block_update(){
+block_update() {
 	[ "$SILENT" != "true" ] && echo "Activating/Deactivating huronOS modules:"
 
 	local PACKAGES HURONDIR BASE
@@ -280,7 +302,7 @@ block_update(){
 }
 
 ## Update the MIME types database, the .desktop database, restart the menu bar to show updates
-update_menu(){
+update_menu() {
 	[ "$UPDATE_MENU" != "true" ] && return
 	update-mime-database /usr/share/mime
 	update-desktop-database /usr/share/applications
@@ -290,13 +312,13 @@ update_menu(){
 }
 
 ## The mount.aufs binary tool, kill proceses, we do not want that
-mask(){
+mask() {
 	mv -f /usr/sbin/mount.aufs /usr/sbin/mount.aufs-
 	mv -f /usr/sbin/umount.aufs /usr/sbin/umount.aufs-
 	return
 }
 
-unmask(){
+unmask() {
 	mv -f /usr/sbin/mount.aufs- /usr/sbin/mount.aufs
 	mv -f /usr/sbin/umount.aufs- /usr/sbin/umount.aufs
 
@@ -305,4 +327,5 @@ unmask(){
 	return
 }
 
-main "$@"; exit
+main "$@"
+exit
