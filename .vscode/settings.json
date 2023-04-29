@@ -1,0 +1,7 @@
+{
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "modificationsIfAvailable",
+    "[sh,bash]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    }
+}
