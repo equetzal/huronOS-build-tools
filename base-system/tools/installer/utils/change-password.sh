@@ -15,22 +15,22 @@
 set -e
 
 # Tests if a password was supplied
-if [ -z "$1" ]
-  then
-  	echo "Usage: change-password.sh your-new-password"
-  	exit 1
+if [ -z "$1" ]; then
+  echo "Usage: change-password.sh your-new-password"
+  exit 1
 fi
 
 ## Test if the script is started by root user. If not, exit
 if [ "0$UID" -ne 0 ]; then
-	echo "Only root can run $(basename "$0")"; exit 1
+  echo "Only root can run $(basename "$0")"
+  exit 1
 fi
 
 # check for mksquashfs with xz compression
 if [ "$(mksquashfs 2>&1 | grep "Xdict-size")" = "" ]; then
-   echo "mksquashfs not found or doesn't support -comp xz, aborting, no changes made"
-   echo "you may consider installing squashfs-tools package"
-   exit 1
+  echo "mksquashfs not found or doesn't support -comp xz, aborting, no changes made"
+  echo "you may consider installing squashfs-tools package"
+  exit 1
 fi
 
 # Get the absolute path of the directory where this script is located

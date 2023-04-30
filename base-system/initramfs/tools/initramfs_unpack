@@ -4,7 +4,7 @@
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2
-#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Taken from the Slax project, authored by:
 #		Tomas M <http://www.slax.org/>
@@ -21,4 +21,7 @@ fi
 
 mkdir -p "$2"
 
-(cd "$2"; xz -d | cpio -idv) < "$1"
+(
+   cd "$2"
+   xz -d | cpio -idv
+) <"$1"

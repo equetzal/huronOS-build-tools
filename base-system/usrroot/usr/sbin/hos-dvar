@@ -19,7 +19,7 @@
 . /usr/lib/hos/enviroment.sh
 
 ## Help function, it prints sintax to user
-help(){
+help() {
 	echo "huronOS Directives Variable Helper Tool"
 	echo "This tool will let you retrieve a variable from the current directives"
 	echo "that are sync in the system. "
@@ -27,40 +27,51 @@ help(){
 	echo "Syntax: hos-dvar [options]"
 	echo
 	echo "options:"
-	printf '%-38.38s\t%s\n' 	"--help"			"Display this menu and exit."
-	printf '%-38.38s\t%s\n' 	"--variable-name [ times | variable ]"	"Variable to lookup, returns empty when not valid."
-	printf '%-38.38s\t%s\n'		"--section [ Global | Event | Contest ]"	"Section to lookup variable, empty when invalid section."
+	printf '%-38.38s\t%s\n' "--help" "Display this menu and exit."
+	printf '%-38.38s\t%s\n' "--variable-name [ times | variable ]" "Variable to lookup, returns empty when not valid."
+	printf '%-38.38s\t%s\n' "--section [ Global | Event | Contest ]" "Section to lookup variable, empty when invalid section."
 }
 
-main(){
+main() {
 	local VAR_NAME SECTION
 
-	while(($#)); do
+	while (($#)); do
 		case $1 in
-			"--help")
-				help; exit 0;;
-			"--variable-name")
-				VAR_NAME="$2"; shift 2;;
-			"--section")
-				SECTION="$2"; shift 2;;
-			*) echo "Unknown operation '$1', please run [hos-dvar --help] for help"; exit 1;;
+		"--help")
+			help
+			exit 0
+			;;
+		"--variable-name")
+			VAR_NAME="$2"
+			shift 2
+			;;
+		"--section")
+			SECTION="$2"
+			shift 2
+			;;
+		*)
+			echo "Unknown operation '$1', please run [hos-dvar --help] for help"
+			exit 1
+			;;
 		esac
 	done
 
 	if [ -z "${VAR_NAME}" ]; then
-		echo "Variable name not specified, please run [hos-dvar --help] for help"; exit 1;
+		echo "Variable name not specified, please run [hos-dvar --help] for help"
+		exit 1
 	fi
 
 	if [ -z "${SECTION}" ]; then
-		echo "Section not specified, please run [hos-dvar --help] for help"; exit 1;
+		echo "Section not specified, please run [hos-dvar --help] for help"
+		exit 1
 	fi
 
 	if [ "times" = "${VAR_NAME}" ]; then
 		sed -nE "/^\[$SECTION-Times\]$/{:l n;/^(\[.*\])?$/q;p;bl}" "$CURRENT_DIRECTIVES_FILE"
 	else
-		sed -nE "/^\[$SECTION\]$/{:l n;/^(\[.*\])?$/q;p;bl}" "$CURRENT_DIRECTIVES_FILE" | grep "$VAR_NAME" | cut -d= -f2
+		sed -nE "/^\[$SECTION\]$/{:l n;/^(\[.*\])?$/q;p;bl}" "$CURRENT_DIRECTIVES_FILE" | grep "${VAR_NAME}=" | cut -d= -f2
 	fi
 }
 
-main "$@"; exit 0
-
+main "$@"
+exit 0

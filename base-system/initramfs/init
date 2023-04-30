@@ -3,12 +3,12 @@
 #	init
 #	Init script for the initramfs. This script is compressed in the
 #	initrd.img file which contains busybox and basic file system to
-#	boot. It is loaded by the bootloader. During this process, the 
+#	boot. It is loaded by the bootloader. During this process, the
 #	init process will load some kernel modules in order to find the
 #	huronOS disk by using the UUID provided by the bootloader.
-#	Then, it will create the final union file system with AUFS, 
+#	Then, it will create the final union file system with AUFS,
 #	making the .hsl (huronOS System Layer) files part of the final
-#	file system to be chrooted. 
+#	file system to be chrooted.
 #	After the execution of this init process, the regular systemd
 # 	process is executed after the chroot.
 #
@@ -16,14 +16,13 @@
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2
-#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Taken from the Slax project, authored by:
 #		Tomas M <http://www.slax.org/>
 #
 #	Heavily modified and redistributed by the huronOS team:
 #		Enya Quetzalli <equetzal@huronos.org>
-
 
 ## Set the initial PATH enviroment variable
 export PATH=.:/:/usr/sbin:/usr/bin:/sbin:/bin
@@ -67,27 +66,26 @@ readonly LANGS_DIR="$SOFTWARE_DIR/langs"
 readonly PROGRAMMING_DIR="$SOFTWARE_DIR/programming"
 readonly TOOLS_DIR="$SOFTWARE_DIR/tools"
 
-
 ## AUFS branches
-	# syschanges/ branch will hold all the system-created
-	# changes that are necesary to boot, like the procfs, sysfs, etc.
-	# also, is the default place to copy up from lower readonly branches.
-	# eg. if /etc/fstab is edited, the modification will be writted in this branch.
-	readonly SYSCHANGES=$MEMORY/syschanges
+# syschanges/ branch will hold all the system-created
+# changes that are necesary to boot, like the procfs, sysfs, etc.
+# also, is the default place to copy up from lower readonly branches.
+# eg. if /etc/fstab is edited, the modification will be writted in this branch.
+readonly SYSCHANGES=$MEMORY/syschanges
 
-	# userchanges/ branch, is where all the newly-created files
-	# will be stored, it can be bind to a device to setup persistence
-	# or it can use ram to drop changes after reboot.
-	# This branch should be mounted AFTER boot on chroot over AUFS union.
-	readonly USRCHANGES=$MEMORY/usrchanges
+# userchanges/ branch, is where all the newly-created files
+# will be stored, it can be bind to a device to setup persistence
+# or it can use ram to drop changes after reboot.
+# This branch should be mounted AFTER boot on chroot over AUFS union.
+readonly USRCHANGES=$MEMORY/usrchanges
 
-	# base/ is not branch, but the directory where the base modules branches
-	# should be mounted and then appended to the AUFS union.
-	readonly BASE_MNT=$MEMORY/base
+# base/ is not branch, but the directory where the base modules branches
+# should be mounted and then appended to the AUFS union.
+readonly BASE_MNT=$MEMORY/base
 
-	# modules/ is not branch, but the directory where any other module that is
-	# not essential for huronOS will be mounted and then appended to the AUFS union.
-	readonly MODULES_MNT=$MEMORY/modules
+# modules/ is not branch, but the directory where any other module that is
+# not essential for huronOS will be mounted and then appended to the AUFS union.
+readonly MODULES_MNT=$MEMORY/modules
 
 ## AUFS resulting union
 readonly UNION=$MEMORY/union
@@ -145,7 +143,7 @@ debug_shell
 
 ## Rootcopy content to huronOS
 # TODO: Check if this feature will be supported by huronOS
-# 		this can mean a security hole for contestants being able to 
+# 		this can mean a security hole for contestants being able to
 #		easily add files to the rootcopy dir and gain root access.
 copy_rootcopy_content "$ROOTCOPY_DIR" "$UNION"
 # debug_shell
@@ -158,7 +156,7 @@ debug_shell
 
 ## Run user custom preinit script
 # TODO: Check if this feature will be supported by huronOS
-# 		this can mean a security hole for contestants being able to 
+# 		this can mean a security hole for contestants being able to
 #		easily change essencial huronOS configurations.
 # user_preinit "$DATA" "$UNION"
 # debug_shell
@@ -166,7 +164,7 @@ debug_shell
 header "huronOS ready!, starting contest enviroment"
 header "Keep Training!"
 
-## Move the temporal ram disk system to the real huronOS system. 
+## Move the temporal ram disk system to the real huronOS system.
 change_root
 
 ## Adding open exclamation to surprise non-spanish speakers lol.

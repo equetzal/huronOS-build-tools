@@ -9,7 +9,7 @@
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2
-#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
@@ -23,9 +23,9 @@ cp ./$NAME.desktop /usr/share/applications/
 ## Install software
 cp eclipse-inst-jre-linux64.tar.gz /tmp/
 pushd /tmp/
-	tar -xf eclipse-inst-jre-linux64.tar.gz
-	cd eclipse-installer/
-	su contestant -c "echo \$! && ./eclipse-inst"
+tar -xf eclipse-inst-jre-linux64.tar.gz
+cd eclipse-installer/
+su contestant -c "echo \$! && ./eclipse-inst"
 popd
 
 ## Create packed changes

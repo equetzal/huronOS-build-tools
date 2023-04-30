@@ -23,7 +23,8 @@ export DIRECTIVES_FILE_URL=""
 ## Test if the script is started by root user. If not, exit
 ## only root user can manipulate the device as required.
 if [ "0$UID" -ne 0 ]; then
-	echo "Only root can run $(basename $0)"; exit 1
+	echo "Only root can run $(basename $0)"
+	exit 1
 fi
 
 # Argument handling
@@ -31,25 +32,25 @@ fi
 NEW_PASSWORD=""
 while [ "$#" -gt 0 ]; do
 	case "$1" in
-		--root-password)
-			if [ -n "$2" ]; then
-				NEW_PASSWORD="$2"
-				shift 2
-			else
-				echo "Error: option --root-password requires an argument" >&2
-				exit 1
-			fi
-		;;
-		-h|--help)
-			echo "Installs the current huronOS into an usb"
-			echo "Usage: ./install.sh [--root-password password]"
+	--root-password)
+		if [ -n "$2" ]; then
+			NEW_PASSWORD="$2"
+			shift 2
+		else
+			echo "Error: option --root-password requires an argument" >&2
 			exit 1
+		fi
 		;;
-		#   Whichever other parameter passed, we know nothing about that here
-		*)
-			shift
+	-h | --help)
+		echo "Installs the current huronOS into an usb"
+		echo "Usage: ./install.sh [--root-password password]"
+		exit 1
 		;;
-  esac
+	#   Whichever other parameter passed, we know nothing about that here
+	*)
+		shift
+		;;
+	esac
 done
 
 # $1 = message to print
@@ -57,13 +58,13 @@ BOLD="$(tput bold)"
 BOLD_GREEN="$(tput setab 2)$(tput bold)"
 BOLD_RED="$(tput setab 2)$(tput setaf 1)$(tput bold)"
 NORMAL_TEXT="$(tput sgr0)"
-print_bold(){
+print_bold() {
 	echo -e "${BOLD}$1${NORMAL_TEXT}"
 }
-print_bold_red(){
+print_bold_red() {
 	echo -e "${BOLD_RED}$1${NORMAL_TEXT}"
 }
-print_step(){
+print_step() {
 	echo -e "${BOLD_GREEN}$1${NORMAL_TEXT}"
 }
 
@@ -77,7 +78,8 @@ print_step "[1/11] Locating huronOS image -> $ISO_DIR"
 ## Configure the remote directives file
 print_step "[2/11] Configuring directives server."
 read -r -p "URL (http/s) of directives file to configure:" DIRECTIVES_FILE_URL
-echo -e "[Server]\nIP=\nDOMAIN=\nDIRECTIVES_ENDPOINT=\nSERVER_ROOM=\nDIRECTIVES_FILE_URL=$DIRECTIVES_FILE_URL\n" > "$SERVER_CONFIG"
+read -r -p "IP of the sync server:" DIRECTIVES_SERVER_IP
+echo -e "[Server]\nIP=\nDOMAIN=\nDIRECTIVES_ENDPOINT=\nSERVER_ROOM=\nDIRECTIVES_FILE_URL=$DIRECTIVES_FILE_URL\nDIRECTIVES_SERVER_IP=$DIRECTIVES_SERVER_IP\n" >"$SERVER_CONFIG"
 
 ## Select the device we want to install huronOS to
 print_step "[3/11] Selecting removable device to install huronOS on"
@@ -86,40 +88,40 @@ DEV_PATHS=$(lsblk --nodeps --noheadings --raw -o PATH)
 HOTPLUG_DEVICES=()
 DEVNUM=0
 for DEV_PATH in $DEV_PATHS; do
-    # Get device attributes
-    DEV_HOTPLUG="$(lsblk --nodeps --noheadings --raw -o HOTPLUG "$DEV_PATH")"
-    DEV_TYPE="$(lsblk --nodeps --noheadings --raw -o TYPE "$DEV_PATH")"
-    DEV_VENDOR="$(lsblk --nodeps --noheadings --raw -o VENDOR "$DEV_PATH")"
-    DEV_MODEL="$(lsblk --nodeps --noheadings --raw -o MODEL "$DEV_PATH")"
-    DEV_SIZE="$(lsblk --nodeps --noheadings --raw -o SIZE "$DEV_PATH")"
+	# Get device attributes
+	DEV_HOTPLUG="$(lsblk --nodeps --noheadings --raw -o HOTPLUG "$DEV_PATH")"
+	DEV_TYPE="$(lsblk --nodeps --noheadings --raw -o TYPE "$DEV_PATH")"
+	DEV_VENDOR="$(lsblk --nodeps --noheadings --raw -o VENDOR "$DEV_PATH")"
+	DEV_MODEL="$(lsblk --nodeps --noheadings --raw -o MODEL "$DEV_PATH")"
+	DEV_SIZE="$(lsblk --nodeps --noheadings --raw -o SIZE "$DEV_PATH")"
 
-    # USBs surely are hotplug and disks, so we'll focus on those
-    if [ "$DEV_HOTPLUG" = "1" ] && [ "$DEV_TYPE" = "disk" ];then
-        # Append device to the hotplug array
-        HOTPLUG_DEVICES+=("$DEV_PATH")
+	# USBs surely are hotplug and disks, so we'll focus on those
+	if [ "$DEV_HOTPLUG" = "1" ] && [ "$DEV_TYPE" = "disk" ]; then
+		# Append device to the hotplug array
+		HOTPLUG_DEVICES+=("$DEV_PATH")
 
-	    print_bold_red "$DEV_TYPE $DEVNUM  $DEV_PATH  $DEV_SIZE  $DEV_VENDOR  $DEV_MODEL"
-        # Get device's available paths (includes the device itself and its partitions)
-        PARTITIONS=$(lsblk --noheadings --raw -o PATH "$DEV_PATH")
-        for PARTITION in $PARTITIONS; do
-            # Ignore the device itself
-            if [ "$PARTITION" != "$DEV_PATH" ]; then
-                # Get partition attributes
-                PART_NAME="$(lsblk --nodeps --noheadings --raw -o NAME "$PARTITION")"
-                PART_TYPE="$(lsblk --nodeps --noheadings --raw -o TYPE "$PARTITION")"
-                PART_SIZE="$(lsblk --nodeps --noheadings --raw -o SIZE "$PARTITION")"
-                PART_LABEL="$(lsblk --nodeps --noheadings --raw -o LABEL "$PARTITION")"
-                echo -e "\t$PART_NAME $PART_TYPE $PART_SIZE $PART_LABEL"
-            fi
-        done
-		DEVNUM=$((DEVNUM+1))
+		print_bold_red "$DEV_TYPE $DEVNUM  $DEV_PATH  $DEV_SIZE  $DEV_VENDOR  $DEV_MODEL"
+		# Get device's available paths (includes the device itself and its partitions)
+		PARTITIONS=$(lsblk --noheadings --raw -o PATH "$DEV_PATH")
+		for PARTITION in $PARTITIONS; do
+			# Ignore the device itself
+			if [ "$PARTITION" != "$DEV_PATH" ]; then
+				# Get partition attributes
+				PART_NAME="$(lsblk --nodeps --noheadings --raw -o NAME "$PARTITION")"
+				PART_TYPE="$(lsblk --nodeps --noheadings --raw -o TYPE "$PARTITION")"
+				PART_SIZE="$(lsblk --nodeps --noheadings --raw -o SIZE "$PARTITION")"
+				PART_LABEL="$(lsblk --nodeps --noheadings --raw -o LABEL "$PARTITION")"
+				echo -e "\t$PART_NAME $PART_TYPE $PART_SIZE $PART_LABEL"
+			fi
+		done
+		DEVNUM=$((DEVNUM + 1))
 	fi
 done
 
 # Safety check if no hotplug+disk device was found
 if [ "${#HOTPLUG_DEVICES[@]}" == "0" ]; then
-    echo "No usb plugged was found"
-    exit 1
+	echo "No usb plugged was found"
+	exit 1
 fi
 
 read -r -p "Please, select the disk where you want to install huronOS on: " SELECTION
@@ -155,10 +157,10 @@ if [[ "${PARTITION_COUNT}" -gt 0 ]]; then
 			# Unmount the partition
 			umount "$PARTITION" || exit 1 #Error unmounting
 		fi
-  	done
-  	echo "Partition(s) unmounted correctly"
+	done
+	echo "Partition(s) unmounted correctly"
 else
-  	echo "No partitions to unmount"
+	echo "No partitions to unmount"
 fi
 
 # Wipes device's filesystem
@@ -169,13 +171,13 @@ print_step "[5/11] Partitioning device $TARGET"
 ## Set positions on the target device
 DISK_SIZE=$(blockdev --getsize64 "$TARGET")
 DISK_SECTORS=$(blockdev --getsz "$TARGET")
-DISK_SIZE_MB=$(( $DISK_SIZE / 1024 / 1024 )) #Convert disk size to MiB
-SYSTEM_PART_END=$(( 6*1024 )) #Set 6GiB to store huronOS
-EVENT_PART_END=$(( ( ($DISK_SIZE_MB - $SYSTEM_PART_END) / 2) + SYSTEM_PART_END ))
+DISK_SIZE_MB=$(($DISK_SIZE / 1024 / 1024)) #Convert disk size to MiB
+SYSTEM_PART_END=$((6 * 1024))              #Set 6GiB to store huronOS
+EVENT_PART_END=$(((($DISK_SIZE_MB - $SYSTEM_PART_END) / 2) + SYSTEM_PART_END))
 
 ## Clean possible partition tables, asuming 512 block size dev (hope there's no 1ZiB usbs soon)
 dd bs=512 if=/dev/zero of="$TARGET" count=34
-dd bs=512 if=/dev/zero of="$TARGET" count=34 seek=$(( $DISK_SECTORS-34 ))
+dd bs=512 if=/dev/zero of="$TARGET" count=34 seek=$(($DISK_SECTORS - 34))
 
 ## Do de partioning
 # 0% = minimal start alignment between sector size vs optimal I/O speed
@@ -219,14 +221,14 @@ cp --verbose -rf "$SERVER_CONFIG" "$SYSTEM_MNT/huronOS/data/configs/sync-server.
 
 # If a password was passed, update the password
 if [ -n "$NEW_PASSWORD" ]; then
-  print_step "[7.5/11] Setting new password: $NEW_PASSWORD"
-  utils/change-password.sh "$NEW_PASSWORD" "$SYSTEM_MNT" || exit 1
+	print_step "[7.5/11] Setting new password: $NEW_PASSWORD"
+	utils/change-password.sh "$NEW_PASSWORD" "$SYSTEM_MNT" || exit 1
 fi
 
 print_step "[8/11] Cleaning device buffers"
 sync &
 SYNC_PID=$!
-while ps -p $SYNC_PID > /dev/null 2>&1; do
+while ps -p $SYNC_PID >/dev/null 2>&1; do
 	echo -ne "\rRemaining data -> $(grep -e "Dirty:" /proc/meminfo)\t$(grep -i "Writeback:" /proc/meminfo)"
 	sleep 1
 done
@@ -245,7 +247,6 @@ if ! sha256sum --check "./checksums"; then
 fi
 cd "$CURRENT_PATH" || exit 1 # error
 
-
 ## Configure the bootloader
 print_step "[10/11] Making device bootable"
 sed "s|system.uuid=UUID|system.uuid=$SYSTEM_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
@@ -262,9 +263,9 @@ umount $SYSTEM_MNT && rm -rf "$INSTALLER_LAB"
 
 # Show the password used in this instalation
 if [ -n "$NEW_PASSWORD" ]; then
-  print_step "The root password was set to: $NEW_PASSWORD"
+	print_step "The root password was set to: $NEW_PASSWORD"
 else
-  print_step "The root password is the default one (toor, unless you executed ./change-password)"
+	print_step "The root password is the default one (toor, unless you executed ./change-password)"
 fi
 
 print_step "Done!, you can remove your device now :)"

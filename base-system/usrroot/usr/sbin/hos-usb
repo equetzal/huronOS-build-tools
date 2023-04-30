@@ -14,7 +14,7 @@
 #		Enya Quetzalli <equetzal@huronos.org>
 
 ## Help function, it prints sintax to user
-help(){
+help() {
 	echo "huronOS USB Storage Mount Tools"
 	echo "This tool will let you change the mount rules for newly connected"
 	echo "USB storage devices. "
@@ -22,32 +22,40 @@ help(){
 	echo "Syntax: hos-usb [operation]"
 	echo
 	echo "operations:"
-	printf '%-38.38s\t%s\n' 	"--help"	"Display this menu and exit."
-	printf '%-38.38s\t%s\n' 	"--enable"	"Enable the mount of usb storage devices."
-	printf '%-38.38s\t%s\n'		"--disable"	"Disable the mount of usb storage devices."
+	printf '%-38.38s\t%s\n' "--help" "Display this menu and exit."
+	printf '%-38.38s\t%s\n' "--enable" "Enable the mount of usb storage devices."
+	printf '%-38.38s\t%s\n' "--disable" "Disable the mount of usb storage devices."
 }
 
-enable_usb(){
+enable_usb() {
 	sed -i 's/ShouldMount=.*/ShouldMount=true/g' /etc/hmount/rule
 	echo "USB storage devices enabled."
 }
 
-disable_usb(){
+disable_usb() {
 	sed -i 's/ShouldMount=.*/ShouldMount=false/g' /etc/hmount/rule
 	echo "USB storage devices disabled."
 }
 
-main(){
+main() {
 	case $1 in
-		"--help")
-			help;exit 0;;
-		"--enable")
-			enable_usb; exit 0;;
-		"--disable")
-			disable_usb; exit 0;;
-		*)
-			echo "Unknown operation, please run [hos-usb --help] for help"; exit 1;;
+	"--help")
+		help
+		exit 0
+		;;
+	"--enable")
+		enable_usb
+		exit 0
+		;;
+	"--disable")
+		disable_usb
+		exit 0
+		;;
+	*)
+		echo "Unknown operation, please run [hos-usb --help] for help"
+		exit 1
+		;;
 	esac
 }
 
-main "$@";
+main "$@"

@@ -63,7 +63,6 @@ export BACKUP_DIRECTIVES_FILE="$SYSTEM_BACKUP_FILES_DIR/directives.backup"
 export BACKUP_STATE_VARIABLES_FILE="$SYSTEM_BACKUP_FILES_DIR/state-variables.backup"
 export BACKUP_STATE_SUMMARY_FILE="$SYSTEM_BACKUP_FILES_DIR/state-summary.backup"
 
-
 ## Make variables readonly
 readonly MEMORY
 readonly SYSTEM_MNT

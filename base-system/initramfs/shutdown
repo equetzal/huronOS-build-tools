@@ -3,13 +3,13 @@
 #	shutdown
 #	Shutdown script for initramfs. It's automatically started by
 #	systemd (if you use it) on shutdown, no need for any tweaks.
-#	Purpose of this script is to unmount everything cleanly. 
+#	Purpose of this script is to unmount everything cleanly.
 #
 #	Copyright (C) 2022, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2
-#		<http://www.gnu.org/licenses/gpl-2.0.html>	
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Taken from the Slax project, authored by:
 #		Tomas M <http://www.slax.org/>
@@ -28,14 +28,12 @@ debug_log "Called with arguments: " "$*"
 # if debug is enabled, run shell now
 debug_shell
 
-detach_free_loops()
-{
+detach_free_loops() {
    losetup -a | cut -d : -f 1 | xargs -r -n 1 losetup -d
 }
 
 # $1=dir
-umount_all()
-{
+umount_all() {
    tac /proc/mounts | cut -d " " -f 2 | grep ^$1 | while read LINE; do
       umount $LINE 2>/dev/null
    done
