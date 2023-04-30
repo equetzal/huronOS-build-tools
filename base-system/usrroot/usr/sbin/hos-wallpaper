@@ -72,11 +72,11 @@ main() {
 # $1 = Wallpaper Section
 # $2 = Current Mode
 prepare_wallpaper() {
-	local SECTION CURRENT_MODE WALLPAPER_URL WALLPAPER_HASH_URL FILE_TYPE SAVE_FILE CURRENT_WALLPAPER
+	local SECTION CURRENT_MODE WALLPAPER_URL WALLPAPER_HASH FILE_TYPE SAVE_FILE CURRENT_WALLPAPER
 	SECTION="$1"
 	CURRENT_MODE="$2"
 	WALLPAPER_URL="$(hos-dvar --variable-name Wallpaper --section "$SECTION")"
-	WALLPAPER_HASH_URL="${WALLPAPER_URL}.sha256"
+	WALLPAPER_HASH="$(hos-dvar --variable-name WallpaperSha256 --section "$SECTION")"
 	BASENAME="$(basename "$WALLPAPER_URL")"
 	FILE_TYPE="${BASENAME##*.}"
 	SAVE_FILE="$SYSTEM_BACKUP_FILES_DIR/${SECTION}-mode-wallpaper.${FILE_TYPE}"
@@ -88,9 +88,9 @@ prepare_wallpaper() {
 		SAVE_FILE="$SYSTEM_BACKUP_FILES_DIR/${SECTION}-mode-wallpaper.${FILE_TYPE}"
 		cp -f "$DEFAULT_WALLPAPER_FILE" "$SAVE_FILE"
 	## If current file is not valid
-	elif should_redownload_file "$SAVE_FILE" "$WALLPAPER_HASH_URL"; then
+	elif should_redownload_file "$SAVE_FILE" "$WALLPAPER_URL" "$WALLPAPER_HASH"; then
 		## Download the file
-		if ! safe_download "$WALLPAPER_URL" "$SAVE_FILE" "$WALLPAPER_HASH_URL"; then
+		if ! safe_download "$WALLPAPER_URL" "$SAVE_FILE" "$WALLPAPER_HASH"; then
 			## If not successfull, leave the file as it is unless there is no file
 			if [ ! -f "$SAVE_FILE" ]; then
 				## Set default wallpaper
