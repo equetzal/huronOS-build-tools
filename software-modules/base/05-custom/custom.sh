@@ -1,8 +1,10 @@
 #!/bin/bash
 
-#	password.sh
-#	Script to build the password huronOS System Layer (.hsl)
-#	for huronOS image. It gets the shadow file used in the installer
+#	custom.sh
+#	Script to build the custom huronOS System Layer (.hsl)
+#	for huronOS image. For now, it prepare the files for changing
+#   the password during installation.
+#   It gets the shadow file used in the installer
 #   in case someone wants to change the password
 #
 #	Copyright (C) 2022, huronOS Project:
