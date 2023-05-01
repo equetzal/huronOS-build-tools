@@ -351,7 +351,15 @@ set_bookmarks() {
 	sed -i "s|<!-- Bookmarks Lines -->|$BOOKMARKS_LINES|g" $TMP_FILE
 	log "+Updating firefox bookmarks in /usr/lib/firefox-esr/bookmarks.html"
 	mkdir -p /usr/lib/firefox-esr
-	cp $TMP_FILE /usr/lib/firefox-esr/bookmarks.html
+	if ! cmp -s /usr/lib/firefox-esr/bookmarks.html $TMP_FILE; then
+		cp $TMP_FILE /usr/lib/firefox-esr/bookmarks.html
+		rm -rf $TMP_FILE
+		log "+Restarting Firefox and deleting places.sqlite"
+		## Kill this way so it doesn't remove firefox from plank
+		## (if is the pined browser)
+		kill $(pgrep firefox)
+		rm -rf /home/contestant/.mozilla/firefox/*default-esr/places.sqlite
+	fi
 	rm -rf $TMP_FILE
 
 	# Chromium bookmarks
@@ -360,8 +368,15 @@ set_bookmarks() {
 	sed -i "s|<!-- Bookmarks Lines -->|$BOOKMARKS_LINES|g" $TMP_FILE
 	log "+Updating chromium bookmarks in /usr/share/chromium/initial_bookmarks.html"
 	mkdir -p /usr/share/chromium
-	cp $TMP_FILE /usr/share/chromium/initial_bookmarks.html
+		log "+Restarting Chromium and deleting Chromium profile"
+		## Kill this way so it doesn't remove chromium from plank
+		## (if is the pined browser)
+		kill $(pgrep chromium)
+		rm -rf /home/contestant/.config/chromium
+		cp $TMP_FILE /usr/share/chromium/initial_bookmarks.html
+	fi
 	rm -rf $TMP_FILE
+
 }
 
 set_wallpaper() {
