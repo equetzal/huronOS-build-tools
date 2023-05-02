@@ -209,7 +209,7 @@ init_devs() {
 	debug_log "init_devs" "$*"
 
 	## Load kernel modules
-	modprobe zram 2>/dev/null
+	# modprobe zram 2>/dev/null
 	modprobe loop 2>/dev/null
 	modprobe squashfs 2>/dev/null
 	modprobe fuse 2>/dev/null
@@ -218,21 +218,21 @@ init_devs() {
 	refresh_devs
 }
 
-# Activate zram (auto-compression of RAM)
-# Compressed RAM consumes 1/2 or even 1/4 of original size
-# Setup static size of 500MB
-init_zram() {
-	debug_log "init_zram" "$*"
-	if [ -r /sys/block/zram0/disksize ]; then
-		echo_green_star
-		echo "Setting dynamic RAM compression"
-		echo 536870912 >/sys/block/zram0/disksize # 512MB
-		mkswap /dev/zram0 >/dev/null
-		swapon /dev/zram0
-		echo 100 >/proc/sys/vm/swappiness
-		## TODO: Future work, search for SWAP devices on hard disks, use them.
-	fi
-}
+# # Activate zram (auto-compression of RAM)
+# # Compressed RAM consumes 1/2 or even 1/4 of original size
+# # Setup static size of 500MB
+# init_zram() {
+# 	debug_log "init_zram" "$*"
+# 	if [ -r /sys/block/zram0/disksize ]; then
+# 		echo_green_star
+# 		echo "Setting dynamic RAM compression"
+# 		echo 536870912 >/sys/block/zram0/disksize # 512MB
+# 		mkswap /dev/zram0 >/dev/null
+# 		swapon /dev/zram0
+# 		echo 100 >/proc/sys/vm/swappiness
+# 		## TODO: Future work, search for SWAP devices on hard disks, use them.
+# 	fi
+# }
 
 ## Returns true if AUFS is available in Kernel
 aufs_is_supported() {
