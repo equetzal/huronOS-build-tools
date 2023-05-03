@@ -22,7 +22,7 @@ DEPENDENCIES="$(tr <dependencies.txt '\n' ' ')"
 
 apt update
 
-apt install --yes --no-install-recommends "$DEPENDENCIES"
+apt install --yes --no-install-recommends $DEPENDENCIES
 apt autoremove --yes --purge
 
 savechanges /tmp/02-firmware.hsl

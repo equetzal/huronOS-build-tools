@@ -23,7 +23,7 @@ DEPENDENCIES="$(tr <dependencies.txt '\n' ' ')"
 ## Install
 apt update
 
-apt install --yes --no-install-recommends "$DEPENDENCIES"
+apt install --yes --no-install-recommends $DEPENDENCIES
 
 ## Delete debian lightdm configs
 rm -rf /usr/share/lightdm/*
