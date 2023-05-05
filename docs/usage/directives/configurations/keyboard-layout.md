@@ -3,17 +3,21 @@
 The directive file is able to configure different keyboard layouts for huronOS via `AvailableKeyboardLayouts` configuration also we can choose the default keyboard layout using `DefaultKeyboardLayout`.
 The full syntax in the directives file is as follows:
  
-  ```
-      AvailableKeyboardLayouts=latam|...|us|
-      DefaultKeyboardLayouts=latam
-  ```
+```ini
+AvailableKeyboardLayouts=latam|...|us|
+DefaultKeyboardLayouts=latam
+```
 
-The all possible values of the field are these:
+## Example
+```ini
+AvailableKeyboardLayouts=latam|us|mao|es|
+DefaultKeyboardLayouts=latam
+```
 
-
+## Possible Values
 
 |  Value 	|  Keyboard  |
-|:-:	|:-:	|
+| ------- | ---------- |
 |  us           | English (US)
 |  af           | Afghani
 |  ara          | Arabic
@@ -113,4 +117,3 @@ The all possible values of the field are these:
 |  id           | Indonesian (Latin)
 |  jv           | Indonesian (Javanese)
 |  my           | Malay (Jawi, Arabic Keyboard)
-|  custom       | A user-defined custom Layout
