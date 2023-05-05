@@ -2,7 +2,6 @@
 sidebar_position: 4
 ---
 # Development Standards
-> WIP: This file stills work in progress
 
 huronOS development requires to write code in different environments which can lead to use different editors like *nano*, *vi*, or GUI powered editors like *vscode*. In any case, we still preferring to maintain certain quality and standards in our codebase to keep collaboration simpler.
 
@@ -31,14 +30,12 @@ Documentation is written on the [huronOS-build-tools](https://github.com/equetza
 - Releases on the *stable* branch will commit the changes of the release tag on the website *stable* branch, will create a new docusaurus documentation version and then will trigger a deploy on the [huronos.org](https://huronos.org) (production) website, which contains the documentation of all the official releases on huronOS-build-tools.
 
 ### Markdown
-All the documentation is written in markdown `.md` extension. We don't use `.mdx` (docusaurus markdown equivalent to `.jsx` files) as it minimize compatibility with several markdown render tools and limit our documentation to few tools. There's no VScode extension for rendering the Docusaurus markdown style, but we do recommend going to the [huronOS-website](https://github.com/huronOS/huronOS-website) repository, clone it and use the [hot reload](https://github.com/facebook/docusaurus/pull/663) feature and symlink your `docs/` directories to use hot reload while editing on the *huronOS-build-tools* repo.
-As an alternative, you can use the [Github Markdown Renderer](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-preview-github-styles) VScode extension, but it will also render Docusaurus specific metadata which might not be the ideal.
+All the documentation is written in markdown `.md` extension. We don't use `.mdx` (docusaurus markdown equivalent to `.jsx` files) as it minimize compatibility with several markdown render tools and limit our documentation to few tools. There's no VScode extension for rendering the Docusaurus markdown style, but we do recommend going using the *Hot Reload* feature.
+As an alternative to hot reload, you can use the [Github Markdown Renderer](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-preview-github-styles) VScode extension, but it will also render Docusaurus specific metadata which might not be the ideal.
 
 ### Docusaurus Hot Reload
-Please, clone the huronOS-Website and huronOS-build-tools repos and checkout staging and your desired version respectively. Then run:
+Please, clone the huronOS-website@staging and huronOS-build-tools@unstable repos at the same directory level, then run:
 ```bash
-rm -rf ./docs
-ln -sf ../huronOS-build-tools/docs ./docs
-yarn install
-yarn start
+cd huronOS-website
+./dev-start.sh
 ```
