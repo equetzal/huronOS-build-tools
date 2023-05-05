@@ -53,6 +53,7 @@ The directives file is able to configure a timezone for the huronOS instance via
 - `America/Cayenne`
 - `America/Chicago`
 - `America/Chihuahua`
+- `America/Ciudad_Juarez`
 - `America/Costa_Rica`
 - `America/Creston`
 - `America/Cuiaba`
