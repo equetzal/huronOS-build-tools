@@ -1,2 +1,0 @@
-# Sync Manager
-TODO

@@ -1,2 +1,0 @@
-# Firewall Manager
-TODO

@@ -24,9 +24,6 @@ We do recommend the [VScode extension](https://marketplace.visualstudio.com/item
 ### Linting
 For bash scripting linting, we do recommend using [Shellcheck](https://github.com/koalaman/shellcheck) to provide static code analysis to catch important bugs when writing bash scripts, which can be actually very hard to debug, track and find. If using VScode, there's a [ShellCheck extension](https://github.com/vscode-shellcheck/vscode-shellcheck).
 
-### IntelliSense
-TODO
-
 ## Documentation
 Documentation is written on the [huronOS-build-tools](https://github.com/equetzal/huronOS-build-tools) repository, this is to keep a relation between the huronOS version and the documentation according to that version. Documentation is built by using [Docusaurus](https://docusaurus.io), but the project is also the implementation of the [huronos.org](https://huronos.org) website which code is on the [huronOS-website](https://github.com/huronOS/huronOS-website) repository. The code submitted under the `huronOS-build-tools/docs` directory triggers a Github action to commit those changes to the website repo and deploy those changes with the following rules:
 - Pulls/Merges on the *unstable* branch, will commit on the website *staging* branch and deploy to Github Pages a.k.a. [Staging](https://huronos.github.io/huronOS-website/).
@@ -45,22 +42,3 @@ ln -sf ../huronOS-build-tools/docs ./docs
 yarn install
 yarn start
 ```
-
-## Version Control
-TODO
-
-### Commits Quality
-TODO
-
-### Stacked PRs
-TODO: Goal
-
-### Git
-TODO: Current state
-Git Tree extension
-
-### Sapling SCM
-TODO: Goal
-Migration goal
-SmartLog extension
-Blockers: Multi-root workspaces
