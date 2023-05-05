@@ -7,6 +7,10 @@ sidebar_position: 1
 ## What is different with huronOS?
 huronOS is designed to work as a **live USB** compatible with both legacy and UEFI BIOS so that you **don't need to modify the hardware** provided by your educational institution, you only boot and **in a matter of seconds** you can have a **competitive programming environment** ready for a competition.
 
+## Desktop Environment
+![huronOS Desktop Environment](../assets/huronOS-desktop-enviroment.svg)
+The huronOS desktop environment is **unique of it's kind**, being designed to only **keep what it's important** for the contestants: Coding, Collaborating, No Distractions.
+
 ## Synchronization 
 We know that most of competitive programming activities are not individual but with a **group of people** that will compete together at the same location or on the same arena. That's why huronOS is built with **synchronization in mind**. huronOS is capable of sync with network-directives that set the **behavior** of the system, like the **software** to enabled for the contestants, the **firewall** setup, the **wallpapers**, the **auto mounting** rules for external devices, the **timezone**, the **keyboard layouts**, etc. Everything **remotely controlled** and applied to all the instances configured with that directives.
 
