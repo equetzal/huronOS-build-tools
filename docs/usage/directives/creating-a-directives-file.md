@@ -15,6 +15,8 @@ This section includes the following directives
     - `never` Option should be used if the configuration file is expected to never expire.
     - `ISO8601 Time` Option should be use for setting an expiration time, it must use [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) extended time format relative to the local time. Example:`2030-01-10T11:45:01`. 
 
+    More info on that [here](./configurations/expiration-time.md)
+
 - `AvailableKeyboardLayouts=[layout| or layout1|...|layoutN|]`
 
     The available layouts to allow to use in the HuronOS instance, a list containing the possible layouts is available [here](./configurations/keyboard-layout.md)
@@ -29,11 +31,17 @@ This section includes the following directives
 - `ContestConfig=[true | false]`
 
     If this flag is true, it will expect the [Event-Times] section to not be empty having times in it.
+    More info on this in [here](./configurations/events-and-contests.md)
 
 ## Example
-```text
+```ini
 [Global]
-TODO
+TimeZone=America/Mexico_City
+ConfigurationExpirationTime=2023-05-15T11:00:00
+AvailableKeyboardLayouts=latam|us|
+DefaultKeyboardLayout=latam
+EventConfig=false
+ContestConfig=true
 ```
 
 # Modes sections [ Always | Event | Contest ]
@@ -68,10 +76,15 @@ Here are the different directives that allow to configure some stuff that would 
 
     The sha256 of the wallpaper defined in the url, more info on the sha [here](./configurations/wallpaper.md)
 
-## Mode
-```text
-[Global]
-TODO
+## Mode example
+```ini
+[Contest]
+AllowedWebsites=codeforces.com|omegaup.com|
+AllowUsbStorage=false
+AvailableSoftware=langs/g++|programming/vscode|
+Bookmarks=Codeforces^http://codeforces.com|
+Wallpaper=directives.huronos.org/wallpaper1.png
+WallpaperSha256=somerandomsha
 ```
 
 # [ Event | Contest ]-Times section
@@ -80,15 +93,58 @@ These sections (if EventConfig and/or ContestConfig is true) define the times th
 
 BeginTime and EndTime must use [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) extended time format relative to the local time. Example:`2030-01-10T11:45:01`. 
 
-# Complete example
-```
-[Global]
+More info on this in [here](./configurations/events-and-contests.md)
 
-[Always]
-[Event]
+## Times example
+```ini
 [Event-Times]
 2023-05-13T10:00:00 2023-05-13T19:00:00
-[Contest]
 [Contest-Times]
 2023-05-13T11:00:00 2023-05-13T15:00:00
+```
+
+# Complete example
+```ini
+[Global]
+TimeZone=America/Mexico_City
+ConfigurationExpirationTime=2023-05-15T11:00:00
+AvailableKeyboardLayouts=latam|us|
+DefaultKeyboardLayout=latam
+EventConfig=true
+ContestConfig=true
+
+[Always]
+AllowedWebsites=all
+AllowUsbStorage=true
+AvailableSoftware=langs/g++|programming/vscode|
+Bookmarks=Codeforces^http://codeforces.com|
+Wallpaper=default
+# No wallpaper sha because we're using the default wallpaper
+
+[Event]
+AllowedWebsites=mytestsite.com
+AllowUsbStorage=true
+AvailableSoftware=langs/g++|programming/vscode|
+Bookmarks=MySite^http://mysite.com|
+Wallpaper=directives.huronos.org/wallpaper1.png
+WallpaperSha256=somerandomsha
+
+[Contest]
+AllowedWebsites=codeforces.com|omegaup.com|
+AllowUsbStorage=false
+AvailableSoftware=langs/g++|programming/vscode|
+Bookmarks=Codeforces^http://codeforces.com|
+Wallpaper=directives.huronos.org/wallpaper1.png
+WallpaperSha256=somerandomsha
+
+[Event-Times]
+2023-05-13T10:00:00 2023-05-13T19:00:00
+
+[Contest-Times]
+# This contest is valid even if it is inside an event
+# It would look like this
+# Always -> Event -> Contest -> Event
+2023-05-13T11:00:00 2023-05-13T15:00:00
+# Contest unrelated to an event
+2023-06-12T11:00:00 2023-06-12T15:00:00
 ```
