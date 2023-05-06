@@ -1,2 +1,2 @@
 # USB Drives Flag
-TODO
+This flag `AllowUsbStorage` allows to control if an usb upon plugging it, is automatically mounted and available to read/write, otherwise the usb would not be mounted automatically, and trying to mount it will throw an error.
