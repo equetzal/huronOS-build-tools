@@ -28,11 +28,21 @@ To build huronOS you'll be needing to follow several steps:
    ./base-system/base.sh
    ```
 
-   After this, a directory and two files on `/tmp` will be created: `gen_iso_image.sh`, `gen_zip_image.sh` and `*-huronOS-data/` directory. If your `/tmp` directory is volatile, please move this files to another newly created directory on `/` (e.g. `/iso`).
+   After this, you will find a similar structure to the following directory on `/tmp`:
+   ```bash
+   huronOS-build-tools-67321/ # Taking 67321 as an example, this will be different in every case. This value is the PID of the process.
+      ├── iso-data/
+      └── make-iso.sh
+   ```
+   By default, make-iso.sh will have a field `ISO_DATA=/tmp/huronOS-build-tools-67321/iso-data` and `ISO_OUTPUT=/tmp/huronOS-build-tools-67321/huronOS-b2023.00xx-amd64.iso`. If you're planing to move the directory, please make sure to update this routes accordingly.
 
 5. **Build the other system layers**
 
-   To build the rest of the layers, you'll be needing to install huronOS on a temporal USB drive using the `install.sh` provided on the `*-huronOS-data/` directory.
+   To build the rest of the layers, you'll be needing to install huronOS on a temporal USB drive, so go ahead and run:
+   ```bash
+   ./make-iso.sh # This step is necessary as it will calculate the checksums of the files
+   ./iso-data/install.sh # You just hit enter when prompt for directives URL and directives server IP
+   ```
 
    After this, please boot on the installed system.
    Once booted, make sure to have access to this repository and internet connection. **Please, consider that at this step, no persistence is provided yet, so all the changes will be volatile**
@@ -65,18 +75,16 @@ To build huronOS you'll be needing to follow several steps:
      ./shared-libs.sh
      reboot
      ```
-   - `05-password.hsl`:
+   - `05-custom.hsl`:
      ```bash
-     cd software-modules/base/05-password/
-     chmod +x password.sh
-     ./password.sh
+     cd software-modules/base/05-custom/
+     chmod +x custom.sh
+     ./custom.sh
      reboot
      ```
 
-   ```
-    After this, return to the debian installation and plug the USB drive, then copy the modules on the `*-data-huronOS/base/` directory.
-
-   ```
+   
+   After this, return to the debian installation and plug the USB drive, then copy the modules on the `iso-data/huronOS/base/` directory.
 
 6. **Pack the current software**
 
@@ -87,8 +95,8 @@ To build huronOS you'll be needing to follow several steps:
    - [`programming`](./software-modules/programming/)
    - [`tools`](./software-modules/tools/)
 
-   After finishing with all the software, copy the resultant `.hsm` files to the `*-data-huronOS/huronOS/software/` directory following the structure of the tree. Remember to reboot each time you create an `.hsm` module to prevent accumulating changes.
+   After finishing with all the software, copy the resultant `.hsm` files to the `iso-data/huronOS/software/` directory following the structure of the tree. Remember to reboot each time you create an `.hsm` module to prevent accumulating changes.
 
 7. **Create the ISO**
 
-   After completing the huronOS data directory, you can run the `gen_iso_file.sh` to create the packed ISO.
+   After completing the huronOS *iso-data* directory, you can run again the `make-iso.sh` to create the packed ISO and the Sha256 checksum.

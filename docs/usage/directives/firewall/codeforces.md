@@ -12,5 +12,7 @@ Using the _domain for groups_ feature, its easy to setup a firewall with only fe
 - `assets.codeforces.com` for rendering markdown.
 
 4. Finally, huronOS `AllowedWebsites` rule should be set to:
-   `AllowedWebsites=yourgroupdomain.contest.codeforces.com|assets.codeforces.com`
+   ```ini title="directives.hdf"
+   AllowedWebsites=yourgroupdomain.contest.codeforces.com|assets.codeforces.com
+   ```
 5. Done. This will automate the firewall propagation on the huronOS instances.

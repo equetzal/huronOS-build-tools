@@ -35,6 +35,7 @@ So, if you plan to contribute continuously to this project, or you decide to for
 	This means, that your rootcopy will be copied at the top of you stacked system layers:
 	```txt
 	rootcopy
+	05-custom.hsl
 	04-shared-libs.hsl
 	03-budgie.hsl
 	02-firmware.hsl

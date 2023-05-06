@@ -17,8 +17,26 @@ sidebar_position: 1
 
 - A working Linux distro to install the system from.
 - A USB device to install the system on (You will lose all your data so back it up).
-- The software for executing the commands: `bash`, `fuser`, `parted` (GNU Parted), `mkfs.vfat`, `mkfs.ext4`, `sha256sum`.
+- Installed dependencies *(see depencies for you distribution)*. 
 - A directives file accessible from the network that will be using huronOS. Please check the [directives file document](./directives/creating-a-directives-file.md) for guidance on setting up this file.
+
+#### Dependencies
+- **On Debian:**  
+   ```bash
+   apt install squashfs-tools parted psmisc e2fsprogs dosfstools perl-base
+   ```
+- **On Ubuntu:**  
+   ```bash
+   apt install squashfs-tools parted psmisc e2fsprogs dosfstools perl-base
+   ```
+- **On Fedora:**  
+   ```bash
+   dnf install squashfs-tools parted psmisc e2fsprogs dosfstools perl-base
+   ```
+- **On Arch Linux:**  
+   ```bash
+   pacman -S install squashfs-tools parted psmisc e2fsprogs dosfstools perl
+   ```
 
 ### Process
 
@@ -59,26 +77,26 @@ sidebar_position: 1
    Please, test the access to this file **from** the network in which you will be using huronOS. Some WANs might have an external firewall blocking the access to your file, resulting in huronOS not being able to keep in sync.
 
 5. **Install huronOS.**  
-   Connect your USB drive, and execute the installer by running `./install.sh`.
 
-   1. The installer will prompt you to write the _directives url_ to sync with, please paste the URL you previously setup. If you don't have one, just leave it blank _(just be aware that sync won't work)_, this can be changed after the installation.
-   2. The installer will prompt you to select a disk to target the installation. **Please do this carefully as the selected disk will be completely erased**.
-   3. Wait for the installer to finish and disconnect the USB drive. If something fails during the installer, please retry.
+   1. You'll be needing a USB drive of at least **16GiB+** for a better performance. Please connect this USB drive and be aware **you will lost all data on it for the installation**.
 
-   **Note:** You can change the default root password of the current instalation by executing the installer like this
-   ```
-    ./install.sh --root-password my_password
-   ```
-   Keep in mind that if you want to change the password for every latter instalations that you might create, instead of manually passing the password each time in the installer, follow the steps mentioned below
-   
-   * Copy all the contents of the ISO somewhere where you have RW access, let's call this path ~/iso/
-   * Navigate to ~/iso/utils
-   * From there execute
-      ```
-      ./change-password my_password
-      ```
-      Be sure to change ***my_password*** with the password that you want to set as the root password
-   * You're all set. Every other instalation you make will have the password you defined.
+   2. Execute the installer, chose one of this options:
+      - **Set a custom root password**  
+         ```bash
+         # `my_password` is your chosen password.
+         ./install.sh --root-password my_password
+         ```
+      - **Use the default *toor* password for root**
+         ```bash
+         ./install.sh
+         ```
+
+   3. Fill the prompts:  
+      1. Write the **directives url** to sync with, please **paste the URL you previously setup**. If you don't have one, just leave it blank _(just be aware that sync won't work)_, this can be changed after the installation.
+      2. Write the **directives server IP** to force the firewall exception to this specific server. You can leave if blank if you want to fallback to DNS resolution.
+   4. The installer will prompt you to select a disk to target the installation. **Please do this carefully as the selected disk will be completely erased**.
+   5. Wait for the installer to finish and disconnect the USB drive. If something fails during the installer, please retry.
+
 6. **Boot from huronOS.**  
    Connect your USB drive and boot from it. You will be auto-logged on the contestant user. For accessing the [root user](./root-access.md), please check the documentation.
 
