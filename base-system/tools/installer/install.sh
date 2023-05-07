@@ -21,6 +21,29 @@ export ISO_DIR=""
 export DIRECTIVES_FILE_URL=""
 export DIRECTIVES_SERVER_IP=""
 
+
+flush_stats(){
+	printf "\n\n\n\n"
+	while ps -p $2 >/dev/null 2>&1; do
+		SYSTEM_WRITEBACK="$(grep -e 'Writeback:' /proc/meminfo)"
+		SYSTEM_DIRTY="$(grep -e 'Dirty:' /proc/meminfo)"
+		DEV_IO_CURRENT="$(awk '{print $9}' /sys/block/"$(echo "$1" | cut -d/ -f3)"/stat)"
+
+		tput cuu 4
+		tput ed
+		printf "%s\n%s\n$1 I/O queue:\n\tPending I/O operations: %s\n" "$SYSTEM_WRITEBACK" "$SYSTEM_DIRTY" "$DEV_IO_CURRENT"
+		sleep 1
+	done
+
+	SYSTEM_WRITEBACK="$(grep -e 'Writeback:' /proc/meminfo)"
+	SYSTEM_DIRTY="$(grep -e 'Dirty:' /proc/meminfo)"
+	DEV_IO_CURRENT="$(awk '{print $9}' /sys/block/"$(echo "$1" | cut -d/ -f3)"/stat)"
+	tput cuu 4
+	tput ed
+	printf "%s\n%s\n$1 I/O queue:\n\tPending I/O operations: %s\n" "$SYSTEM_WRITEBACK" "$SYSTEM_DIRTY" "$DEV_IO_CURRENT"
+}
+
+
 ## Test if the script is started by root user. If not, exit
 ## only root user can manipulate the device as required.
 if [ "0$UID" -ne 0 ]; then
@@ -256,12 +279,9 @@ if [ "$NEW_PASSWORD" != "toor" ]; then
 fi
 
 print_step "[9/13] Cleaning device buffers"
-sync &
+sync -f "$SYSTEM_MNT/huronOS/base/05-custom.hsl" &
 SYNC_PID=$!
-while ps -p $SYNC_PID >/dev/null 2>&1; do
-	echo -ne "\rRemaining data -> $(grep -e "Dirty:" /proc/meminfo)\t$(grep -i "Writeback:" /proc/meminfo)"
-	sleep 1
-done
+flush_stats "$TARGET" $SYNC_PID
 echo
 
 ## Verify file checksums
