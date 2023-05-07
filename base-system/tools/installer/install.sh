@@ -96,6 +96,13 @@ print_step "[1/13] Locating huronOS image -> $ISO_DIR"
 
 ## Configure the remote directives file
 print_step "[2/13] Customizing Installation"
+if [ -z "$NEW_PASSWORD" ]; then
+	read -r -p "Set the root user password:" NEW_PASSWORD
+	if [ -z "$NEW_PASSWORD" ]; then
+		echo "Password set blank, using default 'toor' password"
+		NEW_PASSWORD="toor"
+	fi
+fi
 if [ -z "$DIRECTIVES_FILE_URL" ]; then
 	read -r -p "URL (http/s) of directives file to configure:" DIRECTIVES_FILE_URL
 fi
@@ -244,7 +251,7 @@ cp --verbose -rf "$SERVER_CONFIG" "$SYSTEM_MNT/huronOS/data/configs/sync-server.
 
 # If a password was passed, update the password
 print_step "[8/13] Creating custom system layer"
-if [ -z "$NEW_PASSWORD" ]; then
+if [ "$NEW_PASSWORD" != "toor" ]; then
 	utils/change-password.sh "$NEW_PASSWORD" "$SYSTEM_MNT" || exit 1
 fi
 
@@ -285,11 +292,7 @@ print_step "[12/13] Unmounting device"
 umount $SYSTEM_MNT && rm -rf "$INSTALLER_LAB"
 
 print_step "[13/13] Printing installation data"
-if [ -z "$NEW_PASSWORD" ]; then
-	echo "Your root password is: toor"
-else
-	echo "Your root password is: $NEW_PASSWORD"
-fi
+echo "Your root password is: $NEW_PASSWORD"
 echo "System will sync with the directives URL: '$DIRECTIVES_FILE_URL'"
 echo "System will always create a firewall exception to the IP: '$DIRECTIVES_SERVER_IP'"
 echo
