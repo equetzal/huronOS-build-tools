@@ -40,6 +40,11 @@ systemctl mask systemd-networkd
 systemctl mask systemd-resolved
 systemctl enable connman
 
+## Gives default permisions to earlyom
+chmod 400 /etc/default/earlyoom
+## Enable earlyoom
+systemctl enable earlyoom
+
 ## Remove unwanted files/dirs
 rm -rf /usr/share/wallpapers/
 rm -f /var/lib/systemd/random-seed
