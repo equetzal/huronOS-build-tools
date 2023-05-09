@@ -17,7 +17,7 @@
 
 set -xe
 
-## Setup autostart of plank
+## Setup autostart of plank & systembus-notifications
 mkdir -p ~/.config/autostart/
 cp -r files/autostart/* ~/.config/autostart/
 ## Launch plank (from the monitor script) to create its own config files
