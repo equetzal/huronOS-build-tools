@@ -1,6 +1,6 @@
 # Keyboard Layouts
 
-The directive file is able to configure different keyboard layouts for huronOS via `AvailableKeyboardLayouts` configuration also we can choose the default keyboard layout using `DefaultKeyboardLayout`.
+The directive file is able to configure different keyboard layouts for huronOS via `AvailableKeyboardLayouts` configuration; we can also choose the default keyboard layout using `DefaultKeyboardLayout`.
 The full syntax in the directives file is as follows:
  
 ```ini

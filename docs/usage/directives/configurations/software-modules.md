@@ -1,5 +1,5 @@
 # Activating Software Modules
-We can define which software will be able to the users with the `AvailableSoftware` directive. 
+We can define which software will be available to the users with the `AvailableSoftware` directive. 
 The syntax is as follows:
 - `SoftwareId|SoftwareId|...`
 

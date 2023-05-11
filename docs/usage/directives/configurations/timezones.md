@@ -1,5 +1,5 @@
 # Timezones
-The directives file is able to configure a timezone for the huronOS instance via the `TimeZone` directive, this timezones are compliant with the [IANA  timezones standard](https://www.iana.org/time-zones), we do highly recommend you checking [which timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) is your city.
+The directives file is able to set a timezone for the huronOS instance via the `TimeZone` directive. This timezones are compliant with the [IANA  timezones standard](https://www.iana.org/time-zones), we highly recommend you checking [which timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) is your city on.
 
 *huronOS Queue 0.3 is compliant with the 2023c release of the timezones database.*
 
