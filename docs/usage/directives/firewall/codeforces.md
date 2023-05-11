@@ -1,10 +1,11 @@
 # Codeforces Firewall Exception
 
-When firewall is set to `DROP` policy, [Codeforces](https://codeforces.com) is a website that require a lot of exceptions for setting a working website due to the fact that it makes requests to several servers on the internet. Also, allowing codeforces itself will allow contestants to access in-website blogs, editorials, previous user submissions, etc.
-Then, it's recommended to setup a [domain for groups](https://codeforces.com/blog/entry/51787) which is a codeforces feature build specifically for running contest with controlled environments.
-Using the _domain for groups_ feature, its easy to setup a firewall with only few exceptions. For example:
+When the firewall is blocking all the internet connectivity, setting an exception to [Codeforces](https://codeforces.com) would require many exceptions for getting the site to work properly due to the fact that it makes requests to several servers on the internet. Also, allowing Codeforces itself will allow contestants to access in-website blogs, editorials, previous user submissions, etc.
 
-1. A group for setting a contest has been created on codeforces.
+Then, it's recommended to setup a [*domain for groups*](https://codeforces.com/blog/entry/51787) which is a Codeforces feature built specifically for running contests with controlled environments.
+Using the _domain for groups_ feature, grants an easy firewall setup with only few exceptions. For example:
+
+1. A group for setting a contest has been created on Codeforces.
 2. Following the [blog instructions](https://codeforces.com/blog/entry/51787), the resulting group domain url is `https://yourgroupdomain.contest.codeforces.com`.
 3. Then the firewall needs to make IP exceptions to:
 
@@ -15,4 +16,4 @@ Using the _domain for groups_ feature, its easy to setup a firewall with only fe
    ```ini title="directives.hdf"
    AllowedWebsites=yourgroupdomain.contest.codeforces.com|assets.codeforces.com
    ```
-5. Done. This will automate the firewall propagation on the huronOS instances.
+5. Done. This will automate the firewall propagation to the huronOS instances.

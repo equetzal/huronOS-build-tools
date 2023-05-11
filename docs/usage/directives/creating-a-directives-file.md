@@ -2,35 +2,38 @@
 sidebar_position: 1
 ---
 # Creating a Directives File
-A directives file is build from different sections
+A directives file is composed with different sections
 
 ## Global section
 This section includes the following directives
 - `TimeZone=<YourTimezone>`
 
-    The time zone to use on the HuronOS instances and as reference, this field must have a valid *Continent/City* format. [List of possible values](./configurations/timezones.md)
-- `ConfigurationExpirationTime=[ never | ISO8601 Time ]`
+    The time zone to use in the huronOS instances and, as reference, this field must have a valid *Continent/City* format. [List of possible values](./configurations/timezones.md)
 
-    The time in which your configuration file will be valid. After this time the *default* configuration will be loaded instead. 
+- `ConfigurationExpirationTime=[ never || ISO8601 Time ]`
+
+    The time in which your configuration file will be valid. After this time, the *default* configuration will be loaded instead. 
     - `never` Option should be used if the configuration file is expected to never expire.
     - `ISO8601 Time` Option should be use for setting an expiration time, it must use [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) extended time format relative to the local time. Example:`2030-01-10T11:45:01`. 
 
     More info on that [here](./configurations/expiration-time.md)
 
-- `AvailableKeyboardLayouts=[layout| or layout1|...|layoutN|]`
+- `AvailableKeyboardLayouts=[layout1|...|layoutN|]`
 
-    The available layouts to allow to use in the HuronOS instance, a list containing the possible layouts is available [here](./configurations/keyboard-layout.md)
+    The available layouts allowed to be used in the huronOS instance. A list containing the possible layouts is available [here](./configurations/keyboard-layout.md)
 
 - `DefaultKeyboardLayout=layout`
 
     You might also define a default layout from the ones listed in `AvailableKeyboardLayouts`
-- `EventConfig=[true | false]`
 
-    If this flag is true, it will expect the [Event-Times] section to not be empty having times in it.
+- `EventConfig=[true || false]`
+
+    If this flag is true, it will expect the `[Event-Times]` section to not be empty having times in it.
     
-- `ContestConfig=[true | false]`
+- `ContestConfig=[true || false]`
 
-    If this flag is true, it will expect the [Event-Times] section to not be empty having times in it.
+    If this flag is true, it will expect the `[Contest-Times]` section to not be empty having times in it.
+    
     More info on this in [here](./configurations/events-and-contests.md)
 
 ## Example
@@ -44,20 +47,20 @@ EventConfig=false
 ContestConfig=true
 ```
 
-# Modes sections [ Always | Event | Contest ]
-Here are the different directives that allow to configure some stuff that would be active on whichever section they're defined, they'll be overriden like this
+# Modes sections [ Always || Event || Contest ]
+Here are the different directives that allow to configure some stuff that would be active on whichever section they're defined, they'll be overridden like this
 
     * Contest overrides Event & Always
     * Event overrides Always
 - `AllowedWebsites=[ url1|...|urlN| ]`
     
-    Lists all of the allowed websites during that mode. More info on this directive [here](./configurations/web-firewall.md)
+    A list of all the allowed websites while in that mode. More info on this directive [here](./configurations/web-firewall.md)
 
-- `AllowUsbStorage=[ true | false ]`
+- `AllowUsbStorage=[ true || false ]`
 
-    If the flag is true, the system will alow to access plugged usbs to read/save files outside the system.
+    If the flag is true, the system will allow to access plugged USBs to read/save files outside the system.
     
-    If the flag is false, the system will not allow to access any plugged usb.
+    If the flag is false, the system will not allow to access any plugged USB.
 
     More info on that [here](./configurations/usb-drives.md)
 
@@ -66,9 +69,9 @@ Here are the different directives that allow to configure some stuff that would 
     The software that would be available while the system is on the current mode. [List of possible values](./configurations/software-modules.md)
 
 - `Bookmarks=[ url1|...|urlN| ]`
-    Defines the bookmarks that should appear in the browsers (at least chromium & firefox) at the time the browsers are opened for the 1st time. More info on the bookmarks directive [here](./configurations/bookmarks.md)
+    Defines the bookmarks that should appear in the browsers (at least chromium & firefox) at the time they are opened for the 1st time. More info on the bookmarks directive [here](./configurations/bookmarks.md)
 
-- `Wallpaper=[ default | url ]`
+- `Wallpaper=[ default || url ]`
     
     With "default" the default huronOS wallpaper would be set, otherwise, the wallpaper would be retrieved from the specified url. More info about wallpapers [here](./configurations/wallpaper.md)
 
@@ -83,12 +86,12 @@ AllowedWebsites=codeforces.com|omegaup.com|
 AllowUsbStorage=false
 AvailableSoftware=langs/g++|programming/vscode|
 Bookmarks=Codeforces^http://codeforces.com|
-Wallpaper=directives.huronos.org/wallpaper1.png
+Wallpaper=directives.huronOS.org/wallpaper1.png
 WallpaperSha256=somerandomsha
 ```
 
 # [ Event | Contest ]-Times section
-These sections (if EventConfig and/or ContestConfig is true) define the times that might activate the events and/or the contests, the syntax for specify an event time or a contest time is  
+These sections (if EventConfig and/or ContestConfig is true) define the times that might activate the events and/or the contests, the syntax for specifying an event time or a contest time is  
 `BeginTime EndTime` 
 
 BeginTime and EndTime must use [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) extended time format relative to the local time. Example:`2030-01-10T11:45:01`. 
@@ -126,7 +129,7 @@ AllowedWebsites=mytestsite.com
 AllowUsbStorage=true
 AvailableSoftware=langs/g++|programming/vscode|
 Bookmarks=MySite^http://mysite.com|
-Wallpaper=directives.huronos.org/wallpaper1.png
+Wallpaper=directives.huronOS.org/wallpaper1.png
 WallpaperSha256=somerandomsha
 
 [Contest]
@@ -134,7 +137,7 @@ AllowedWebsites=codeforces.com|omegaup.com|
 AllowUsbStorage=false
 AvailableSoftware=langs/g++|programming/vscode|
 Bookmarks=Codeforces^http://codeforces.com|
-Wallpaper=directives.huronos.org/wallpaper1.png
+Wallpaper=directives.huronOS.org/wallpaper1.png
 WallpaperSha256=somerandomsha
 
 [Event-Times]

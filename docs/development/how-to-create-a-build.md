@@ -3,10 +3,10 @@ sidebar_position: 5
 ---
 # Building huronOS
 
-To build huronOS you'll be needing to follow several steps:
+To build huronOS you'll need to follow several steps:
 
 1. **Install Debian:**  
-   Firstly install on a computer Debian 11.6 with a minimal installation setup. Make sure to do not install **any** extra software mentioned on the installer, and do not setup extra users other than root. (if you do, erase them)
+   First, install Debian 11.6 in a computer with a minimal installation setup. Make sure to not install **any** extra software mentioned on the installer, and do not setup extra users other than root. (if you do, erase them).
 
 2. **Get huronOS-build-tools**  
    Clone this repo on the `/` root directory of your newly installed Debian.
@@ -28,9 +28,9 @@ To build huronOS you'll be needing to follow several steps:
    ./base-system/base.sh
    ```
 
-   After this, you will find a similar structure to the following directory on `/tmp`:
+   Afterwards, you will find a similar structure to the following directory on `/tmp`:
    ```bash
-   huronOS-build-tools-67321/ # Taking 67321 as an example, this will be different in every case. This value is the PID of the process.
+   huronOS-build-tools-67321/ # Taking 67321 as an example, this will be different with each case. This value is the PID of the process.
       ├── iso-data/
       └── make-iso.sh
    ```
@@ -38,16 +38,16 @@ To build huronOS you'll be needing to follow several steps:
 
 5. **Build the other system layers**
 
-   To build the rest of the layers, you'll be needing to install huronOS on a temporal USB drive, so go ahead and run:
+   To build the rest of the layers, you'll need to install huronOS at a temporal USB drive, so go ahead and run:
    ```bash
    ./make-iso.sh # This step is necessary as it will calculate the checksums of the files
    ./iso-data/install.sh # You just hit enter when prompt for directives URL and directives server IP
    ```
 
-   After this, please boot on the installed system.
-   Once booted, make sure to have access to this repository and internet connection. **Please, consider that at this step, no persistence is provided yet, so all the changes will be volatile**
+   After this, please boot up the installed system.
+   Once booted, make sure to have access to that repository and internet connection. **Please, consider that at this step, no persistence has been provided yet, so all the changes will be volatile**
 
-   Run as **root** the following commands to build the rest of the modules:
+   Run, as **root**, the following commands to build the rest of the modules:
 
    - `02-firmware.hsl`:
      ```bash
@@ -84,7 +84,7 @@ To build huronOS you'll be needing to follow several steps:
      ```
 
    
-   After this, return to the debian installation and plug the USB drive, then copy the modules on the `iso-data/huronOS/base/` directory.
+   Next, return to the debian installation and plug the USB drive, then copy the modules on the `iso-data/huronOS/base/` directory.
 
 6. **Pack the current software**
 
