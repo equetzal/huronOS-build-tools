@@ -107,7 +107,7 @@ debug_shell
 ## Load basic devices kernel modules, verify AUFS availability and set RAM compression
 init_devs
 init_aufs
-init_zram
+# init_zram
 debug_shell
 
 ## Load all the available kernel modules, skip network.
