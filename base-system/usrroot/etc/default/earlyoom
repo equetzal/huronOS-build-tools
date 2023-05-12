@@ -1,0 +1,25 @@
+# Default settings for earlyoom. This file is sourced by /bin/sh from
+# /etc/init.d/earlyoom or by systemd from earlyoom.service.
+
+# Options to pass to earlyoom
+# Report memory status every 15 seconds
+# SIGTERM if memory below 20
+# SIGKILL if memory below 15
+# Send bus notifications (for GUI notifications)
+EARLYOOM_ARGS="-r 15 -m 20,15 -n"
+
+# Examples:
+
+# Print memory report every minute instead of every hour
+# EARLYOOM_ARGS="-r 60"
+
+# Available minimum memory 5%
+# EARLYOOM_ARGS="-m 5"
+
+# Available minimum memory 15% and free minimum swap 5%
+# EARLYOOM_ARGS="-m 15 -s 5"
+
+# Avoid killing processes whose name matches this regexp
+# EARLYOOM_ARGS="--avoid '(^|/)(init|X|sshd|firefox)$'"
+
+# See more at `earlyoom -h'

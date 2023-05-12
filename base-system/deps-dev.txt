@@ -1,0 +1,7 @@
+gddrescue
+genisoimage
+gpart
+netcat
+smartmontools
+unzip
+zip

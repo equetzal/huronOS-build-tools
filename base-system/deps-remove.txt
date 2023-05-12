@@ -1,0 +1,16 @@
+debconf-i18n
+dvd+rw-tools
+dnsmasq
+installation-report
+mc
+mdadm
+rsync
+oomd
+ssh
+vim-common
+vim-tiny
+virt-what
+grub-common
+grub-pc-bin
+grub-pc-bin
+grub2-common
