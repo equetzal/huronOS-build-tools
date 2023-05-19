@@ -10,7 +10,7 @@ This section includes the following directives
 
     The time zone to use in the huronOS instances and, as reference, this field must have a valid *Continent/City* format. [List of possible values](./configurations/timezones.md)
 
-- `ConfigurationExpirationTime=[ never || ISO8601 Time ]`
+- `ConfigExpirationTime=[ never || ISO8601 Time ]`
 
     The time in which your configuration file will be valid. After this time, the *default* configuration will be loaded instead. 
     - `never` Option should be used if the configuration file is expected to never expire.
@@ -40,7 +40,7 @@ This section includes the following directives
 ```ini
 [Global]
 TimeZone=America/Mexico_City
-ConfigurationExpirationTime=2023-05-15T11:00:00
+ConfigExpirationTime=2023-05-15T11:00:00
 AvailableKeyboardLayouts=latam|us|
 DefaultKeyboardLayout=latam
 EventConfig=false
@@ -85,7 +85,7 @@ Here are the different directives that allow to configure some stuff that would 
 AllowedWebsites=codeforces.com|omegaup.com|
 AllowUsbStorage=false
 AvailableSoftware=langs/g++|programming/vscode|
-Bookmarks=Codeforces^http://codeforces.com|
+Bookmarks={Codeforces^http://codeforces.com}|
 Wallpaper=directives.huronOS.org/wallpaper1.png
 WallpaperSha256=somerandomsha
 ```
@@ -110,7 +110,7 @@ More info on this in [here](./configurations/events-and-contests.md)
 ```ini
 [Global]
 TimeZone=America/Mexico_City
-ConfigurationExpirationTime=2023-05-15T11:00:00
+ConfigExpirationTime=2023-05-15T11:00:00
 AvailableKeyboardLayouts=latam|us|
 DefaultKeyboardLayout=latam
 EventConfig=true
@@ -120,7 +120,7 @@ ContestConfig=true
 AllowedWebsites=all
 AllowUsbStorage=true
 AvailableSoftware=langs/g++|programming/vscode|
-Bookmarks=Codeforces^http://codeforces.com|
+Bookmarks={Codeforces^http://codeforces.com}|
 Wallpaper=default
 # No wallpaper sha because we're using the default wallpaper
 
@@ -128,7 +128,7 @@ Wallpaper=default
 AllowedWebsites=mytestsite.com
 AllowUsbStorage=true
 AvailableSoftware=langs/g++|programming/vscode|
-Bookmarks=MySite^http://mysite.com|
+Bookmarks={MySite^http://mysite.com}|
 Wallpaper=directives.huronOS.org/wallpaper1.png
 WallpaperSha256=somerandomsha
 
@@ -136,7 +136,7 @@ WallpaperSha256=somerandomsha
 AllowedWebsites=codeforces.com|omegaup.com|
 AllowUsbStorage=false
 AvailableSoftware=langs/g++|programming/vscode|
-Bookmarks=Codeforces^http://codeforces.com|
+Bookmarks={Codeforces^http://codeforces.com}|
 Wallpaper=directives.huronOS.org/wallpaper1.png
 WallpaperSha256=somerandomsha
 
