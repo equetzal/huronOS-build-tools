@@ -38,7 +38,9 @@ libassuan0
 libastyle3
 libatomic1
 libavformat58
+libbabeltrace1
 libbinutils
+libboost-regex1.74.0
 libc-dev-bin
 libc6-dev
 libcc1-0
@@ -50,6 +52,7 @@ libctf-nobfd0
 libctf0
 libcurl4
 libdbusmenu-qt5-2
+libdebuginfod1
 libdouble-conversion3
 libdvbpsi10
 libebml5
@@ -71,6 +74,7 @@ libgtksourceview-4-0
 libgtksourceview-4-common
 libhttp-parser2.9
 libidn11
+libipt2
 libisl23
 libitm1
 libixml10
@@ -259,6 +263,8 @@ libserf-1-1
 libsidplay2
 libsignon-qt5-1
 libsodium23
+libsource-highlight-common
+libsource-highlight4v5
 libspatialaudio0
 libspeexdsp1
 libssh-gcrypt-4
