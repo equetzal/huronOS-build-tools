@@ -1,3 +1,4 @@
+antlr3
 binutils
 binutils-common
 binutils-x86-64-linux-gnu
@@ -18,6 +19,8 @@ gpgconf
 gpgsm
 install-info
 java-common
+javahelp2
+junit4
 kded5
 kinit
 kio
@@ -29,10 +32,13 @@ libaccounts-glib0
 libaccounts-qt5-1
 libamtk-5-0
 libamtk-5-common
+libantlr3-runtime-java
+libapache-pom-java
 libapr1
 libaprutil1
 libaribb24-0
 libasan6
+libasm-java
 libasound2
 libassuan0
 libastyle3
@@ -41,6 +47,7 @@ libavformat58
 libbabeltrace1
 libbinutils
 libboost-regex1.74.0
+libbsh-java
 libc-dev-bin
 libc6-dbg
 libc6-dev
@@ -48,6 +55,10 @@ libcc1-0
 libcddb2
 libclang1-11
 libcodeblocks0
+libcommons-codec-java
+libcommons-io-java
+libcommons-logging-java
+libcommons-parent-java
 libcrypt-dev
 libctf-nobfd0
 libctf0
@@ -58,8 +69,11 @@ libdouble-conversion3
 libdvbpsi10
 libebml5
 libeditorconfig0
+libequinox-osgi-java
 libevent-2.1-7
 libfam0
+libfelix-framework-java
+libfelix-main-java
 libgbm1
 libgcc-10-dev
 libgcrypt20
@@ -73,13 +87,20 @@ libgspell-1-common
 libgtk-3-0
 libgtksourceview-4-0
 libgtksourceview-4-common
+libhamcrest-java
 libhttp-parser2.9
 libidn11
 libipt2
 libisl23
 libitm1
 libixml10
+libjcommander-java
+libjna-java
+libjna-jni
+libjna-platform-java
 libjs-underscore
+libjson-simple-java
+libjsr305-java
 libkaccounts2
 libkasten4controllers0
 libkasten4core0
@@ -204,6 +225,10 @@ libmsgpackc2
 libmtp-common
 libmtp9
 libmysofa1
+libnb-org-openide-modules-java
+libnb-org-openide-util-java
+libnb-org-openide-util-lookup-java
+libnb-platform18-java
 libnfs13
 libnorm1
 libnotify4
@@ -214,6 +239,9 @@ libokteta-l10n
 libokteta3core0
 libokteta3gui0
 libopenmpt-modplug1
+libosgi-annotation-java
+libosgi-compendium-java
+libosgi-core-java
 libotf0
 libpcre2-16-0
 libpgm-5.3-0
@@ -271,7 +299,9 @@ libspatialaudio0
 libspeexdsp1
 libssh-gcrypt-4
 libstdc++-10-dev
+libstringtemplate4-java
 libsvn1
+libswing-layout-java
 libswscale5
 libtcl8.6
 libtepl-5-0
@@ -284,6 +314,7 @@ libunibilium4
 libupnp13
 libutf8proc2
 libva-wayland2
+libvisualvm-jni
 libvlc5
 libvlccore9
 libvterm0
@@ -343,6 +374,7 @@ ruby-power-assert
 ruby-test-unit
 ruby-xmlrpc
 rubygems-integration
+testng
 tmux
 vlc-data
 vlc-plugin-base
