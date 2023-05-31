@@ -42,6 +42,7 @@ libbabeltrace1
 libbinutils
 libboost-regex1.74.0
 libc-dev-bin
+libc6-dbg
 libc6-dev
 libcc1-0
 libcddb2

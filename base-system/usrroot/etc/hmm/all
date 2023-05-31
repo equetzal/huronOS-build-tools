@@ -1,5 +1,6 @@
 HURONDIR=/run/initramfs/memory/system/huronOS/software/
 debuggers/gdb               true
+debuggers/valgrind          true
 internet/chrome             true
 internet/chromium           true
 internet/crow               true
