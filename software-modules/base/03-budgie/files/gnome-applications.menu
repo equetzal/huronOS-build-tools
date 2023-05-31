@@ -37,6 +37,7 @@
       <Filename>intellij.desktop</Filename>
       <Filename>joe.desktop</Filename>
       <Filename>vim.desktop</Filename>
+      <Filename>neovim.desktop</Filename>
       <Filename>clion.desktop</Filename>
       <Filename>pycharm.desktop</Filename>
 	  <Filename>rider.desktop</Filename>

@@ -27,6 +27,7 @@ programming/intellij        true
 programming/joe             true
 programming/kate            true
 programming/kdevelop        true
+programming/neovim          true
 programming/pycharm         true
 programming/rider           true
 programming/sublime         true
