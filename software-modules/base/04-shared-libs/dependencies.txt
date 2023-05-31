@@ -181,6 +181,8 @@ libkuserfeedbackwidgets1
 libkwalletbackend5-5
 liblirc-client0
 liblsan0
+libluajit-5.1-2
+libluajit-5.1-common
 libm17n-0
 libmad0
 libmatroska7
@@ -192,6 +194,7 @@ libminizip1
 libmpc3
 libmpeg2-4
 libmpfr6
+libmsgpackc2
 libmtp-common
 libmtp9
 libmysofa1
@@ -264,15 +267,18 @@ libsvn1
 libswscale5
 libtcl8.6
 libtepl-5-0
+libtermkey1
 libtinyxml2.6.2v5
 libtirpc-dev
 libtsan0
 libubsan1
+libunibilium4
 libupnp13
 libutf8proc2
 libva-wayland2
 libvlc5
 libvlccore9
+libvterm0
 libwxbase3.0-0v5
 libwxgtk3.0-gtk3-0v5
 libx11-xcb1
@@ -292,7 +298,9 @@ libxtst6
 libyaml-0-2
 libzmq5
 linux-libc-dev
+lua-luv
 m17n-db
+neovim-runtime
 phonon4qt5
 phonon4qt5-backend-vlc
 pinentry-curses
