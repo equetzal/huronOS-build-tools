@@ -196,6 +196,7 @@ libmbedtls12
 libmbedx509-0
 libmd4c0
 libminizip1
+libmotif-common
 libmpc3
 libmpeg2-4
 libmpfr6
@@ -300,6 +301,7 @@ libxcb-xinerama0
 libxcb-xinput0
 libxcb-xv0
 libxkbfile1
+libxm4
 libxss1
 libxtst6
 libyaml-0-2
