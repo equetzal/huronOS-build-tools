@@ -16,22 +16,18 @@
 set -xe
 
 # Install destiny build packages
-INST_PACKAGES="acpi-support-base acpid alsa-utils at bc bzip2 connman curl dbus-broker dnsutils dosfstools file firmware-linux hdparm htop iptables kexec-tools less lsof lzma man ntfs-3g ntpdate oomd parted pm-utils powermgmt-base psmisc rfkill sdparm speedtest-cli squashfs-tools systemd-timesyncd traceroute usb-modeswitch wget wireless-tools wpasupplicant xz-utils"
-DEV_PACKAGES="gddrescue genisoimage gpart netcat smartmontools unzip zip"
-REM_PACKAGES="debconf-i18n dvd+rw-tools dnsmasq installation-report mc mdadm rsync ssh vim-common vim-tiny virt-what grub-common grub-pc-bin grub-pc-bin grub2-common"
+mapfile -t INST_PACKAGES <deps-install.txt
+mapfile -t DEV_PACKAGES <deps-dev.txt
+mapfile -t REM_PACKAGES <deps-remove.txt
 
 apt update
-# shellcheck disable=SC2086
-apt install --yes --no-install-recommends $INST_PACKAGES
+apt install --yes --no-install-recommends "${INST_PACKAGES[@]}"
 if [ "$DEVELOPER" = "true" ]; then
-	# shellcheck disable=SC2086
-	apt install --yes --no-install-recommends $DEV_PACKAGES
+	apt install --yes --no-install-recommends "${DEV_PACKAGES[@]}"
 else
-	# shellcheck disable=SC2086
-	apt autoremove --yes --purge $DEV_PACKAGES
+	apt autoremove --yes --purge "${DEV_PACKAGES[@]}"
 fi
-# shellcheck disable=SC2086
-apt autoremove --yes --purge $REM_PACKAGES
+apt autoremove --yes --purge "${REM_PACKAGES[@]}"
 
 # Copy root directories
 pushd usrroot && cp --parents -afr * / && popd
