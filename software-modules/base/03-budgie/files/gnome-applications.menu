@@ -26,6 +26,7 @@
 
       <Filename>atom.desktop</Filename>
       <Filename>codeblocks.desktop</Filename>
+      <Filename>ddd.desktop</Filename>
       <Filename>eclipse.desktop</Filename>
       <Filename>emacs.desktop</Filename>
       <Filename>geany.desktop</Filename>
@@ -37,6 +38,8 @@
       <Filename>intellij.desktop</Filename>
       <Filename>joe.desktop</Filename>
       <Filename>vim.desktop</Filename>
+      <Filename>visualvm.desktop</Filename>
+      <Filename>neovim.desktop</Filename>
       <Filename>clion.desktop</Filename>
       <Filename>pycharm.desktop</Filename>
 	  <Filename>rider.desktop</Filename>

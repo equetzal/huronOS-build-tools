@@ -1,4 +1,8 @@
 HURONDIR=/run/initramfs/memory/system/huronOS/software/
+debuggers/ddd               true
+debuggers/gdb               true
+debuggers/valgrind          true
+debuggers/visualvm          true
 internet/chrome             true
 internet/chromium           true
 internet/crow               true
@@ -27,6 +31,7 @@ programming/intellij        true
 programming/joe             true
 programming/kate            true
 programming/kdevelop        true
+programming/neovim          true
 programming/pycharm         true
 programming/rider           true
 programming/sublime         true
