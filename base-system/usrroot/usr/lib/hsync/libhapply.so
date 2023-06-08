@@ -307,13 +307,24 @@ set_software() {
 	SOFTWARE_LIST="$(echo "$AVAILABLE_SOFTWARE" | sed 's/|/ /g')"
 
 	log " Activating software modules:"
-	cp -f /etc/hmm/any /etc/hmm/current
+	HURONDIR=/run/initramfs/memory/system/huronOS/software/
+	# Find all the sofware modules under HURONDIR
+	SOFTWARE_FOUND=$(find $HURONDIR -name '*.hsm' | sed -e "s|$HURONDIR||")
+	CURRENT_FILE="/etc/hmm/current"
+	# Erase the contents of current or create it if doesn't exists
+	truncate -s 0 $CURRENT_FILE
+	echo "HURONDIR=$HURONDIR" >$CURRENT_FILE
+	# Print the software found to CURRENT_FILE
+	for SFW in $SOFTWARE_FOUND; do
+		printf "%s\t\t\t%s\n" "$SFW" "false"
+	done >>$CURRENT_FILE
+
 	for SFW in $SOFTWARE_LIST; do
-		sed "s:$SFW.*:$SFW\t\t\ttrue:g" -i /etc/hmm/current
+		sed "s:$SFW.*:$SFW\t\t\ttrue:g" -i $CURRENT_FILE
 		echo -e "\t\t$SFW" | tee -a /var/log/hsync.log
 	done
 
-	hmm -uf --block-update /etc/hmm/current | sed -r "s/\x1B\[(([0-9]{1,2})?(;)?([0-9]{1,2})?)?[m,K,H,f,J]//g" | tee -a /var/log/hsync.log
+	hmm -uf --block-update $CURRENT_FILE | sed -r "s/\x1B\[(([0-9]{1,2})?(;)?([0-9]{1,2})?)?[m,K,H,f,J]//g" | tee -a /var/log/hsync.log
 
 	## Special cases
 	chown -R contestant:contestant /home/contestant/.config/JetBrains
