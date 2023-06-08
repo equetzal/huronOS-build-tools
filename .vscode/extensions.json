@@ -1,5 +1,7 @@
 {
 	"recommendations": [
 		"foxundermoon.shell-format",
+		"streetsidesoftware.code-spell-checker",
+		"timonwong.shellcheck"
 	]
 }
