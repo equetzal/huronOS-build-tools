@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Java API Documentation
+Comment=Java API Documentation
+Icon=accessories-dictionary-symbolic
+Exec=open /usr/share/doc/reference/java/docs/api/index.html
+Categories=Reference;
+NoDisplay=false
