@@ -18,11 +18,11 @@
 set -xe
 
 ## Get the dependencies and replace every new line with a space
-DEPENDENCIES="$(tr <dependencies.txt '\n' ' ')"
+mapfile -t DEPENDENCIES <dependencies.txt
 
 apt update
 
-apt install --yes --no-install-recommends $DEPENDENCIES
+apt install --yes --no-install-recommends "${DEPENDENCIES[@]}"
 apt autoremove --yes --purge
 
 savechanges /tmp/02-firmware.hsl
