@@ -5,6 +5,7 @@ installation-report
 mc
 mdadm
 rsync
+oomd
 ssh
 vim-common
 vim-tiny

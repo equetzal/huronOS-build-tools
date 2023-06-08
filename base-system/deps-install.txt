@@ -9,6 +9,7 @@ curl
 dbus-broker
 dnsutils
 dosfstools
+earlyoom
 file
 firmware-linux
 hdparm
@@ -21,7 +22,6 @@ lzma
 man
 ntfs-3g
 ntpdate
-oomd
 parted
 pm-utils
 powermgmt-base
