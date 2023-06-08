@@ -19,6 +19,30 @@ export SYSTEM_MNT="$INSTALLER_LAB/usb-syspart"
 export SERVER_CONFIG="$INSTALLER_LAB/sync-server.conf"
 export ISO_DIR=""
 export DIRECTIVES_FILE_URL=""
+export DIRECTIVES_SERVER_IP=""
+
+
+flush_stats(){
+	printf "\n\n\n\n"
+	while ps -p $2 >/dev/null 2>&1; do
+		SYSTEM_WRITEBACK="$(grep -e 'Writeback:' /proc/meminfo)"
+		SYSTEM_DIRTY="$(grep -e 'Dirty:' /proc/meminfo)"
+		DEV_IO_CURRENT="$(awk '{print $9}' /sys/block/"$(echo "$1" | cut -d/ -f3)"/stat)"
+
+		tput cuu 4
+		tput ed
+		printf "%s\n%s\n$1 I/O queue:\n\tPending I/O operations: %s\n" "$SYSTEM_WRITEBACK" "$SYSTEM_DIRTY" "$DEV_IO_CURRENT"
+		sleep 1
+	done
+
+	SYSTEM_WRITEBACK="$(grep -e 'Writeback:' /proc/meminfo)"
+	SYSTEM_DIRTY="$(grep -e 'Dirty:' /proc/meminfo)"
+	DEV_IO_CURRENT="$(awk '{print $9}' /sys/block/"$(echo "$1" | cut -d/ -f3)"/stat)"
+	tput cuu 4
+	tput ed
+	printf "%s\n%s\n$1 I/O queue:\n\tPending I/O operations: %s\n" "$SYSTEM_WRITEBACK" "$SYSTEM_DIRTY" "$DEV_IO_CURRENT"
+}
+
 
 ## Test if the script is started by root user. If not, exit
 ## only root user can manipulate the device as required.
@@ -41,9 +65,27 @@ while [ "$#" -gt 0 ]; do
 			exit 1
 		fi
 		;;
+	--directives-url)
+		if [ -n "$2" ]; then
+			DIRECTIVES_FILE_URL="$2"
+			shift 2
+		else
+			echo "Error: option --directives-url requires an argument" >&2
+			exit 1
+		fi
+		;;
+	--directives-server-ip)
+		if [ -n "$2" ]; then
+			DIRECTIVES_SERVER_IP="$2"
+			shift 2
+		else
+			echo "Error: option --directives-server-ip requires an argument" >&2
+			exit 1
+		fi
+		;;
 	-h | --help)
 		echo "Installs the current huronOS into an usb"
-		echo "Usage: ./install.sh [--root-password password]"
+		echo "Usage: ./install.sh [--root-password PASSWORD] [--directives-url URL] [--directives-server-ip IP]"
 		exit 1
 		;;
 	#   Whichever other parameter passed, we know nothing about that here
@@ -73,16 +115,27 @@ mkdir -p "$INSTALLER_LAB"
 
 ## Save the directory where the script is running, it should match the ISO of huronOS
 ISO_DIR="$(dirname "$(readlink -f "$0")")"
-print_step "[1/11] Locating huronOS image -> $ISO_DIR"
+print_step "[1/13] Locating huronOS image -> $ISO_DIR"
 
 ## Configure the remote directives file
-print_step "[2/11] Configuring directives server."
-read -r -p "URL (http/s) of directives file to configure:" DIRECTIVES_FILE_URL
-read -r -p "IP of the sync server:" DIRECTIVES_SERVER_IP
+print_step "[2/13] Customizing Installation"
+if [ -z "$NEW_PASSWORD" ]; then
+	read -r -p "Set the root user password:" NEW_PASSWORD
+	if [ -z "$NEW_PASSWORD" ]; then
+		echo "Password set blank, using default 'toor' password"
+		NEW_PASSWORD="toor"
+	fi
+fi
+if [ -z "$DIRECTIVES_FILE_URL" ]; then
+	read -r -p "URL (http/s) of directives file to configure:" DIRECTIVES_FILE_URL
+fi
+if [ -z "$DIRECTIVES_SERVER_IP" ]; then
+	read -r -p "IP of the sync server:" DIRECTIVES_SERVER_IP
+fi
 echo -e "[Server]\nIP=\nDOMAIN=\nDIRECTIVES_ENDPOINT=\nSERVER_ROOM=\nDIRECTIVES_FILE_URL=$DIRECTIVES_FILE_URL\nDIRECTIVES_SERVER_IP=$DIRECTIVES_SERVER_IP\n" >"$SERVER_CONFIG"
 
 ## Select the device we want to install huronOS to
-print_step "[3/11] Selecting removable device to install huronOS on"
+print_step "[3/13] Selecting removable device to install huronOS on"
 DEV_PATHS=$(lsblk --nodeps --noheadings --raw -o PATH)
 # Array to store the usb devices found
 HOTPLUG_DEVICES=()
@@ -139,7 +192,7 @@ fi
 ## User confirmed, continue
 
 ## For each mountpoint that the device is using, kill and unmount
-print_step "[4/11] Unmounting selected device partitions"
+print_step "[4/13] Unmounting selected device partitions"
 # Count every target device's mounted partitions
 PARTITION_COUNT=$(mount | grep -c "$TARGET")
 
@@ -167,7 +220,7 @@ fi
 wipefs -a "$TARGET" || exit 1
 echo "Device cleaned out succesfully"
 
-print_step "[5/11] Partitioning device $TARGET"
+print_step "[5/13] Partitioning device $TARGET"
 ## Set positions on the target device
 DISK_SIZE=$(blockdev --getsize64 "$TARGET")
 DISK_SECTORS=$(blockdev --getsz "$TARGET")
@@ -194,7 +247,7 @@ parted -a optimal --script "$TARGET" \
 	set 1 boot on
 
 ## Create the filesystems
-print_step "[6/11] Creating filesystems"
+print_step "[6/13] Creating filesystems"
 mkfs.vfat -F 32 -n HURONOS -I "${TARGET}1"
 mkfs.ext4 -L event-data -F "${TARGET}2"
 mkfs.ext4 -L contest-data -F "${TARGET}3"
@@ -212,7 +265,7 @@ mkdir -p $SYSTEM_MNT
 mount UUID=$SYSTEM_UUID $SYSTEM_MNT
 
 ## Start copying the contents of huronOS installation
-print_step "[7/11] Copying huronOS system data"
+print_step "[7/13] Copying huronOS system data"
 cp --verbose -rf "$ISO_DIR/huronOS/" "$SYSTEM_MNT"
 cp --verbose -rf "$ISO_DIR/boot/" "$SYSTEM_MNT"
 cp --verbose -rf "$ISO_DIR/EFI/" "$SYSTEM_MNT"
@@ -220,22 +273,19 @@ cp --verbose -rf "$ISO_DIR/checksums" "$SYSTEM_MNT"
 cp --verbose -rf "$SERVER_CONFIG" "$SYSTEM_MNT/huronOS/data/configs/sync-server.conf"
 
 # If a password was passed, update the password
-if [ -n "$NEW_PASSWORD" ]; then
-	print_step "[7.5/11] Setting new password: $NEW_PASSWORD"
+print_step "[8/13] Creating custom system layer"
+if [ "$NEW_PASSWORD" != "toor" ]; then
 	utils/change-password.sh "$NEW_PASSWORD" "$SYSTEM_MNT" || exit 1
 fi
 
-print_step "[8/11] Cleaning device buffers"
-sync &
+print_step "[9/13] Cleaning device buffers"
+sync -f "$SYSTEM_MNT/huronOS/base/05-custom.hsl" &
 SYNC_PID=$!
-while ps -p $SYNC_PID >/dev/null 2>&1; do
-	echo -ne "\rRemaining data -> $(grep -e "Dirty:" /proc/meminfo)\t$(grep -i "Writeback:" /proc/meminfo)"
-	sleep 1
-done
+flush_stats "$TARGET" $SYNC_PID
 echo
 
 ## Verify file checksums
-print_step "[9/11] Validating installation files"
+print_step "[10/13] Validating installation files"
 CURRENT_PATH="$(pwd)"
 cd "$SYSTEM_MNT" || exit 1 # error
 if ! sha256sum --check "./checksums"; then
@@ -248,7 +298,7 @@ fi
 cd "$CURRENT_PATH" || exit 1 # error
 
 ## Configure the bootloader
-print_step "[10/11] Making device bootable"
+print_step "[11/13] Making device bootable"
 sed "s|system.uuid=UUID|system.uuid=$SYSTEM_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
 sed "s|event.uuid=UUID|event.uuid=$EVENT_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
 sed "s|contest.uuid=UUID|contest.uuid=$CONTEST_UUID|g" -i "$SYSTEM_MNT/boot/huronos.cfg"
@@ -258,14 +308,13 @@ $SYSTEM_MNT/boot/extlinux.x64 --install $SYSTEM_MNT/boot/
 ## TODO: Configure root password and other things
 
 ## Unmount fylesystems
-print_step "[11/11] Unmounting device"
+print_step "[12/13] Unmounting device"
 umount $SYSTEM_MNT && rm -rf "$INSTALLER_LAB"
 
-# Show the password used in this instalation
-if [ -n "$NEW_PASSWORD" ]; then
-	print_step "The root password was set to: $NEW_PASSWORD"
-else
-	print_step "The root password is the default one (toor, unless you executed ./change-password)"
-fi
+print_step "[13/13] Printing installation data"
+echo "Your root password is: $NEW_PASSWORD"
+echo "System will sync with the directives URL: '$DIRECTIVES_FILE_URL'"
+echo "System will always create a firewall exception to the IP: '$DIRECTIVES_SERVER_IP'"
+echo
 
-print_step "Done!, you can remove your device now :)"
+print_step "Done! huronOS is ready on $TARGET, you can remove your device now :)"
