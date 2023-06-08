@@ -104,8 +104,8 @@ find /$LMK/kernel/ | grep crc32c | while read LINE; do
    copy_including_deps $LINE
 done
 
-copy_including_deps /$LMK/kernel/drivers/staging/zsmalloc # needed by zram
-copy_including_deps /$LMK/kernel/drivers/block/zram
+# copy_including_deps /$LMK/kernel/drivers/staging/zsmalloc # needed by zram
+# copy_including_deps /$LMK/kernel/drivers/block/zram
 copy_including_deps /$LMK/kernel/drivers/block/loop.*
 
 # usb drivers
