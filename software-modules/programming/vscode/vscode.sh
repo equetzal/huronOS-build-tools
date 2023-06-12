@@ -16,6 +16,7 @@
 
 set -xe
 NAME=codium
+TARGET_DIR="/run/initramfs/memory/system/huronOS/software/programming/"
 
 ## Add vscodium keyring
 wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg |
@@ -58,5 +59,5 @@ rm -rf /tmp/$NAME.hsm/usr/share/applications/code-url-handler.desktop
 find /tmp/$NAME.hsm/
 dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/$NAME.hsm /run/initramfs/memory/system/huronOS/software/programming/
+cp /tmp/$NAME.hsm "$TARGET_DIR"
 echo "Finished creating $NAME.hsm!"

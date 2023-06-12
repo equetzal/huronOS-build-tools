@@ -16,6 +16,7 @@
 
 set -xe
 NAME=midnight-commander
+TARGET_DIR="/run/initramfs/memory/system/huronOS/software/tools/"
 
 ## Install software
 apt update
@@ -42,5 +43,5 @@ rm -rf /tmp/$NAME.hsm/usr/share/applications/mc.desktop
 rm -rf /tmp/$NAME.hsm/usr/share/applications/mcedit.desktop
 dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/$NAME.hsm /run/initramfs/memory/system/huronOS/tools/
+cp /tmp/$NAME.hsm "$TARGET_DIR"
 echo "Finished creating $NAME.hsm!"

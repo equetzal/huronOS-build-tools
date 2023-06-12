@@ -16,7 +16,7 @@
 
 set -xe
 NAME=crow
-TARGET="/run/initramfs/memory/system/huronOS/software/internet/"
+TARGET_DIR="/run/initramfs/memory/system/huronOS/software/internet/"
 
 ## Install software
 apt update
@@ -43,5 +43,5 @@ rm -rf /tmp/$NAME.hsm/usr/share/applications/io.crow*
 find /tmp/$NAME.hsm
 dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/$NAME.hsm "$TARGET"
+cp /tmp/$NAME.hsm "$TARGET_DIR"
 echo "Finished creating $NAME.hsm!"

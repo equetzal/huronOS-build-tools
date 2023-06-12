@@ -16,6 +16,7 @@
 
 set -xe
 NAME=valgrind
+TARGET_DIR="/run/initramfs/memory/system/huronOS/software/debuggers/"
 
 ## Install software
 apt update
@@ -35,5 +36,5 @@ find . ! -path "./usr/share/man*" ! -path "./usr/share/lintian*" ! -path "./usr/
 cd ..
 dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/$NAME.hsm /run/initramfs/memory/system/huronOS/programming/
+cp /tmp/$NAME.hsm "$TARGET_DIR"
 echo "Finished creating $NAME.hsm!"

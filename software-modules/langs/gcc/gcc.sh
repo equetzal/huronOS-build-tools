@@ -17,10 +17,12 @@
 #		Enya Quetzalli <equetzal@huronos.org>
 
 set -xe
+NAME=gcc
+TARGET_DIR="/run/initramfs/memory/system/huronOS/software/langs/"
 
 ## Install software
 apt update
-apt install --yes --no-install-recommends gcc
+apt install --yes --no-install-recommends $NAME
 apt autoremove --yes
 
 ## Prepare final files
@@ -29,14 +31,15 @@ tar -xvzf reference.tar.gz -C /usr/share/doc/reference/c/ --strip-components=1
 cp ./c-documentation.desktop /usr/share/applications/
 
 ## Create packed changes
-savechanges /tmp/gcc.hsm
+savechanges /tmp/$NAME.hsm
 
 ## Clean package to maintain only relevant files
-hsm2dir /tmp/gcc.hsm
-rm -rf /tmp/gcc.hsm/var
-rm -rf /tmp/gcc.hsm/etc
-rm -rf /tmp/gcc.hsm/root
-rm -rf /tmp/gcc.hsm/home
-dir2hsm /tmp/gcc.hsm
+hsm2dir /tmp/$NAME.hsm
+rm -rf /tmp/$NAME.hsm/var
+rm -rf /tmp/$NAME.hsm/etc
+rm -rf /tmp/$NAME.hsm/root
+rm -rf /tmp/$NAME.hsm/home
+dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/gcc.hsm /run/initramfs/memory/system/huronOS/langs/
+cp /tmp/$NAME.hsm "$TARGET_DIR"
+echo "Finished creating $NAME.hsm!"

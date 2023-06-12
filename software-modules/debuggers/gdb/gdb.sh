@@ -16,6 +16,7 @@
 
 set -xe
 NAME=gdb
+TARGET_DIR="/run/initramfs/memory/system/huronOS/software/debuggers/"
 
 ## Install software
 apt update
@@ -32,5 +33,5 @@ find ./ ! -path "./etc/gdb*" ! -path "./usr/share/man*" ! -path "./usr/share/gdb
 cd ..
 dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/$NAME.hsm /run/initramfs/memory/system/huronOS/programming/
+cp /tmp/$NAME.hsm "$TARGET_DIR"
 echo "Finished creating $NAME.hsm!"

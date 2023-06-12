@@ -73,6 +73,7 @@ mkdir -p "$FILES"/data/journal
 mkdir -p "$FILES"/data/backups
 mkdir -p "$FILES"/data/configs
 mkdir -p "$FILES"/software
+mkdir -p "$FILES"/software/debuggers
 mkdir -p "$FILES"/software/internet
 mkdir -p "$FILES"/software/langs
 mkdir -p "$FILES"/software/programming

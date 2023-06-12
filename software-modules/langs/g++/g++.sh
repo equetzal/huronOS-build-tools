@@ -17,10 +17,12 @@
 #		Enya Quetzalli <equetzal@huronos.org>
 
 set -xe
+NAME=g++
+TARGET_DIR="/run/initramfs/memory/system/huronOS/software/langs/"
 
 ## Install software
 apt update
-apt install --yes --no-install-recommends g++
+apt install --yes --no-install-recommends $NAME
 apt autoremove --yes
 
 ## Prepare final files
@@ -29,15 +31,16 @@ tar -xvzf reference.tar.gz --strip-components=1 -C /usr/share/doc/reference/c++/
 cp ./c++-documentation.desktop /usr/share/applications/
 
 ## Create packed changes
-savechanges /tmp/g++.hsm
+savechanges /tmp/$NAME.hsm
 
 ## Clean package to maintain only relevant files
-hsm2dir /tmp/g++.hsm
-rm -rf /tmp/g++.hsm/var
-rm -rf /tmp/g++.hsm/etc
-rm -rf /tmp/g++.hsm/root
-rm -rf /tmp/g++.hsm/home
-rm -f /tmp/g++.hsm/usr/bin/*gcc*
-dir2hsm /tmp/g++.hsm
+hsm2dir /tmp/$NAME.hsm
+rm -rf /tmp/$NAME.hsm/var
+rm -rf /tmp/$NAME.hsm/etc
+rm -rf /tmp/$NAME.hsm/root
+rm -rf /tmp/$NAME.hsm/home
+rm -f /tmp/$NAME.hsm/usr/bin/*gcc*
+dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/g++.hsm /run/initramfs/memory/system/huronOS/langs/
+cp /tmp/$NAME.hsm "$TARGET_DIR"
+echo "Finished creating $NAME.hsm!"

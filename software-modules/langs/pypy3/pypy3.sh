@@ -16,6 +16,8 @@
 #		Enya Quetzalli <equetzal@huronos.org>
 
 set -xe
+NAME=pypy3
+TARGET_DIR="/run/initramfs/memory/system/huronOS/software/langs/"
 
 ## Install software
 apt update
@@ -27,14 +29,15 @@ tar -xvzf reference.tar.gz --strip-components=1 -C /usr/share/doc/reference/pyth
 cp ./python3-documentation.desktop /usr/share/applications/
 
 ## Create packed changes
-savechanges /tmp/pypy3.hsm
+savechanges /tmp/$NAME.hsm
 
 ## Clean package to maintain only relevant files
-hsm2dir /tmp/pypy3.hsm
-rm -rf /tmp/pypy3.hsm/var
-rm -rf /tmp/pypy3.hsm/home
-rm -rf /tmp/pypy3.hsm/root
-rm -rf /tmp/pypy3.hsm/etc
-dir2hsm /tmp/pypy3.hsm
+hsm2dir /tmp/$NAME.hsm
+rm -rf /tmp/$NAME.hsm/var
+rm -rf /tmp/$NAME.hsm/home
+rm -rf /tmp/$NAME.hsm/root
+rm -rf /tmp/$NAME.hsm/etc
+dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/pypy3.hsm /run/initramfs/memory/system/huronOS/langs/
+cp /tmp/$NAME.hsm "$TARGET_DIR"
+echo "Finished creating $NAME.hsm!"

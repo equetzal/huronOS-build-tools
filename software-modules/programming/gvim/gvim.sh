@@ -16,6 +16,7 @@
 
 set -xe
 NAME=gvim
+TARGET_DIR="/run/initramfs/memory/system/huronOS/software/programming/"
 
 ## Install software
 apt update
@@ -54,5 +55,5 @@ rm -rf /tmp/$NAME.hsm/etc/alternatives/view
 rm -rf /tmp/$NAME.hsm/etc/alternatives/ex
 dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/$NAME.hsm /run/initramfs/memory/system/huronOS/programming/
+cp /tmp/$NAME.hsm "$TARGET_DIR"
 echo "Finished creating $NAME.hsm!"
