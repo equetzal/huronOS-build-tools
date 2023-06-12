@@ -16,6 +16,7 @@
 
 set -xe
 NAME=eclipse
+TARGET_DIR="/run/initramfs/memory/system/huronOS/software/programming/"
 
 ## Prepare final files
 cp ./$NAME.desktop /usr/share/applications/
@@ -42,5 +43,5 @@ rm -rf /tmp/$NAME.hsm/home/contestant/.xsession*
 rm -rf /tmp/$NAME.hsm/home/contestant/.X*
 dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/$NAME.hsm /run/initramfs/memory/system/huronOS/programming/
+cp /tmp/$NAME.hsm "$TARGET_DIR"
 echo "Finished creating $NAME.hsm!"

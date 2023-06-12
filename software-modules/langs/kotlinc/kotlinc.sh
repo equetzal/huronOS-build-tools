@@ -18,6 +18,7 @@
 
 set -xe
 NAME=kotlinc
+TARGET_DIR="/run/initramfs/memory/system/huronOS/software/langs/"
 
 ## Prepare software
 unzip ./kotlin-compiler-1.6.21.zip -d /tmp/compiler/
@@ -37,5 +38,5 @@ rm -rf /tmp/$NAME.hsm/usr/bin/*.bat
 rm -rf /tmp/compiler/
 dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/$NAME.hsm /run/initramfs/memory/system/huronOS/langs/
+cp /tmp/$NAME.hsm "$TARGET_DIR"
 echo "Finished creating $NAME.hsm!"

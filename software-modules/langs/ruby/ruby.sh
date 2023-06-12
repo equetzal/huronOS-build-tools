@@ -16,25 +16,28 @@
 #		Enya Quetzalli <equetzal@huronos.org>
 
 set -xe
+NAME=ruby
+TARGET_DIR="/run/initramfs/memory/system/huronOS/software/langs/"
 
 ## Install software
 apt update
-apt install --yes --no-install-recommends ruby
+apt install --yes --no-install-recommends $NAME
 
 ## Prepare final files
-mkdir -p /usr/share/doc/reference/ruby/
-tar -xvzf reference.tar.gz --strip-components=1 -C /usr/share/doc/reference/ruby/
+mkdir -p /usr/share/doc/reference/$NAME/
+tar -xvzf reference.tar.gz --strip-components=1 -C /usr/share/doc/reference/$NAME/
 cp ./ruby-documentation.desktop /usr/share/applications/
 
 ## Create packed changes
-savechanges /tmp/ruby.hsm
+savechanges /tmp/$NAME.hsm
 
 ## Clean package to maintain only relevant files
-hsm2dir /tmp/ruby.hsm
-rm -rf /tmp/ruby.hsm/var
-rm -rf /tmp/ruby.hsm/home
-rm -rf /tmp/ruby.hsm/root
-rm -rf /tmp/ruby.hsm/etc
-dir2hsm /tmp/ruby.hsm
+hsm2dir /tmp/$NAME.hsm
+rm -rf /tmp/$NAME.hsm/var
+rm -rf /tmp/$NAME.hsm/home
+rm -rf /tmp/$NAME.hsm/root
+rm -rf /tmp/$NAME.hsm/etc
+dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/ruby.hsm /run/initramfs/memory/system/huronOS/langs/
+cp /tmp/$NAME.hsm "$TARGET_DIR"
+echo "Finished creating $NAME.hsm!"

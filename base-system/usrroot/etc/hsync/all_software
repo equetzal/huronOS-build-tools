@@ -1,3 +1,7 @@
+debuggers/ddd
+debuggers/gdb
+debuggers/valgrind
+debuggers/visualvm
 internet/chrome
 internet/chromium
 internet/crow
@@ -26,6 +30,7 @@ programming/intellij
 programming/joe
 programming/kate
 programming/kdevelop
+programming/neovim
 programming/pycharm
 programming/rider
 programming/sublime

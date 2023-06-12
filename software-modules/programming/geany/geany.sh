@@ -16,6 +16,7 @@
 
 set -xe
 NAME=geany
+TARGET_DIR="/run/initramfs/memory/system/huronOS/software/programming/"
 
 ## Install software
 apt update
@@ -40,4 +41,5 @@ rm -rf /tmp/$NAME.hsm/usr/share/applications/bamf-2.index
 rm -rf /tmp/$NAME.hsm/usr/share/applications/mimeinfo.cache
 dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/$NAME.hsm /run/initramfs/memory/system/huronOS/programming/
+cp /tmp/$NAME.hsm "$TARGET_DIR"
+echo "Finished creating $NAME.hsm!"

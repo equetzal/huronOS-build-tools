@@ -16,6 +16,7 @@
 
 set -xe
 NAME=visualvm
+TARGET_DIR="/run/initramfs/memory/system/huronOS/software/debuggers/"
 
 ## In this particular script, given that visualvm depends on java but java cannot be installed directly in the dependencies,
 ## it is required to create a temp layer installing the remaining dependencies related to java before actually installing visualvm.
@@ -38,5 +39,5 @@ find . ! -path "./usr/share/visualvm*" ! -path "./usr/share/man*" ! -path "./usr
 cd ..
 dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/$NAME.hsm /run/initramfs/memory/system/huronOS/programming/
+cp /tmp/$NAME.hsm "$TARGET_DIR"
 echo "Finished creating $NAME.hsm!"

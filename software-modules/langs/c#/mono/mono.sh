@@ -17,7 +17,7 @@
 
 set -xe
 NAME=mono
-TARGET="/run/initramfs/memory/system/huronOS/software/langs/"
+TARGET_DIR="/run/initramfs/memory/system/huronOS/software/langs/"
 
 ## Add mono repo keyring
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
@@ -51,5 +51,5 @@ find /tmp/$NAME.hsm/
 dir2hsm /tmp/$NAME.hsm
 
 mkdir -p "$TARGET"
-cp /tmp/$NAME.hsm "$TARGET"
+cp /tmp/$NAME.hsm "$TARGET_DIR"
 echo "Finished creating $NAME.hsm!"

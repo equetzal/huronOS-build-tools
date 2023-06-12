@@ -17,6 +17,8 @@
 #		Enya Quetzalli <equetzal@huronos.org>
 
 set -xe
+NAME=javac
+TARGET_DIR="/run/initramfs/memory/system/huronOS/software/langs/"
 
 ## Install software
 apt update
@@ -29,12 +31,13 @@ tar -xvzf reference.tar.gz -C /usr/share/doc/reference/java/ --strip-components=
 cp ./java-documentation.desktop /usr/share/applications/
 
 ## Create packed changes
-savechanges /tmp/javac.hsm
+savechanges /tmp/$NAME.hsm
 
 ## Clean package to maintain only relevant files
-hsm2dir /tmp/javac.hsm
-cd /tmp/javac.hsm
+hsm2dir /tmp/$NAME.hsm
+cd /tmp/$NAME.hsm
 find . ! -path "./usr/lib/jvm*" ! -path "./usr/bin*" ! -path "./usr/share/icons*" ! -path "./usr/share/man*" ! -path "./usr/share/pixmaps*" ! -path "./etc/alternatives*" ! -path "./usr/share/application-registry*" ! -path "./usr/share/lintian*" ! -path "./usr/share/applications/java-documentation.desktop" ! -path "./usr/share/doc/reference/java*" -delete
-dir2hsm /tmp/javac.hsm
+dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/javac.hsm /run/initramfs/memory/system/huronOS/langs/
+cp /tmp/$NAME.hsm "$TARGET_DIR"
+echo "Finished creating $NAME.hsm!"

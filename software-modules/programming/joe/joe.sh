@@ -16,6 +16,7 @@
 
 set -xe
 NAME=joe
+TARGET_DIR="/run/initramfs/memory/system/huronOS/software/programming/"
 
 apt update
 apt install --yes --no-install-recommends $NAME
@@ -41,5 +42,5 @@ rm -rf /tmp/$NAME.hsm/usr/share/applications/jpico.desktop
 rm -rf /tmp/$NAME.hsm/usr/share/applications/jmacs.desktop
 dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/$NAME.hsm /run/initramfs/memory/system/huronOS/programming/
+cp /tmp/$NAME.hsm "$TARGET_DIR"
 echo "Finished creating $NAME.hsm!"

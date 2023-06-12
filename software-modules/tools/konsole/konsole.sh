@@ -16,6 +16,7 @@
 
 set -xe
 NAME=konsole
+TARGET_DIR="/run/initramfs/memory/system/huronOS/software/tools/"
 
 ## Install software
 apt update
@@ -40,5 +41,5 @@ rm -rf /tmp/$NAME.hsm/usr/share/applications/mimeinfo.cache
 rm -rf /tmp/$NAME.hsm/usr/share/applications/org.kde.konsole.desktop
 dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/$NAME.hsm /run/initramfs/memory/system/huronOS/tools/
+cp /tmp/$NAME.hsm "$TARGET_DIR"
 echo "Finished creating $NAME.hsm!"

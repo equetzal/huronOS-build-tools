@@ -15,31 +15,34 @@
 #		Enya Quetzalli <equetzal@huronos.org>
 
 set -xe
+NAME=codeblocks
+TARGET_DIR="/run/initramfs/memory/system/huronOS/software/programming/"
 
 ## Install software
 apt update
-apt install --yes --no-install-recommends codeblocks
+apt install --yes --no-install-recommends $NAME
 apt autoremove --yes
 
 ## Prepare final files
-cp ./codeblocks.desktop /usr/share/applications/
+cp ./$NAME.desktop /usr/share/applications/
 
 ## Create packed changes
-savechanges /tmp/codeblocks.hsm
+savechanges /tmp/$NAME.hsm
 
 ## Clean package to maintain only relevant files
-hsm2dir /tmp/codeblocks.hsm
-rm -rf /tmp/codeblocks.hsm/var
-rm -rf /tmp/codeblocks.hsm/etc
-rm -rf /tmp/codeblocks.hsm/root
-rm -rf /tmp/codeblocks.hsm/home
-rm -rf /tmp/codeblocks.hsm/usr/share/mime
-rm -rf /tmp/codeblocks.hsm/usr/share/gnome
-rm -rf /tmp/codeblocks.hsm/usr/share/metainfo
-rm -rf /tmp/codeblocks.hsm/usr/share/lintian
-rm -rf /tmp/codeblocks.hsm/usr/share/icons
-rm -rf /tmp/codeblocks.hsm/usr/share/applications/bamf-2.index
-rm -rf /tmp/codeblocks.hsm/usr/share/applications/mimeinfo.cache
-dir2hsm /tmp/codeblocks.hsm
+hsm2dir /tmp/$NAME.hsm
+rm -rf /tmp/$NAME.hsm/var
+rm -rf /tmp/$NAME.hsm/etc
+rm -rf /tmp/$NAME.hsm/root
+rm -rf /tmp/$NAME.hsm/home
+rm -rf /tmp/$NAME.hsm/usr/share/mime
+rm -rf /tmp/$NAME.hsm/usr/share/gnome
+rm -rf /tmp/$NAME.hsm/usr/share/metainfo
+rm -rf /tmp/$NAME.hsm/usr/share/lintian
+rm -rf /tmp/$NAME.hsm/usr/share/icons
+rm -rf /tmp/$NAME.hsm/usr/share/applications/bamf-2.index
+rm -rf /tmp/$NAME.hsm/usr/share/applications/mimeinfo.cache
+dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/codeblocks.hsm /run/initramfs/memory/system/huronOS/programming/
+cp /tmp/$NAME.hsm "$TARGET_DIR"
+echo "Finished creating $NAME.hsm!"

@@ -16,6 +16,7 @@
 
 set -xe
 NAME=kate
+TARGET_DIR="/run/initramfs/memory/system/huronOS/software/programming/"
 
 ## Install software
 apt update
@@ -41,4 +42,5 @@ rm -rf /tmp/$NAME.hsm/usr/share/applications/mimeinfo.cache
 rm -rf /tmp/$NAME.hsm/usr/share/applications/org.kde.kate.desktop
 dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/$NAME.hsm /run/initramfs/memory/system/huronOS/programming/
+cp /tmp/$NAME.hsm "$TARGET_DIR"
+echo "Finished creating $NAME.hsm!"

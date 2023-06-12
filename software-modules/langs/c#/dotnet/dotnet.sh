@@ -17,7 +17,7 @@
 
 set -xe
 NAME=dotnet
-TARGET="/run/initramfs/memory/system/huronOS/software/langs/"
+TARGET_DIR="/run/initramfs/memory/system/huronOS/software/langs/"
 
 ## Install microsoft signature
 wget https://packages.microsoft.com/config/debian/11/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
@@ -52,5 +52,5 @@ find /tmp/$NAME.hsm/
 dir2hsm /tmp/$NAME.hsm
 
 mkdir -p "$TARGET"
-cp /tmp/$NAME.hsm "$TARGET"
+cp /tmp/$NAME.hsm "$TARGET_DIR"
 echo "Finished creating $NAME.hsm!"

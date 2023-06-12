@@ -16,6 +16,7 @@
 
 set -xe
 NAME=neovim
+TARGET_DIR="/run/initramfs/memory/system/huronOS/software/programming/"
 
 ## Install software
 apt update
@@ -34,5 +35,5 @@ cd /tmp/$NAME.hsm
 find . ! -path "./usr/share/doc/neovim/*" ! -path "./etc/alternatives/*" ! -path "./usr/bin/*" ! -path "./usr/libexec/*" -delete
 dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/$NAME.hsm /run/initramfs/memory/system/huronOS/programming/
+cp /tmp/$NAME.hsm "$TARGET_DIR"
 echo "Finished creating $NAME.hsm!"
