@@ -3,10 +3,10 @@
 
 # Options to pass to earlyoom
 # Report memory status every 15 seconds
-# SIGTERM if memory below 20
-# SIGKILL if memory below 15
+# SIGTERM if memory below 10
+# SIGKILL if memory below 5
 # Send bus notifications (for GUI notifications)
-EARLYOOM_ARGS="-r 15 -m 20,15 -n"
+EARLYOOM_ARGS="-r 15 -m 10,5 -n"
 
 # Examples:
 
