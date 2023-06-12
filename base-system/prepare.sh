@@ -77,6 +77,7 @@ chmod 760 /usr/sbin/auls
 chmod 760 /usr/sbin/hmm
 chmod 760 /usr/sbin/hos-*
 chmod 760 /usr/sbin/savechanges
+chmod 755 /usr/bin/systembus-notify
 
 ## Journal max size
 sed -i 's;#SystemMaxUse=.*;SystemMaxUse=300M;1' /etc/systemd/journald.conf
