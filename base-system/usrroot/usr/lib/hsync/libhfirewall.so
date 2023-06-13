@@ -76,8 +76,21 @@ firewall_accept_all() {
 	iptables -X
 	iptables -Z
 
+	# Allow all incoming and outgoing IPv6 traffic
+	ip6tables -P INPUT ACCEPT
+	ip6tables -P OUTPUT ACCEPT
+	ip6tables -P FORWARD ACCEPT
+
 	log "Setting firewall rules to:
-	$(iptables --list)"
+	##############
+	###  IPv4  ###
+	##############
+	$(iptables --list)
+	##############
+	###  IPv6  ###
+	##############
+	$(ip6tables --list)
+	"
 
 	return 0
 }
@@ -150,7 +163,13 @@ firewall_filter_ipv4() {
 }
 
 firewall_filter_ipv6() {
-	#TODO: Implement
+	# TODO(https://github.com/equetzal/huronOS-build-tools/issues/97):
+	# Implement same logic as with ipv4 instead of all or none
+
+	# Drop all incoming and outgoing IPv6 traffic
+	ip6tables -P INPUT DROP
+	ip6tables -P OUTPUT DROP
+	ip6tables -P FORWARD DROP
 	return 0
 }
 
@@ -161,7 +180,15 @@ firewall_accept_filtered_web() {
 	firewall_filter_ipv6
 
 	log "Setting firewall rules to:
-	$(iptables-legacy --list)"
+	##############
+	###  IPv4  ###
+	##############
+	$(iptables --list)
+	##############
+	###  IPv6  ###
+	##############
+	$(ip6tables --list)
+	"
 
 	return 0
 }
