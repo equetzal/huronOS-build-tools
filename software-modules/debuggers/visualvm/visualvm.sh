@@ -35,7 +35,7 @@ savechanges /tmp/$NAME.hsm
 ## Clean package to maintain only relevant files
 hsm2dir /tmp/$NAME.hsm
 cd /tmp/$NAME.hsm
-find . ! -path "./usr/share/visualvm*" ! -path "./usr/share/man*" ! -path "./usr/share/lintian*" ! -path "./usr/share/icons*" ! -path "./usr/share/doc*" ! -path "./usr/bin*" ! -path "./etc/visualvm*"
+find . ! -path "./usr/share/visualvm*" ! -path "./usr/share/man*" ! -path "./usr/share/lintian*" ! -path "./usr/share/icons*" ! -path "./usr/share/doc*" ! -path "./usr/bin*" ! -path "./etc/visualvm*" -delete || true
 cd ..
 dir2hsm /tmp/$NAME.hsm
 

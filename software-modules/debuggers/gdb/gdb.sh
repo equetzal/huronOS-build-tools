@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #	vim.sh
-#	Script to build the modular software package of Vim
+#	Script to build the modular software package of gdb
 #	for huronOS. It purges the unnecessary files on the FS
 #	to allow AUFS add/del operations on the fly.
 #
@@ -12,7 +12,7 @@
 #		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Authors:
-#		Enya Quetzalli <equetzal@huronos.org>
+#		Daniel Cerna <dcerna@huronos.org>
 
 set -xe
 NAME=gdb
@@ -29,7 +29,7 @@ savechanges /tmp/$NAME.hsm
 ## Clean package to maintain only relevant files
 hsm2dir /tmp/$NAME.hsm
 cd /tmp/gdb.hsm
-find ./ ! -path "./etc/gdb*" ! -path "./usr/share/man*" ! -path "./usr/share/gdb*" ! -path "./usr/share/doc*" ! -path "./usr/include/gdb*" ! -path "./usr/bin/gdb*" -delete || true
+find . ! -path "./etc/gdb*" ! -path "./usr/share/man*" ! -path "./usr/share/gdb*" ! -path "./usr/share/doc*" ! -path "./usr/include/gdb*" ! -path "./usr/bin/gdb*" -delete || true
 cd ..
 dir2hsm /tmp/$NAME.hsm
 

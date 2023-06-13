@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #	vim.sh
-#	Script to build the modular software package of Vim
+#	Script to build the modular software package of valgrind
 #	for huronOS. It purges the unnecessary files on the FS
 #	to allow AUFS add/del operations on the fly.
 #
@@ -12,7 +12,7 @@
 #		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Authors:
-#		Enya Quetzalli <equetzal@huronos.org>
+#		Daniel Cerna <dcerna@huronos.org>
 
 set -xe
 NAME=valgrind
@@ -22,9 +22,6 @@ TARGET_DIR="/run/initramfs/memory/system/huronOS/software/debuggers/"
 apt update
 apt install --yes --no-install-recommends $NAME
 apt autoremove --yes
-
-## Prepare final files
-cp ./$NAME.desktop /usr/share/applications/
 
 ## Create packed changes
 savechanges /tmp/$NAME.hsm

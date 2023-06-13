@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#	vim.sh
-#	Script to build the modular software package of Vim
+#	ddd.sh
+#	Script to build the modular software package of ddd
 #	for huronOS. It purges the unnecessary files on the FS
 #	to allow AUFS add/del operations on the fly.
 #
@@ -12,10 +12,10 @@
 #		<http://www.gnu.org/licenses/gpl-2.0.html>	
 #
 #	Authors:
-#		Enya Quetzalli <equetzal@huronos.org>
+#		Daniel Cerna <dcerna@huronos.org>
 
 set -xe
-NAME=valgrind
+NAME=ddd
 TARGET_DIR="/run/initramfs/memory/system/huronOS/software/debuggers/"
 
 ## Install software
@@ -32,7 +32,7 @@ savechanges /tmp/$NAME.hsm
 ## Clean package to maintain only relevant files
 hsm2dir /tmp/$NAME.hsm
 cd /tmp/$NAME.hsm
-find . ! -path "./usr/share/doc*" ! -path "./usr/share/ddd*" ! -path "./usr/share/info*" ! -path "./usr/share/man*" ! -path "./usr/share/pixmaps*" ! -path "./usr/bin*"  ! -path "./etc/X11*" -delete
+find . ! -path "./usr/share/doc*" ! -path "./usr/share/ddd*" ! -path "./usr/share/info*" ! -path "./usr/share/man*" ! -path "./usr/share/pixmaps*" ! -path "./usr/bin*"  ! -path "./etc/X11*" -delete || true
 cd ..
 dir2hsm /tmp/$NAME.hsm
 
