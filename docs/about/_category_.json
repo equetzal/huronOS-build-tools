@@ -1,0 +1,8 @@
+{
+	"label": "About huronOS",
+	"position": 3,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn about why huronOS exists and which problems it solves."
+	}
+}

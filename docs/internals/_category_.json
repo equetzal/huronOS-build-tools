@@ -1,0 +1,8 @@
+{
+	"label": "Internals",
+	"position": 5,
+	"link": {
+		"type": "generated-index",
+		"description": "Learn how huronOS is designed, why and how it works internally."
+	}
+}
