@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 5
 ---
 # Tips for Developing huronOS
 So, if you plan on contributing constantly to this project, or you decide to fork it and continue on your own, these tips can help you iterate quicker on your development process. Let's check some of those tips:
