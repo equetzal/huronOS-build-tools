@@ -17,17 +17,31 @@
 set -xe
 NAME=visualvm
 TARGET_DIR="/run/initramfs/memory/system/huronOS/software/debuggers/"
+MAIN_PATH="$(dirname "$(readlink -f "$0")")"
 
-## In this particular script, given that visualvm depends on java but java cannot be installed directly in the dependencies,
-## it is required to create a temp layer installing the remaining dependencies related to java before actually installing visualvm.
+apt update
+
+## Patch visualvm so it is not linked to the javasdk
+## allowing only the relevant visualvm files to be preserved
+cd /tmp
+apt download visualvm
+mkdir tmp-visualvm
+dpkg-deb -R visualvm_2.1.5-1_all.deb tmp-visualvm
+sed -i 's/default-jdk (>= 2:1.11) | java11-sdk, //' tmp-visualvm/DEBIAN/control
+dpkg-deb -b tmp-visualvm visualvm-patched.deb
+
+## Install java so it doesn't autoinstall
+apt install  --yes --no-install-recommends openjdk-17-jdk default-jdk
 
 ## Install software
-apt update
 apt install --yes --no-install-recommends $NAME
-apt autoremove --yes
+
+## Remove java and it's dependencies
+## effectively keeping visualvm and its files
+apt remove  --yes --autoremove openjdk-17-jdk default-jdk
 
 ## Prepare final files
-cp ./$NAME.desktop /usr/share/applications/
+cp "$MAIN_PATH/$NAME.desktop" /usr/share/applications/
 
 ## Create packed changes
 savechanges /tmp/$NAME.hsm

@@ -1,26 +1,14 @@
 antlr3
-aspnetcore-runtime-6.0
-aspnetcore-targeting-pack-6.0
 binutils
 binutils-common
 binutils-x86-64-linux-gnu
-ca-certificates-java
 chromium-common
 codeblocks-common
-default-jre
-default-jre-headless
-dotnet-apphost-pack-6.0
-dotnet-host
-dotnet-hostfxr-6.0
-dotnet-runtime-6.0
-dotnet-runtime-deps-6.0
-dotnet-targeting-pack-6.0
 emacs-bin-common
+emacs-common
 emacs-el
 emacs-gtk
-g++-12
 gawk
-gcc-12
 geany-common
 gedit-common
 gettext-base
@@ -33,7 +21,6 @@ gir1.2-soup-3.0
 git
 git-man
 install-info
-java-common
 javahelp2
 junit4
 kate5-data
@@ -59,7 +46,6 @@ libbsh-java
 libc-dev-bin
 libc6-dbg
 libc6-dev
-libcc1-0
 libclang1-14
 libcodeblocks0
 libcommons-codec-java
@@ -175,7 +161,6 @@ libserf-1-1
 libsigsegv2
 libsource-highlight-common
 libsource-highlight4v5
-libstdc++-12-dev
 libstringtemplate4-java
 libsvn1
 libswing-layout-java
@@ -193,7 +178,6 @@ libutf8proc2
 libvisualvm-jni
 libvterm0
 libwxbase3.2-1
-libwxgtk3.2-1
 libxcb-composite0
 libxcb-damage0
 libxm4
@@ -204,10 +188,6 @@ lua-luv
 m17n-db
 mc-data
 neovim-runtime
-netstandard-targeting-pack-2.1
-openjdk-17-jdk-headless
-openjdk-17-jre
-openjdk-17-jre-headless
 plasma-framework
 pypy3-lib
 python3-bs4
@@ -218,7 +198,6 @@ python3-charset-normalizer
 python3-click
 python3-colorama
 python3-dbus
-python3-gi-cairo
 python3-gtts
 python3-gtts-token
 python3-idna
@@ -237,7 +216,7 @@ qml-module-qtquick-layouts
 qml-module-qtquick-xmllistmodel
 qml-module-qtwebkit
 rake
-rpcsvc-proto
+ruby
 ruby-net-telnet
 ruby-rubygems
 ruby-sdbm
