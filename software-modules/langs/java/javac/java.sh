@@ -22,7 +22,7 @@ TARGET_DIR="/run/initramfs/memory/system/huronOS/software/langs/"
 
 ## Install software
 apt update
-apt install --yes --no-install-recommends openjdk-17-jdk
+apt install --yes --no-install-recommends openjdk-17-jdk default-jdk
 apt autoremove --yes
 
 ## Prepare final files
@@ -36,7 +36,8 @@ savechanges /tmp/$NAME.hsm
 ## Clean package to maintain only relevant files
 hsm2dir /tmp/$NAME.hsm
 cd /tmp/$NAME.hsm
-find . ! -path "./usr/lib/jvm*" ! -path "./usr/bin*" ! -path "./usr/share/icons*" ! -path "./usr/share/man*" ! -path "./usr/share/pixmaps*" ! -path "./etc/alternatives*" ! -path "./usr/share/application-registry*" ! -path "./usr/share/lintian*" ! -path "./usr/share/applications/java-documentation.desktop" ! -path "./usr/share/doc/reference/java*" -delete
+find . ! -path "./usr/lib/jvm*" ! -path "./usr/bin*" ! -path "./usr/share/icons*" ! -path "./usr/share/man*" ! -path "./usr/share/pixmaps*" ! -path "./etc/alternatives*" ! -path "./usr/share/application-registry*" ! -path "./usr/share/lintian*" ! -path "./usr/share/applications/java-documentation.desktop" ! -path "./usr/share/doc/reference/java*" -delete || true
+cd ..
 dir2hsm /tmp/$NAME.hsm
 
 cp /tmp/$NAME.hsm "$TARGET_DIR"
