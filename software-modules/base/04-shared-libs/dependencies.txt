@@ -5,7 +5,6 @@ binutils-x86-64-linux-gnu
 chromium-common
 codeblocks-common
 emacs-bin-common
-emacs-common
 emacs-el
 emacs-gtk
 gawk
@@ -178,6 +177,7 @@ libutf8proc2
 libvisualvm-jni
 libvterm0
 libwxbase3.2-1
+libwxgtk3.2-1
 libxcb-composite0
 libxcb-damage0
 libxm4
@@ -198,6 +198,7 @@ python3-charset-normalizer
 python3-click
 python3-colorama
 python3-dbus
+python3-gi-cairo
 python3-gtts
 python3-gtts-token
 python3-idna
@@ -216,7 +217,7 @@ qml-module-qtquick-layouts
 qml-module-qtquick-xmllistmodel
 qml-module-qtwebkit
 rake
-ruby
+rpcsvc-proto
 ruby-net-telnet
 ruby-rubygems
 ruby-sdbm
