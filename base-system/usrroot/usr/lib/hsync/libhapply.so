@@ -47,7 +47,9 @@ apply_global_directives() {
 	set_timezone
 	set_keyboards
 	set_current_keyboard
-
+	if [ "$STATE_IS_CLOCK_SYNC" = "yes" ]; then
+		set_scheduled_shutdown
+	fi
 	return 0 # success
 }
 
@@ -403,4 +405,24 @@ set_wallpaper() {
 
 	log "-Couldn't find any background to restore"
 	return 1 # error
+}
+
+set_scheduled_shutdown() {
+	local SHUTDOWN_TIME SHUTDOWN_TIME_EPOCH CURRENT_TIME_EPOCH SECONDS_TO_SHUTDOWN MINUTES_TO_SHUTDOWN
+	SHUTDOWN_TIME="$(get_directives_var Global ShutdownTime)"
+	log "Cancelling scheduled shutdown (if any)"
+	shutdown -c
+	if [ "$SHUTDOWN_TIME" = "none" ]; then
+		return 0
+	fi
+	SHUTDOWN_TIME_EPOCH=$(date -d "$SHUTDOWN_TIME" +%s)
+	CURRENT_TIME_EPOCH=$(date +%s)
+	SECONDS_TO_SHUTDOWN=$((SHUTDOWN_TIME_EPOCH-CURRENT_TIME_EPOCH))
+	if [ "$SECONDS_TO_SHUTDOWN" -lt 0 ]; then
+		log "Current shutdown is for a time that already happened, skiping scheduled shutdown."
+		exit 0
+	fi
+	MINUTES_TO_SHUTDOWN=$((SECONDS_TO_SHUTDOWN/60))
+	log "Scheduling shutdown in $MINUTES_TO_SHUTDOWN minute(s)"
+	shutdown +"$MINUTES_TO_SHUTDOWN"
 }
