@@ -25,6 +25,10 @@ apt autoremove --yes
 
 ## Prepare final files
 cp ./$NAME.desktop /usr/share/applications/
+mkdir -p /home/contestant/.config/codeblocks/
+cp ./default.conf /home/contestant/.config/codeblocks/default.conf
+chmod 644 /home/contestant/.config/codeblocks/default.conf
+chown -R contestant /home/contestant/.config/codeblocks/
 
 ## Create packed changes
 savechanges /tmp/$NAME.hsm
