@@ -21,8 +21,7 @@ export ISO_DIR=""
 export DIRECTIVES_FILE_URL=""
 export DIRECTIVES_SERVER_IP=""
 
-
-flush_stats(){
+flush_stats() {
 	printf "\n\n\n\n"
 	while ps -p $2 >/dev/null 2>&1; do
 		SYSTEM_WRITEBACK="$(grep -e 'Writeback:' /proc/meminfo)"
@@ -43,7 +42,6 @@ flush_stats(){
 	printf "%s\n%s\n$1 I/O queue:\n\tPending I/O operations: %s\n" "$SYSTEM_WRITEBACK" "$SYSTEM_DIRTY" "$DEV_IO_CURRENT"
 }
 
-
 ## Test if the script is started by root user. If not, exit
 ## only root user can manipulate the device as required.
 if [ "0$UID" -ne 0 ]; then
@@ -52,8 +50,10 @@ if [ "0$UID" -ne 0 ]; then
 fi
 
 # Argument handling
-# Supports --root-password & help displaying
 NEW_PASSWORD=""
+IP_ADDRESS=""
+IP_MASK=""
+IP_GATEWAY=""
 while [ "$#" -gt 0 ]; do
 	case "$1" in
 	--root-password)
@@ -83,9 +83,27 @@ while [ "$#" -gt 0 ]; do
 			exit 1
 		fi
 		;;
+	--ip-address)
+		if [ -n "$2" ]; then
+			IP_ADDRESS="$2"
+			shift 2
+		fi
+		;;
+	--ip-mask)
+		if [ -n "$2" ]; then
+			IP_MASK="$2"
+			shift 2
+		fi
+		;;
+	--ip-gateway)
+		if [ -n "$2" ]; then
+			IP_GATEWAY="$2"
+			shift 2
+		fi
+		;;
 	-h | --help)
 		echo "Installs the current huronOS into an usb"
-		echo "Usage: ./install.sh [--root-password PASSWORD] [--directives-url URL] [--directives-server-ip IP]"
+		echo "Usage: ./install.sh [--root-password PASSWORD] [--directives-url URL] [--directives-server-ip IP] [--ip-address IP --ip-mask NUMBER --ip-gateway IP]"
 		exit 1
 		;;
 	#   Whichever other parameter passed, we know nothing about that here
@@ -94,6 +112,12 @@ while [ "$#" -gt 0 ]; do
 		;;
 	esac
 done
+
+if [[ -z $IP_ADDRESS || -z $IP_MASK || -z $IP_GATEWAY ]]; then
+	echo "IP Address: *$IP_ADDRESS*, IP Mask: *$IP_MASK*, IP Gateway: *$IP_GATEWAY*"
+	echo "If using --ip-address --ip-mask and/or --ip-gateway, none of them should be empty, exiting."
+	exit 1
+fi
 
 # $1 = message to print
 BOLD="$(tput bold)"
@@ -132,7 +156,7 @@ fi
 if [ -z "$DIRECTIVES_SERVER_IP" ]; then
 	read -r -p "IP of the sync server:" DIRECTIVES_SERVER_IP
 fi
-echo -e "[Server]\nIP=\nDOMAIN=\nDIRECTIVES_ENDPOINT=\nSERVER_ROOM=\nDIRECTIVES_FILE_URL=$DIRECTIVES_FILE_URL\nDIRECTIVES_SERVER_IP=$DIRECTIVES_SERVER_IP\n" >"$SERVER_CONFIG"
+echo -e "[Server]\nIP_ADDRESS=$IP_ADDRESS\nIP_MASK=$IP_MASK\nIP_GATEWAY=$IP_GATEWAY\nDIRECTIVES_ENDPOINT=\nSERVER_ROOM=\nDIRECTIVES_FILE_URL=$DIRECTIVES_FILE_URL\nDIRECTIVES_SERVER_IP=$DIRECTIVES_SERVER_IP\n" >"$SERVER_CONFIG"
 
 ## Select the device we want to install huronOS to
 print_step "[3/13] Selecting removable device to install huronOS on"
