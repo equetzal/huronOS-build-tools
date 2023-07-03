@@ -4,4 +4,4 @@ sidebar_position: 1
 
 TODO: Write doc
 
-# How to develop for huronOS
+# How can you help huronOS?

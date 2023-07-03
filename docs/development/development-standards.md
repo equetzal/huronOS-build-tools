@@ -1,6 +1,7 @@
 ---
 sidebar_position: 6
 ---
+
 # Development Standards
 
 huronOS development requires writing code in different environments which can lead to the use of different editors like *nano*, *vi*, or GUI powered editors like *vscode*. In any case, we are still inclined to maintain certain quality standards in our codebase to keep collaboration simpler.
