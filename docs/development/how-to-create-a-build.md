@@ -1,6 +1,7 @@
 ---
-sidebar_position: 7
+sidebar_position: 8
 ---
+
 # Building huronOS
 
 To build huronOS you'll need to follow several steps:
