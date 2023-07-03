@@ -50,6 +50,5 @@ rm -rf /tmp/$NAME.hsm/usr/share/applications/mimeinfo.cache
 find /tmp/$NAME.hsm/
 dir2hsm /tmp/$NAME.hsm
 
-mkdir -p "$TARGET"
 cp /tmp/$NAME.hsm "$TARGET_DIR"
 echo "Finished creating $NAME.hsm!"

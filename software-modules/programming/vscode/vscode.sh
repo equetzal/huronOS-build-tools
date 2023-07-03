@@ -59,5 +59,5 @@ rm -rf /tmp/$NAME.hsm/usr/share/applications/code-url-handler.desktop
 find /tmp/$NAME.hsm/
 dir2hsm /tmp/$NAME.hsm
 
-cp /tmp/$NAME.hsm "$TARGET_DIR"
+cp /tmp/$NAME.hsm "$TARGET_DIR/vscode.hsm"
 echo "Finished creating $NAME.hsm!"
