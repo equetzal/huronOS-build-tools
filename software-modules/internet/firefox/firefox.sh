@@ -43,6 +43,11 @@ FF_EXT_PATH="/usr/lib/firefox-esr/distribution/extensions"
 mkdir -p $FF_EXT_PATH
 curl -o "$FF_EXT_PATH/bookmarks@huronos.org.xpi" -L https://github.com/huronOS/bookmark-bridge/releases/latest/download/bookmark-bridge.xpi
 
+# Some initial configurations
+mkdir -p /usr/lib/firefox-esr/defaults/pref/
+cp autoconfig.js /usr/lib/firefox-esr/defaults/pref/autoconfig.js
+cp firefox.cfg /usr/lib/firefox-esr/firefox.cfg
+
 ## Create packed changes
 savechanges /tmp/$NAME.hsm
 
