@@ -335,33 +335,9 @@ set_software() {
 # Currently, only Firefox and Chromium are supported.
 set_bookmarks() {
 
-	local NAME URL TMP_FILE
-	BOOKMARKS="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "Bookmarks" | sed 's/[{}^|]/ /g')"
-	BOOKMARKS_LINES=""
-
-	log " Setting default bookmarks on Firefox and Chromium to:"
-	while read -r NAME URL; do
-		BOOKMARKS_LINES="$BOOKMARKS_LINES\n        <DT><A HREF=\"$URL\">$NAME</A>"
-		echo -e "\t\t$(echo $NAME | sed 's:_: :g') -> $URL" | tee -a /var/log/hsync.log
-	done < <(echo $BOOKMARKS | xargs -n 2)
-
-	# Firefox bookmarks
-	TMP_FILE="/tmp/firefox-bookmarks-$$.html"
-	cp /etc/hsync/bookmarks/templates/firefox.html $TMP_FILE
-	sed -i "s|<!-- Bookmarks Lines -->|$BOOKMARKS_LINES|g" $TMP_FILE
-	log "+Updating firefox bookmarks in /usr/lib/firefox-esr/bookmarks.html"
-	mkdir -p /usr/lib/firefox-esr
-	cp $TMP_FILE /usr/lib/firefox-esr/bookmarks.html
-	rm -rf $TMP_FILE
-
-	# Chromium bookmarks
-	TMP_FILE="/tmp/chromium-bookmarks-$$.html"
-	cp /etc/hsync/bookmarks/templates/chromium.html $TMP_FILE
-	sed -i "s|<!-- Bookmarks Lines -->|$BOOKMARKS_LINES|g" $TMP_FILE
-	log "+Updating chromium bookmarks in /usr/share/chromium/initial_bookmarks.html"
-	mkdir -p /usr/share/chromium
-	cp $TMP_FILE /usr/share/chromium/initial_bookmarks.html
-	rm -rf $TMP_FILE
+	BOOKMARKS="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "Bookmarks")"
+	log " Setting bookmarks"
+	sed -i 's@^BOOKMARKS.*"@BOOKMARKS="'"${BOOKMARKS}"'"@' /usr/bin/current_bookmarks || true
 }
 
 set_wallpaper() {
