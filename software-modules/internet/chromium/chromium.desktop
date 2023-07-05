@@ -3,7 +3,7 @@ Version=1.0
 Name=Chromium Web Browser
 GenericName=Web Browser
 Comment=Access the Internet
-Exec=/usr/bin/chromium %U
+Exec=/usr/lib/chromium/chromium --show-component-extension-options --enable-gpu-rasterization --no-default-browser-check --disable-pings --media-router=0 --enable-remote-extensions --flag-switches-begin --flag-switches-end
 Terminal=false
 X-MultipleArgs=false
 Type=Application

@@ -20,11 +20,17 @@ TARGET_DIR="/run/initramfs/memory/system/huronOS/software/internet/"
 
 ## Install software
 apt update
-apt install --yes --no-install-recommends firefox-esr
+# TODO: When migrating to debian12, replace pip with python3-watchdog and remove the following two lines
+apt install --yes --no-install-recommends firefox-esr python-is-python3 pip
+pip install watchdog
+apt remove --yes pip
 apt autoremove --yes
 
 ## Prepare final files
 cp ./$NAME.desktop /usr/share/applications/
+
+# Prepare the bookmark-bridge extension
+./../bookmark-bridge/firefox/setup-extension.sh
 
 ## Create packed changes
 savechanges /tmp/$NAME.hsm

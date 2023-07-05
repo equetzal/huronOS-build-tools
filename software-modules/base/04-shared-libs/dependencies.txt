@@ -346,6 +346,7 @@ phonon4qt5-backend-vlc
 pinentry-curses
 plasma-framework
 pypy3-lib
+python-is-python3
 python3-cairo
 python3-gi
 python3-gi-cairo
