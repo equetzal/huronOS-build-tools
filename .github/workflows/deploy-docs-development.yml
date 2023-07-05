@@ -4,6 +4,7 @@ on:
     workflow_dispatch:
     push:
         branches: [development]
+        paths: ['docs/**']
 
 jobs:
     build:
