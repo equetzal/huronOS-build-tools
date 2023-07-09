@@ -18,7 +18,7 @@ This is the primary repository containing a collection of scripts that facilitat
 
 ### [website](https://github.com/huronOS/website)
 
-This repository houses the source code for our website, [huronos.org](https://huronos.org). We have developed the website using [Docusaurus](https://docusaurus.io), an MIT-licensed tool created by Meta. Docusaurus enables us to write documentation using Markdown, create components using React, and deploy the entire website as a static, indexable page that is searchable by search engines such as Google. We have automated the deployment process using Github Actions. The `development` branch is automatically deployed to [staging.huronos.org](https://staging.huronos.org), while the `main` branch is deployed to [huronos.org](https://huronos.org), with any pending TODO files being excluded.
+This repository houses the source code for our website, [huronos.org](https://huronos.org). We have developed the website using [Docusaurus](https://docusaurus.io), an MIT-licensed tool created by Meta. Docusaurus enables us to write documentation using Markdown, create components using React, and deploy the entire website as a static, indexable page that is searchable by search engines such as Google. We have automated the deployment process using Github Actions. The `development` branch is automatically deployed to [staging.huronos.org](https://staging.huronos.org), while the `main` branch is deployed to [huronos.org](https://huronos.org), with any pending `TODO` files being excluded.
 
 ### [syslinux](https://github.com/huronOS/syslinux)
 
