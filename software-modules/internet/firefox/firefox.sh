@@ -32,6 +32,11 @@ cp ./$NAME.desktop /usr/share/applications/
 # Prepare the bookmark-bridge extension
 ./../../packages/bookmark-bridge/firefox/setup-extension.sh
 
+# Prepare firefox default config
+mkdir -P /usr/lib/.firefox-esr/defaults/pref/
+cp autoconfig.js /usr/lib/firefox-esr/defaults/pref/autoconfig.js
+cp firefox.cfg /usr/lib/firefox-esr/firefox.cfg
+
 ## Create packed changes
 savechanges /tmp/$NAME.hsm
 
