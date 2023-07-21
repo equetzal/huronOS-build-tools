@@ -19,7 +19,7 @@ set -xe
 
 ## Setup autostart of plank & systembus-notifications
 mkdir -p ~/.config/autostart/
-cp -r files/autostart/* ~/.config/autostart/
+cp -r /tmp/files/autostart/* ~/.config/autostart/
 ## Launch plank (from the monitor script) to create its own config files
 (plankrm >/dev/null 2>&1 &)
 
@@ -29,24 +29,8 @@ echo -e "[PlankDockItemPreferences]\nLauncher=file:///usr/share/applications/org
 echo -e "[PlankDockItemPreferences]\nLauncher=file:///usr/share/applications/org.gnome.Nautilus.desktop" >~/.config/plank/dock1/launchers/org.gnome.Nautilus.dockitem
 dconf load /net/launchpad/plank/docks/ </tmp/huronOS-plank-config.dump
 
-## Load the menu bar configuration
-dconf load /com/solus-project/ </tmp/huronOS-desktop-config.dump
+## Load the budgie configuration
+dconf load / </tmp/huronOS-desktop-config.dump
 
-## Background, Icons, Preferences
-gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/huronos-background.png
-gsettings set org.gnome.desktop.interface icon-theme 'Moka'
-gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
-gsettings set org.gnome.desktop.media-handling automount false
-gsettings set org.gnome.desktop.media-handling automount-open false
-gsettings set org.gnome.desktop.session idle-delay 0
-gsettings set org.gnome.settings-daemon.plugins.power idle-dim false
-gsettings set org.gnome.settings-daemon.plugins.power ambient-enabled false
-gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 0
-gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
-gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout 0
-gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing'
-
-## Time and date
-gsettings set org.gnome.desktop.interface clock-format '12h'
-gsettings set org.gnome.desktop.interface clock-show-seconds true
-gsettings set org.gnome.desktop.interface clock-show-date false
+## Restart budgie to reflect dconf changes
+budgie-panel --replace &
