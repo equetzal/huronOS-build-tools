@@ -1,7 +1,7 @@
 gddrescue
 genisoimage
 gpart
-netcat
+netcat-openbsd
 smartmontools
 unzip
 zip
