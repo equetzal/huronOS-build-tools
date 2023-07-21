@@ -1,8 +1,7 @@
 #!/bin/bash
 
 #	java.sh
-#	Script to build the modular software package of Java
-#   for huronOS.
+#	Script to build the modular software package of Java for huronOS.
 #	It purges the unnecessary files on the FS to allow AUFS
 #	add/del operations on the fly.
 #	It includes the documentation for the Java language.
@@ -14,7 +13,7 @@
 #		<http://www.gnu.org/licenses/gpl-2.0.html>
 #
 #	Authors:
-#		Enya Quetzalli <equetzal@huronos.org>
+#		Daniel Cerna <dcerna@huronos.org>
 
 set -xe
 NAME=javac
@@ -36,7 +35,49 @@ savechanges /tmp/$NAME.hsm
 ## Clean package to maintain only relevant files
 hsm2dir /tmp/$NAME.hsm
 cd /tmp/$NAME.hsm
-find . ! -path "./usr/lib/jvm*" ! -path "./usr/bin*" ! -path "./usr/share/icons*" ! -path "./usr/share/man*" ! -path "./usr/share/pixmaps*" ! -path "./etc/alternatives*" ! -path "./usr/share/application-registry*" ! -path "./usr/share/lintian*" ! -path "./usr/share/applications/java-documentation.desktop" ! -path "./usr/share/doc/reference/java*" -delete
+
+# Array to store paths to exclude that contain java things
+declare -a EXCLUDE_PATHS=(
+    "./etc/.java/*"
+    "./etc/alternatives/*"
+    "./etc/java-11-openjdk/*"
+    "./etc/java-17-openjdk/*"
+    "./etc/ssl/*"
+    "./usr/bin/*"
+    "./usr/lib/*"
+    "./usr/lib/jvm/*"
+    "./usr/sbin/update-java-alternatives*"
+    "./usr/share/applications/java-documentation.desktop*"
+    "./usr/share/bash-completion/completions/update-java-alternatives*"
+    "./usr/share/ca-certificates-java/*"
+    "./usr/share/doc/*"
+    "./usr/share/gdb/auto-load/usr/lib/jvm/*"
+    "./usr/share/gtksourceview-4/language-specs/*"
+    "./usr/share/java/*"
+    "./usr/share/lintian/*"
+    "./usr/share/man/man1/*"
+    "./usr/share/man/man8/*"
+    "./usr/share/maven-repo/*"
+    "./usr/share/mime/*"
+    "./usr/share/nano/*"
+    "./usr/share/netbeans/platform18/*"
+    "./usr/share/nvim/runtime/*"
+    "./usr/share/source-highlight/*"
+)
+
+# Construct the find command with the paths to exclude
+FIND_CMD="find ."
+for PATH in "${EXCLUDE_PATHS[@]}"; do
+    FIND_CMD+=" ! -path \"$PATH\""
+done
+FIND_CMD+=" -delete || true"
+
+# Execute the find command
+eval "$FIND_CMD"
+
+# Exit the hsm directory so it does not give issues
+# while converting back the folder to an hsm
+cd ..
 dir2hsm /tmp/$NAME.hsm
 
 cp /tmp/$NAME.hsm "$TARGET_DIR"
