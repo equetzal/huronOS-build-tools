@@ -47,9 +47,6 @@ export UNION="/"
 export SYSCHANGES="$MEMORY/syschanges"
 export USRCHANGES="$MEMORY/usrchanges"
 
-## Local dirs
-export CURRENT_WALLPAPERS_DIR="/usr/share/backgrounds"
-
 ## Special files
 export DEFAULT_DIRECTIVES_FILE="/etc/hsync/default"
 export DEFAULT_WALLPAPER_FILE="/usr/share/backgrounds/huronos-background.png"
