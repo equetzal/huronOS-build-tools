@@ -119,6 +119,13 @@ should_redownload_file() {
 	return 1 # No download
 }
 
+default_wallpaper() {
+	BASENAME="$(basename "$DEFAULT_WALLPAPER_FILE")"
+	FILE_TYPE="${BASENAME##*.}"
+	SAVE_FILE="$SYSTEM_BACKUP_FILES_DIR/${CURRENT_MODE}-mode-wallpaper.${FILE_TYPE}"
+	cp -f "$DEFAULT_WALLPAPER_FILE" "$SAVE_FILE"
+}
+
 main() {
 	local CURRENT_MODE WALLPAPER_URL WALLPAPER_HASH
 
@@ -184,26 +191,21 @@ main() {
 
 	## If no URL setup or default is selected, use default wallpaper
 	if [ -z "$WALLPAPER_URL" ] || [ "$WALLPAPER_URL" = "default" ]; then
-		BASENAME="$(basename "$DEFAULT_WALLPAPER_FILE")"
-		FILE_TYPE="${BASENAME##*.}"
-		SAVE_FILE="$SYSTEM_BACKUP_FILES_DIR/${CURRENT_MODE}-mode-wallpaper.${FILE_TYPE}"
-		cp -f "$DEFAULT_WALLPAPER_FILE" "$SAVE_FILE"
+		default_wallpaper
 	## If current file is not valid
 	elif should_redownload_file "$SAVE_FILE" "$WALLPAPER_URL" "$WALLPAPER_HASH"; then
-		## Download the file
-		if ! safe_download "$WALLPAPER_URL" "$SAVE_FILE" "$WALLPAPER_HASH"; then
-			## If not successfull, leave the file as it is unless there is no file
-			if [ ! -f "$SAVE_FILE" ]; then
-				## Set default wallpaper
-				BASENAME="$(basename "$DEFAULT_WALLPAPER_FILE")"
-				FILE_TYPE="${BASENAME##*.}"
-				SAVE_FILE="$SYSTEM_BACKUP_FILES_DIR/${CURRENT_MODE}-mode-wallpaper.${FILE_TYPE}"
-				cp -f "$DEFAULT_WALLPAPER_FILE" "$SAVE_FILE"
-			fi
+		## Try to download the file
+		safe_download "$WALLPAPER_URL" "$SAVE_FILE" "$WALLPAPER_HASH"
+		DOWNLOAD_STATUS=$?
+		## If not successfull, and no previous wallpaper exists, set default wallpaper
+		if [ $DOWNLOAD_STATUS -ne 0 ] && [ ! -f "$SAVE_FILE" ]; then
+			## Set default wallpaper
+			default_wallpaper
 		fi
 	fi
 
 	## Set the wallpaper as current
+	CURRENT_WALLPAPERS_DIR="/usr/share/backgrounds"
 	CURRENT_WALLPAPER="$CURRENT_WALLPAPERS_DIR/$$-current-wallpaper.${FILE_TYPE}"
 	cp -f "$SAVE_FILE" "$CURRENT_WALLPAPER"
 	chmod 777 "$CURRENT_WALLPAPER"
