@@ -145,10 +145,6 @@ main() {
 			CURRENT_MODE="$2"
 			shift 2
 			;;
-		"--automatic")
-			CURRENT_MODE="$(hos-dmode)"
-			shift 1
-			;;
 		"--wallpaper-url" | "-u")
 			WALLPAPER_URL="$2"
 			shift 2
