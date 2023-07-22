@@ -28,8 +28,7 @@ help() {
 	echo
 	echo "operations:"
 	printf '%-30.30s\t%s\n' "--help" "Display this help and exit."
-	printf '%-30.30s\t%s\n' "--automatic" "Automatically download and set the wallpapers in directives."
-	printf '%-30.30s\t%s\n' "--manual MODE" "Manually try to apply the wallpaer for the specified Mode."
+	printf '%-30.30s\t%s\n' "[ --target-mode | -m ] MODE" "Try to apply the wallpaer for the specified Mode."
 	printf '%-30.30s\t%s\n' "--wallpaper-url URL" "The url to retrieve the wallpaper from."
 	printf '%-30.30s\t%s\n' "--wallpaper-hash HASH" "The hash to check the downloaded wallpaper against."
 	echo
@@ -141,7 +140,7 @@ main() {
 			help
 			exit 0
 			;;
-		"--manual")
+		"--target-mode" | "-m")
 			CURRENT_MODE="$2"
 			shift 2
 			;;
