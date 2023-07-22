@@ -30,7 +30,7 @@ fi
 apt autoremove --yes --purge "${REM_PACKAGES[@]}"
 
 # Copy root directories
-pushd usrroot && cp --parents -afr * / && popd
+./tools/rootcopy.sh /
 if [ "$DEVELOPER" = "true" ]; then
 	pushd devroot && cp --parents -afr * / && popd
 fi
