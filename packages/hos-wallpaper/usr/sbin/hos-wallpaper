@@ -120,6 +120,7 @@ should_redownload_file() {
 }
 
 default_wallpaper() {
+	DEFAULT_WALLPAPER_FILE="/usr/share/backgrounds/huronos-background.png"
 	BASENAME="$(basename "$DEFAULT_WALLPAPER_FILE")"
 	FILE_TYPE="${BASENAME##*.}"
 	SAVE_FILE="$SYSTEM_BACKUP_FILES_DIR/${CURRENT_MODE}-mode-wallpaper.${FILE_TYPE}"
@@ -144,10 +145,6 @@ main() {
 		"--manual")
 			CURRENT_MODE="$2"
 			shift 2
-			;;
-		"--automatic")
-			CURRENT_MODE="$(hos-dmode)"
-			shift 1
 			;;
 		"--wallpaper-url" | "-u")
 			WALLPAPER_URL="$2"
