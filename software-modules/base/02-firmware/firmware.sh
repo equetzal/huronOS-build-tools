@@ -25,5 +25,9 @@ apt update
 apt install --yes --no-install-recommends "${DEPENDENCIES[@]}"
 apt autoremove --yes --purge
 
+## Install the nvidia drivers
+cd nvidia
+./install-nvidia-drivers.sh
+
 savechanges /tmp/02-firmware.hsl
 cp /tmp/02-firmware.hsl /run/initramfs/memory/system/huronOS/base --verbose
