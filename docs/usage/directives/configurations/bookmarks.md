@@ -1,12 +1,11 @@
 # Browser Bookmarks
 This directive allows for custom bookmarks in Firefox and Chromium. The following syntax is how we can create them:
 
-- `{name^URL}`
+- `{BookmarkTitle^URL}`
 
 This is how it looks in the directives file:
-- `Bookmarks={name-1^URL-1}|...|{name-n^URL-n}|`
+- `Bookmarks={BookmarkTitle^URL}|...|{BookmarkTitle^URL}|`
 
 # Notes
-- The URL must contain the http / https prefix, otherwise it would be classified as invalid and the bookmark would not be shown in the browser.
-
-- Given how the bookmarks are applied to the browsers, they are only applied the first time the browsers are opened, thus, it is expected that if an instance already opened chromium and the bookmarks are updated later on in the directives, the bookmarks are going to stay the same in chromium. We plan on improving this so the bookmarks are in sync with the directives file (just give us either more time or more staff ;-;).
+- The URL MUST CONTAIN the http(s):// prefix, otherwise it would be classified as invalid and the bookmark would not be added to the browsers.
+- We have an extension that comes preinstalled with the browsers, this allows you to see a bookmark reflected in every huronOS instance at most 2 minutes after pushing the changes to the bookmarks directive rule.
