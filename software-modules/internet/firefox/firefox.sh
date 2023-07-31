@@ -42,6 +42,11 @@ mkdir -P /usr/lib/.firefox-esr/defaults/pref/
 cp autoconfig.js /usr/lib/firefox-esr/defaults/pref/autoconfig.js
 cp firefox.cfg /usr/lib/firefox-esr/firefox.cfg
 
+# Prepare firefox default config
+mkdir -P /usr/lib/.firefox-esr/defaults/pref/
+cp autoconfig.js /usr/lib/firefox-esr/defaults/pref/autoconfig.js
+cp firefox.cfg /usr/lib/firefox-esr/firefox.cfg
+
 ## Create packed changes
 savechanges /tmp/$NAME.hsm
 
