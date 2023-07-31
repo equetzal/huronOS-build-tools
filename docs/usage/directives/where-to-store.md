@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 # Where to store the directives file
 Since the directives file is a text file after all, you can store the directives 
