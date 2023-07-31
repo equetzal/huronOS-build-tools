@@ -344,8 +344,11 @@ neovim-runtime
 phonon4qt5
 phonon4qt5-backend-vlc
 pinentry-curses
+pip
 plasma-framework
 pypy3-lib
+python-is-python3
+python-is-python3
 python3-cairo
 python3-gi
 python3-gi-cairo
