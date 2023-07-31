@@ -22,6 +22,10 @@ set -xe
 mapfile -t DEPENDENCIES <dependencies.txt
 apt update
 apt install --yes --no-install-recommends "${DEPENDENCIES[@]}"
+# Required for firefox and chromium extension
+# TODO: When migrating to debian12, replace dependency pip with python3-watchdog and remove the following two lines
+pip install watchdog
+apt remove --yes pip
 
 ## Recompile gschemas
 glib-compile-schemas /usr/share/glib-2.0/schemas/

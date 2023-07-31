@@ -26,6 +26,9 @@ apt autoremove --yes
 ## Prepare final files
 cp ./$NAME.desktop /usr/share/applications/
 
+# Prepare the bookmark-bridge extension
+./../../../packages/bookmark-bridge/chromium/setup-extension.sh
+
 ## Create packed changes
 savechanges /tmp/$NAME.hsm
 
