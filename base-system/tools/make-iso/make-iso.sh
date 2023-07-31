@@ -51,7 +51,7 @@ echo "Generating $ISO_OUTPUT"
 
 ## Gen ISO Hash
 sha256sum "$ISO_OUTPUT" >>"$ISO_OUTPUT.sha256"
-md5sum "$ISO_OUTPUT" >>"$ISO_OUTPUT.sha256"
+md5sum "$ISO_OUTPUT" >>"$ISO_OUTPUT.md5"
 
 ## Return to original directory
 cd "$CURRENT_PATH" || exit 1 # error
