@@ -7,6 +7,8 @@ Requires=graphical.target
 [Service]
 User=root
 Group=root
-ExecStart=/usr/sbin/hos-wallpaper --manual %i
+EnvironmentFile=/etc/default/wallpaper-service.env
+StandardOutput=journal
+ExecStart=/usr/sbin/hos-wallpaper --manual $CURRENT_MODE --wallpaper-url $WALLPAPER_URL --wallpaper-hash $WALLPAPER_HASH
 Restart=on-abnormal
 SuccessExitStatus=0

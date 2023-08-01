@@ -64,7 +64,7 @@ apply_specific_directives() {
 	set_hmount_rules
 	set_software
 	set_bookmarks
-	systemctl start "happly-wallpaper@$DIRECTIVES_SPECIFIC_CONFIG.service"
+	set_wallpaper
 	rfkill unblock bluetooth
 
 	return 0 # success
@@ -365,42 +365,9 @@ set_bookmarks() {
 }
 
 set_wallpaper() {
-
-	local NAME FILE
-	WALLPAPER="$(get_directives_var "$DIRECTIVES_SPECIFIC_CONFIG" "Wallpaper")"
-
-	if [ "$WALLPAPER" = "default" ]; then
-		log " Setting default huronOS wallpaper"
-		su contestant -c "export DISPLAY=:0; gsettings set org.gnome.desktop.background picture-uri file:///usr/share/backgrounds/huronos-background.png"
-		return 0 # success
-	fi
-
-	log " Downloading wallpaper $WALLPAPER"
-	NAME=$(basename "$WALLPAPER")
-	FILE="/usr/share/backgrounds/custom-background-$$-$NAME"
-	if wget --no-cache --tries=2 --timeout=10 "$WALLPAPER" -O "$FILE"; then
-		log "+Setting new wallpaper"
-		chmod 777 "$FILE"
-		su contestant -c "export DISPLAY=:0; gsettings set org.gnome.desktop.background picture-uri file://$FILE"
-		find /usr/share/backgrounds/ | grep custom-background | grep -v $$ | xargs -n 1 rm -f
-		return 0 # success
-	fi
-	rm -f "$FILE"
-	log "-Wallpaper cannot be downloaded. Wrong URL?, No internet?"
-
-	# There's a chance that if persistence is set, and this is a restoration of a previous state
-	# the background image stills available. Let's search for it.
-	log " Attempting to restore previous background image"
-	FILE="$(ls /usr/share/backgrounds/ | sed 's: :\n:g' | grep "$NAME" | head -n 1)"
-	if [ "$FILE" != "" ]; then
-		FILE="/usr/share/backgrounds/${FILE}"
-		log "+Wallpaper found: $FILE, restoring wallpaper"
-		chmod 777 $FILE
-		su contestant -c "export DISPLAY=:0; gsettings set org.gnome.desktop.background picture-uri file://$FILE"
-		find /usr/share/backgrounds/ | grep custom-background | grep -v "$FILE" | xargs -n 1 rm -f
-		return 0 #success
-	fi
-
-	log "-Couldn't find any background to restore"
-	return 1 # error
+	CURRENT_MODE="$(hos-dmode)"
+	WALLPAPER_URL="$(hos-dvar --variable-name Wallpaper --section "$CURRENT_MODE")"
+	WALLPAPER_HASH="$(hos-dvar --variable-name WallpaperSha256 --section "$CURRENT_MODE")"
+	echo -e "CURRENT_MODE=$CURRENT_MODE\nWALLPAPER_URL=$WALLPAPER_URL\nWALLPAPER_HASH=$WALLPAPER_HASH" >/etc/default/wallpaper-service.env
+	systemctl start happly-wallpaper.service
 }
