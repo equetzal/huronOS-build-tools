@@ -26,6 +26,12 @@ apt autoremove --yes
 ## Prepare final files
 cp ./$NAME.desktop /usr/share/applications/
 
+# Delete debian added bookmarks
+rm /usr/share/chromium/initial_bookmarks.html
+
+# Prepare the bookmark-bridge extension
+./../../../packages/bookmark-bridge/chromium/setup-extension.sh
+
 ## Create packed changes
 savechanges /tmp/$NAME.hsm
 
