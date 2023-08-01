@@ -13,10 +13,11 @@
 #	Authors:
 #		Enya Quetzalli <equetzal@huronos.org>
 
-STACK_ID="$(cat /proc/mounts | grep 'aufs / aufs' | egrep -o 'si=([^,) ]+)' | tr = _)"
+# shellcheck disable=SC2010
+STACK_ID="$(grep 'aufs / aufs' < /proc/mounts | grep -oE 'si=([^,) ]+)' | tr '=' '_')"
 BRANCHES_DIR="/sys/fs/aufs/${STACK_ID}"
-BRANCHES_LIST="$(ls -v1 $BRANCHES_DIR | grep -E "br[0-9]+")"
+BRANCHES_LIST="$(ls -v1 "$BRANCHES_DIR" | grep -E "br[0-9]+")"
 
 for BR in $BRANCHES_LIST; do
-	printf "%-5.5s\t%-50.50s\t%s\n" "${BR}" "$(cat $BRANCHES_DIR/$BR)" "$(cat /proc/mounts | grep $(cat $BRANCHES_DIR/$BR | cut -d= -f1) | tail -n 1 | awk '{print $1}')"
+	printf "%-5.5s\t%-50.50s\t%s\n" "${BR}" "$(cat "$BRANCHES_DIR"/"$BR")" "$(grep "$(cut -d= -f1 < "$BRANCHES_DIR"/"$BR")" < /proc/mounts | tail -n 1 | awk '{print $1}')"
 done
