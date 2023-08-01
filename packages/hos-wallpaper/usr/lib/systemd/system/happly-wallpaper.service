@@ -1,0 +1,14 @@
+[Unit]
+Description=huronOS Wallpaper Sync Service
+Requires=network.target
+Requires=time-sync.target
+Requires=graphical.target
+
+[Service]
+User=root
+Group=root
+EnvironmentFile=/etc/default/wallpaper-service.env
+StandardOutput=journal
+ExecStart=/usr/sbin/hos-wallpaper --target-mode $CURRENT_MODE --wallpaper-url $WALLPAPER_URL --wallpaper-hash $WALLPAPER_HASH
+Restart=on-abnormal
+SuccessExitStatus=0
