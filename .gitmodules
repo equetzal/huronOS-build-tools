@@ -1,0 +1,3 @@
+[submodule "packages/bookmark-bridge"]
+	path = packages/bookmark-bridge
+	url = https://github.com/huronOS/bookmark-bridge
