@@ -18,12 +18,16 @@ set -xe
 NAME=atom
 TARGET_DIR="/run/initramfs/memory/system/huronOS/software/programming/"
 
+## Add atom keyring
+wget -qO - https://packagecloud.io/AtomEditor/atom/gpgkey | gpg --dearmor -o /usr/share/keyrings/atomeditor-keyring.gpg
+
+## Add repository to deb source list
+echo "deb [arch=amd64 signed-by=/usr/share/keyrings/atomeditor-keyring.gpg] https://packagecloud.io/AtomEditor/atom/any/ any main" | tee /etc/apt/sources.list.d/atom.list
+
 ## Install software
-cat atom.deb_* >/tmp/atom-amd64.deb
 apt update
-apt install --yes --no-install-recommends /tmp/atom-amd64.deb
+apt install --yes --no-install-recommends atom
 apt autoremove --yes
-rm /tmp/atom-amd64.deb
 
 ## Prepare final files
 cp ./$NAME.desktop /usr/share/applications/
