@@ -1,0 +1,80 @@
+#!/bin/bash
+#	ipman.sh
+#	This script sets the IP address of the huronOS instance based on the
+#   configuration file (sync-server.conf) and if no interface sticks with
+#   the defined IP it leaves the available interfaces with dhcp.
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
+#
+#	Authors:
+#		Daniel Cerna <dcerna@huronos.org>
+
+. /usr/lib/hos/enviroment.sh
+
+# Retrieves the required fields
+IP_ADDRESS=$(grep "^IP_ADDRESS=.*$" $CURRENT_SYNC_SERVER_CONFIG_FILE | cut -d= -f2)
+IP_MASK=$(grep "^IP_MASK=.*$" $CURRENT_SYNC_SERVER_CONFIG_FILE | cut -d= -f2)
+IP_GATEWAY=$(grep "^IP_GATEWAY=.*$" $CURRENT_SYNC_SERVER_CONFIG_FILE | cut -d= -f2)
+IP_SERVER=$(grep "^DIRECTIVES_SERVER_IP=.*$" $CURRENT_SYNC_SERVER_CONFIG_FILE | cut -d= -f2)
+DIRECTIVES_FILE_URL=$(grep "^DIRECTIVES_FILE_URL=.*$" $CURRENT_SYNC_SERVER_CONFIG_FILE | cut -d= -f2)
+
+if [[ $IP_MASK =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+    SUBNET_MASK=$IP_MASK
+else
+    ONES=$((2 ** 32 - 2 ** (32 - IP_MASK)))
+    SUBNET_MASK=$(printf "%d.%d.%d.%d\n" $((ONES >> 24 & 255)) $((ONES >> 16 & 255)) $((ONES >> 8 & 255)) $((ONES & 255)))
+fi
+# Convert subnet mask decimal form to the subnet mask octal form
+
+# Test if any of the required fields is empty
+if [ -z "$IP_ADDRESS" ]; then
+    echo "No IP defined, exiting"
+    exit 0
+fi
+if [ -z "$IP_MASK" ]; then
+    echo "No ip mask defined, exiting"
+    exit 0
+fi
+if [ -z "$IP_GATEWAY" ]; then
+    echo "No gateway defined, exiting"
+    exit 0
+fi
+
+# Get a list of all available interfaces
+INTERFACES=$(connmanctl services | awk '{print $3}' | grep ^e)
+
+# Loop through each interface and set the IP address
+for INTERFACE in $INTERFACES; do
+    # Sets the IP in the current interface
+    echo "Testing with interface $INTERFACE"
+    connmanctl config "$INTERFACE" --ipv4 manual "$IP_ADDRESS" "$SUBNET_MASK" "$IP_GATEWAY"
+
+    # Wait for interface transition from idle to ready"
+    while true; do
+        # Check the current state of the interface
+        INTERFACE_EVENT=$(connmanctl services "$INTERFACE" | grep State | sed 's| ||g' | cut -d= -f 2)
+        if [[ "$INTERFACE_EVENT" == "ready" ]]; then
+            echo "Interface $INTERFACE is ready"
+            break
+        fi
+        sleep 1
+    done
+
+    # Test for internet connection with
+    # a ping to the directives server with 3 tries and a timeout of 5 seconds
+    # a request to the directives file (in case pings are blocked on the network)
+    echo "Testing connection to the server"
+    if [[ $(ping -q -c 3 -W 5 "$IP_SERVER" >/dev/null) || $(curl -s "$DIRECTIVES_FILE_URL" /dev/null) ]]; then
+        echo "Internet connection is working, exiting"
+        exit 0
+    else
+        echo "No internet connection, falling back to DHCP"
+        connmanctl config "$INTERFACE" --ipv4 dhcp
+    fi
+done
+echo "None of the interfaces worked, using dhcp."
+exit 1
