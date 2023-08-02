@@ -21,8 +21,7 @@ export ISO_DIR=""
 export DIRECTIVES_FILE_URL=""
 export DIRECTIVES_SERVER_IP=""
 
-
-flush_stats(){
+flush_stats() {
 	printf "\n\n\n\n"
 	while ps -p $2 >/dev/null 2>&1; do
 		SYSTEM_WRITEBACK="$(grep -e 'Writeback:' /proc/meminfo)"
@@ -43,7 +42,6 @@ flush_stats(){
 	printf "%s\n%s\n$1 I/O queue:\n\tPending I/O operations: %s\n" "$SYSTEM_WRITEBACK" "$SYSTEM_DIRTY" "$DEV_IO_CURRENT"
 }
 
-
 ## Test if the script is started by root user. If not, exit
 ## only root user can manipulate the device as required.
 if [ "0$UID" -ne 0 ]; then
@@ -52,8 +50,10 @@ if [ "0$UID" -ne 0 ]; then
 fi
 
 # Argument handling
-# Supports --root-password & help displaying
 NEW_PASSWORD=""
+INSTANCE_IP_ADDRESS=""
+INSTANCE_IP_MASK=""
+INSTANCE_IP_GATEWAY=""
 while [ "$#" -gt 0 ]; do
 	case "$1" in
 	--root-password)
@@ -83,9 +83,27 @@ while [ "$#" -gt 0 ]; do
 			exit 1
 		fi
 		;;
+	--instance-ip-address | -ia)
+		if [ -n "$2" ]; then
+			INSTANCE_IP_ADDRESS="$2"
+			shift 2
+		fi
+		;;
+	--instance-ip-mask | -im)
+		if [ -n "$2" ]; then
+			INSTANCE_IP_MASK="$2"
+			shift 2
+		fi
+		;;
+	--instance-ip-gateway | -ig)
+		if [ -n "$2" ]; then
+			INSTANCE_IP_GATEWAY="$2"
+			shift 2
+		fi
+		;;
 	-h | --help)
 		echo "Installs the current huronOS into an usb"
-		echo "Usage: ./install.sh [--root-password PASSWORD] [--directives-url URL] [--directives-server-ip IP]"
+		echo "Usage: ./install.sh [--root-password PASSWORD] [--directives-url URL] [--directives-server-ip IP] [--instance-ip-address|-ia IP --instance-ip-mask|-im NUMBER --instance-ip-gateway|-ig IP]"
 		exit 1
 		;;
 	#   Whichever other parameter passed, we know nothing about that here
@@ -94,6 +112,22 @@ while [ "$#" -gt 0 ]; do
 		;;
 	esac
 done
+
+if [ -z "$INSTANCE_IP_ADDRESS" ]; then
+	if [ -n "$INSTANCE_IP_MASK" ] || [ -n "$INSTANCE_IP_GATEWAY" ]; then
+		echo "Instance IP Address: *$INSTANCE_IP_ADDRESS*, Instance IP Mask: *$INSTANCE_IP_MASK*, Instance IP Gateway: *$INSTANCE_IP_GATEWAY*"
+		echo "If using --instance-ip-mask and/or --instance-ip-gateway, --instance-ip-address should be set too."
+		exit 1
+	fi
+fi
+
+if [ -n "$INSTANCE_IP_ADDRESS" ]; then
+	if [ -z "$INSTANCE_IP_MASK" ] || [ -z "$INSTANCE_IP_GATEWAY" ]; then
+		echo "Instance IP Address: *$INSTANCE_IP_ADDRESS*, Instance IP Mask: *$INSTANCE_IP_MASK*, Instance IP Gateway: *$INSTANCE_IP_GATEWAY*"
+		echo "If using --instance-ip-address, --instance-ip-mask and/or --instance-ip-gateway must be set too."
+		exit 1
+	fi
+fi
 
 # $1 = message to print
 BOLD="$(tput bold)"
@@ -132,7 +166,7 @@ fi
 if [ -z "$DIRECTIVES_SERVER_IP" ]; then
 	read -r -p "IP of the sync server:" DIRECTIVES_SERVER_IP
 fi
-echo -e "[Server]\nIP=\nDOMAIN=\nDIRECTIVES_ENDPOINT=\nSERVER_ROOM=\nDIRECTIVES_FILE_URL=$DIRECTIVES_FILE_URL\nDIRECTIVES_SERVER_IP=$DIRECTIVES_SERVER_IP\n" >"$SERVER_CONFIG"
+echo -e "[Server]\nINSTANCE_IP_ADDRESS=$INSTANCE_IP_ADDRESS\nINSTANCE_IP_MASK=$INSTANCE_IP_MASK\nINSTANCE_IP_GATEWAY=$INSTANCE_IP_GATEWAY\nDIRECTIVES_ENDPOINT=\nSERVER_ROOM=\nDIRECTIVES_FILE_URL=$DIRECTIVES_FILE_URL\nDIRECTIVES_SERVER_IP=$DIRECTIVES_SERVER_IP\n" >"$SERVER_CONFIG"
 
 ## Select the device we want to install huronOS to
 print_step "[3/13] Selecting removable device to install huronOS on"
@@ -315,6 +349,9 @@ print_step "[13/13] Printing installation data"
 echo "Your root password is: $NEW_PASSWORD"
 echo "System will sync with the directives URL: '$DIRECTIVES_FILE_URL'"
 echo "System will always create a firewall exception to the IP: '$DIRECTIVES_SERVER_IP'"
+if [ -n "$INSTANCE_IP_ADDRESS" ]; then
+	echo "Instance will have the IP: '$INSTANCE_IP_ADDRESS'"
+fi
 echo
 
 print_step "Done! huronOS is ready on $TARGET, you can remove your device now :)"

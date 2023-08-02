@@ -59,6 +59,8 @@ ln -sf /etc/dpkg/origins/huronos /etc/dpkg/origins/default
 ln -sf /usr/lib/os-release /etc/os-release
 
 ## hsync symlinks
+chmod 744 /usr/lib/systemd/system/ipman.service
+ln -sf /usr/lib/systemd/system/ipman.service /etc/systemd/system/ipman.service
 ln -sf /usr/lib/systemd/system/hsync.service /etc/systemd/system/hsync.service
 ln -sf /usr/lib/systemd/system/happly.service /etc/systemd/system/happly.service
 ln -sf /usr/lib/systemd/system/happly-wallpaper.service /etc/systemd/system/happly-wallpaper.service
