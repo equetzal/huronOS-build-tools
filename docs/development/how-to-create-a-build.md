@@ -12,7 +12,7 @@ To build huronOS you'll need to follow several steps:
 2. **Get huronOS-build-tools**  
    Clone this repo on the `/` root directory of your newly installed Debian with the following command
    
-   `git clone --recursive https://github.com/equetzal/huronOS-build-tools`
+   `git clone --recurse-submodules https://github.com/equetzal/huronOS-build-tools`
 
 3. **Compile the huronOS kernel**  
    huronOS needs a kernel that supports [AUFS](https://aufs.sf.net), so we need to replace the kernel. To do so, run as **root**:
