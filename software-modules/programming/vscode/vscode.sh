@@ -19,13 +19,10 @@ NAME=codium
 TARGET_DIR="/run/initramfs/memory/system/huronOS/software/programming/"
 
 ## Add vscodium keyring
-wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg |
-    gpg --dearmor |
-    dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
+wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | gpg --dearmor | dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
 
 ## Add repository to deb source list
-echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https://download.vscodium.com/debs vscodium main' |
-    tee /etc/apt/sources.list.d/vscodium.list
+echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https://download.vscodium.com/debs vscodium main' | tee /etc/apt/sources.list.d/vscodium.list
 
 ## Install software
 apt update
@@ -56,6 +53,7 @@ rm -rf /tmp/$NAME.hsm/usr/share/applications/bamf-2.index
 rm -rf /tmp/$NAME.hsm/usr/share/applications/mimeinfo.cache
 rm -rf /tmp/$NAME.hsm/usr/share/applications/code.desktop
 rm -rf /tmp/$NAME.hsm/usr/share/applications/code-url-handler.desktop
+rm -rf /tmp/$NAME.hsm//etc/apt/sources.list
 find /tmp/$NAME.hsm/
 dir2hsm /tmp/$NAME.hsm
 
