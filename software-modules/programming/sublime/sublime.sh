@@ -46,6 +46,7 @@ rm -rf /tmp/$NAME.hsm/usr/share/icons/hicolor/icon-theme.cache
 rm -rf /tmp/$NAME.hsm/usr/share/applications/bamf-2.index
 rm -rf /tmp/$NAME.hsm/usr/share/applications/mimeinfo.cache
 rm -rf /tmp/$NAME.hsm/usr/share/applications/sublime_text.desktop
+rm -rf /tmp/$NAME.hsm//etc/apt/sources.list
 dir2hsm /tmp/$NAME.hsm
 
 cp /tmp/$NAME.hsm "$TARGET_DIR"
