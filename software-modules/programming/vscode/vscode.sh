@@ -53,6 +53,7 @@ rm -rf /tmp/$NAME.hsm/usr/share/applications/bamf-2.index
 rm -rf /tmp/$NAME.hsm/usr/share/applications/mimeinfo.cache
 rm -rf /tmp/$NAME.hsm/usr/share/applications/code.desktop
 rm -rf /tmp/$NAME.hsm/usr/share/applications/code-url-handler.desktop
+rm -rf /tmp/$NAME.hsm//etc/apt/sources.list
 find /tmp/$NAME.hsm/
 dir2hsm /tmp/$NAME.hsm
 
