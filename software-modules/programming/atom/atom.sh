@@ -45,6 +45,7 @@ rm -rf /tmp/$NAME.hsm/usr/share/gnome
 rm -rf /tmp/$NAME.hsm/usr/share/mime
 rm -rf /tmp/$NAME.hsm/usr/share/applications/bamf-2.index
 rm -rf /tmp/$NAME.hsm/usr/share/applications/mimeinfo.cache
+rm -rf /tmp/$NAME.hsm//etc/apt/sources.list
 dir2hsm /tmp/$NAME.hsm
 
 cp /tmp/$NAME.hsm "$TARGET_DIR"
