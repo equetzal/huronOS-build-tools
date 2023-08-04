@@ -15,7 +15,7 @@
 #		Enya Quetzalli <equetzal@huronos.org>
 
 set -xe
-NAME=codium
+NAME=vscode
 TARGET_DIR="/run/initramfs/memory/system/huronOS/software/programming/"
 
 ## Add vscodium keyring
