@@ -140,6 +140,7 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/
 systemctl daemon-reload
 systemctl enable lightdm.service
 systemctl enable hsync.timer
+systemctl enable ipman.service
 
 ## Set default resolution for VGA unknown displays
 #cp -f "files/10-unknown.conf" "/usr/share/X11/xorg.conf.d/10-unknown.conf"
