@@ -1,0 +1,40 @@
+#Comment line
+[Global]
+TimeZone=America/Mexico_City
+ConfigExpirationTime=2023-07-22T12:15:00
+AvailableKeyboardLayouts=latam|us|es|dvorak|
+DefaultKeyboardLayout=latam
+EventConfig=false
+ContestConfig=true
+#ShutdownTime=none
+
+[Always]
+AllowedWebsites=all
+AllowUsbStorage=true
+AvailableSoftware=internet/chromium|internet/crow|internet/firefox|langs/g++|langs/gcc|langs/javac|langs/kotlinc|langs/pypy3|langs/python3|tools/konsole|programming/atom|programming/codeblocks|programming/eclipse|programming/geany|programming/gedit|programming/gvim|programming/intellij|programming/kate|programming/kdevelop|programming/pycharm|programming/sublime|programming/vim|programming/vscode|
+Bookmarks={VJUDGE^https://vjudge.net}|{Codeforces^https://cpciitsur.contest.codeforces.com}|
+Wallpaper=http://23.239.16.64/files/wallpaper/gpmx2023_round1_contest_mode.png
+WallpaperSha256=824d8560d35ec070589a5b72f2da85aff38203a7f6b1aee8bae7900c608d4369
+#Comment line
+[Event]
+AllowedWebsites=all
+AllowUsbStorage=true
+AvailableSoftware=internet/chromium|internet/crow|internet/firefox|langs/g++|langs/gcc|langs/javac|langs/kotlinc|langs/pypy3|langs/python3|tools/konsole|programming/atom|programming/codeblocks|programming/eclipse|programming/geany|programming/gedit|programming/gvim|programming/intellij|programming/kate|programming/kdevelop|programming/pycharm|programming/sublime|programming/vim|
+Bookmarks={huronOS^https://huronos.org}|{Contest^https://boca.icpcmexico.org}|
+Wallpaper=default
+
+[Contest]
+AllowedWebsites=vj.csgrandeur.cn|gravatar.loli.net|lib.baomitu.com|vjudge.net|deepl.com|static.deepl.com|w.deepl.com|s.deepl.com|login-wall.deepl.com|www2.deepl.com|dict.deepl.com
+AllowUsbStorage=false
+AvailableSoftware=internet/chromium|internet/crow|internet/firefox|langs/g++|langs/gcc|langs/javac|langs/kotlinc|langs/pypy3|langs/python3|tools/konsole|programming/atom|programming/codeblocks|programming/eclipse|programming/emacs|programming/geany|programming/gedit|programming/gvim|programming/intellij|programming/kate|programming/kdevelop|programming/pycharm|programming/sublime|programming/vim|programming/vscode|
+Bookmarks={VJudge^https://vjudge.net}|{Traductor^https://www.deepl.com/en/translator#en/es/}|
+Wallpaper=https://directives.huronos.org/external/itsur/cpci_itsur_wallpaper.png
+WallpaperSha256=c2340e3f28e23fb4c5649beed7f20d1ef38bdc9a4560b125490f33797eddd44d
+
+[Event-Times]
+
+[Contest-Times]
+2023-07-22T11:50:00 2023-07-22T12:15:00
+2023-07-22T11:50:00 2023-07-22T12:15:00
+2023-07-22T11:50:00 2023-07-22T12:15:00
+2023-07-22T11:50:00 2023-07-22T12:15:00
