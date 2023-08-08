@@ -18,9 +18,15 @@ set -xe
 NAME=sublime
 TARGET_DIR="/run/initramfs/memory/system/huronOS/software/programming/"
 
+## Add sublime keyring
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add -
+
+## Add repository to deb source list
+echo "deb https://download.sublimetext.com/ apt/stable/" | tee /etc/apt/sources.list.d/sublime-text.list
+
 ## Install software
 apt update
-apt install --yes --no-install-recommends ./sublime-text_build-3211_amd64.deb
+apt install --yes --no-install-recommends sublime-text
 apt autoremove --yes
 
 ## Prepare final files
