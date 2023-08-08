@@ -22,7 +22,7 @@ TARGET_DIR="/run/initramfs/memory/system/huronOS/software/programming/"
 cp ./$NAME.desktop /usr/share/applications/
 
 ## Install software
-cp eclipse-inst-jre-linux64.tar.gz /tmp/
+wget -P /tmp https://eclipse.mirror.rafal.ca/oomph/epp/2023-06/R/eclipse-inst-jre-linux64.tar.gz
 pushd /tmp/
 tar -xf eclipse-inst-jre-linux64.tar.gz
 cd eclipse-installer/
