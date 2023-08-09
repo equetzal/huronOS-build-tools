@@ -11,7 +11,6 @@ dnsutils
 dosfstools
 earlyoom
 file
-firmware-linux
 hdparm
 htop
 iptables
