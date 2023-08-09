@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#	quick-reboot.sh
+#	Small script to reboot the system using Kexec with the same boot options
+#   selected on the bootloader.
+#
+#	Copyright (C) 2023, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
+#
+#	Authors:
+#		Enya Quetzalli <equetzal@huronos.org>
+
+main(){
+    local KERNEL INIT_RAM_DISK
+    KERNEL="/run/initramfs/memory/system/boot/vmlinuz-$(uname -r)"
+    INIT_RAM_DISK="/run/initramfs/memory/system/boot/initrfs.img"
+
+    kexec -l "$KERNEL" --initrd="$INIT_RAM_DISK" --reuse-cmdline
+    systemctl kexec
+}
+
+main "$@"
+
