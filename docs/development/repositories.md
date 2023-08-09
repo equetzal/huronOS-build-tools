@@ -26,7 +26,7 @@ We maintain our own fork of Syslinux, which allows us to parallelize the huronOS
 
 ### [bookmark-bridge](https://github.com/huronOS/bookmark-bridge)
 
-To ensure synchronization between the bookmark settings and the [directives file](../usage/directives/creating-a-directives-file.md), we utilize this extension. It enables the bookmarks to be updated even after the user has opened the browser for the first time. Our goal is to replace the current `initial_bookmarks` approach, which does not allow for bookmark updates once the browser has been launched.
+To ensure synchronization between the bookmark settings and the directives file, we utilize this extension. It enables the bookmarks to be updated even after the user has opened the browser for the first time. Our goal is to replace the current `initial_bookmarks` approach, which does not allow for bookmark updates once the browser has been launched.
 
 ## Planned Repositories
 
