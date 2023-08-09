@@ -20,6 +20,7 @@ mapfile -t INST_PACKAGES <deps-install.txt
 mapfile -t DEV_PACKAGES <deps-dev.txt
 mapfile -t REM_PACKAGES <deps-remove.txt
 
+cp -rf usrroot/etc/apt/* /etc/apt/ 
 apt update
 apt install --yes --no-install-recommends "${INST_PACKAGES[@]}"
 if [ "$DEVELOPER" = "true" ]; then
