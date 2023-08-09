@@ -1,0 +1,8 @@
+# Autosetup desktop
+[Desktop Entry]
+Type=Application
+Name=Welcome
+Exec=/tmp/03-budgie/setup-desktop.sh
+AutostartCondition=if-exists /tmp/budgie-desktop-autosetup
+OnlyShowIn=GNOME;
+NoDisplay=true
