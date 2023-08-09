@@ -74,8 +74,7 @@ The specific directives are only applied when their time-window is active and th
     This directive defines a list of software packages to enable for the user during the execution mode.
 
 - [`Bookmarks=[ bookmark1|...|bookmarkN| ]`](./configurations/bookmarks.md)  
-    Set the initial browser bookmarks\* (supported only in Chromium and Firefox).
-    > Please note that updates after the first open are not yet supported.
+    Set the browser bookmarks\* (supported only in Chromium and Firefox).
 
 - [`Wallpaper=[ default || wallpaperURL ]`](./configurations/wallpaper.md)  
     By setting this directive to `default`, the [huronOS wallpaper](https://github.com/equetzal/huronOS-build-tools/blob/development/software-modules/base/03-budgie/files/huronos-background.png) will be used. Otherwise, the image will be retrieved from the specified URL.
