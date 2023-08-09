@@ -25,7 +25,7 @@ Installing huronOS is a once in a while task that might take you some time at th
 1. In the highly likely scenario in which you'll be using huronOS for 'multiple teams/contestants' type contest, we recommend you **buy USB** drives from a **well-known storage media company** such as *SanDisk*, *Kingstone* or *Samsung* (etc). We highly discourage the purchase of cheap USB drives that don't have any branding and are commonly used with tampography.  
     *We might be openning a store in the near future where you'd be able to buy the USB drives ready to just plug in and use. But there's still work to be done in that regard.*
 
-2. Setup your directives file by following the [Creating a Directives File](../usage/directives/creating-a-directives-file.md) docs.
+2. Setup your directives file by reading the [introduction to the directives file](../usage/directives/introduction-to-directives.md) docs.
 
 3. To install huronOS we suggest you follow the [**installation guide**](../usage/how-to-install.md), make sure to test each USB booting process.
 
