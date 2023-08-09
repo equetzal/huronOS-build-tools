@@ -1,0 +1,6 @@
+# Autosetup desktop
+[Desktop Entry]
+Type=Application
+Name=Desktop-autosetup
+Exec=gnome-terminal -- bash -c "/tmp/03-budgie/setup-desktop.sh"
+Terminal=false

@@ -19,7 +19,7 @@ set -xe
 
 ## Setup autostart of plank & systembus-notifications
 mkdir -p ~/.config/autostart/
-cp -r files/autostart/* ~/.config/autostart/
+cp -r /tmp/03-budgie/files/autostart/* ~/.config/autostart/
 ## Launch plank (from the monitor script) to create its own config files
 (plankrm >/dev/null 2>&1 &)
 
@@ -50,3 +50,5 @@ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-typ
 gsettings set org.gnome.desktop.interface clock-format '12h'
 gsettings set org.gnome.desktop.interface clock-show-seconds true
 gsettings set org.gnome.desktop.interface clock-show-date false
+
+touch /tmp/budgie-done

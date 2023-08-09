@@ -60,6 +60,12 @@ sed -i 's/#session-wrapper=.*/session-wrapper=\/etc\/X11\/Xsession/g' /etc/light
 sed -i 's/#autologin-user=.*/autologin-user=contestant/g' /etc/lightdm/lightdm.conf
 sed -i 's/#autologin-user-timeout=.*/autologin-user-timeout=0/g' /etc/lightdm/lightdm.conf
 
+# Creates folder where files should be
+pushd ..
+mkdir /tmp/03-budgie
+cp -r 03-budgie/* /tmp/03-budgie/
+popd
+
 ## Set budgie background
 mkdir -p /usr/share/backgrounds/
 cp files/huronos-background.png /usr/share/backgrounds/huronos-background.png
@@ -148,8 +154,29 @@ systemctl enable hsync.timer
 cp -f "files/plankrm" "/usr/local/bin/plankrm"
 chmod +x "/usr/local/bin/plankrm"
 
-echo "Please run setup-desktop.sh on each user will have the contestant user interface"
-sleep 10
+# echo "Please run setup-desktop.sh on each user will have the contestant user interface"
+# sleep 10
+mkdir -p /home/contestant/.config/autostart
+
+#cp files/autostart/autosetup.desktop /etc/xdg/autostart/
+cp files/autostart/autosetup.desktop /home/contestant/.config/autostart/
+chown contestant /home/contestant/.config/autostart/autosetup.desktop
+chown contestant /home/contestant/.config/autostart/
+chown contestant /home/contestant/.config/
+chown contestant /home/contestant/
+#AUTOSETUP_FILE="/tmp/budgie-desktop-autosetup"
+#touch "$AUTOSETUP_FILE"
 
 ## Launch lightdm to configure desktops
 systemctl start lightdm.service
+
+# Wait for the setupdesktop to finish
+FLAG_FILE="/tmp/budgie-done"
+while [[ ! -f $FLAG_FILE ]]; do sleep 1; done
+rm "$FLAG_FILE"
+
+savechanges /tmp/03-budgie.hsl
+cp /tmp/03-budgie.hsl /run/initramfs/memory/system/huronOS/base --verbose
+
+# Remove autosetup file
+#rm "$AUTOSETUP_FILE"
