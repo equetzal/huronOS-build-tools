@@ -21,13 +21,13 @@ mapfile -t DEV_PACKAGES <deps-dev.txt
 mapfile -t REM_PACKAGES <deps-remove.txt
 
 apt update
+apt autoremove --yes --purge "${REM_PACKAGES[@]}"
 apt install --yes --no-install-recommends "${INST_PACKAGES[@]}"
 if [ "$DEVELOPER" = "true" ]; then
 	apt install --yes --no-install-recommends "${DEV_PACKAGES[@]}"
 else
 	apt autoremove --yes --purge "${DEV_PACKAGES[@]}"
 fi
-apt autoremove --yes --purge "${REM_PACKAGES[@]}"
 
 # Copy root directories
 pushd usrroot && cp --parents -afr * / && popd
@@ -41,11 +41,13 @@ cp tools/quick-reboot/quick-reboot /usr/sbin/
 ## Deactivate systemd-networkd
 systemctl mask systemd-networkd
 systemctl mask systemd-resolved
+
+## Install connman
+apt --yes install connman
 systemctl enable connman
 
 ## Gives default permisions to earlyom
 chmod 400 /etc/default/earlyoom
-## Enable earlyoom
 systemctl enable earlyoom
 
 ## Remove unwanted files/dirs

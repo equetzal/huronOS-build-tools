@@ -4,7 +4,6 @@ alsa-utils
 at
 bc
 bzip2
-connman
 curl
 dbus-broker
 dnsutils
