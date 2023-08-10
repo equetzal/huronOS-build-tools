@@ -141,15 +141,21 @@ systemctl daemon-reload
 systemctl enable lightdm.service
 systemctl enable hsync.timer
 
-## Set default resolution for VGA unknown displays
-#cp -f "files/10-unknown.conf" "/usr/share/X11/xorg.conf.d/10-unknown.conf"
-
 ## Copy plank resolution monitor
 cp -f "files/plankrm" "/usr/local/bin/plankrm"
 chmod +x "/usr/local/bin/plankrm"
 
-echo "Please run setup-desktop.sh on each user will have the contestant user interface"
-sleep 10
-
 ## Launch lightdm to configure desktops
 systemctl start lightdm.service
+echo "Waiting to lightdm to start"
+sleep 5
+cp setup-desktop.sh /tmp/setup-desktop.sh
+chown contestant:contestant /tmp/setup-desktop.sh
+chmod +x /tmp/setup-desktop.sh
+su contestant -c 'export DISPLAY=:0; export XDG_RUNTIME_DIR=/run/user/$(id -u contestant); export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u contestant)/bus; sleep 3; /tmp/setup-desktop.sh'
+systemctl restart lightdm.service
+sleep 4
+chvt 1
+
+savechanges /tmp/03-budgie.hsl
+cp /tmp/03-budgie.hsl /run/initramfs/memory/system/huronOS/base --verbose

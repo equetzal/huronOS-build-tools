@@ -64,11 +64,7 @@ To build huronOS you'll need to follow several steps:
      cd software-modules/base/03-budgie/
      chmod +x budgie.sh
      chmod +x setup-desktop.sh
-     chmod +x save.sh
      ./budgie.sh
-     # Wait for the GUI to start
-     ./setup-desktop.sh # Run this as contestant
-     ./save.sh # Run this as root
      quick-reboot
      ```
    - `04-shared-libs.hsl`:
