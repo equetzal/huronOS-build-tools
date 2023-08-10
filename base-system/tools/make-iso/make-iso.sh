@@ -50,8 +50,8 @@ echo "Generating $ISO_OUTPUT"
 "$ISO_TOOL" -o "$ISO_OUTPUT" -v -J -R -D -A "huronOS" -V "huronOS" -no-emul-boot -boot-info-table -boot-load-size 4 -b boot/isolinux.bin -c boot/isolinux.boot .
 
 ## Gen ISO Hash
-sha256sum "$ISO_OUTPUT" >>"$ISO_OUTPUT.sha256"
-md5sum "$ISO_OUTPUT" >>"$ISO_OUTPUT.md5"
+sha256sum "$ISO_OUTPUT" | sed 's, .*/, ,' > "$ISO_OUTPUT.sha256"
+md5sum "$ISO_OUTPUT" | sed 's, .*/, ,' > "$ISO_OUTPUT.md5"
 
 ## Return to original directory
 cd "$CURRENT_PATH" || exit 1 # error
