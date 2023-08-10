@@ -57,33 +57,29 @@ To build huronOS you'll need to follow several steps:
      cd software-modules/base/02-firmware/
      chmod +x firmware.sh
      ./firmware.sh
-     reboot
+     quick-reboot
      ```
    - `03-budgie.hsl`:
      ```bash
      cd software-modules/base/03-budgie/
      chmod +x budgie.sh
      chmod +x setup-desktop.sh
-     chmod +x save.sh
      ./budgie.sh
-     # Wait for the GUI to start
-     ./setup-desktop.sh # Run this as contestant
-     ./save.sh # Run this as root
-     reboot
+     quick-reboot
      ```
    - `04-shared-libs.hsl`:
      ```bash
      cd software-modules/base/04-shared-libs/
      chmod +x shared-libs.sh
      ./shared-libs.sh
-     reboot
+     quick-reboot
      ```
    - `05-custom.hsl`:
      ```bash
      cd software-modules/base/05-custom/
      chmod +x custom.sh
      ./custom.sh
-     reboot
+     quick-reboot
      ```
 
    

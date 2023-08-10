@@ -20,6 +20,7 @@ mapfile -t INST_PACKAGES <deps-install.txt
 mapfile -t DEV_PACKAGES <deps-dev.txt
 mapfile -t REM_PACKAGES <deps-remove.txt
 
+cp -rf usrroot/etc/apt/* /etc/apt/ 
 apt update
 apt install --yes --no-install-recommends "${INST_PACKAGES[@]}"
 if [ "$DEVELOPER" = "true" ]; then
@@ -34,6 +35,9 @@ pushd usrroot && cp --parents -afr * / && popd
 if [ "$DEVELOPER" = "true" ]; then
 	pushd devroot && cp --parents -afr * / && popd
 fi
+
+## Copy tools
+cp tools/quick-reboot/quick-reboot /usr/sbin/
 
 ## Deactivate systemd-networkd
 systemctl mask systemd-networkd
@@ -78,6 +82,7 @@ chmod 760 /usr/sbin/hmm
 chmod 760 /usr/sbin/hos-*
 chmod 760 /usr/sbin/savechanges
 chmod 755 /usr/bin/systembus-notify
+chmod 700 /usr/sbin/quick-reboot
 
 ## Journal max size
 sed -i 's;#SystemMaxUse=.*;SystemMaxUse=300M;1' /etc/systemd/journald.conf
