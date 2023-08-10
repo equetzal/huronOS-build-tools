@@ -19,14 +19,24 @@ NAME=eclipse
 TARGET_DIR="/run/initramfs/memory/system/huronOS/software/programming/"
 
 ## Prepare final files
-cp ./$NAME.desktop /usr/share/applications/
+#cp ./$NAME.desktop /usr/share/applications/
 
 ## Install software
-cp eclipse-inst-jre-linux64.tar.gz /tmp/
+ECLIPSE_TAR="eclipse.tar.gz"
+wget -O "/tmp/$ECLIPSE_TAR" http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2021-09/R/eclipse-java-2021-09-R-linux-gtk-x86_64.tar.gz
 pushd /tmp/
-tar -xf eclipse-inst-jre-linux64.tar.gz
-cd eclipse-installer/
-su contestant -c "echo \$! && ./eclipse-inst"
+tar zxf "$ECLIPSE_TAR" -C /opt
+rm /tmp/eclipse.tar.gz
+wget -O /usr/share/pixmaps/eclipse.png "https://icon-icons.com/downloadimage.php?id=94656&root=1381/PNG/64/&file=eclipse_94656.png"
+cat - <<EOM >/usr/share/applications/eclipse.desktop
+[Desktop Entry]
+Name=Eclipse
+Exec=/opt/eclipse/eclipse
+Type=Application
+Icon=eclipse
+EOM
+# cd eclipse-installer/
+# su contestant -c "echo \$! && ./eclipse-inst"
 popd
 
 ## Create packed changes
