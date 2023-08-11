@@ -20,7 +20,7 @@ mapfile -t INST_PACKAGES <deps-install.txt
 mapfile -t DEV_PACKAGES <deps-dev.txt
 mapfile -t REM_PACKAGES <deps-remove.txt
 
-cp -rf usrroot/etc/apt/* /etc/apt/ 
+cp -rf usrroot/etc/apt/* /etc/apt/
 apt update
 apt install --yes --no-install-recommends "${INST_PACKAGES[@]}"
 if [ "$DEVELOPER" = "true" ]; then
@@ -63,6 +63,7 @@ ln -sf /etc/dpkg/origins/huronos /etc/dpkg/origins/default
 ln -sf /usr/lib/os-release /etc/os-release
 
 ## hsync symlinks
+ln -sf /usr/lib/systemd/system/ipman.service /etc/systemd/system/ipman.service
 ln -sf /usr/lib/systemd/system/hsync.service /etc/systemd/system/hsync.service
 ln -sf /usr/lib/systemd/system/happly.service /etc/systemd/system/happly.service
 ln -sf /usr/lib/systemd/system/happly-wallpaper.service /etc/systemd/system/happly-wallpaper.service
@@ -83,6 +84,7 @@ chmod 760 /usr/sbin/hos-*
 chmod 760 /usr/sbin/savechanges
 chmod 755 /usr/bin/systembus-notify
 chmod 700 /usr/sbin/quick-reboot
+chmod 744 /usr/sbin/ipman
 
 ## Journal max size
 sed -i 's;#SystemMaxUse=.*;SystemMaxUse=300M;1' /etc/systemd/journald.conf
