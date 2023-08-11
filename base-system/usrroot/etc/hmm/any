@@ -40,4 +40,5 @@ programming/vscode                          false
 programming/vsc-clangd                      false
 programming/vsc-cpp-compile-run             false
 programming/vsc-cpptools                    false
+programming/vsc-intellij-idea-keybindings   false
 programming/vsc-vscodevim                   false
