@@ -9,8 +9,6 @@ The syntax for specifying an event time or a contest time is
 
 BeginTime and EndTime must use [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) extended time format relative to the local time. Example:`2030-01-10T11:45:01`. 
 
-More info on this in [here](./configurations/events-and-contests.md)
-
 ## Times example
 ```
 [Event-Times]
