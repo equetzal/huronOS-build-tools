@@ -18,7 +18,7 @@ sidebar_position: 1
 - A working GNU / Linux distro to install the system from.
 - A USB device to install the system on (You will lose all your data so back it up).
 - Installed dependencies *(see dependencies for your distribution)*. 
-- A directives file accessible from the network that will be using huronOS. Please check the [directives file documentation](./directives/creating-a-directives-file.md) for guidance on setting up this file.
+- A directives file accessible from the network that will be using huronOS. Please check the [introduction to directives doc](./directives/introduction-to-directives.md) for guidance on setting up this file.
 
 #### Dependencies
 - **On Debian:**  
