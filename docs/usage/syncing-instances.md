@@ -12,7 +12,7 @@ To prevent firewall issues, the IP address of the specified directives file URL 
 > **WARNING:**   
 > Please be aware that if your DHCP-provided DNS server fails, the system may enter a *softlock* state when using the firewall in *DROP* mode, as it will block all connectivity, including access to the directives file's server. To avoid this, it is recommended to add a *directives server IP* to bypass the need for DNS resolution and ensure that the directives' server remains accessible for system synchronization.
 
-For detailed guidelines on hosting your directives file appropriately, please refer to our [recommendations for hosting a directives file](./directives/where-to-store.md).
+For detailed guidelines on hosting your directives file appropriately, please refer to our [directives server doc](./directives/directives-server.md).
 
 ## Configuring the Directives URL
 
