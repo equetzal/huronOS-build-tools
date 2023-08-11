@@ -2,7 +2,6 @@ debuggers/ddd
 debuggers/gdb
 debuggers/valgrind
 debuggers/visualvm
-internet/chrome
 internet/chromium
 internet/crow
 internet/firefox
@@ -36,3 +35,8 @@ programming/rider
 programming/sublime
 programming/vim
 programming/vscode
+programming/vsc-clangd
+programming/vsc-cpp-compile-run
+programming/vsc-cpptools
+programming/vsc-intellij-idea-keybindings
+programming/vsc-vscodevim
