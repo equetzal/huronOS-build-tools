@@ -48,6 +48,7 @@ This is a list of available packages in a default installation:
 | `programming/vim`           		| programming | vim                | Vim |
 | `programming/vscode`        		| programming | vscode             | Vscode (Codium) |
 | `programming/rider`         		| programming | rider              | Rider |
+| `programming/vsc-clangd`          | programming | vsc-clangd         | Vscode Extension ClangD |
 | `programming/vsc-cpp-compile-run` | programming | cpp-compile-run    | Vscode Extension CPP Compile/Run |
 | `programming/vsc-cpptools`        | programming | vsc-cpptools       | Vscode Extension Ms Cpp Tools |
 | `programming/vsc-vscodevim`       | programming | vsc-vscodevim      | Vscode Extension VSCodeVim |
