@@ -39,7 +39,6 @@ help() {
 
 main() {
 	local SET_MODE
-
 	while (($#)); do
 		case $1 in
 		"--help")

@@ -31,6 +31,7 @@ apt autoremove --yes --purge "${REM_PACKAGES[@]}"
 
 # Copy root directories
 pushd usrroot && cp --parents -afr * / && popd
+
 if [ "$DEVELOPER" = "true" ]; then
 	pushd devroot && cp --parents -afr * / && popd
 fi
