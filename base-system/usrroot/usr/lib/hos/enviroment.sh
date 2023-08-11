@@ -47,12 +47,8 @@ export UNION="/"
 export SYSCHANGES="$MEMORY/syschanges"
 export USRCHANGES="$MEMORY/usrchanges"
 
-## Local dirs
-export CURRENT_WALLPAPERS_DIR="/usr/share/backgrounds"
-
 ## Special files
 export DEFAULT_DIRECTIVES_FILE="/etc/hsync/default"
-export DEFAULT_WALLPAPER_FILE="/usr/share/backgrounds/huronos-background.png"
 export CURRENT_DIRECTIVES_FILE="/etc/hsync/directives"
 export CURRENT_STATE_VARIABLES_FILE="/etc/hsync/state-variables"
 export CURRENT_STATE_SUMMARY_FILE="/etc/hsync/state-summary"
@@ -85,7 +81,6 @@ readonly SOFTWARE_MODULES_LOOPBACK_DIR
 readonly UNION
 readonly SYSCHANGES
 readonly USRCHANGES
-readonly CURRENT_WALLPAPERS_DIR
 readonly DEFAULT_DIRECTIVES_FILE
 readonly CURRENT_DIRECTIVES_FILE
 readonly CURRENT_STATE_VARIABLES_FILE
