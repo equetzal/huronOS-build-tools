@@ -3,7 +3,6 @@ debuggers/ddd                               true
 debuggers/gdb                               true
 debuggers/valgrind                          true
 debuggers/visualvm                          true
-internet/chrome                             true
 internet/chromium                           true
 internet/crow                               true
 internet/firefox                            true
