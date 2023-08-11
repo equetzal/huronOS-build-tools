@@ -16,7 +16,7 @@
 
 set -xe
 NAME=vscode
-TARGET_DIR="/run/initramfs/memory/system/huronOS/software/programming/"
+TARGET_DIR="/run/initramfs/memory/system/huronOS/software/programming"
 
 ## Add vscodium keyring
 wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | gpg --dearmor | dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
@@ -30,11 +30,18 @@ apt install --yes --no-install-recommends codium
 apt autoremove --yes
 
 ## Prepare final files
-cp ./$NAME.desktop /usr/share/applications/
-cp ./$NAME.png /usr/share/pixmaps/vscodium.png
-cp ./$NAME.png /usr/share/codium/resources/app/resources/linux/code.png
 ln -sf /usr/bin/codium /usr/bin/code
 ln -sf /usr/bin/codium /usr/bin/vscode
+unlink /usr/bin/codium
+cp ./codium /usr/bin/codium 
+cp ./$NAME.desktop /usr/share/applications/
+cp ./$NAME.desktop /usr/share/applications/codium.desktop
+cp ./$NAME.png /usr/share/pixmaps/vscodium.png
+cp ./$NAME.png /usr/share/codium/resources/app/resources/linux/code.png
+mkdir -p /opt/codium/contestant/extensions/
+mkdir -p /opt/codium/contestant/extensions/ids
+chown -R contestant:contestant /opt/codium/contestant
+chmod 755 /usr/bin/codium
 
 ## Create packed changes
 savechanges /tmp/$NAME.hsm
