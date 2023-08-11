@@ -15,12 +15,12 @@
 #		Enya Quetzalli <equetzal@huronos.org>
 
 set -xe
-NAME=crow
+NAME=dialect
 TARGET_DIR="/run/initramfs/memory/system/huronOS/software/internet/"
 
 ## Install software
 apt update
-apt install --yes --no-install-recommends "./crow-translate_2.10.3_amd64.deb"
+apt install --yes --no-install-recommends dialect
 apt autoremove --yes
 
 ## Prepare final files
