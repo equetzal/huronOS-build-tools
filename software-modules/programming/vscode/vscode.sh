@@ -30,11 +30,17 @@ apt install --yes --no-install-recommends codium
 apt autoremove --yes
 
 ## Prepare final files
+ln -sf /usr/bin/codium /usr/bin/code
+ln -sf /usr/bin/codium /usr/bin/vscode
+unlink /usr/bin/codium
+cp ./codium /usr/bin/codium 
 cp ./$NAME.desktop /usr/share/applications/
 cp ./$NAME.png /usr/share/pixmaps/vscodium.png
 cp ./$NAME.png /usr/share/codium/resources/app/resources/linux/code.png
-ln -sf /usr/bin/codium /usr/bin/code
-ln -sf /usr/bin/codium /usr/bin/vscode
+mkdir -p /opt/codium/contestant/extensions/
+mkdir -p /opt/codium/contestant/extensions/ids
+chown -R contestant:contestant /opt/codium/contestant
+chmod 755 /usr/bin/codium
 
 ## Create packed changes
 savechanges /tmp/$NAME.hsm
