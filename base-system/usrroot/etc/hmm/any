@@ -37,6 +37,7 @@ programming/rider                           false
 programming/sublime                         false
 programming/vim                             false
 programming/vscode                          false
+programming/vsc-clangd                      false
 programming/vsc-cpp-compile-run             false
 programming/vsc-cpptools                    false
 programming/vsc-vscodevim                   false
