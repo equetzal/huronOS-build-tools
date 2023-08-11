@@ -49,6 +49,7 @@ This is a list of available packages in a default installation:
 | `programming/vscode`        		| programming | vscode             | Vscode (Codium) |
 | `programming/rider`         		| programming | rider              | Rider |
 | `programming/vsc-cpp-compile-run` | programming | cpp-compile-run    | Vscode Extension CPP Compile/Run |
+| `programming/vsc-vscodevim`       | programming | vsc-vscodevim      | Vscode Extension VSCodeVim |
 
 ### Documentation
 The reference documents for the langs are included in each language package. 

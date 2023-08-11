@@ -38,3 +38,4 @@ programming/sublime         	true
 programming/vim             	true
 programming/vscode          	true
 programming/vsc-cpp-compile-run true
+programming/vsc-vscodevim       true
