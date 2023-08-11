@@ -2,7 +2,6 @@ debuggers/ddd
 debuggers/gdb
 debuggers/valgrind
 debuggers/visualvm
-internet/chrome
 internet/chromium
 internet/crow
 internet/firefox
