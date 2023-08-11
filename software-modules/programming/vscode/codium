@@ -1,0 +1,41 @@
+#!/bin/bash
+
+#	codium.sh
+#	Script to wrap the codium execution to firsly build the extensions.json
+#	file if hasn't been created yet to allow proper vsode load of .hsm extensions
+#
+#	Copyright (C) 2023, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
+#
+#	Authors:
+#		Enya Quetzalli <equetzal@huronos.org>
+
+set -xe
+
+EXTENSIONS_FILE="/opt/codium/contestant/extensions/extensions.json"
+EXTENSIONS_IDS="/opt/codium/contestant/extensions/ids"
+
+## If extensions.json already exists, it might was rewrote by vscode 
+## after updating extensions, in which case replacing it will cause 
+## extensions to not be loaded after update.
+if [ ! -f "$EXTENSIONS_FILE" ]; then
+	echo -n "[" > "$EXTENSIONS_FILE"
+	for file in "$EXTENSIONS_IDS"/*; do
+		if [ -f "$file" ]; then
+			echo -n "$(cat $file)" | tr -d '\n' >> "$EXTENSIONS_FILE"
+			echo -n "," >> "$EXTENSIONS_FILE"
+		fi
+	done
+	sed -i '$ s/,$//' "$EXTENSIONS_FILE"
+	echo "]" >> "$EXTENSIONS_FILE"
+fi
+
+## Call codium with the same arguments it was called but with extensions-dir when not specified
+if echo "$@" | grep -qe "--extensions-dir"; then
+	/usr/share/codium/bin/codium "$@"
+else
+	/usr/share/codium/bin/codium --extensions-dir /opt/codium/contestant/extensions/ "$@"
+fi
