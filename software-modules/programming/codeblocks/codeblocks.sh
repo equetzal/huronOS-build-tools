@@ -38,7 +38,10 @@ hsm2dir /tmp/$NAME.hsm
 rm -rf /tmp/$NAME.hsm/var
 rm -rf /tmp/$NAME.hsm/etc
 rm -rf /tmp/$NAME.hsm/root
-rm -rf /tmp/$NAME.hsm/home
+rm -rf /tmp/$NAME.hsm/home/contestant/.local
+rm -rf /tmp/$NAME.hsm/home/contestant/.config/pulse
+rm -rf /tmp/$NAME.hsm/home/contestant/.config/dconf
+rm -rf /tmp/$NAME.hsm/home/contestant/.cache
 rm -rf /tmp/$NAME.hsm/usr/share/mime
 rm -rf /tmp/$NAME.hsm/usr/share/gnome
 rm -rf /tmp/$NAME.hsm/usr/share/metainfo
