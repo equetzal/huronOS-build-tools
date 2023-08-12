@@ -1,0 +1,9 @@
+[Unit]
+Description=Set IP address on the first interface that has ping to the directives server
+After=network.target
+
+[Service]
+ExecStart=/usr/sbin/ipman
+
+[Install]
+WantedBy=multi-user.target

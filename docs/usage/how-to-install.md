@@ -80,21 +80,21 @@ sidebar_position: 1
    1. You'll need a **16GiB+** USB drive, at least, for better performance. Please connect this USB drive; and be aware: **you will lose all data on it, for the installation**.
 
    2. Execute the installer, chose one of this options:
-      - **Set a custom root password**  
+      - **Passing all the configurations in one go**  
          ```bash
-         # `my_password` is your chosen password.
-         ./install.sh --root-password my_password
-         ```
-      - **Use the default *toor* password for root**
-         ```bash
-         ./install.sh
+         ./install.sh --directives-url http://site.com/directives.hdf --directives-server-ip 1.1.1.1 --root-password toor --instance-ip-address 192.168.1.1 --instance-ip-mask 24 --instance-ip-gateway 192.168.1.254
          ```
 
-   3. Fill the prompts:  
-      1. Write the **directives url** to sync with, please **paste the URL you previously set up**. If you don't have one, just leave it blank _(be aware that sync won't work)_, this can be changed after the installation.
-      2. Write the **directives server IP** to force the firewall exception to this specific server. You can leave it blank if you want to fallback to DNS resolution.
-   4. The installer will prompt you to select a disk to target the installation. **Please do this carefully as the selected disk will be completely erased**.
-   5. Wait for the installer to finish and disconnect the USB drive. If something fails during the installation process, please retry.
+      - **Fill the prompts:**  
+         1. Write the **directives url** to sync with, please **paste the URL you previously set up**. If you don't have one, just leave it blank _(be aware that sync won't work)_, this can be changed after the installation in the (`HURONOS/data/configs/sync-server.conf` file of the huronOS usb).
+         2. Write the **directives server IP** to force the firewall exception to this specific server. You can leave it blank if you want to fallback to DNS resolution.
+         3. Write the **root password** to set a root password (if left blank `toor` would be the default password)3. Write the **ip configuration** containing
+         4. Write the **ip configuration** containing
+            - Instance IP address: The ip of that particular huronOS instance
+            - Instance IP mask: The mask of the instance ip address as a number, ex: 8, 16, 24
+            - Instance IP gateway: The gateway of the network
+   3. The installer will prompt you to select a disk to target the installation. **Please do this carefully as the selected disk will be completely erased**.
+   4. Wait for the installer to finish and disconnect the USB drive. If something fails during the installation process, please retry.
 
 6. **Boot from huronOS.**  
    Connect your USB drive and boot from it. You will be auto-logged on the contestant user. To access the [root user](./root-access.md), please check the documentation.
