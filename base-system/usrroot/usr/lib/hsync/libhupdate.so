@@ -77,6 +77,7 @@ have_global_config_changed() {
 	is_var_equal "DefaultKeyboardLayout" "$CURRENT_DIRECTIVES" "$NEW_DIRECTIVES" || return 0    # true, have-changed
 	is_var_equal "EventConfig" "$CURRENT_DIRECTIVES" "$NEW_DIRECTIVES" || return 0              # true, have-changed
 	is_var_equal "ContestConfig" "$CURRENT_DIRECTIVES" "$NEW_DIRECTIVES" || return 0            # true, have-changed
+	is_var_equal "ShutdownTime" "$CURRENT_DIRECTIVES" "$NEW_DIRECTIVES" || return 0     # true, have-changed
 
 	return 1 # false, have-not-changed
 }
