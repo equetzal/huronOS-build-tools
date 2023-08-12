@@ -2,6 +2,7 @@
 Description=huronOS sync service
 Wants=connman.service
 Wants=systemd-timedated.service
+Wants=ipman.service
 
 [Service]
 User=root
