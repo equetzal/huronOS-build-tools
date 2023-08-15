@@ -82,9 +82,18 @@ sidebar_position: 1
    2. Execute the installer, chose one of this options:
       - **Passing all the configurations in one go**  
          ```bash
-         ./install.sh --directives-url http://site.com/directives.hdf --directives-server-ip 1.1.1.1 --root-password toor --instance-ip-address 192.168.1.1 --instance-ip-mask 24 --instance-ip-gateway 192.168.1.254
+         ./install.sh --directives-url http://site.com/directives.hdf --directives-server-ip 1.1.1.1 --root-password toor --instance-ip-address 192.168.1.1 --instance-ip-mask 24 --instance-ip-gateway 192.168.1.254 --config-file config.conf
          ```
-
+      - **Using a config file**  
+         ```bash
+         ./install.sh --config-file config.conf
+         ```
+         And your config file should look like this:
+         ```
+         #Installer config
+         PASSWORD=toor
+         ```
+      
       - **Fill the prompts:**  
          1. Write the **directives url** to sync with, please **paste the URL you previously set up**. If you don't have one, just leave it blank _(be aware that sync won't work)_, this can be changed after the installation in the (`HURONOS/data/configs/sync-server.conf` file of the huronOS usb).
          2. Write the **directives server IP** to force the firewall exception to this specific server. You can leave it blank if you want to fallback to DNS resolution.
