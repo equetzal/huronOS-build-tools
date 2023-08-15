@@ -4,7 +4,7 @@
 export PATH=.:./tools:../tools:/usr/sbin:/usr/bin:/sbin:/bin:/
 export LIVEKITNAME="huronOS"
 export BUILD_YEAR="2023"
-export BUILD_VERSION="0029"
+export BUILD_VERSION="0030"
 export VMLINUZ=/boot/vmlinuz-6.0.15-huronos+
 export KERNEL="6.0.15-huronos+"
 export MKMOD="bin etc home lib lib64 opt root sbin srv usr var"
