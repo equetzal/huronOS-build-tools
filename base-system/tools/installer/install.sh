@@ -54,6 +54,7 @@ NEW_PASSWORD=""
 INSTANCE_IP_ADDRESS=""
 INSTANCE_IP_MASK=""
 INSTANCE_IP_GATEWAY=""
+CONFIG_FILE_PATH=""
 while [ "$#" -gt 0 ]; do
 	case "$1" in
 	--root-password)
@@ -101,9 +102,25 @@ while [ "$#" -gt 0 ]; do
 			shift 2
 		fi
 		;;
+	--config-file | -ig)
+		if [ -n "$2" ]; then
+			CONFIG_FILE_PATH="$2"
+			output=$(./read $CONFIG_FILE_PATH)
+			NEW_PASSWORD=$(echo "$output" | sed -n 1p)
+			DIRECTIVES_FILE_URL=$(echo "$output" | sed -n 2p)
+			DIRECTIVES_SERVER_IP=$(echo "$output" | sed -n 3p)
+			INSTANCE_IP_ADDRESS=$(echo "$output" | sed -n 4p)
+			INSTANCE_IP_MASK=$(echo "$output" | sed -n 5p)
+			INSTANCE_IP_GATEWAY=$(echo "$output" | sed -n 6p)
+			shift 2
+		else
+			echo "Error: option --config-file requires an argument" >&2
+			exit 1
+		fi
+		;;
 	-h | --help)
 		echo "Installs the current huronOS into an usb"
-		echo "Usage: ./install.sh [--root-password PASSWORD] [--directives-url URL] [--directives-server-ip IP] [--instance-ip-address IP --instance-ip-mask NUMBER --instance-ip-gateway IP]"
+		echo "Usage: ./install.sh [--root-password PASSWORD] [--directives-url URL] [--directives-server-ip IP] [--instance-ip-address IP --instance-ip-mask NUMBER --instance-ip-gateway IP] [--config-file FILE]"
 		exit 1
 		;;
 	#   Whichever other parameter passed, we know nothing about that here
