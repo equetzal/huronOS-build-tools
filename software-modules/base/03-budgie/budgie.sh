@@ -140,6 +140,7 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/
 systemctl daemon-reload
 systemctl enable lightdm.service
 systemctl enable hsync.timer
+systemctl enable ipman.service
 
 ## Copy plank resolution monitor
 cp -f "files/plankrm" "/usr/local/bin/plankrm"

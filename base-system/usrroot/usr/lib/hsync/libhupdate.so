@@ -36,6 +36,9 @@ try_directives_download() {
 	# If directives files does not follow the syntax, let's just drop the file.
 	## Check if directives file follows the syntaxis
 
+	log " Converting text file $DIRECTIVES_TEMP_FILE to UNIX standard"
+	dos2unix "$DIRECTIVES_TEMP_FILE"
+
 	#log " Syntax revision over $DIRECTIVES_TEMP_FILE"
 	#if ! timeout 2 /usr/lib/hsync/hsync.validator $DIRECTIVES_TEMP_FILE >> /var/log/hsync.log; then
 	# 	log "-Directives file $DIRECTIVES_TEMP_FILE have an invalid syntaxis. Droping file."
