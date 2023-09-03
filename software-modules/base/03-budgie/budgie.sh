@@ -141,6 +141,7 @@ systemctl daemon-reload
 systemctl enable lightdm.service
 systemctl enable hsync.timer
 systemctl enable ipman.service
+systemctl enable hypnotizer.timer
 
 ## Copy plank resolution monitor
 cp -f "files/plankrm" "/usr/local/bin/plankrm"

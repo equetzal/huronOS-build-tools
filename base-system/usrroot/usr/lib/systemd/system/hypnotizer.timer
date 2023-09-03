@@ -1,0 +1,9 @@
+[Unit]
+Description=TImer to check if is time to shutdown the machine
+Requires=hsync.service
+
+[Timer]
+OnUnitInactiveSec=60s
+
+[Install]
+WantedBy=timers.target
