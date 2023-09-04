@@ -1,0 +1,38 @@
+#!/bin/bash
+set -e
+
+## Check if clock is in sync, otherwise the current time is untrusted
+STATE_IS_CLOCK_SYNC=$(timedatectl show | grep NTPSynchronized | cut -d= -f2)
+if [ "$STATE_IS_CLOCK_SYNC" = "no" ]; then
+    echo "System time is not in sync, exiting"
+fi
+
+## Getting the shutdown time
+# SHUTDOWN_TIME="2023-09-02T15:05:00"
+SHUTDOWN_TIME="$(get_directives_var Global ShutdownTime)"
+if [ -z "$SHUTDOWN_TIME" ] || [ "$SHUTDOWN_TIME" = "none" ]; then
+    echo "No shutdown scheduled, exiting."
+    exit 0
+fi
+
+## Getting the remaining time to shutdown
+SHUTDOWN_TIME_EPOCH=$(date -d "$SHUTDOWN_TIME" +%s)
+CURRENT_TIME_EPOCH=$(date +%s)
+SECONDS_TO_SHUTDOWN=$((SHUTDOWN_TIME_EPOCH - CURRENT_TIME_EPOCH))
+## If secondsToShutdown > 0: don't shutdown yet
+## If secondsToShutdown < 0: try to shutdown
+if [ "$SECONDS_TO_SHUTDOWN" -gt 0 ]; then
+    echo "Scheduled shutdown scheduled for later, exiting"
+    exit 0
+fi
+
+## If we're not in always mode, exit
+## We don't want to ruin neither an event or a contest
+if [[ $(hos-dmode) != "Always" ]]; then
+    echo "The system will shut down as soon as it goes to Always mode, exiting"
+    exit 0
+fi
+
+# If we hit this point, is totally safe to shutdown
+echo "The starts aligned, shutting down the system"
+shutdown -h now
