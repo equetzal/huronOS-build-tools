@@ -1,0 +1,13 @@
+[Unit]
+Description=TImer to check if is time to shutdown the machine
+
+
+[Timer]
+AccuracySec=1s
+OnUnitInactiveSec=60s
+OnBootSec=1s
+OnClockChange=false
+OnTimezoneChange=false
+
+[Install]
+WantedBy=timers.target

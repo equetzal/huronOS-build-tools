@@ -1,0 +1,52 @@
+#!/bin/bash
+#	hypnotizer.sh
+#	This script tries to shutdown the instance
+#   at the time specified in the global section
+#   if the required conditions (time and mode) are met.
+#
+#	Copyright (C) 2022, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
+#
+#	Authors:
+#		Daniel Cerna <dcerna@huronos.org>
+set -e
+
+. /usr/lib/hsync/libhlog.so
+
+## Check if clock is in sync, otherwise the current time is untrusted
+STATE_IS_CLOCK_SYNC=$(timedatectl show | grep NTPSynchronized | cut -d= -f2)
+if [ "$STATE_IS_CLOCK_SYNC" = "no" ]; then
+    log "System time is not in sync, exiting"
+fi
+
+## Getting the shutdown time
+SHUTDOWN_TIME="$(hos-dvar --variable-name ShutdownTime --section Global)"
+if [ -z "$SHUTDOWN_TIME" ] || [ "$SHUTDOWN_TIME" = "none" ]; then
+    log "No shutdown scheduled, exiting."
+    exit 0
+fi
+
+## Getting the remaining time to shutdown
+SHUTDOWN_TIME_EPOCH=$(date -d "$SHUTDOWN_TIME" +%s)
+CURRENT_TIME_EPOCH=$(date +%s)
+SECONDS_TO_SHUTDOWN=$((SHUTDOWN_TIME_EPOCH - CURRENT_TIME_EPOCH))
+## If secondsToShutdown > 0: don't shutdown yet
+## If secondsToShutdown < 0: try to shutdown
+if [ "$SECONDS_TO_SHUTDOWN" -gt 0 ]; then
+    log "Scheduled shutdown scheduled for later, exiting"
+    exit 0
+fi
+
+## If we're not in always mode, exit
+## We don't want to ruin neither an event or a contest
+if [[ $(hos-dmode) != "Always" ]]; then
+    log "The system will shut down as soon as it goes to Always mode, exiting"
+    exit 0
+fi
+
+# If we hit this point, is totally safe to shutdown
+log "The starts aligned, shutting down the system"
+shutdown -h now
