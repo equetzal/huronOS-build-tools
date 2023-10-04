@@ -16,6 +16,7 @@ langs/python3
 langs/ruby
 tools/byobu
 tools/konsole
+tools/make
 tools/midnight-commander
 programming/atom
 programming/clion
