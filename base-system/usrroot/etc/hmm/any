@@ -17,6 +17,7 @@ langs/python3                               false
 langs/ruby                                  false
 tools/byobu                                 false
 tools/konsole                               false
+tools/make                                  false
 tools/midnight-commander                    false
 programming/atom                            false
 programming/clion                           false

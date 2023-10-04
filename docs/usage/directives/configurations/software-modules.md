@@ -31,6 +31,7 @@ This is a list of available packages in a default installation:
 | `langs/ruby`                                 | langs       | ruby               | Ruby interpreter |
 | `tools/byobu`                                | tools       | byoubu             | Byoubu |
 | `tools/konsole`                              | tools       | konsole            | KDE konsole |
+| `tools/make`                                 | tools       | make               | GNU Make |
 | `tools/midnight-commander`                   | tools       | midnight-commander | Midnight-Commander
 | `programming/atom`                           | programming | atom               | Atom |
 | `programming/codeblocks`                     | programming | codeblocks         | Code::Blocks |
