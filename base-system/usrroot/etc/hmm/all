@@ -17,6 +17,7 @@ langs/python3                               true
 langs/ruby                                  true
 tools/byobu                                 true
 tools/konsole                               true
+tools/make                                  true
 tools/midnight-commander                    true
 programming/atom                            true
 programming/clion                           true
@@ -40,4 +41,5 @@ programming/vsc-clangd                      true
 programming/vsc-cpp-compile-run             true
 programming/vsc-cpptools                    true
 programming/vsc-intellij-idea-keybindings   true
+programming/vsc-makefile-tools              true
 programming/vsc-vscodevim                   true
