@@ -21,7 +21,7 @@ TARGET_DIR="/run/initramfs/memory/system/huronOS/software/langs/"
 
 ## Install software
 apt update
-apt install --yes --no-install-recommends openjdk-17-jdk
+apt install --yes --no-install-recommends openjdk-17-jdk default-jdk
 apt autoremove --yes
 
 ## Prepare final files
