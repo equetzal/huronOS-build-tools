@@ -2,7 +2,6 @@ HURONDIR=/run/initramfs/memory/system/huronOS/software/
 debuggers/ddd                               false
 debuggers/gdb                               false
 debuggers/valgrind                          false
-debuggers/visualvm                          false
 internet/chromium                           false
 internet/crow                               false
 internet/firefox                            false
