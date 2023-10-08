@@ -314,7 +314,6 @@ libunibilium4
 libupnp13
 libutf8proc2
 libva-wayland2
-libvisualvm-jni
 libvlc5
 libvlccore9
 libvterm0
