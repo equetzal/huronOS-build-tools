@@ -17,6 +17,7 @@ langs/python3                               true
 langs/ruby                                  true
 tools/byobu                                 true
 tools/konsole                               true
+tools/make                                  true
 tools/midnight-commander                    true
 programming/atom                            true
 programming/clion                           true
