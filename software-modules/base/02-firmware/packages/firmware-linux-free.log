@@ -1,9 +1,0 @@
-Reading package lists...
-Building dependency tree...
-Reading state information...
-firmware-linux-free is already the newest version (20200122-1).
-firmware-linux-free set to manually installed.
-The following packages were automatically installed and are no longer required:
-  gettext-base libbrotli1 libefiboot1 libefivar1 libfreetype6 libpng16-16 ucf
-Use 'apt autoremove' to remove them.
-0 upgraded, 0 newly installed, 0 to remove and 18 not upgraded.
