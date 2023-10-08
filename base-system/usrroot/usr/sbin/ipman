@@ -19,7 +19,18 @@
 IP_ADDRESS=$(grep "^INSTANCE_IP_ADDRESS=.*$" $CURRENT_SYNC_SERVER_CONFIG_FILE | cut -d= -f2)
 IP_MASK=$(grep "^INSTANCE_IP_MASK=.*$" $CURRENT_SYNC_SERVER_CONFIG_FILE | cut -d= -f2)
 IP_GATEWAY=$(grep "^INSTANCE_IP_GATEWAY=.*$" $CURRENT_SYNC_SERVER_CONFIG_FILE | cut -d= -f2)
+DIRECTIVES_SERVER_IP="$(grep DIRECTIVES_SERVER_IP "$CURRENT_SYNC_SERVER_CONFIG_FILE" | cut -d= -f2)"
 
+# Check if the network is working before setting the IP
+echo "Checking connection before setting the IP"
+if (ping -q -c 3 -W 5 "$DIRECTIVES_SERVER_IP" >/dev/null) || (ping -q -c 3 -W 5 "$IP_GATEWAY" >/dev/null); then
+    echo "Network connection is working, no ip assignement needed, exiting"
+    exit 0
+else
+    echo "No network connection detected, setting the IP"
+fi
+
+# Convert subnet mask decimal form to the subnet mask octal form
 if [[ $IP_MASK =~ ^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
     SUBNET_MASK=$IP_MASK
 else
