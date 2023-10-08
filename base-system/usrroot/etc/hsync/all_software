@@ -40,4 +40,5 @@ programming/vsc-clangd
 programming/vsc-cpp-compile-run
 programming/vsc-cpptools
 programming/vsc-intellij-idea-keybindings
+programming/vsc-makefile-tools
 programming/vsc-vscodevim

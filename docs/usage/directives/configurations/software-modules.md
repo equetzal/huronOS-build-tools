@@ -53,6 +53,7 @@ This is a list of available packages in a default installation:
 | `programming/vsc-cpp-compile-run`            | programming | cpp-compile-run    | Vscode Extension CPP Compile/Run |
 | `programming/vsc-cpptools`                   | programming | vsc-cpptools       | Vscode Extension Ms Cpp Tools |
 | `programming/vsc-intellij-idea-keybindings`  | programming | vsc-intellij-idea-keybindings | Vscode Extension IntelliJ IDEA Keybindings |
+| `programming/vsc-makefile-tools`             | programming | vsc-makefile-tools | Vscode Makefile Tools |
 | `programming/vsc-vscodevim`                  | programming | vsc-vscodevim      | Vscode Extension VSCodeVim |
 
 ### Documentation
