@@ -1,1 +1,0 @@
-libyaml-0-2 ruby-minitest ruby-net-telnet ruby-power-assert ruby-test-unit ruby-xmlrpc rubygems-integration 
