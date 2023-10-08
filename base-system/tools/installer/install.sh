@@ -169,7 +169,7 @@ print_step "[3/13] Selecting removable device to install huronOS on"
 DEV_PATHS=$(lsblk --nodeps --noheadings --raw -o PATH)
 # Array to store the usb devices found
 HOTPLUG_DEVICES=()
-DEVNUM=0
+DEVNUM=1
 for DEV_PATH in $DEV_PATHS; do
 	# Get device attributes
 	DEV_HOTPLUG="$(lsblk --nodeps --noheadings --raw -o HOTPLUG "$DEV_PATH")"
@@ -210,7 +210,7 @@ fi
 read -r -p "Please, select the disk where you want to install huronOS on: " SELECTION
 
 # Get the target from the array of candidate devices
-TARGET=${HOTPLUG_DEVICES[$SELECTION]}
+TARGET=${HOTPLUG_DEVICES[$((SELECTION - 1))]}
 read -r -p "The selected disk is $(print_bold_red "$TARGET"), $(print_bold "ALL DATA WILL BE LOST (includes partitions)"), do you want to continue? (Y/n) " CONFIRM
 
 ## Exit if answer is not Y or y
