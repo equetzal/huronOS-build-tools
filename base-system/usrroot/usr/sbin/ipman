@@ -37,7 +37,6 @@ else
     ONES=$((2 ** 32 - 2 ** (32 - IP_MASK)))
     SUBNET_MASK=$(printf "%d.%d.%d.%d\n" $((ONES >> 24 & 255)) $((ONES >> 16 & 255)) $((ONES >> 8 & 255)) $((ONES & 255)))
 fi
-# Convert subnet mask decimal form to the subnet mask octal form
 
 # Test if any of the required fields is empty
 if [ -z "$IP_ADDRESS" ]; then
@@ -75,9 +74,14 @@ for INTERFACE in $INTERFACES; do
 
     # Test for network connection with a ping to the gateway,
     # if it's successful, we're on the network
-    echo "Testing connection to the gateway"
+    echo "Testing connection to the gateway and to the directives server"
+    if [ -n "$DIRECTIVES_SERVER_IP" ] && ping -q -c 3 -W 5 "$DIRECTIVES_SERVER_IP" >/dev/null; then
+        echo "Network connection to $DIRECTIVES_SERVER_IP is working, exiting"
+        exit 0
+    fi
+
     if ping -q -c 3 -W 5 "$IP_GATEWAY" >/dev/null; then
-        echo "Network connection is working, exiting"
+        echo "Network connection to $IP_GATEWAY is working, exiting"
         exit 0
     else
         echo "No network connection, falling back to DHCP"
