@@ -8,6 +8,7 @@ connman
 curl
 dbus-broker
 dnsutils
+dos2unix
 dosfstools
 earlyoom
 file
