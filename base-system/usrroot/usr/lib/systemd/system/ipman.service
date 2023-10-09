@@ -4,6 +4,9 @@ After=network.target
 
 [Service]
 ExecStart=/usr/sbin/ipman
+Restart=on-failure
+RestartSec=10
+RemainAfterExit=yes
 
 [Install]
 WantedBy=multi-user.target
