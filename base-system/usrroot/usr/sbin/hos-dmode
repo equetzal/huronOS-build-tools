@@ -19,7 +19,7 @@
 fits_lapse() {
 	local LAPSES CURRENT_TIMEZONE CURRENT_TIME START_TIME END_TIME
 	LAPSES="$1"
-	CURRENT_TIMEZONE="$(hos-dvar --variable-name TimeZone --section Global)"
+	CURRENT_TIMEZONE="$(dvar --variable-name TimeZone --section Global)"
 	CURRENT_TIME="$(date +'%s')"
 
 	# For each start-time and end-time, check if we're in between.
@@ -38,8 +38,8 @@ fits_lapse() {
 current_directives_mode() {
 	local CURRENT_MODE EVENT_LAPSES CONTEST_LAPSES
 	CURRENT_MODE="Always"
-	EVENT_LAPSES="$(hos-dvar --variable-name times --section Event)"
-	CONTEST_LAPSES="$(hos-dvar --variable-name times --section Contest)"
+	EVENT_LAPSES="$(dvar --variable-name times --section Event)"
+	CONTEST_LAPSES="$(dvar --variable-name times --section Contest)"
 
 	if [ -n "$EVENT_LAPSES" ] && fits_lapse "$EVENT_LAPSES"; then
 		CURRENT_MODE="Event"
