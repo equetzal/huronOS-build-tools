@@ -26,7 +26,7 @@ magic() {
 	mkdir -p "$AUX_DIR"
 
 	echo "https://directives.huronos.org/directives.hdf" >>"$AUX_FILE"
-	hos-dvar --variable-name Wallpaper --section "$SECTION" >>"$AUX_FILE"
+	dvar --variable-name Wallpaper --section "$SECTION" >>"$AUX_FILE"
 
 	cat "$AUX_FILE"
 
