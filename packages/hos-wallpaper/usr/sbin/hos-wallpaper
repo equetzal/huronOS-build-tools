@@ -30,6 +30,9 @@ help() {
 	echo "operations:"
 	printf '%-30.30s\t%s\n' "--help" "Display this help and exit."
 	printf '%-30.30s\t%s\n' "--automatic" "Automatically download and set the wallpapers in directives."
+	printf '%-30.30s\t%s\n' "--manual MODE" "Manually try to apply the wallpaer for the specified Mode."
+	printf '%-30.30s\t%s\n' "--wallpaper-url URL" "The url to retrieve the wallpaper from."
+	printf '%-30.30s\t%s\n' "--wallpaper-hash HASH" "The hash to check the downloaded wallpaper against."
 	#	printf '%-30.30s\t%s\n' 	"--manual [Mode] [URL]"	"Add the provided module to the root AUFS union."
 	echo
 	#	echo "options:"
@@ -38,7 +41,13 @@ help() {
 }
 
 main() {
-	local SET_MODE
+	local SET_MODE WALLPAPER_URL WALLPAPER_HASH
+
+	# If no arguments, show help
+	if [ "$#" -eq 0 ]; then
+		help
+		exit 0
+	fi
 
 	while (($#)); do
 		case $1 in
@@ -54,6 +63,14 @@ main() {
 			SET_MODE="$(hos-dmode)"
 			shift 1
 			;;
+		"--wallpaper-url" | "-u")
+			WALLPAPER_URL="$2"
+			shift 2
+			;;
+		"--wallpaper-hash" | "-h")
+			WALLPAPER_HASH="$2"
+			shift 2
+			;;
 		*)
 			echo "Unknown operation '$1', please run [hos-wallpaper --help] for help"
 			exit 1
@@ -62,11 +79,24 @@ main() {
 	done
 
 	if [ -z "${SET_MODE}" ]; then
-		echo "Mode to apply not specified, please run [hos-wallpaper --help] for help"
+		echo "Mode to apply not specified, "
 		exit 1
 	fi
 
-	check_wallpapers "$SET_MODE"
+	if [ -z "${WALLPAPER_URL}" ]; then
+		echo "File URL not specified, "
+		exit 1
+	fi
+	if [ -z "${WALLPAPER_HASH}" ]; then
+		echo "File hash not specified, "
+		exit 1
+	fi
+	if [ -z "$SET_MODE" ] || [ -z "$WALLPAPER_URL" ] || [ -z "$WALLPAPER_HASH" ]; then
+		echo "Missing arguments, please run [hos-wallpaper --help] for help"
+		exit 1
+	fi
+
+	check_wallpapers "$SET_MODE" "$WALLPAPER_URL" "$WALLPAPER_HASH"
 }
 
 # $1 = Wallpaper Section
@@ -75,8 +105,8 @@ prepare_wallpaper() {
 	local SECTION CURRENT_MODE WALLPAPER_URL WALLPAPER_HASH FILE_TYPE SAVE_FILE CURRENT_WALLPAPER
 	SECTION="$1"
 	CURRENT_MODE="$2"
-	WALLPAPER_URL="$(hos-dvar --variable-name Wallpaper --section "$SECTION")"
-	WALLPAPER_HASH="$(hos-dvar --variable-name WallpaperSha256 --section "$SECTION")"
+	WALLPAPER_URL="$3"
+	WALLPAPER_HASH="$4"
 	BASENAME="$(basename "$WALLPAPER_URL")"
 	FILE_TYPE="${BASENAME##*.}"
 	SAVE_FILE="$SYSTEM_BACKUP_FILES_DIR/${SECTION}-mode-wallpaper.${FILE_TYPE}"
@@ -116,17 +146,19 @@ prepare_wallpaper() {
 
 # $1 = Current Mode
 check_wallpapers() {
-	local CURRENT_MODE
+	local CURRENT_MODE WALLPAPER_URL WALLPAPER_HASH
 	CURRENT_MODE="$1"
+	WALLPAPER_URL="$2"
+	WALLPAPER_HASH="$3"
 
 	## Check for Always mode
-	prepare_wallpaper "Always" "$CURRENT_MODE"
+	prepare_wallpaper "Always" "$CURRENT_MODE" "$WALLPAPER_URL" "$WALLPAPER_HASH"
 
 	## Check for Event mode
-	prepare_wallpaper "Event" "$CURRENT_MODE"
+	prepare_wallpaper "Event" "$CURRENT_MODE" "$WALLPAPER_URL" "$WALLPAPER_HASH"
 
 	## Check for Contest mode
-	prepare_wallpaper "Contest" "$CURRENT_MODE"
+	prepare_wallpaper "Contest" "$CURRENT_MODE" "$WALLPAPER_URL" "$WALLPAPER_HASH"
 }
 
 main "$@"
