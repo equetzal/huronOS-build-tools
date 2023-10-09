@@ -27,9 +27,9 @@ help() {
 	echo "Syntax: hos-dvar [options]"
 	echo
 	echo "options:"
-	printf '%-38.38s\t%s\n' "--help" "Display this menu and exit."
-	printf '%-38.38s\t%s\n' "--variable-name [ times | variable ]" "Variable to lookup, returns empty when not valid."
-	printf '%-38.38s\t%s\n' "--section [ Global | Event | Contest ]" "Section to lookup variable, empty when invalid section."
+	printf '%-4.4s\t%-38.38s\t%s\n' "-h," "--help" "Display this menu and exit."
+	printf '%-4.4s\t%-38.38s\t%s\n' "-v," "--variable-name [ times | variable ]" "Variable to lookup, returns empty when not valid."
+	printf '%-4.4s\t%-38.38s\t%s\n' "-s, " "--section [ Global | Event | Contest ]" "Section to lookup variable, empty when invalid section."
 }
 
 main() {
@@ -41,11 +41,11 @@ main() {
 			help
 			exit 0
 			;;
-		"--variable-name")
+		"--variable-name" | "-v")
 			VAR_NAME="$2"
 			shift 2
 			;;
-		"--section")
+		"--section" | "-s")
 			SECTION="$2"
 			shift 2
 			;;
