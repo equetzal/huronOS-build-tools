@@ -30,7 +30,8 @@ fi
 apt autoremove --yes --purge "${REM_PACKAGES[@]}"
 
 # Copy root directories
-pushd usrroot && cp --parents -afr * / && popd
+chmod +x tools/rootcopy.sh
+./tools/rootcopy.sh /
 
 cp "$CHANGEDIR/../packages/hos-wallpaper/usr/sbin/hos-wallpaper" /usr/sbin/hos-wallpaper
 cp "$CHANGEDIR/../packages/hos-wallpaper/usr/lib/systemd/system/happly-wallpaper@.service" /usr/lib/systemd/system/happly-wallpaper@.service
