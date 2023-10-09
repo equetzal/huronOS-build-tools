@@ -75,8 +75,8 @@ prepare_wallpaper() {
 	local SECTION CURRENT_MODE WALLPAPER_URL WALLPAPER_HASH FILE_TYPE SAVE_FILE CURRENT_WALLPAPER
 	SECTION="$1"
 	CURRENT_MODE="$2"
-	WALLPAPER_URL="$(hos-dvar --variable-name Wallpaper --section "$SECTION")"
-	WALLPAPER_HASH="$(hos-dvar --variable-name WallpaperSha256 --section "$SECTION")"
+	WALLPAPER_URL="$(dvar --variable-name Wallpaper --section "$SECTION")"
+	WALLPAPER_HASH="$(dvar --variable-name WallpaperSha256 --section "$SECTION")"
 	BASENAME="$(basename "$WALLPAPER_URL")"
 	FILE_TYPE="${BASENAME##*.}"
 	SAVE_FILE="$SYSTEM_BACKUP_FILES_DIR/${SECTION}-mode-wallpaper.${FILE_TYPE}"

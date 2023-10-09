@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#	hos-dvar.sh
+#	dvar.sh
 #	This tool returns the specified variable of the sync directives file.
 #	If 'times' are specified for sections Event and Contest, the lapses
 # 	will be returned. In any other case, the variable value will be returned
@@ -24,7 +24,7 @@ help() {
 	echo "This tool will let you retrieve a variable from the current directives"
 	echo "that are sync in the system. "
 	echo
-	echo "Syntax: hos-dvar [options]"
+	echo "Syntax: dvar [options]"
 	echo
 	echo "options:"
 	printf '%-4.4s\t%-38.38s\t%s\n' "-h," "--help" "Display this menu and exit."
@@ -50,19 +50,19 @@ main() {
 			shift 2
 			;;
 		*)
-			echo "Unknown operation '$1', please run [hos-dvar --help] for help"
+			echo "Unknown operation '$1', please run [dvar --help] for help"
 			exit 1
 			;;
 		esac
 	done
 
 	if [ -z "${VAR_NAME}" ]; then
-		echo "Variable name not specified, please run [hos-dvar --help] for help"
+		echo "Variable name not specified, please run [dvar --help] for help"
 		exit 1
 	fi
 
 	if [ -z "${SECTION}" ]; then
-		echo "Section not specified, please run [hos-dvar --help] for help"
+		echo "Section not specified, please run [dvar --help] for help"
 		exit 1
 	fi
 
