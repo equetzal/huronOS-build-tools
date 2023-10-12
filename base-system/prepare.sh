@@ -24,9 +24,9 @@ cp -rf usrroot/etc/apt/* /etc/apt/
 apt update
 apt install --yes --no-install-recommends "${INST_PACKAGES[@]}"
 if [ "$DEVELOPER" = "true" ]; then
-	apt install --yes --no-install-recommends "${DEV_PACKAGES[@]}"
+    apt install --yes --no-install-recommends "${DEV_PACKAGES[@]}"
 else
-	apt autoremove --yes --purge "${DEV_PACKAGES[@]}"
+    apt autoremove --yes --purge "${DEV_PACKAGES[@]}"
 fi
 apt autoremove --yes --purge "${REM_PACKAGES[@]}"
 
@@ -37,7 +37,7 @@ cp "$CHANGEDIR/../packages/hos-wallpaper/usr/sbin/hos-wallpaper" /usr/sbin/hos-w
 cp "$CHANGEDIR/../packages/hos-wallpaper/usr/lib/systemd/system/happly-wallpaper@.service" /usr/lib/systemd/system/happly-wallpaper@.service
 
 if [ "$DEVELOPER" = "true" ]; then
-	pushd devroot && cp --parents -afr * / && popd
+    pushd devroot && cp --parents -afr * / && popd
 fi
 
 ## Copy tools
@@ -73,6 +73,8 @@ ln -sf /usr/lib/systemd/system/happly.service /etc/systemd/system/happly.service
 ln -sf /usr/lib/systemd/system/happly-wallpaper.service /etc/systemd/system/happly-wallpaper.service
 ln -sf /usr/lib/systemd/system/hsync.timer /etc/systemd/system/hsync.timer
 ln -sf /usr/lib/hsync/hsync.sh /usr/lib/hsync/happly.sh
+ln -sf /usr/lib/systemd/system/hypnotizer.timer /etc/systemd/system/hypnotizer.timer
+ln -sf /usr/lib/systemd/system/hypnotizer.service /etc/systemd/system/hypnotizer.service
 
 ## Permissions
 chmod 640 /etc/fstab

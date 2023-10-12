@@ -1,0 +1,8 @@
+[Unit]
+Description=Service to check if is time to shutdown the machine
+
+[Service]
+ExecStart=/usr/sbin/hypnotizer
+
+[Install]
+WantedBy=multi-user.target
