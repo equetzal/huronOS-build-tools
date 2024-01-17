@@ -10,7 +10,25 @@ If you encounter difficulties not addressed here, or if you have further questio
 
 ## How to use a static IP on an instance
 
-To use static IP, you need to assign the instance ip address, ip gateway and network mask at the time of using the installer, for example `sudo ./install.sh --instance-ip-address 192.168.1.2 --instance-ip-gateway 192.168.1.254 --instance-ip-mask`
+To use static IP, you need to assign the instance ip address, ip gateway and network mask:
+- **During installation:**  
+    At the time of using the installer, add the following flags `sudo ./install.sh --instance-ip-address 192.168.1.2 --instance-ip-gateway 192.168.1.254 --instance-ip-mask`; This will configure the system automatically with the data provided.
+
+- **After installation:**
+    To set or modify this configuration, connect the USB to modify to a booted computer and edit the file `huronOS/data/configs/sync-server.conf` to change the values of:
+    ```ini
+    [Server]
+    INSTANCE_IP_ADDRESS=$INSTANCE_IP_ADDRESS
+    INSTANCE_IP_MASK=$INSTANCE_IP_MASK
+    INSTANCE_IP_GATEWAY=$INSTANCE_IP_GATEWAY
+    ```
+    Replace the content after the `=` with your configuration, e.g.
+    ```ini
+    [Server]
+    INSTANCE_IP_ADDRESS=192.168.0.23
+    INSTANCE_IP_MASK=255.255.255.0
+    INSTANCE_IP_GATEWAY=192.168.0.1
+    ```
 
 ## How it works
 This feature works the following way
