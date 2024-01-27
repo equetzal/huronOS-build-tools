@@ -354,7 +354,8 @@ set_wallpaper() {
 	log " Downloading wallpaper $WALLPAPER"
 	NAME=$(basename "$WALLPAPER")
 	FILE="/usr/share/backgrounds/custom-background-$$-$NAME"
-	if wget --no-cache --tries=2 --timeout=10 "$WALLPAPER" -O "$FILE"; then
+	
+	if curl --retry 2 --max-time 10 --output "$WALLPAPER" -H 'Cache-Control: no-cache, no-store' "$FILE"; then
 		log "+Setting new wallpaper"
 		chmod 777 "$FILE"
 		su contestant -c "export DISPLAY=:0; gsettings set org.gnome.desktop.background picture-uri file://$FILE"
