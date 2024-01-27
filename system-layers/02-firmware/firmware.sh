@@ -22,6 +22,12 @@ mapfile -t DEPENDENCIES <dependencies.txt
 
 apt update
 
+## Accept the License terms before doing install
+echo firmware-ipw2x00 firmware-ipw2x00/license/accepted boolean true | debconf-set-selections
+echo firmware-ivtv firmware-ivtv/license/accepted boolean true | debconf-set-selections
+
+## Set to non-interactive to avoid being prompt
+export DEBIAN_FRONTEND=noninteractive
 apt install --yes --no-install-recommends "${DEPENDENCIES[@]}"
 apt autoremove --yes --purge
 
