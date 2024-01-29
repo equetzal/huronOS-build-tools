@@ -1,0 +1,108 @@
+#!/bin/bash
+
+set -x
+
+. /usr/lib/hos/enviroment.sh
+
+## Constants
+FIRMWARE_DIR="system-layers/02-firmware"
+BUDGIE_DIR="system-layers/03-budgie"
+SHARED_LIBS_DIR="system-layers/04-shared-libs"
+CUSTOM_DIR="system-layers/05-custom"
+
+
+## Read data from user that should automate things
+PATH_TO_HBT="/media/ssd/lab/huronOS-build-tools"
+DISK_WITH_HBT="/dev/nvme0n1p2"
+DISK_MOUNT_POINT="/media/ssd"
+
+## Use a build-control directory that is natively persistent
+mkdir -p "$SYSTEM_BUILD_CONTROL_DIR"
+echo "Creating $SYSTEM_BUILD_CONTROL_DIR"
+
+## Create the mount script
+cat <<EOL > "$SYSTEM_BUILD_CONTROL_DIR/mount.sh"
+#!/bin/bash
+mkdir -p "$DISK_MOUNT_POINT"
+mount "$DISK_WITH_HBT" "$DISK_MOUNT_POINT"
+cd "$PATH_TO_HBT"
+EOL
+
+## Create the 02-firmware script
+cat <<EOL > "$SYSTEM_BUILD_CONTROL_DIR/02.sh"
+#!/bin/bash
+cd "$PATH_TO_HBT/$FIRMWARE_DIR"
+. ./firmware.sh
+quick-reboot
+EOL
+
+## Create the 03-budgie script
+cat <<EOL > "$SYSTEM_BUILD_CONTROL_DIR/03.sh"
+#!/bin/bash
+cd "$PATH_TO_HBT/$BUDGIE_DIR"
+. ./budgie.sh
+quick-reboot
+EOL
+
+## Create the 04-shared-libs script
+cat <<EOL > "$SYSTEM_BUILD_CONTROL_DIR/04.sh"
+#!/bin/bash
+cd "$PATH_TO_HBT/$SHARED_LIBS_DIR"
+. ./shared-libs.sh
+quick-reboot
+EOL
+
+## Create the 05-custom script
+cat <<EOL > "$SYSTEM_BUILD_CONTROL_DIR/05.sh"
+#!/bin/bash
+cd "$PATH_TO_HBT/$CUSTOM_DIR"
+. ./custom.sh
+quick-reboot
+EOL
+
+cat <<EOL > "$SYSTEM_BUILD_CONTROL_DIR/queue"
+02.sh
+03.sh
+04.sh
+05.sh
+EOL
+
+
+cat <<EOL > "/etc/systemd/system/sysforge-wizard.service"
+[Unit]
+Description=Automate system builds
+After=getty.target
+After=systemd-logind.service
+
+[Service]
+User=root
+Group=root
+ExecStart=/usr/lib/sysforge/sysforge-wizard.sh
+
+[Install]
+WantedBy=multi-user.target
+EOL
+
+systemctl daemon-reload
+systemctl enable sysforge-wizard.service
+systemctl mask getty@tty1.service
+systemctl mask console-getty.service
+
+## Create helper HSL
+NAME="09-sysforge-wizard"
+savechanges /tmp/$NAME.hsm
+hsm2dir /tmp/$NAME.hsm
+rm -rf /tmp/$NAME.hsm/var
+rm -rf /tmp/$NAME.hsm/run
+rm -rf /tmp/$NAME.hsm/media
+rm -rf /tmp/$NAME.hsm/tmp
+rm -rf /tmp/$NAME.hsm/sys
+rm -rf /tmp/$NAME.hsm/proc
+rm -rf /tmp/$NAME.hsm/dev
+rm -rf /tmp/$NAME.hsm/etc/fstab
+rm -rf /tmp/$NAME.hsm/usr
+dir2hsm /tmp/$NAME.hsm
+mv "/tmp/$NAME.hsm" "/tmp/$NAME.hsl"
+mv "/tmp/$NAME.hsl" "$SYSTEM_BASE_DIR/"
+
+quick-reboot

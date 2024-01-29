@@ -30,5 +30,6 @@ apt remove --yes pip
 ## Recompile gschemas
 glib-compile-schemas /usr/share/glib-2.0/schemas/
 
+chvt 1
 savechanges /tmp/04-shared-libs.hsl
 cp /tmp/04-shared-libs.hsl /run/initramfs/memory/system/huronOS/base --verbose
