@@ -20,6 +20,8 @@ set -xe
 # Get the dependencies and replace every new line with a space
 mapfile -t DEPENDENCIES <dependencies.txt
 
+chvt 1 || true
+
 ## Install
 apt update
 

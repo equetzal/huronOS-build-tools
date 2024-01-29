@@ -1,0 +1,143 @@
+#!/bin/bash
+
+#	sysforge
+#	Script to prepare the system to build the upper system-layers automatically
+#
+#	Copyright (C) 2024, huronOS Project:
+#		<http://huronos.org>
+#
+#	Licensed under the GNU GPL Version 2
+#		<http://www.gnu.org/licenses/gpl-2.0.html>
+#
+#	Authors:
+#		Enya Quetzalli <equetzal@huronos.org>
+
+set -x
+
+. /usr/lib/hos/enviroment.sh
+
+## Print functions
+print_bold() {
+	echo -e "${BOLD}$1${NORMAL_TEXT}"
+}
+print_bold_red() {
+	echo -e "${BOLD_RED}$1${NORMAL_TEXT}"
+}
+print_step() {
+	echo -e "${BOLD_GREEN}$1${NORMAL_TEXT}"
+}
+
+## Constants
+FIRMWARE_DIR="system-layers/02-firmware"
+BUDGIE_DIR="system-layers/03-budgie"
+SHARED_LIBS_DIR="system-layers/04-shared-libs"
+CUSTOM_DIR="system-layers/05-custom"
+
+## Read data from user that should automate things
+print_step "[1/8] Configuring huronOS-build-tools (HBT) source"
+read -r -p "Path to disk containing HBT repo: " DISK_WITH_HBT
+read -r -p "Mount point for disk: " DISK_MOUNT_POINT
+read -r -p "Path of mounted HBT directory: " DISK_WITH_HBT
+
+## Use a build-control directory that is natively persistent
+print_step "[2/8] Creating the persistent build-control directory"
+mkdir -p "$SYSTEM_BUILD_CONTROL_DIR"
+echo "Creating $SYSTEM_BUILD_CONTROL_DIR"
+
+## Create the mount script
+print_step "[3/8] Automating HBT boot mount"
+cat <<EOL > "$SYSTEM_BUILD_CONTROL_DIR/mount.sh"
+#!/bin/bash
+mkdir -p "$DISK_MOUNT_POINT"
+mount "$DISK_WITH_HBT" "$DISK_MOUNT_POINT"
+cd "$PATH_TO_HBT"
+EOL
+
+## Create the 02-firmware script
+print_step "[4/8] Creating system-layers scripts"
+echo "02-firmware"
+cat <<EOL > "$SYSTEM_BUILD_CONTROL_DIR/02.sh"
+#!/bin/bash
+cd "$PATH_TO_HBT/$FIRMWARE_DIR"
+. ./firmware.sh
+quick-reboot
+EOL
+
+## Create the 03-budgie script
+echo "03-budgie"
+cat <<EOL > "$SYSTEM_BUILD_CONTROL_DIR/03.sh"
+#!/bin/bash
+cd "$PATH_TO_HBT/$BUDGIE_DIR"
+. ./budgie.sh
+quick-reboot
+EOL
+
+## Create the 04-shared-libs script
+echo "04-shared-libs"
+cat <<EOL > "$SYSTEM_BUILD_CONTROL_DIR/04.sh"
+#!/bin/bash
+cd "$PATH_TO_HBT/$SHARED_LIBS_DIR"
+. ./shared-libs.sh
+quick-reboot
+EOL
+
+## Create the 05-custom script
+echo "05-custom"
+cat <<EOL > "$SYSTEM_BUILD_CONTROL_DIR/05.sh"
+#!/bin/bash
+cd "$PATH_TO_HBT/$CUSTOM_DIR"
+. ./custom.sh
+quick-reboot
+EOL
+
+## Create the queue
+print_step "[5/8] Queueing jobs"
+cat <<EOL > "$SYSTEM_BUILD_CONTROL_DIR/queue"
+02.sh
+03.sh
+04.sh
+05.sh
+EOL
+
+
+print_step "[6/8] Creating the sysforge boot wizard"
+cat <<EOL > "/etc/systemd/system/sysforge-wizard.service"
+[Unit]
+Description=Automate system builds
+After=getty.target
+After=systemd-logind.service
+
+[Service]
+User=root
+Group=root
+ExecStart=/usr/lib/sysforge/sysforge-wizard.sh
+
+[Install]
+WantedBy=multi-user.target
+EOL
+
+systemctl daemon-reload
+systemctl enable sysforge-wizard.service
+systemctl mask getty@tty1.service
+systemctl mask console-getty.service
+
+## Create helper HSL
+print_step "[7/8] Creating temporal system-layer"
+NAME="09-sysforge-wizard"
+savechanges /tmp/$NAME.hsm
+hsm2dir /tmp/$NAME.hsm
+rm -rf /tmp/$NAME.hsm/var
+rm -rf /tmp/$NAME.hsm/run
+rm -rf /tmp/$NAME.hsm/media
+rm -rf /tmp/$NAME.hsm/tmp
+rm -rf /tmp/$NAME.hsm/sys
+rm -rf /tmp/$NAME.hsm/proc
+rm -rf /tmp/$NAME.hsm/dev
+rm -rf /tmp/$NAME.hsm/etc/fstab
+rm -rf /tmp/$NAME.hsm/usr
+dir2hsm /tmp/$NAME.hsm
+mv "/tmp/$NAME.hsm" "/tmp/$NAME.hsl"
+mv "/tmp/$NAME.hsl" "$SYSTEM_BASE_DIR/"
+
+print_step "[8/8] Rebooting into wizard"
+quick-reboot

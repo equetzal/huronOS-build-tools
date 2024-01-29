@@ -17,13 +17,20 @@
 #		Daniel Cerna <dcerna@huronos.org>
 
 set -xe
+
+chvt 1 || true
+
 # Create a fake root
 mkdir -p "squashfs-root/etc/"
+
 # Copy the shadow file to the fake root
 cp "/etc/shadow" "squashfs-root/etc/shadow"
+
 # Squash the fake root into a System Layer
 mksquashfs "squashfs-root" /tmp/05-custom.hsl
+
 # Copy the System Layer to the USB next to the other System Layers
 cp /tmp/05-custom.hsl /run/initramfs/memory/system/huronOS/base --verbose
+
 # Erases the fake root
 rm -r "squashfs-root"
