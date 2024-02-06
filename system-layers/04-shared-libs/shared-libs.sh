@@ -21,6 +21,7 @@ set -xe
 ## Get the dependencies and replace every new line with a space
 mapfile -t DEPENDENCIES <dependencies.txt
 apt update
+(sleep 3 && chvt 1 && sleep 1 && chvt 1)&
 apt install --yes --no-install-recommends "${DEPENDENCIES[@]}"
 # Required for firefox and chromium extension
 # TODO: When migrating to debian12, replace dependency pip with python3-watchdog and remove the following two lines
@@ -30,5 +31,6 @@ apt remove --yes pip
 ## Recompile gschemas
 glib-compile-schemas /usr/share/glib-2.0/schemas/
 
+chvt 1
 savechanges /tmp/04-shared-libs.hsl
 cp /tmp/04-shared-libs.hsl /run/initramfs/memory/system/huronOS/base --verbose
