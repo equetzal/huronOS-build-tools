@@ -27,8 +27,9 @@ export SYSTEM_SOFTWARE_DIR="$SYSTEM_MNT/huronOS/software"
 export SYSTEM_ROOTCOPY_DIR="$SYSTEM_MNT/huronOS/rootcopy"
 
 ## Data dirs
-export SYSTEM_CONFIGS_DIR="$SYSTEM_DATA_DIR/configs"
 export SYSTEM_BACKUP_FILES_DIR="$SYSTEM_DATA_DIR/backups"
+export SYSTEM_BUILD_CONTROL_DIR="$SYSTEM_DATA_DIR/build-control"
+export SYSTEM_CONFIGS_DIR="$SYSTEM_DATA_DIR/configs"
 export SYSTEM_JOURNAL_DIR="$SYSTEM_DATA_DIR/journal"
 export SYSTEM_LOGS_DIR="$SYSTEM_DATA_DIR/logs"
 
