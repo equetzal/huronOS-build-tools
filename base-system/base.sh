@@ -68,10 +68,10 @@ mkdir -p "$EFI"
 mkdir -p "${ISO_DATA}/utils"
 mkdir -p "$FILES"/base
 mkdir -p "$FILES"/data
-mkdir -p "$FILES"/data/logs
-mkdir -p "$FILES"/data/journal
 mkdir -p "$FILES"/data/backups
 mkdir -p "$FILES"/data/configs
+mkdir -p "$FILES"/data/journal
+mkdir -p "$FILES"/data/logs
 mkdir -p "$FILES"/software
 mkdir -p "$FILES"/software/debuggers
 mkdir -p "$FILES"/software/internet
