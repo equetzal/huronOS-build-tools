@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #	sysforge
-#	Script to prepare the system to build the upper system-layers automatically
+#	Script to prepare the system to build the upper system-layers
+# 	and the software-modules automatically
 #
 #	Copyright (C) 2024, huronOS Project:
 #		<http://huronos.org>
@@ -58,6 +59,48 @@ EOL
 	done <"$SCRIPTS_LIST"
 }
 
+## Test if the script is started by root user. If not, exit
+## only root user can manipulate the device as required.
+if [ "0$UID" -ne 0 ]; then
+	echo "Only root can run $(basename $0)"
+	exit 1
+fi
+
+if [ -z "$1" ]; then
+	echo "Missing build option"
+	echo "Run: sysforge --help"
+	exit 1
+fi
+
+# TODO: Validate we're running on no-sync mode
+
+## Argument handling
+BUILD_SYSTEM_LAYERS="false"
+BUILD_SOFTWARE_MODULES="false"
+while [ "$#" -gt 0 ]; do
+	case "$1" in
+	--system-layers)
+		BUILD_SYSTEM_LAYERS="true"
+		shift 1
+		;;
+	--software-modules)
+		BUILD_SOFTWARE_MODULES="true"
+		shift 1
+		;;
+	-h | --help)
+		echo "Sysforge builds the system upper layers and/or software modules automatically"
+		echo "Usage: sysforge [--system-layers] [--software-modules]"
+		exit 1
+		;;
+	#   Whichever other parameter passed, we know nothing about that here
+	*)
+		echo "Unknown build uption"
+		echo "Run: sysforge --help"
+		exit 1
+		;;
+	esac
+done
+
 ## Read data from user that should automate things
 print_step "[1/7] Configuring huronOS-build-tools (HBT) source"
 read -e -r -p "Path to disk containing HBT repo: " DISK_WITH_HBT
@@ -92,7 +135,12 @@ EOL
 
 ## Create the build scripts
 print_step "[4/7] Creating build scripts"
-enqueue_scripts "/usr/lib/sysforge/system-layers.list"
+if [ "$BUILD_SYSTEM_LAYERS" = "true" ]; then
+	enqueue_scripts "/usr/lib/sysforge/system-layers.list"
+fi
+if [ "$BUILD_SOFTWARE_MODULES" = "true" ]; then
+	enqueue_scripts "/usr/lib/sysforge/software-modules.list"
+fi
 
 print_step "[5/7] Creating the sysforge boot wizard"
 cat <<EOL >"/etc/systemd/system/sysforge-wizard.service"
