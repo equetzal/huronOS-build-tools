@@ -71,7 +71,7 @@ if [ -s "$QUEUE" ]; then
 	mv "$QUEUE.tmp" "$QUEUE"
 
 	## Launch the script
-	chvt 1 || true
+	(sleep 3 && chvt 1 && sleep 1 && chvt 1)&
 	print_step "[4/5] Processing script $NEXT_SCRIPT."
 	. "$SYSTEM_BUILD_CONTROL_DIR/$NEXT_SCRIPT" 2>&1 | tee /dev/tty1 -a "$SYSTEM_MNT"/sysforge-wizard.log || exit_error "Error: while running $NEXT_SCRIPT"
 

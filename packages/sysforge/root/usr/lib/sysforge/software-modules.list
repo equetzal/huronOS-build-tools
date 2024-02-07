@@ -1,0 +1,6 @@
+software-modules/debuggers/ddd/ddd.sh
+software-modules/debuggers/gdb/gdb.sh
+software-modules/debuggers/valgrind/valgrind.sh
+software-modules/internet/chromium/chromium.sh
+software-modules/internet/crow/crow.sh
+software-modules/internet/firefox/firefox.sh
