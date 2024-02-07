@@ -35,6 +35,7 @@ print_text() {
 }
 exit_error() {
 	print_text "$1"
+	echo -e "$1" | tee -a "$SYSTEM_MNT"/sysforge-wizard.errors.log
 	exit 1
 }
 
@@ -70,9 +71,19 @@ if [ -s "$QUEUE" ]; then
 	tail -n +2 "$QUEUE" > "$QUEUE.tmp"
 	mv "$QUEUE.tmp" "$QUEUE"
 
+	## Try to keep the foreground console here instead of lightdm
+	(for _ in {1..10}; do sleep 1 && chvt 1; done)&
+
+	## Installer script will likely require internet connectivity
+	## Let´s wait until the DNS becomes available to launch the script
+	while ! ping -c 1 -W 1 1.1.1.1; do
+		print_text "Waiting for DNS to become available..."
+		sleep 1
+	done
+
 	## Launch the script
-	chvt 1 || true
 	print_step "[4/5] Processing script $NEXT_SCRIPT."
+	export DEBIAN_FRONTEND=noninteractive
 	. "$SYSTEM_BUILD_CONTROL_DIR/$NEXT_SCRIPT" 2>&1 | tee /dev/tty1 -a "$SYSTEM_MNT"/sysforge-wizard.log || exit_error "Error: while running $NEXT_SCRIPT"
 
 	## Now restart the system
@@ -81,7 +92,7 @@ if [ -s "$QUEUE" ]; then
 	quick-reboot
 else
 	chvt 1 || true
-	print_step "[4/5] Empty queue, preparing system to first-boot."
+	print_step "[4/5] Empty queue, disabling sysforge wizard."
 	rm -rf "$SYSTEM_BUILD_CONTROL_DIR"
 	rm -rf "$SYSTEM_BASE_DIR/09-sysforge-wizard.hsl"
 	
