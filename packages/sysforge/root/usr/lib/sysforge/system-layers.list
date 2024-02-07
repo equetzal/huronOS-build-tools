@@ -1,0 +1,4 @@
+system-layers/02-firmware/firmware.sh
+system-layers/03-budgie/budgie.sh
+system-layers/04-shared-libs/shared-libs.sh
+system-layers/05-custom/custom.sh
