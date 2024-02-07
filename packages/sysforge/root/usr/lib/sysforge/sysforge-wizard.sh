@@ -70,9 +70,12 @@ if [ -s "$QUEUE" ]; then
 	tail -n +2 "$QUEUE" > "$QUEUE.tmp"
 	mv "$QUEUE.tmp" "$QUEUE"
 
+	## Try to keep the foreground console here instead of lightdm
+	(for _ in {1..10}; do sleep 1 && chvt 1; done)&
+
 	## Launch the script
-	chvt 1 || true
 	print_step "[4/5] Processing script $NEXT_SCRIPT."
+	export DEBIAN_FRONTEND=noninteractive
 	. "$SYSTEM_BUILD_CONTROL_DIR/$NEXT_SCRIPT" 2>&1 | tee /dev/tty1 -a "$SYSTEM_MNT"/sysforge-wizard.log || exit_error "Error: while running $NEXT_SCRIPT"
 
 	## Now restart the system
