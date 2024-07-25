@@ -3,7 +3,7 @@
 //	This program validates the syntaxis of the huronOS directives file (.hdf)
 //	according to the syntaxis stipulated for huronOS.
 //
-//	Copyright (C) 2022, huronOS Project:
+//	Copyright (C) 2024, huronOS Project:
 //		<http://huronos.org>
 //
 //	Licensed under the GNU GPL Version 2

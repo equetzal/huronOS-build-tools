@@ -3,7 +3,7 @@
 #	utils.sh
 #	General util functions to use on general huronOS scripts
 #
-#	Copyright (C) 2022, huronOS Project:
+#	Copyright (C) 2024, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2

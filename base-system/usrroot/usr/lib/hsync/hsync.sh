@@ -15,7 +15,7 @@
 #	This script, uses another own-created bash libraries for it's
 #	execution and they are necesary to correctly execute this driver script.
 #
-#	Copyright (C) 2022, huronOS Project:
+#	Copyright (C) 2024, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2

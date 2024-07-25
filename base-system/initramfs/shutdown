@@ -5,7 +5,7 @@
 #	systemd (if you use it) on shutdown, no need for any tweaks.
 #	Purpose of this script is to unmount everything cleanly.
 #
-#	Copyright (C) 2022, huronOS Project:
+#	Copyright (C) 2024, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2

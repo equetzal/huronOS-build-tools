@@ -5,7 +5,7 @@
 #	for huronOS. It purges the unnecessary files on the FS
 #	to allow AUFS add/del operations on the fly.
 #
-#	Copyright (C) 2022, huronOS Project:
+#	Copyright (C) 2024, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2

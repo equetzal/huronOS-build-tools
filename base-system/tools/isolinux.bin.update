@@ -4,7 +4,7 @@
 #	This script will update the file ../bootfiles/isolinux.bin to match
 #	your LiveKit name. Note you may need to run this on a 32bit system.
 #	Requires: Debian
-#	Copyright (C) 2022, huronOS Project:
+#	Copyright (C) 2024, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2

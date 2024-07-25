@@ -6,7 +6,7 @@
 #	add/del operations on the fly.
 #	It includes the documentation for the Python 3 programming language.
 #
-#	Copyright (C) 2022, huronOS Project:
+#	Copyright (C) 2024, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2

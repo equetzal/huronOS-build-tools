@@ -5,7 +5,7 @@
 #	This script is called by udev rules, see /lib/udev/rules.d/
 #	This script considers the huronOS directives to decide when to autmount devices.
 #
-#	Copyright (C) 2022, huronOS Project:
+#	Copyright (C) 2024, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2

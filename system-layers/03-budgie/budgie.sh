@@ -6,7 +6,7 @@
 #	enviroment designed for competitive programming along with the
 #	activation of the huronOS contest system subsistems.
 #
-#	Copyright (C) 2022, huronOS Project:
+#	Copyright (C) 2024, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2

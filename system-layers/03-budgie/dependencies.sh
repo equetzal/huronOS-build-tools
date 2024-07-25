@@ -6,7 +6,7 @@
 #	huronOS System Layer. It is used to extract
 #	the list of dependencies based on the firmware layer.
 #
-#	Copyright (C) 2022, huronOS Project:
+#	Copyright (C) 2024, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2

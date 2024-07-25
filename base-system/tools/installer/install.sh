@@ -4,7 +4,7 @@
 #	Script to select, partition, format, configure and install
 #	huronOS on a removable USB storage device.
 #
-#	Copyright (C) 2022, huronOS Project:
+#	Copyright (C) 2024, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2

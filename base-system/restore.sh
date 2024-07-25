@@ -4,7 +4,7 @@
 #	Script to restore the grub installation and do not let the system
 #	unbootable after the execution of base.sh
 #
-#	Copyright (C) 2022, huronOS Project:
+#	Copyright (C) 2024, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2

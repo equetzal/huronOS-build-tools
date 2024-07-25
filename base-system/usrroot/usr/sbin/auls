@@ -4,7 +4,7 @@
 #	Small script to print the current arrangement of the AUFS layers (branches).
 #	The order is from superior layers to the bottom layers.
 #
-#	Copyright (C) 2022, huronOS Project:
+#	Copyright (C) 2024, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2

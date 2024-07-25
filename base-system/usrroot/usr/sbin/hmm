@@ -5,7 +5,7 @@
 #	decativate modules automatically on the fly using AUFS. It also allows
 #	the creation of new modules.
 #
-#	Copyright (C) 2022, huronOS Project:
+#	Copyright (C) 2024, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2

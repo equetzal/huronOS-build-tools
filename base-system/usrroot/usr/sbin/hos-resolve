@@ -4,7 +4,7 @@
 #	This tool parses the domain names provided on the directives file
 #	an writes a file with only IP addresses or
 #
-#	Copyright (C) 2022, huronOS Project:
+#	Copyright (C) 2024, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2

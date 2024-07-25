@@ -5,7 +5,7 @@
 #	This script needs to be executed on a super-light debian
 #	installation and update the ./config file to be successful.
 #
-#	Copyright (C) 2022, huronOS Project:
+#	Copyright (C) 2024, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2

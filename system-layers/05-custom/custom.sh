@@ -7,7 +7,7 @@
 #   It gets the shadow file used in the installer
 #   in case someone wants to change the password
 #
-#	Copyright (C) 2022, huronOS Project:
+#	Copyright (C) 2024, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2

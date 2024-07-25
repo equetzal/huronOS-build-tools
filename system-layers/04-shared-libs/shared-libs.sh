@@ -7,7 +7,7 @@
 #	This layer reduces the amount of duplicated dependencies
 #	once overlayed the software modular packages.
 #
-#	Copyright (C) 2022, huronOS Project:
+#	Copyright (C) 2024, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2

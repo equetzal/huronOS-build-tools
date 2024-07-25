@@ -4,7 +4,7 @@
 #	This script allows the creation of the initramfs that will allow
 #	huronOS to create it's final file system and boot on the OS.
 #
-#	Copyright (C) 2022, huronOS Project:
+#	Copyright (C) 2024, huronOS Project:
 #		<http://huronos.org>
 #
 #	Licensed under the GNU GPL Version 2
