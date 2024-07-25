@@ -3,8 +3,8 @@
 ## Define config variables for huronOS
 export PATH=.:./tools:../tools:/usr/sbin:/usr/bin:/sbin:/bin:/
 export LIVEKITNAME="huronOS"
-export BUILD_YEAR="2023"
-export BUILD_VERSION="0031"
+export BUILD_YEAR="2024"
+export BUILD_VERSION="0032"
 export VMLINUZ=/boot/vmlinuz-6.0.15-huronos+
 export KERNEL="6.0.15-huronos+"
 export MKMOD="bin etc home lib lib64 opt root sbin srv usr var"
