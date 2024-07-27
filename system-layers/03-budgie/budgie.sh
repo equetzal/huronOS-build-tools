@@ -116,6 +116,11 @@ rm /usr/lib/udev/rules.d/*udisks2*.rules
 ## Compile schemas to include connman-gtk
 glib-compile-schemas /usr/share/glib-2.0/schemas/
 systemctl daemon-reload
+
+## TODO: Check why systemd is not allowing to enable directly the service
+systemctl disable lightdm.service
+systemctl disable hsync.timer
+systemctl disable ipman.service
 systemctl enable lightdm.service
 systemctl enable hsync.timer
 systemctl enable ipman.service

@@ -115,6 +115,7 @@ save_kernel() {
 	rm -f $TMP/usr/lib/modules/$NAME/{build,source}
 	mkdir -p $TMP/boot
 	cp linux/arch/x86/boot/bzImage $TMP/boot/vmlinuz-$NAME
+	cp $HTOOLS_KERNEL_DIR/huronos.config $TMP/boot/config-$NAME
 	cd $TMP
 	tar -c * | gzip -f >$HTOOLS_KERNEL_DIR/kernel-stuff/$NAME.tar.gz
 	echo "Your compiled kernel has been saved on $HTOOLS_KERNEL_DIR/kernel-stuff/$NAME.tar.gz"
