@@ -2,53 +2,32 @@
 sidebar_position: 1
 ---
 
-TODO: Rewrite this text for new website
+# How the Project Started
 
-# huronOS history
-huronOS starts its development by Enya Quetzalli in 2019 as a prototype of a distribution for competitive programming.
+huronOS have had several stages that lead to the creation of the system.
 
-Why huronOS was needed in first place
-In 2019 Quetzalli wanted to help her university hosts the early classificatory contests (4 contests) for the ICPC by doing coordination, logistics and learn how to configure the programming environment required for the contest. A lot of problems surged during the programming environment process because the university was not allowing the installation of any operating system on the institution hardware, any modifications were available to be done during the weekdays.
+### The need for a solution
+Most universities which host ICPC or IOI competitions needs to have a contest environment that's prepared and compliant with all the contest rules. This objective is hard to archive for some institutions and most of them create temporal solutions to the problematic, like Virtual Machine images, live USBs, PXE boot systems, temporarily installed OS's, or even save the data before a competition and be able to restore it after the contest to have a training camps scenario. 
 
-1st contest: The first contest used a virtual machine image under the supposition that all the university computed had the VM software installed, this was not true, and results were poor and not equal for all the teams.
+The Superior School of Computer Sciences (ESCOM-IPN) was not an exception to this. The team in charge of the ICPC environment created something they called 'contestImage', which was a simple Ubuntu live USB with persistence added to it.  
+They quickly noticed that in order to provide a clean environment they were needing to flash each USB (some times more than 70 USBs) for every round of the competition, which was very time consuming and did not provide as way to do a classic 'warmup' contest before the start of the competition without contaminating the filesystem with code programmed before competition.
 
-2nd contest: On the second contest, the computers had a GNU/Linux distribution installed, but this was not complying with all the ICPC requirements.
+Very quickly, the team discovered they wanted to automate several things: The setup of a wallpaper, the cleanup of the filesystem, the ability to change the firewall from a practice online judge to an official competition judge, the ability to enable or disable software depending on the type of competition (IOI-like or ICPC-like), etc.
 
-After all of this, Quetzalli proposed preparing live-USB systems to hold the contest. This was the seed for the development of huronOS.
+Some of this were able to be automated, like the wallpaper and a minimal-working script to clean the filesystem. However, it was quickly noted that the effort to achieve all those features was not going to be small.
 
-The Contest Image
-After accepting the challenge, Quetzalli decided to build a simple image of a persistent live system by taking Ubuntu Budgie, making it persistent using Rufus utility and then install ICPC software, a basic firewall and setting a shared wallpaper for the image. Took dd and got a full image of the USB and then flashed that image on all the USBs.
+### The proof of concept
+After the experience of having hosted several ICPC and OMI competitions, the team noticed that they were not alone in their experience for setting up a competitive programming contest environment. Several other universities experience the same issues, and most of them does not communicate their issues neither share their solutions. 
 
-3rd contest: During the third contest, some computers were using legacy BIOS, but the sticks prepared were only capable of booting on UEFI. Luckily enough there was enough UEFI computers to successfully boot a computer for all the teams. The performance of the system during the contest were good, it proved being a good a approach to be taken.
+This led to the idea of creating a full well-crafted solution for this problematic, and use the time and effort of all this persons who already invested their time into setting up an arena for the contest to also contribute to the project. However, to do this, it was firsly required to proof that the features were actually possible to implement. Main challenges were: *How to enable and disable software on-demand in order to comply with several competitions?*, *How to make the OS immutable so that all the changes that a contestant make are able to be erased, while also preserving persistence during any competitions?*, or *How to provide persistence of data for a training camp scenario but hide it and make it unaccessible to the contestants each time a contest is held during a training camp*.
 
-After this contest, some improvements were notable. It was needed to create a script to automatically update the wallpapers and clean all the persistent data left by the contestants on the USB keys. This led to an improved image with some scripts that connected to a server to download the current wallpaper and check for a time to clean all the contest data. This new image was called contestImage.
+All of this ideas, made the project to be chosen as the graduation project of several students that participated into competitive programming competitions. The goal was to proof that all of these scenarios were possible by building a custom OS (distro). All these students were part of the ESCOM's algorithmic club, which official pet is a *ferret* or ***hurón*** in spanish.
+This is how the project started it's implementation and got called huronOS, in alution to the pet of their club.
 
-4th contest: After re-flashing all the USB keys for the contest and just a day before the contest, it was informed that the server where the online judge was going to be hosted was different to the stated before. This was a big problem as the firewall was configured with a different address. The contest image had hardcoded the server address, so it was needed to rebuild that image and re-flash all USBs keys again. The contest was successful, but a lot of work had to be done with pressure because of this situation.
 
-The 4th date was important to determine that a lot of improvements were needed to cut the amount of time spent into configuring these systems, but the approach was right.
+### The current project
+After the graduation project was finished, a working *Proof Of Concept* product was available. However it still had several issues to be addressed before being able to be used by official competitions. In spite of that, at the beggining of 2022 several universities on Mexico City which were meant to be hosts for the ICPC competition, got a student strike that made the contest unable to be held by any of them. This lead another university to host the competition, with the restriction of not being able to modify the computers and to only have access to them the same day the competition. So, due to this situation huronOS was the best option available.
 
-The OMI: After all the ICPC, the university was selected to be the Mexican Olympiad of Informatics finals host. But the requirements, configurations and software for this contest were highly different than the ones prepared for the ICPC. This required again, rebuilding an image for changing the software, firewall, configs, etc.
+After the successful official contest, the team decided to made the first release, huronOS Queue 0.1 (alpha). Since then, the project has progressed tremendously and it's currently very stable and used by several organizations for their contests. However, there's still several features and characteristics typical of most other distributions that are not currently present in huronOS. For this reason, the project is still considered *alpha*.
 
-The training camp: During the first winter training camp of the university, the contest image was used for the contests on the event, but it was not possible to use it during the learning sessions as it had a firewall and restrictions that was not allowing the participants to use internet, etc.
-
-The Proof of Life
-After a year of seeing all this issues, other communities were asked if they had similar issues during the organization of their competitions and they told they had them. So, Quetzalli asked herself, why not to build a definite solution to this. An OS capable of changing its behavior and be orchestrated from a server. A lot of specialized features were needed, like:
-
-The OS should synchronize with a server to change its behavior, allowing to be orchestrated up to N instances of the OS remotely.
-Build a live system that can boot from most hardware used at universities to host competitive programming events.
-Enabling and disabling software remotely in a matter of seconds.
-Changing its behavior in timed schedules depending on the event running (training camps, or contests, etc.).
-Cleaning its own filesystem to restore its state depending on the event running while preserving the persistence of each event running.
-Change the firewall configurations according to the specifications of the running event.
-Change details like wallpaper, keyboard layout, language, bookmarks, etc.
-This was the start of huronOS idea, a GNU/Linux distribution based on Debian and using the Linux-Live + Slax building tools as the base for building a proof of life with all the features needed and using this project as the final project for graduation.
-
-In 2021 the project was approved to be used for the graduation of three students:
-
-Abraham Omar
-Bryan Enrique
-Enya Quetzalli
-During 2021 and 2022 the project was developed, and the first builds of huronOS came to the light, showing that it was possible to satisfy most of the needs for competitive programming contests.
-
-The First Alpha
-After the final project at the university, the huronOS project is continuing its path and bringing the PoL into an alpha state for development.
+Currently, the system is already being used at several universities and it's also the official operating system for the Mexican Olympiad of Informatics. The project is still un active development and looks forward into getting their first official release (non-alpha).
