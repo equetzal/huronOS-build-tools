@@ -1,11 +1,11 @@
-# Where is HuronOS Being Used?
+# Where is huronOS Being Used?
 
-huronOS is actively utilized by numerous competitive programming communities. Due to HuronOS's commitment to privacy and the absence of telemetry, we do not maintain a comprehensive list of all users. However, we collaborate closely with several key organizations.
+huronOS is actively utilized by numerous competitive programming communities. Due to huronOS's commitment to privacy and the absence of telemetry, we do not maintain a comprehensive list of all users. However, we collaborate closely with several key organizations.
 
 Here are some notable examples:
 
 ### **[Training Camp Mexico](https://tcmx.icpcmexico.org)**
-The TCMX (Training Camp Mexico) serves as the *official* training camp for the ICPC Mexico region, where HuronOS plays a crucial role in constructing the contest environment. This annual event gathers the LATAM Champions of the ICPC World Finals to mentor and prepare multiple teams aspiring to reach the regional finals.
+The TCMX (Training Camp Mexico) serves as the *official* training camp for the ICPC Mexico region, where huronOS plays a crucial role in constructing the contest environment. This annual event gathers the LATAM Champions of the ICPC World Finals to mentor and prepare multiple teams aspiring to reach the regional finals.
 
 ![Training Camp Mexico 2023 - Inauguration](../assets/tcmx2023_directors.jpg)
 ![Training Camp Mexico 2023 - After Last Contest](../assets/tcmx2023_after_contest.jpg)
@@ -17,7 +17,7 @@ huronOS is the designated operating system for the Mexican Olympiad of Informati
 ![Olimpiada Mexicana de Informatica 2023 - Contest within a laboratory](../assets/omi2023_ceremony.png)
 
 ### ICPC "Gran Premio de México"
-The "Gran Premio de México" functions as the qualifying rounds for the ICPC Mexico Regional Finals. This is a synchronized multi-location contest hosted by various universities, many of which rely on HuronOS to facilitate their competitions. Notable universities utilizing HuronOS include:
+The "Gran Premio de México" functions as the qualifying rounds for the ICPC Mexico Regional Finals. This is a synchronized multi-location contest hosted by various universities, many of which rely on huronOS to facilitate their competitions. Notable universities utilizing huronOS include:
 - Benemérita Universidad Autónoma de Puebla (BUAP)
 - Centro de Nanociencias y Nanotecnología Baja California Sur de la Universidad Nacional Autónoma de México (CNyN-UNAM)
 - Escuela Superior de Cómputo del Instituto Politécnico Nacional (ESCOM-IPN)

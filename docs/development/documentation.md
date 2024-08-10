@@ -40,7 +40,7 @@ To streamline the process of submitting documentation, follow these steps:
 5. Create a draft PR to preserve the original text.
 6. Utilize chatGPT to rewrite your markdown file with the provided prompt:
 ```txt
-Please rewrite the following markdown text to look professional, with software terminology, good grammar and oriented to technically skilled people. Make sure to do not delete the links, images, nor changing the titles and keep the tables format. Properly escape triple backtick codeblocks with 4 backticks. Please, output the rewrite in markdown format in a codeblock so that I can just copy it. 
+Please rewrite the following markdown text to look professional, with software terminology, good grammar and oriented to technically skilled people. Make sure to do not delete the links, images, nor changing the titles and keep the tables format. Properly escape triple backtick codeblocks with 4 backticks. Please, output the rewrite in markdown format in a codeblock so that I can just copy it. Remember to spell "huronOS" as-is, case sensitive.
 
 # Here paste your markdown content
 ```

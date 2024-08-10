@@ -1,5 +1,5 @@
 # Setting Firewall for Web Broswing
-HuronOS includes a firewall that allows to specify which pages would be available, by default all sites are available with `AllowedWebsites=all`, but if you want to specify a site, the syntax is `AllowedWebsites=mysite.com|myotherSite.com|...|`, note that after every site there has to be a pipe `|` to separate them.
+huronOS includes a firewall that allows to specify which pages would be available, by default all sites are available with `AllowedWebsites=all`, but if you want to specify a site, the syntax is `AllowedWebsites=mysite.com|myotherSite.com|...|`, note that after every site there has to be a pipe `|` to separate them.
 
 # Example
 ```text
