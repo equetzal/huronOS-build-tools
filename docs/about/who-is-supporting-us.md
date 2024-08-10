@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Who's Supporting Us?
 
 huronOS is a free, open-source software project designed to assist educational institutions and individuals in competitive programming competitions. As a non-commercial initiative, huronOS generates no revenue. However, contributions from our supporters are vital in keeping the project operational and active.

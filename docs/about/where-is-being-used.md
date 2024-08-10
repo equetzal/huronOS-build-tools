@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Where is huronOS Being Used?
 
 huronOS is actively utilized by numerous competitive programming communities. Due to huronOS's commitment to privacy and the absence of telemetry, we do not maintain a comprehensive list of all users. However, we collaborate closely with several key organizations.
