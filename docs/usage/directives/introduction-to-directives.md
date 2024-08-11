@@ -53,6 +53,7 @@ In event mode, the system has a separate partition disk (persistent) that stores
 
 To better understand modes and mode transitions, we use the following diagram to illustrate how *mode priorities* (Contest > Event > Default) are utilized to set up contests and events:
 
-![Mode Priorities](../../assets/system-modes.svg)
+![Mode Priorities](../../assets/themed/dark/system-modes.svg#gh-dark-mode-only)
+![Mode Priorities](../../assets/themed/light/system-modes.svg#gh-light-mode-only)
 
 In this example, you can see that the *default* mode is replaced with an event. This means that all data on the *default* persistence will be cleaned upon changing to the *event* mode, ensuring the event starts with a clean filesystem. Throughout the event, all data remains persistent between contests. The two contests are held within the contest time, and all contest data is copied to the event partition once the contest concludes. After the event, the filesystem is cleaned, and the *default* mode becomes active. Creating another event simply involves setting a new time window.

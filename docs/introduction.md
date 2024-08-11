@@ -8,7 +8,8 @@ sidebar_position: 1
 huronOS is designed to work as a **live USB** compatible with both legacy and UEFI BIOS, intended to **avoid the need to modify the hardware** provided by your educational institution; you only boot and **in a matter of seconds** you can have a **competitive programming environment** ready for a competition.
 
 ## Desktop Environment
-![huronOS' Desktop Environment](assets/huronOS-desktop-enviroment.svg)
+![huronOS' Desktop Environment](assets/themed/dark/huronOS-desktop-enviroment.svg#gh-dark-mode-only)
+![huronOS' Desktop Environment](assets/themed/light/huronOS-desktop-enviroment.svg#gh-light-mode-only)
 huronOS' desktop environment is **a first-of-its-kind**, being designed to only **keep what's important** for the contestants: Coding, Collaborating, and No Distractions.
 
 ## Synchronization 
